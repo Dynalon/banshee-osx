@@ -304,6 +304,8 @@ namespace Banshee.Sources
             return CanAddTracks && source != this;
         }
 
+        public bool IsTemporary { get; set; }
+
         public override bool AcceptsUserInputFromSource (Source source)
         {
             return base.AcceptsUserInputFromSource (source) && CanAddTracks;

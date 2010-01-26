@@ -58,6 +58,7 @@ namespace Banshee.Daap
 
         public DaapPlaylistSource (DAAP.Playlist playlist, DaapSource parent) : base (playlist.Name, parent)
         {
+            IsTemporary = true;
             this.parent = parent;
             Save ();
 

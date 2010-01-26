@@ -368,6 +368,18 @@ namespace Banshee.Playlist
             ServiceManager.DbConnection.CommitTransaction ();
         }
 
+        public static void ClearTemporary (PrimarySource parent)
+        {
+            if (parent != null) {
+                ServiceManager.DbConnection.BeginTransaction ();
+                ServiceManager.DbConnection.Execute (@"
+                    DELETE FROM CorePlaylistEntries WHERE PlaylistID IN (SELECT PlaylistID FROM CorePlaylists WHERE PrimarySourceID = ? AND IsTemporary = 1);
+                    DELETE FROM CorePlaylists WHERE PrimarySourceID = ? AND IsTemporary = 1;", parent.DbId, parent.DbId
+                );
+                ServiceManager.DbConnection.CommitTransaction ();
+            }
+        }
+
         private static int GetPlaylistId (string name)
         {
             return ServiceManager.DbConnection.Query<int> (

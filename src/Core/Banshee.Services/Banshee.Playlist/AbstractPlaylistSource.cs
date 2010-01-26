@@ -77,12 +77,6 @@ namespace Banshee.Playlist
             get { return true; }
         }
 
-        private bool is_temporary = false;
-        public bool IsTemporary {
-            get { return is_temporary; }
-            set { is_temporary = value; }
-        }
-
         public int? DbId {
             get { return dbid; }
             protected set {

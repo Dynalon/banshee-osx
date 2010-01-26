@@ -126,9 +126,10 @@ namespace Banshee.Sources
 
                 dbid = ServiceManager.DbConnection.Query<int> ("SELECT PrimarySourceID FROM CorePrimarySources WHERE StringID = ?", UniqueId);
                 if (dbid == 0) {
-                    dbid = ServiceManager.DbConnection.Execute ("INSERT INTO CorePrimarySources (StringID) VALUES (?)", UniqueId);
+                    dbid = ServiceManager.DbConnection.Execute ("INSERT INTO CorePrimarySources (StringID, IsTemporary) VALUES (?, ?)", UniqueId, IsTemporary);
                 } else {
                     SavedCount = ServiceManager.DbConnection.Query<int> ("SELECT CachedCount FROM CorePrimarySources WHERE PrimarySourceID = ?", dbid);
+                    IsTemporary = ServiceManager.DbConnection.Query<bool> ("SELECT IsTemporary FROM CorePrimarySources WHERE PrimarySourceID = ?", dbid);
                 }
 
                 if (dbid == 0) {
@@ -203,9 +204,14 @@ namespace Banshee.Sources
             get { return base_dir_with_sep ?? (base_dir_with_sep = BaseDirectory + System.IO.Path.DirectorySeparatorChar); }
         }
 
-        protected PrimarySource (string generic_name, string name, string id, int order) : base (generic_name, name, id, order)
+        protected PrimarySource (string generic_name, string name, string id, int order) : this (generic_name, name, id, order, false)
+        {
+        }
+
+        protected PrimarySource (string generic_name, string name, string id, int order, bool is_temp) : base (generic_name, name, id, order)
         {
             Properties.SetString ("SortChildrenActionLabel", Catalog.GetString ("Sort Playlists By"));
+            IsTemporary = is_temp;
             PrimarySourceInitialize ();
         }
 
@@ -245,6 +251,8 @@ namespace Banshee.Sources
 
         public virtual void Dispose ()
         {
+            PurgeSelfIfTemporary ();
+
             if (Application.ShuttingDown)
                 return;
 
@@ -269,6 +277,12 @@ namespace Banshee.Sources
             DatabaseTrackModel.AddCondition (String.Format ("CoreTracks.PrimarySourceID = {0}", DbId));
 
             primary_sources[DbId] = this;
+
+            // If there was a crash, tracks can be left behind, for example in DaapSource.
+            // Temporary playlists are cleaned up by the PlaylistSource.LoadAll call below
+            if (IsTemporary && SavedCount > 0) {
+                PurgeTracks ();
+            }
 
             // Load our playlists and smart playlists
             foreach (PlaylistSource pl in PlaylistSource.LoadAll (this)) {
@@ -432,6 +446,20 @@ namespace Banshee.Sources
         protected override void OnTracksRemoved ()
         {
             OnTracksDeleted ();
+        }
+
+        protected virtual void PurgeSelfIfTemporary ()
+        {
+            if (!IsTemporary) {
+                return;
+            }
+
+            PlaylistSource.ClearTemporary (this);
+            PurgeTracks ();
+
+            ServiceManager.DbConnection.Execute (new HyenaSqliteCommand (@"
+                DELETE FROM CorePrimarySources WHERE PrimarySourceId = ?"),
+                DbId);
         }
 
         protected virtual void PurgeTracks ()

@@ -58,7 +58,7 @@ namespace Banshee.Daap
         private bool is_activating;
 
         public DaapSource (DAAP.Service service) : base (Catalog.GetString ("Music Share"), service.Name,
-                                                    (service.Address.ToString () + service.Port).Replace (":", "").Replace (".", ""), 300)
+                                                    (service.Address.ToString () + service.Port).Replace (":", "").Replace (".", ""), 300, true)
         {
             this.service = service;
             Properties.SetString ("UnmapSourceActionLabel", Catalog.GetString ("Disconnect"));
