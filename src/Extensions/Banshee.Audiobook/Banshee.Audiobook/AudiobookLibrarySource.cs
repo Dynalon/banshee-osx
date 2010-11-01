@@ -102,6 +102,7 @@ namespace Banshee.Audiobook
             book_view = new LazyLoadSourceContents<BookView> ();
             Properties.Set<ISourceContents> ("Nereid.SourceContents", grid_view);
 
+            Properties.Set<System.Reflection.Assembly> ("ActiveSourceUIResource.Assembly", System.Reflection.Assembly.GetExecutingAssembly ());
             Properties.SetString ("ActiveSourceUIResource", "ActiveSourceUI.xml");
             Properties.Set<bool> ("ActiveSourceUIResourcePropagate", true);
             Properties.Set<System.Action> ("ActivationAction", delegate { SwitchToGridView (); });
