@@ -145,6 +145,7 @@ namespace Banshee.Streaming
             }
 
             trying_to_play = true;
+            SavePlaybackError (StreamPlaybackError.None);
 
             if (loaded) {
                 PlayCore ();
