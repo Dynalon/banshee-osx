@@ -80,6 +80,11 @@ namespace Banshee.LibraryWatcher
                 throw new Exception ("Will not create LibraryWatcher for the entire home directory");
             }
 
+            string root = Path.GetPathRoot (Environment.CurrentDirectory);
+            if (path == root || path == root + Path.DirectorySeparatorChar) {
+                throw new Exception ("Will not create LibraryWatcher for the entire root directory");
+            }
+
             import_manager = ServiceManager.Get<LibraryImportManager> ();
 
             watcher = new FileSystemWatcher (path);
