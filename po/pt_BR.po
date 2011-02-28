@@ -24,9 +24,9 @@ msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&component=general\n"
-"POT-Creation-Date: 2011-02-19 23:53+0000\n"
-"PO-Revision-Date: 2011-02-18 15:40-0300\n"
-"Last-Translator: Krix Apolinário <krixapolinario@gmail.com>\n"
+"POT-Creation-Date: 2011-02-28 18:14+0000\n"
+"PO-Revision-Date: 2011-02-24 14:35-0300\n"
+"Last-Translator: Gabriel F. Vilar <cogumm@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -369,9 +369,9 @@ msgstr "Suporta o download de arquivos BitTorrent a partir de podcasts."
 
 #. ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore.addin.xml
 #: ../data/addin-xml-strings.cs:163
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:49
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:50
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:90
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:52
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:53
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:115
 msgid "Ubuntu One Music Store"
 msgstr "Ubuntu One Music Store"
 
@@ -704,14 +704,18 @@ msgid "Could not create 'audioconvert' plugin"
 msgstr "Não foi possível criar o plug-in \"audioconvert\""
 
 #: ../libbanshee/banshee-transcoder.c:270
+msgid "Could not create 'audioresample' plugin"
+msgstr "Não foi possível criar plug-in \"audioresample\""
+
+#: ../libbanshee/banshee-transcoder.c:276
 msgid "Could not create encoding pipeline"
 msgstr "Não foi possível criar a linha de processamento de codificação"
 
-#: ../libbanshee/banshee-transcoder.c:276
+#: ../libbanshee/banshee-transcoder.c:282
 msgid "Could not get sink pad from encoder"
 msgstr "Não foi possível obter um bloco dissipador do codificador"
 
-#: ../libbanshee/banshee-transcoder.c:341
+#: ../libbanshee/banshee-transcoder.c:345
 msgid "Could not construct pipeline"
 msgstr "Não foi possível construir a linha de processamento"
 
@@ -766,6 +770,7 @@ msgid "Could not initialize GStreamer library"
 msgstr "Não foi possível iniciar a biblioteca do GStreamer"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:441
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:147
 msgid "Unknown Error"
 msgstr "Erro desconhecido"
 
@@ -793,7 +798,7 @@ msgstr ""
 msgid "Could not create transcoder"
 msgstr "Não foi possível criar o transcodificador"
 
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:287
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:348
 msgid "GStreamer# 0.10"
 msgstr "GStreamer# 0.10"
 
@@ -1272,7 +1277,7 @@ msgstr "Pul_ar para o item em reprodução"
 msgid "{0} ({1}:{2:00})"
 msgstr "{0} ({1}:{2:00})"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseAlbumListModel.cs:69
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseAlbumListModel.cs:75
 #, csharp-format
 msgid "All Albums ({0})"
 msgstr "Todos os álbuns ({0})"
@@ -2486,7 +2491,7 @@ msgstr "Por favor, preencha um relatório de erro com esse erro: {0}"
 msgid "Edit Smart Playlist"
 msgstr "Editar lista de reprodução inteligente"
 
-#: ../src/Core/Banshee.Services/Banshee.SmartPlaylist/SmartPlaylistSource.cs:252
+#: ../src/Core/Banshee.Services/Banshee.SmartPlaylist/SmartPlaylistSource.cs:254
 msgid "Delete Smart Playlist"
 msgstr "Excluir lista de reprodução inteligente"
 
@@ -6825,7 +6830,7 @@ msgstr "Iniciar monitoramento SQL"
 msgid "Stop SQL Monitoring"
 msgstr "Parar monitoramento SQL"
 
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:89
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:114
 msgid "Track Preview"
 msgstr "Pre-visualizar a faixa"
 
