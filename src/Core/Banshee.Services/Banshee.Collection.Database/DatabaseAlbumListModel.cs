@@ -40,11 +40,17 @@ using Banshee.Database;
 
 namespace Banshee.Collection.Database
 {
+    internal class AllAlbumInfo : AlbumInfo
+    {
+        public AllAlbumInfo () : base (null) {}
+        public override string DisplayArtistName { get { return null; } }
+    }
+
     public class DatabaseAlbumListModel : DatabaseFilterListModel<DatabaseAlbumInfo, AlbumInfo>
     {
         public DatabaseAlbumListModel (Banshee.Sources.DatabaseSource source, DatabaseTrackListModel trackModel, BansheeDbConnection connection, string uuid)
             : base (Banshee.Query.BansheeQuery.AlbumField.Name, Banshee.Query.BansheeQuery.AlbumField.Label,
-                    source, trackModel, connection, DatabaseAlbumInfo.Provider, new AlbumInfo (null), uuid)
+                    source, trackModel, connection, DatabaseAlbumInfo.Provider, new AllAlbumInfo (), uuid)
         {
             QueryFields = new QueryFieldSet (Banshee.Query.BansheeQuery.AlbumField);
             ReloadFragmentFormat = @"

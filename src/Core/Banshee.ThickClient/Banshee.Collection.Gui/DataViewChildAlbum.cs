@@ -65,7 +65,6 @@ namespace Banshee.Collection.Gui
                 new TextBlock () {
                     Binder = new Hyena.Data.ObjectBinder () { Property = "DisplayArtistName" },
                     UseMarkup = true,
-                    // TODO hide for 'All Artists'
                     TextFormat = "<small>{0}</small>",
                     Opacity = 0.6
                 }
