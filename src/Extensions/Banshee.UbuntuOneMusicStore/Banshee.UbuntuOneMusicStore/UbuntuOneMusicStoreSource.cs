@@ -75,6 +75,7 @@ namespace Banshee.UbuntuOneMusicStore
             if (uri.StartsWith ("u1ms://")) {
                 string http_url = uri.Replace ("u1ms://", "http://");
                 custom_view.Store.LoadStoreLink (http_url);
+                ServiceManager.SourceManager.SetActiveSource (this);
             }
         }
 
