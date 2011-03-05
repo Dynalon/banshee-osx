@@ -27,8 +27,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Banshee\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-26 18:51+0100\n"
-"PO-Revision-Date:  2011-02-26 19:20+01000\n"
+"POT-Creation-Date: 2011-03-05 13:45+0100\n"
+"PO-Revision-Date:  2011-03-05 14:10+01000\n"
 "Last-Translator: Jordi Mas i Hernàndez <jmas@softcatala.org>\n"
 "Language-Team: ca_ES <tradgnome@softcatala.net>\n"
 "Language: \n"
@@ -97,11 +97,11 @@ msgstr ""
 #. ../src/Extensions/Banshee.AmazonMp3.Store/Banshee.AmazonMp3.Store.addin.xml
 #: ../data/addin-xml-strings.cs:33
 msgid "Amazon MP3 Store Source"
-msgstr "Botiga d'Amazon MP3"
+msgstr "Botiga MP3 d'Amazon"
 
 #: ../data/addin-xml-strings.cs:34
 msgid "Browse, search, and purchase music from the Amazon MP3 store."
-msgstr "Navegueu, cerqueu i compreu música de la botiga d'Amazon MP3."
+msgstr "Navegueu, cerqueu i compreu música de la botiga MP3 d'Amazon."
 
 #: ../data/addin-xml-strings.cs:35 ../data/addin-xml-strings.cs:40
 #: ../data/addin-xml-strings.cs:75 ../data/addin-xml-strings.cs:90
@@ -113,7 +113,7 @@ msgstr "Fonts en línia"
 #. ../src/Extensions/Banshee.AmazonMp3/Banshee.AmazonMp3.addin.xml
 #: ../data/addin-xml-strings.cs:38
 msgid "Amazon MP3 Import"
-msgstr "Importació Amazon MP3"
+msgstr "Importació d'MP3 d'Amazon"
 
 #: ../data/addin-xml-strings.cs:39
 msgid "Download and import music purchased from Amazon.com."
@@ -372,9 +372,9 @@ msgstr "Compatibilitat amb baixades de fitxers BitTorrent des de podcasts."
 
 #. ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore.addin.xml
 #: ../data/addin-xml-strings.cs:163
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:49
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:50
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:90
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:52
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:53
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:116
 msgid "Ubuntu One Music Store"
 msgstr "Botiga de música Ubuntu One"
 
@@ -797,6 +797,7 @@ msgid "Could not initialize GStreamer library"
 msgstr "No s'ha pogut inicialitzar la biblioteca del GStreamer"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:441
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:147
 msgid "Unknown Error"
 msgstr "Error desconegut"
 
@@ -825,7 +826,7 @@ msgstr ""
 msgid "Could not create transcoder"
 msgstr "No s'ha pogut crear el codificador"
 
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:287
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:348
 msgid "GStreamer# 0.10"
 msgstr "GStreamer# 0.10"
 
@@ -1326,7 +1327,7 @@ msgstr "S_alta a l'element que s'està reproduint"
 msgid "{0} ({1}:{2:00})"
 msgstr "{0} ({1}:{2:00})"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseAlbumListModel.cs:69
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseAlbumListModel.cs:75
 #, csharp-format
 msgid "All Albums ({0})"
 msgstr "Tots els àlbums ({0})"
@@ -2602,7 +2603,7 @@ msgstr "Empleneu un informe amb aquest error: {0}"
 msgid "Edit Smart Playlist"
 msgstr "Edita la llista de reproducció intel·ligent"
 
-#: ../src/Core/Banshee.Services/Banshee.SmartPlaylist/SmartPlaylistSource.cs:252
+#: ../src/Core/Banshee.Services/Banshee.SmartPlaylist/SmartPlaylistSource.cs:254
 msgid "Delete Smart Playlist"
 msgstr "Suprimeix la llista de reproducció intel·ligent"
 
@@ -5286,7 +5287,7 @@ msgstr "Buida la cua del sistema de fitxers en sortir"
 # N.T.: Tipus de problema:
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/AlbumDuplicateSolver.cs:46
 msgid "Duplicate Albums"
-msgstr "Duplicació d'àlbums"
+msgstr "Àlbums duplicats"
 
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/AlbumDuplicateSolver.cs:47
 msgid ""
@@ -5300,7 +5301,7 @@ msgstr ""
 # N.T.: Tipus de problema:
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/ArtistDuplicateSolver.cs:46
 msgid "Duplicate Artists"
-msgstr "Duplicació d'artistes"
+msgstr "Artistes duplicats"
 
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/ArtistDuplicateSolver.cs:47
 msgid ""
@@ -5330,7 +5331,7 @@ msgstr "Aplica les reparacions seleccionades"
 # N.T.: Tipus de problema:
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/GenreDuplicateSolver.cs:46
 msgid "Duplicate Genres"
-msgstr "Duplicació de gèneres"
+msgstr "Gèneres duplicats"
 
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/GenreDuplicateSolver.cs:47
 msgid ""
@@ -5784,7 +5785,7 @@ msgstr "Pel·lícules lliures"
 
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:81
 msgid "Prelinger Archives"
-msgstr "Arxius Prelinger"
+msgstr "L'arxiu Prelinger"
 
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:82
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:109
@@ -5801,7 +5802,7 @@ msgstr "Vídeos de videojocs"
 
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:85
 msgid "Vlogs"
-msgstr "Vídeo blocs"
+msgstr "Videoblocs"
 
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:86
 msgid "Youth Media"
@@ -7064,7 +7065,7 @@ msgstr "Inicia la monitorització SQL"
 msgid "Stop SQL Monitoring"
 msgstr "Atura la monitorització SQL"
 
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:89
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:115
 msgid "Track Preview"
 msgstr "Previsualització de la cançó"
 
