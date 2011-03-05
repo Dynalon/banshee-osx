@@ -134,7 +134,7 @@ function tag_release () {
 }
 
 function post_release () {
-	firefox "http://bugzilla.gnome.org/editversions.cgi?action=new&product=banshee&version=${PACKAGE_VERSION}"
+	xdg-open "http://bugzilla.gnome.org/editversions.cgi?action=new&product=banshee&version=${PACKAGE_VERSION}"
 }
 
 # Build the OS X binary
