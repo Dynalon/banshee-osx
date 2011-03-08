@@ -328,7 +328,12 @@ namespace Banshee.NotificationArea
                 }
             }
 
+// Work around/fix bgo#641608 on Windows with this if/else/endif
+#if WIN32
+            menu.Popup (null, null, null, 3, Gtk.Global.CurrentEventTime);
+#else
             menu.Popup (null, null, notif_area.PositionMenu, 3, Gtk.Global.CurrentEventTime);
+#endif
         }
 
         private void CloseWindow (object o, EventArgs args)
