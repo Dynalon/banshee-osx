@@ -192,7 +192,7 @@ namespace Banshee.ServiceStack
             }
 
             if (!shown) {
-                Banshee.Web.Browser.Open (String.Format ("http://library.gnome.org/users/{0}/{1}/", project, Version));
+                Banshee.Web.Browser.Open (String.Format ("http://library.gnome.org/users/{0}/", project));
             }
         }
 
