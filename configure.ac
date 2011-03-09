@@ -31,7 +31,7 @@ m4_define([banshee_asm_version],
 	[banshee_api_version.0.0])
 
 AC_PREREQ(2.52)
-AC_INIT([banshee-1], banshee_version,
+AC_INIT([banshee], banshee_version,
 	[http://bugzilla.gnome.org/enter_bug.cgi?product=banshee])
 
 AM_INIT_AUTOMAKE([1.9 dist-bzip2 tar-ustar dist-zip foreign])
