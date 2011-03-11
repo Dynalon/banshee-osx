@@ -1,5 +1,5 @@
 ===============================================================================
-WELCOME TO BANSHEE 1.9.4 - Released February 23, 2011
+WELCOME TO BANSHEE 1.9.5 - Released March 9, 2011
 ===============================================================================
 
   * Banshee is a multimedia management and playback application for GNOME.
@@ -8,31 +8,30 @@ WELCOME TO BANSHEE 1.9.4 - Released February 23, 2011
     and video podcasts.  Sync your Android, iPod, and other devices. We think
     you'll love the new Banshee!"
 
-  * Learn More: http://banshee.fm/download/archives/1.9.4
+  * Learn More: http://banshee.fm/download/archives/1.9.5
 
 
 ===============================================================================
 NEW AWESOME FEATURES AND ENHANCEMENTS
 ===============================================================================
 
-    Banshee 1.9.4 is a development release, part of the 1.9.x series
+    Banshee 1.9.5 is a development release, part of the 1.9.x series
     leading up to Banshee 2.0.
 
     Enhancements:
 
-      * Various fixes and improvements to the Windows build
-      * MultimediaKeys: Support Pause, FastForward, Rewind, Repeat and Shuffle
-      * Advertise lastfm scheme handling in the .desktop files
+      * Add support for handling u1ms:// links
+      * Windows: Add Win7 thumbnail toolbar playback buttons
+      * OS X Build: Work with new bockbuild, add MonoMac
 
-    Notable Bugs Fixed (25 fixed since 1.9.3):
+    Notable Bugs Fixed (20 fixed since 1.9.4):
 
-      * AmazonMp3.Store: Fix the server 'Home' redirect
-      * Misc theme and string fixes
-      * bgo#638541: Don't try to find subtitle files for music
-      * Fix the position label when the stream ends
-      * TrackInfoDisplay: Don't display last track when idle
-      * bgo#614530: Fixed a ListView glitch
-      * bgo#642717: SoundMenu: don't call BlacklistMediaPlayer on startup
+      * bgo#644315: Fix album browser's border on Windows
+      * bgo#641608: windows: Fix notification icon menu positioning
+      * bgo#643188: Help: Fix help URL to library.gnome.org
+      * bgo#643407: GStreamerSharp: Properly handle GStreamer errors
+      * bgo#641674: SmartPlaylists: Fix queries with { and }
+      * Hide 'Unknown Artist' in 'All Albums' browser entry
 
 ===============================================================================
 SOURCES / PACKAGES
@@ -41,10 +40,10 @@ SOURCES / PACKAGES
 Sources
 -------
 
-    * Banshee 1.9.4 Tarballs:
-      http://download.banshee.fm/banshee/unstable/1.9.4/banshee-1-1.9.4.tar.bz2
-      http://download.banshee.fm/banshee/unstable/1.9.4/banshee-1-1.9.4.tar.gz
-      http://download.banshee.fm/banshee/unstable/1.9.4/banshee-1-1.9.4.sha256sum
+    * Banshee 1.9.5 Tarballs:
+      http://download.banshee.fm/banshee/unstable/1.9.5/banshee-1-1.9.5.tar.bz2
+      http://download.banshee.fm/banshee/unstable/1.9.5/banshee-1-1.9.5.tar.gz
+      http://download.banshee.fm/banshee/unstable/1.9.5/banshee-1-1.9.5.sha256sum
 
 Packages
 --------
@@ -61,7 +60,11 @@ Packages
 
     Binaries for Mac OS X 10.5 and 10.6:
 
-    * http://download.banshee.fm/banshee/stable/1.8.0/banshee-1-1.8.0.macosx.intel.dmg
+    * http://download.banshee.fm/banshee/unstable/1.9.5/banshee-1-1.9.5.macosx.intel.dmg
+
+    Binaries for Windows:
+
+    * http://download.banshee.fm/banshee/unstable/1.9.5/Banshee-1.9.5.msi
 
 ===============================================================================
 DEPENDENCIES
@@ -131,7 +134,7 @@ REPORT BUGS - HELP THE PROJECT - GROW THE COMMUNITY
     hesitate to file bugs!
 
     * http://banshee.fm/contribute/file-bugs
-    * http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&version=1.9.4
+    * http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&version=1.9.5
 
 
 ===============================================================================
@@ -144,14 +147,14 @@ Contributors For This Release
     The following people directly contributed to the release of this version
     of Banshee. Without their help, there would be no release!
 
-      Alex Launi, Alexander Kojevnikov, Andrés G. Aragoneses, Bertrand Lorentz,
-      Chow Loong Jin, Dustin C. Hatch, Gabriel Burt, Iain Lane, Matt Sturgeon
+      Aaron Bockover, Frank Ziegler, Gabriel Burt, Pete Johanson, Rodney Dawes
 
     The following people contributed updated translations to this release.
     Without them, our project's reach would be much more limited.
 
-      Andrej Žnidaršič, Ángel Sanz, Benjamín Valero, Fran Diéguez,
-      Krix Apolinário, Marek Černocký
+      Andrej Žnidaršič, Cheng-Chia Tseng, Daniel Mustieles, David Planella,
+      Gabriel F. Vilar, Jordi Mas, Marek Černocký, Mario Blättermann,
+      Rudolfs Mazurs, Yaron Shahrabani, Yuri Myasoedov
 
 Contributors In Past Releases
 -----------------------------
@@ -171,8 +174,8 @@ Contributors In Past Releases
     David Spreen, David Stone, Diego E. Pettenò, Dougal Stanton,
     Dustin C. Hatch, Eitan Isaacson, Elena Grassi, Eoin Hennessy, Eric Butler,
     Erik Schmidt, Fabian Jost, Felipe Almeida Lessa, Fernando Casanova,
-    Florent Thoumie, Fredrik Hedberg, Félix Velasco, Gabriel Burt,
-    Garrett LeSage, Ghislain Lacroix, Götz Waschk, Haitao Feng,
+    Florent Thoumie, Frank Ziegler, Fredrik Hedberg, Félix Velasco,
+    Gabriel Burt, Garrett LeSage, Ghislain Lacroix, Götz Waschk, Haitao Feng,
     Hans Petter Jansson, Harold Schreckengost, Iain Lane,
     Igor Guerrero Fonseca, Ilya Konstantinov, Ivan N. Zlatev, Jack Deslippe,
     Jakub Steiner, James Willcox, Jan Arne Petersen, Jason Conti, Jason Taylor,

@@ -65,9 +65,9 @@ namespace Banshee.Collection.Gui
                 new TextBlock () {
                     Binder = new Hyena.Data.ObjectBinder () { Property = "DisplayArtistName" },
                     UseMarkup = true,
-                    // TODO hide for 'All Artists'
                     TextFormat = "<small>{0}</small>",
-                    Opacity = 0.6
+                    // FIXME Windows: non-1.0 opacity causes view's border to be drawn over; bgo#644315
+                    Opacity = Hyena.PlatformDetection.IsWindows ? 1.0 : 0.6
                 }
             );
 

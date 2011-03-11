@@ -15,7 +15,7 @@ if test -z "$profile_name"; then
 	esac
 fi
 
-profile="profile.$profile_name.py"
+profile="$profile_name.py"
 
 if ! test -f "../bockbuild/profiles/banshee/$profile"; then
 	echo "Profile does not exist: build/bundle/$profile"

@@ -102,7 +102,7 @@ namespace Banshee.Collection
             }
         }
 
-        public string DisplayArtistName {
+        public virtual string DisplayArtistName {
             get { return StringUtil.MaybeFallback (ArtistName, ArtistInfo.UnknownArtistName); }
         }
 

@@ -18,8 +18,23 @@ SOURCES =  \
 
 RESOURCES = Banshee.Osx.addin.xml
 
+EXTRA_BUNDLE = $(MONOMAC_ASSEMBLIES)
+
 if PLATFORM_DARWIN
 include $(top_srcdir)/build/build.mk
+
+define EXTRA_INSTALL_DATA_HOOK
+	for ASM in $(MONOMAC_ASSEMBLIES); do \
+		$(INSTALL) -m 0755 $$ASM $(DESTDIR)$(moduledir); \
+	done;
+endef
+
+define EXTRA_UNINSTALL_HOOK
+	for ASM in $(MONOMAC_ASSEMBLIES); do \
+		rm -f $(DESTDIR)$(moduledir)/`basename $$ASM`; \
+	done;
+endef
+
 else
 EXTRA_DIST = $(SOURCES) $(RESOURCES)
 endif

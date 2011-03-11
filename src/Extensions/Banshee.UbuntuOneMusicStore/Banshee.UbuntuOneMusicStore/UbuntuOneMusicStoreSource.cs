@@ -3,8 +3,10 @@
 //
 // Authors:
 //   Jo Shields <directhex@apebox.org>
+//   Rodney Dawes <rodney.dawes@canonical.com>
 //
 // Copyright (C) 2010 Jo Shields
+// Copyright (C) 2011 Canonical, Ltd.
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the
@@ -28,6 +30,7 @@
 
 using Mono.Unix;
 using Gdk;
+using System;
 
 using Hyena;
 
@@ -51,6 +54,29 @@ namespace Banshee.UbuntuOneMusicStore
             sort_order, "ubuntu-one-music-store")
         {
             Properties.SetString ("Icon.Name", "ubuntuone");
+
+            // So we can handle u1ms:// URIs
+            ServiceManager.Get<DBusCommandService> ().ArgumentPushed += OnCommandLineArgument;
+        }
+
+        ~UbuntuOneMusicStoreSource ()
+        {
+            ServiceManager.Get<DBusCommandService> ().ArgumentPushed -= OnCommandLineArgument;
+        }
+
+        private void OnCommandLineArgument (string uri, object value, bool isFile)
+        {
+            if (!isFile || String.IsNullOrEmpty (uri)) {
+                return;
+            }
+
+            Log.Debug ("U1MS: URI requested: ", uri);
+            // Handle u1ms:// URIs
+            if (uri.StartsWith ("u1ms://")) {
+                string http_url = uri.Replace ("u1ms://", "http://");
+                custom_view.Store.LoadStoreLink (http_url);
+                ServiceManager.SourceManager.SetActiveSource (this);
+            }
         }
 
         // A count of 0 will be hidden in the source TreeView
@@ -127,6 +153,7 @@ namespace Banshee.UbuntuOneMusicStore
             public void ResetSource () { }
             public Gtk.Widget Widget { get { return store; } }
             public ISource Source { get { return null; } }
+            public UbuntuOne.U1MusicStore Store { get { return store; } }
         }
     }
 }

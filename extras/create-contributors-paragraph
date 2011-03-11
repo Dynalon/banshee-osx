@@ -18,10 +18,12 @@ foreach my $name (@names) {
         $i = $indent - 1;
         print "\n";
         print ' ' x $indent;
+    } else {
+        print " ";
     }
 
     print $name;
-    print ", ";
+    print ",";
     $i += length ($name) + 2;
 }
 print "\n";
