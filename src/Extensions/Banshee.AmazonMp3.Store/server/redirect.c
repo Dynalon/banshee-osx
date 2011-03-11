@@ -45,6 +45,7 @@ main (gint argc, gchar **argv)
     gchar *input;
     gchar *domain;
     gchar *affiliate_code;
+    gchar *home_path, *search_category;
     gchar *p;
     gchar *dest_url = NULL;
     gboolean direct_url = FALSE;
@@ -52,6 +53,8 @@ main (gint argc, gchar **argv)
     country = NULL;
     input = NULL;
     action = NULL;
+    home_path = "mp3";
+    search_category = "digital-music";
 
     remote_addr = g_getenv ("REMOTE_ADDR");
 
@@ -94,22 +97,35 @@ main (gint argc, gchar **argv)
     } else if (strcmp (country, "JP") == 0) {
         domain = "co.jp";
         affiliate_code = "banshee-jp-22";
+    } else if (strcmp (country, "CA") == 0) {
+        domain = "ca";
+        affiliate_code = "banshee-ca-20";
+        // Amazon.ca doesn't have an MP3 store (yet), so
+        // adjust Home and Search to use the general music section
+        home_path = "music";
+        search_category = "popular";
     } else {
         domain = "com";
         affiliate_code = "banshee-20";
     }
 
     if (strcmp (action, "search") == 0) {
-        dest_url = g_strdup_printf ("http://www.amazon.%s/s/ref=nb_sb_noss?url=search-alias%%3Ddigital-music&field-keywords=%s", domain, input);
+        dest_url = g_strdup_printf (
+            "http://www.amazon.%s/s/ref=nb_sb_noss?url=search-alias%%3D%s&field-keywords=%s",
+            domain, search_category, input
+        );
     } else if (strcmp (action, "sign_out") == 0) {
-        dest_url = g_strdup_printf ("http://www.amazon.%s/gp/help/customer/sign-out.html/ref=ya__lo?ie=UTF8&returnPath=%%2Fmp3", domain);
+        dest_url = g_strdup_printf (
+            "http://www.amazon.%s/gp/help/customer/sign-out.html/ref=ya__lo?ie=UTF8&returnPath=%%2F%s",
+            domain, home_path
+        );
     } else if (strcmp (action, "about") == 0) {
         dest_url = g_strdup ("http://banshee.fm/about/revenue/");
         direct_url = TRUE;
     }
 
     if (dest_url == NULL) {
-        dest_url = g_strdup_printf ("http://www.amazon.%s/mp3", domain);
+        dest_url = g_strdup_printf ("http://www.amazon.%s/%s", domain, home_path);
     }
 
     if (direct_url) {
