@@ -87,6 +87,8 @@ namespace Banshee.AmazonMp3.Store
             var combo = new Banshee.Widgets.DictionaryComboBox<string> ();
             combo.Add (Catalog.GetString ("Automatic (Geo IP detection)"), "geo");
             combo.Add (null, null);
+            // TODO uncomment this after string-freeze
+            //combo.Add (Catalog.GetString ("Canada (amazon.ca)"), "CA");
             combo.Add (Catalog.GetString ("France (amazon.fr)"), "FR");
             combo.Add (Catalog.GetString ("Germany, Switzerland, Austria (amazon.de)"), "DE");
             combo.Add (Catalog.GetString ("Japan (amazon.co.jp)"), "JP");
