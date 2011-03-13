@@ -327,6 +327,16 @@ _bp_pipeline_construct (BansheePlayer *player)
     
     g_return_val_if_fail (audiosink != NULL, FALSE);
 
+    // Set the profile to "music and movies" (gst-plugins-good 0.10.3)
+    if (g_object_class_find_property (G_OBJECT_GET_CLASS (audiosink), "profile")) {
+        g_object_set (G_OBJECT (audiosink), "profile", 1, NULL);
+    }
+
+    /* Set the audio sink to READY so it can autodetect the right sink element
+     * if needed, as this allows us to correctly determine whether it has a
+     * volume */
+    gst_element_set_state (audiosink, GST_STATE_READY);
+
     // See if the audiosink has a 'volume' property.  If it does, we assume it saves and restores
     // its volume information - and that we shouldn't
     player->audiosink_has_volume = FALSE;
@@ -342,10 +352,6 @@ _bp_pipeline_construct (BansheePlayer *player)
     bp_debug ("Audiosink has volume: %s",
         player->audiosink_has_volume ? "YES" : "NO");
         
-    // Set the profile to "music and movies" (gst-plugins-good 0.10.3)
-    if (g_object_class_find_property (G_OBJECT_GET_CLASS (audiosink), "profile")) {
-        g_object_set (G_OBJECT (audiosink), "profile", 1, NULL);
-    }
     
     // Create a custom audio sink bin that will hold the real primary sink
     player->audiobin = gst_bin_new ("audiobin");
@@ -392,7 +398,7 @@ _bp_pipeline_construct (BansheePlayer *player)
         gst_element_link_many (audiosinkqueue, player->volume, audiosink, NULL);
     }
     player->before_rgvolume = player->volume;
-    player->after_rgvolume = audiosink;
+    player->after_rgvolume = player->audiosink = audiosink;
     player->rgvolume_in_pipeline = FALSE;
     _bp_replaygain_pipeline_rebuild (player);
 
@@ -431,6 +437,12 @@ _bp_pipeline_destroy (BansheePlayer *player)
     if (GST_IS_ELEMENT (player->playbin)) {
         player->target_state = GST_STATE_NULL;
         gst_element_set_state (player->playbin, GST_STATE_NULL);
+
+        // The audiosink was set READY early to detect sink volume control in
+        // case it is out of sync with the playbin state ensure it's in NULL now
+        if (player->audiosink != NULL && GST_STATE (player->audiosink) != GST_STATE_NULL)
+          gst_element_set_state (player->audiosink, GST_STATE_NULL);
+
         gst_object_unref (GST_OBJECT (player->playbin));
     }
     

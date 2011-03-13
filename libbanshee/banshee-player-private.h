@@ -136,6 +136,7 @@ struct BansheePlayer {
     GstElement *preamp;
     GstElement *volume;
     GstElement *rgvolume;
+    GstElement *audiosink;
 
     GstElement *before_rgvolume;
     GstElement *after_rgvolume;
