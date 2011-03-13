@@ -1,7 +1,7 @@
 prefix=@prefix@
 exec_prefix=${prefix}
 libdir=@libdir@
-bansheedir=${libdir}/banshee-1
+bansheedir=${libdir}/@PACKAGE@
 
 Name: Banshee WebBrowser
 Description: Embedded web browser for the Banshee Media Framework
