@@ -640,6 +640,10 @@ namespace Banshee.Collection.Database
                 if (rating != value) {
                     rating = value;
                     Save (true, BansheeQuery.RatingField);
+                    if (TrackEqual (ServiceManager.PlayerEngine.CurrentTrack)) {
+                        ServiceManager.PlayerEngine.CurrentTrack.Rating = value;
+                        ServiceManager.PlayerEngine.TrackInfoUpdated ();
+                    }
                 }
             }
         }
