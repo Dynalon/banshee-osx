@@ -70,10 +70,6 @@
         (GST_VERSION_MAJOR == (major) && GST_VERSION_MINOR == (minor) && \
             GST_VERSION_MICRO >= (micro)))
 
-#if BANSHEE_CHECK_GST_VERSION(0,10,25)
-#include <gst/interfaces/streamvolume.h>
-#endif
-
 #ifdef WIN32
 #define bp_debug(x) banshee_log_debug ("player", x)
 #define bp_debug2(x, a2) banshee_log_debug ("player", x, a2)
@@ -152,7 +148,6 @@ struct BansheePlayer {
     gboolean buffering;
     gchar *cdda_device;
     gboolean in_gapless_transition;
-    gboolean supports_stream_volume;
     gboolean audiosink_has_volume;
     
     // Video State

@@ -308,13 +308,6 @@ bp_supports_gapless (BansheePlayer *player)
 }
 
 P_INVOKE gboolean
-bp_supports_stream_volume (BansheePlayer *player)
-{
-    g_return_val_if_fail (IS_BANSHEE_PLAYER (player), FALSE);
-    return player->supports_stream_volume;
-}
-
-P_INVOKE gboolean
 bp_audiosink_has_volume (BansheePlayer *player)
 {
     g_return_val_if_fail (IS_BANSHEE_PLAYER (player), FALSE);
