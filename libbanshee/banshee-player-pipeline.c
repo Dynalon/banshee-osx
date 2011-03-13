@@ -261,6 +261,8 @@ static void bp_volume_changed_callback (GstElement *playbin, GParamSpec *spec, B
 
     g_object_get (G_OBJECT (playbin), "volume", &volume, NULL);
 
+    player->current_volume = volume;
+
     if (player->volume_changed_cb != NULL) {
         player->volume_changed_cb (player, volume);
     }
