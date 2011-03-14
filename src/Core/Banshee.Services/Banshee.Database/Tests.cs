@@ -44,7 +44,7 @@ namespace Banshee.Database
         [Test]
         public void Migrate ()
         {
-            Paths.ApplicationName = Application.InternalName;
+            Application.InitializePaths ();
 
             int count = 0;
             foreach (string file in Directory.GetFiles (Path.Combine (TestsDir, "data"))) {

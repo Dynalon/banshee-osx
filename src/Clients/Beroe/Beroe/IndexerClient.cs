@@ -73,7 +73,7 @@ namespace Beroe
 
         private static void Startup ()
         {
-            Paths.ApplicationName = "banshee";
+            Application.InitializePaths ();
 
             ThreadAssist.InitializeMainThread ();
 
