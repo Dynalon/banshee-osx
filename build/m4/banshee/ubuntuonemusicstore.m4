@@ -8,7 +8,7 @@ AC_DEFUN([BANSHEE_CHECK_UBUNTUONE],
 	if test "x$enable_ubuntuone" = "xyes"; then
 		has_ubuntuonesharp=no
 		PKG_CHECK_MODULES(UBUNTUONESHARP,
-			[ubuntuone-sharp-1.0],
+			[ubuntuone-sharp-1.0 >= 0.3.2],
 			has_ubuntuonesharp=yes, has_ubuntuonesharp=no)
 		if test "x$has_ubuntuonesharp" = "xno"; then
 			AC_MSG_ERROR([ubuntuone-sharp was not found. Please install ubuntuone-sharp, or disable Ubuntu One support by passing --disable-ubuntuone])

@@ -426,7 +426,7 @@ ${PACKAGE}-${VERSION}
     Gapless playback:  ${ENABLE_GAPLESS} (gstreamer-plugins-base > 0.10.25.2)
     YouTube extension: ${enable_youtube} (gdata-sharp >= 1.4)
     Sound menu:        ${enable_soundmenu}
-    Ubuntu One Store:  ${enable_ubuntuone} (ubuntuone-sharp)
+    Ubuntu One Store:  ${enable_ubuntuone} (ubuntuone-sharp >= 0.3.2)
 
   Build/Development:
     Unit Tests:        ${do_tests} (nunit >= ${NUNIT_REQUIRED})
