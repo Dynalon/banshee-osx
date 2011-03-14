@@ -36,7 +36,7 @@ namespace Banshee.SoundMenu
     {
         private const string DBusInterface = "com.canonical.indicators.sound";
         private const string DBusPath = "/com/canonical/indicators/sound/service";
-        private const string desktop_name = "banshee-1";
+        private const string desktop_name = "banshee";
 
         private delegate void SoundStateUpdateHandler (int new_state);
 

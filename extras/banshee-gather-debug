@@ -24,8 +24,8 @@ function begin_log () {
 }
 
 function find_pid () {
-	BANSHEE_PID=`(pidof banshee-1 2>/dev/null || 
-		(ps -eo pid,cmd | awk '/mono.*banshee-1\/.*.exe/ { print $1 }')2>/dev/null) | 
+	BANSHEE_PID=`(pidof banshee 2>/dev/null || 
+		(ps -eo pid,cmd | awk '/mono.*banshee\/.*.exe/ { print $1 }')2>/dev/null) | 
 		tr -d '[:space:]'`
 	
 	[[ -z "$BANSHEE_PID" ]] && \
@@ -41,7 +41,7 @@ function capture_mono_stack_trace () {
 function capture_gdb_stack_trace () {
 	echo -n " - Running gdb to get a stack dump: "
 	begin_log "Running gdb (where, detach, quit)"
-	gdb --quiet --pid=$(pidof banshee-1) -ex where -ex detach -ex quit 1>&2 \
+	gdb --quiet --pid=$(pidof banshee) -ex where -ex detach -ex quit 1>&2 \
 		&& echo "success" \
 		|| echo "error"
 }

@@ -145,7 +145,7 @@ namespace Booter
 
         private static void ShowHelp ()
         {
-            Console.WriteLine ("Usage: {0} [options...] [files|URIs...]", "banshee-1");
+            Console.WriteLine ("Usage: {0} [options...] [files|URIs...]", "banshee");
             Console.WriteLine ();
 
             Layout commands = new Layout (

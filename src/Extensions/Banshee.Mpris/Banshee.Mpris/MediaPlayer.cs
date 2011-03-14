@@ -107,7 +107,7 @@ namespace Banshee.Mpris
         }
 
         public string DesktopEntry {
-            get { return "banshee-1"; }
+            get { return "banshee"; }
         }
 
         // This is just a list of commonly supported MIME types.
