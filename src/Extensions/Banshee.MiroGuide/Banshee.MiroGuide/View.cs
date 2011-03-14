@@ -125,8 +125,8 @@ namespace Banshee.MiroGuide
 
         public override void GoSearch (string query)
         {
-            var uri = GetActionUrl (LastPageWasAudio, "search/");
-            LoadUri (new Uri (uri + query).AbsoluteUri);
+            query = System.Uri.EscapeDataString (query);
+            LoadUri (new Uri (GetActionUrl (LastPageWasAudio, "search/") + query).AbsoluteUri);
         }
 
         private string GetActionUrl (bool audio, string action)
