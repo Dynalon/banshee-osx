@@ -5,18 +5,18 @@ SOURCES = Booter/Entry.cs
 
 include $(top_srcdir)/build/build.mk
 
-bin_SCRIPTS = banshee-1
+bin_SCRIPTS = banshee
 EXTRA_DIST += Banshee.exe.config
 module_SCRIPTS += Banshee.exe.config
 
 if PLATFORM_DARWIN
-banshee-1: banshee-1.darwin
+banshee: banshee.darwin
 else
-banshee-1: banshee-1.linux
+banshee: banshee.linux
 endif
 	cp $< $@
 
 install-exec-hook:
-	$(LN_S) -f banshee-1 $(DESTDIR)$(bindir)/muinshee
+	$(LN_S) -f banshee $(DESTDIR)$(bindir)/muinshee
 
-CLEANFILES = banshee-1
+CLEANFILES = banshee

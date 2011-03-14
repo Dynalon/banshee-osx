@@ -296,8 +296,8 @@ src/AssemblyInfo.cs
 src/Clients/Makefile
 src/Clients/Beroe/Makefile
 src/Clients/Booter/Makefile
-src/Clients/Booter/banshee-1.linux
-src/Clients/Booter/banshee-1.darwin
+src/Clients/Booter/banshee.linux
+src/Clients/Booter/banshee.darwin
 src/Clients/Halie/Makefile
 src/Clients/Muinshee/Makefile
 src/Clients/Nereid/Makefile
