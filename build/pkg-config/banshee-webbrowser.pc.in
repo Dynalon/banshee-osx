@@ -6,6 +6,6 @@ bansheedir=${libdir}/@PACKAGE@
 Name: Banshee WebBrowser
 Description: Embedded web browser for the Banshee Media Framework
 Version: @VERSION@
-Requires: banshee-1-services banshee-1-hyena-gui banshee-1-thickclient
+Requires: banshee-services banshee-hyena-gui banshee-thickclient
 Libs: -r:${bansheedir}/Banshee.WebBrowser.dll
 

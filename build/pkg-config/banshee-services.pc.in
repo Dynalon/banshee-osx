@@ -6,5 +6,5 @@ bansheedir=${libdir}/@PACKAGE@
 Name: Banshee Services
 Description: Service layer APIs for the Banshee Media Framework
 Version: @VERSION@
-Requires: banshee-1-core banshee-1-mono-media
+Requires: banshee-core banshee-mono-media
 Libs: -r:${bansheedir}/Banshee.Services.dll

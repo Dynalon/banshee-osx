@@ -6,6 +6,6 @@ bansheedir=${libdir}/@PACKAGE@
 Name: Banshee Last.fm
 Description: Last.fm libraries for the Banshee Media Framework
 Version: @VERSION@
-Requires: banshee-1-mono-media banshee-1-hyena
+Requires: banshee-mono-media banshee-hyena
 Libs: -r:System -r:Mono.Posix -r:ICSharpCode.SharpZipLib -r:${bansheedir}/Lastfm.dll
 
