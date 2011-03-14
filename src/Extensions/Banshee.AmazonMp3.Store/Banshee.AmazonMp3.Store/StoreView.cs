@@ -47,7 +47,10 @@ namespace Banshee.AmazonMp3.Store
             "co.uk",
             "co.jp",
             "de",
-            "fr"
+            "fr",
+            "ca",
+            "cn",
+            "it"
         };
 
         private static bool IsAmzContentType (string contentType)
