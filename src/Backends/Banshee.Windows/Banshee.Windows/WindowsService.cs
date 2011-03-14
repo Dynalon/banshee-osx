@@ -36,6 +36,7 @@ using System.Text;
 using Banshee.ServiceStack;
 using Banshee.Gui;
 
+using Mono.Unix;
 using Windows7Support;
 
 namespace Banshee.Windows
@@ -45,6 +46,7 @@ namespace Banshee.Windows
         bool disposed;
         GtkElementsService elements_service;
         InterfaceActionService interface_action_service;
+        VersionUpdater version_updater = new VersionUpdater ();
 
         private IList<ThumbnailToolbarButton> buttons;
 
@@ -92,6 +94,7 @@ namespace Banshee.Windows
         public void Initialize ()
         {
             // TODO check for updates and other cool stuff
+            version_updater.CheckForUpdates (false);
 
             elements_service = ServiceManager.Get<GtkElementsService> ();
             interface_action_service = ServiceManager.Get<InterfaceActionService> ();
@@ -99,6 +102,31 @@ namespace Banshee.Windows
             if (!ServiceStart ()) {
                 ServiceManager.ServiceStarted += OnServiceStarted;
             }
+
+            // add check for updates action
+            interface_action_service.GlobalActions.Add (new Gtk.ActionEntry[] {
+                new Gtk.ActionEntry ("CheckForUpdatesAction", null,
+                    Catalog.GetString("Check for Updates"), null,
+                    null, CheckForUpdatesEvent)
+            });
+
+            // merge check for updates menu item
+            interface_action_service.UIManager.AddUiFromString (@"
+              <ui>
+                <menubar name=""MainMenu"">
+                  <menu name=""HelpMenu"" action=""HelpMenuAction"">
+                    <placeholder name=""CheckForUpdatesPlaceholder"">
+                    <menuitem name=""CheckForUpdates"" action=""CheckForUpdatesAction""/>
+                    </placeholder>
+                  </menu>
+                </menubar>
+              </ui>
+            ");
+        }
+
+        private void CheckForUpdatesEvent (object o, EventArgs args)
+        {
+            version_updater.CheckForUpdates (true);
         }
 
         #endregion
