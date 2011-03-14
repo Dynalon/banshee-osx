@@ -14,7 +14,6 @@ if [ $BANSHEE_EXEC_NAME = "muinshee" ]; then
     export MONO_PATH=@expanded_libdir@/@PACKAGE@/Extensions
 fi
 
-[ ${BANSHEE_EXEC_NAME%%-1} = "banshee" ] && BANSHEE_EXEC_NAME="banshee-1"
 [ -n "$BANSHEE_DEBUG" -o -f "${BANSHEE_CONFIG_DIR}/always-debug" ] && BANSHEE_DEBUG="--debug"
 [ -n "$BANSHEE_TRACE" ] && BANSHEE_TRACE="--trace=$BANSHEE_TRACE"
 [ -n "$BANSHEE_PROFILE" ] && BANSHEE_PROFILE="--profile=$BANSHEE_PROFILE"
