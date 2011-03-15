@@ -112,7 +112,7 @@ main (gint argc, gchar **argv)
     if (strcmp (action, "search") == 0) {
         dest_url = g_strdup_printf (
             "http://www.amazon.%s/s/ref=nb_sb_noss?url=search-alias%%3D%s&field-keywords=%s",
-            domain, search_category, input
+            domain, search_category, g_uri_escape_string (input, NULL, TRUE)
         );
     } else if (strcmp (action, "sign_out") == 0) {
         dest_url = g_strdup_printf (

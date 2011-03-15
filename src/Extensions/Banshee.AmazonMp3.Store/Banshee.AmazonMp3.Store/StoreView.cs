@@ -147,11 +147,6 @@ namespace Banshee.AmazonMp3.Store
 
         public override void GoSearch (string query)
         {
-            // Two escapes needed because on the redirect.c server it is put into
-            // a URI, which is escaped and passed as an argument to Amazon's own
-            // redirect server (so we can inject the affiliate code).
-            // Test search: tilly & the wall
-            query = System.Uri.EscapeDataString (query);
             query = System.Uri.EscapeDataString (query);
             LoadUri (new Uri (GetActionUrl ("search/" + query)).AbsoluteUri);
         }
