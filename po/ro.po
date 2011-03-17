@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=banshe"
 "e&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2011-03-11 16:44+0000\n"
-"PO-Revision-Date: 2011-03-17 01:07+0200\n"
+"PO-Revision-Date: 2011-03-17 02:14+0200\n"
 "Last-Translator: Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
 "Language-Team: Romanian Gnome Team <gnomero-list@lists.sourceforge.net>\n"
 "Language: ro\n"
@@ -83,11 +83,10 @@ msgid "Amazon MP3 Store Source"
 msgstr "Sursa Amazon MP3 Store"
 
 #: ../data/addin-xml-strings.cs:34
-#, fuzzy
 #| msgid "Browse, search, and purchase music from the Amazon MP3 store"
 msgid "Browse, search, and purchase music from the Amazon MP3 store."
 msgstr ""
-"Răsfoiți, căutați și achiziționați muzică de la magazinul de MP3-uri Amazon"
+"Răsfoiți, căutați și achiziționați muzică de la magazinul de MP3-uri Amazon."
 
 #: ../data/addin-xml-strings.cs:35 ../data/addin-xml-strings.cs:40
 #: ../data/addin-xml-strings.cs:75 ../data/addin-xml-strings.cs:90
@@ -102,10 +101,9 @@ msgid "Amazon MP3 Import"
 msgstr "Importă MP3-uri de la Amazon"
 
 #: ../data/addin-xml-strings.cs:39
-#, fuzzy
 #| msgid "Download and import music purchased from Amazon.com"
 msgid "Download and import music purchased from Amazon.com."
-msgstr "Descărcați și importați muzică achiziționată de pe Amazon.com"
+msgstr "Descărcați și importați muzică achiziționată de pe Amazon.com."
 
 #. ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook.addin.xml
 #: ../data/addin-xml-strings.cs:43
@@ -183,10 +181,9 @@ msgid "eMusic Import"
 msgstr "Importă de la eMusic"
 
 #: ../data/addin-xml-strings.cs:74
-#, fuzzy
 #| msgid "Download and import music purchased from eMusic"
 msgid "Download and import music purchased from eMusic."
-msgstr "Descărcați și importați muzică achiziționată de pe eMusic"
+msgstr "Descărcați și importați muzică achiziționată de pe eMusic."
 
 #. ../src/Extensions/Banshee.FileSystemQueue/Banshee.FileSystemQueue.addin.xml
 #: ../data/addin-xml-strings.cs:78
@@ -203,10 +200,9 @@ msgid "Metadata Fixup"
 msgstr "Remediere metadate"
 
 #: ../data/addin-xml-strings.cs:84
-#, fuzzy
 #| msgid "Fix broken and missing metadata using bulk operations"
 msgid "Fix broken and missing metadata using bulk operations."
-msgstr "Remediază metadatele defecte sau lipsă utilizând operații în masă"
+msgstr "Remediază metadatele defecte sau lipsă utilizând operații în masă."
 
 #. ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive.addin.xml
 #: ../data/addin-xml-strings.cs:88
@@ -252,10 +248,9 @@ msgid "Library Watcher"
 msgstr "Supraveghetorul Bibliotecii"
 
 #: ../data/addin-xml-strings.cs:109
-#, fuzzy
 #| msgid "Automatically update music and video libraries"
 msgid "Automatically update music and video libraries."
-msgstr "Actualizează automat bibliotecile de muzică și video"
+msgstr "Actualizează automat bibliotecile de muzică și video."
 
 #. ../src/Extensions/Banshee.MiniMode/Banshee.MiniMode.addin.xml
 #: ../data/addin-xml-strings.cs:113
@@ -346,10 +341,9 @@ msgstr ""
 
 #. ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu.addin.xml
 #: ../data/addin-xml-strings.cs:153
-#, fuzzy
 #| msgid "Sound Menu integration for Banshee"
 msgid "Sound Menu Integration"
-msgstr "Integrare în meniul sunet pentru Banshee"
+msgstr "Integrare în meniul de sunet"
 
 #: ../data/addin-xml-strings.cs:154
 msgid "Control Banshee from the Sound Menu."
@@ -402,10 +396,9 @@ msgid "YouTube"
 msgstr "YouTube"
 
 #: ../data/addin-xml-strings.cs:174
-#, fuzzy
 #| msgid "Show related YouTube videos in the context pane"
 msgid "Show related YouTube videos in the context pane."
-msgstr "Afișează videoclipuri înrudite de pe YouTube în panoul de context"
+msgstr "Afișează videoclipuri înrudite de pe YouTube în panoul de context."
 
 #: ../data/audio-profiles/aac-novell.xml.in.h:1
 msgid "3GPP"
@@ -706,10 +699,9 @@ msgid "Could not create 'audioconvert' plugin"
 msgstr "Nu s-a putut crea modulul de extensie 'audioconvert'"
 
 #: ../libbanshee/banshee-transcoder.c:270
-#, fuzzy
 #| msgid "Could not create 'audioconvert' plugin"
 msgid "Could not create 'audioresample' plugin"
-msgstr "Nu s-a putut crea modulul de extensie 'audioconvert'"
+msgstr "Nu s-a putut crea modulul de extensie 'audioresample'"
 
 #: ../libbanshee/banshee-transcoder.c:276
 msgid "Could not create encoding pipeline"
@@ -717,7 +709,7 @@ msgstr "Nu s-a putut crea linia de asamblare de codare"
 
 #: ../libbanshee/banshee-transcoder.c:282
 msgid "Could not get sink pad from encoder"
-msgstr ""
+msgstr "Nu s-a putut obține un „sink pad” de la codor"
 
 #: ../libbanshee/banshee-transcoder.c:345
 msgid "Could not construct pipeline"
@@ -954,9 +946,8 @@ msgid "Player position in currently playing track"
 msgstr "Poziția player-ului în piesa redată curent"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:188
-#, fuzzy
 msgid "Playing Track Metadata Query Options"
-msgstr "Opțiunile afișajului de metadate a piesei redate"
+msgstr "Opțiunile de interogare a metadatelor piesei redate"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:189
 msgid "URI"
@@ -1534,7 +1525,7 @@ msgstr "Titlu"
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:119
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:84
 msgid "Count"
-msgstr ""
+msgstr "Contor"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:125
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:90
@@ -1544,7 +1535,7 @@ msgstr "Număr"
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:131
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:96
 msgid "Count (unsorted)"
-msgstr ""
+msgstr "Contor (nesortat)"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:137
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:102
@@ -2074,7 +2065,7 @@ msgstr "bițipeeșantion"
 
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:163
 msgid "bitdepth"
-msgstr ""
+msgstr "bitdepth"
 
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:163
 msgid "quantization"
@@ -3140,10 +3131,9 @@ msgstr "Amestecat"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackSubtitleActions.cs:62
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackSubtitleActions.cs:63
-#, fuzzy
 #| msgid "title"
 msgid "Subtitle"
-msgstr "Subtitlu"
+msgstr "Subtitrare"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackSubtitleActions.cs:65
 msgid "Load File..."
@@ -3432,7 +3422,7 @@ msgstr[2] "Sigur doriți să eliminați cele {0} de elemente selectate din {1}?"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/AlbumArtistEntry.cs:53
 msgid "Com_pilation Album Artist:"
-msgstr ""
+msgstr "Artistul unui album com_pilație:"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/AlbumArtistEntry.cs:57
 msgid ""
@@ -3503,7 +3493,7 @@ msgstr "_Număr piesă:"
 #. Catalog.GetString ("Automatically set disc number and count"),
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:166
 msgid "Set all disc numbers and counts to these values"
-msgstr ""
+msgstr "Definește toate numerele de disc și contoarele la aceste valori"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:167
 msgid "_Disc Number:"
@@ -3599,15 +3589,15 @@ msgstr "Avansează la piesa următoare și editează titlul"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/SortingPage.cs:42
 msgid "Sorting"
-msgstr "Se sortează"
+msgstr "Sortare"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/SortingPage.cs:52
 msgid "Set all sort track titles to this value"
-msgstr "Stabilește toate titlurile pieselor sortate la această valuare"
+msgstr ""
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/SortingPage.cs:53
 msgid "Sort Track Title:"
-msgstr "Sortează titlul piesei:"
+msgstr ""
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/SortingPage.cs:60
 msgid "Set all sort track artists to this value"
@@ -3659,7 +3649,7 @@ msgstr "Rată de biți audio:"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:207
 msgid "Audio Sample Rate:"
-msgstr ""
+msgstr "Rata de eșantionare audio:"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:209
 msgid "Audio Channels:"
@@ -4114,7 +4104,7 @@ msgstr "Se contactează..."
 
 #: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:159
 msgid "Buffering"
-msgstr ""
+msgstr "Se umple memoria tampon"
 
 #: ../src/Core/Banshee.Widgets/Banshee.Widgets/VolumeButton.cs:96
 msgid "Volume"
@@ -4886,7 +4876,7 @@ msgstr "D_etectează"
 
 #: ../src/Extensions/Banshee.Bpm/Banshee.Bpm/BpmEntry.cs:104
 msgid "T_ap"
-msgstr ""
+msgstr "_Atingeți"
 
 #: ../src/Extensions/Banshee.Bpm/Banshee.Bpm/BpmEntry.cs:112
 msgid "Have Banshee attempt to auto-detect the BPM of this song"
@@ -4900,6 +4890,7 @@ msgstr "Redă această piesă"
 #: ../src/Extensions/Banshee.Bpm/Banshee.Bpm/BpmEntry.cs:117
 msgid "Tap this button to the beat to set the BPM for this song manually"
 msgstr ""
+"Atingeți acest buton după ritmul piesei pentru a-i seta manual BPM-ul"
 
 #: ../src/Extensions/Banshee.Bpm/Banshee.Bpm/BpmService.cs:147
 msgid "_Automatically detect BPM for all songs"
@@ -5690,7 +5681,7 @@ msgstr "Muzică și arte"
 
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:103
 msgid "Netlabels"
-msgstr ""
+msgstr "Netlabels"
 
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:105
 msgid "Non-English Audio"
@@ -6166,7 +6157,7 @@ msgstr "Personal"
 #: ../src/Extensions/Banshee.LastfmStreaming/Banshee.LastfmStreaming/StationSource.cs:585
 #: ../src/Extensions/Banshee.LastfmStreaming/Banshee.LastfmStreaming/StationType.cs:102
 msgid "Mix"
-msgstr ""
+msgstr "Mixaj"
 
 #: ../src/Extensions/Banshee.LastfmStreaming/Banshee.LastfmStreaming/StationSource.cs:586
 msgid "Banshee Group"
@@ -6710,6 +6701,8 @@ msgid ""
 "If checked, Banshee will check every hour to see if this podcast has new "
 "episodes"
 msgstr ""
+"Dacă este bifat, Banshee va verifica la fiecare oră pentru a vedea dacă "
+"acest podcast are episoade noi"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastFeedPropertiesDialog.cs:109
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastSubscribeDialog.cs:136
@@ -6909,7 +6902,6 @@ msgid "Condition:"
 msgstr "Condiție:"
 
 #: ../src/Hyena/Hyena.Gui/Hyena.Query.Gui/QueryBox.cs:104
-#, fuzzy
 #| msgid "_Search"
 msgid "_Match"
 msgstr "_Potrivire"
