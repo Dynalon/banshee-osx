@@ -20,7 +20,7 @@
                 "audioconvert"
                 (gst-construct-element "lamemp3enc"
                         (if (= encoding_mode 0)
-                                ("bitrate" bitrate "target" 1)
+                                ("bitrate" bitrate "target" 1 "cbr" "true")
                                 (if (= encoding_mode 4)
                                         ("quality" (- 9 vbr_quality) "target" 0)
                                 )
