@@ -364,6 +364,9 @@ namespace Banshee.Mpris
             StringBuilder object_path_builder = new StringBuilder ();
 
             object_path_builder.Append (DBusServiceManager.ObjectRoot);
+            if (playlist.Parent != null) {
+                object_path_builder.AppendFormat ("/{0}", DBusServiceManager.MakeDBusSafeString (playlist.Parent.TypeName));
+            }
             object_path_builder.Append ("/Playlists/");
 
             object_path_builder.Append (DBusServiceManager.MakeDBusSafeString (playlist.UniqueId));
