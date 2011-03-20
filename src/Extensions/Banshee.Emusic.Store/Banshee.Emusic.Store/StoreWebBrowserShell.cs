@@ -44,10 +44,20 @@ namespace Banshee.Emusic.Store
 
             SearchEntry.EmptyMessage = String.Format (Catalog.GetString ("Search eMusic"));
 
-            // FIXME: add a ‘sign out’ button, just as soon as someone figures
-            // out how to detect being signed in.
+            store_view.SignInChanged += (o, a) => CheckSignedIn ();
+            CheckSignedIn ();
 
             ShowAll ();
+        }
+
+        private void CheckSignedIn ()
+        {
+            if (StoreView.IsSignedIn) {
+                var signout = NavigationControl.AddLink (Catalog.GetString ("Sign Out of eMusic"), null);
+                signout.Activated += (o, a) => StoreView.SignOut ();
+            } else {
+                NavigationControl.ClearLinks ();
+            }
         }
     }
 }

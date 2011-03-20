@@ -52,6 +52,9 @@ namespace Banshee.Emusic.Store
         public StoreView ()
         {
             CanSearch = true;
+            IsSignedIn = false;
+            OssiferSession.CookieChanged += (o, n) => CheckSignIn ();
+            CheckSignIn ();
             FullReload ();
         }
 
@@ -107,6 +110,32 @@ namespace Banshee.Emusic.Store
         public override void GoSearch (string query)
         {
             LoadUri ("http://integrated-services.banshee.fm/emusic/search/" + System.Uri.EscapeDataString(query));
+        }
+
+        public event EventHandler SignInChanged;
+        public bool IsSignedIn { get; private set; }
+
+        public void SignOut ()
+        {
+            LoadUri ("https://www.emusic.com/security/j_acegi_logout.html");
+        }
+
+        private void CheckSignIn ()
+        {
+            bool signed_in = OssiferSession.GetCookie ("EMUSIC_REMEMBER_ME_COOKIE", "www.emusic.com", "/") != null;
+
+            if (IsSignedIn != signed_in) {
+                IsSignedIn = signed_in;
+                OnSignInChanged ();
+            }
+        }
+
+        protected virtual void OnSignInChanged ()
+        {
+            var handler = SignInChanged;
+            if (handler != null) {
+                handler (this, EventArgs.Empty);
+            }
         }
     }
 }
