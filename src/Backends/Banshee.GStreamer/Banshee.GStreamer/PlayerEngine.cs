@@ -40,6 +40,7 @@ using Banshee.MediaEngine;
 using Banshee.ServiceStack;
 using Banshee.Configuration;
 using Banshee.Preferences;
+using Banshee.Collection;
 
 namespace Banshee.GStreamer
 {
@@ -306,7 +307,10 @@ namespace Banshee.GStreamer
             StopIterating ();
             Close (false);
             OnEventChanged (PlayerEvent.EndOfStream);
-            if (!next_track_pending) {
+            if (!next_track_pending &&
+                (!GaplessEnabled || ((CurrentTrack.MediaAttributes & TrackMediaAttributes.VideoStream) != 0))) {
+                // We don't request next track in OnEoS if gapless playback is enabled and current track has no video stream contained.
+                // The request next track is already called in OnAboutToFinish().
                 OnEventChanged (PlayerEvent.RequestNextTrack);
             } else if (pending_uri != null) {
                 Log.Warning ("[Gapless] EOS signalled while waiting for next track.  This means that Banshee " +
@@ -316,13 +320,15 @@ namespace Banshee.GStreamer
                 OpenUri (pending_uri, pending_maybe_video);
                 Play ();
                 pending_uri = null;
-            } else {
+            } else if (!GaplessEnabled || ((CurrentTrack.MediaAttributes & TrackMediaAttributes.VideoStream) != 0)) {
                 // This should be unreachable - the RequestNextTrack event is delegated to the main thread
                 // and so blocks the bus callback from delivering the EOS message.
                 //
                 // Playback should continue as normal from here, when the RequestNextTrack message gets handled.
                 Log.Warning ("[Gapless] EndOfStream message received before the next track has been set.  " +
                     "If this happens frequently, please file a bug");
+            } else {
+                Log.Debug ("[Gapless] Reach the last music under repeat off mode");
             }
         }
 
@@ -693,6 +699,7 @@ namespace Banshee.GStreamer
                     }
                 } else {
                     gapless_enabled = false;
+                    next_track_pending = false;
                 }
             }
         }
