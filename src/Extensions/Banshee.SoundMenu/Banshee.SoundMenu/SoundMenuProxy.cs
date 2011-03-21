@@ -46,6 +46,7 @@ namespace Banshee.SoundMenu
         private interface ISoundMenu
         {
             bool BlacklistMediaPlayer (string player_desktop_name, bool blacklist);
+            bool IsBlacklisted (string player_desktop_name);
             int GetSoundState ();
             event SoundStateUpdateHandler SoundStateUpdate;
         }
