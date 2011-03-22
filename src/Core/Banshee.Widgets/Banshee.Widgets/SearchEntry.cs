@@ -385,7 +385,7 @@ namespace Banshee.Widgets
 
         public string Query {
             get { return entry.Text.Trim(); }
-            set { entry.Text = value.Trim(); }
+            set { entry.Text = String.IsNullOrEmpty (value) ? String.Empty : value.Trim (); }
         }
 
         public bool IsQueryAvailable {
