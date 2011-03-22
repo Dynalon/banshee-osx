@@ -358,6 +358,14 @@ namespace Banshee.Collection.Database
             protected set { query_fields = value; }
         }
 
+        public bool Contains (DatabaseTrackInfo track)
+        {
+            return track != null && connection.Query<bool> (
+                String.Format ("SELECT COUNT(*) > 0 {0} AND CoreTracks.TrackID = ? LIMIT 1", UnfilteredQuery),
+                track.TrackId
+            );
+        }
+
         public int IndexOf (QueryNode query, long offset)
         {
             lock (this) {

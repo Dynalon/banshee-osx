@@ -28,6 +28,7 @@
 //
 
 using System;
+using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 
@@ -422,6 +423,7 @@ namespace Banshee.Sources
         public void RemoveTrack (int index)
         {
             if (index != -1) {
+                first_nonremoved_track = TrackModel[index - 1];
                 RemoveTrackRange (track_model, new RangeCollection.Range (index, index));
                 OnTracksRemoved ();
             }
@@ -439,8 +441,25 @@ namespace Banshee.Sources
 
         public void RemoveTracks (DatabaseTrackListModel model, Selection selection)
         {
+            FindFirstNotRemovedTrack (model, selection);
             WithTrackSelection (model, selection, RemoveTrackRange);
             OnTracksRemoved ();
+        }
+
+        protected void FindFirstNotRemovedTrack (DatabaseTrackListModel model, Selection selection)
+        {
+            first_nonremoved_track = null;
+
+            var playback_src = ServiceManager.PlaybackController.Source as DatabaseSource;
+            if (playback_src != this && playback_src.Parent != this)
+                return;
+
+            int i = model.IndexOf (ServiceManager.PlayerEngine.CurrentTrack);
+            if (!selection.Contains (i))
+                return;
+
+            var range = selection.Ranges.First (r => r.Start <= i && i <= r.End);
+            first_nonremoved_track = model[range.Start - 1];
         }
 
         public void DeleteTracks (Selection selection)
@@ -453,6 +472,7 @@ namespace Banshee.Sources
             if (model == null)
                 return;
 
+            FindFirstNotRemovedTrack (model, selection);
             WithTrackSelection (model, selection, DeleteTrackRange);
             OnTracksDeleted ();
         }
@@ -551,6 +571,7 @@ namespace Banshee.Sources
             }
         }
 
+        TrackInfo first_nonremoved_track = null;
         protected virtual void OnTracksDeleted ()
         {
             PruneArtistsAlbums ();
@@ -558,12 +579,37 @@ namespace Banshee.Sources
             foreach (PrimarySource psource in PrimarySources) {
                 psource.NotifyTracksDeleted ();
             }
+            SkipTrackIfRemoved ();
         }
 
         protected virtual void OnTracksRemoved ()
         {
             PruneArtistsAlbums ();
             Reload ();
+            SkipTrackIfRemoved ();
+        }
+
+        protected void SkipTrackIfRemoved ()
+        {
+            var playback_src = ServiceManager.PlaybackController.Source as DatabaseSource;
+            if (playback_src != this && playback_src.Parent != this)
+                return;
+
+            var track = ServiceManager.PlayerEngine.CurrentTrack as DatabaseTrackInfo;
+            if (track == null || playback_src.DatabaseTrackModel.Contains (track))
+                return;
+
+            Log.DebugFormat ("Playing track was removed from {0}, so stopping it", this);
+            if (ServiceManager.PlaybackController.StopWhenFinished) {
+                ServiceManager.PlayerEngine.Close ();
+            } else {
+                // Set the PriorTrack to the track before the one we removed, so that, if we're in non-shuffle mode,
+                // we'll pick the first non-removed track after the one that was playing
+                if (first_nonremoved_track != null) {
+                    ServiceManager.PlaybackController.PriorTrack = first_nonremoved_track;
+                }
+                ServiceManager.PlaybackController.Next ();
+            }
         }
 
         // If we are a PrimarySource, return ourself and our children, otherwise if our Parent

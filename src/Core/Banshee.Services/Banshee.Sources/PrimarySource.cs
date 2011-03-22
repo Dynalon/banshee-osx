@@ -421,6 +421,8 @@ namespace Banshee.Sources
                 if (handler != null) {
                     handler (this, new TrackEventArgs ());
                 }
+
+                SkipTrackIfRemoved ();
             });
         }
 
