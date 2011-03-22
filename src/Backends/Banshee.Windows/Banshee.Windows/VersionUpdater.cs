@@ -58,25 +58,27 @@ namespace Banshee.Windows
             HttpFileDownloader downloader = new HttpFileDownloader ();
             downloader.Uri = new Uri (download_url + doap_filename);
             downloader.TempPathRoot = Path.GetTempPath ();
-            downloader.Finished += new Action<HttpDownloader> (DoapDownloader_Finished);
+            downloader.Finished += OnDoapDownloaderFinished;
             downloader.Start ();
 
             temp_doap_path = downloader.LocalPath;
         }
 
-        void DoapDownloader_Finished (HttpDownloader obj)
+        void OnDoapDownloaderFinished (HttpDownloader obj)
         {
             if (obj.State.FailureException != null) {
                 if (verbose) {
-                    DisplayMessage (Catalog.GetString ("Can't check for updates"), Catalog.GetString ("We're currently not able to check if there's a new version available. Please try again later."), MessageType.Error);
+                    DisplayMessage (Catalog.GetString ("Can't check for updates"),
+                        Catalog.GetString ("We're currently not able to check if there's a new version available. Please try again later."), MessageType.Error);
                 }
-            }
-            else {
-                XDocument doap = XDocument.Load (temp_doap_path);
-                XNamespace nsDoap = XNamespace.Get ("http://usefulinc.com/ns/doap#");
-                unstable_version = (from p in doap.Descendants (nsDoap + "Version")
-                                    where p.Element (nsDoap + "branch").Value.StartsWith ("master")
-                                    select new { Revision = p.Element (nsDoap + "revision").Value }).First ().Revision;
+            } else {
+                var doap = XDocument.Load (temp_doap_path);
+                var ns_doap = XNamespace.Get ("http://usefulinc.com/ns/doap#");
+                unstable_version = doap.Descendants (ns_doap + "Version")
+                                       .Where (p => p.Element (ns_doap + "branch").Value.StartsWith ("master"))
+                                       .Select (p => new { Revision = p.Element (ns_doap + "revision").Value })
+                                       .First ()
+                                       .Revision;
 
                 // once we have the version information, the temporary local copy of doap may be deleted
                 File.Delete (temp_doap_path);
@@ -87,8 +89,7 @@ namespace Banshee.Windows
                     Gtk.Application.Invoke (delegate {
                         DisplayUpdateAvailableDialog ();
                     });
-                }
-                else {
+                } else {
                     if (verbose) {
                         DisplayMessage (Catalog.GetString ("No update available"), Catalog.GetString ("You already have the latest version of Banshee installed."), MessageType.Info);
                     }
@@ -99,7 +100,9 @@ namespace Banshee.Windows
         public void DisplayUpdateAvailableDialog ()
         {
             bool update;
-            using (var message_dialog = new MessageDialog (ServiceManager.Get<GtkElementsService> ().PrimaryWindow, 0, MessageType.Question, ButtonsType.YesNo, String.Format (Catalog.GetString ("A new version of Banshee ({0}) is available.{1}Do you want to update?"), unstable_version, Environment.NewLine))) {
+            using (var message_dialog = new MessageDialog (ServiceManager.Get<GtkElementsService> ().PrimaryWindow, 0,
+                    MessageType.Question, ButtonsType.YesNo, String.Format (
+                    Catalog.GetString ("A new version of Banshee ({0}) is available.{1}Do you want to update?"), unstable_version, Environment.NewLine))) {
                 message_dialog.WindowPosition = WindowPosition.CenterOnParent;
                 message_dialog.Title = Catalog.GetString ("Banshee update available");
                 update = (message_dialog.Run () == (int)ResponseType.Yes);
@@ -109,19 +112,20 @@ namespace Banshee.Windows
             if (update) {
                 string downloadUrl = String.Format ("{0}unstable/{1}/Banshee-{1}.msi", download_url, unstable_version);
 
-                HttpFileDownloader downloader = new HttpFileDownloader ();
-                downloader.Uri = new Uri (downloadUrl);
-                downloader.TempPathRoot = Path.GetTempPath ();
-                downloader.FileExtension = "msi";
-                downloader.Progress += new Action<HttpDownloader> (InstallerDownloader_Progress);
-                downloader.Finished += new Action<HttpDownloader> (InstallerDownloader_Finished);
+                var downloader = new HttpFileDownloader () {
+                    Uri = new Uri (downloadUrl),
+                    TempPathRoot = Path.GetTempPath (),
+                    FileExtension = "msi"
+                };
+                downloader.Progress += OnInstallerDownloaderProgress;
+                downloader.Finished += OnInstallerDownloaderFinished;
                 downloader.Start ();
 
                 temp_installer_path = downloader.LocalPath;
 
-                job = new DownloadManagerJob (this)
-                {
-                    Title = Catalog.GetString (String.Format ("Downloading Banshee-{0}.msi", unstable_version)),
+                job = new DownloadManagerJob (this) {
+                    // Translators: {0} is the filename, eg Banshee-1.9.5.msi
+                    Title = String.Format (Catalog.GetString ("Downloading {0}"), String.Format ("Banshee-{0}.msi", unstable_version)),
                     CanCancel = false
                 };
 
@@ -129,24 +133,23 @@ namespace Banshee.Windows
             }
         }
 
-        void InstallerDownloader_Progress (HttpDownloader obj)
+        void OnInstallerDownloaderProgress (HttpDownloader obj)
         {
             string downloaded = Math.Round (obj.State.TotalBytesRead / 1024d / 1024d, 1).ToString ("F1");
-            string todownload = Math.Round (obj.State.TotalBytesExpected / 1024d / 1024d, 1).ToString ();
+            string total = Math.Round (obj.State.TotalBytesExpected / 1024d / 1024d, 1).ToString ();
             string rate = Math.Round (obj.State.TransferRate / 1024d, 1).ToString ("F1");
 
             job.Progress = obj.State.PercentComplete;
-            job.Status = String.Format ("{0} MB / {1} MB ({2} KB/s)", downloaded, todownload, rate);
+            job.Status = String.Format ("{0} MB / {1} MB ({2} KB/s)", downloaded, total, rate);
         }
 
-        void InstallerDownloader_Finished (HttpDownloader obj)
+        void OnInstallerDownloaderFinished (HttpDownloader obj)
         {
             base.OnDownloaderFinished (obj);
 
             if (obj.State.FailureException != null) {
                 DisplayMessage (Catalog.GetString ("Update download failed"), Catalog.GetString ("The download failed. Please try again later."), MessageType.Error);
-            }
-            else {
+            } else {
                 Gtk.Application.Invoke (delegate {
                     DisplayUpdateFinishedDownloadingDialog ();
                 });
@@ -156,7 +159,9 @@ namespace Banshee.Windows
         private void DisplayUpdateFinishedDownloadingDialog ()
         {
             bool update;
-            using (var message_dialog = new MessageDialog (ServiceManager.Get<GtkElementsService> ().PrimaryWindow, 0, MessageType.Question, ButtonsType.YesNo, String.Format (Catalog.GetString ("The update finished downloading.{0}Do you want to shutdown Banshee and run the installer?"), Environment.NewLine))) {
+            using (var message_dialog = new MessageDialog (ServiceManager.Get<GtkElementsService> ().PrimaryWindow, 0,
+                        MessageType.Question, ButtonsType.YesNo, String.Format (
+                            Catalog.GetString ("The update finished downloading.{0}Do you want to shutdown Banshee and run the installer?"), Environment.NewLine))) {
                 message_dialog.WindowPosition = WindowPosition.CenterOnParent;
                 message_dialog.Title = Catalog.GetString ("Update finished downloading");
                 update = (message_dialog.Run () == (int)ResponseType.Yes);
@@ -171,8 +176,7 @@ namespace Banshee.Windows
                 msiProcess.Start ();
 
                 Banshee.ServiceStack.Application.Shutdown ();
-            }
-            else {
+            } else {
                 // delete the downloaded installer as the user does not want to update now
                 File.Delete (temp_installer_path);
             }
