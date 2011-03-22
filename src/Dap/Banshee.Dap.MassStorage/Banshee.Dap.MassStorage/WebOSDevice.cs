@@ -77,14 +77,16 @@ namespace Banshee.Dap.MassStorage
         // recognize them within the media player.
         private static string [] playlist_formats = new string [] {
             // "audio/x-scpls",
-            // "audio/mpegurl",
-            // "audio/x-mpegurl"
+            "audio/mpegurl",
+            "audio/x-mpegurl"
         };
+
+        private static string playlists_path = "Music/";
 
         private static string [] audio_folders = new string [] {
             "Music/",
             "Videos/",
-            "ringtones/",
+            //"ringtones/",
             "AmazonMP3/"
         };
 
@@ -103,7 +105,7 @@ namespace Banshee.Dap.MassStorage
 
         public override void SourceInitialize ()
         {
-            amazon_base_dir = System.IO.Path.Combine (Source.Volume.MountPoint, audio_folders[3]);
+            amazon_base_dir = System.IO.Path.Combine (Source.Volume.MountPoint, audio_folders[2]);
 
             amazon_source = new AmazonMp3GroupSource (Source, "AmazonMP3", amazon_base_dir);
             amazon_source.AutoHide = true;
@@ -148,6 +150,10 @@ namespace Banshee.Dap.MassStorage
 
         protected override string [] DefaultPlaylistFormats {
             get { return playlist_formats; }
+        }
+
+        protected override string DefaultPlaylistPath {
+            get { return playlists_path; }
         }
 
         public override string [] GetIconNames ()
