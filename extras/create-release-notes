@@ -36,7 +36,7 @@ $all_contributors = $3;
 $html = <<END;
 <ul>
 	<li><strong>Release Date:</strong> $release_date</li>
-	<li><strong>Source Tarball:</strong> <a href="http://download.banshee-project.org/banshee/$stable/$version/banshee-$version.tar.bz2">banshee-1-$version.tar.bz2</a></li>
+	<li><strong>Source Tarball:</strong> <a href="http://download.banshee-project.org/banshee/$stable/$version/banshee-$version.tar.bz2">banshee-$version.tar.bz2</a></li>
 	<li><strong>Release Information:</strong>
 <a href="http://download.banshee-project.org/banshee/$stable/$version/banshee-$version.news">NEWS</a>,
 <a href="http://download.banshee-project.org/banshee/$stable/$version/banshee-$version.sha256sum">sha256sum</a></li>
