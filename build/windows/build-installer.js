@@ -32,7 +32,7 @@ heatDir ("etc");
 heatDir ("lib");
 heatDir ("share");
 
-// Create the installer, will be outputted to Banshee-1.9.3.msi in build/windows/
+// Create the installer, will be outputted to Banshee-1.9.6.msi in build/windows/
 build ("Installer.wixproj")
 WScript.Echo ("Setup successfully generated");
 
