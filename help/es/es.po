@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: banshee-help.master\n"
-"POT-Creation-Date: 2011-03-13 11:54+0000\n"
-"PO-Revision-Date: 2011-03-13 14:02+0100\n"
+"POT-Creation-Date: 2011-03-24 02:02+0000\n"
+"PO-Revision-Date: 2011-03-23 16:15+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Introducción a la interfaz de usuario de Banshee"
 
 #: C/ui.page:27(title) C/introduction.page:43(title)
 msgid "<gui>Banshee Media Player</gui> window"
-msgstr ""
+msgstr "Ventana del <gui>Reproductor multimedia Banshee</gui>"
 
 #: C/ui.page:28(app) C/introduction.page:44(app) C/index.page:21(title)
 msgid "Banshee Media Player"
@@ -65,7 +65,7 @@ msgstr "Reproductor multimedia Banshee"
 
 #: C/ui.page:30(p) C/introduction.page:46(p)
 msgid "<app>Banshee</app> library interface"
-msgstr ""
+msgstr "Interfaz de la colección de <app>Banshee</app>"
 
 #: C/ui.page:35(title)
 msgid "Sources"
@@ -107,7 +107,7 @@ msgstr ""
 
 #: C/ui.page:58(title)
 msgid "Now Playing View"
-msgstr ""
+msgstr "Vista «En reproducción»"
 
 #: C/ui.page:59(p)
 msgid ""
@@ -190,6 +190,10 @@ msgid ""
 "Pressing the device icon will take you to your device home page in Banshee "
 "displaying your sync preferences."
 msgstr ""
+"Cuando conecte su dispositivo, Banshee lo mostrará en el menú de la "
+"izquierda. Al pulsar en el icono del dispositivo, le llevará a la página "
+"principal del dispositivo en Banshee, mostrando sus preferencias de "
+"sincronización."
 
 #: C/sync.page:50(title)
 msgid "Sync Your Music"
@@ -206,6 +210,8 @@ msgid ""
 "Choose your device from the Banshee menu and then choose how you want to "
 "sync your media, including:"
 msgstr ""
+"Seleccione su dispositivo desde el menú de Banshee y elija cómo quiere "
+"sincronizar sus medios, incluyendo:"
 
 #: C/sync.page:60(p)
 msgid "Music"
@@ -244,6 +250,11 @@ msgid ""
 "If your library is larger than the space on your portable media player, "
 "Banshee will sync media until your player is full and then stop."
 msgstr ""
+"Si elige sincronizar automáticamente su colección completa con su "
+"dispositivo portátil, asegúrese de que su reproductor multimedia tiene "
+"espacio suficiente. Si su colección es más grande que el espacio de su "
+"reproductor multimedia, Banshee sincronizará el contenido hasta que el "
+"reproductor esté lleno."
 
 #: C/sync.page:82(p)
 msgid ""
@@ -263,6 +274,12 @@ msgid ""
 "your portable music player, how many hours or days of listening that is "
 "equal to, and total space used."
 msgstr ""
+"Banshee mostrará el espacio total del disco de su reproductor multimedia "
+"portátil en un gráfico centrado en la parte inferior de Banshee. El gráfico "
+"mostrará cuánto espacio ocupan los archivos de sonido, vídeo, otros y el "
+"espacio libre. Justo debajo Banshee mostrará cuántos elementos en total hay "
+"almacenados en su reproductor portátil de música, a cuántas horas o días de "
+"reproducción equivalen y el espacio usado total."
 
 #: C/sync.page:100(title)
 msgid "Sync Your Entire Library"
@@ -296,7 +313,7 @@ msgstr ""
 
 #: C/sync.page:127(title)
 msgid "Play Music From Your Portable Music Player"
-msgstr ""
+msgstr "Reproducir música desde su reproductor portátil"
 
 #: C/sync.page:128(p)
 msgid ""
@@ -308,7 +325,7 @@ msgstr ""
 
 #: C/sync.page:135(title)
 msgid "Remove Music From your Portable Music Player"
-msgstr ""
+msgstr "Quitar música de su reproductor portátil"
 
 #: C/sync.page:136(p)
 msgid ""
@@ -326,7 +343,7 @@ msgstr ""
 
 #: C/sort.page:9(desc)
 msgid "Sort your media and add additional columns."
-msgstr ""
+msgstr "Ordenar su contenido multimedia y añadir columnas adicionales."
 
 #: C/sort.page:24(title)
 msgid "Sort your media"
@@ -342,6 +359,10 @@ msgid ""
 "additional information about the songs in your library or change the way you "
 "can view and sort your songs, artists or albums."
 msgstr ""
+"A medida que su colección crece, puede querer cambiar la vista de su "
+"colección para añadir información adicional sobre las canciones de su "
+"colección o cambiar la forma en que puede ver y ordenar sus canciones, "
+"artistas o álbumes."
 
 #: C/sort.page:34(p)
 msgid ""
@@ -353,6 +374,14 @@ msgid ""
 "display all available column to choose from. Click the checkbox next to the "
 "name of the column you wish to add to the library view."
 msgstr ""
+"Puede añadir más columnas a la vista de colección en <app>Banshee</app> para "
+"obtener más información sobre las canciones y para permitirle ordenarlas. De "
+"manera predeterminada, Banshee muestra columnas para las canciones que "
+"incluyen <gui>Nombre</gui>, <gui>Artista</gui>, <gui>Álbum</gui> y "
+"<gui>Duración</gui>. Para añadir columnas adicionales, pulse con el botón "
+"derecho del ratón en cualquiera de las columnas y Banshee mostrará todas las "
+"columnas disponibles para elegir. Pulse en la casilla junto al nombre de la "
+"columna que quiere añadir a la vista de colección."
 
 #: C/sort.page:46(title)
 msgid "Sorting Columns"
@@ -369,11 +398,11 @@ msgstr ""
 
 #: C/search.page:9(desc)
 msgid "Search your media and perfom basic queries."
-msgstr ""
+msgstr "Buscar su contenido multimedia y realizar consultas básicas."
 
 #: C/search.page:24(title)
 msgid "Searching your Banshee Library"
-msgstr ""
+msgstr "Buscar en su colección de Banshee"
 
 #: C/search.page:26(p)
 msgid ""
@@ -388,6 +417,9 @@ msgid ""
 "click the <gui>Search</gui> box in the upper right hand corner of the "
 "Library view in Banshee."
 msgstr ""
+"Para realizar una búsqueda de su contenido multimedia en Banshee, presione "
+"<key>S</key> o pulse en la caja <gui>Buscar</gui> en la esquina superior "
+"derecha en la vista de colección de Banshee."
 
 #: C/search.page:35(p)
 msgid ""
@@ -421,13 +453,15 @@ msgstr ""
 
 #: C/search.page:56(title)
 msgid "Logical Operators and Examples"
-msgstr ""
+msgstr "Operadores lógicos y ejemplos"
 
 #: C/search.page:57(p)
 msgid ""
 "The following is a list of logical operators and examples of the search "
 "results when searching using them."
 msgstr ""
+"Lo siguiente es una lista de operadores lógicos y ejemplos de resultados de "
+"búsquedas realizadas usándolos."
 
 #: C/search.page:62(gui)
 msgid "Operator"
@@ -465,7 +499,7 @@ msgstr ""
 
 #: C/search.page:80(p)
 msgid "Examples of logical operations include:"
-msgstr ""
+msgstr "Los ejemplos de operaciones lógicas incluyen:"
 
 #: C/search.page:84(gui)
 msgid "Query"
@@ -639,7 +673,7 @@ msgstr ""
 
 #: C/play.page:88(title)
 msgid "Play an internet radio station"
-msgstr ""
+msgstr "Reproducir una emisora de radio de Internet"
 
 #: C/play.page:90(p)
 msgid ""
@@ -1411,11 +1445,6 @@ msgid "Videos From Photos Folder"
 msgstr "Vídeos de la carpeta de Imágenes"
 
 #: C/import.page:55(p)
-#| msgid ""
-#| "Many digital cameras can take short vidoes, and photo-management "
-#| "applications often download these videos directly into your Photos "
-#| "folder. Choose this option to import any videos that have been stored in "
-#| "your Photos folder."
 msgid ""
 "Many digital cameras can take short videos, and photo-management "
 "applications often download these videos directly into your Photos folder. "
@@ -1550,7 +1579,7 @@ msgstr ""
 
 #: C/amazon.page:63(title)
 msgid "Import Amazon MP3s manually"
-msgstr ""
+msgstr "Importar MP3 de Amazon manualmente"
 
 #: C/amazon.page:65(p)
 msgid ""
