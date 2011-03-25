@@ -31,7 +31,7 @@ RELEASE_RC_FILE="release-rc"
 case "$(uname)" in
     FreeBSD)
         MAKE=gmake
-        SHA256="sha256 -r"
+        SHA256="shasum -a 256"
         ;;
 	Darwin)
 		MAKE=make
@@ -42,10 +42,6 @@ case "$(uname)" in
         SHA256=sha256sum
         ;;
 esac
-
-function sha256 {
-	exec $SHA256 $@ | awk '{print $1 "  " $2}'
-}
 
 cat <<EOF
 Release Summary
@@ -110,7 +106,7 @@ function prepare_upload () {
 		|| bail "Could not copy NEWS file"
 
 	(cd release-data && {
-		sha256 * > ${PACKAGE_NAME}-${PACKAGE_VERSION}.sha256sum \
+		$SHA256 * > ${PACKAGE_NAME}-${PACKAGE_VERSION}.sha256sum \
 			|| bail "Could not sha256sum the release files"
 	}) || exit 1
 }
