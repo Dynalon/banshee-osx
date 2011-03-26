@@ -29,8 +29,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-13 12:52+0100\n"
-"PO-Revision-Date: 2011-02-26 23:31+0200\n"
+"POT-Creation-Date: 2011-03-26 14:29+0100\n"
+"PO-Revision-Date: 2011-03-16 23:31+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -41,9 +41,8 @@ msgstr ""
 
 #. ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice.addin.xml
 #: ../data/addin-xml-strings.cs:8
-#, fuzzy
 msgid "Apple Devices Support"
-msgstr "Enhedsunderstøttelse til Apple"
+msgstr "Understøttelse af Apple-enheder"
 
 #: ../data/addin-xml-strings.cs:9
 msgid "Support for most iPod/iPhone/iPad devices."
@@ -101,9 +100,8 @@ msgid "Amazon MP3 Store Source"
 msgstr "Kilde for Amazons MP3-butik"
 
 #: ../data/addin-xml-strings.cs:34
-#, fuzzy
 msgid "Browse, search, and purchase music from the Amazon MP3 store."
-msgstr "Gennemse, søge og købe musik fra Amazons MP3-butik"
+msgstr "Gennemse, søge og købe musik fra Amazons MP3-butik."
 
 #: ../data/addin-xml-strings.cs:35 ../data/addin-xml-strings.cs:40
 #: ../data/addin-xml-strings.cs:75 ../data/addin-xml-strings.cs:90
@@ -118,9 +116,8 @@ msgid "Amazon MP3 Import"
 msgstr "MP3-import for Amazon"
 
 #: ../data/addin-xml-strings.cs:39
-#, fuzzy
 msgid "Download and import music purchased from Amazon.com."
-msgstr "Hent og importer musik købt fra Amazon.com"
+msgstr "Hent og importer musik købt fra Amazon.com."
 
 #. ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook.addin.xml
 #: ../data/addin-xml-strings.cs:43
@@ -198,9 +195,8 @@ msgid "eMusic Import"
 msgstr "Import fra eMusic"
 
 #: ../data/addin-xml-strings.cs:74
-#, fuzzy
 msgid "Download and import music purchased from eMusic."
-msgstr "Hent og importer musik købt fra eMusic"
+msgstr "Hent og importer musik købt fra eMusic."
 
 #. ../src/Extensions/Banshee.FileSystemQueue/Banshee.FileSystemQueue.addin.xml
 #: ../data/addin-xml-strings.cs:78
@@ -217,9 +213,9 @@ msgid "Metadata Fixup"
 msgstr "Opretning af metadata"
 
 #: ../data/addin-xml-strings.cs:84
-#, fuzzy
 msgid "Fix broken and missing metadata using bulk operations."
-msgstr "Ret ødelagte og manglende metadata ved at rette mange filer på en gang"
+msgstr ""
+"Ret ødelagte og manglende metadata ved at rette mange filer på en gang."
 
 #. ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive.addin.xml
 #: ../data/addin-xml-strings.cs:88
@@ -265,9 +261,8 @@ msgid "Library Watcher"
 msgstr "Bibliotekovervåger"
 
 #: ../data/addin-xml-strings.cs:109
-#, fuzzy
 msgid "Automatically update music and video libraries."
-msgstr "Opdater automatisk musik og videobiblioteker"
+msgstr "Opdater automatisk musik og videobiblioteker."
 
 #. ../src/Extensions/Banshee.MiniMode/Banshee.MiniMode.addin.xml
 #: ../data/addin-xml-strings.cs:113
@@ -355,9 +350,8 @@ msgstr "Abonner på podcast og hent afsnit som fil eller strøm."
 
 #. ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu.addin.xml
 #: ../data/addin-xml-strings.cs:153
-#, fuzzy
 msgid "Sound Menu Integration"
-msgstr "Lydmenuintegration for Banshee"
+msgstr "Lydmenuintegration"
 
 #: ../data/addin-xml-strings.cs:154
 msgid "Control Banshee from the Sound Menu."
@@ -408,9 +402,8 @@ msgid "YouTube"
 msgstr "YouTube"
 
 #: ../data/addin-xml-strings.cs:174
-#, fuzzy
 msgid "Show related YouTube videos in the context pane."
-msgstr "Vis relaterede YouTube-videoer i kontekstpanelet"
+msgstr "Vis relaterede YouTube-videoer i kontekstpanelet."
 
 #: ../data/audio-profiles/aac-novell.xml.in.h:1
 msgid "3GPP"
@@ -710,9 +703,8 @@ msgid "Could not create 'audioconvert' plugin"
 msgstr "Kunne ikke oprette udvidelsesmodulet audioconvert"
 
 #: ../libbanshee/banshee-transcoder.c:270
-#, fuzzy
 msgid "Could not create 'audioresample' plugin"
-msgstr "Kunne ikke oprette udvidelsesmodulet audioconvert"
+msgstr "Kunne ikke oprette udvidelsesmodulet audioresample"
 
 #: ../libbanshee/banshee-transcoder.c:276
 msgid "Could not create encoding pipeline"
@@ -761,12 +753,12 @@ msgstr "Kunne ikke oprette BPM-genkendelsesdriver."
 # gap-less, altså uden 'huller' imellem.  Jeg tror det er en funktion,
 # der afspiller efterfølgende spor uden at vente imellem (jeg ser nu at
 # strengen nedenunder faktisk skriver dette også)
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:82
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:818
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:83
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:825
 msgid "Enable _gapless playback"
 msgstr "Aktiver afspilning af _gapless (uden afspilningshuller)"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:83
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:84
 msgid ""
 "Eliminate the small playback gap on track change.  Useful for concept albums "
 "and classical music"
@@ -774,21 +766,21 @@ msgstr ""
 "Eliminerer det lille afspilningshul når et nummer overgår til det næste. "
 "Brugbart for konceptalbum og klassisk musik"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:151
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:193
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:152
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:194
 msgid "Could not initialize GStreamer library"
 msgstr "Kunne ikke initialisere GStreamer-bibliotek"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:441
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:447
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:147
 msgid "Unknown Error"
 msgstr "Ukendt fejl"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:812
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:819
 msgid "_Enable ReplayGain correction"
 msgstr "_Aktiver ReplayGain-korrektion"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:813
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:820
 msgid ""
 "For tracks that have ReplayGain data, automatically scale (normalize) "
 "playback volume"
@@ -796,7 +788,7 @@ msgstr ""
 "Skaler (normaliser) automatisk afspilningslydstyrke for numre der indeholder "
 "ReplayGain-data"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:819
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:826
 msgid ""
 "Eliminate the small playback gap on track change.  Useful for concept albums "
 "and classical music."
@@ -2464,7 +2456,7 @@ msgstr "drm"
 #. Translators: These are unique strings for playback errors. Please, no spaces. Blank ok.
 #: ../src/Core/Banshee.Services/Banshee.Query/PlaybackErrorQueryValue.cs:64
 #: ../src/Core/Banshee.Services/Banshee.Query/PlaybackErrorQueryValue.cs:66
-#: ../src/Core/Banshee.Services/Banshee.ServiceStack/Application.cs:354
+#: ../src/Core/Banshee.Services/Banshee.ServiceStack/Application.cs:367
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:234
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:236
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:238
@@ -2494,7 +2486,7 @@ msgstr "Rediger intelligent afspilningsliste"
 msgid "Delete Smart Playlist"
 msgstr "Slet intelligent afspilningsliste"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/DatabaseSource.cs:147
+#: ../src/Core/Banshee.Services/Banshee.Sources/DatabaseSource.cs:148
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:160
 #, csharp-format
 msgid "All Genres ({0})"
@@ -2577,12 +2569,12 @@ msgstr "Mappehie_rarki"
 msgid "File _name"
 msgstr "Fil_navn"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:669
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:671
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "Tilføjer {0} af {1} til {2}"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:688
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:690
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "Sletter {0} af {1} fra {2}"
@@ -3385,15 +3377,15 @@ msgstr "Søg mellem alle sange af denne kunstner"
 msgid "_Delete From \"{0}\""
 msgstr "_Slet fra \"{0}\""
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:542
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:535
 msgid "The folder could not be found."
 msgstr "Mappen kunne ikke findes."
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:543
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:536
 msgid "Please check that the track's location is accessible by the system."
 msgstr "Undersøg venligst at nummerets placering kan tilgås af systemet."
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:620
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:607
 #, csharp-format
 msgid "Are you sure you want to permanently delete this item?"
 msgid_plural ""
@@ -3401,16 +3393,16 @@ msgid_plural ""
 msgstr[0] "Er du sikker på du vil slette dette element permanent?"
 msgstr[1] "Er du sikker på du vil slette de {0} valgte elementer permanent?"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:624
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:611
 msgid "If you delete the selection, it will be permanently lost."
 msgstr "Hvis du sletter det valgte vil det permament være tabt."
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:627
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:614
 #, csharp-format
 msgid "Remove selection from {0}?"
 msgstr "Fjern valg fra {0}?"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:630
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:617
 #, csharp-format
 msgid "Are you sure you want to remove the selected item from your {1}?"
 msgid_plural ""
@@ -4523,7 +4515,7 @@ msgstr "Påkrævet mappedybde"
 msgid "Supports Playlists"
 msgstr "Understøtter afspilningslister"
 
-#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/WebOSDevice.cs:189
+#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/WebOSDevice.cs:195
 msgid "Ringtones"
 msgstr "Ringetoner"
 
@@ -4699,14 +4691,14 @@ msgstr "Lydbøger"
 msgid "Search your audiobooks"
 msgstr "Søg i din lydbogsamling"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:145
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:146
 #, csharp-format
 msgid "{0} book"
 msgid_plural "{0} books"
 msgstr[0] "{0} bog"
 msgstr[1] "{0} bøger"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:149
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:150
 msgid "Audiobooks Folder"
 msgstr "Mappe til lydbøger"
 
@@ -6258,11 +6250,11 @@ msgstr "Find interessante podcast i Miro Guides podcastmappe!"
 msgid "Open Miro Guide"
 msgstr "Åbn Miro Guide"
 
-#: ../src/Extensions/Banshee.MiroGuide/Banshee.MiroGuide/View.cs:56
+#: ../src/Extensions/Banshee.MiroGuide/Banshee.MiroGuide/View.cs:57
 msgid "Search for podcasts"
 msgstr "Søg efter podcasts"
 
-#: ../src/Extensions/Banshee.MiroGuide/Banshee.MiroGuide/View.cs:57
+#: ../src/Extensions/Banshee.MiroGuide/Banshee.MiroGuide/View.cs:58
 msgid "Search for video podcasts"
 msgstr "Søg efter videopodcast"
 
