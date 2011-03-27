@@ -1,17 +1,17 @@
 # Spanish translation for banshee-help.master
 # Copyright (C) 2010 banshee's COPYRIGHT HOLDER
 # This file is distributed under the same license as the banshee package.
-# Benjamín Valero Espinosa <benjavalero@gmail.com>, 2010.
 # Ángel Sanz <mizo0mizo@gmail.com>, 2010.
 # Guillermo Pascual <akira.space@gmail.com>, 2010.
 # Jorge González <jorgegonz@svn.gnome.org>, 2010, 2011.
+# Benjamín Valero Espinosa <benjavalero@gmail.com>, 2010, 2011.
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: banshee-help.master\n"
-"POT-Creation-Date: 2011-03-24 02:02+0000\n"
-"PO-Revision-Date: 2011-03-23 16:15+0100\n"
+"POT-Creation-Date: 2011-03-26 13:30+0000\n"
+"PO-Revision-Date: 2011-03-27 18:44+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -862,6 +862,11 @@ msgid ""
 "finished with each song. When you have completed editing all metadata, press "
 "<gui>Save</gui>."
 msgstr ""
+"Actualice la información de la canción. Si ha seleccionado varias canciones, "
+"para editarlas  pulse el icono con una flecha a la derecha del campo "
+"<gui>Título de la pista</gui> o pulse el botón <gui>Adelante</gui> en la "
+"parte inferior del diálogo cuando termine con cada canción. Cuando haya "
+"terminado de editar todos los metadatos, pulse <gui>Guardar</gui>."
 
 #: C/manage-playlists.page:10(desc)
 msgid "Create and manage playlists."
@@ -879,6 +884,12 @@ msgid ""
 "browse through. Some portable media players even allow you to transfer the "
 "playlist so you can take it with you on the go."
 msgstr ""
+"Las listas de reproducción le permiten crear y guardar una lista de pistas "
+"de música para reproducirlas en un orden específico. Las listas de "
+"reproducción son adecuadas para crear una lista de sus canciones favoritas o "
+"para partir su colección en listas más pequeñas que sean más sencillas de "
+"explorar. Algunos reproductores multimedia portátiles le permiten incluso "
+"transferir la lista de reproducción para que pueda llevarla consigo."
 
 #: C/manage-playlists.page:28(p)
 msgid ""
@@ -886,6 +897,10 @@ msgid ""
 "playlist, as well as smart playlists. Smart Playlists are automatically "
 "generated playlists based on your listening habits, favorite music, or more."
 msgstr ""
+"Banshee soporta tanto listas de reproducción normales, que incluyen "
+"canciones que añade a la lista, como listas de reproducción inteligentes. "
+"Las listas de reproducción inteligentes son listas de reproducción generadas "
+"automáticamente basadas en sus hábitos de escucha, su música favorita, etc."
 
 #: C/manage-playlists.page:34(title)
 msgid "Normal Playlists"
@@ -898,6 +913,10 @@ msgid ""
 "albums, your latest favorite songs, or an upbeat playlist to listen to while "
 "you exercise."
 msgstr ""
+"Una lista de reproducción normal es una lista de canciones que puede añadir "
+"y gestionar. Podría querer crear su propia lista de canciones de su artista "
+"favorito desde varios álbumes, sus últimas canciones favoritas o una lista "
+"de reproducción animada para escuchar mientras hace ejercicio."
 
 #: C/manage-playlists.page:42(p)
 msgid ""
@@ -913,6 +932,19 @@ msgid ""
 "gui> to add them to the playlist. You can repeat this process until you have "
 "added all the tracks you want in the playlist."
 msgstr ""
+"Puede crear una nueva lista de reproducción pulsando <keyseq><key>Control</"
+"key><key>N</key></keyseq>, eligiendo desde el menú <guiseq><gui>Multimedia</"
+"gui><gui>Lista de reproducción nueva</gui></guiseq> o seleccionando las "
+"pistas que le gustaría añadir a la lista de reproducción. Seleccione las "
+"pistas, pulse con el botón derecho y elija <guiseq><gui>Añadir a la lista de "
+"reproducción</gui><gui>Lista de reproducción nueva</gui></guiseq>. También "
+"puede arrastrar y soltarlas a la nueva lista de reproducción seleccionando "
+"las pistas y arrastrándolas al panel izquierdo sobre <gui>Música</gui>. Al "
+"arrastrar sobre <gui>Música</gui>, aparecerá una nueva opción <gui><em>Lista "
+"de reproducción nueva</em></gui> y podrá soltar las pistas sobre "
+"<gui><em>Lista de reproducción nueva</em></gui> para añadirlas a la lista. "
+"Puede repetir este proceso hasta que haya añadido a la lista de reproducción "
+"todas las pistas que desee."
 
 #: C/manage-playlists.page:56(p)
 msgid ""
@@ -920,6 +952,9 @@ msgid ""
 "the playlist and press <gui>Rename Playlist</gui> and enter the name of your "
 "playlist."
 msgstr ""
+"Para darle a su lista de reproducción un nombre propio, seleccione la lista "
+"de reproducción, pulse con el botón derecho en la lista, pulse "
+"<gui>Renombrar</gui> e introduzca el nombre de la lista de reproducción."
 
 #: C/manage-playlists.page:61(p)
 msgid ""
@@ -929,6 +964,12 @@ msgid ""
 "column until the up or down arrow is no longer showing and the column is "
 "blank and then re-order the playlist."
 msgstr ""
+"Puede cambiar el orden de la lista de reproducción arrastrando y soltando la "
+"canción a la nueva posición dentro de la lista. Las canciones sólo se pueden "
+"reordenar en la lista de reproducción cuando no se está ordenando por "
+"ninguna columna. Para dejar de ordenar por una columna, pulse la columna "
+"hasta que ya no aparezcan las flechas de arriba o abajo y la columna esté en "
+"blanco, y entonces reordene la lista de reproducción."
 
 #: C/manage-playlists.page:68(p)
 msgid ""
@@ -937,6 +978,11 @@ msgid ""
 "gui><gui>Remove from Playlist</gui></guiseq> or right click the track(s) "
 "with your mouse and press <gui>Remove from Playlist</gui>."
 msgstr ""
+"Para quitar una pista de la lista de reproducción, seleccione las pistas que "
+"quiere quitar. Pulse <key>Supr</key>, elija desde el menú  "
+"<guiseq><gui>Editar</gui><gui>Quitar de la lista de reproducción</gui></"
+"guiseq> o pulse con el botón derecho y luego pulse <gui>Quitar de la lista "
+"de reproducción</gui>."
 
 #: C/manage-playlists.page:76(title)
 msgid "Smart Playlist"
@@ -948,6 +994,10 @@ msgid ""
 "number of pre-set variables. You can quickly create a new playlist based on "
 "a specific artist, favorites or more."
 msgstr ""
+"Las listas de reproducción inteligentes le permiten generar rápidamente una "
+"lista de reproducción dinámica basada en diversas variables preestablecidas. "
+"Puede crear rápidamente una lista de reproducción nueva basada en un artista "
+"específico, favoritos, etc."
 
 #: C/manage-playlists.page:83(p)
 msgid ""
@@ -958,6 +1008,13 @@ msgid ""
 "from any field included in the song's meatadata, such as Album, Artist or "
 "Year. Choose the criteria and then choose from one of the following:"
 msgstr ""
+"Para crear una lista de reproducción inteligente nueva, elija desde el menú "
+"<guiseq><gui>Multimedia</gui><gui>Lista de reproducción inteligente nueva</"
+"gui></guiseq>. Aparecerá un diálogo para crear una lista de reproducción "
+"inteligente nueva. Introduzca el nombre de la lista y después elija los "
+"criterios en los que se basará su lista de reproducción. Puede elegir "
+"cualquier campo incluido en los metadatos de una canción, como el álbum, el "
+"artista o el año. Escoja los criterios y luego elija uno de los siguientes:"
 
 #: C/manage-playlists.page:93(p) C/manage-playlists.page:109(gui)
 #: C/manage-playlists.page:113(gui)
@@ -991,6 +1048,11 @@ msgid ""
 "all songs from 2010 that you rated 5 stars. To create this playlist you "
 "would choose:"
 msgstr ""
+"También puede pulsar el botón <gui>+</gui> para añadir una nueva condición a "
+"la lista de reproducción inteligente. Por ejemplo, puede crear una lista de "
+"reproducción inteligente que incluya todas las canciones desde 2010 y "
+"valoradas con 5 estrellas. Para crear esta lista de reproducción, podría "
+"elegir:"
 
 #: C/manage-playlists.page:110(gui)
 msgid "2010"
@@ -1009,6 +1071,9 @@ msgid ""
 "You can then optionally select how many songs are included by pressing the "
 "<gui>Limit</gui> to checkbox and choosing the number of songs to be included."
 msgstr ""
+"Luego puede seleccionar opcionalmente cuántas canciones se incluirán "
+"pulsando en la casilla <gui>Limitar a</gui> y eligiendo el número de "
+"canciones que se incluirán."
 
 #: C/manage-playlists.page:123(p)
 msgid ""
@@ -1018,6 +1083,9 @@ msgid ""
 "automatically generated and saved for you. The following playlists are "
 "included:"
 msgstr ""
+"Banshee también incluye listas de reproducción inteligentes creadas para "
+"usted. Pulse el botón <gui>Abrir en el editor</gui> para ver cómo se creó la "
+"lista de reproducción o para modificarla."
 
 #: C/manage-playlists.page:131(title)
 msgid "Banshee Smart Playlists"
@@ -1034,31 +1102,31 @@ msgstr ""
 
 #: C/manage-playlists.page:135(p)
 msgid "Recently Added (Songs imported within the last week"
-msgstr ""
+msgstr "Añadidas recientemente (Canciones importadas durante la última semana)"
 
 #: C/manage-playlists.page:136(p)
 msgid "Unheard (Songs that have not been played or skipped)"
-msgstr ""
+msgstr "No oídas (Canciones omitidas o no reproducidas)"
 
 #: C/manage-playlists.page:137(p)
 msgid "Neglected Favorites (Favorites not played in over two months)"
-msgstr ""
+msgstr "Favoritos abandonados (Favoritos no reproducidos en más de dos meses)"
 
 #: C/manage-playlists.page:139(p)
 msgid "700 MB of Favorites (A data CD worth of favorite songs)"
-msgstr ""
+msgstr "700 MB de favoritos (Un CD de datos lleno de canciones favoritas)"
 
 #: C/manage-playlists.page:140(p)
 msgid "80 Minutes of Favorites (An audio CD worth of favorite songs)"
-msgstr ""
+msgstr "80 minutos de favoritos (Un CD de sonido lleno de canciones favoritas)"
 
 #: C/manage-playlists.page:142(p)
 msgid "Unrated (Songs that haven't been rated)"
-msgstr ""
+msgstr "No valoradas (Canciones que no se han valorado)"
 
 #: C/manage-coverart.page:9(desc)
 msgid "Manage or change your albums cover art."
-msgstr ""
+msgstr "Gestionar o cambiar las portadas de sus álbumes."
 
 #: C/manage-coverart.page:24(title)
 msgid "Cover art"
@@ -1066,7 +1134,7 @@ msgstr "Portada"
 
 #: C/lastfm.page:9(desc)
 msgid "Enable Last.fm, song reporting and Last.fm radio."
-msgstr ""
+msgstr "Activar Last.fm, el informe de canciones y la radio Last.fm."
 
 #: C/lastfm.page:24(title)
 msgid "Last.fm"
@@ -1082,6 +1150,13 @@ msgid ""
 "Last.fm offers multiple channels to stream, including recommended music for "
 "you based on your listening habits, your favorites and more."
 msgstr ""
+"Last.fm es un popular servicio en línea que ofrece versión libre y de pago. "
+"Last.fm ofrece información sobre artistas y álbumes musicales y, si crea un "
+"perfil de usuario, Last.fm le permite seguir la música que escucha en "
+"Banshee gratuitamente. Si se suscribe como miembro de pago, también puede "
+"escuchar música en «streaming» desde Last.fm en varios clientes de música, "
+"incluyendo a Banshee. Last.fm ofrece varios canales, incluyendo música "
+"recomendada basada en sus hábitos de escucha, sus favoritos, etc."
 
 #: C/lastfm.page:35(title)
 msgid "Enable Last.fm"
@@ -1096,6 +1171,12 @@ msgid ""
 "gui> tab and press the <gui>Source</gui> drop down menu and choose <gui>Last."
 "fm</gui> and select the <em>Sign up for Last.fm</em> link."
 msgstr ""
+"Para obtener el máximo de Last.fm, querrá crear un perfil de Last.fm. Visite "
+"<link href=\"http://www.last.fm/join\">http://www.last.fm/join</link> para "
+"crear una cuenta o elija <guiseq><gui>Editar</gui><gui>Preferencias</gui></"
+"guiseq> desde el menú de Banshee. Luego pulse la pestaña <gui>Específicas de "
+"las fuentes</gui> y pulse la lista desplegable <gui>Fuente</gui>, elija "
+"<gui>Last.fm</gui> y seleccione el enlace <em>Registrarse en Last.fm</em>."
 
 #: C/lastfm.page:45(p)
 msgid ""
@@ -1108,10 +1189,19 @@ msgid ""
 "access to Last.fm. Return to Banshee and press the <gui>Finish Logging In</"
 "gui> button to complete the process."
 msgstr ""
+"Para permitir que Banshee informe sobre las canciones que reproduce en su "
+"equipo a Last.fm, inicie sesión en Last.fm dentro de Banshee en las "
+"preferencias <gui>Específicas de las fuentes</gui>. Introduzca su nombre de "
+"usuario y pulse el botón <gui>Iniciar sesión en Last.fm</gui>. Se le "
+"redirigirá a una web de Last.fm en su navegador para conceder acceso a "
+"Banshee. Pulse el enlace <gui>Sí, permitir acceso</gui> en su navegador y se "
+"le redirigirá a una web que mostrará un mensaje indicando que Banshee ya "
+"tiene acceso a Last.fm. Vuelva a Banshee y pulse el botón <gui>Finalizar el "
+"inicio de sesión</gui> para completar el proceso."
 
 #: C/lastfm.page:58(title)
 msgid "Enable Last.fm Song Reporting"
-msgstr ""
+msgstr "Activar el informe de canciones en Last.fm"
 
 #: C/lastfm.page:59(p)
 msgid ""
@@ -1124,6 +1214,15 @@ msgid ""
 "website. Last.fm will automatically update your music metadata if any of "
 "your artist, song title or album information is incorrect."
 msgstr ""
+"Tras enlazar Banshee con éxito a su perfil de Last.fm, para permitir que "
+"Banshee informe las canciones a su perfil de Last.fm, en la pestaña "
+"<gui>Específicas de las fuentes</gui> en las preferencias de Banshee, pulse "
+"la casilla <gui>Activar informe de canciones</gui>. Si tiene una conexión "
+"activa a Internet, Banhee enviará a Last.fm información relacionada con las "
+"canciones que reproduce. Para ver su histórico de reproducción, visite su "
+"perfil en la página web de Last.fm. Last.fm actualizará automáticamente los "
+"metadatos de su música si la información del artista, canción o álbum no es "
+"correcta."
 
 #: C/lastfm.page:72(title)
 msgid "Listen to Last.fm Radio"
@@ -1137,6 +1236,12 @@ msgid ""
 "receive premium radio features: listening to playlists and stations of music "
 "you've loved or tagged."
 msgstr ""
+"La radio de Last.fm es gratuita para los residentes en Estados Unidos, Reino "
+"Unido y Alemania. Los residentes en otros países tendrán que obtener una "
+"cuenta de pago de Last.fm para escuchar la radio. Los miembros de pago, en "
+"todos los países, también reciben características adicionales para la radio: "
+"escuchar las listas de reproducción y las emisoras de música que ha "
+"etiquetado o marcado como favoritas."
 
 #: C/lastfm.page:80(p)
 msgid ""
@@ -1150,6 +1255,16 @@ msgid ""
 "<guiseq><gui>Playback</gui><gui>Next</gui></guiseq> to play the next song in "
 "your radio station queue."
 msgstr ""
+"En el menú contextual de Banshee a la izquierda, tendrá ahora una sección de "
+"Last.fm, incluyendo sus emisoras de radio de Last.fm. Necesitará una "
+"conexión a Internet activa para escuchar la radio de Last.fm. Elija la "
+"emisora de radio que desea escuchar y Banshee se comunicará con Last.fm para "
+"rellenar canciones para esa emisora de radio. Pulse el botón "
+"<gui>Reproducir</gui> en Banshee o la <key>barra espaciadora</key> para "
+"empezar a reproducir una emisora de radio de Last.fm. También puede pulsar "
+"el botón  <gui>Siguiente</gui> en Banshee, <key>N</key> o escoger "
+"<guiseq><gui>Reproducir</gui><gui>Siguiente</gui></guiseq> para reproducir "
+"la siguiente canción en la cola de su emisora de radio."
 
 #: C/keyboardshortcuts.page:7(desc) C/advanced.page:27(title)
 #: C/advanced.page:29(title)
@@ -1202,7 +1317,7 @@ msgstr "Reproducir la canción anterior"
 
 #: C/keyboardshortcuts.page:49(title) C/keyboardshortcuts.page:69(title)
 msgid "Library Interaction"
-msgstr ""
+msgstr "Interacción con la colección"
 
 #: C/keyboardshortcuts.page:56(key) C/keyboardshortcuts.page:76(key)
 #: C/keyboardshortcuts.page:114(key) C/keyboardshortcuts.page:118(key)
@@ -1225,7 +1340,7 @@ msgstr "<key>/</key>, <keyseq><key>Ctrl</key><key>F</key></keyseq>"
 
 #: C/keyboardshortcuts.page:61(p)
 msgid "Open import media dialog"
-msgstr ""
+msgstr "Abrir diálogo de importación de contenido multimedia"
 
 #: C/keyboardshortcuts.page:76(p)
 msgid "Create New Playlist"
@@ -1241,7 +1356,7 @@ msgstr "Y"
 
 #: C/keyboardshortcuts.page:93(p)
 msgid "Mark the selected episodes as old"
-msgstr ""
+msgstr "Marcar los episodios seleccionados como antiguos"
 
 #: C/keyboardshortcuts.page:103(title)
 msgid "Interface"
@@ -1249,7 +1364,7 @@ msgstr "Interfaz"
 
 #: C/keyboardshortcuts.page:110(p)
 msgid "Toggle full-screen mode"
-msgstr "Activar el modo de pantalla completa"
+msgstr "Conmutar el modo de pantalla completa"
 
 #: C/keyboardshortcuts.page:114(key) C/keyboardshortcuts.page:118(key)
 msgid "A"
@@ -1257,7 +1372,7 @@ msgstr "A"
 
 #: C/keyboardshortcuts.page:114(p)
 msgid "Select all songs in playlist view"
-msgstr ""
+msgstr "Seleccionar todas las canciones en la vista de lista de reproducción"
 
 #: C/keyboardshortcuts.page:118(key)
 msgid "Shift"
@@ -1265,7 +1380,7 @@ msgstr "Mayús"
 
 #: C/keyboardshortcuts.page:119(p)
 msgid "Unselect all songs in playlist view"
-msgstr ""
+msgstr "Deseleccionar todas las canciones en la vista de lista de reproducción"
 
 #: C/keyboardshortcuts.page:123(key)
 msgid "W"
@@ -1274,6 +1389,8 @@ msgstr "W"
 #: C/keyboardshortcuts.page:123(p)
 msgid "Hide Banshee Window (Requires Notification Area Plug-in Enabled"
 msgstr ""
+"Ocultar la ventana de Banshee (requiere tener activada la extensión «Icono "
+"en el área de notificación»)"
 
 #: C/keyboardshortcuts.page:127(key)
 msgid "Left Mouse Button"
@@ -1282,6 +1399,8 @@ msgstr "Botón izquierdo del ratón"
 #: C/keyboardshortcuts.page:128(p)
 msgid "Play Previous Song (Requires Notification Area Plug-in Enabled"
 msgstr ""
+"Reproducir la canción anterior (requiere tener activada la extensión «Icono "
+"en el área de notificación»)"
 
 #: C/keyboardshortcuts.page:132(key)
 msgid "Right Mouse Button"
@@ -1290,6 +1409,8 @@ msgstr "Botón derecho del ratón"
 #: C/keyboardshortcuts.page:133(p)
 msgid "Play Next Song (Requires Notification Area Plug-in Enabled"
 msgstr ""
+"Reproducir la canción siguiente (requiere tener activada la extensión «Icono "
+"en el área de notificación»)"
 
 #: C/keyboardshortcuts.page:137(key)
 msgid "Middle Mouse Button"
@@ -1298,19 +1419,23 @@ msgstr "Botón central del ratón"
 #: C/keyboardshortcuts.page:138(p)
 msgid "Toggle Play / Pause (Requires Notification Area Plug-in Enabled"
 msgstr ""
+"Alternar entre Reproducir / Pausar (requiere tener activada la extensión "
+"«Icono en el área de notificación»)"
 
 #: C/itunes-import.page:8(desc)
 msgid ""
 "Import music and categorizations from the <app>iTunes</app> media player."
 msgstr ""
+"Importar música y clasificaciones desde el reproductor multimedia "
+"<app>iTunes</app>."
 
 #: C/itunes-import.page:12(title)
 msgid "Import your <app>iTunes</app> library"
-msgstr "Importar su biblioteca de <app>iTunes</app>"
+msgstr "Importar su colección de <app>iTunes</app>"
 
 #: C/introduction.page:8(desc)
 msgid "Introduction to the <app>Banshee Media Player</app>."
-msgstr ""
+msgstr "Introducción al <app>Reproductor multimedia Banshee</app>."
 
 #: C/introduction.page:24(title)
 msgid "Introduction"
@@ -1322,12 +1447,17 @@ msgid ""
 "videos, and other media as well sync it with portable devices to take your "
 "media on the go."
 msgstr ""
+"<app>Banshee</app> en un reproductor multimedia que le permite reproducir su "
+"música, vídeos y otro contenido multimedia así como sincronizarse con "
+"dispositivos portátiles para llevar su contenido multimedia consigo."
 
 #: C/introduction.page:31(p)
 msgid ""
 "<app>Banshee</app> includes features to import your media, manage its "
 "metadata, and play your music and videos."
 msgstr ""
+"<app>Banshee</app> incluye características como importar su contenido "
+"multimedia, gestionar sus metadatos y reproducir su música y sus vídeos."
 
 #: C/introduction.page:35(p)
 msgid ""
@@ -1336,6 +1466,11 @@ msgid ""
 "popular devices including most iPods, Sandisk and Creative MP3 players, and "
 "Android powered phones."
 msgstr ""
+"Banshee también le ayuda a sincronizar su música y sus vídeos con "
+"dispositivos portátiles populares, como reproductores de sonido digitales y "
+"teléfonos inteligentes. Banshee soporta dispositivos populares incluyendo la "
+"mayoría de reproductores MP3, iPod, Sandisk y Creative y teléfonos con "
+"Android."
 
 #: C/index.page:24(title)
 msgid "Add, Remove &amp; Play"
