@@ -222,7 +222,7 @@ msgstr "Last.fm továbbítás"
 
 #: ../data/addin-xml-strings.cs:99
 msgid "Last.fm scrobbling and context pane recommendations."
-msgstr "Last.fm továbbítás és javaslatok a környezet ablaktáblán."
+msgstr "Last.fm továbbítás és javaslatok a kontextus ablaktáblán."
 
 #. ../src/Extensions/Banshee.LastfmStreaming/Banshee.LastfmStreaming.addin.xml
 #: ../data/addin-xml-strings.cs:103
@@ -318,7 +318,7 @@ msgstr "Számok sorba állítása eseti lejátszólistába, vagy automata DJ has
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:107
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:210
 msgid "Podcasts"
-msgstr "Podcastek"
+msgstr "Podcastok"
 
 #: ../data/addin-xml-strings.cs:149
 msgid "Subscribe to podcasts and stream or download episodes."
@@ -366,11 +366,11 @@ msgstr "Wikipédia"
 
 #: ../data/addin-xml-strings.cs:169
 msgid "View artist information from Wikipedia in the context pane."
-msgstr "Előadó-információk megjelenítése a Wikipédiából a környezet ablaktáblán."
+msgstr "Előadó-információk megjelenítése a Wikipédiából a kontextus ablaktáblán."
 
 #: ../data/addin-xml-strings.cs:170 ../data/addin-xml-strings.cs:175
 msgid "Context Pane"
-msgstr "Környezet ablaktábla"
+msgstr "Kontextus ablaktábla"
 
 #. ../src/Extensions/Banshee.YouTube/Banshee.YouTube.addin.xml
 #: ../data/addin-xml-strings.cs:173
@@ -380,7 +380,7 @@ msgstr "YouTube"
 
 #: ../data/addin-xml-strings.cs:174
 msgid "Show related YouTube videos in the context pane."
-msgstr "Kapcsolódó YouTube videók megjelenítése a környezet ablaktáblán."
+msgstr "Kapcsolódó YouTube videók megjelenítése a kontextus ablaktáblán."
 
 #: ../data/audio-profiles/aac-novell.xml.in.h:1
 msgid "3GPP"
@@ -1744,7 +1744,7 @@ msgstr "Értékelés és lejátszások száma metaadatok mentése a támogatott 
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:60
 msgid "_Update file and folder names"
-msgstr "_Fájl és mappanevek frissítése"
+msgstr "_Fájl- és mappanevek frissítése"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:61
 msgid "Rename files and folders according to media metadata"
@@ -2627,7 +2627,7 @@ msgstr "Albumrács kikapcsolása"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Collection.Gui/AlbumListView.cs:77
 msgid "Disable album grid and show the classic layout instead"
-msgstr "Albumrács kikapcsolása és a klasszikus elrendezés megjelenítése"
+msgstr "Albumrács kikapcsolása, és a klasszikus elrendezés megjelenítése"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Collection.Gui/BaseTrackListView.cs:76
 msgid "Cannot Reorder While Sorted"
@@ -2709,11 +2709,11 @@ msgstr "{0} bit"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.ContextPane/ContextPane.cs:119
 msgid "Make the context pane larger or smaller"
-msgstr "A környezet ablaktábla átméretezése"
+msgstr "A kontextus ablaktábla átméretezése"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.ContextPane/ContextPane.cs:123
 msgid "Hide context pane"
-msgstr "Környezet ablaktábla elrejtése"
+msgstr "Kontextus ablaktábla elrejtése"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.ContextPane/ContextPane.cs:144
 msgid "Waiting for playback to begin..."
@@ -3728,11 +3728,11 @@ msgstr "Grafikus hangszínszabályzó megjelenítése"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/ViewActions.cs:72
 msgid "_Context Pane"
-msgstr "_Környezet ablaktábla"
+msgstr "_Kontextus ablaktábla"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/ViewActions.cs:73
 msgid "Show the context pane beneath the track list"
-msgstr "A környezet ablaktábla megjelenítése a számlista alatt"
+msgstr "A kontextus ablaktábla megjelenítése a számlista alatt"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/ViewActions.cs:80
 msgid "_Fullscreen"
@@ -5705,7 +5705,7 @@ msgid ""
 "Enter the Genre, Title and URL of the radio station you wish to add. A "
 "description is optional."
 msgstr ""
-"Adja meg a felvenni kívánt rádióállomás műfaját, nevét és URL címét. A "
+"Adja meg a felvenni kívánt rádióállomás műfaját, nevét és URL-címét. A "
 "leírás elhagyható."
 
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/StationEditor.cs:118
@@ -5718,7 +5718,7 @@ msgstr "Állomás neve:"
 
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/StationEditor.cs:121
 msgid "Stream URL:"
-msgstr "Műsor URL címe:"
+msgstr "Műsor URL-címe:"
 
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/StationEditor.cs:122
 msgid "Station Creator:"
@@ -6554,7 +6554,7 @@ msgstr "Podcast hozzáadása…"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastActions.cs:79
 msgid "Subscribe to a new podcast"
-msgstr "Feliratkozás új podcastre"
+msgstr "Feliratkozás új podcastra"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastActions.cs:93
 msgid "Unsubscribe and Delete"
@@ -6582,7 +6582,7 @@ msgstr "Megjelölés újként"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastActions.cs:134
 msgid "Archive"
-msgstr "Archívum"
+msgstr "Archiválás"
 
 #. Translators: this is a verb used as a button name, not a noun
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastActions.cs:140
@@ -6614,7 +6614,7 @@ msgstr "Érvénytelen URL"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastActions.cs:351
 msgid "Podcast URL is invalid."
-msgstr "A podcast URL címe érvénytelen."
+msgstr "A podcast URL-címe érvénytelen."
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastEpisodePage.cs:109
 msgid "Episode Details"
@@ -6689,11 +6689,11 @@ msgstr "URL:"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastSubscribeDialog.cs:95
 msgid "Subscribe to New Podcast"
-msgstr "Feliratkozás új podcastre"
+msgstr "Feliratkozás új podcastra"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastSubscribeDialog.cs:103
 msgid "Please enter the URL of the podcast to which you would like to subscribe."
-msgstr "Adja meg a podcast URL címét, amelyre fel kíván iratkozni."
+msgstr "Adja meg a podcast URL-címét, amelyre fel kíván iratkozni."
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/SyncPreferenceComboBox.cs:41
 msgid "Download all episodes"
