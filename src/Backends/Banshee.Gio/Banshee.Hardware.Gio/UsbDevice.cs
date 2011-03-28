@@ -72,20 +72,33 @@ namespace Banshee.Hardware.Gio
 
         public static int GetBusNumber (IUsbDevice device)
         {
+            int num = 0;
             var raw = device as IRawDevice;
-            return raw == null ? 0 : int.Parse (raw.Device.UdevMetadata.GetPropertyString (UdevUsbBusNumber));
+
+            if (raw != null && Int32.TryParse (raw.Device.UdevMetadata.GetPropertyString (UdevUsbBusNumber), out num)) {
+                return num;
+            }
+            return 0;
         }
 
         public static int GetDeviceNumber (IUsbDevice device)
         {
             var raw = device as IRawDevice;
-            return raw ==  null ? 0 : int.Parse (raw.Device.UdevMetadata.GetPropertyString (UdevUsbDeviceNumber));
+            int num = 0;
+            if (raw != null && Int32.TryParse (raw.Device.UdevMetadata.GetPropertyString (UdevUsbDeviceNumber), out num)) {
+                return num;
+            }
+            return 0;
         }
 
         public static int GetProductId (IUsbDevice device)
         {
             var raw = device as IRawDevice;
-            return raw == null ? 0 : int.Parse (raw.Device.UdevMetadata.GetPropertyString (UdevProductId), NumberStyles.HexNumber);
+            int num = 0;
+            if (raw != null && Int32.TryParse (raw.Device.UdevMetadata.GetPropertyString (UdevProductId), NumberStyles.HexNumber, null, out num)) {
+                return num;
+            }
+            return 0;
         }
 
         public static int GetSpeed (IUsbDevice device)
