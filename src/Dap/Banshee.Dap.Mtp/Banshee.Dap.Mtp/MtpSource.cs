@@ -95,7 +95,7 @@ namespace Banshee.Dap.Mtp
                 //if (v.BusNumber == busnum && v.DeviceNumber == devnum) {
                 if (v.DeviceNumber == devnum) {
                     // If gvfs-gphoto has it mounted, unmount it
-                    if (volume != null) {
+                    if (volume != null && volume.IsMounted) {
                         volume.Unmount ();
                     }
 
