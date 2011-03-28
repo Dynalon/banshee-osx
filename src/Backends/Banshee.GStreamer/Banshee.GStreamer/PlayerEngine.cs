@@ -308,7 +308,7 @@ namespace Banshee.GStreamer
             Close (false);
             OnEventChanged (PlayerEvent.EndOfStream);
             if (!next_track_pending &&
-                (!GaplessEnabled || ((CurrentTrack.MediaAttributes & TrackMediaAttributes.VideoStream) != 0))) {
+                (!GaplessEnabled || (CurrentTrack != null && CurrentTrack.HasAttribute (TrackMediaAttributes.VideoStream)))) {
                 // We don't request next track in OnEoS if gapless playback is enabled and current track has no video stream contained.
                 // The request next track is already called in OnAboutToFinish().
                 OnEventChanged (PlayerEvent.RequestNextTrack);
@@ -320,7 +320,7 @@ namespace Banshee.GStreamer
                 OpenUri (pending_uri, pending_maybe_video);
                 Play ();
                 pending_uri = null;
-            } else if (!GaplessEnabled || ((CurrentTrack.MediaAttributes & TrackMediaAttributes.VideoStream) != 0)) {
+            } else if (!GaplessEnabled || (CurrentTrack != null && CurrentTrack.HasAttribute (TrackMediaAttributes.VideoStream))) {
                 // This should be unreachable - the RequestNextTrack event is delegated to the main thread
                 // and so blocks the bus callback from delivering the EOS message.
                 //
@@ -362,10 +362,14 @@ namespace Banshee.GStreamer
         {
             if (GaplessEnabled) {
                 // Must do it here because the next track is already playing.
-                ServiceManager.PlayerEngine.IncrementLastPlayed (1.0);
 
-                OnEventChanged (PlayerEvent.EndOfStream);
-                OnEventChanged (PlayerEvent.StartOfStream);
+                // If the state is anything other than loaded, assume we were just playing a track and should
+                // EoS it and increment its playcount etc.
+                if (CurrentState != PlayerState.Loaded) {
+                    ServiceManager.PlayerEngine.IncrementLastPlayed (1.0);
+                    OnEventChanged (PlayerEvent.EndOfStream);
+                    OnEventChanged (PlayerEvent.StartOfStream);
+                }
             }
         }
 
