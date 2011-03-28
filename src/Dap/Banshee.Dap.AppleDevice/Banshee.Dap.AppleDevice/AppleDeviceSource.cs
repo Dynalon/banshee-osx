@@ -75,7 +75,7 @@ namespace Banshee.Dap.AppleDevice
 
             if (!Volume.IsMounted) {
                 Hyena.Log.Information ("AppleDeviceSource is ignoring unmounted volume " + Volume.Name);
-                throw new InvalidOperationException ();
+                throw new InvalidDeviceException ();
             }
             
             Device = new GPod.Device (Volume.MountPoint);
