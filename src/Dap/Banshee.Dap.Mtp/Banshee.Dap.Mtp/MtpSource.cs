@@ -66,7 +66,7 @@ namespace Banshee.Dap.Mtp
             base.DeviceInitialize (device);
 
             var portInfo = device.ResolveUsbPortInfo ();
-            if (portInfo == null) {
+            if (portInfo == null || portInfo.DeviceNumber == 0) {
                 throw new InvalidDeviceException ();
             }
 
