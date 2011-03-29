@@ -251,7 +251,14 @@ namespace Nereid
                     TooltipText = Catalog.GetString ("Close")
                 };
 
-                close_button.Clicked += (o, e) => Hide ();
+                close_button.Clicked += (o, e) => {
+                    if (ServiceManager.PlayerEngine.IsPlaying () &&
+                       (ServiceManager.PlayerEngine.CurrentState != PlayerState.Paused)  &&
+                        ServiceManager.PlayerEngine.CurrentTrack.HasAttribute (TrackMediaAttributes.VideoStream)) {
+                        ServiceManager.PlayerEngine.Pause ();
+                    }
+                    Hide ();
+                };
                 close_button.ShowAll ();
                 ActionService.PopulateToolbarPlaceholder (header_toolbar, "/HeaderToolbar/ClosePlaceholder", close_button);
             } else {
