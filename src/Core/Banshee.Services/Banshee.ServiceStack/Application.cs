@@ -199,7 +199,7 @@ namespace Banshee.ServiceStack
                     Paths.InstalledApplicationDataRoot, project, lang);
 
                 if (System.IO.Directory.Exists (path)) {
-                    shown = Banshee.Web.Browser.Open (String.Format ("ghelp:/{0}", path), false);
+                    shown = Banshee.Web.Browser.Open (String.Format ("ghelp:{0}", path), false);
                     break;
                 }
             }
