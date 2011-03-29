@@ -116,6 +116,8 @@ namespace Banshee.Gui
                 new ActionEntry("AboutAction", "gtk-about", OnAbout)
             });
 
+            this["VersionInformationAction"].Visible = ApplicationContext.Debugging;
+
             GLib.Timeout.Add (500, delegate {
                 if (ApplicationContext.CommandLine.Contains ("show-import-media")) {
                     OnImport (null, null);
