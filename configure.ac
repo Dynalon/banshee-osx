@@ -93,6 +93,8 @@ PKG_CHECK_MODULES(MEEGO_PANEL, meego-panel,
 	HAVE_MEEGO_PANEL=yes, HAVE_MEEGO_PANEL=no)
 if test "x$HAVE_GNOME_2_28" = "xno" -o "x$HAVE_MEEGO_PANEL" = "xyes"; then
 	BANSHEE_DESKTOP_NAME="_Name=Banshee Media Player"
+        MEEGO_PANELS_DIR=`$PKG_CONFIG --variable=meego_panel_panels_dir meego-panel`
+        AC_SUBST(MEEGO_PANELS_DIR)
 else
 	BANSHEE_DESKTOP_NAME="_Name=Banshee"
 fi
