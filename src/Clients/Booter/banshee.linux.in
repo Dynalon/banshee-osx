@@ -44,8 +44,9 @@ if [ ! -z "$BANSHEE_CLIENT" ]; then
 	BANSHEE_CLIENT="--client=${BANSHEE_CLIENT}"
 fi
 
-# We are testing the SGen compacting GC
-export MONO_ENV_OPTIONS="--gc=sgen"
+# We were testing the SGen compacting GC; disabled for 2.0 release b/c there are serious
+# issues with sgen on Mono 2.8.0
+#export MONO_ENV_OPTIONS="--gc=sgen"
 
 # Work around NowPlaying/webkit crash (bgo#641515)
 export XLIB_SKIP_ARGB_VISUALS=1
