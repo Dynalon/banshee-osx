@@ -58,7 +58,7 @@ namespace Media.Playlists.Xspf
 
         private static XmlNamespaceManager BuildNamespaceManager (XmlDocument doc)
         {
-            XmlNamespaceManager xmlns = new XmlNamespaceManager (doc.NameTable);
+            var xmlns = new XmlNamespaceManager (doc.NameTable);
             xmlns.AddNamespace ("xspf", XspfNamespace);
             return xmlns;
         }
@@ -129,11 +129,12 @@ namespace Media.Playlists.Xspf
             }
 
             XmlAttribute version_attr = playlist_node.Attributes["version"];
-            if(version_attr == null || version_attr.Value == null) {
+            if(version_attr != null && version_attr.Value == null) {
                 throw new ApplicationException("XSPF playlist version must be specified");
             } else {
                 try {
-                    int version = Int32.Parse(version_attr.Value);
+                    // If the version attr is missing, assume it's version 1; Fixes bgo#646237
+                    int version = version_attr == null ? 1 : Int32.Parse (version_attr.Value);
                     if(version < 0 || version > 1) {
                         throw new ApplicationException("Only XSPF versions 0 and 1 are supported");
                     }
@@ -168,12 +169,12 @@ namespace Media.Playlists.Xspf
 
         protected bool IsExtensionNode(XmlNode node)
         {
-            return node.Name == "extension" && node.NamespaceURI == XspfNamespace;
+            return node.Name == "extension" && (node.NamespaceURI == XspfNamespace || node.NamespaceURI == "");
         }
 
         protected bool IsTrackListNode(XmlNode node)
         {
-            return node.Name == "trackList" && node.NamespaceURI == XspfNamespace;
+            return node.Name == "trackList" && (node.NamespaceURI == XspfNamespace || node.NamespaceURI == "");
         }
 
         protected virtual void LoadExtensionNode(XmlNode extensionNode, XmlNamespaceManager xmlns)
