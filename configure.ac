@@ -93,12 +93,15 @@ PKG_CHECK_MODULES(MEEGO_PANEL, meego-panel,
 	HAVE_MEEGO_PANEL=yes, HAVE_MEEGO_PANEL=no)
 if test "x$HAVE_GNOME_2_28" = "xno" -o "x$HAVE_MEEGO_PANEL" = "xyes"; then
 	BANSHEE_DESKTOP_NAME="_Name=Banshee Media Player"
-        MEEGO_PANELS_DIR=`$PKG_CONFIG --variable=meego_panel_panels_dir meego-panel`
-        AC_SUBST(MEEGO_PANELS_DIR)
 else
 	BANSHEE_DESKTOP_NAME="_Name=Banshee"
 fi
 AC_SUBST(BANSHEE_DESKTOP_NAME)
+
+if test "x$HAVE_MEEGO_PANEL" = "xyes"; then
+  MEEGO_PANELS_DIR=`$PKG_CONFIG --variable=meego_panel_panels_dir meego-panel`
+  AC_SUBST(MEEGO_PANELS_DIR)
+fi
 
 dnl Check for gdk-x11 >= 2.22 for NotificationArea extension, bgo#638477
 PKG_CHECK_MODULES(GDK_2_22, gdk-x11-2.0 >= 2.22, have_gdk_2_22=yes, have_gdk_2_22=no)
