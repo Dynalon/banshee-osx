@@ -273,7 +273,6 @@ static void bp_volume_changed_callback (GstElement *playbin, GParamSpec *spec, B
 gboolean 
 _bp_pipeline_construct (BansheePlayer *player)
 {
-    GValue value = {0};
     GstBus *bus;
     GstPad *teepad;
     GstPad *pad;
@@ -406,15 +405,10 @@ _bp_pipeline_construct (BansheePlayer *player)
     bus = gst_pipeline_get_bus (GST_PIPELINE (player->playbin));    
     gst_bus_add_watch (bus, bp_pipeline_bus_callback, player);
 
-    
-    GstPad *sinkpad = gst_element_get_pad (audiosinkqueue, "sink");
-    g_value_init (&value, G_OBJECT_TYPE (sinkpad));
-    g_value_set_instance (&value, sinkpad);
-    g_object_set_property (G_OBJECT (player->audiotee), "alloc-pad", &value);
-    g_value_unset (&value);
-
     // Link the first tee pad to the primary audio sink queue
+    GstPad *sinkpad = gst_element_get_pad (audiosinkqueue, "sink");
     pad = gst_element_get_request_pad (player->audiotee, "src%d");
+    g_object_set(player->audiotee, "alloc-pad", pad, NULL);
     gst_pad_link (pad, sinkpad);
     gst_object_unref (GST_OBJECT (pad));
 
