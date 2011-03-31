@@ -199,6 +199,7 @@ _bp_vis_pipeline_setup (BansheePlayer *player)
 
     GstElement *fakesink, *converter, *resampler, *audiosinkqueue;
     GstCaps *caps;
+    GstPad *teepad;
     GstPad *pad;
     gint wanted_size;
     
@@ -256,7 +257,9 @@ _bp_vis_pipeline_setup (BansheePlayer *player)
                       converter, fakesink, NULL);
     
     pad = gst_element_get_static_pad (audiosinkqueue, "sink");
-    gst_pad_link (gst_element_get_request_pad (player->audiotee, "src%d"), pad);
+    teepad = gst_element_get_request_pad (player->audiotee, "src%d");
+    gst_pad_link (teepad, pad);
+    gst_object_unref (GST_OBJECT (teepad));
     gst_object_unref (GST_OBJECT (pad));
     
     gst_element_link_many (audiosinkqueue, resampler, converter, NULL);

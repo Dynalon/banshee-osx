@@ -276,6 +276,7 @@ _bp_pipeline_construct (BansheePlayer *player)
     GValue value = {0};
     GstBus *bus;
     GstPad *teepad;
+    GstPad *pad;
     GstElement *audiosink;
     GstElement *audiosinkqueue;
     GstElement *eq_audioconvert = NULL;
@@ -413,7 +414,10 @@ _bp_pipeline_construct (BansheePlayer *player)
     g_value_unset (&value);
 
     // Link the first tee pad to the primary audio sink queue
-    gst_pad_link (gst_element_get_request_pad (player->audiotee, "src0"), sinkpad);
+    pad = gst_element_get_request_pad (player->audiotee, "src%d");
+    gst_pad_link (pad, sinkpad);
+    gst_object_unref (GST_OBJECT (pad));
+
     // Now allow specialized pipeline setups
     _bp_cdda_pipeline_setup (player);
     _bp_video_pipeline_setup (player, bus);
