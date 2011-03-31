@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: banshee-help.master\n"
-"POT-Creation-Date: 2011-03-26 13:30+0000\n"
-"PO-Revision-Date: 2011-03-27 18:44+0200\n"
+"POT-Creation-Date: 2011-03-30 21:06+0000\n"
+"PO-Revision-Date: 2011-03-31 11:01+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -77,9 +77,9 @@ msgid ""
 "give you quick access to your Play Queue, Music, Videos, Amazon, Last.fm, "
 "Podcasts and more."
 msgstr ""
-"Para acceder a su música y vídeos, utilice los iconos en el panel izquierdo "
-"de Banshee. Estos iconos le dan acceso directo a la cola de reproducción, "
-"música, vídeos, Amazon, Last.fm, podcasts, etc."
+"Su música y sus fuentes se muestran a la izquierda de Banshee. Las fuentes "
+"le dan acceso directo a la cola de reproducción, música, vídeos, Amazon, "
+"Last.fm, podcasts, etc."
 
 #: C/ui.page:42(p)
 msgid ""
@@ -95,7 +95,7 @@ msgstr ""
 
 #: C/ui.page:50(title)
 msgid "Library Browser"
-msgstr ""
+msgstr "Examinador de colecciones"
 
 #: C/ui.page:51(p)
 msgid ""
@@ -104,6 +104,11 @@ msgid ""
 "Banshee can display your music or video library, Podcast subscriptions or "
 "even the Amazon Music Store to allow you to buy music."
 msgstr ""
+"Cuando selecciona una canción o un vídeo desde «Fuentes», Banshee mostrará su "
+"contenido en el «Examinador de colecciones». Dependiendo de la fuente que "
+"elija, Banshee podrá mostrar su colección de música o de vídeo, "
+"subscripciones a Podcasts o incluso la tienda de música de Amazon para "
+"permitirle comprar música."
 
 #: C/ui.page:58(title)
 msgid "Now Playing View"
@@ -117,6 +122,11 @@ msgid ""
 "album and cover art if available. If you are watching a video, Banshee will "
 "display the video."
 msgstr ""
+"Útil cuando se usa Banshee en modo a pantalla completa, el modo «En "
+"reproducción» oculta la colección para darle una vista más grande de la "
+"música o del vídeo que está viendo. Cuando escucha música, la vista «En "
+"reproducción» le mostrará el nombre del artista, el álbum y la portada, si "
+"está disponible. Si está viendo un vídeo, Banshee mostrará el vídeo."
 
 #: C/ui.page:65(p)
 msgid ""
@@ -126,6 +136,11 @@ msgid ""
 "<guiseq><gui>View</gui><gui>Fullscreen</gui></guiseq> to start Fullscreen "
 "mode."
 msgstr ""
+"Para cambiar la vista «En reproducción» para ocultar la interfaz de usuario "
+"de Banshee y usar el modo a pantalla completa, puede pulsar <key>F</key>, "
+"pulsar el botón <gui>Pantalla completa</gui> en la esquina superior derecha "
+"de Banshee o elegir <guiseq><gui>Ver</gui><gui>Pantalla completa</gui></"
+"guiseq> para iniciar el modo a pantalla completa."
 
 #: C/ui.page:74(title)
 msgid "Library"
@@ -140,6 +155,12 @@ msgid ""
 "or old podcasts. Please see each Source's help page for detailed information "
 "on managing a source."
 msgstr ""
+"La vista «Colección» de Banshee cambiará dependiendo de la fuente que haya "
+"elegido. La «Colección de música» mostrará la carátula, los artistas en su "
+"colección y lista de canciones. La «Colección de podcast» mostrará sus "
+"subscripciones a podcast, los podcast que se han bajado y los que no, y "
+"todos los podcast, nuevos o antiguos. Consulte la página de ayuda de "
+"«Fuentes» para obtener información detallada sobre cómo gestionar una fuente."
 
 #: C/sync.page:9(desc)
 msgid "Sync your media to a portable media player or smartphone."
@@ -173,7 +194,7 @@ msgstr ""
 
 #: C/sync.page:37(title)
 msgid "Device Support"
-msgstr "Dispositivos soportados"
+msgstr "Soporte de dispositivos"
 
 #: C/sync.page:38(p)
 msgid ""
@@ -204,6 +225,9 @@ msgid ""
 "You can choose to manage the media on your portable music by having Banshee "
 "automatically sync it or manage your music and media manually."
 msgstr ""
+"Puede elegir gestionar el contenido multimedia de su reproductor de música "
+"portátil haciendo que Banshee lo sincronice automáticamente, o puede "
+"gestionar su música y sus archivos multimedia manualmente."
 
 #: C/sync.page:56(p)
 msgid ""
@@ -211,7 +235,7 @@ msgid ""
 "sync your media, including:"
 msgstr ""
 "Seleccione su dispositivo desde el menú de Banshee y elija cómo quiere "
-"sincronizar sus medios, incluyendo:"
+"sincronizar sus archivos multimedia, incluyendo:"
 
 #: C/sync.page:60(p)
 msgid "Music"
@@ -264,6 +288,13 @@ msgid ""
 "new content is added based on the playlist rules, and Banshee will sync the "
 "new playlist to your device every time you plug it in."
 msgstr ""
+"si ha creado listas de reproducción o listas de reproducción inteligentes en "
+"su colección de música, también se mostrarán como una opción de "
+"sincronización de «Música». Esto puede ser útil para crear listas de "
+"reproducción inteligentes, ya que las listas de reproducción inteligentes se "
+"actualizarán automáticamente a medida que se añade contenido basado en las "
+"reglas de la lista de reproducción, y Banshee sincronizará automáticamente "
+"la nueva lista de reproducción con su dispositivo cada vez que lo conecte."
 
 #: C/sync.page:89(p)
 msgid ""
@@ -287,12 +318,17 @@ msgstr "Sincronizar su biblioteca completa"
 
 #: C/sync.page:101(p)
 msgid ""
-"You can drag and drop media to your portable music player form Banshee. "
+"You can drag and drop media to your portable music player from Banshee. "
 "Select the file or files you want to copy to your portable media player and "
 "then press and hold your right mouse button and drag the file(s) to your "
 "portable media player icon in Banshee. This will copy the files to your "
 "device."
 msgstr ""
+"Puede arrastrar y soltar archivos multimedia en su reproductor de música "
+"portátil desde Banshee. Seleccione el archivo o los archivos que quiera "
+"copiar en su reproductor multimedia portátil y mantenga pulsado el botón del "
+"ratón mientras arrastra los archivos al icono de su reproductor multimedia "
+"portátil en Banshee. Esto copiará los archivos a su dispositivo."
 
 #: C/sync.page:108(p)
 msgid ""
@@ -303,6 +339,12 @@ msgid ""
 "distribution for the necessary codecs as it is outside the scope of this "
 "help and varies by distribution."
 msgstr ""
+"Si su colección de música está codificada en un formato que su reproductor "
+"multimedia portátil no soporta, como OGG o FLAC, y tiene instalados los "
+"códecs necesarios, Banshee puede convertir automáticamente estos archivos a "
+"MP3 al transferirlos a su reproductor multimedia portátil. Compruebe que su "
+"distribución de Linux tiene los códecs necesarios, ya que esto está fuera "
+"del objetivo de esta ayuda y varía según la distribución."
 
 #: C/sync.page:117(p)
 msgid ""
@@ -310,6 +352,10 @@ msgid ""
 "portable music player. To eject your device in Banshee, using your mouse "
 "right click the device in the Banshee menu and press <gui>Disconnect</gui>."
 msgstr ""
+"Puede necesitar expulsar su dispositivo para cargar los archivos "
+"correctamente en su reproductor multimedia portátil. Para expulsar su "
+"dispositivo desde Banshee, pulse con el botón derecho del ratón sobre el "
+"dispositivo en el menú de Banshee y pulse <gui>Desconectar</gui>."
 
 #: C/sync.page:127(title)
 msgid "Play Music From Your Portable Music Player"
@@ -322,6 +368,11 @@ msgid ""
 "player's library will be displayed. You can then play music in Banshee just "
 "as you would music in your own library."
 msgstr ""
+"Puede reproducir música almacenada en su reproductor de música portátil "
+"directamente en Banshee. Elija su reproductor en el menú de Banshee en la "
+"parte izquierda y se mostrará la colección de su reproductor de música "
+"portátil. Entonces puede reproducir la música en Banshee igual que lo haría "
+"desde su propia colección."
 
 #: C/sync.page:135(title)
 msgid "Remove Music From your Portable Music Player"
@@ -331,15 +382,22 @@ msgstr "Quitar música de su reproductor portátil"
 msgid ""
 "To remove songs stored on your portable music player, choose your player in "
 "Banshee to view its library. Then choose the tracks you would like to remove "
-"and right click the tracks and choose \"Delete\" or from the menu choose "
-"<guiseq><gui>Edit</gui><gui>Delete</gui></guiseq>."
+"and right click the tracks and choose <gui>Delete</gui> or from the menu "
+"choose <guiseq><gui>Edit</gui><gui>Delete</gui></guiseq>."
 msgstr ""
+"Para quitar canciones almacenadas en su reproductor de música portátil, "
+"elija su reproductor en Banshee para ver su colección. Elija las pistas que "
+"quiere quitar, pulse con el botón derecho sobre las pistas y elija "
+"«Eliminar», o elija <guiseq><gui>Editar</gui><gui>Eliminar</gui></guiseq> en "
+"el menú."
 
 #: C/sync.page:142(p)
 msgid ""
 "Deleting files from your portable music player will permanently remove the "
 "files and you will not be able to recover them."
 msgstr ""
+"Al eliminar archivos de su reproductor de música portátil se eliminarán de "
+"manera permanente, y no podrá recuperarlos."
 
 #: C/sort.page:9(desc)
 msgid "Sort your media and add additional columns."
@@ -395,6 +453,12 @@ msgid ""
 "sort that column alphabetically. Clicking the <gui>Artist</gui> column again "
 "will sort the column in reverse alphabetical order."
 msgstr ""
+"Puede ordenar su colección usando su ratón para pulsar en cualquiera de las "
+"columnas mostradas en la vista de colección. Si quiere ordenar su colección "
+"de música por artista, pulse en la cabecera de la columna <gui>Artista</gui> "
+"y Banshee ordenará automáticamente esa columna por orden alfabético. "
+"Pulsando otra vez en la columna <gui>Artista</gui>, la columna se ordenará "
+"en orden alfabético inverso."
 
 #: C/search.page:9(desc)
 msgid "Search your media and perfom basic queries."
@@ -410,6 +474,9 @@ msgid ""
 "quickly and easily with basic search terms or perform detailed searches with "
 "Banshee's advanced search terminology."
 msgstr ""
+"Banshee tiene un lenguaje de búsquedas potente. Puede buscar en su colección "
+"rápida y fácilmente con términos de búsqueda básicos, o realizar búsquedas "
+"detalladas con la terminología de búsqueda avanzada de Banshee."
 
 #: C/search.page:30(p)
 msgid ""
@@ -425,12 +492,20 @@ msgstr ""
 msgid ""
 "A search query consists of some basic terms, for example, <em>dave matthews</"
 "em>. By entering <em>dave matthews</em> in the search box, Banshee will "
-"search all metatdata fields including Track Title, Album Title, Album "
-"Artist, Year, etc. Any track whose metadata includes <em>dave</em> and "
-"<em>matthews</em> will be returned. Search terms are case, meaning you don't "
+"search all metadata fields including Track Title, Album Title, Album Artist, "
+"Year, etc. Any track whose metadata includes <em>dave</em> and <em>matthews</"
+"em> will be returned. Search terms are case insensitive, meaning you don't "
 "have to capitalize. <em>dave</em>, <em>Dave</em>, and <em>DAVE</em> all mean "
 "the same thing when searching."
 msgstr ""
+"Una consulta de búsqueda consiste en algunos términos básicos, por ejemplo, "
+"<em>dave matthews</em>. Al introducir <em>dave matthews</em> en la caja de "
+"búsqueda, Banshee buscará todos los campos de metadatos, incluyendo «Pista», "
+"«Título de la pista», «Título del álbum», «Artista», «Año», etc. Se devolverá "
+"cualquier pista cuyos metadatos incluyan <em>dave</em> y <em>matthews</em>. "
+"Los términos de búsqueda no son sensibles a las mayúsculas, lo que significa "
+"que no tiene que preocuparse de usarlas. <em>dave</em>, <em>Dave</em> y "
+"<em>DAVE</em> tienen todos el mismo significado a la hora de buscar."
 
 #: C/search.page:43(title)
 msgid "Basic Operators"
@@ -443,6 +518,10 @@ msgid ""
 "other operators are used between two search terms. Because it is the "
 "default, there is no explicit AND operator."
 msgstr ""
+"Los operadores se pueden poner entre dos palabras de la búsqueda o ponerse "
+"antes de una palabra de la búsqueda. El operador predeterminado es <gui>AND</"
+"gui> y se usa cuando no se usan otros operadores entre dos términos de "
+"búsqueda. Al ser el operador predeterminado, no existe de manera explícita."
 
 #: C/search.page:49(p)
 msgid ""
@@ -450,6 +529,9 @@ msgid ""
 "these three operations can yield very powerful queries to help you search "
 "your media."
 msgstr ""
+"Otros operadores básicos son <gui>OR</gui> y <gui>NOT</gui>. Juntos, estos "
+"tres operadores puede generar consultas muy potentes para ayudarle a buscar "
+"sus archivos multimedia."
 
 #: C/search.page:56(title)
 msgid "Logical Operators and Examples"
@@ -473,11 +555,13 @@ msgstr "Descripción"
 
 #: C/search.page:65(p)
 msgid "<em>default</em>, <em>white space</em>"
-msgstr ""
+msgstr "<em>predeterminado</em>, <em>espacio en blanco</em>"
 
 #: C/search.page:65(p)
 msgid "Search for two terms with a space between the two words or terms."
 msgstr ""
+"Buscar dos términos con un espacio en blanco entre las dos palabras o "
+"términos."
 
 #: C/search.page:69(p)
 msgid "OR, or, <key>|</key>, <key>,</key>"
@@ -486,16 +570,20 @@ msgstr "OR, or, <key>|</key>, <key>,</key>"
 #: C/search.page:69(p)
 msgid "Search results will be two songs with either result in any field."
 msgstr ""
+"Los resultados de la búsqueda serán dos canciones con resultados en "
+"cualquier campo."
 
 #: C/search.page:73(p)
 msgid "NOT, not,<key>-</key>"
-msgstr "NOT, not,<key>-</key>"
+msgstr "NOT, not, <key>-</key>"
 
 #: C/search.page:73(p)
 msgid ""
 "Do not display search results with any search term that follows the operator "
 "of NOT, not,<key>-</key>."
 msgstr ""
+"No mostrar los resultados de la búsqueda con cualquier término de búsqueda "
+"que sigue al operador NOT, not, <key>-</key>."
 
 #: C/search.page:80(p)
 msgid "Examples of logical operations include:"
@@ -514,6 +602,8 @@ msgid ""
 "Matches any fields in a track containing both <em>dave</em> and "
 "<em>matthews</em>."
 msgstr ""
+"Busca cualquier campo de una pista que contenga <em>dave</em> y "
+"<em>matthews</em>."
 
 #: C/search.page:92(p)
 msgid "dave, matthews"
@@ -521,9 +611,11 @@ msgstr "dave, matthews"
 
 #: C/search.page:92(p) C/search.page:97(p) C/search.page:102(p)
 msgid ""
-"Matches any fields in a track containing both <em>dave</em> or <em>matthews</"
-"em>."
+"Matches any fields in a track containing either <em>dave</em> or "
+"<em>matthews</em>."
 msgstr ""
+"Busca cualquier campo de una pista de una pista que contenga <em>dave</em> o "
+"<em>matthews</em>."
 
 #: C/search.page:97(p)
 msgid "dave or matthews"
@@ -538,15 +630,17 @@ msgid "-\"dave matthews\""
 msgstr "-\"dave matthews\""
 
 #: C/search.page:107(p)
-msgid ""
-"Displays all tracks whose fields do not containt <em>dave matthews</em>."
+msgid "Displays all tracks whose fields do not contain <em>dave matthews</em>."
 msgstr ""
+"Muestra todas las pistas cuyos campos no contienen <em>dave matthews</em>."
 
 #: C/search.page:114(p)
 msgid ""
 "For more information on performing more complex search queries, see the "
 "<link xref=\"adv-search\"/> page."
 msgstr ""
+"Para obtener más información sobre cómo realizar consultas de búsqueda más "
+"complejas, consulte la <link xref=\"adv-search\"/>"
 
 #: C/rb-import.page:8(desc)
 msgid ""
@@ -557,7 +651,7 @@ msgstr ""
 
 #: C/rb-import.page:12(title)
 msgid "Import your <app>Rhythmbox</app> library"
-msgstr ""
+msgstr "Importar su colección de <app>Rhythmbox</app>"
 
 #: C/play.page:9(desc)
 msgid "Play your videos and music files."
@@ -630,6 +724,9 @@ msgid ""
 "Favorites, Recently Added and Unheard music. Choose the one you wish to "
 "listen to and you can play songs from each."
 msgstr ""
+"Banshee también muestra sus álbumes favoritos (aquellos que más escucha), "
+"favoritos recientes, añadidos recientemente y música no oída. Seleccione el "
+"que quiere escuchar y puede reproducir canciones de cada uno de ellos."
 
 #: C/play.page:61(title)
 msgid "Play a video"
@@ -652,6 +749,8 @@ msgid ""
 "Banshee also shows your Favorite videos (those you watch the most) and "
 "Unwatched videos. Choose one and you can play a video from the list."
 msgstr ""
+"Banshee también muestra sus vídeos favoritos (aquellos que más ve) y vídeos "
+"no vistos. Seleccione uno y puede reproducir un vídeo desde la lista."
 
 #: C/play.page:74(title)
 msgid "Play a Podcast"
@@ -659,7 +758,7 @@ msgstr "Reproducir un podcast"
 
 #: C/play.page:76(p)
 msgid ""
-"Podcasts shows you all Podcasts you're subscribed too, all Podcast shows "
+"Podcasts shows you all Podcasts you're subscribed to, all Podcast shows "
 "available, and the Podcast browser lists all Podcasts in order of newest "
 "first."
 msgstr ""
@@ -670,6 +769,9 @@ msgid ""
 "press the <key>Spacebar</key>, or choose <guiseq><gui>Playback</"
 "gui><gui>Play</gui></guiseq> from the Banshee menu."
 msgstr ""
+"Para reproducir un podcast, elija el que quiere reproducir de la lista y "
+"pulse <key>Espacio</key> o elija <guiseq><gui>Reproducir</"
+"gui><gui>Reproducir</gui></guiseq> desde el menú de Banshee."
 
 #: C/play.page:88(title)
 msgid "Play an internet radio station"
@@ -680,6 +782,8 @@ msgid ""
 "The Radio source shows you all internet radio stations you have added to "
 "Banshee alphabetically."
 msgstr ""
+"La fuente «Radio» le muestra, alfabéticamente, todas las emisoras de radio de "
+"Internet que ha añadido a Banshee."
 
 #: C/play.page:94(p)
 msgid ""
@@ -687,10 +791,14 @@ msgid ""
 "from the list and press the <key>Spacebar</key>, or choose "
 "<guiseq><gui>Playback</gui><gui>Play</gui></guiseq> from the Banshee menu."
 msgstr ""
+"Para reproducir una emisora de radio de Internet, elija la emisora de radio "
+"que quiere reproducir de la lista y pulse <key>Espacio</key> o elija "
+"<guiseq><gui>Reproducir</gui><gui>Reproducir</gui></guiseq> desde el menú de "
+"Banshee."
 
 #: C/play-queue.page:9(desc)
 msgid "Add media to your play queue."
-msgstr ""
+msgstr "Añadir archivos multimedia a su cola de reproducción."
 
 #: C/play-queue.page:18(title)
 msgid "Play Queue"
@@ -702,6 +810,10 @@ msgid ""
 "order. You can add many tracks to let you listen to hours of music non-stop. "
 "You can add individual tracks or entire albums, and sort or re-order them."
 msgstr ""
+"La <gui>Cola de reproducción</gui> le permite añadir música para "
+"reproducirla en orden secuencial. Puede añadir varias pistas para escuchar "
+"horas de música sin parar. Puede añadir pistas individuales o álbumes "
+"completos, y ordenarlos o reordenarlos."
 
 #: C/play-queue.page:26(title)
 msgid "Add Music to the Play Queue"
@@ -712,6 +824,8 @@ msgid ""
 "From your music library, you will need to select the music tracks or albums "
 "you want to add to the play queue."
 msgstr ""
+"Desde su colección de música, deberá seleccionar las pistas de música o los "
+"álbumes que quiere añadir a la cola de reproducción."
 
 #: C/play-queue.page:32(p)
 msgid ""
@@ -719,6 +833,9 @@ msgid ""
 "the album and drag the album over <gui>Play Queue</gui> in the far left "
 "window pane."
 msgstr ""
+"Para añadir un álbum completo a la cola de reproducción, usando su ratón "
+"pulse en el álbum y, manteniéndolo pulsado, arrástrelo hasta la <gui>Cola de "
+"reproducción</gui> en el panel izquierdo de la ventana."
 
 #: C/play-queue.page:37(p)
 msgid ""
@@ -727,15 +844,27 @@ msgid ""
 "the far left window pane, or right click the track and choose <gui>Add to "
 "Play Queue</gui>."
 msgstr ""
+"Puede añadir pistas de música a la cola de reproducción individualmente o en "
+"grupo. Para añadir un archivo individual, arrastre y suéltelo sobre la "
+"<gui>Cola de reproducción</gui> en en panel izquierdo de la ventana, o pulse "
+"con el botón derecho sobre la pista y elija <gui>Añadir a la cola de "
+"reproducción</gui>."
 
 #: C/play-queue.page:43(p)
 msgid ""
 "You can select multiple files by using your mouse and pressing <key>Control</"
 "key> and choosing each file with your mouse or select a range of files by "
-"pressing <key>Shift</key> twice to select that range of files. You can then "
-"drag and drop it over the <gui>Play Queue</gui> in the far left window pane "
-"or right click the tracks and choose <gui>Add to Play Queue</gui>."
+"pressing <key>Shift</key> and clicking twice to select that range of files. "
+"You can then drag and drop it over the <gui>Play Queue</gui> in the far left "
+"window pane or right click the tracks and choose <gui>Add to Play Queue</"
+"gui>."
 msgstr ""
+"Puede seleccionar varios archivos usando su ratón y pulsando <key>Ctrl</key> "
+"y eligiendo cada archivo con su ratón, o seleccionando un rango de archivos "
+"pulsando <key>Mayús</key> dos veces para seleccionar el rango de archivos. "
+"Entonces puede arrastrar y soltar sobre la <gui>Cola de reproducción</gui> "
+"en el panel izquierdo de la ventana o pulsar con el botón derecho sobre las "
+"pistas y seleccionar <gui>Añadir a la cola de reproducción</gui>."
 
 #: C/play-queue.page:56(title)
 msgid "Organize Your Play Queue"
@@ -750,28 +879,41 @@ msgid ""
 "order with your mouse and release your mouse over the number or place in the "
 "list you wish those files to be in the queue."
 msgstr ""
+"Su cola de reproducción está organizada en el orden en que añade las pistas. "
+"Las primeras pistas o álbumes que añade a la cola serán las primeras que se "
+"reproduzcan. Puede reordenar su cola de reproducción usando su ratón y "
+"arrastrando y soltando una pista o un grupo de pistas en la lista. Elija con "
+"su ratón la pista o las pistas que quiere reordenar y suelte el ratón encima "
+"del número o del sitio en la lista en que quiere que estén esas pistas en la "
+"cola."
 
 #: C/play-queue.page:70(title)
 msgid "Removing Tracks from the Play Queue"
-msgstr "Eliminar pistas de la cola de reproducción"
+msgstr "Quitar pistas de la cola de reproducción"
 
 #: C/play-queue.page:72(p)
 msgid ""
 "You can remove an individual track, a group of tracks, or clear your entire "
 "play queue."
 msgstr ""
+"Puede quitar una pista individual, un grupo de pistas o limpiar la cola de "
+"reproducción completa."
 
 #: C/play-queue.page:76(p)
 msgid ""
 "To remove an individual track or group of tracks, select the track with your "
 "mouse and then press <key>Delete</key>."
 msgstr ""
+"Para quitar una pista individual o un grupo de pistas, seleccione la pista "
+"con su ratón y pulse <key>Supr</key>."
 
 #: C/play-queue.page:80(p)
 msgid ""
 "To clear your entire Play Queue, press the <gui>Clear</gui> button in the "
 "upper right hand corner of the Play Queue."
 msgstr ""
+"Para limpiar la cola de reproducción completa, pulse el botón <gui>Limpiar</"
+"gui> en la esquina superior derecha de la cola de reproducción."
 
 #: C/manage-tags.page:10(desc)
 msgid "Edit and change music tags and metadata."
@@ -794,18 +936,29 @@ msgid ""
 "ripping the CD if available. For more information on ripping CDs and "
 "including the metadata see the <link xref=\"import\"/>."
 msgstr ""
+"La música digital contiene metadatos que almacenan información en el archivo "
+"de música, incluyendo el artista, el álbum, el año de grabación, el género, "
+"etc. La mayor parte de la música comprada por Internet tendrá los metadatos "
+"ya incrustados, y si importa música desde CD, Banshee incluirá los metadatos "
+"al extraer el CD, si están disponibles. Para obtener más información sobre "
+"cómo extraer CD e incluir los metadatos, consulte la <link xref=\"import\"/>."
 
 #: C/manage-tags.page:39(p)
 msgid ""
 "Popular metadata formats are ID3v1 and ID3v2 for MP3 files and Vorbis "
 "comments for OGG Vorbis files."
 msgstr ""
+"Formatos de metadatos populares son ID3v1 y ID3v2 para archivos MP3 y "
+"comentarios Vorbis para archivos OGG Vorbis."
 
 #: C/manage-tags.page:42(p)
 msgid ""
 "If you have imported songs that do not contain metadata, <app>Banshee</app> "
 "will display <gui>Unknown</gui> for most fields in the library."
 msgstr ""
+"Si ha importado canciones que no contienen metadatos, <app>Banshee</app> "
+"mostrará <gui>Desconocido</gui> para la mayoría de los campos de la "
+"colección."
 
 #: C/manage-tags.page:50(title)
 msgid "Edit Your Metadata"
@@ -819,16 +972,25 @@ msgid ""
 "mouse and right click on the files and select <gui>Edit Track Information</"
 "gui>."
 msgstr ""
+"Puede cambiar y editar los metadatos de sus canciones. Seleccione la canción "
+"o las canciones que quiere actualizar y pulse <key>E</key>, elija "
+"<guiseq><gui>Editar</gui><gui>Editar la información de la pista</gui></"
+"guiseq> desde el menú o pulse con el botón derecho del ratón sobre los "
+"archivos y seleccione <gui>Editar la información de la pista</gui>."
 
 #: C/manage-tags.page:59(p)
 msgid ""
 "A dialog box will appear that shows the song's metadata and allow you to "
 "change or update it. The default fields displayed include:"
 msgstr ""
+"Aparecerá un cuadro de diálogo que mostrará los metadatos de la canción y le "
+"permitirá cambiarlos o actualizarlos. Los campos predeterminados mostrados "
+"incluyen:"
 
 #: C/manage-tags.page:63(gui)
-msgid "Track Title:"
-msgstr "Título de la pista:"
+#| msgid "Track Title:"
+msgid "Track Title"
+msgstr "Título de la pista"
 
 #: C/manage-tags.page:64(gui)
 msgid "Track Artist"
@@ -872,7 +1034,7 @@ msgstr ""
 msgid "Create and manage playlists."
 msgstr "Crear y gestionar listas de reproducción."
 
-#: C/manage-playlists.page:19(title)
+#: C/manage-playlists.page:19(title) C/keyboardshortcuts.page:69(title)
 msgid "Playlists"
 msgstr "Listas de reproducción"
 
@@ -919,9 +1081,22 @@ msgstr ""
 "de reproducción animada para escuchar mientras hace ejercicio."
 
 #: C/manage-playlists.page:42(p)
+#| msgid ""
+#| "You can create a new playlist by pressing <keyseq><key>Control</"
+#| "key><key>N</key></keyseq>, from the menu choosing <guiseq><gui>Menu</"
+#| "gui><gui>New Playlist</gui></guiseq> or by selecing the track(s) you "
+#| "would like to add to the playlist. Select the track(s), right click them, "
+#| "and choose <guiseq><gui>Add to Playlist</gui><gui>New Playlist</gui></"
+#| "guiseq>. You can also drag and drop them to a new playlist by selecting "
+#| "the track(s) and dragging them to the left hand window pane over "
+#| "<gui>Music</gui>. As you drag it over <gui>Music</gui>, a new option "
+#| "<gui><em>New Playlist</em></gui> will appear and you can drop the track"
+#| "(s) over <gui><em>New Playlist</em></gui> to add them to the playlist. "
+#| "You can repeat this process until you have added all the tracks you want "
+#| "in the playlist."
 msgid ""
 "You can create a new playlist by pressing <keyseq><key>Control</key><key>N</"
-"key></keyseq>, from the menu choosing <guiseq><gui>Menu</gui><gui>New "
+"key></keyseq>, from the menu choosing <guiseq><gui>Media</gui><gui>New "
 "Playlist</gui></guiseq> or by selecing the track(s) you would like to add to "
 "the playlist. Select the track(s), right click them, and choose "
 "<guiseq><gui>Add to Playlist</gui><gui>New Playlist</gui></guiseq>. You can "
@@ -932,7 +1107,7 @@ msgid ""
 "gui> to add them to the playlist. You can repeat this process until you have "
 "added all the tracks you want in the playlist."
 msgstr ""
-"Puede crear una nueva lista de reproducción pulsando <keyseq><key>Control</"
+"Puede crear una nueva lista de reproducción pulsando <keyseq><key>Ctrl</"
 "key><key>N</key></keyseq>, eligiendo desde el menú <guiseq><gui>Multimedia</"
 "gui><gui>Lista de reproducción nueva</gui></guiseq> o seleccionando las "
 "pistas que le gustaría añadir a la lista de reproducción. Seleccione las "
@@ -944,7 +1119,7 @@ msgstr ""
 "de reproducción nueva</em></gui> y podrá soltar las pistas sobre "
 "<gui><em>Lista de reproducción nueva</em></gui> para añadirlas a la lista. "
 "Puede repetir este proceso hasta que haya añadido a la lista de reproducción "
-"todas las pistas que desee."
+"todas las pistas que quiera."
 
 #: C/manage-playlists.page:56(p)
 msgid ""
@@ -1101,7 +1276,8 @@ msgstr ""
 "Favoritos recientes (Canciones escuchadas a menudo en la última semana)"
 
 #: C/manage-playlists.page:135(p)
-msgid "Recently Added (Songs imported within the last week"
+#| msgid "Recently Added (Songs imported within the last week"
+msgid "Recently Added (Songs imported within the last week)"
 msgstr "Añadidas recientemente (Canciones importadas durante la última semana)"
 
 #: C/manage-playlists.page:136(p)
@@ -1244,8 +1420,19 @@ msgstr ""
 "etiquetado o marcado como favoritas."
 
 #: C/lastfm.page:80(p)
+#, fuzzy
+#| msgid ""
+#| "In Banshee's context menu on the left hand side, you will now have a Last."
+#| "fm section, including your Last.fm radio stations. You will need an "
+#| "active internet connection to listen to Last.fm radio. Choose the radio "
+#| "station you wish to listen to and Banshee will communicate with Last.fm "
+#| "to populate songs for that radio station. Press the <gui>Play</gui> "
+#| "button in Banshee or <key>Spacebar</key> to start streaming a Last.fm "
+#| "radio station. You can also press the <gui>Next</gui> button in Banshee, "
+#| "<key>N</key> or choose <guiseq><gui>Playback</gui><gui>Next</gui></"
+#| "guiseq> to play the next song in your radio station queue."
 msgid ""
-"In Banshee's context menu on the left hand side, you will now have a Last.fm "
+"In Banshee's sources pane on the left hand side, you will now have a Last.fm "
 "section, including your Last.fm radio stations. You will need an active "
 "internet connection to listen to Last.fm radio. Choose the radio station you "
 "wish to listen to and Banshee will communicate with Last.fm to populate "
@@ -1262,7 +1449,7 @@ msgstr ""
 "rellenar canciones para esa emisora de radio. Pulse el botón "
 "<gui>Reproducir</gui> en Banshee o la <key>barra espaciadora</key> para "
 "empezar a reproducir una emisora de radio de Last.fm. También puede pulsar "
-"el botón  <gui>Siguiente</gui> en Banshee, <key>N</key> o escoger "
+"el botón <gui>Siguiente</gui> en Banshee, <key>N</key> o escoger "
 "<guiseq><gui>Reproducir</gui><gui>Siguiente</gui></guiseq> para reproducir "
 "la siguiente canción en la cola de su emisora de radio."
 
@@ -1315,28 +1502,28 @@ msgstr "B"
 msgid "Play the previous song"
 msgstr "Reproducir la canción anterior"
 
-#: C/keyboardshortcuts.page:49(title) C/keyboardshortcuts.page:69(title)
+#: C/keyboardshortcuts.page:49(title)
 msgid "Library Interaction"
 msgstr "Interacción con la colección"
 
-#: C/keyboardshortcuts.page:56(key) C/keyboardshortcuts.page:76(key)
+#: C/keyboardshortcuts.page:56(p)
+msgid "<key>/</key>, <keyseq><key>Control</key><key>F</key></keyseq>"
+msgstr "<key>/</key>, <keyseq><key>Ctrl</key><key>F</key></keyseq>"
+
+#: C/keyboardshortcuts.page:56(p)
+msgid "Move the focus to the search box"
+msgstr "Mover el foco a la caja de búsqueda"
+
+#: C/keyboardshortcuts.page:60(key) C/keyboardshortcuts.page:76(key)
 #: C/keyboardshortcuts.page:114(key) C/keyboardshortcuts.page:118(key)
 #: C/keyboardshortcuts.page:123(key) C/keyboardshortcuts.page:127(key)
 #: C/keyboardshortcuts.page:132(key) C/keyboardshortcuts.page:137(key)
 msgid "Control"
 msgstr "Ctrl"
 
-#: C/keyboardshortcuts.page:56(key) C/keyboardshortcuts.page:110(key)
-msgid "F"
-msgstr "F"
-
-#: C/keyboardshortcuts.page:56(p)
-msgid "Move the focus to the search box"
-msgstr "Mover el foco a la caja de búsqueda"
-
-#: C/keyboardshortcuts.page:60(p)
-msgid "<key>/</key>, <keyseq><key>Control</key><key>F</key></keyseq>"
-msgstr "<key>/</key>, <keyseq><key>Ctrl</key><key>F</key></keyseq>"
+#: C/keyboardshortcuts.page:60(key)
+msgid "I"
+msgstr "I"
 
 #: C/keyboardshortcuts.page:61(p)
 msgid "Open import media dialog"
@@ -1361,6 +1548,10 @@ msgstr "Marcar los episodios seleccionados como antiguos"
 #: C/keyboardshortcuts.page:103(title)
 msgid "Interface"
 msgstr "Interfaz"
+
+#: C/keyboardshortcuts.page:110(key)
+msgid "F"
+msgstr "F"
 
 #: C/keyboardshortcuts.page:110(p)
 msgid "Toggle full-screen mode"
@@ -1389,8 +1580,8 @@ msgstr "W"
 #: C/keyboardshortcuts.page:123(p)
 msgid "Hide Banshee Window (Requires Notification Area Plug-in Enabled"
 msgstr ""
-"Ocultar la ventana de Banshee (requiere tener activada la extensión «Icono "
-"en el área de notificación»)"
+"Ocultar la ventana de Banshee (requiere tener activada la extensión «Icono en "
+"el área de notificación»)"
 
 #: C/keyboardshortcuts.page:127(key)
 msgid "Left Mouse Button"
@@ -1772,7 +1963,7 @@ msgstr "Añadir emisora de radio"
 msgid ""
 "To add an internet radio station to Banshee, press <gui>Add Station</gui> in "
 "the upper right hand corner of Banshee or, from the menu, choose "
-"<guiseq><gui>Menu</gui><gui>Add Station</gui></guiseq>."
+"<guiseq><gui>Media</gui><gui>Add Station</gui></guiseq>."
 msgstr ""
 
 #: C/add-radio.page:48(p)
@@ -1788,9 +1979,9 @@ msgid ""
 "kind of music the internet radio station plays from the available drop down "
 "selections. You will then need to enter the <gui>Station Name</gui>. Enter a "
 "name for the radio station. Then press tab or use your mouse to select the "
-"<gui>Stream URL:</gui> dialog to paste the URL of the radio station. Using "
+"<gui>Stream URL</gui> field to paste the URL of the radio station. Using "
 "your mouse right click and choose <gui>Paste</gui> or press "
-"<keyseq><key>Control</key>+<key>V</key></keyseq>."
+"<keyseq><key>Control</key><key>V</key></keyseq>."
 msgstr ""
 
 #: C/add-radio.page:62(p)
@@ -1890,4 +2081,6 @@ msgstr ""
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/index.page:0(None)
 msgid "translator-credits"
-msgstr "Benjamín Valero Espinosa <benjavalero@gmail.com>, 2010"
+msgstr ""
+"Daniel Mustieles <daniel.mustieles@gmail.com>, 2011\n"
+"Benjamín Valero Espinosa <benjavalero@gmail.com>, 2010, 2011"
