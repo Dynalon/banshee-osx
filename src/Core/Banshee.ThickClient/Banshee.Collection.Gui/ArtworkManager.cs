@@ -423,6 +423,13 @@ namespace Banshee.Collection.Gui
                     }
                 }
 
+                if (count == 0) {
+                    try {
+                        ServiceManager.DbConnection.Execute ("DELETE FROM CoverArtDownloads");
+                        Log.InformationFormat ("Reset CoverArtDownloads table so missing artwork will get fetched");
+                    } catch {}
+                }
+
                 Directory.Delete (legacy_root_path, true);
                 Log.InformationFormat ("Migrated {0} files in {1}s", count, DateTime.Now.Subtract(started).TotalSeconds);
             }
