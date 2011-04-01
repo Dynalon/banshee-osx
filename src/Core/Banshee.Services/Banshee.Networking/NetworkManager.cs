@@ -40,6 +40,7 @@ namespace Banshee.Networking
         private interface INetworkManager
         {
             event StateChangeHandler StateChange;
+            event StateChangeHandler StateChanged;
             State state ();
         }
 
@@ -58,18 +59,36 @@ namespace Banshee.Networking
 
             manager = Bus.System.GetObject<INetworkManager>(BusName, new ObjectPath(ObjectPath));
             manager.StateChange += OnStateChange;
+            // Grr, NM 0.9 renamed the signal to StateChanged
+            manager.StateChanged += OnStateChange;
         }
 
         private void OnStateChange(State state)
         {
+            state = DeFrobApiBreak (state);
             StateChangeHandler handler = StateChange;
             if(handler != null) {
                 handler(state);
             }
         }
 
+        private static State DeFrobApiBreak (State state)
+        {
+            // Grr, NM 0.9 changed the state values. Map them to our existing enum
+            switch ((int) state) {
+                case 10: return State.Asleep;
+                case 20: return State.Disconnected;
+                case 30: return State.Disconnected;
+                case 40: return State.Connecting;
+                case 50: return State.Connected;
+                case 60: return State.Connected;
+                case 70: return State.Connected;
+            }
+            return state;
+        }
+
         public State State {
-            get { return manager.state(); }
+            get { return DeFrobApiBreak (manager.state ()); }
         }
 
         public static bool ManagerPresent {
