@@ -73,19 +73,29 @@ namespace Banshee.GnomeBackend
             }
         }
 
+        static bool logged_error;
         public void Inhibit ()
         {
-            if (!cookie.HasValue && Manager != null) {
-                cookie = Manager.Inhibit ("Banshee", Catalog.GetString ("Fullscreen video playback active"));
+            try {
+                if (!cookie.HasValue && Manager != null) {
+                    cookie = Manager.Inhibit ("Banshee", Catalog.GetString ("Fullscreen video playback active"));
+                }
+            } catch (Exception e) {
+                if (!logged_error) {
+                    Log.Information ("Error trying to Inhibit GNOME screensaver; probably running >= 2.91.91 gnome-screensaver which removed this API", e.Message);
+                    logged_error = true;
+                }
             }
         }
 
         public void UnInhibit ()
         {
-            if (cookie.HasValue && Manager != null) {
-                Manager.UnInhibit (cookie.Value);
-                cookie = null;
-            }
+            try {
+                if (cookie.HasValue && Manager != null) {
+                    Manager.UnInhibit (cookie.Value);
+                    cookie = null;
+                }
+            } catch {}
         }
     }
 }
