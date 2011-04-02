@@ -82,7 +82,7 @@ namespace Banshee.GnomeBackend
                 }
             } catch (Exception e) {
                 if (!logged_error) {
-                    Log.Information ("Error trying to Inhibit GNOME screensaver; probably running >= 2.91.91 gnome-screensaver which removed this API", e.Message);
+                    Hyena.Log.Information ("Error trying to Inhibit GNOME screensaver; probably running >= 2.91.91 gnome-screensaver which removed this API", e.Message);
                     logged_error = true;
                 }
             }
