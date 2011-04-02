@@ -1,17 +1,17 @@
 # Spanish translation for banshee-help.master
 # Copyright (C) 2010 banshee's COPYRIGHT HOLDER
 # This file is distributed under the same license as the banshee package.
-# Ángel Sanz <mizo0mizo@gmail.com>, 2010.
 # Guillermo Pascual <akira.space@gmail.com>, 2010.
 # Jorge González <jorgegonz@svn.gnome.org>, 2010, 2011.
 # Benjamín Valero Espinosa <benjavalero@gmail.com>, 2010, 2011.
+# Ángel Sanz <mizo0mizo@gmail.com>, 2010, 2011.
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: banshee-help.master\n"
-"POT-Creation-Date: 2011-03-30 21:06+0000\n"
-"PO-Revision-Date: 2011-03-31 11:01+0200\n"
+"POT-Creation-Date: 2011-04-01 19:24+0000\n"
+"PO-Revision-Date: 2011-04-02 13:25+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -104,8 +104,8 @@ msgid ""
 "Banshee can display your music or video library, Podcast subscriptions or "
 "even the Amazon Music Store to allow you to buy music."
 msgstr ""
-"Cuando selecciona una canción o un vídeo desde «Fuentes», Banshee mostrará su "
-"contenido en el «Examinador de colecciones». Dependiendo de la fuente que "
+"Cuando selecciona una canción o un vídeo desde «Fuentes», Banshee mostrará "
+"su contenido en el «Examinador de colecciones». Dependiendo de la fuente que "
 "elija, Banshee podrá mostrar su colección de música o de vídeo, "
 "subscripciones a Podcasts o incluso la tienda de música de Amazon para "
 "permitirle comprar música."
@@ -501,11 +501,12 @@ msgstr ""
 "Una consulta de búsqueda consiste en algunos términos básicos, por ejemplo, "
 "<em>dave matthews</em>. Al introducir <em>dave matthews</em> en la caja de "
 "búsqueda, Banshee buscará todos los campos de metadatos, incluyendo «Pista», "
-"«Título de la pista», «Título del álbum», «Artista», «Año», etc. Se devolverá "
-"cualquier pista cuyos metadatos incluyan <em>dave</em> y <em>matthews</em>. "
-"Los términos de búsqueda no son sensibles a las mayúsculas, lo que significa "
-"que no tiene que preocuparse de usarlas. <em>dave</em>, <em>Dave</em> y "
-"<em>DAVE</em> tienen todos el mismo significado a la hora de buscar."
+"«Título de la pista», «Título del álbum», «Artista», «Año», etc. Se "
+"devolverá cualquier pista cuyos metadatos incluyan <em>dave</em> y "
+"<em>matthews</em>. Los términos de búsqueda no son sensibles a las "
+"mayúsculas, lo que significa que no tiene que preocuparse de usarlas. "
+"<em>dave</em>, <em>Dave</em> y <em>DAVE</em> tienen todos el mismo "
+"significado a la hora de buscar."
 
 #: C/search.page:43(title)
 msgid "Basic Operators"
@@ -762,6 +763,9 @@ msgid ""
 "available, and the Podcast browser lists all Podcasts in order of newest "
 "first."
 msgstr ""
+"La colección Podcasts le mostrará todos los podcasts a los que está "
+"suscrito, todos las emisiones disponibles, y el explorador de podcasts lista "
+"todos los podcasts en orden de más reciente a más antiguo."
 
 #: C/play.page:80(p)
 msgid ""
@@ -782,8 +786,8 @@ msgid ""
 "The Radio source shows you all internet radio stations you have added to "
 "Banshee alphabetically."
 msgstr ""
-"La fuente «Radio» le muestra, alfabéticamente, todas las emisoras de radio de "
-"Internet que ha añadido a Banshee."
+"La fuente «Radio» le muestra, alfabéticamente, todas las emisoras de radio "
+"de Internet que ha añadido a Banshee."
 
 #: C/play.page:94(p)
 msgid ""
@@ -988,7 +992,6 @@ msgstr ""
 "incluyen:"
 
 #: C/manage-tags.page:63(gui)
-#| msgid "Track Title:"
 msgid "Track Title"
 msgstr "Título de la pista"
 
@@ -1081,19 +1084,6 @@ msgstr ""
 "de reproducción animada para escuchar mientras hace ejercicio."
 
 #: C/manage-playlists.page:42(p)
-#| msgid ""
-#| "You can create a new playlist by pressing <keyseq><key>Control</"
-#| "key><key>N</key></keyseq>, from the menu choosing <guiseq><gui>Menu</"
-#| "gui><gui>New Playlist</gui></guiseq> or by selecing the track(s) you "
-#| "would like to add to the playlist. Select the track(s), right click them, "
-#| "and choose <guiseq><gui>Add to Playlist</gui><gui>New Playlist</gui></"
-#| "guiseq>. You can also drag and drop them to a new playlist by selecting "
-#| "the track(s) and dragging them to the left hand window pane over "
-#| "<gui>Music</gui>. As you drag it over <gui>Music</gui>, a new option "
-#| "<gui><em>New Playlist</em></gui> will appear and you can drop the track"
-#| "(s) over <gui><em>New Playlist</em></gui> to add them to the playlist. "
-#| "You can repeat this process until you have added all the tracks you want "
-#| "in the playlist."
 msgid ""
 "You can create a new playlist by pressing <keyseq><key>Control</key><key>N</"
 "key></keyseq>, from the menu choosing <guiseq><gui>Media</gui><gui>New "
@@ -1276,7 +1266,6 @@ msgstr ""
 "Favoritos recientes (Canciones escuchadas a menudo en la última semana)"
 
 #: C/manage-playlists.page:135(p)
-#| msgid "Recently Added (Songs imported within the last week"
 msgid "Recently Added (Songs imported within the last week)"
 msgstr "Añadidas recientemente (Canciones importadas durante la última semana)"
 
@@ -1420,17 +1409,6 @@ msgstr ""
 "etiquetado o marcado como favoritas."
 
 #: C/lastfm.page:80(p)
-#, fuzzy
-#| msgid ""
-#| "In Banshee's context menu on the left hand side, you will now have a Last."
-#| "fm section, including your Last.fm radio stations. You will need an "
-#| "active internet connection to listen to Last.fm radio. Choose the radio "
-#| "station you wish to listen to and Banshee will communicate with Last.fm "
-#| "to populate songs for that radio station. Press the <gui>Play</gui> "
-#| "button in Banshee or <key>Spacebar</key> to start streaming a Last.fm "
-#| "radio station. You can also press the <gui>Next</gui> button in Banshee, "
-#| "<key>N</key> or choose <guiseq><gui>Playback</gui><gui>Next</gui></"
-#| "guiseq> to play the next song in your radio station queue."
 msgid ""
 "In Banshee's sources pane on the left hand side, you will now have a Last.fm "
 "section, including your Last.fm radio stations. You will need an active "
@@ -1442,14 +1420,14 @@ msgid ""
 "<guiseq><gui>Playback</gui><gui>Next</gui></guiseq> to play the next song in "
 "your radio station queue."
 msgstr ""
-"En el menú contextual de Banshee a la izquierda, tendrá ahora una sección de "
-"Last.fm, incluyendo sus emisoras de radio de Last.fm. Necesitará una "
+"En el panel de fuentes de Banshee a la izquierda, tendrá ahora una sección "
+"de Last.fm, incluyendo sus emisoras de radio de Last.fm. Necesitará una "
 "conexión a Internet activa para escuchar la radio de Last.fm. Elija la "
 "emisora de radio que desea escuchar y Banshee se comunicará con Last.fm para "
-"rellenar canciones para esa emisora de radio. Pulse el botón "
-"<gui>Reproducir</gui> en Banshee o la <key>barra espaciadora</key> para "
-"empezar a reproducir una emisora de radio de Last.fm. También puede pulsar "
-"el botón <gui>Siguiente</gui> en Banshee, <key>N</key> o escoger "
+"reproducir canciones de la radio de Last.fm. Pulse el botón <gui>Reproducir</"
+"gui> en Banshee o la <key>barra espaciadora</key> para empezar a reproducir "
+"una emisora de radio de Last.fm. También puede pulsar el botón "
+"<gui>Siguiente</gui> en Banshee, <key>N</key> o escoger "
 "<guiseq><gui>Reproducir</gui><gui>Siguiente</gui></guiseq> para reproducir "
 "la siguiente canción en la cola de su emisora de radio."
 
@@ -1580,8 +1558,8 @@ msgstr "W"
 #: C/keyboardshortcuts.page:123(p)
 msgid "Hide Banshee Window (Requires Notification Area Plug-in Enabled"
 msgstr ""
-"Ocultar la ventana de Banshee (requiere tener activada la extensión «Icono en "
-"el área de notificación»)"
+"Ocultar la ventana de Banshee (requiere tener activada la extensión «Icono "
+"en el área de notificación»)"
 
 #: C/keyboardshortcuts.page:127(key)
 msgid "Left Mouse Button"
@@ -1755,6 +1733,9 @@ msgid ""
 "Choose this option to import only the specific file or files you select. You "
 "will be prompted with a dialog to choose the file or files to import."
 msgstr ""
+"Elija esta opción para importar sólo los archivos específicos que "
+"seleccione. Se mostrará un diálogo en el que podrá elegir qué archivos "
+"importar."
 
 #: C/import.page:49(gui)
 msgid "Home Folder"
@@ -1765,6 +1746,8 @@ msgid ""
 "Choose this option to import all music and video files in your entire home "
 "folder, including files in any subfolders."
 msgstr ""
+"Elija esta opción para importar todos los archivos de música y vídeo en su "
+"carpeta personal, incluyendo los archivos de las subcarpetas."
 
 #: C/import.page:54(gui)
 msgid "Videos From Photos Folder"
@@ -1777,7 +1760,7 @@ msgid ""
 "Choose this option to import any videos that have been stored in your Photos "
 "folder."
 msgstr ""
-"Muchas cámaras digitales pueden tomar vídeos cortos, y las aplicaciones de "
+"Muchas cámaras digitales pueden hacer vídeos cortos, y las aplicaciones de "
 "gestión de fotografías a menudo descargan esos vídeos directamente en la "
 "carpeta «Imágenes». Elija esta opción para importar cualquier vídeo que se "
 "haya guardado en la carpeta «Imágenes»."
@@ -1788,7 +1771,7 @@ msgid ""
 "worrying about duplicate entries in your library."
 msgstr ""
 "Puede importar con seguridad desde una carpeta desde la que ya haya "
-"importado sin preocuparse por entradas duplicadas en su colección."
+"importado antes sin riesgo de crear entradas duplicadas en su colección."
 
 #: C/import.page:68(title)
 msgid "Import from a Playlist"
@@ -1810,15 +1793,15 @@ msgstr ""
 
 #: C/import.page:78(title)
 msgid "Additional Import Sources"
-msgstr "Fuentes de importación adicionales"
+msgstr "Importar desde otras fuentes"
 
 #: C/import.page:79(p)
 msgid ""
 "Plugins may add additional import choices. The following additional sources "
 "will be available if the appropriate plugins are enabled:"
 msgstr ""
-"Los complementos pueden añadir opciones adicionales de importación. Las "
-"siguiente fuentes adicionales estarán disponibles si se activan los "
+"Algunos complementos le permiten añadir opciones adicionales de importación. "
+"Las siguientes fuentes adicionales estarán disponibles si se activan los "
 "complementos adecuados:"
 
 #: C/extensions.page:8(desc)
@@ -1839,23 +1822,23 @@ msgstr "Gestionar extensiones de Banshee"
 
 #: C/extensions.page:34(title)
 msgid "Community Banshee Extensions"
-msgstr ""
+msgstr "Extensiones de la comunidad de Banshee"
 
 #: C/extensions.page:36(title)
 msgid "Add community built extensions for Banshee"
-msgstr ""
+msgstr "Añadir extensiones desarrolladas por la comunidad de Banshee"
 
 #: C/emusic.page:8(desc)
 msgid "Import music purchased from eMusic."
-msgstr ""
+msgstr "Importar música comprada en eMusic."
 
 #: C/emusic.page:12(title)
 msgid "Import your eMusic tracks"
-msgstr ""
+msgstr "Importar canciones de eMusic"
 
 #: C/amazon.page:9(desc)
 msgid "Sync and purchase music from the Amazon MP3 Store."
-msgstr ""
+msgstr "Sincronizar y comprar música de la tienda de Amazon MP3."
 
 #: C/amazon.page:24(title)
 msgid "Amazon MP3 Store"
@@ -1869,16 +1852,24 @@ msgid ""
 "an MP3 in certain countries and depending on your location, you may not be "
 "able to buy Amazon MP3s."
 msgstr ""
+"Banshee le permite descargar e importar música de la tienda de Amazon MP3.  "
+"Puede importar de forma manual sus archivos comprados en Amazon, adquirir "
+"música desde el navegador o comprar música desde el propio Banshee. Amazon "
+"sólo permite la compra de música en MP3 en algunos países, por lo que "
+"dependiendo de su ubicación es posible que no pueda comprar MP3 de Amazon."
 
 #: C/amazon.page:34(p)
 msgid ""
 "Banshee uses an Amazon affiliate code for all music purchases. All money "
 "made via this affiliate code is donated to the GNOME Foundation."
 msgstr ""
+"Banshee emplea un código de afiliado con Amazon en todas las compras de "
+"música. Todo el dinero que se gana por medio de este código es donado a la "
+"Fundación GNOME."
 
 #: C/amazon.page:40(title)
 msgid "Purchase Amazon MP3s in your web browser"
-msgstr ""
+msgstr "Comprar música en MP3 desde Amazon desde el navegador"
 
 #: C/amazon.page:42(p)
 msgid ""
@@ -1888,10 +1879,15 @@ msgid ""
 "will download the .amz file and Banshee will automatically open it and begin "
 "the download and import the music."
 msgstr ""
+"La música que se compra desde la tienda de Amazon MP3 puede ser descargada e "
+"importada a Banshee automáticamente. El programa se asocia con los archivos ."
+"amz que Amazon proporciona en la compra de música en MP3. Cuando compre "
+"música en Amazon, el navegador descargará el archivo .amz y Banshee lo "
+"abrirá automáticamente y comenzará la descarga e importación."
 
 #: C/amazon.page:51(title)
 msgid "Buy Amazon MP3s in Banshee"
-msgstr "Comprar MP3 de Amazon en Banshee"
+msgstr "Comprar música en MP3 de Amazon desde Banshee"
 
 #: C/amazon.page:53(p)
 msgid ""
@@ -1902,10 +1898,16 @@ msgid ""
 "click. Banshee will automatically download and import your purchase into the "
 "library."
 msgstr ""
+"También puede buscar canciones en Amazon desde Banshee. Elija la Tienda de "
+"Amazon MP3 desde el menú de la izquierda. Esto cargará la tienda de Amazon "
+"MP3 como si la estuviera viendo en el navegador. Tras iniciar sesión en "
+"Amazon, podrá buscar música que desea comprar y descargarla con una sola "
+"pulsación. Banshee descargará e importará la música comprada a su colección "
+"de forma automática."
 
 #: C/amazon.page:63(title)
 msgid "Import Amazon MP3s manually"
-msgstr "Importar MP3 de Amazon manualmente"
+msgstr "Importar música en MP3 de Amazon manualmente"
 
 #: C/amazon.page:65(p)
 msgid ""
@@ -1916,6 +1918,12 @@ msgid ""
 "to be imported. Banshee will then open this file and connect to the Amazon "
 "MP3 store to begin the download."
 msgstr ""
+"Cuando compra música en Amazon a través del navegador, se descarga un "
+"archivo con la extensión .amz que se guarda en su disco duro. Para importar "
+"de forma manual la música comprada en Amazon, vaya a "
+"<guiseq><gui>Multimedia</gui><gui>Importar contenido multimedia…</gui></"
+"guiseq> y seleccione el archivo *.amz que desea importar. Banshee abrirá el "
+"archivo y se conectará a la tienda de Amazon MP3 para comenzar la descarga."
 
 #: C/amazon.page:74(p)
 msgid ""
@@ -1925,6 +1933,12 @@ msgid ""
 "recommended you download and import any purchases from Amazon within an hour "
 "of purchase."
 msgstr ""
+"Los archivos .amz de Amazon sólo tienen validez por un periodo corto de "
+"tiempo. Si tarda mucho en descargar su música, el archivo expirará y no "
+"podrá utilizarlo para descargar música desde Amazon. La tienda no da "
+"información precisa sobre cuánto tiempo pueden ser utilizados los archivos. "
+"Se recomienda que descargue e importe la música de la tienda Amazon MP3 como "
+"máximo una hora después de la compra."
 
 #: C/advanced.page:8(desc)
 msgid "Get help for advanced actions."
@@ -1937,6 +1951,7 @@ msgstr "Opciones avanzadas y ayuda"
 #: C/add-radio.page:11(desc)
 msgid "Add, remove and play internet radio stations in Banshee."
 msgstr ""
+"Añadir, eliminar y reproducir emisoras de radio por Internet en Banshee."
 
 #: C/add-radio.page:26(title)
 msgid "Internet Radio"
@@ -1954,10 +1969,16 @@ msgid ""
 "amateur broadcasting their own station, or commercial internet radio "
 "stations that include live DJs and even commercials."
 msgstr ""
+"Las emisoras de radio por Internet son parecidas a las emisoras de radio "
+"normales. Permiten a una persona u organización emitir música en directo por "
+"medio de Internet. Las emisoras de radio por Internet pueden consistir en "
+"una emisión simultánea de una emisora corriente, una persona emitiendo su "
+"propio programa, o emisiones de tipo comercial que pueden incluir, por "
+"ejemplo, sesiones de DJ o incluso anuncios."
 
 #: C/add-radio.page:41(title)
 msgid "Add Radio Station"
-msgstr "Añadir emisora de radio"
+msgstr "Añadir emisoras de radio"
 
 #: C/add-radio.page:43(p)
 msgid ""
@@ -1965,6 +1986,10 @@ msgid ""
 "the upper right hand corner of Banshee or, from the menu, choose "
 "<guiseq><gui>Media</gui><gui>Add Station</gui></guiseq>."
 msgstr ""
+"Para añadir una emisora de radio por Internet a Banshee, pulse en "
+"<gui>Añadir emisora</gui> en la esquina superior derecha de Banshee o, desde "
+"el menú, pulse en <guiseq><gui>Multimedia</gui><gui>Añadir emisora</gui></"
+"guiseq>."
 
 #: C/add-radio.page:48(p)
 msgid ""
@@ -1972,6 +1997,10 @@ msgid ""
 "in your web browser. In most browsers, you can right click on the link and "
 "press <gui>Copy Link</gui>."
 msgstr ""
+"En la página web de la emisora de radio, copie en enlace a la URL del "
+"podcast en el navegador. En la mayoría de los navegadores, puede pulsar con "
+"el botón derecho del ratón en el enlace y seleccionar <gui>Copiar enlace</"
+"gui>."
 
 #: C/add-radio.page:54(p)
 msgid ""
@@ -1983,17 +2012,29 @@ msgid ""
 "your mouse right click and choose <gui>Paste</gui> or press "
 "<keyseq><key>Control</key><key>V</key></keyseq>."
 msgstr ""
+"Banshee le pedirá que introduzca el <gui>Género de la emisora</gui>. Elija "
+"el tipo de música que emite la estación de radio del menú desplegable. "
+"Después, tendrá que introducir el <gui>Nombre de la emisora</gui>. Escriba "
+"un nombre para la emisora de radio. A continuación, pulse el tabulador o "
+"seleccione el campo <gui>URL del flujo</gui> y pegue la URL de la emisora de "
+"radio. Puede hacer esto pulsando con el botón derecho del ratón y "
+"seleccionando <gui>Pegar</gui> o pulsando las teclas <keyseq><key>Control</"
+"key><key>V</key></keyseq>."
 
 #: C/add-radio.page:62(p)
 msgid ""
 "You can optionally also fill out the fields for <gui>Station Creator</gui>, "
 "<gui>Description</gui>, and <gui>Rating</gui>."
 msgstr ""
+"Adicionalmente, también puede completar los campos para <gui>Creador de la "
+"emisora</gui>, <gui>Descripción</gui> y <gui>Valoración</gui>."
 
 #: C/add-radio.page:66(p)
 msgid ""
 "Then press <gui>Save</gui> to save the internet radio station in Banshee."
 msgstr ""
+"Para acabar, pulse en <gui>Guardar</gui> para guardar la estación de radio "
+"por Internet en Banshee."
 
 #: C/add-podcast.page:11(desc)
 msgid "Add, remove and play podcasts in Banshee."
@@ -2010,6 +2051,10 @@ msgid ""
 "a podcast in Banshee, each time a new program is released, Banshee will "
 "automatically download the podcast and allow you to listen to it."
 msgstr ""
+"Los podcasts son programas grabados, parecidos a los de radio, que se "
+"encuentran disponibles en Internet y a los que puede suscribirse. Cuando se "
+"suscriba a un podcast en Banshee, el programa irá descargando los nuevos "
+"programas automáticamente y le permitirá escucharlos."
 
 #: C/add-podcast.page:36(p)
 msgid ""
@@ -2018,6 +2063,10 @@ msgid ""
 "term such as \"movie podcast\" and you will be presented with many options "
 "to choose from."
 msgstr ""
+"Se pueden encontrar podcasts sobre prácticamente cualquier tema, como "
+"música, películas, Linux y mucho más. Para encontrar podcasts en Internet, "
+"utilice su buscador preferido e introduzca términos como «podcasts música» "
+"para encontrar un gran número de opciones donde elegir."
 
 #: C/add-podcast.page:44(title)
 msgid "Add a Podcast"
@@ -2031,6 +2080,11 @@ msgid ""
 "podcast's subscription. In most web browsers, you can right click on the "
 "link and choose <gui>Copy link</gui>."
 msgstr ""
+"Para añadir un podcast a Banshee, primero deberá visitar la página web del "
+"podcast en Internet. Casi todos los podcasts cuentan con un botón o un "
+"enlace que permite suscribirse al podcast. Copie dicho enlace. En la mayoría "
+"de los navegadores puede pulsar con el botón derecho en el enlace y "
+"seleccionar <gui>Copiar enlace</gui>."
 
 #: C/add-podcast.page:53(p)
 msgid ""
@@ -2039,18 +2093,26 @@ msgid ""
 "Subscribe to Podcast</gui></guiseq> or use the keyboard shortcut "
 "<keyseq><key>Shift</key><key>Control</key><key>F</key></keyseq>."
 msgstr ""
+"En Banshee, pulse en <gui>Subcribirse a un podcast</gui> en la esquina "
+"superior derecha o, desde el menú, pulse en <guiseq><gui>Multimedia</"
+"gui><gui>Añadir podcast…</gui></guiseq> o bien pulse <keyseq><key>Máyus</"
+"key><key>Control</key><key>F</key></keyseq>."
 
 #: C/add-podcast.page:59(p)
 msgid ""
 "Banshee will then allow you to choose how you want to download new podcasts "
 "from a drop down menu. Your choices include:"
 msgstr ""
+"Entonces, Banshee le permitirá elegir cómo desea descargar nuevos capítulos "
+"desde un menú desplegable. Las opciones son:"
 
 #: C/add-podcast.page:63(p)
 msgid ""
 "Download the Most Recent Episode (This will automatically download the last "
 "episode that was released)."
 msgstr ""
+"Descargar los episodios más recientes (esto descargará automáticamente el "
+"último episodio publicado del programa)."
 
 #: C/add-podcast.page:65(p)
 msgid "Download All Episodes (This will download all episodes)."
@@ -2061,26 +2123,29 @@ msgid ""
 "Let Me Decide Which Episodes to Download (This will allow you to choose "
 "which episodes you would like to download)."
 msgstr ""
+"Dejar que el usuario decida qué episodios descargar (esto le permitirá "
+"elegir qué episodios desea descargar)."
 
 #: C/add-podcast.page:70(p)
 msgid "After you have added a Podcast feed, Banshee will display:"
-msgstr "Después de añadir un podcast, Banshee mostrará:"
+msgstr "Después de añadir un podcast, Banshee le mostrará:"
 
 #: C/add-podcast.page:73(p)
 msgid "<gui>Name</gui>: (Name of the specific episode)"
-msgstr ""
+msgstr "<gui>Nombre</gui>: (Nombre del episodio)"
 
 #: C/add-podcast.page:74(p)
 msgid "<gui>Podcast</gui>: (Name of the Podcast)"
-msgstr "<gui>Podcast</gui>: (nombre del podcast)"
+msgstr "<gui>Podcast</gui>: (Nombre del podcast)"
 
 #: C/add-podcast.page:75(p)
 msgid "<gui>Published</gui> (Date the episode was published or released)"
-msgstr ""
+msgstr "<gui>Publicado</gui> (Fecha en que se publicó el episodio)"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/index.page:0(None)
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2011\n"
-"Benjamín Valero Espinosa <benjavalero@gmail.com>, 2010, 2011"
+"Benjamín Valero Espinosa <benjavalero@gmail.com>, 2010, 2011\n"
+"Ángel Sanz <mizo0mizo@gmail.com>, 2011"
