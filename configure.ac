@@ -100,8 +100,11 @@ AC_SUBST(BANSHEE_DESKTOP_NAME)
 
 if test "x$HAVE_MEEGO_PANEL" = "xyes"; then
   MEEGO_PANELS_DIR=`$PKG_CONFIG --variable=meego_panel_panels_dir meego-panel`
-  AC_SUBST(MEEGO_PANELS_DIR)
+else
+  MEEGO_PANELS_DIR='${datadir}/mutter-meego/panels'
 fi
+AC_SUBST(MEEGO_PANELS_DIR)
+
 
 dnl Check for gdk-x11 >= 2.22 for NotificationArea extension, bgo#638477
 PKG_CHECK_MODULES(GDK_2_22, gdk-x11-2.0 >= 2.22, have_gdk_2_22=yes, have_gdk_2_22=no)
