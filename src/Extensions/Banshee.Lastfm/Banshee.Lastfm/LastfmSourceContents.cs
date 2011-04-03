@@ -132,10 +132,15 @@ namespace Banshee.Lastfm
             main_box.PackStart (top_artists, false, false, 0);
             //PackStart (recommended_artists, true, true, 0);
 
-            user = new LastfmUserData (username);
-            recently_loved.SetList (user.RecentLovedTracks);
-            recently_played.SetList (user.RecentTracks);
-            top_artists.SetList (user.GetTopArtists (TopType.Overall));
+            try {
+                user = new LastfmUserData (username);
+                recently_loved.SetList (user.RecentLovedTracks);
+                recently_played.SetList (user.RecentTracks);
+                top_artists.SetList (user.GetTopArtists (TopType.Overall));
+            } catch (Exception e) {
+                lastfm.SetStatus ("Failed to get information from your Last.fm profile", true, ConnectionState.InvalidAccount);
+                Log.Exception (String.Format ("LastfmUserData query failed for {0}", username), e);
+            }
 
             ShowAll ();
         }
