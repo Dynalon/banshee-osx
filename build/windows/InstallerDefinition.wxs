@@ -14,7 +14,10 @@
 <?define binDir= "..\..\bin\bin" ?>
 <?define etcDir= "..\..\bin\etc" ?>
 <?define libDir= "..\..\bin\lib" ?>
-<?define shareDir= "..\..\bin\share" ?>
+<?define share_bansheeDir= "..\..\bin\share\banshee" ?>
+<?define share_themesDir= "..\..\bin\share\themes" ?>
+<?define share_iconsDir= "..\..\bin\share\icons" ?>
+<?define share_localeDir= "..\..\bin\share\locale" ?>
 
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <Product Id="*" Name="$(var.ProductShortName) $(var.ProductVersionText)" Language="1033" Version="$(var.ProductVersion)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)">
@@ -59,6 +62,8 @@
 
             </Component>
           </Directory>
+          <Directory Id="SHARELOCATION" Name="share">
+	  </Directory>
         </Directory>
       </Directory>
 
@@ -89,7 +94,14 @@
       <ComponentGroupRef Id="bin" />
       <ComponentGroupRef Id="etc" />
       <ComponentGroupRef Id="lib" />
-      <ComponentGroupRef Id="share" />
+
+      <ComponentGroupRef Id="share\banshee" />
+      <ComponentGroupRef Id="share\icons" />
+      <ComponentGroupRef Id="share\themes" />
+    </Feature>
+
+    <Feature Id="TranslationsFeature" Title="Banshee Translations" Level="1">
+      <ComponentGroupRef Id="share\locale" />
     </Feature>
 
     <!-- Sequences -->
@@ -119,5 +131,8 @@
   <?include obj\generated_bin.wxi ?>
   <?include obj\generated_etc.wxi ?>
   <?include obj\generated_lib.wxi ?>
-  <?include obj\generated_share.wxi ?>
+  <?include obj\generated_share_banshee.wxi ?>
+  <?include obj\generated_share_icons.wxi ?>
+  <?include obj\generated_share_themes.wxi ?>
+  <?include obj\generated_share_locale.wxi ?>
 </Wix>

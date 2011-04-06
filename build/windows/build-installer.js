@@ -30,7 +30,10 @@ if (fs.FolderExists (bin + "\\bin\\addin-db-001")) fs.DeleteFolder (bin + "\\bin
 heatDir ("bin");
 heatDir ("etc");
 heatDir ("lib");
-heatDir ("share");
+heatDir ("share\\banshee");
+heatDir ("share\\icons");
+heatDir ("share\\locale");
+heatDir ("share\\themes");
 
 // Create the installer, will be outputted to Banshee-1.9.6.msi in build/windows/
 build ("Installer.wixproj")
@@ -38,17 +41,25 @@ WScript.Echo ("Setup successfully generated");
 
 function heatDir (dir)
 {
-  var params = ' -cg ' + dir + ' -scom -sreg -ag -sfrag -indent 2 -var var.' + dir + 'Dir -dr INSTALLLOCATION ';
+  var wxi_name = dir.replace (/\\/, '_');
+  var params = ' -cg ' + dir + ' -scom -sreg -ag -sfrag -indent 2 -var var.' + wxi_name + 'Dir';
+ 
+  if (wxi_name.indexOf ("share") == 0) {
+	  params += ' -dr SHARELOCATION ';
+  } else {
+	  params += ' -dr INSTALLLOCATION ';
+  }
+
   if (dir == 'bin') {
     // Do not auto-generate ids for files in the bin directory
     params += '-suid '
   }
   // Generate the list of binary files (managed and native .dlls and .pdb and .config files)
-  run (heat + ' dir ..\\..\\bin\\' + dir + params + ' -out obj\\generated_'+dir+'.wxi');
+  run (heat + ' dir ..\\..\\bin\\' + dir + params + ' -out obj\\generated_'+wxi_name+'.wxi');
 
   // Heat has no option to output Include (wxi) files instead of Wix (wxs) ones, so do a little regex
-  regexreplace ('obj\\generated_'+dir+'.wxi', /Wix xmlns/, 'Include xmlns');
-  regexreplace ('obj\\generated_'+dir+'.wxi', /Wix>/, 'Include>');
+  regexreplace ('obj\\generated_'+wxi_name+'.wxi', /Wix xmlns/, 'Include xmlns');
+  regexreplace ('obj\\generated_'+wxi_name+'.wxi', /Wix>/, 'Include>');
 }
 
 function run (cmd)
