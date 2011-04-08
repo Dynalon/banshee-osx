@@ -393,58 +393,58 @@ cat <<EOF
 ${PACKAGE}-${VERSION}
 
   Build Environment
-    Install Prefix:    ${prefix}
-    Datadir:           ${expanded_datadir}
-    Libdir:            ${expanded_libdir}
+    Install Prefix:        ${prefix}
+    Datadir:               ${expanded_datadir}
+    Libdir:                ${expanded_libdir}
 
-    C Compiler:        ${CC}
-    Mono C# Compiler:  ${MCS} ${GMCS_FLAGS}
-    Mono Runtime:      ${MONO}
-    Gtk#:              ${gtk_version}
+    C Compiler:            ${CC}
+    Mono C# Compiler:      ${MCS} ${GMCS_FLAGS}
+    Mono Runtime:          ${MONO}
+    Gtk#:                  ${gtk_version}
 
   Video/Graphics:
-    Graphics System:   ${GRAPHICS_SUBSYSTEM}
-    X11 Video:         ${have_xvidmode}
-    Clutter:           ${enable_clutter}
+    Graphics System:       ${GRAPHICS_SUBSYSTEM}
+    X11 Video:             ${have_xvidmode}
+    Clutter:               ${enable_clutter}
 
   Operating System/Desktop Environment:
-    GNOME Support:     ${enable_gnome}
-    OSX Support:       ${enable_osx}
-    MeeGo Support:     ${enable_meego}
+    GNOME Support:         ${enable_gnome}
+    OSX Support:           ${enable_osx}
+    MeeGo Support:         ${enable_meego}
 
   Digital Audio Player (DAP) Support:
-    Mass Storage:      yes
-    MTP:               ${enable_libmtp}
-    Apple Device:      ${enable_appledevice}
-    iPod:              ${enable_ipodsharp}
-    Karma:             ${enable_karmasharp}
+    Mass Storage:          yes
+    MTP:                   ${enable_libmtp}
+    Apple Device:          ${enable_appledevice}
+    ipod-sharp (legacy):   ${enable_ipodsharp}
+    Karma:                 ${enable_karmasharp}
 
   Extra Features:
-    Web Browser:       ${have_libwebkit} (webkit-1.0 >= $WEBKIT_MIN_VERSION, libsoup-2.4 >= $SOUP_MIN_VERSION)
-      + GNOME Proxy    ${have_libsoup_gnome} (libsoup-gnome-2.4 >= $SOUP_GNOME_MIN_VERSION)
-      + Amazon MP3     ${have_libwebkit}
-      + Miro Guide     ${have_libwebkit}
-      + Wikipedia      ${have_libwebkit}
-    Boo Scripting:     ${enable_boo}
-    Builtin Equalizer: ${enable_builtin_equalizer}
-    DAAP:              ${enable_daap}
-    GIO Backend:       ${enable_gio} (glib >= 2.22, gtk-sharp-beans, and gio-sharp)
-    GIO Hardware:      ${enable_gio_hardware} (gudev-sharp, gkeyfile-sharp)
-    HAL Backend:       ${enable_hal}
-    Library Watcher:   ${HAVE_MONO_2_4_3} (Mono >= 2.4.3)
-    Podcasts:          ${enable_podcast}
-    Gapless playback:  ${ENABLE_GAPLESS} (gstreamer-plugins-base > 0.10.25.2)
-    YouTube extension: ${enable_youtube} (gdata-sharp >= 1.4)
-    Sound menu:        ${enable_soundmenu}
-    Ubuntu One Store:  ${enable_ubuntuone} (ubuntuone-sharp >= 0.3.2)
+    Web Browser:           ${have_libwebkit} (webkit-1.0 >= $WEBKIT_MIN_VERSION, libsoup-2.4 >= $SOUP_MIN_VERSION)
+      + GNOME Proxy        ${have_libsoup_gnome} (libsoup-gnome-2.4 >= $SOUP_GNOME_MIN_VERSION)
+      + Amazon MP3         ${have_libwebkit}
+      + Miro Guide         ${have_libwebkit}
+      + Wikipedia          ${have_libwebkit}
+    Boo Scripting:         ${enable_boo}
+    Builtin Equalizer:     ${enable_builtin_equalizer}
+    DAAP:                  ${enable_daap}
+    GIO Backend:           ${enable_gio} (glib >= 2.22, gtk-sharp-beans, and gio-sharp)
+    GIO Hardware:          ${enable_gio_hardware} (gudev-sharp, gkeyfile-sharp)
+    HAL Backend:           ${enable_hal}
+    Library Watcher:       ${HAVE_MONO_2_4_3} (Mono >= 2.4.3)
+    Podcasts:              ${enable_podcast}
+    Gapless playback:      ${ENABLE_GAPLESS} (gstreamer-plugins-base > 0.10.25.2)
+    YouTube extension:     ${enable_youtube} (gdata-sharp >= 1.4)
+    Sound menu:            ${enable_soundmenu}
+    Ubuntu One Store:      ${enable_ubuntuone} (ubuntuone-sharp >= 0.3.2)
 
   Build/Development:
-    Unit Tests:        ${do_tests} (nunit >= ${NUNIT_REQUIRED})
-    API Docs:          ${enable_docs} (monodocer and mdassembler)
-    User Help:         ${enable_user_help} (gnome-doc-utils >= 0.17.3)
-    Custom a11y:       ${gtksharp_with_a11y} (gtk-sharp >= 2.12.10)
-    Release Build:     ${enable_release}
-    Vendor Build ID:   ${vendor_build_id}
+    Unit Tests:            ${do_tests} (nunit >= ${NUNIT_REQUIRED})
+    API Docs:              ${enable_docs} (monodocer and mdassembler)
+    User Help:             ${enable_user_help} (gnome-doc-utils >= 0.17.3)
+    Custom a11y:           ${gtksharp_with_a11y} (gtk-sharp >= 2.12.10)
+    Release Build:         ${enable_release}
+    Vendor Build ID:       ${vendor_build_id}
 
 EOF
 
