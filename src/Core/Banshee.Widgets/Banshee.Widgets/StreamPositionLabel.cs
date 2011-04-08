@@ -95,8 +95,6 @@ namespace Banshee.Widgets
                 return;
             }
 
-            EnsureStyle ();
-
             int width, height;
             layout.GetPixelSize (out width, out height);
 
