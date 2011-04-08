@@ -430,7 +430,7 @@ ${PACKAGE}-${VERSION}
     DAAP:                  ${enable_daap}
     GIO Backend:           ${enable_gio} (glib >= 2.22, gtk-sharp-beans, and gio-sharp)
     GIO Hardware:          ${enable_gio_hardware} (gudev-sharp, gkeyfile-sharp)
-    HAL Backend:           ${enable_hal}
+    HAL Hardware (legacy): ${enable_hal}
     Library Watcher:       ${HAVE_MONO_2_4_3} (Mono >= 2.4.3)
     Podcasts:              ${enable_podcast}
     Gapless playback:      ${ENABLE_GAPLESS} (gstreamer-plugins-base > 0.10.25.2)
