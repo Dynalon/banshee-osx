@@ -11,13 +11,13 @@ AC_DEFUN([BANSHEE_CHECK_GTK_SHARP],
 		PKG_CHECK_MODULES(GLIBSHARP, glib-sharp-3.0 >= $GTKSHARP3_REQUIRED)
 		AC_SUBST(GLIBSHARP_LIBS)
 
-        gtk_version=3
+		gtk_version=3
 		AM_CONDITIONAL(HAVE_GTK3, true)
 
-        HAVE_GLIBSHARP_2_12_7=yes
+		HAVE_GLIBSHARP_2_12_7=yes
 		AM_CONDITIONAL(HAVE_GLIBSHARP_2_12_7, true)
 
-        gtksharp_with_a11y=yes
+		gtksharp_with_a11y=yes
 		AM_CONDITIONAL(ENABLE_ATK, true)
 	else
 		dnl Fall back to gtk-sharp-2.0
@@ -38,6 +38,6 @@ AC_DEFUN([BANSHEE_CHECK_GTK_SHARP],
 		AM_CONDITIONAL(ENABLE_ATK, test "x$gtksharp_with_a11y" = "xyes")
 
 		AM_CONDITIONAL(HAVE_GTK3, false)
-        gtk_version="2"
+		gtk_version="2"
 	fi
 ])
