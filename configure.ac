@@ -400,6 +400,7 @@ ${PACKAGE}-${VERSION}
     C Compiler:        ${CC}
     Mono C# Compiler:  ${MCS} ${GMCS_FLAGS}
     Mono Runtime:      ${MONO}
+    Gtk#:              ${gtk_version}
 
   Video/Graphics:
     Graphics System:   ${GRAPHICS_SUBSYSTEM}
