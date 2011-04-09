@@ -2,7 +2,7 @@ AC_DEFUN([BANSHEE_CHECK_DAP_IPOD],
 [
 	IPODSHARP_REQUIRED=0.8.5
 
-	AC_ARG_ENABLE(ipod, AC_HELP_STRING([--enable-ipod], [Enable legacy ipod-sharp DAP support]), enable_ipod="yes", enable_ipod="no")
+	AC_ARG_ENABLE(ipod, AC_HELP_STRING([--enable-ipod], [Enable legacy ipod-sharp DAP support]), , enable_ipod="no")
 
 	if test "x$enable_ipod" = "xyes"; then
 		enable_ipodsharp="${enable_ipod}"
