@@ -117,7 +117,7 @@ namespace Banshee.Emusic.Store
 
         public void SignOut ()
         {
-            LoadUri ("https://www.emusic.com/security/j_acegi_logout.html");
+            LoadUri ("http://integrated-services.banshee.fm/emusic/sign_out/");
         }
 
         private void CheckSignIn ()
