@@ -52,17 +52,16 @@ namespace Banshee.Wikipedia
             }
         }
 
+        internal void SetLoaded ()
+        {
+            State = ContextState.Loaded;
+        }
+
         private WikipediaView view;
         public override Widget Widget {
             get {
                 if (view == null) {
-                    view = new WikipediaView ();
-                    view.view.LoadStatusChanged += delegate {
-                        if (view.view.LoadStatus == Banshee.WebBrowser.OssiferLoadStatus.FirstVisuallyNonEmptyLayout) {
-                            State = ContextState.Loaded;
-                        }
-                    };
-                    view.ShowAll ();
+                    view = new WikipediaView (this);
                 }
                 return view;
             }
