@@ -82,6 +82,10 @@ namespace Banshee.Collection.Gui
                 Log.Exception ("Could not migrate album artwork cache directory", e);
             }
 
+            if (ApplicationContext.CommandLine.Contains ("fetch-artwork")) {
+                ResetScanResultCache ();
+            }
+
             Banshee.Metadata.MetadataService.Instance.ArtworkUpdated += OnArtworkUpdated;
         }
 
@@ -425,11 +429,7 @@ namespace Banshee.Collection.Gui
                 }
 
                 if (count == 0) {
-                    try {
-                        ServiceManager.DbConnection.Execute ("DELETE FROM CoverArtDownloads");
-                        DatabaseConfigurationClient.Client.Set<DateTime> ("last_cover_art_scan", DateTime.MinValue);
-                        Log.InformationFormat ("Reset CoverArtDownloads table so missing artwork will get fetched");
-                    } catch {}
+                    ResetScanResultCache ();
                 }
 
                 Directory.Delete (legacy_root_path, true);
@@ -437,6 +437,15 @@ namespace Banshee.Collection.Gui
             }
 
             CacheVersion = CUR_VERSION;
+        }
+
+        private void ResetScanResultCache ()
+        {
+            try {
+                ServiceManager.DbConnection.Execute ("DELETE FROM CoverArtDownloads");
+                DatabaseConfigurationClient.Client.Set<DateTime> ("last_cover_art_scan", DateTime.MinValue);
+                Log.InformationFormat ("Reset CoverArtDownloads table so missing artwork will get fetched");
+            } catch {}
         }
 
         private static SafeUri cache_version_file = new SafeUri (Paths.Combine (CoverArtSpec.RootPath, ".cache_version"));
