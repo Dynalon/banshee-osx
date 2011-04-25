@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
 "cgi?product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-03-22 14:28+0000\n"
-"PO-Revision-Date: 2011-03-31 18:35+0300\n"
+"POT-Creation-Date: 2011-04-08 17:33+0000\n"
+"PO-Revision-Date: 2011-04-18 20:54+0300\n"
 "Last-Translator: Rūdofls Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,6 @@ msgstr ""
 
 #. ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice.addin.xml
 #: ../data/addin-xml-strings.cs:8
-#| msgid "Apple device Support"
 msgid "Apple Devices Support"
 msgstr "Apple ierīču atbalsts"
 
@@ -83,14 +82,14 @@ msgid "Amazon MP3 Store Source"
 msgstr "Amazon MP3 veikala avots"
 
 #: ../data/addin-xml-strings.cs:34
-#| msgid "Browse, search, and purchase music from the Amazon MP3 store"
 msgid "Browse, search, and purchase music from the Amazon MP3 store."
 msgstr "Pārlūko, meklē un iegādājies mūziku no Amazon MP3 veikala."
 
 #: ../data/addin-xml-strings.cs:35 ../data/addin-xml-strings.cs:40
-#: ../data/addin-xml-strings.cs:75 ../data/addin-xml-strings.cs:90
-#: ../data/addin-xml-strings.cs:100 ../data/addin-xml-strings.cs:105
-#: ../data/addin-xml-strings.cs:120 ../data/addin-xml-strings.cs:165
+#: ../data/addin-xml-strings.cs:75 ../data/addin-xml-strings.cs:80
+#: ../data/addin-xml-strings.cs:95 ../data/addin-xml-strings.cs:105
+#: ../data/addin-xml-strings.cs:110 ../data/addin-xml-strings.cs:125
+#: ../data/addin-xml-strings.cs:170
 msgid "Online Sources"
 msgstr "Teišsaistes avoti"
 
@@ -100,7 +99,6 @@ msgid "Amazon MP3 Import"
 msgstr "Amazon MP3 importēšana"
 
 #: ../data/addin-xml-strings.cs:39
-#| msgid "Download and import music purchased from Amazon.com"
 msgid "Download and import music purchased from Amazon.com."
 msgstr "Lejupielādē un importē Amazon.com iegādāto mūziku."
 
@@ -114,8 +112,8 @@ msgid "Organize audiobooks, lectures, etc."
 msgstr "Sakārto audio grāmatas, lekcijas utt."
 
 #: ../data/addin-xml-strings.cs:45 ../data/addin-xml-strings.cs:50
-#: ../data/addin-xml-strings.cs:80 ../data/addin-xml-strings.cs:95
-#: ../data/addin-xml-strings.cs:145 ../data/addin-xml-strings.cs:150
+#: ../data/addin-xml-strings.cs:85 ../data/addin-xml-strings.cs:100
+#: ../data/addin-xml-strings.cs:150 ../data/addin-xml-strings.cs:155
 msgid "Core"
 msgstr "Kodols"
 
@@ -139,11 +137,11 @@ msgstr "Pielāgo un paplašini Banshee ar Boo valodas skriptiem."
 
 #: ../data/addin-xml-strings.cs:55 ../data/addin-xml-strings.cs:60
 #: ../data/addin-xml-strings.cs:65 ../data/addin-xml-strings.cs:70
-#: ../data/addin-xml-strings.cs:85 ../data/addin-xml-strings.cs:110
-#: ../data/addin-xml-strings.cs:115 ../data/addin-xml-strings.cs:125
-#: ../data/addin-xml-strings.cs:130 ../data/addin-xml-strings.cs:135
-#: ../data/addin-xml-strings.cs:140 ../data/addin-xml-strings.cs:155
-#: ../data/addin-xml-strings.cs:160
+#: ../data/addin-xml-strings.cs:90 ../data/addin-xml-strings.cs:115
+#: ../data/addin-xml-strings.cs:120 ../data/addin-xml-strings.cs:130
+#: ../data/addin-xml-strings.cs:135 ../data/addin-xml-strings.cs:140
+#: ../data/addin-xml-strings.cs:145 ../data/addin-xml-strings.cs:160
+#: ../data/addin-xml-strings.cs:165
 msgid "Utilities"
 msgstr "Utilītprogrammas"
 
@@ -174,89 +172,97 @@ msgstr "DAAP koplietošana"
 msgid "Browse and listen to music shared over your local network."
 msgstr "Pārlūko un klausies mūziku, kas ir koplietota tavā lokālajā tīklā."
 
-#. ../src/Extensions/Banshee.Emusic/Banshee.Emusic.addin.xml
+#. ../src/Extensions/Banshee.Emusic.Store/Banshee.Emusic.Store.addin.xml
 #: ../data/addin-xml-strings.cs:73
+#| msgid "Music Share"
+msgid "eMusic Store"
+msgstr "eMusic veikals"
+
+#: ../data/addin-xml-strings.cs:74
+#| msgid "Browse, search, and purchase music from the Amazon MP3 store."
+msgid "Browse, search, and purchase music and audiobooks from eMusic"
+msgstr "Pārlūko, meklē un iegādājies mūziku un audio grāmatas no eMusic"
+
+#. ../src/Extensions/Banshee.Emusic/Banshee.Emusic.addin.xml
+#: ../data/addin-xml-strings.cs:78
 msgid "eMusic Import"
 msgstr "Importēt eMusic"
 
-#: ../data/addin-xml-strings.cs:74
-#| msgid "Download and import music purchased from eMusic"
+#: ../data/addin-xml-strings.cs:79
 msgid "Download and import music purchased from eMusic."
 msgstr "Lejupielādēt un importēt eMusic pirktu mūziku."
 
 #. ../src/Extensions/Banshee.FileSystemQueue/Banshee.FileSystemQueue.addin.xml
-#: ../data/addin-xml-strings.cs:78
+#: ../data/addin-xml-strings.cs:83
 msgid "File System Preview Queue"
 msgstr "Failu sistēmas priekšskatīšanas rinda"
 
-#: ../data/addin-xml-strings.cs:79
+#: ../data/addin-xml-strings.cs:84
 msgid "Preview files without importing to your library."
 msgstr "Priekšskatīt failus, neimportējot tos fonotēkā."
 
 #. ../src/Extensions/Banshee.Fixup/Banshee.Fixup.addin.xml
-#: ../data/addin-xml-strings.cs:83
+#: ../data/addin-xml-strings.cs:88
 msgid "Metadata Fixup"
 msgstr "Metadatu labošana"
 
-#: ../data/addin-xml-strings.cs:84
-#| msgid "Fix broken and missing metadata using bulk operations"
+#: ../data/addin-xml-strings.cs:89
 msgid "Fix broken and missing metadata using bulk operations."
 msgstr ""
 "Salabo salūzušus un trūkstošus metadatus, izmantojot masveida darbības."
 
 #. ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive.addin.xml
-#: ../data/addin-xml-strings.cs:88
+#: ../data/addin-xml-strings.cs:93
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HomeSource.cs:58
 msgid "Internet Archive"
 msgstr "Interneta arhīvs"
 
-#: ../data/addin-xml-strings.cs:89
+#: ../data/addin-xml-strings.cs:94
 msgid "Browse and search the Internet Archive's vast media collection."
 msgstr "Pārlūkot un meklēt Interneta arhīva plašajā multimediju kolekcijā."
 
 #. ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio.addin.xml
-#: ../data/addin-xml-strings.cs:93
+#: ../data/addin-xml-strings.cs:98
 msgid "Internet Radio"
 msgstr "Interneta radio"
 
-#: ../data/addin-xml-strings.cs:94
+#: ../data/addin-xml-strings.cs:99
 msgid "Listen to and organize Internet Radio stations."
 msgstr "Klausies un organizē Interneta radio stacijas."
 
 #. ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.addin.xml
-#: ../data/addin-xml-strings.cs:98
+#: ../data/addin-xml-strings.cs:103
 msgid "Last.fm Scrobbling"
 msgstr "Last.fm scrobbling"
 
-#: ../data/addin-xml-strings.cs:99
+#: ../data/addin-xml-strings.cs:104
 msgid "Last.fm scrobbling and context pane recommendations."
 msgstr "Last.fm scrobbling un konteksta rūts rekomendācijas."
 
 #. ../src/Extensions/Banshee.LastfmStreaming/Banshee.LastfmStreaming.addin.xml
-#: ../data/addin-xml-strings.cs:103
+#: ../data/addin-xml-strings.cs:108
 msgid "Last.fm Radio"
 msgstr "Last.fm radio"
 
-#: ../data/addin-xml-strings.cs:104
+#: ../data/addin-xml-strings.cs:109
 msgid "Last.fm streaming radio for paid subscribers."
 msgstr "Last.fm radio maksas abonementiem."
 
 #. ../src/Extensions/Banshee.LibraryWatcher/Banshee.LibraryWatcher.addin.xml
-#: ../data/addin-xml-strings.cs:108
+#: ../data/addin-xml-strings.cs:113
 msgid "Library Watcher"
 msgstr "Fonotēkas uzraugs"
 
-#: ../data/addin-xml-strings.cs:109
-#| msgid "Automatically update music and video libraries"
+#: ../data/addin-xml-strings.cs:114
 msgid "Automatically update music and video libraries."
 msgstr "Automātiski atjaunināt fonotēku un videotēku."
 
 #. ../src/Extensions/Banshee.MiniMode/Banshee.MiniMode.addin.xml
-#: ../data/addin-xml-strings.cs:113
+#: ../data/addin-xml-strings.cs:118
 msgid "Mini Mode"
 msgstr "Mini režīms"
 
-#: ../data/addin-xml-strings.cs:114
+#: ../data/addin-xml-strings.cs:119
 msgid ""
 "Control Banshee through a small window with only playback controls and track "
 "information."
@@ -265,65 +271,65 @@ msgstr ""
 "informāciju."
 
 #. ../src/Extensions/Banshee.MiroGuide/Banshee.MiroGuide.addin.xml
-#: ../data/addin-xml-strings.cs:118
+#: ../data/addin-xml-strings.cs:123
 msgid "Miro Guide Podcast Directory"
 msgstr "Miro Guide podraižu vārdnīca"
 
-#: ../data/addin-xml-strings.cs:119
+#: ../data/addin-xml-strings.cs:124
 msgid "Browse and subscribe to thousands of audio and video podcasts."
 msgstr "Pārlūko un abonē tūkstošiem audi un video podraides."
 
 #. ../src/Extensions/Banshee.Mpris/Banshee.Mpris.addin.xml
-#: ../data/addin-xml-strings.cs:123
+#: ../data/addin-xml-strings.cs:128
 msgid "MPRIS D-Bus interface"
 msgstr "MPRIS D-Bus saskarne"
 
-#: ../data/addin-xml-strings.cs:124
+#: ../data/addin-xml-strings.cs:129
 msgid "Control Banshee using the MPRIS D-Bus interface."
 msgstr "Vadiet Banshee, izmantojot MPRIS D-Bus saskarni."
 
 #. ../src/Extensions/Banshee.MultimediaKeys/Banshee.MultimediaKeys.addin.xml
-#: ../data/addin-xml-strings.cs:128
+#: ../data/addin-xml-strings.cs:133
 msgid "Multimedia Keys"
 msgstr "Multimediju taustiņi"
 
-#: ../data/addin-xml-strings.cs:129
+#: ../data/addin-xml-strings.cs:134
 msgid "Control playback via the multimedia keys on your keyboard."
 msgstr "Vadiet atskaņošanu ar multimediju taustiņiem uz tastatūras."
 
 #. ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea.addin.xml
-#: ../data/addin-xml-strings.cs:133
+#: ../data/addin-xml-strings.cs:138
 msgid "Notification Area Icon"
 msgstr "Paziņojumu lauka ikona"
 
-#: ../data/addin-xml-strings.cs:134
+#: ../data/addin-xml-strings.cs:139
 msgid "Display an icon in the notification area for controlling Banshee."
 msgstr "Rādīt ikonu paziņojumu laukā, lai vadītu Banshee."
 
 #. ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration.addin.xml
-#: ../data/addin-xml-strings.cs:138
+#: ../data/addin-xml-strings.cs:143
 msgid "Importers for Amarok, Rhythmbox and iTunes"
 msgstr "Amarok, Rhythmbox un iTunes importētāji"
 
-#: ../data/addin-xml-strings.cs:139
+#: ../data/addin-xml-strings.cs:144
 msgid "Import your library from Amarok, Rhythmbox or iTunes."
 msgstr "Importējiet savu fonotēku no Amarok, Rhythmbox vai iTunes."
 
 #. ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue.addin.xml
-#: ../data/addin-xml-strings.cs:143
+#: ../data/addin-xml-strings.cs:148
 #: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:58
 #: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:79
 msgid "Play Queue"
 msgstr "Atskaņošanas rinda"
 
-#: ../data/addin-xml-strings.cs:144
+#: ../data/addin-xml-strings.cs:149
 msgid "Queue tracks in an ad-hoc playlist, or let the Auto DJ take over."
 msgstr ""
 "Sarindot celiņus ekspromta repertuārā, vai ļaut automātiskajam DJ pārņemt "
 "vadību."
 
 #. ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.addin.xml
-#: ../data/addin-xml-strings.cs:148
+#: ../data/addin-xml-strings.cs:153
 #: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:194
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/PodcastGroupSource.cs:38
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:107
@@ -331,38 +337,37 @@ msgstr ""
 msgid "Podcasts"
 msgstr "Podraides"
 
-#: ../data/addin-xml-strings.cs:149
+#: ../data/addin-xml-strings.cs:154
 msgid "Subscribe to podcasts and stream or download episodes."
 msgstr "Abonējiet podraides un plūsmas vai lejupielādējiet sērijas."
 
 #. ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu.addin.xml
-#: ../data/addin-xml-strings.cs:153
-#| msgid "Sound Menu integration for Banshee"
+#: ../data/addin-xml-strings.cs:158
 msgid "Sound Menu Integration"
 msgstr "Skaņas izvēlnes integrācija"
 
-#: ../data/addin-xml-strings.cs:154
+#: ../data/addin-xml-strings.cs:159
 msgid "Control Banshee from the Sound Menu."
 msgstr "Vadīt Banshee no skaņas izvēlnes."
 
 #. ../src/Extensions/Banshee.Torrent/Banshee.Torrent.addin.xml
-#: ../data/addin-xml-strings.cs:158
+#: ../data/addin-xml-strings.cs:163
 msgid "Torrent Downloader"
 msgstr "Torrent lejupielādētājs"
 
-#: ../data/addin-xml-strings.cs:159
+#: ../data/addin-xml-strings.cs:164
 msgid "Support downloading BitTorrent files from podcasts."
 msgstr "Atbalstīt BitTorrent failu un podraižu lejupielādēšanu."
 
 #. ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore.addin.xml
-#: ../data/addin-xml-strings.cs:163
+#: ../data/addin-xml-strings.cs:168
 #: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:52
 #: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:53
 #: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:116
 msgid "Ubuntu One Music Store"
 msgstr "Ubuntu One mūzikas veikals"
 
-#: ../data/addin-xml-strings.cs:164
+#: ../data/addin-xml-strings.cs:169
 msgid ""
 "This extension grants access to the Ubuntu One Music Store, powered by "
 "7digital."
@@ -371,27 +376,26 @@ msgstr ""
 "7digital."
 
 #. ../src/Extensions/Banshee.Wikipedia/Banshee.Wikipedia.addin.xml
-#: ../data/addin-xml-strings.cs:168
+#: ../data/addin-xml-strings.cs:173
 #: ../src/Extensions/Banshee.Wikipedia/Banshee.Wikipedia/ContextPage.cs:44
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
-#: ../data/addin-xml-strings.cs:169
+#: ../data/addin-xml-strings.cs:174
 msgid "View artist information from Wikipedia in the context pane."
 msgstr "Skatīt no Wikipedia ņemtu informāciju konteksta rūtī."
 
-#: ../data/addin-xml-strings.cs:170 ../data/addin-xml-strings.cs:175
+#: ../data/addin-xml-strings.cs:175 ../data/addin-xml-strings.cs:180
 msgid "Context Pane"
 msgstr "Konteksta rūts"
 
 #. ../src/Extensions/Banshee.YouTube/Banshee.YouTube.addin.xml
-#: ../data/addin-xml-strings.cs:173
+#: ../data/addin-xml-strings.cs:178
 #: ../src/Extensions/Banshee.YouTube/Banshee.YouTube/ContextPage.cs:44
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../data/addin-xml-strings.cs:174
-#| msgid "Show related YouTube videos in the context pane"
+#: ../data/addin-xml-strings.cs:179
 msgid "Show related YouTube videos in the context pane."
 msgstr "Rādīt saistītos YouTube video konteksta rūtī."
 
@@ -693,7 +697,6 @@ msgid "Could not create 'audioconvert' plugin"
 msgstr "Nevarēja izveidot audioconvert spraudni"
 
 #: ../libbanshee/banshee-transcoder.c:270
-#| msgid "Could not create 'audioconvert' plugin"
 msgid "Could not create 'audioresample' plugin"
 msgstr "Nevarēja izveidot 'audioresample' spraudni"
 
@@ -725,7 +728,7 @@ msgstr "Nevarēja ierakstīt CD"
 msgid "Brasero could not be started"
 msgstr "Nevarēja palaist Brasero"
 
-#: ../src/Backends/Banshee.Gnome/Banshee.GnomeBackend/GnomeScreensaverManager.cs:79
+#: ../src/Backends/Banshee.Gnome/Banshee.GnomeBackend/GnomeScreensaverManager.cs:81
 msgid "Fullscreen video playback active"
 msgstr "Pilnekrāna video atskaņošana ir aktīva"
 
@@ -742,7 +745,7 @@ msgid "Could not create BPM detection driver."
 msgstr "Neizdevās izveidot sitienu minūtē noteikšanas spraudni"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:83
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:825
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:829
 msgid "Enable _gapless playback"
 msgstr "_Aktivēt atskaņošanu bez pauzēm"
 
@@ -759,16 +762,16 @@ msgstr ""
 msgid "Could not initialize GStreamer library"
 msgstr "Nevar inicializēt GStreamer bibliotēku"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:447
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:451
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:147
 msgid "Unknown Error"
 msgstr "Nezināma kļūda"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:819
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:823
 msgid "_Enable ReplayGain correction"
 msgstr "Aktivēt R_eplayGain kļūdu labošanu"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:820
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:824
 msgid ""
 "For tracks that have ReplayGain data, automatically scale (normalize) "
 "playback volume"
@@ -776,7 +779,7 @@ msgstr ""
 "Celiņiem, kuriem ir ReplayGain dati, automātiski mainīt (normalizēt) "
 "atskaņošanas skaļumu"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:826
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:830
 msgid ""
 "Eliminate the small playback gap on track change.  Useful for concept albums "
 "and classical music."
@@ -1139,7 +1142,7 @@ msgid "Play Song"
 msgstr "Atskaņot dziesmu"
 
 #. Translators: this is a verb (command), not a noun (things)
-#: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:465
+#: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:472
 msgid "Search"
 msgstr "Meklēt"
 
@@ -1720,7 +1723,7 @@ msgstr ""
 "Neviens atskaņotāja dzinis netika atrasts. Lūdzu pārliecinieties, ka Banshee "
 "ir ticis uzinstalēts pareizi."
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:347
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:349
 msgid "Problem with Player Engine"
 msgstr "Problēma ar atskaņotāja dzini"
 
@@ -2473,7 +2476,7 @@ msgstr "Rediģēt gudro repertuāru"
 msgid "Delete Smart Playlist"
 msgstr "Dzēst gudro repertuāru"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/DatabaseSource.cs:147
+#: ../src/Core/Banshee.Services/Banshee.Sources/DatabaseSource.cs:148
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:160
 #, csharp-format
 msgid "All Genres ({0})"
@@ -2560,12 +2563,12 @@ msgstr "Mapes hie_rarhija"
 msgid "File _name"
 msgstr "Faila _nosaukums"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:669
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:671
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "Pievieno {0} no {1} pie {2}"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:688
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:690
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "Dzēš {0} no {1} no {2}"
@@ -2672,7 +2675,7 @@ msgstr ""
 #. Translators: this is {track number} of {track count}
 #: ../src/Core/Banshee.ThickClient/Banshee.Collection.Gui/ColumnCellDiscAndCount.cs:40
 #: ../src/Core/Banshee.ThickClient/Banshee.Collection.Gui/ColumnCellTrackAndCount.cs:40
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:172
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:170
 #: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapPropertiesDialog.cs:148
 #, csharp-format
 msgid "{0} of {1}"
@@ -3009,11 +3012,11 @@ msgid "View detailed version and configuration information"
 msgstr "Skatīt detalizētu versijas un konfigurācijas informāciju"
 
 #. Prompt user for location of the playlist.
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:169
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:171
 msgid "Import Playlist"
 msgstr "Importēt repertuāru"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:170
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:172
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:558
 msgid "Playlists"
 msgstr "Repertuāri"
@@ -3366,15 +3369,15 @@ msgstr "Meklēt visas šī izpildītāja dziesmas"
 msgid "_Delete From \"{0}\""
 msgstr "_Dzēst no \"{0}\""
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:542
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:535
 msgid "The folder could not be found."
 msgstr "Neizdevās atrast mapi."
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:543
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:536
 msgid "Please check that the track's location is accessible by the system."
 msgstr "Lūdzu, pāraudiet, vai celiņa atrašanās vieta ir sistēmai pieejama."
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:620
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:607
 #, csharp-format
 msgid "Are you sure you want to permanently delete this item?"
 msgid_plural ""
@@ -3383,16 +3386,16 @@ msgstr[0] "Vai tiešām vēlaties uz pilnībā dzēst šo {0} vienumu?"
 msgstr[1] "Vai tiešām vēlaties uz pilnībā dzēst šos {0} vienumus?"
 msgstr[2] "Vai tiešām vēlaties uz pilnībā dzēst šos {0} vienumus?"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:624
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:611
 msgid "If you delete the selection, it will be permanently lost."
 msgstr "Ja dzēsīsiet šo izvēli, tā būs uz visiem laikiem zaudēta."
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:627
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:614
 #, csharp-format
 msgid "Remove selection from {0}?"
 msgstr "Izņemt izvēlēto no {0}?"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:630
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:617
 #, csharp-format
 msgid "Are you sure you want to remove the selected item from your {1}?"
 msgid_plural ""
@@ -4073,16 +4076,16 @@ msgstr "Attīrīt meklēšanu"
 msgid "Seek"
 msgstr "Meklēt"
 
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:148
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:146
 msgid "Idle"
 msgstr "Dīkstāvē"
 
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:149
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:147
 #: ../src/Extensions/Banshee.AmazonMp3/Banshee.AmazonMp3/AmazonDownloadManager.cs:58
 msgid "Contacting..."
 msgstr "Sazinās ar..."
 
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:159
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:157
 msgid "Buffering"
 msgstr "Buferē"
 
@@ -4509,7 +4512,7 @@ msgstr "Nepieciešamais mapes dziļums"
 msgid "Supports Playlists"
 msgstr "Atbalsta repertuārus"
 
-#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/WebOSDevice.cs:189
+#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/WebOSDevice.cs:195
 msgid "Ringtones"
 msgstr "Zvanu melodijas"
 
@@ -4686,7 +4689,7 @@ msgstr "Audio grāmatas"
 msgid "Search your audiobooks"
 msgstr "Meklēt audio grāmatās"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:145
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:146
 #, csharp-format
 msgid "{0} book"
 msgid_plural "{0} books"
@@ -4694,7 +4697,7 @@ msgstr[0] "{0} grāmata"
 msgstr[1] "{0} grāmatas"
 msgstr[2] "{0} grāmatas"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:149
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:150
 msgid "Audiobooks Folder"
 msgstr "Audio grāmatu mape"
 
@@ -5061,6 +5064,22 @@ msgstr "eMusic faili"
 #: ../src/Extensions/Banshee.Emusic/Banshee.Emusic/EmusicImport.cs:77
 msgid "eMusic Tracks"
 msgstr "eMusic celiņi"
+
+#: ../src/Extensions/Banshee.Emusic.Store/Banshee.Emusic.Store/StoreSource.cs:42
+#: ../src/Extensions/Banshee.Emusic.Store/Banshee.Emusic.Store/StoreWebBrowserShell.cs:41
+#| msgid "Music"
+msgid "eMusic"
+msgstr "eMusic"
+
+#: ../src/Extensions/Banshee.Emusic.Store/Banshee.Emusic.Store/StoreWebBrowserShell.cs:45
+#, csharp-format
+#| msgid "Search Results"
+msgid "Search eMusic"
+msgstr "Meklēt eMusic"
+
+#: ../src/Extensions/Banshee.Emusic.Store/Banshee.Emusic.Store/StoreWebBrowserShell.cs:56
+msgid "Sign Out of eMusic"
+msgstr "Izrakstīties no eMusic"
 
 #: ../src/Extensions/Banshee.FileSystemQueue/Banshee.FileSystemQueue/FileSystemQueueSource.cs:57
 #: ../src/Extensions/Banshee.FileSystemQueue/Banshee.FileSystemQueue/FileSystemQueueSource.cs:58
@@ -5948,7 +5967,7 @@ msgstr "Nesen atskaņotie celiņi"
 msgid "My Top Artists"
 msgstr "Mani topa mākslinieki"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmSourceContents.cs:206
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmSourceContents.cs:211
 #, csharp-format
 msgid "{0} plays"
 msgstr "{0} atskaņojumi"
@@ -6188,19 +6207,19 @@ msgstr "lastfm:// URL"
 msgid "lastfm://"
 msgstr "lastfm://"
 
-#: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MediaPanelContents.cs:113
+#: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MediaPanelContents.cs:110
 msgid "Media"
 msgstr "Medijs"
 
-#: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MediaPanelContents.cs:123
+#: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MediaPanelContents.cs:120
 msgid "Library"
 msgstr "Fonotēka"
 
-#: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MediaPanelContents.cs:135
+#: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MediaPanelContents.cs:132
 msgid "Launch the Banshee Media Player"
 msgstr "Palaist Banshee mūzikas atskaņotāju"
 
-#: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MediaPanelContents.cs:168
+#: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MediaPanelContents.cs:165
 #: ../src/Extensions/Banshee.NowPlaying/Banshee.NowPlaying/NowPlayingSource.cs:50
 msgid "Now Playing"
 msgstr "Tagad atskaņo"
