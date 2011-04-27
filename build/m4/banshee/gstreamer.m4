@@ -20,12 +20,5 @@ AC_DEFUN([BANSHEE_CHECK_GSTREAMER],
 		gstreamer-plugins-base-0.10 >= 0.10.26,
 		has_gst_0_10_26=yes, has_gst_0_10_26=no)
 	AM_CONDITIONAL(HAVE_GST_0_10_26, test "x$has_gst_0_10_26" = "xyes")
-
-	dnl Builtin equalizer (optional)
-	AC_ARG_ENABLE(builtin-equalizer,
-		AC_HELP_STRING([--disable-builtin-equalizer],
-			[Disable builtin equalizer]),
-		, enable_builtin_equalizer="yes")
-	AM_CONDITIONAL(ENABLE_BUILTIN_EQUALIZER, test "x$enable_builtin_equalizer" = "xyes")
 ])
 

@@ -283,9 +283,6 @@ extras/Makefile
 
 libbanshee/Makefile
 
-gstreamer/Makefile
-gstreamer/equalizer/Makefile
-
 src/Hyena/Makefile
 src/Hyena/build/Makefile
 src/Hyena/build/pkg-config/Makefile
@@ -419,7 +416,6 @@ ${PACKAGE}-${VERSION}
       + Miro Guide         ${have_libwebkit}
       + Wikipedia          ${have_libwebkit}
     Boo Scripting:         ${enable_boo}
-    Builtin Equalizer:     ${enable_builtin_equalizer}
     DAAP:                  ${enable_daap}
     GIO Backend:           ${enable_gio} (glib >= 2.22, gtk-sharp-beans, and gio-sharp)
     GIO Hardware:          ${enable_gio_hardware} (gudev-sharp, gkeyfile-sharp)

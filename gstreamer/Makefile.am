@@ -1,7 +1,0 @@
-if ENABLE_BUILTIN_EQUALIZER
-SUBDIRS = \
-	equalizer
-endif
-
-MAINTAINERCLEANFILES = Makefile.in
-
