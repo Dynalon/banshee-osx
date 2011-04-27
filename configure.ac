@@ -64,14 +64,10 @@ dnl User help
 SHAMROCK_CHECK_GNOME_DOC_UTILS(0.17.3)
 
 dnl Mono and gmcs
-SHAMROCK_CHECK_MONO_MODULE(1.9.1)
+SHAMROCK_CHECK_MONO_MODULE(2.4.3)
 SHAMROCK_FIND_MONO_2_0_COMPILER
 SHAMROCK_FIND_MONO_RUNTIME
 SHAMROCK_CHECK_MONO_2_0_GAC_ASSEMBLIES([Mono.Cairo Mono.Posix ICSharpCode.SharpZipLib])
-
-dnl Check for mono >= 2.4.3 for LibraryWatcher extension, with fix for bnc#322330
-PKG_CHECK_MODULES(MONO_2_4_3, mono >= 2.4.3, HAVE_MONO_2_4_3=yes, HAVE_MONO_2_4_3=no)
-AM_CONDITIONAL(ENABLE_LIBRARY_WATCHER, test "x$HAVE_MONO_2_4_3" = "xyes")
 
 dnl Check for GNOME >= 2.28 to see if we should remove
 dnl 'Media Player' from the app Name, bgo#596242, except
@@ -400,7 +396,6 @@ ${PACKAGE}-${VERSION}
     DAAP:                  ${enable_daap}
     GIO Backend:           ${enable_gio} (glib >= 2.22, gtk-sharp-beans, and gio-sharp)
     GIO Hardware:          ${enable_gio_hardware} (gudev-sharp, gkeyfile-sharp)
-    Library Watcher:       ${HAVE_MONO_2_4_3} (Mono >= 2.4.3)
     Podcasts:              ${enable_podcast}
     Gapless playback:      ${ENABLE_GAPLESS} (gstreamer-plugins-base > 0.10.25.2)
     YouTube extension:     ${enable_youtube} (gdata-sharp >= 1.4)
