@@ -430,7 +430,6 @@ ${PACKAGE}-${VERSION}
     Unit Tests:            ${do_tests} (nunit >= ${NUNIT_REQUIRED})
     API Docs:              ${enable_docs} (monodocer and mdassembler)
     User Help:             ${enable_user_help} (gnome-doc-utils >= 0.17.3)
-    Custom a11y:           ${gtksharp_with_a11y} (gtk-sharp >= 2.12.10)
     Release Build:         ${enable_release}
     Vendor Build ID:       ${vendor_build_id}
 
