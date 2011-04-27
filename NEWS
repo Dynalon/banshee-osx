@@ -1,18 +1,5 @@
 ===============================================================================
-WELCOME TO BANSHEE 2.0.0 - Released April 6, 2011
-===============================================================================
-
-  * Banshee is a multimedia management and playback application for GNOME.
-
-    "Play your music and videos. Stay entertained and up to date with podcasts
-    and video podcasts.  Sync your Android, iPod, and other devices. We think
-    you'll love the new Banshee!"
-
-  * Learn More: http://banshee.fm/download/archives/2.0.0
-
-
-===============================================================================
-NEW AWESOME FEATURES AND ENHANCEMENTS
+Banshee 2.1.0 - NOT YET RELEASED
 ===============================================================================
 
     Banshee 2.0 is the culmination of six months' work by 36 developers and
@@ -200,66 +187,6 @@ Packages
     * http://download.banshee.fm/banshee/stable/2.0.0/Banshee-2.0.0.msi
 
 ===============================================================================
-DEPENDENCIES
-===============================================================================
-
-    * Mono 1.9.1 (.NET 2.0 Profile / gmcs)
-    * SQlite 3.4
-    * Gtk# 2.12
-    * GStreamer 0.10.23
-
-    * NDesk DBus (ndesk-dbus) 0.5
-    * NDesk DBus GLib (ndesk-dbus-glib) 0.3
-    * Mono.Addins (mono-addins) 0.3.1
-    * TagLib# (taglib-sharp) >= 2.0.3.7
-
-    * Required to build default feature stack:
-      * libmtp >= 0.2.0
-        * Note to packagers: since libmtp has different .so files for
-          different versions, you need to require in your package the same
-          version of libmtp you used to build Banshee.
-      * mono-zeroconf >= 0.8.0
-      * boo >= 0.8.1
-      * GIO support requires glib >= 2.22, gio-sharp and gtk-sharp-beans
-      * Library Watcher extension requires Mono >= 2.4.3
-      * Accessibilty for ListView and Rating widgets requires Gtk# >= 2.12.10
-      * YouTube extension requires gdata-sharp-core and
-        gdata-sharp-youtube >= 1.4
-      * Amazon MP3 Store, Wikipedia Context Pane, and Miro Guide require
-        webkit-1.0 >= 1.2.2
-      * GIO/udev-based hardware backend requires glib >= 2.22, gio-sharp,
-        gtk-sharp-beans, gudev-sharp and gkeyfile-sharp
-      * Apple Devices backend requires libgpod-sharp >= 0.7.95
-
-    * Run-time requirements for default feature stack:
-      * GIO/udev
-      * Brasero >= 0.8.1
-      * Avahi
-      * gst-plugins-bad (providing the bpmdetect GStreamer plugin)
-
-    Packagers:
-      * --with-vendor-build-id=<foo> should always be set and detail the distro
-        name and version (e.g. openSUSE 11.1), and the repository origin, such
-        as 'Banshee Team PPA'; for example, the %distribution macro is used in
-        the openSUSE Build Service, which expands to something like this:
-        'home:gabrielburt:branches:Banshee / openSUSE_Factory'; also the
-        build/configure time is stored along with the host OS and CPU
-
-    Please note that for openSUSE, all of the dependencies above can be
-    found in the openSUSE Build Service, and are linked into the
-    Banshee project. Even if you build from source, if you wish
-    to avoid building the entire dependency chain above, add the
-    Banshee repository to your repository list.
-
-    Historically, Banshee has fostered development of a number of projects
-    and bundled their source code instead of depending on external builds.
-    Many of these dependencies have matured and grown into well maintained
-    projects on their own, and we are now depending on them externally. We
-    waited to remove the bundles long enough to allow for distributions to
-    ship packages to reduce the pain of building Banshee.
-
-
-===============================================================================
 REPORT BUGS - HELP THE PROJECT - GROW THE COMMUNITY
 ===============================================================================
 
@@ -304,47 +231,3 @@ Contributors For This Release
       Michael Kotsarinis, Petr Kovar, Rudolfs Mazurs, Sira Nokyoongtong,
       Takayuki KUSANO, Ville-Pekka Vainio, Xandru Armesto, Yaron Shahrabani,
       Yuri Myasoedov, Žygimantas Beručka, Χάρης Κουζινόπουλος
-
-Contributors In Past Releases
------------------------------
-
-    Aaron Bockover, Alan McGovern, Alex Bennee, Alex Kloss, Alex Launi,
-    Alex Mauer, Alex Willmy, Alexander Hixon, Alexander Kojevnikov,
-    Alexandros Frantzis, Alp Toker, Anders Petersson, Andrea Cimitan,
-    Andreas Neustifter, Andreas Nilsson, Andrew Conkling,
-    Andrés G. Aragoneses, Andy Midgette, Aran Cox, Arthur Carli,
-    Arun Raghavan, Aurélien Mino, Aydemir Ulaş Şahin, Ben Maurer,
-    Benjamín Valero Espinosa, Bertrand Lorentz, Bill Dawson, Bob Copeland,
-    Bojan Rajkovic, Brad Taylor, Brandon Perry, Brian Lucas, Brian Nickel,
-    Brian Teague, Chow Loong Jin, Chris Howie, Chris Jones, Chris Lahey,
-    Chris Toshok, Chris Turchin, Christian Hergert, Christian Krause,
-    Christoph Burgdorf, Christopher James Halse Rogers, Claude Paroz,
-    Cody Russell, Cosmin Banu, Dan Wilson, Dan Winship, Daniel Munkton,
-    Daniel Siegel, David Nielsen, David Spreen, David Stone, Diego E. Pettenò,
-    Dougal Stanton, Dustin C. Hatch, Eitan Isaacson, Elena Grassi,
-    Eoin Hennessy, Eric Butler, Erik Schmidt, Fabian Jost,
-    Felipe Almeida Lessa, Fernando Casanova, Florent Thoumie, Frank Ziegler,
-    Fredrik Hedberg, Félix Velasco, Gabriel Burt, Garrett LeSage,
-    Ghislain Lacroix, Götz Waschk, Haitao Feng, Hans Petter Jansson,
-    Harold Schreckengost, Iain Lane, Igor Guerrero Fonseca, Ilya Konstantinov,
-    Ivan N. Zlatev, Jack Deslippe, Jakub Steiner, James Willcox,
-    Jan Arne Petersen, Jason Conti, Jason Taylor, Jeff Tickle, Jeff Wheeler,
-    Jensen Somers, Jeroen Budts, Jo Shields, Johannes Kuhn, John Millikin,
-    Jonas Urth Olsen, Jordi Mas, Jorge Castro, Julien Moutte, Juri Pakaste,
-    Ján Sokoly, Jérémie Laval, K. Vishnoo Charan Reddy, Ken Vandine,
-    Kentaro KAZUHAMA, Kevin Duffus, Koichi Akabe, Konstantin Oshiyko,
-    Larry Ewing, Lauri Kotilainen, Lukas Lipka, Mackenan Grassi, Marijn Ros,
-    Mark Busby, Matt Enright, Matt Sturgeon, Michael Kaiser,
-    Michael Martin-Smucker, Michael Monreal, Michael Monreal, Michał Sawicz,
-    Miguel de Icaza, Mike Gemünde, Mike Urbanski, Moritz Schallaböck,
-    Nathan Palmer, Neil Loknath, Nicholas Doyle, Nicholas Parker,
-    Nicolò Chieffo, Nils Naumann, Oben Sonne, Olivier Dufour, Oscar Forero,
-    Pacho Ramos, Patrick van Staveren, Paul Cutler, Paul Lange, Pavel Antonov,
-    Pepijn van de Geer, Pete Johanson, Peter de Kraker, Pratik Patel,
-    Przemysław Grzegorczyk, Raimo Radczewski, Robin Stocker, Roderich Schupp,
-    Rodney Dawes, Romain Tartière, Ruben Vermeersch, Ryan Collier,
-    Samuel Gyger, Sandy Armstrong, Scott Peterson, Sebastian Dröge,
-    Shaun McCance, Sjoerd Simons, Tim Fisken, Tim Yamin, Tobias Mueller,
-    Todd Berman, Travis Glenn Hansen, Travis Reitter, Trey Ethridge,
-    Valentin Sawadski, Will Farrington, William Friesen, William Pettersson,
-    Wouter Bolsterlee, Yuuto Tokunaga, Zhou Ting

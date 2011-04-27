@@ -1,10 +1,61 @@
-Banshee is a music management and playback application for GNOME.
+Banshee is a multimedia management and playback application for GNOME.
 
-   "Import, organize, play, and share your music using Banshee's simple, 
-    powerful interface. Rip CDs, play and sync your iPod, create playlists, 
-    and burn audio CDs. Most portable music devices are supported. Banshee 
-    also has support for podcasting, smart playlists, music recommendations, 
-    and much more."
+    "Play your music and videos. Stay entertained and up to date with podcasts
+    and video podcasts.  Sync your Android, iPod, and other devices. We think
+    you'll love the new Banshee!"
+
+      Download  http://banshee.fm/download/
+           Git  http://git.gnome.org/browse/banshee/
+          Bugs  http://bugzilla.gnome.org/browse.cgi?product=banshee
+  Mailing List  http://mail.gnome.org/mailman/listinfo/banshee-list
+           IRC  #banshee on irc.gnome.org (GIMPNet)
+      Get Help  http://banshee.fm/support/
+    Contribute  http://banshee.fm/contribute/
 
 Learn More: http://banshee.fm/
  
+===============================================================================
+DEPENDENCIES
+===============================================================================
+
+    * Mono 1.9.1 (.NET 2.0 Profile / gmcs)
+    * SQlite 3.4
+    * Gtk# 2.12
+    * GStreamer 0.10.23
+
+    * NDesk DBus (ndesk-dbus) 0.5
+    * NDesk DBus GLib (ndesk-dbus-glib) 0.3
+    * Mono.Addins (mono-addins) 0.3.1
+    * TagLib# (taglib-sharp) >= 2.0.3.7
+
+    * Required to build default feature stack:
+      * libmtp >= 0.2.0
+        * Note to packagers: since libmtp has different .so files for
+          different versions, you need to require in your package the same
+          version of libmtp you used to build Banshee.
+      * mono-zeroconf >= 0.8.0
+      * boo >= 0.8.1
+      * GIO support requires glib >= 2.22, gio-sharp and gtk-sharp-beans
+      * Library Watcher extension requires Mono >= 2.4.3
+      * Accessibilty for ListView and Rating widgets requires Gtk# >= 2.12.10
+      * YouTube extension requires gdata-sharp-core and
+        gdata-sharp-youtube >= 1.4
+      * Amazon MP3 Store, Wikipedia Context Pane, and Miro Guide require
+        webkit-1.0 >= 1.2.2
+      * GIO/udev-based hardware backend requires glib >= 2.22, gio-sharp,
+        gtk-sharp-beans, gudev-sharp and gkeyfile-sharp
+      * Apple Devices backend requires libgpod-sharp >= 0.7.95
+
+    * Run-time requirements for default feature stack:
+      * GIO/udev
+      * Brasero >= 0.8.1
+      * Avahi
+      * gst-plugins-bad (providing the bpmdetect GStreamer plugin)
+
+    Packagers:
+      * --with-vendor-build-id=<foo> should always be set and detail the distro
+        name and version (e.g. openSUSE 11.1), and the repository origin, such
+        as 'Banshee Team PPA'; for example, the %distribution macro is used in
+        the openSUSE Build Service, which expands to something like this:
+        'home:gabrielburt:branches:Banshee / openSUSE_Factory'; also the
+        build/configure time is stored along with the host OS and CPU
