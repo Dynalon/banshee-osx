@@ -76,10 +76,8 @@ namespace Banshee.MiniMode
         {
             var vbox = new VBox () { Spacing = 12 };
             var top = new HBox () { Spacing = 6 };
-            var mid = new HBox () { Spacing = 6 };
             var bot = new HBox () { Spacing = 6 };
             vbox.PackStart (top, false, false, 0);
-            vbox.PackStart (mid, false, false, 0);
             vbox.PackStart (bot, false, false, 0);
 
             // Top row: playback buttons, seek slider, full-mode button, volume
@@ -107,16 +105,16 @@ namespace Banshee.MiniMode
             volume_button = new ConnectedVolumeButton ();
             top.PackStart (volume_button, false, false, 0);
 
-            // Middle row: source dropdown
+            // Bottom row: source dropdown, track info display (cover art, etc), repeat mode button
             source_combo_box = new SourceComboBox ();
-            mid.PackStart (source_combo_box, true, true, 0);
+            bot.PackStart (source_combo_box, false, false, 0);
 
-            // Bottom row: track info display (cover art, etc), repeat mode button
             track_info_display = new ClassicTrackInfoDisplay ();
+            track_info_display.WidthRequest = 250;
             bot.PackStart (track_info_display, true, true, 0);
 
             var repeat_align = new Alignment (1, 1, 1, 1);
-            var repeat_toggle_button = new RepeatActionButton ();
+            var repeat_toggle_button = new RepeatActionButton (true);
             repeat_align.Add (repeat_toggle_button);
             bot.PackEnd (repeat_align, false, false, 0);
 
