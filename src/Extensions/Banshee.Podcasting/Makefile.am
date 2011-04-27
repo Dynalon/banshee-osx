@@ -41,9 +41,4 @@ RESOURCES =  \
 	Resources/ActiveSourceUI.xml \
 	Resources/GlobalUI.xml
 
-if ENABLE_PODCAST
 include $(top_srcdir)/build/build.mk
-else
-EXTRA_DIST = $(SOURCES) $(RESOURCES)
-endif
-

@@ -38,7 +38,7 @@ AC_PROG_LIBTOOL
 AC_PROG_INSTALL
 
 dnl How to configure for distcheck
-DISTCHECK_CONFIGURE_FLAGS="--disable-docs --enable-mtp --enable-daap --enable-podcast --enable-user-help --enable-release"
+DISTCHECK_CONFIGURE_FLAGS="--disable-docs --enable-mtp --enable-daap --enable-user-help --enable-release"
 AC_SUBST(DISTCHECK_CONFIGURE_FLAGS)
 
 dnl Export Version Info
@@ -186,10 +186,6 @@ AM_CONDITIONAL(ENABLE_GAPLESS, test "x$ENABLE_GAPLESS" = "xyes")
 
 dnl i18n
 SHAMROCK_CONFIGURE_I18N($PACKAGE)
-
-dnl the bird is the word
-AC_ARG_ENABLE(podcast, AC_HELP_STRING([--disable-podcast], [Disable Podcasting support]), , enable_podcast="yes")
-AM_CONDITIONAL(ENABLE_PODCAST, test "x$enable_podcast" = "xyes")
 
 AC_ARG_ENABLE(release,
 	AC_HELP_STRING([--enable-release],
@@ -396,7 +392,6 @@ ${PACKAGE}-${VERSION}
     DAAP:                  ${enable_daap}
     GIO Backend:           ${enable_gio} (glib >= 2.22, gtk-sharp-beans, and gio-sharp)
     GIO Hardware:          ${enable_gio_hardware} (gudev-sharp, gkeyfile-sharp)
-    Podcasts:              ${enable_podcast}
     Gapless playback:      ${ENABLE_GAPLESS} (gstreamer-plugins-base > 0.10.25.2)
     YouTube extension:     ${enable_youtube} (gdata-sharp >= 1.4)
     Sound menu:            ${enable_soundmenu}
