@@ -206,43 +206,6 @@ namespace Banshee.Hardware.Gio
         {
             Device = device;
         }
-
-#if LEGACY_IPOD_SUPPORT
-        bool IDevice.PropertyExists (string key)
-        {
-            return Device.PropertyExists (key);
-        }
-
-        string IDevice.GetPropertyString (string key)
-        {
-            return Device.GetPropertyString (key);
-        }
-
-        double IDevice.GetPropertyDouble (string key)
-        {
-            return Device.GetPropertyDouble (key);
-        }
-
-        bool IDevice.GetPropertyBoolean (string key)
-        {
-            return Device.GetPropertyBoolean (key);
-        }
-
-        int IDevice.GetPropertyInteger (string key)
-        {
-            return Device.GetPropertyInteger (key);
-        }
-
-        ulong IDevice.GetPropertyUInt64 (string key)
-        {
-            return Device.GetPropertyUInt64 (key);
-        }
-
-        public string[] GetPropertyStringList (string key)
-        {
-            return Device.GetPropertyStringList (key);
-        }
-#endif
     }
 }
 #endif

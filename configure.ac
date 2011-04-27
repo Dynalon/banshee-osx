@@ -169,7 +169,6 @@ fi
 dnl DAP support (each module is optional)
 BANSHEE_CHECK_DAP_MTP
 BANSHEE_CHECK_DAP_APPLEDEVICE
-BANSHEE_CHECK_DAP_IPOD
 BANSHEE_CHECK_DAP_KARMA
 
 dnl DAAP support (optional)
@@ -339,7 +338,6 @@ src/Libraries/MusicBrainz/Makefile
 src/Dap/Makefile
 src/Dap/Banshee.Dap/Makefile
 src/Dap/Banshee.Dap.AppleDevice/Makefile
-src/Dap/Banshee.Dap.Ipod/Makefile
 src/Dap/Banshee.Dap.MassStorage/Makefile
 src/Dap/Banshee.Dap.Mtp/Makefile
 src/Dap/Banshee.Dap.Karma/Makefile
@@ -412,7 +410,6 @@ ${PACKAGE}-${VERSION}
     Mass Storage:          yes
     MTP:                   ${enable_libmtp}
     Apple Device:          ${enable_appledevice}
-    ipod-sharp (legacy):   ${enable_ipodsharp}
     Karma:                 ${enable_karmasharp}
 
   Extra Features:

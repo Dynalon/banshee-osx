@@ -41,17 +41,6 @@ namespace Banshee.Hardware
 
         IDeviceMediaCapabilities MediaCapabilities { get; }
 
-#if LEGACY_IPOD_SUPPORT
-        bool PropertyExists (string key);
-
-        string GetPropertyString (string key);
-        double GetPropertyDouble (string key);
-        bool GetPropertyBoolean (string key);
-        int GetPropertyInteger (string key);
-        ulong GetPropertyUInt64 (string key);
-        string [] GetPropertyStringList (string key);
-#endif
-
         IUsbDevice ResolveRootUsbDevice ();
         IUsbPortInfo ResolveUsbPortInfo ();
     }

@@ -9,11 +9,6 @@ internal static class AddinXmlStringCatalog
         Catalog.GetString (@"Support for most iPod/iPhone/iPad devices.");
         Catalog.GetString (@"Device Support");
 
-        // ../src/Dap/Banshee.Dap.Ipod/Banshee.Dap.Ipod.addin.xml
-        Catalog.GetString (@"iPod Support");
-        Catalog.GetString (@"Support for most iPod devices.");
-        Catalog.GetString (@"Device Support");
-
         // ../src/Dap/Banshee.Dap.Karma/Banshee.Dap.Karma.addin.xml
         Catalog.GetString (@"Karma Support");
         Catalog.GetString (@"Support for Rio Karma devices.");
