@@ -377,24 +377,20 @@ ${PACKAGE}-${VERSION}
     MeeGo Support:         ${enable_meego}
 
   Digital Audio Player (DAP) Support:
+    Apple Device:          ${enable_appledevice} (libgpod-sharp)
+    Karma:                 ${enable_karmasharp}
     Mass Storage:          yes
     MTP:                   ${enable_libmtp}
-    Apple Device:          ${enable_appledevice}
-    Karma:                 ${enable_karmasharp}
 
   Extra Features:
     Web Browser:           ${have_libwebkit} (webkit-1.0 >= $WEBKIT_MIN_VERSION, libsoup-2.4 >= $SOUP_MIN_VERSION)
       + GNOME Proxy        ${have_libsoup_gnome} (libsoup-gnome-2.4 >= $SOUP_GNOME_MIN_VERSION)
-      + Amazon MP3         ${have_libwebkit}
-      + Miro Guide         ${have_libwebkit}
-      + Wikipedia          ${have_libwebkit}
     Boo Scripting:         ${enable_boo}
     DAAP:                  ${enable_daap}
     GIO Backend:           ${enable_gio} (glib >= 2.22, gtk-sharp-beans, and gio-sharp)
     GIO Hardware:          ${enable_gio_hardware} (gudev-sharp, gkeyfile-sharp)
-    Gapless playback:      ${ENABLE_GAPLESS} (gstreamer-plugins-base > 0.10.25.2)
-    YouTube extension:     ${enable_youtube} (gdata-sharp >= 1.4)
-    Sound menu:            ${enable_soundmenu}
+    YouTube:               ${enable_youtube} (gdata-sharp >= 1.4)
+    Sound Menu:            ${enable_soundmenu}
     Ubuntu One Store:      ${enable_ubuntuone} (ubuntuone-sharp >= 0.3.2)
 
   Build/Development:
