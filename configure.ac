@@ -13,10 +13,7 @@ m4_define([banshee_version_pre_release], [0])
 m4_define([concat], $1$2$3$4)
 
 dnl create base version string
-m4_define([banshee_version], concat(
-	banshee_version_major.,
-	banshee_version_minor.,
-	banshee_version_micro))
+m4_define([banshee_version], concat(banshee_version_major., banshee_version_minor., banshee_version_micro))
 
 dnl create the release version
 m4_define([banshee_version],
@@ -24,15 +21,11 @@ m4_define([banshee_version],
 		banshee_version,
 		concat(banshee_version, banshee_version_pre_release)))
 
-m4_define([banshee_api_version],
-	[banshee_version_major.banshee_version_minor])
-
-m4_define([banshee_asm_version],
-	[banshee_api_version.0.0])
+m4_define([banshee_api_version], [banshee_version_major.banshee_version_minor])
+m4_define([banshee_asm_version], [banshee_api_version.0.0])
 
 AC_PREREQ(2.52)
-AC_INIT([banshee], banshee_version,
-	[http://bugzilla.gnome.org/enter_bug.cgi?product=banshee])
+AC_INIT([banshee], banshee_version, [http://bugzilla.gnome.org/enter_bug.cgi?product=banshee])
 
 AM_INIT_AUTOMAKE([1.9 dist-bzip2 tar-ustar dist-zip foreign])
 AM_MAINTAINER_MODE
@@ -74,11 +67,7 @@ dnl Mono and gmcs
 SHAMROCK_CHECK_MONO_MODULE(1.9.1)
 SHAMROCK_FIND_MONO_2_0_COMPILER
 SHAMROCK_FIND_MONO_RUNTIME
-SHAMROCK_CHECK_MONO_2_0_GAC_ASSEMBLIES([	
-	Mono.Cairo
-	Mono.Posix
-	ICSharpCode.SharpZipLib
-])
+SHAMROCK_CHECK_MONO_2_0_GAC_ASSEMBLIES([Mono.Cairo Mono.Posix ICSharpCode.SharpZipLib])
 
 dnl Check for mono >= 2.4.3 for LibraryWatcher extension, with fix for bnc#322330
 PKG_CHECK_MODULES(MONO_2_4_3, mono >= 2.4.3, HAVE_MONO_2_4_3=yes, HAVE_MONO_2_4_3=no)
@@ -87,10 +76,8 @@ AM_CONDITIONAL(ENABLE_LIBRARY_WATCHER, test "x$HAVE_MONO_2_4_3" = "xyes")
 dnl Check for GNOME >= 2.28 to see if we should remove
 dnl 'Media Player' from the app Name, bgo#596242, except
 dnl in MeeGo where GNOME >= 2.28, but we want the full name
-PKG_CHECK_MODULES(GNOME_2_28, gnome-desktop-2.0 >= 2.28,
-	HAVE_GNOME_2_28=yes, HAVE_GNOME_2_28=no)
-PKG_CHECK_MODULES(MEEGO_PANEL, meego-panel,
-	HAVE_MEEGO_PANEL=yes, HAVE_MEEGO_PANEL=no)
+PKG_CHECK_MODULES(GNOME_2_28, gnome-desktop-2.0 >= 2.28, HAVE_GNOME_2_28=yes, HAVE_GNOME_2_28=no)
+PKG_CHECK_MODULES(MEEGO_PANEL, meego-panel, HAVE_MEEGO_PANEL=yes, HAVE_MEEGO_PANEL=no)
 if test "x$HAVE_GNOME_2_28" = "xno" -o "x$HAVE_MEEGO_PANEL" = "xyes"; then
 	BANSHEE_DESKTOP_NAME="_Name=Banshee Media Player"
 else
@@ -152,10 +139,7 @@ BANSHEE_CHECK_OSX
 PKG_CHECK_MODULES(SQLITE, sqlite3 >= 3.4)
 
 dnl GNOME (optional)
-AC_ARG_ENABLE(gnome, 
-	AC_HELP_STRING([--disable-gnome], 
-		[Disable GNOME support]), 
-	, enable_gnome="yes")
+AC_ARG_ENABLE(gnome, AC_HELP_STRING([--disable-gnome], [Disable GNOME support]), , enable_gnome="yes")
 if test "x$enable_gnome" = "xyes"; then
 	BANSHEE_CHECK_GNOME_SHARP
 	AC_PATH_PROG(GCONFTOOL, gconftool-2, no)
@@ -208,10 +192,7 @@ dnl i18n
 SHAMROCK_CONFIGURE_I18N($PACKAGE)
 
 dnl the bird is the word
-AC_ARG_ENABLE(podcast, 
-	AC_HELP_STRING([--disable-podcast], 
-		[Disable Podcasting support]), 
-	, enable_podcast="yes")
+AC_ARG_ENABLE(podcast, AC_HELP_STRING([--disable-podcast], [Disable Podcasting support]), , enable_podcast="yes")
 AM_CONDITIONAL(ENABLE_PODCAST, test "x$enable_podcast" = "xyes")
 
 AC_ARG_ENABLE(release,
@@ -448,4 +429,3 @@ if test -d ${expanded_libdir}/${PACKAGE}; then
 	echo "           Installing over an existing install will cause conflicts!"
 	echo 
 fi
-
