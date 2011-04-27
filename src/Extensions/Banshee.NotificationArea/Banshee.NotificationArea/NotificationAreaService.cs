@@ -216,9 +216,7 @@ namespace Banshee.NotificationArea
             }
 
             if (notif_area == null) {
-                #if HAVE_GTK_2_10
                 notif_area = new GtkNotificationAreaBox (elements_service.PrimaryWindow);
-                #endif
             }
 
             if (notif_area == null) {
