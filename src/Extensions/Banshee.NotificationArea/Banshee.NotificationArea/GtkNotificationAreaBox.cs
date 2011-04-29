@@ -26,8 +26,6 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#if HAVE_GTK_2_10
-
 using System;
 using Mono.Unix;
 using Gtk;
@@ -86,6 +84,3 @@ namespace Banshee.NotificationArea
         }
     }
 }
-
-#endif
-

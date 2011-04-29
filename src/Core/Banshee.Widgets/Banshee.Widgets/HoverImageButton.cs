@@ -33,7 +33,7 @@ namespace Banshee.Widgets
 {
     public class HoverImageButton : EventBox
     {
-        private static Gdk.Cursor hand_cursor = new Gdk.Cursor(Gdk.CursorType.Hand1);
+        private static Gdk.Cursor hand_cursor = new Gdk.Cursor(Gdk.CursorType.Hand2);
 
         private IconSize icon_size = IconSize.Menu;
         private string [] icon_names = { "image-missing", Stock.MissingImage };

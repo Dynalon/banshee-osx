@@ -96,6 +96,7 @@ namespace Banshee.CoverArt
         {
             ServiceManager.SourceManager.MusicLibrary.TracksAdded += OnTracksAdded;
             ServiceManager.SourceManager.MusicLibrary.TracksChanged += OnTracksChanged;
+            FetchCoverArt ();
         }
 
         public void Dispose ()

@@ -109,6 +109,8 @@ public class TranslatorExtractor
             case "ca": language_name = "Catalan"; break;
             case "ca@valencia": language_name = "Catalan (Valencian)"; break;
             case "zh_CN": language_name = "Simplified Chinese"; break;
+            case "zh_HK": language_name = "Chinese (Hong Kong)"; break;
+            case "zh_TW": language_name = "Chinese (Taiwan)"; break;
             case "fr": language_name = "French"; break;
             case "ko": language_name = "Korean"; break;
             case "ast": language_name = "Asturian"; break;

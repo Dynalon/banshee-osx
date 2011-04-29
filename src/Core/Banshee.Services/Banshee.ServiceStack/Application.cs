@@ -169,6 +169,19 @@ namespace Banshee.ServiceStack
             }
         }
 
+        static bool paths_initialized;
+        public static void InitializePaths ()
+        {
+            if (!paths_initialized) {
+                // We changed banshee-1 to banshee everywhere except the
+                // ~/.config/banshee-1/ and ~/.cache/banshee-1 directories, and 
+                // for gconf
+                Paths.UserApplicationName = "banshee-1";
+                Paths.ApplicationName = InternalName;
+                paths_initialized = true;
+            }
+        }
+
         [DllImport ("libglib-2.0-0.dll")]
         static extern IntPtr g_get_language_names ();
 
@@ -186,7 +199,7 @@ namespace Banshee.ServiceStack
                     Paths.InstalledApplicationDataRoot, project, lang);
 
                 if (System.IO.Directory.Exists (path)) {
-                    shown = Banshee.Web.Browser.Open (String.Format ("ghelp:/{0}", path), false);
+                    shown = Banshee.Web.Browser.Open (String.Format ("ghelp:{0}", path), false);
                     break;
                 }
             }
@@ -279,7 +292,7 @@ namespace Banshee.ServiceStack
         }
 
         public static string InternalName {
-            get { return "banshee-1"; }
+            get { return "banshee"; }
         }
 
         public static string IconName {

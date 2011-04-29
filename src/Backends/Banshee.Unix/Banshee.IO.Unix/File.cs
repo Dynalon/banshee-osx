@@ -48,7 +48,7 @@ namespace Banshee.IO.Unix
             is_directory = is_regular_file = Syscall.stat (path, out buf) == 0;
             is_regular_file &= (buf.st_mode & FilePermissions.S_IFREG) == FilePermissions.S_IFREG;
             is_directory &= (buf.st_mode & FilePermissions.S_IFDIR) == FilePermissions.S_IFDIR;
-            // FIXME: workaround for http://bugzilla.ximian.com/show_bug.cgi?id=76966
+            // FIXME: workaround for http://bugzilla.novell.com/show_bug.cgi?id=319774
             is_directory &= ! ((buf.st_mode & FilePermissions.S_IFSOCK) == FilePermissions.S_IFSOCK);
             mtime = buf.st_mtime;
         }

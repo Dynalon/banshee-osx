@@ -31,8 +31,12 @@ RELEASE_RC_FILE="release-rc"
 case "$(uname)" in
     FreeBSD)
         MAKE=gmake
-        SHA256="sha256 -r"
+        SHA256="shasum -a 256"
         ;;
+	Darwin)
+		MAKE=make
+		SHA256="shasum -a 256"
+		;;
     *)
         MAKE=make
         SHA256=sha256sum

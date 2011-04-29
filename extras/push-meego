@@ -4,7 +4,7 @@ import os
 import sys
 import subprocess
 
-prefix = '/usr/lib/banshee-1'
+prefix = '/usr/lib/banshee'
 exclude_files = []
 sync_files = {}
 last_sync_files = {}
@@ -50,4 +50,4 @@ for dirname, files in sync_files.iteritems ():
     scp.append (os.path.abspath (os.path.join (prefix, dirname)))
     os.waitpid (subprocess.Popen (scp).pid, 0)
 
-subprocess.call (['meego-ssh', 'killall', '-9', 'Xorg', 'mutter', 'banshee-1'])
+subprocess.call (['meego-ssh', 'killall', '-9', 'Xorg', 'mutter', 'banshee'])

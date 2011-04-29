@@ -216,9 +216,7 @@ namespace Banshee.NotificationArea
             }
 
             if (notif_area == null) {
-                #if HAVE_GTK_2_10
                 notif_area = new GtkNotificationAreaBox (elements_service.PrimaryWindow);
-                #endif
             }
 
             if (notif_area == null) {
@@ -328,12 +326,12 @@ namespace Banshee.NotificationArea
                 }
             }
 
-// Work around/fix bgo#641608 on Windows with this if/else/endif
-#if WIN32
-            menu.Popup (null, null, null, 3, Gtk.Global.CurrentEventTime);
-#else
-            menu.Popup (null, null, notif_area.PositionMenu, 3, Gtk.Global.CurrentEventTime);
-#endif
+            // Work around/fix bgo#641608 on Windows with this if/else/endif
+            if (PlatformDetection.IsWindows) {
+                menu.Popup (null, null, null, 3, Gtk.Global.CurrentEventTime);
+            } else {
+                menu.Popup (null, null, notif_area.PositionMenu, 3, Gtk.Global.CurrentEventTime);
+            }
         }
 
         private void CloseWindow (object o, EventArgs args)

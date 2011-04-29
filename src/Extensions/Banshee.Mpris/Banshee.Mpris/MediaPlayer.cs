@@ -107,7 +107,7 @@ namespace Banshee.Mpris
         }
 
         public string DesktopEntry {
-            get { return "banshee-1"; }
+            get { return "banshee"; }
         }
 
         // This is just a list of commonly supported MIME types.
@@ -364,6 +364,9 @@ namespace Banshee.Mpris
             StringBuilder object_path_builder = new StringBuilder ();
 
             object_path_builder.Append (DBusServiceManager.ObjectRoot);
+            if (playlist.Parent != null) {
+                object_path_builder.AppendFormat ("/{0}", DBusServiceManager.MakeDBusSafeString (playlist.Parent.TypeName));
+            }
             object_path_builder.Append ("/Playlists/");
 
             object_path_builder.Append (DBusServiceManager.MakeDBusSafeString (playlist.UniqueId));

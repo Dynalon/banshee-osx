@@ -90,10 +90,7 @@ namespace Banshee.MeeGo
                 ServiceManager.PlayerEngine.CurrentState != PlayerState.Idle,
                 PlayerEvent.StateChange | PlayerEvent.StartOfStream);
 
-            source_combo_box.Model.Filter = (source) =>
-                source == ServiceManager.SourceManager.MusicLibrary ||
-                source.Parent == ServiceManager.SourceManager.MusicLibrary ||
-                source.GetType ().FullName == "Banshee.PlayQueue.PlayQueueSource";
+            source_combo_box.Model.Filter = (source) => source is ITrackModelSource;
             source_combo_box.Model.Refresh ();
             source_combo_box.UpdateActiveSource ();
 
@@ -302,6 +299,11 @@ namespace Banshee.MeeGo
                 SetSource (source);
 
                 search_entry.Ready = true;
+
+                if (source != null && source != ServiceManager.SourceManager.MusicLibrary
+                     && source.Parent != ServiceManager.SourceManager.MusicLibrary) {
+                     ServiceManager.Get<MeeGoService> ().PresentPrimaryInterface ();
+                }
             });
         }
 

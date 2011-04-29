@@ -73,7 +73,7 @@ namespace Beroe
 
         private static void Startup ()
         {
-            Paths.ApplicationName = "banshee-1";
+            Application.InitializePaths ();
 
             ThreadAssist.InitializeMainThread ();
 
@@ -113,7 +113,7 @@ namespace Beroe
                 // FIXME: Using Process.Start sucks, but DBus doesn't let you specify
                 // extra command line arguments
                 DBusConnection.Disconnect ("CollectionIndexer");
-                Process.Start ("banshee-1", builder.ToString ());
+                Process.Start ("banshee", builder.ToString ());
                 // Bus.Session.StartServiceByName (DBusConnection.DefaultBusName);
                 // Bus.Session.Iterate ();
             }

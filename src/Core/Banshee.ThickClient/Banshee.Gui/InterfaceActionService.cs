@@ -114,6 +114,8 @@ namespace Banshee.Gui
             if (ui_str != null) {
                 active_source_uis.Add (UIManager.AddUiFromString (ui_str));
             }
+
+            UIManager.EnsureUpdate ();
         }
 
         private void OnExtensionChanged (object o, ExtensionNodeEventArgs args)

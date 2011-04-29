@@ -308,13 +308,6 @@ bp_supports_gapless (BansheePlayer *player)
 }
 
 P_INVOKE gboolean
-bp_supports_stream_volume (BansheePlayer *player)
-{
-    g_return_val_if_fail (IS_BANSHEE_PLAYER (player), FALSE);
-    return player->supports_stream_volume;
-}
-
-P_INVOKE gboolean
 bp_audiosink_has_volume (BansheePlayer *player)
 {
     g_return_val_if_fail (IS_BANSHEE_PLAYER (player), FALSE);
@@ -326,17 +319,34 @@ bp_set_volume (BansheePlayer *player, gdouble volume)
 {
     GParamSpec *volume_spec;
     GValue value = { 0, };
+    GstElement *v;
 
     g_return_if_fail (IS_BANSHEE_PLAYER (player));
-    g_return_if_fail (GST_IS_ELEMENT(player->volume));
+
+    // playbin will either control the volume property of the audiosinks real
+    // sink element case the audiosink doesn't have one it will control a
+    // volume element it created itself.
+    // Unfortunately if playbin creates a volume element it will be before our
+    // audiosink and thus before our equalizer and replaygain, which is
+    // undesirable because of latency issues (Most likely they insert too many
+    // queues). So only use the playbin volume support when we know our sink
+    // supports volume control
+
+    if (player->audiosink_has_volume) {
+      v = player->playbin;
+    } else {
+      v = player->volume;
+    }
+
+    g_return_if_fail (GST_IS_ELEMENT(v));
 
     player->current_volume = CLAMP (volume, 0.0, 1.0);
-    volume_spec = g_object_class_find_property (G_OBJECT_GET_CLASS (player->volume), "volume");
+    volume_spec = g_object_class_find_property (G_OBJECT_GET_CLASS (v), "volume");
     g_value_init (&value, G_TYPE_DOUBLE);
     g_value_set_double (&value, player->current_volume);
     g_param_value_validate (volume_spec, &value);
 
-    g_object_set_property (G_OBJECT (player->volume), "volume", &value);
+    g_object_set_property (G_OBJECT (v), "volume", &value);
     g_value_unset (&value);
     _bp_rgvolume_print_volume(player);
 }
@@ -484,12 +494,8 @@ bp_get_subtitle_description (BansheePlayer *player, int i)
             return NULL;
         }
         bp_debug ("[subtitle]: iso 639-2 subtitle code %s", code);
-#ifdef HAVE_GST_0_10_26
         desc = (gchar *) gst_tag_get_language_name ((const gchar *)&code);
         bp_debug ("[subtitle]: subtitle language: %s", desc);
-#else
-        desc = g_strdup (code);
-#endif
 
         g_free (code);
     }

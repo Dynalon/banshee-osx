@@ -84,6 +84,12 @@ namespace Banshee.Metadata
                 return;
             }
 
+            if (String.IsNullOrEmpty (track.AlbumTitle) || track.AlbumTitle == AlbumInfo.UnknownAlbumTitle ||
+                String.IsNullOrEmpty (track.ArtistName) || track.ArtistName == ArtistInfo.UnknownArtistName) {
+                // Do not try to fetch album art for these
+                return;
+            }
+
             lock (((ICollection)queries).SyncRoot) {
                 if (!queries.ContainsKey (track)) {
                     IMetadataLookupJob job = CreateJob (track);

@@ -95,8 +95,6 @@ namespace Banshee.Widgets
                 return;
             }
 
-            EnsureStyle ();
-
             int width, height;
             layout.GetPixelSize (out width, out height);
 
@@ -174,12 +172,14 @@ namespace Banshee.Widgets
             }
         }
 
+        private string last_text;
         private void UpdateLabel (string text)
         {
-            if (!IsRealized || layout == null) {
+            if (!IsRealized || layout == null || text == last_text) {
                 return;
             }
 
+            last_text = text;
             layout.SetMarkup (String.Format (format_string, GLib.Markup.EscapeText (text)));
             QueueResize ();
         }
@@ -202,7 +202,6 @@ namespace Banshee.Widgets
             set {
                 buffering_progress = Math.Max (0.0, Math.Min (1.0, value));
                 UpdateLabel ();
-                QueueDraw ();
             }
         }
 
@@ -228,7 +227,6 @@ namespace Banshee.Widgets
                 if (state != value) {
                     state = value;
                     UpdateLabel ();
-                    QueueDraw ();
                 }
             }
         }
@@ -239,7 +237,6 @@ namespace Banshee.Widgets
                 if (is_live != value) {
                     is_live = value;
                     UpdateLabel ();
-                    QueueDraw ();
                 }
             }
         }

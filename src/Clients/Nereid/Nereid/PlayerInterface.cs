@@ -251,7 +251,14 @@ namespace Nereid
                     TooltipText = Catalog.GetString ("Close")
                 };
 
-                close_button.Clicked += (o, e) => Hide ();
+                close_button.Clicked += (o, e) => {
+                    if (ServiceManager.PlayerEngine.IsPlaying () &&
+                       (ServiceManager.PlayerEngine.CurrentState != PlayerState.Paused)  &&
+                        ServiceManager.PlayerEngine.CurrentTrack.HasAttribute (TrackMediaAttributes.VideoStream)) {
+                        ServiceManager.PlayerEngine.Pause ();
+                    }
+                    Hide ();
+                };
                 close_button.ShowAll ();
                 ActionService.PopulateToolbarPlaceholder (header_toolbar, "/HeaderToolbar/ClosePlaceholder", close_button);
             } else {
@@ -670,9 +677,11 @@ namespace Nereid
                 }
             }
 
-            // Don't disable them if ctrl is pressed
-            disable_keybindings &= (evnt.State & Gdk.ModifierType.ControlMask) == 0 &&
-                evnt.Key != Gdk.Key.Control_L && evnt.Key != Gdk.Key.Control_R;
+            // Don't disable them if ctrl is pressed, unless ctrl-a is pressed
+            if (evnt.Key != Gdk.Key.a) {
+                disable_keybindings &= (evnt.State & Gdk.ModifierType.ControlMask) == 0 &&
+                    evnt.Key != Gdk.Key.Control_L && evnt.Key != Gdk.Key.Control_R;
+            }
 
             if (disable_keybindings) {
                 if (accel_group_active) {

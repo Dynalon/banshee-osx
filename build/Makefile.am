@@ -11,7 +11,6 @@ ALL_TARGETS = $(TRANSLATOR_EXTRACTOR_ASSEMBLY) $(DLL_MAP_VERIFIER_ASSEMBLY) $(AD
 if GCONF_SCHEMAS_INSTALL
 bansheedir = $(pkglibdir)
 banshee_SCRIPTS = $(GCONF_SCHEMA_EXTRACTOR_ASSEMBLY)
-ALL_TARGETS += $(GCONF_SCHEMA_EXTRACTOR_ASSEMBLY)
 $(GCONF_SCHEMA_EXTRACTOR_ASSEMBLY): GConfSchemaExtractor.cs
 	$(MCS) -out:$@ $<
 endif
@@ -45,7 +44,6 @@ EXTRA_DIST = \
 	gconf-schema-rules \
 	gnome-doc-utils.make
 
-DISTCLEANFILES = gnome-doc-utils.make
 CLEANFILES = *.exe *.mdb
 MAINTAINERCLEANFILES = Makefile.in
 

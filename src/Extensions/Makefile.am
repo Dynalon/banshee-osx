@@ -8,6 +8,7 @@ SUBDIRS = \
 	Banshee.CoverArt \
 	Banshee.Daap \
 	Banshee.Emusic \
+	Banshee.Emusic.Store \
 	Banshee.FileSystemQueue \
 	Banshee.InternetArchive \
 	Banshee.Fixup \

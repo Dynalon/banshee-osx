@@ -64,6 +64,8 @@ namespace Banshee.AmazonMp3.Store
                 Catalog.GetString ("_Keep me logged in"),
                 Catalog.GetString ("Keep any session cookies that Amazon MP3 may set across instances.")));
             session_section.Add (logout_pref = new VoidPreference ("log-out-button"));*/
+
+            Hyena.Log.InformationFormat ("AmazonMP3 store redirect URL: {0}", RedirectUrl.Get ());
         }
 
         public void Dispose ()
@@ -87,6 +89,8 @@ namespace Banshee.AmazonMp3.Store
             var combo = new Banshee.Widgets.DictionaryComboBox<string> ();
             combo.Add (Catalog.GetString ("Automatic (Geo IP detection)"), "geo");
             combo.Add (null, null);
+            // TODO uncomment this after string-freeze
+            //combo.Add (Catalog.GetString ("Canada (amazon.ca)"), "CA");
             combo.Add (Catalog.GetString ("France (amazon.fr)"), "FR");
             combo.Add (Catalog.GetString ("Germany, Switzerland, Austria (amazon.de)"), "DE");
             combo.Add (Catalog.GetString ("Japan (amazon.co.jp)"), "JP");
@@ -117,6 +121,11 @@ namespace Banshee.AmazonMp3.Store
             "plugins.amazonmp3store", "persist-login",
             true,
             "Persist the Amazon MP3 store account login across sessions (via cookies)", null);
+
+        public static readonly SchemaEntry<string> RedirectUrl = new SchemaEntry<string> (
+            "plugins.amazonmp3store", "redirect_url",
+            StoreView.REDIRECT_URL,
+            "The URL of the redirect server to use for the AmazonMP3 store.", null);
     }
 }
 

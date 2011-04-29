@@ -261,6 +261,8 @@ static void bp_volume_changed_callback (GstElement *playbin, GParamSpec *spec, B
 
     g_object_get (G_OBJECT (playbin), "volume", &volume, NULL);
 
+    player->current_volume = volume;
+
     if (player->volume_changed_cb != NULL) {
         player->volume_changed_cb (player, volume);
     }
@@ -273,9 +275,9 @@ static void bp_volume_changed_callback (GstElement *playbin, GParamSpec *spec, B
 gboolean 
 _bp_pipeline_construct (BansheePlayer *player)
 {
-    GValue value = {0};
     GstBus *bus;
     GstPad *teepad;
+    GstPad *pad;
     GstElement *audiosink;
     GstElement *audiosinkqueue;
     GstElement *eq_audioconvert = NULL;
@@ -286,15 +288,6 @@ _bp_pipeline_construct (BansheePlayer *player)
     // Playbin is the core element that handles autoplugging (finding the right
     // source and decoder elements) based on source URI and stream content
     player->playbin = gst_element_factory_make ("playbin2", "playbin");
-
-    player->supports_stream_volume = FALSE;
-#if BANSHEE_CHECK_GST_VERSION(0,10,25)
-    player->supports_stream_volume = gst_element_implements_interface (
-        player->playbin, GST_TYPE_STREAM_VOLUME);
-#endif
-
-    bp_debug ("Stream volume supported: %s",
-        player->supports_stream_volume ? "YES" : "NO");
 
 #ifdef ENABLE_GAPLESS
     // FIXME: Connect a proxy about-to-finish callback that will generate a next-track-starting callback.
@@ -327,6 +320,16 @@ _bp_pipeline_construct (BansheePlayer *player)
     
     g_return_val_if_fail (audiosink != NULL, FALSE);
 
+    // Set the profile to "music and movies" (gst-plugins-good 0.10.3)
+    if (g_object_class_find_property (G_OBJECT_GET_CLASS (audiosink), "profile")) {
+        g_object_set (G_OBJECT (audiosink), "profile", 1, NULL);
+    }
+
+    /* Set the audio sink to READY so it can autodetect the right sink element
+     * if needed, as this allows us to correctly determine whether it has a
+     * volume */
+    gst_element_set_state (audiosink, GST_STATE_READY);
+
     // See if the audiosink has a 'volume' property.  If it does, we assume it saves and restores
     // its volume information - and that we shouldn't
     player->audiosink_has_volume = FALSE;
@@ -342,10 +345,6 @@ _bp_pipeline_construct (BansheePlayer *player)
     bp_debug ("Audiosink has volume: %s",
         player->audiosink_has_volume ? "YES" : "NO");
         
-    // Set the profile to "music and movies" (gst-plugins-good 0.10.3)
-    if (g_object_class_find_property (G_OBJECT_GET_CLASS (audiosink), "profile")) {
-        g_object_set (G_OBJECT (audiosink), "profile", 1, NULL);
-    }
     
     // Create a custom audio sink bin that will hold the real primary sink
     player->audiobin = gst_bin_new ("audiobin");
@@ -392,7 +391,7 @@ _bp_pipeline_construct (BansheePlayer *player)
         gst_element_link_many (audiosinkqueue, player->volume, audiosink, NULL);
     }
     player->before_rgvolume = player->volume;
-    player->after_rgvolume = audiosink;
+    player->after_rgvolume = player->audiosink = audiosink;
     player->rgvolume_in_pipeline = FALSE;
     _bp_replaygain_pipeline_rebuild (player);
 
@@ -405,15 +404,13 @@ _bp_pipeline_construct (BansheePlayer *player)
     bus = gst_pipeline_get_bus (GST_PIPELINE (player->playbin));    
     gst_bus_add_watch (bus, bp_pipeline_bus_callback, player);
 
-    
-    GstPad *sinkpad = gst_element_get_pad (audiosinkqueue, "sink");
-    g_value_init (&value, G_OBJECT_TYPE (sinkpad));
-    g_value_set_instance (&value, sinkpad);
-    g_object_set_property (G_OBJECT (player->audiotee), "alloc-pad", &value);
-    g_value_unset (&value);
-
     // Link the first tee pad to the primary audio sink queue
-    gst_pad_link (gst_element_get_request_pad (player->audiotee, "src0"), sinkpad);
+    GstPad *sinkpad = gst_element_get_pad (audiosinkqueue, "sink");
+    pad = gst_element_get_request_pad (player->audiotee, "src%d");
+    g_object_set(player->audiotee, "alloc-pad", pad, NULL);
+    gst_pad_link (pad, sinkpad);
+    gst_object_unref (GST_OBJECT (pad));
+
     // Now allow specialized pipeline setups
     _bp_cdda_pipeline_setup (player);
     _bp_video_pipeline_setup (player, bus);
@@ -433,6 +430,12 @@ _bp_pipeline_destroy (BansheePlayer *player)
     if (GST_IS_ELEMENT (player->playbin)) {
         player->target_state = GST_STATE_NULL;
         gst_element_set_state (player->playbin, GST_STATE_NULL);
+
+        // The audiosink was set READY early to detect sink volume control in
+        // case it is out of sync with the playbin state ensure it's in NULL now
+        if (player->audiosink != NULL && GST_STATE (player->audiosink) != GST_STATE_NULL)
+          gst_element_set_state (player->audiosink, GST_STATE_NULL);
+
         gst_object_unref (GST_OBJECT (player->playbin));
     }
     

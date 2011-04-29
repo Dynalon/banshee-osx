@@ -52,7 +52,7 @@ namespace Banshee.Playlists.Formats
             }
 
             line = line.Trim();
-            return line == "#EXTM3U" || line.StartsWith("http");
+            return line == "#EXTM3U" || line.StartsWith("http") || Banshee.Collection.Database.DatabaseImportManager.IsWhiteListedFile (line);
         }
 
         public M3uPlaylistFormat()

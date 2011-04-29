@@ -11,5 +11,10 @@ SOURCES =  \
 
 RESOURCES = Banshee.Emusic.addin.xml
 
+mimedir = $(datadir)/mime/packages
+mime_DATA = banshee-emx.xml
+
 include $(top_srcdir)/build/build.mk
+
+EXTRA_DIST += banshee-emx.xml
 

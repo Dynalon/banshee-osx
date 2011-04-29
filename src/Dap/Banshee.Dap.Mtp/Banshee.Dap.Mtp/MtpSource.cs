@@ -66,7 +66,7 @@ namespace Banshee.Dap.Mtp
             base.DeviceInitialize (device);
 
             var portInfo = device.ResolveUsbPortInfo ();
-            if (portInfo == null) {
+            if (portInfo == null || portInfo.DeviceNumber == 0) {
                 throw new InvalidDeviceException ();
             }
 
@@ -95,7 +95,7 @@ namespace Banshee.Dap.Mtp
                 //if (v.BusNumber == busnum && v.DeviceNumber == devnum) {
                 if (v.DeviceNumber == devnum) {
                     // If gvfs-gphoto has it mounted, unmount it
-                    if (volume != null) {
+                    if (volume != null && volume.IsMounted) {
                         volume.Unmount ();
                     }
 

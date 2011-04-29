@@ -9,11 +9,6 @@ internal static class AddinXmlStringCatalog
         Catalog.GetString (@"Support for most iPod/iPhone/iPad devices.");
         Catalog.GetString (@"Device Support");
 
-        // ../src/Dap/Banshee.Dap.Ipod/Banshee.Dap.Ipod.addin.xml
-        Catalog.GetString (@"iPod Support");
-        Catalog.GetString (@"Support for most iPod devices.");
-        Catalog.GetString (@"Device Support");
-
         // ../src/Dap/Banshee.Dap.Karma/Banshee.Dap.Karma.addin.xml
         Catalog.GetString (@"Karma Support");
         Catalog.GetString (@"Support for Rio Karma devices.");
@@ -68,6 +63,11 @@ internal static class AddinXmlStringCatalog
         Catalog.GetString (@"DAAP Sharing");
         Catalog.GetString (@"Browse and listen to music shared over your local network.");
         Catalog.GetString (@"Utilities");
+
+        // ../src/Extensions/Banshee.Emusic.Store/Banshee.Emusic.Store.addin.xml
+        Catalog.GetString (@"eMusic Store");
+        Catalog.GetString (@"Browse, search, and purchase music and audiobooks from eMusic");
+        Catalog.GetString (@"Online Sources");
 
         // ../src/Extensions/Banshee.Emusic/Banshee.Emusic.addin.xml
         Catalog.GetString (@"eMusic Import");

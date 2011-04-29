@@ -26,6 +26,7 @@
 // THE SOFTWARE.
 
 using System;
+using System.Web;
 using Mono.Unix;
 
 using Gtk;
@@ -125,8 +126,8 @@ namespace Banshee.MiroGuide
 
         public override void GoSearch (string query)
         {
-            var uri = GetActionUrl (LastPageWasAudio, "search/");
-            LoadUri (new Uri (uri + query).AbsoluteUri);
+            query = System.Uri.EscapeDataString (query);
+            LoadUri (new Uri (GetActionUrl (LastPageWasAudio, "search/") + query).AbsoluteUri);
         }
 
         private string GetActionUrl (bool audio, string action)
@@ -140,23 +141,20 @@ namespace Banshee.MiroGuide
         private bool TryBypassRedirect (string uri)
         {
             if (uri != null && uri.StartsWith ("http://subscribe.getmiro.com/") && uri.Contains ("url1")) {
-                int a = uri.IndexOf ("url1") + 5;
-                int l = Math.Min (uri.Length - 1, uri.IndexOf ('&', a)) - a;
-                if (l > 0 && a + l < uri.Length) {
-                    var direct_uri = System.Web.HttpUtility.UrlDecode (uri.Substring (a, l));
-                    if (uri.Contains ("/download")) {
-                        // FIXME download and import
-                        //Banshee.Streaming.RadioTrackInfo.OpenPlay (direct_uri);
-                        //Banshee.ServiceStack.ServiceManager.PlaybackController.StopWhenFinished = true;
-                        Log.DebugFormat ("MiroGuide: downloading {0}", direct_uri);
-                        Log.Information ("Downloading not yet implemented.  URL", direct_uri, true);
-                    } else {
-                        // Subscribe to it straight away, don't redirect at all
-                        ServiceManager.Get<DBusCommandService> ().PushFile (direct_uri);
-                        Log.DebugFormat ("MiroGuide: subscribing straight away to {0}", direct_uri);
-                    }
-                    return true;
+                var direct_uri = HttpUtility.UrlDecode (uri.SubstringBetween ("url1=", "&"));
+                var title = HttpUtility.UrlDecode (uri.SubstringBetween ("title1=", "&"));
+                if (uri.Contains ("/download")) {
+                    // FIXME download and import
+                    //Banshee.Streaming.RadioTrackInfo.OpenPlay (direct_uri);
+                    //Banshee.ServiceStack.ServiceManager.PlaybackController.StopWhenFinished = true;
+                    Log.DebugFormat ("MiroGuide: downloading {0} ({1})", title, direct_uri);
+                    Log.Information ("Downloading not yet implemented.  URL", direct_uri, true);
+                } else {
+                    // Subscribe to it straight away, don't redirect at all
+                    ServiceManager.Get<DBusCommandService> ().PushFile (direct_uri);
+                    Log.DebugFormat ("MiroGuide: subscribing straight away to {0} ({1})", title, direct_uri);
                 }
+                return true;
             }
 
             return false;
@@ -167,26 +165,19 @@ namespace Banshee.MiroGuide
         private bool TryInterceptListenWatch (string uri)
         {
             bool ret = false;
-            if (uri != null && uri.StartsWith ("http://miroguide.com/items/")) {
-                int i = Uri.LastIndexOf ('/') + 1;
-                int channel_id = Int32.Parse (Uri.Substring (i, Uri.Length - i));
-
-                i = uri.LastIndexOf ('/') + 1;
+            if (uri != null && uri.Contains ("miroguide.com/items/")) {
+                int i = uri.LastIndexOf ('/') + 1;
                 var item_id = uri.Substring (i, uri.Length - i);
 
                 // Get the actual media URL via the MiroGuide API
                 new Hyena.Downloader.HttpStringDownloader () {
-                    Uri = new Uri (String.Format ("http://www.miroguide.com/api/get_channel?datatype=json&id={0}", channel_id)),
+                    Uri = new Uri (String.Format ("http://www.miroguide.com/api/get_item?datatype=json&id={0}", item_id)),
                     Finished = (d) => {
                         if (d.State.Success) {
                             string media_url = null;
-                            var obj = new Deserializer (d.Content).Deserialize ();
-                            var ary = ((JsonObject)obj)["item"] as JsonArray;
-                            foreach (JsonObject item in ary) {
-                                if ((item["playback_url"] as string).EndsWith (item_id)) {
-                                    media_url = item["url"] as string;
-                                    break;
-                                }
+                            var item = new Deserializer (d.Content).Deserialize () as JsonObject;
+                            if (item.ContainsKey ("url")) {
+                                media_url = item["url"] as string;
                             }
 
                             if (media_url != null) {

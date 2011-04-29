@@ -44,7 +44,7 @@ namespace Banshee.Gui
     public abstract class GtkBaseClient : Client
     {
         static GtkBaseClient () {
-            Paths.ApplicationName = Application.InternalName;
+            Application.InitializePaths ();
             user_gtkrc = Path.Combine (Paths.ApplicationData, "gtkrc");
         }
 
@@ -150,9 +150,7 @@ namespace Banshee.Gui
             ThreadAssist.ProxyToMainHandler = Banshee.ServiceStack.Application.Invoke;
 
             Gdk.Global.ProgramClass = Application.InternalName;
-#if HAVE_GLIBSHARP_2_12_7
             GLib.Global.ApplicationName = "Banshee";
-#endif
 
             if (ApplicationContext.Debugging) {
                 GLib.Log.SetLogHandler ("Gtk", GLib.LogLevelFlags.Critical, GLib.Log.PrintTraceLogFunction);

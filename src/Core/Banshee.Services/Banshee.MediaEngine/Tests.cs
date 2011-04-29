@@ -29,6 +29,7 @@
 #if ENABLE_TESTS
 
 using System;
+using System.Linq;
 using System.Threading;
 
 using NUnit.Framework;
@@ -51,7 +52,7 @@ namespace Banshee.MediaEngine
         [Test]
         public void TestMediaEngineService ()
         {
-            AssertTransition (() => service.Volume = 5, PlayerEvent.Volume);
+            AssertTransition (null, () => service.Volume = 5, PlayerEvent.Volume);
 
             for (int i = 0; i < 3; i++) {
                 WaitFor (PlayerState.Idle);
@@ -62,6 +63,7 @@ namespace Banshee.MediaEngine
                 Assert.AreEqual (null, service.CurrentSafeUri);
 
                 LoadAndPlay ("A_boy.ogg");
+                Assert.AreEqual (0, service.CurrentTrack.PlayCount);
 
                 for (int j = 0; j < 4; j++) {
                     AssertTransition (() => service.Pause (), PlayerState.Paused);
@@ -71,12 +73,15 @@ namespace Banshee.MediaEngine
                 }
 
                 AssertTransition (() => service.Position = service.Length - 200, PlayerEvent.Seek);
-                WaitFor (PlayerState.Idle, PlayerEvent.EndOfStream, PlayerEvent.RequestNextTrack);
+
+                WaitFor (PlayerState.Idle, PlayerEvent.EndOfStream);
+                Assert.AreEqual (1, service.CurrentTrack.PlayCount);
 
                 service.Close (true);
             }
 
             play_when_idles = 0;
+            Assert.AreEqual (PlayerState.Idle, service.CurrentState);
             service.Play ();
             Thread.Sleep (50);
             Assert.AreEqual (1, play_when_idles);
@@ -96,8 +101,9 @@ namespace Banshee.MediaEngine
             var uri = new SafeUri (Paths.Combine (TestsDir, "data", filename));
             var states = service.IsPlaying () ? new object [] { PlayerState.Paused, PlayerState.Idle, PlayerState.Loading } : new object [] { PlayerState.Loading };
             //var states = service.IsPlaying () ? new object [] { PlayerState.Paused, PlayerState.Loading } : new object [] { PlayerState.Loading };
+            Log.DebugFormat ("LoadAndPlaying {0}", filename);
             if (rand.NextDouble () > .5) {
-                AssertTransition (() => service.Open (new UnknownTrackInfo (uri)), states);
+                AssertTransition (() => service.Open (new TrackInfo () { Uri = uri }), states);
             } else {
                 AssertTransition (() => service.Open (uri), states);
             }
@@ -126,8 +132,13 @@ namespace Banshee.MediaEngine
 
         private void WaitFor (System.Action action, PlayerState state)
         {
+            WaitFor (default_ignore, action, state);
+        }
+
+        private void WaitFor (System.Func<PlayerState?, PlayerEvent?, bool> ignore, System.Action action, PlayerState state)
+        {
             if (service.CurrentState != state) {
-                AssertTransition (action, state);
+                AssertTransition (ignore, action, state);
             } else if (action != null) {
                 Assert.Fail (String.Format ("Already in state {0} before invoking action", state));
             }
@@ -135,11 +146,27 @@ namespace Banshee.MediaEngine
 
         private void WaitFor (params object [] states)
         {
-            AssertTransition (null, states);
+            WaitFor (default_ignore, states);
+        }
+
+        private void WaitFor (System.Func<PlayerState?, PlayerEvent?, bool> ignore, params object [] states)
+        {
+            AssertTransition (ignore, null, states);
         }
 
         private void AssertTransition (System.Action action, params object [] states)
         {
+            // By default, ignore volume events b/c the system/stream volume stuff seems to raise them at random times
+            AssertTransition (default_ignore, action, states);
+        }
+
+        public System.Func<PlayerState?, PlayerEvent?, bool> default_ignore = new System.Func<PlayerState?, PlayerEvent?, bool> ((s, e) =>
+            e != null && (e.Value == PlayerEvent.Volume || e.Value == PlayerEvent.RequestNextTrack)
+        );
+
+        private void AssertTransition (System.Func<PlayerState?, PlayerEvent?, bool> ignore, System.Action action, params object [] states)
+        {
+            Log.DebugFormat ("AssertTransition: {0}", String.Join (", ", states.Select (s => s.ToString ()).ToArray ()));
             int result_count = 0;
             var reset_event = new ManualResetEvent (false);
             var handler = new PlayerEventHandler (a => {
@@ -149,9 +176,21 @@ namespace Banshee.MediaEngine
 
                         var last_state = sca != null ? sca.Current : service.CurrentState;
                         var last_event = a.Event;
+
+                        if (ignore != null && ignore (last_state, last_event)) {
+                            Log.DebugFormat ("   > ignoring {0}/{1}", last_event, last_state);
+                            return;
+                        }
+
+                        if (sca == null) {
+                            Log.DebugFormat ("   > {0}", a.Event);
+                        } else {
+                            Log.DebugFormat ("   > {0}", last_state);
+                        }
+
                         var evnt = (states[result_count] as PlayerEvent?) ?? PlayerEvent.StateChange;
                         var state = states[result_count] as PlayerState?;
-                        //Console.WriteLine ("want {0}/{1} but got {2}/{3}", evnt, state, last_event, last_state);
+
                         result_count++;
                         Assert.AreEqual (evnt, last_event);
                         if (state != null) {
@@ -168,8 +207,7 @@ namespace Banshee.MediaEngine
 
             while (result_count < states.Length) {
                 reset_event.Reset ();
-                if (!reset_event.WaitOne (1000)) {
-                    //Assert.Fail (String.Format ("Waited 1s for {0}; didn't happen", states[result_count]));
+                if (!reset_event.WaitOne (2000)) {
                     Assert.Fail (String.Format ("Waited 1s for state/event, didnt' happen"));
                     break;
                 }
@@ -254,6 +292,7 @@ namespace Banshee.MediaEngine
             }
 
             ApplicationContext.Debugging = false;
+            //Log.Debugging = true;
             Application.TimeoutHandler = RunTimeout;
             Application.IdleHandler = RunIdle;
             Application.IdleTimeoutRemoveHandler = IdleTimeoutRemove;
@@ -284,9 +323,14 @@ namespace Banshee.MediaEngine
 
             service = new PlayerEngineService ();
 
-            //service.ConnectEvent (a => { Console.WriteLine ("{0}: {1}", a.Event, service.CurrentState); });
             service.PlayWhenIdleRequest += delegate { play_when_idles++; };
             service.TrackIntercept += delegate { track_intercepts++; return false; };
+
+            // TODO call each test w/ permutations of Gapless enabled/disabled, RG enabled/disabled
+
+            try {
+                ServiceManager.RegisterService (service);
+            } catch {}
 
             ((IInitializeService)service).Initialize ();
             ((IDelayedInitializeService)service).DelayedInitialize ();

@@ -331,7 +331,7 @@ namespace Bacon
         }
 
         // FIXME: There's no g_signal_stop_emission* binding:
-        // http://bugzilla.ximian.com/show_bug.cgi?id=76416
+        // http://bugzilla.novell.com/show_bug.cgi?id=319275
 
         [DllImport("libgobject-2.0-0.dll")]
         private static extern void g_signal_stop_emission_by_name(IntPtr o, string signal);
@@ -590,7 +590,7 @@ namespace Bacon
         // FIXME: This is seriously LAME. The Gtk# binding does not support mutating
         // Gdk.Event* objects. All the properties are marked read only. Support for
         // these objects is simply incomplete.
-        // http://bugzilla.ximian.com/show_bug.cgi?id=80685
+        // http://bugzilla.novell.com/show_bug.cgi?id=323373
 
         private void UpdateEventButton(Gdk.EventButton evnt, Gdk.Window window, Gdk.EventType type)
         {
@@ -689,7 +689,7 @@ namespace Bacon
             // FIXME: This is also seriously LAME. The MinSliderSize property is "protected"
             // according to gtkrange.h, and thus should be exposed and accessible through
             // this sub-class, but GAPI does not bind protected structure fields. LAME LAME.
-            // http://bugzilla.ximian.com/show_bug.cgi?id=80684
+            // http://bugzilla.novell.com/show_bug.cgi?id=323372
 
             [DllImport("libgobject-2.0-0.dll")]
             private static extern void g_type_query(IntPtr type, IntPtr query);

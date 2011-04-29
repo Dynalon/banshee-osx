@@ -35,6 +35,7 @@ using Hyena;
 using Banshee.ServiceStack;
 using Banshee.MediaEngine;
 using Banshee.Collection;
+using Banshee.ContextPane;
 
 using Banshee.Gui;
 
@@ -47,13 +48,12 @@ namespace Banshee.Wikipedia
         // Translators: this is used for looking up artist pages on Wikipedia; change to your wikipedia language if you want
         private string url_format = Catalog.GetString ("http://en.wikipedia.org/wiki/{0}");
 
-        internal OssiferWebView view;
+        private OssiferWebView view;
+        private ContextPage page;
 
-        public WikipediaView ()
+        public WikipediaView (ContextPage page)
         {
-            view = new OssiferWebView ();
-
-            Add (view);
+            this.page = page;
         }
 
         private string last_artist;
@@ -75,6 +75,17 @@ namespace Banshee.Wikipedia
         private void OpenUrl (string uri)
         {
             Hyena.Log.DebugFormat ("Opening {0}", uri);
+
+            if (view == null) {
+                view = new OssiferWebView ();
+                view.LoadStatusChanged += delegate {
+                    if (view.LoadStatus == Banshee.WebBrowser.OssiferLoadStatus.FirstVisuallyNonEmptyLayout) {
+                        page.SetLoaded ();
+                    }
+                };
+                Add (view);
+                ShowAll ();
+            }
             view.LoadUri (uri);
         }
     }

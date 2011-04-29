@@ -72,7 +72,7 @@ namespace Banshee.Daap
             VBox.ShowAll ();
 
             AddStockButton (Stock.Cancel, ResponseType.Cancel);
-            AddStockButton (Stock.Ok, ResponseType.Ok, true);
+            AddStockButton (Stock.Add, ResponseType.Ok, true);
 
             LoadHistory();
         }

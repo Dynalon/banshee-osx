@@ -51,9 +51,9 @@ namespace Banshee.Metrics
 
         public static void Start ()
         {
-            // Only enable collection 20% of the time
-            var one_in_five = new Random ().NextDouble () < 0.2;
-            if (one_in_five && banshee_metrics == null) {
+            // Only enable collection 5% of the time
+            var one_in_twenty = new Random ().NextDouble () < 0.05;
+            if (one_in_twenty && banshee_metrics == null) {
                 Log.Information ("Starting collection of anonymous usage data");
                 try {
                     banshee_metrics = new BansheeMetrics ();

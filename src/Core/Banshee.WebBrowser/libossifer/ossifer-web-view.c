@@ -76,7 +76,7 @@ ossifer_web_view_download_get_mimetype (WebKitDownload *download)
 static WebKitWebView *
 ossifer_web_view_create_web_view (WebKitWebView *web_view, WebKitWebFrame *frame, gpointer user_data)
 {
-    return WEBKIT_WEB_VIEW (g_object_new (OSSIFER_TYPE_WEB_VIEW, NULL));
+    return web_view;
 }
 
 static void

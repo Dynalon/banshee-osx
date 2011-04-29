@@ -75,9 +75,22 @@ namespace Banshee.LibraryWatcher
             this.library = library;
             handle = new ManualResetEvent(false);
             string path = library.BaseDirectoryWithSeparator;
+            if (String.IsNullOrEmpty (path)) {
+                throw new Exception ("Will not create LibraryWatcher for the blank directory");
+            }
+
             string home = Environment.GetFolderPath (Environment.SpecialFolder.Personal) + Path.DirectorySeparatorChar;
             if (path == home) {
                 throw new Exception ("Will not create LibraryWatcher for the entire home directory");
+            }
+
+            string root = Path.GetPathRoot (Environment.CurrentDirectory);
+            if (path == root || path == root + Path.DirectorySeparatorChar) {
+                throw new Exception ("Will not create LibraryWatcher for the entire root directory");
+            }
+
+            if (!Banshee.IO.Directory.Exists (path)) {
+                throw new Exception ("Will not create LibraryWatcher for non-existent directory");
             }
 
             import_manager = ServiceManager.Get<LibraryImportManager> ();

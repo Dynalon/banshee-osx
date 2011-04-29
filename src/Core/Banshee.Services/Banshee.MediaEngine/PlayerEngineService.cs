@@ -230,6 +230,8 @@ namespace Banshee.MediaEngine
 
             if (args.Event == PlayerEvent.StartOfStream) {
                 incremented_last_played = false;
+            } else if (args.Event == PlayerEvent.EndOfStream) {
+                IncrementLastPlayed ();
             }
 
             RaiseEvent (args);
@@ -553,7 +555,7 @@ namespace Banshee.MediaEngine
 
         public TrackInfo CurrentTrack {
             get {
-                return active_engine.CurrentTrack ?? synthesized_contacting_track;
+                return active_engine == null ? null : active_engine.CurrentTrack ?? synthesized_contacting_track;
             }
         }
 

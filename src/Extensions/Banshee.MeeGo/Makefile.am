@@ -39,7 +39,7 @@ com.meego.UX.Shell.Panels.banshee.service: com.meego.UX.Shell.Panels.banshee.ser
 
 desktopfiles_in_files = meego-panel-banshee.desktop.in
 desktopfiles_files = $(desktopfiles_in_files:.desktop.in=.desktop)
-desktopfilesdir = $(datadir)/mutter-meego/panels
+desktopfilesdir = $(MEEGO_PANELS_DIR)
 desktopfiles_DATA = $(desktopfiles_files)
 
 %.desktop.in: %.desktop.in.in Makefile

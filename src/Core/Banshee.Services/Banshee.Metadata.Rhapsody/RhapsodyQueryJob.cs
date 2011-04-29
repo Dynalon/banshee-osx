@@ -56,6 +56,10 @@ namespace Banshee.Metadata.Rhapsody
 
         private static string GetAlbumUrl (IBasicTrackInfo track)
         {
+            if (track == null || track.AlbumArtist == null || track.AlbumTitle == null) {
+                return null;
+            }
+
             string artist = EscapeUrlPart (track.AlbumArtist);
             string album = EscapeUrlPart (track.AlbumTitle);
             return String.Format ("{0}/{1}", artist, album);
@@ -68,7 +72,8 @@ namespace Banshee.Metadata.Rhapsody
 
         public override void Run()
         {
-            if (Track == null || (Track.MediaAttributes & TrackMediaAttributes.Podcast) != 0) {
+            if (Track == null || (Track.MediaAttributes & TrackMediaAttributes.Podcast) != 0
+                || GetAlbumUrl (Track) == null) {
                 return;
             }
 

@@ -165,9 +165,10 @@ namespace Banshee.Dap.AppleDevice
             case GPod.MediaType.Audio:
                 MediaAttributes |= TrackMediaAttributes.Music;
                 break;
-            case GPod.MediaType.AudioVideo:
+            // This seems to cause audio files to show up in Banshee in the Videos section
+            /*case GPod.MediaType.AudioVideo:
                 MediaAttributes |= TrackMediaAttributes.VideoStream;
-                break;
+                break;*/
             case GPod.MediaType.MusicVideo:
                 MediaAttributes |= TrackMediaAttributes.Music | TrackMediaAttributes.VideoStream;
                 break;
@@ -187,6 +188,11 @@ namespace Banshee.Dap.AppleDevice
             case GPod.MediaType.MusicTVShow:
                 MediaAttributes |= TrackMediaAttributes.Music | TrackMediaAttributes.VideoStream | TrackMediaAttributes.TvShow;
                 break;
+            }
+
+            // If it's just AudioStream, add Music to it as well so it'll show up in Music
+            if (MediaAttributes == TrackMediaAttributes.AudioStream) {
+                MediaAttributes |= TrackMediaAttributes.Music;
             }
         }
 
@@ -260,7 +266,10 @@ namespace Banshee.Dap.AppleDevice
                 } else if (HasAttribute (TrackMediaAttributes.TvShow)) {
                     track.MediaType = GPod.MediaType.TVShow;
                 } else {
-                    track.MediaType = GPod.MediaType.AudioVideo;
+                    // I dont' think AudioVideo should be used here; upon loading the tracks
+                    // into Banshee, audio files often have AudioVideo (aka MediaType == 0) too.
+                    //track.MediaType = GPod.MediaType.AudioVideo;
+                    track.MediaType = GPod.MediaType.Movie;
                 }
             } else {
                 if (HasAttribute (TrackMediaAttributes.Podcast)) {

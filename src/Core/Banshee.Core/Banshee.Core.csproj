@@ -32,7 +32,6 @@
     <WarningLevel>4</WarningLevel>
     <Optimize>false</Optimize>
     <OutputPath>..\..\..\bin\bin</OutputPath>
-    <DefineConstants>WIN32</DefineConstants>
     <CustomCommands>
       <CustomCommands>
         <Command type="AfterBuild" command="..\..\..\build\windows\post-build.bat" workingdir="${SolutionDir}" />

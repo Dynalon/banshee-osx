@@ -62,7 +62,7 @@ namespace Banshee.CoverArt
             // Since we do last_scan - retry_every, avoid out-of-range error by ensuring
             // the last_scan date isn't already MinValue
             if (last_scan == DateTime.MinValue) {
-                last_scan = DateTime.Now - TimeSpan.FromDays (300);
+                last_scan = DateTime.Now - TimeSpan.FromDays (365*50);
             }
 
             CountCommand = new HyenaSqliteCommand (@"

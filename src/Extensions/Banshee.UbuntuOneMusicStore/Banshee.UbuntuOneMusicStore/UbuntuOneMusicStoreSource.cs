@@ -55,6 +55,10 @@ namespace Banshee.UbuntuOneMusicStore
         {
             Properties.SetString ("Icon.Name", "ubuntuone");
 
+            if (custom_view == null) {
+                Properties.Set<ISourceContents> ("Nereid.SourceContents", custom_view = new CustomView ());
+            }
+
             // So we can handle u1ms:// URIs
             ServiceManager.Get<DBusCommandService> ().ArgumentPushed += OnCommandLineArgument;
         }
@@ -82,17 +86,6 @@ namespace Banshee.UbuntuOneMusicStore
         // A count of 0 will be hidden in the source TreeView
         public override int Count {
             get { return 0; }
-        }
-
-        // Defer any UI creation until it's actually needed.
-        public override void Activate ()
-        {
-            if (custom_view == null) {
-                Properties.Set<ISourceContents> ("Nereid.SourceContents", custom_view = new CustomView ());
-            }
-
-            base.Activate ();
-            Log.Debug ("U1MS: Initialized");
         }
 
         public class StoreWrapper: UbuntuOne.U1MusicStore, IDisableKeybindings

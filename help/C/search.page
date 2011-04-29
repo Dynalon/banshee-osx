@@ -34,9 +34,9 @@
   
   <p>A search query consists of some basic terms, for example, 
   <em>dave matthews</em>.  By entering <em>dave matthews</em> in the search box,
-   Banshee will search all metatdata fields including Track Title, Album Title,
+   Banshee will search all metadata fields including Track Title, Album Title,
    Album Artist, Year, etc.  Any track whose metadata includes <em>dave</em> 
-   and <em>matthews</em> will be returned.  Search terms are case, meaning you don't have to capitalize.  <em>dave</em>, <em>Dave</em>, and <em>DAVE</em>
+   and <em>matthews</em> will be returned.  Search terms are case insensitive, meaning you don't have to capitalize.  <em>dave</em>, <em>Dave</em>, and <em>DAVE</em>
    all mean the same thing when searching.</p>
 
 <section id="operators">
@@ -90,22 +90,22 @@
   </tr>
   <tr>
     <td><p>dave, matthews</p></td> <td><p>
-    Matches any fields in a track containing both <em>dave</em> or
+    Matches any fields in a track containing either <em>dave</em> or
     <em>matthews</em>.</p></td>
   </tr>
   <tr>
     <td><p>dave or matthews</p></td> <td><p>
-    Matches any fields in a track containing both <em>dave</em> or
+    Matches any fields in a track containing either <em>dave</em> or
     <em>matthews</em>.</p></td>
   </tr> 
   <tr>
     <td><p>dave | matthews</p></td> <td><p>
-    Matches any fields in a track containing both <em>dave</em> or
+    Matches any fields in a track containing either <em>dave</em> or
     <em>matthews</em>.</p></td>
   </tr>       
   <tr>
     <td><p>-"dave matthews"</p></td> <td><p>
-    Displays all tracks whose fields do not containt <em>dave
+    Displays all tracks whose fields do not contain <em>dave
     matthews</em>.</p></td>
   </tr> 
   
