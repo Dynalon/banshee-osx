@@ -29,7 +29,11 @@ DOC_PAGES = \
 	sync.page \
 	ui.page
 
+<<<<<<< HEAD
 DOC_LINGUAS = ca da de el es fr gl hu ja sl
+=======
+DOC_LINGUAS = ca da de el es fr gl sl uk
+>>>>>>> Added uk translation
 dist-hook: doc-dist-hook
 
 endif
