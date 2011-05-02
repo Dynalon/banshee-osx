@@ -112,7 +112,7 @@ namespace Banshee.GStreamer
         public void Finish ()
         {
             if (output_path != null) {
-                System.IO.File.Delete (output_path);
+                Banshee.IO.File.Delete (new SafeUri (output_path));
             }
 
             TrackReset ();
