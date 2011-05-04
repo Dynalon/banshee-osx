@@ -83,6 +83,7 @@ namespace Banshee.Metadata.MusicBrainz
         public MusicBrainzQueryJob (IBasicTrackInfo track)
         {
             Track = track;
+            MusicBrainzService.UserAgent = Banshee.Web.Browser.UserAgent;
         }
 
         public override void Run ()

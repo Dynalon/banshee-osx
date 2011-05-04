@@ -74,6 +74,8 @@ namespace Banshee.AudioCd
         {
             this.volume = volume;
             disc_title = Catalog.GetString ("Audio CD");
+
+            MusicBrainzService.UserAgent = Banshee.Web.Browser.UserAgent;
         }
 
         public void NotifyUpdated ()
