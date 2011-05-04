@@ -36,6 +36,8 @@ namespace MusicBrainz
             }
         }
 
+        public static string UserAgent { get; set; }
+
         static RequestCachePolicy cache_policy;
         public static RequestCachePolicy CachePolicy {
             get { return cache_policy; }

@@ -389,7 +389,8 @@ namespace MusicBrainz
             if (min_interval > time)
                 Thread.Sleep ((min_interval - time).Milliseconds);
 
-            WebRequest request = WebRequest.Create (url);
+            var request = WebRequest.Create (url) as HttpWebRequest;
+            request.UserAgent = MusicBrainzService.UserAgent;
             if (cache_implemented == null) {
                 try {
                     request.CachePolicy = MusicBrainzService.CachePolicy;
