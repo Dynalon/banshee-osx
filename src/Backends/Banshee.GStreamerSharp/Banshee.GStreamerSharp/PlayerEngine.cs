@@ -28,6 +28,7 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -35,6 +36,7 @@ using System.Threading;
 using Mono.Unix;
 
 using Gst;
+using Gst.PbUtils;
 using Gst.BasePlugins;
 
 using Hyena;
@@ -54,6 +56,7 @@ namespace Banshee.GStreamerSharp
         Pipeline pipeline;
         PlayBin2 playbin;
         uint iterate_timeout_id = 0;
+        List<string> missing_details = new List<string> ();
 
         public PlayerEngine ()
         {
@@ -128,11 +131,39 @@ namespace Banshee.GStreamerSharp
                     msg.ParseError (out error_type, out err_msg, out debug);
 
                     HandleError (error_type, err_msg, debug);
+                    break;
 
+                case MessageType.Element:
+                    if (MissingPluginMessage.IsMissingPluginMessage (msg)) {
+                        string detail = MissingPluginMessage.GetInstallerDetail (msg);
+
+                        if (detail == null)
+                            return false;
+
+                        if (missing_details.Contains (detail)) {
+                            Log.DebugFormat ("Ignoring missing element details, already prompted ('{0}')", detail);
+                            return false;
+                        }
+
+                        Log.DebugFormat ("Saving missing element details ('{0}')", detail);
+                        missing_details.Add (detail);
+
+                        Log.Error ("Missing GStreamer Plugin", MissingPluginMessage.GetDescription (msg), true);
+
+                        InstallPluginsContext install_context = new InstallPluginsContext ();
+                        Install.InstallPlugins (missing_details.ToArray (), install_context, OnInstallPluginsReturn);
+                    }
                     break;
             }
 
             return true;
+        }
+
+        private void OnInstallPluginsReturn (InstallPluginsReturn status)
+        {
+            Log.InformationFormat ("GStreamer plugin installer returned: {0}", status);
+            if (status == InstallPluginsReturn.Success || status == InstallPluginsReturn.InstallInProgress) {
+            }
         }
 
         private void OnVolumeChanged (object o, Gst.GLib.NotifyArgs args)
