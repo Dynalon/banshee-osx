@@ -42,6 +42,7 @@ using Banshee.Metadata;
 using Banshee.Configuration;
 using Banshee.Collection;
 using Banshee.Equalizer;
+using Banshee.Collection.Database;
 
 namespace Banshee.MediaEngine
 {
@@ -283,7 +284,23 @@ namespace Banshee.MediaEngine
 
         public void Open (SafeUri uri)
         {
-            Open (new UnknownTrackInfo (uri));
+             // Check if the uri exists
+            if (uri == null || !File.Exists (uri.AbsolutePath)) {
+                return;
+            }
+            // Try to find uri in the library
+            int track_id = DatabaseTrackInfo.GetTrackIdForUri (uri);
+            if (track_id > 0) {
+                DatabaseTrackInfo track_db = DatabaseTrackInfo.Provider.FetchSingle (track_id);
+                Open (track_db);
+            } else {
+                // Not in the library, get info from the file
+                TrackInfo track = new TrackInfo ();
+                using (var file = StreamTagger.ProcessUri (uri)) {
+                    StreamTagger.TrackInfoMerge (track, file, false);
+                }
+                Open (track);
+            }
         }
 
         void IPlayerEngineService.Open (string uri)
