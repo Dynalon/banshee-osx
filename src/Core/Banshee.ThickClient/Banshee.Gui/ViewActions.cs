@@ -66,6 +66,8 @@ namespace Banshee.Gui
                    Catalog.GetString ("View the graphical equalizer"), OnShowEqualizer)
             });
 
+            this["ShowEqualizerAction"].Sensitive = false;
+
             Add (new ToggleActionEntry [] {
                 new ToggleActionEntry (
                    "ShowContextPaneAction", null,
