@@ -20,6 +20,10 @@
   <Extension path="/Banshee/MediaEngine/PlayerEngine">
     <PlayerEngine class="Banshee.GStreamerSharp.PlayerEngine"/>
   </Extension>
+
+  <Extension path="/Banshee/MediaEngine/BpmDetector">
+    <BpmDetector class="Banshee.GStreamerSharp.BpmDetector"/>
+  </Extension>
   
   <!--
   <Extension path="/Banshee/MediaEngine/AudioCdRipper">
