@@ -48,9 +48,6 @@ fi
 # issues with sgen on Mono 2.8.0
 #export MONO_ENV_OPTIONS="--gc=sgen"
 
-# Work around NowPlaying/webkit crash (bgo#641515)
-export XLIB_SKIP_ARGB_VISUALS=1
-
 if [ -n "$BANSHEE_DEBUG" -o -n "$BANSHEE_TRACE" -o -n "$BANSHEE_PROFILE" ]; then
     MONO_OPTIONS="$BANSHEE_DEBUG $BANSHEE_TRACE $BANSHEE_PROFILE"
     echo "** Running Mono with $MONO_OPTIONS **"
