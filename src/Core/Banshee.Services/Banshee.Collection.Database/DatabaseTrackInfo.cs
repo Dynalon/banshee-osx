@@ -776,6 +776,13 @@ namespace Banshee.Collection.Database
             "SELECT TrackID FROM CoreTracks WHERE PrimarySourceId IN (?) AND Uri = ? LIMIT 1"
         );
 
+        private static string get_track_by_metadata_hash =
+            "SELECT {0} FROM {1} WHERE {2} AND PrimarySourceId IN (?) AND MetadataHash = ? LIMIT 1";
+
+        private static HyenaSqliteCommand get_track_count_by_metadata_hash = new HyenaSqliteCommand (
+            "SELECT COUNT('x') FROM CoreTracks WHERE PrimarySourceId IN (?) AND MetadataHash = ?"
+        );
+
         public static int GetTrackIdForUri (SafeUri uri, int [] primary_sources)
         {
             return ServiceManager.DbConnection.Query<int> (get_track_id_by_uri,
@@ -788,9 +795,34 @@ namespace Banshee.Collection.Database
                 primary_sources, absoluteUri);
         }
 
+        private static IDataReader FindTrackByMetadataHash (string metadata_hash, int [] primary_sources)
+        {
+            var command = new HyenaSqliteCommand (String.Format (
+                get_track_by_metadata_hash,
+                provider.Select, provider.From, provider.Where));
+            return ServiceManager.DbConnection.Query (command,
+                primary_sources, metadata_hash);
+        }
+
         public static bool ContainsUri (SafeUri uri, int [] primary_sources)
         {
             return GetTrackIdForUri (uri, primary_sources) > 0;
+        }
+
+        internal static DatabaseTrackInfo GetTrackForMetadataHash (string metadata_hash, int [] primary_sources)
+        {
+            using (IDataReader reader = FindTrackByMetadataHash (metadata_hash, primary_sources)) {
+                if (reader.Read ()) {
+                    return provider.Load (reader);
+                }
+                return null;
+            }
+        }
+
+        internal static int MetadataHashCount (string metadata_hash, int [] primary_sources)
+        {
+            return ServiceManager.DbConnection.Query<int> (get_track_count_by_metadata_hash,
+                primary_sources, metadata_hash);
         }
 
         public static void UpdateMetadataHash (string albumTitle, string artistName, string condition)

@@ -168,20 +168,23 @@ namespace Banshee.Collection.Database
                 return null;
             }
 
-            DatabaseTrackInfo track = null;
+            DatabaseTrackInfo track = new DatabaseTrackInfo () { Uri = uri };
+            using (var file = StreamTagger.ProcessUri (uri)) {
+                StreamTagger.TrackInfoMerge (track, file, false, true);
+            }
+
+            track.Uri = uri;
+
+            if (FindOutdatedDupe (track)) {
+                return null;
+            }
+
+            track.PrimarySource = trackPrimarySourceChooser (track);
 
             // TODO note, there is deadlock potential here b/c of locking of shared commands and blocking
             // because of transactions.  Needs to be fixed in HyenaDatabaseConnection.
             ServiceManager.DbConnection.BeginTransaction ();
             try {
-                track = new DatabaseTrackInfo () { Uri = uri };
-                using (var file = StreamTagger.ProcessUri (uri)) {
-                    StreamTagger.TrackInfoMerge (track, file, false, true);
-                }
-
-                track.Uri = uri;
-                track.PrimarySource = trackPrimarySourceChooser (track);
-
                 bool save_track = true;
                 if (track.PrimarySource is Banshee.Library.LibrarySource) {
                     save_track = track.CopyToLibraryIfAppropriate (force_copy);
@@ -206,6 +209,23 @@ namespace Banshee.Collection.Database
             }
 
             return track;
+        }
+
+        private bool FindOutdatedDupe (DatabaseTrackInfo track)
+        {
+            if (DatabaseTrackInfo.MetadataHashCount (track.MetadataHash, PrimarySourceIds) != 1) {
+                return false;
+            }
+
+            var track_to_update = DatabaseTrackInfo.GetTrackForMetadataHash (track.MetadataHash, PrimarySourceIds);
+
+            if (track_to_update == null || Banshee.IO.File.Exists (track_to_update.Uri)) {
+                return false;
+            }
+
+            track_to_update.Uri = track.Uri;
+            track_to_update.Save ();
+            return true;
         }
 
         private void LogError (string path, Exception e)
