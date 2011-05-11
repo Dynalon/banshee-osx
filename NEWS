@@ -1,5 +1,5 @@
 ===============================================================================
-Banshee 2.1.0 - NOT YET RELEASED
+Banshee 2.1.0 - 2011-05-11
 ===============================================================================
 
     Banshee 2.1.0 is the first release in the 2.1 development series leading up
@@ -13,11 +13,34 @@ Banshee 2.1.0 - NOT YET RELEASED
 
     Enhancements:
 
-      * 
+      * ArtworkManager: add --fetch-artwork argument
+      * bgo#647754: Xperia X12 support
+      * bgo#508713: MiniMode: Reduce height of window
+      * bgo#648941: Support .spc files
+      * bgo#649401: Set UserAgent when doing MusicBrainz queries
 
     Notable Bugs Fixed (N fixed since 2.0):
 
-      * 
+      * Windows installer fixes
+      * bgo#647059: Fix Remote Daap crash
+      * bgo#647089: Daap: Bind to IPAddress.Loopback instead of Any
+      * bgo#644648: libbanshee fixes
+      * bgo#642113: Change Remote dialog's button from Ok to Add
+      * bgo#647144: StreamPositionLabel fixes
+      * AmazonMp3.Store: Fix signed-in detection for UK store
+      * bgo#633552: AppleDevice: Ensure m4a/mp3 are supported
+      * bgo#634647: Have ctrl-a select text in SearchEntry
+      * bgo#642140: Last.fm: Close HTTP streams when finished with them
+      * bgo#648133: build: Don't delete gnome-doc-utils.make during distclean
+      * bgo#647932: DatabaseSource: Fix NRE in SkipTrackIfRemoved
+      * bgo#646991: AlbumListView: Fix disappearing option in Preferences
+      * bgo#647024: Lastfm: Fix NRE crash
+      * bgo#636057: Fix rendering glitch
+      * PodcastFeedPropertiesDialog: Fix display of feed URL
+      * bgo#648458: PlsPlaylistFormat: Make parsing the header case-insensitive
+      * bgo#611489: GStreamer: Use Banshee.IO instead of System.IO
+      * bgo#641748: ViewActions: enable eq once we know backend supports it
+      * bgo#638889: Banshee.Services: Avoid creating dupes after moves
 
     Packaging Changes:
 
@@ -80,27 +103,17 @@ Contributors For This Release
     The following people directly contributed to the release of this version
     of Banshee. Without their help, there would be no release!
 
-      Aaron Bockover, Alan McGovern, Alexander Kojevnikov, Alex Launi,
-      Alex Willmy, Andreas Nilsson, Andrés G. Aragoneses, Aran Cox,
-      Aurélien Mino, Benjamín Valero Espinosa, Bertrand Lorentz,
-      Chow Loong Jin, Christian Krause, Dougal Stanton, Dustin C. Hatch,
-      Frank Ziegler, Gabriel Burt, Ján Sokoly, Jensen Somers, Jonas Urth Olsen,
-      kentaro KAZUHAMA, Koichi Akabe, Mackenan Grassi, Mark Busby,
-      Martin Lettner, Michał Sawicz, Olivier Dufour, Paul Cutler,
-      Pete Johanson, Raimo Radczewski, Rodney Dawes, Samuel Gyger,
-      Sjoerd Simons, Tim Fisken, William Friesen, Yuuto Tokunaga, Zhou Ting
+      Alexander Kojevnikov, Andrés G. Aragoneses, Bertrand Lorentz,
+      Chow Loong Jin, Christopher James Halse Rogers, David Nielsen,
+      Dustin C. Hatch, Frank Ziegler, Gabriel Burt, Hajime Mizuno,
+      Jérémie Laval, Jonas Urth Olsen, Mackenan Grassi, Michael Martin-Smucker,
+      Olivier Dufour, Pete Johanson, Rodney Dawes, Sjoerd Simons, Will Thompson
 
     The following people contributed updated translations to this release.
     Without them, our project's reach would be much more limited.
 
-      Andika Triwidada, Andrej Žnidaršič, Ángel Sanz, António Lima,
-      Aron Xu, Benjamín Valero Espinosa, Bruce Cowan, Bruno Brouard,
-      Carles Ferrando, Cheng-Chia Tseng, Daniel Korostil, Daniel Mustieles,
-      Daniel Nylander, David Planella, Fran Diéguez, Gabor Kelemen,
-      Gabriel F. Vilar, Gianvito Cavasoli, Inaki Larranaga Murgoitio,
-      Joe Hansen, Jordi Mas, Jorge González, Kenneth Nielsen, Kentaro KAZUHAMA,
-      Kjartan Maraas, Krix Apolinário, Leonid Kanter, Lucian Adrian Grijincu,
-      Marek Černocký, Mario Blättermann, Matej Urbančič, Maxim V. Dziumanenko,
-      Michael Kotsarinis, Petr Kovar, Rudolfs Mazurs, Sira Nokyoongtong,
-      Takayuki KUSANO, Ville-Pekka Vainio, Xandru Armesto, Yaron Shahrabani,
-      Yuri Myasoedov, Žygimantas Beručka, Χάρης Κουζινόπουλος
+      Andrej Žnidaršič, Benjamín Valero, Bruno Brouard, Changwoo Ryu,
+      Daniel Korostil, Djavan Fagundes, Fran Diéguez, Gabor Kelemen,
+      Hajime Taira, krishnababu k, Kristjan SCHMIDT, Lê Hoàng Phương,
+      Mario Blättermann, Marek Černocký, Markus Schley, Michael Kotsarinis,
+      Nguyễn Thái Ngọc Duy, Rudolfs Mazurs, Wouter Bolsterlee, Yuri Myasoedov
