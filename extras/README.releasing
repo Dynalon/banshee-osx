@@ -11,9 +11,9 @@ Pre-release:
 
 Release:
 * Run the `extras/make-release` script (from extras/ directory)
-  + Add --unstable if appropriate
   + Note that this makes the tag, adds the version to bugzilla,
-    and uploads the tarballs.
+    and uploads the tarballs. You need to ssh to master.gnome.org to
+    install the tarballs on ftp.gnome.org.
 
 Post-release:
 * Update the website
