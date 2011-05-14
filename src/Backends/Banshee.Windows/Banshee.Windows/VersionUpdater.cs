@@ -68,8 +68,8 @@ namespace Banshee.Windows
         {
             if (obj.State.FailureException != null) {
                 if (verbose) {
-                    DisplayMessage ("Can't check for updates",
-                        "We're currently not able to check if there's a new version available. Please try again later.", MessageType.Error);
+                    DisplayMessage (Catalog.GetString ("Can't check for updates"),
+                        Catalog.GetString ("We're currently not able to check if there's a new version available. Please try again later."), MessageType.Error);
                 }
             } else {
                 var doap = XDocument.Load (temp_doap_path);
@@ -91,7 +91,7 @@ namespace Banshee.Windows
                     });
                 } else {
                     if (verbose) {
-                        DisplayMessage ("No update available", "You already have the latest version of Banshee installed.", MessageType.Info);
+                        DisplayMessage (Catalog.GetString ("No update available"), Catalog.GetString ("You already have the latest version of Banshee installed."), MessageType.Info);
                     }
                 }
             }
@@ -102,9 +102,9 @@ namespace Banshee.Windows
             bool update;
             using (var message_dialog = new MessageDialog (ServiceManager.Get<GtkElementsService> ().PrimaryWindow, 0,
                     MessageType.Question, ButtonsType.YesNo, String.Format (
-                    "A new version of Banshee ({0}) is available.{1}Do you want to update?", unstable_version, Environment.NewLine))) {
+                    Catalog.GetString ("A new version of Banshee ({0}) is available.{1}Do you want to update?"), unstable_version, Environment.NewLine))) {
                 message_dialog.WindowPosition = WindowPosition.CenterOnParent;
-                message_dialog.Title = "Banshee update available";
+                message_dialog.Title = Catalog.GetString ("Banshee update available");
                 update = (message_dialog.Run () == (int)ResponseType.Yes);
                 message_dialog.Destroy ();
             }
@@ -125,7 +125,7 @@ namespace Banshee.Windows
 
                 job = new DownloadManagerJob (this) {
                     // Translators: {0} is the filename, eg Banshee-1.9.5.msi
-                    Title = String.Format ("Downloading {0}", String.Format ("Banshee-{0}.msi", unstable_version)),
+                    Title = String.Format (Catalog.GetString ("Downloading {0}"), String.Format ("Banshee-{0}.msi", unstable_version)),
                     CanCancel = false
                 };
 
@@ -148,7 +148,7 @@ namespace Banshee.Windows
             base.OnDownloaderFinished (obj);
 
             if (obj.State.FailureException != null) {
-                DisplayMessage ("Update download failed", "The download failed. Please try again later.", MessageType.Error);
+                DisplayMessage (Catalog.GetString ("Update download failed"), Catalog.GetString ("The download failed. Please try again later."), MessageType.Error);
             } else {
                 Gtk.Application.Invoke (delegate {
                     DisplayUpdateFinishedDownloadingDialog ();
@@ -161,9 +161,9 @@ namespace Banshee.Windows
             bool update;
             using (var message_dialog = new MessageDialog (ServiceManager.Get<GtkElementsService> ().PrimaryWindow, 0,
                         MessageType.Question, ButtonsType.YesNo, String.Format (
-                            "The update finished downloading.{0}Do you want to shutdown Banshee and run the installer?", Environment.NewLine))) {
+                            Catalog.GetString ("The update finished downloading.{0}Do you want to shutdown Banshee and run the installer?"), Environment.NewLine))) {
                 message_dialog.WindowPosition = WindowPosition.CenterOnParent;
-                message_dialog.Title = "Update finished downloading";
+                message_dialog.Title = Catalog.GetString ("Update finished downloading");
                 update = (message_dialog.Run () == (int)ResponseType.Yes);
                 message_dialog.Destroy ();
             }

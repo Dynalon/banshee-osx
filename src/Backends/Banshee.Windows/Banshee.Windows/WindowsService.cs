@@ -106,7 +106,7 @@ namespace Banshee.Windows
             // add check for updates action
             interface_action_service.GlobalActions.Add (new Gtk.ActionEntry[] {
                 new Gtk.ActionEntry ("CheckForUpdatesAction", null,
-                    "Check for Updates", null,
+                    Catalog.GetString("Check for Updates"), null,
                     null, CheckForUpdatesEvent)
             });
 
