@@ -103,9 +103,11 @@ namespace Banshee.GStreamerSharp
                     break;
 
                 case MessageType.StateChanged:
-                    State old_state, new_state, pending_state;
-                    msg.ParseStateChanged (out old_state, out new_state, out pending_state);
-                    HandleStateChange (old_state, new_state, pending_state);
+                    if (msg.Src == playbin) {
+                        State old_state, new_state, pending_state;
+                        msg.ParseStateChanged (out old_state, out new_state, out pending_state);
+                        HandleStateChange (old_state, new_state, pending_state);
+                    }
                     break;
 
                 case MessageType.Buffering:
