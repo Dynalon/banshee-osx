@@ -56,6 +56,7 @@ namespace Banshee.GStreamerSharp
         PlayBin2 playbin;
         uint iterate_timeout_id = 0;
         List<string> missing_details = new List<string> ();
+        ManualResetEvent next_track_set;
 
         public PlayerEngine ()
         {
@@ -83,13 +84,47 @@ namespace Banshee.GStreamerSharp
             Gst.Application.Init ();
             playbin = new PlayBin2 ();
 
+            next_track_set = new ManualResetEvent (false);
+
             // Remember the volume from last time
             Volume = (ushort)PlayerEngineService.VolumeSchema.Get ();
 
             playbin.AddNotification ("volume", OnVolumeChanged);
             playbin.Bus.AddWatch (OnBusMessage);
+            playbin.AboutToFinish += OnAboutToFinish;
 
             OnStateChanged (PlayerState.Ready);
+        }
+
+        void OnAboutToFinish (object o, Gst.GLib.SignalArgs args)
+        {
+            // This is needed to make Shuffle-by-* work.
+            // Shuffle-by-* uses the LastPlayed field to determine what track in the grouping to play next.
+            // Therefore, we need to update this before requesting the next track.
+            //
+            // This will be overridden by IncrementLastPlayed () called by
+            // PlaybackControllerService's EndOfStream handler.
+            CurrentTrack.UpdateLastPlayed ();
+
+            next_track_set.Reset ();
+            OnEventChanged (PlayerEvent.RequestNextTrack);
+
+            if (!next_track_set.WaitOne (1000, false)) {
+                Log.Warning ("[Gapless]: Timed out while waiting for next track to be set.");
+                next_track_set.Set ();
+            }
+        }
+
+        public override void SetNextTrackUri (SafeUri uri, bool maybeVideo)
+        {
+            if (next_track_set.WaitOne (0, false)) {
+                // We've been asked to set the next track, but have taken too
+                // long to get here.  Bail for now, and the EoS handling will
+                // pick up the pieces.
+                return;
+            }
+            playbin.Uri = uri.AbsoluteUri;
+            next_track_set.Set ();
         }
 
         private bool OnBusMessage (Bus bus, Message msg)
@@ -151,6 +186,8 @@ namespace Banshee.GStreamerSharp
 
                         InstallPluginsContext install_context = new InstallPluginsContext ();
                         Install.InstallPlugins (missing_details.ToArray (), install_context, OnInstallPluginsReturn);
+                    } else if (msg.Src == playbin && msg.Structure.Name == "playbin2-stream-changed") {
+                        HandleStreamChanged ();
                     }
                     break;
             }
@@ -168,6 +205,14 @@ namespace Banshee.GStreamerSharp
         private void OnVolumeChanged (object o, Gst.GLib.NotifyArgs args)
         {
             OnEventChanged (PlayerEvent.Volume);
+        }
+
+        private void HandleStreamChanged ()
+        {
+            // Set the current track as fully played before signaling EndOfStream.
+            ServiceManager.PlayerEngine.IncrementLastPlayed (1.0);
+            OnEventChanged (PlayerEvent.EndOfStream);
+            OnEventChanged (PlayerEvent.StartOfStream);
         }
 
         private void HandleError (Enum domain, string error_message, string debug)
