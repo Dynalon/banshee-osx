@@ -53,7 +53,6 @@ namespace Banshee.GStreamerSharp
 {
     public class PlayerEngine : Banshee.MediaEngine.PlayerEngine
     {
-        Pipeline pipeline;
         PlayBin2 playbin;
         uint iterate_timeout_id = 0;
         List<string> missing_details = new List<string> ();
@@ -82,15 +81,13 @@ namespace Banshee.GStreamerSharp
             }
 
             Gst.Application.Init ();
-            pipeline = new Pipeline ();
             playbin = new PlayBin2 ();
-            pipeline.Add (playbin);
 
             // Remember the volume from last time
             Volume = (ushort)PlayerEngineService.VolumeSchema.Get ();
 
             playbin.AddNotification ("volume", OnVolumeChanged);
-            pipeline.Bus.AddWatch (OnBusMessage);
+            playbin.Bus.AddWatch (OnBusMessage);
 
             OnStateChanged (PlayerState.Ready);
         }
@@ -292,8 +289,8 @@ namespace Banshee.GStreamerSharp
 
         protected override void OpenUri (SafeUri uri, bool maybeVideo)
         {
-            if (pipeline.CurrentState == State.Playing || pipeline.CurrentState == State.Paused) {
-                pipeline.SetState (Gst.State.Ready);
+            if (playbin.CurrentState == State.Playing || playbin.CurrentState == State.Paused) {
+                playbin.SetState (Gst.State.Ready);
             }
 
             playbin.Uri = uri.AbsoluteUri;
@@ -304,19 +301,19 @@ namespace Banshee.GStreamerSharp
             // HACK, I think that directsoundsink has a bug that resets its volume to 1.0 every time
             // This seems to fix bgo#641427
             Volume = Volume;
-            pipeline.SetState (Gst.State.Playing);
+            playbin.SetState (Gst.State.Playing);
             OnStateChanged (PlayerState.Playing);
         }
 
         public override void Pause ()
         {
-            pipeline.SetState (Gst.State.Paused);
+            playbin.SetState (Gst.State.Paused);
             OnStateChanged (PlayerState.Paused);
         }
 
         public override void Close (bool fullShutdown)
         {
-            pipeline.SetState (State.Null);
+            playbin.SetState (State.Null);
             base.Close (fullShutdown);
         }
 
