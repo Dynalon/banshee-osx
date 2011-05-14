@@ -49,6 +49,7 @@ Release Summary
   Release Upload:
     User:  ${WEB_USER}
     Host:  ${WEB_HOST}
+    DOAP:  ${WEB_DOAP_PATH}
 
   git tag: ${TAG_NAME}
 
@@ -109,6 +110,11 @@ function upload_release () {
 
 	scp -r release-data ${WEB_USER}@${WEB_HOST}: \
 		|| bail "Uploading release failed"
+
+	[[ -z "${WEB_DOAP_PATH}" ]] || {
+		scp *.doap ${WEB_USER}@${WEB_HOST}:${WEB_DOAP_PATH} \
+			|| bail "Could not upload DOAP file"
+	}
 
 #	( ssh ${WEB_USER}@${WEB_HOST} ftpadmin install \
 #		release-data/${PACKAGE_NAME}-${PACKAGE_VERSION}.tar.bz2) \
