@@ -53,7 +53,44 @@ namespace Banshee.GStreamerSharp
 {
     public class PlayerEngine : Banshee.MediaEngine.PlayerEngine
     {
+        private class AudioSinkBin : Bin
+        {
+            Element hw_audio_sink;
+            public AudioSinkBin (string elementName) : base(elementName)
+            {
+                hw_audio_sink = SelectAudioSink ();
+                Add (hw_audio_sink);
+
+                AddPad (new GhostPad ("sink", hw_audio_sink.GetStaticPad ("sink")));
+            }
+
+            static Element SelectAudioSink ()
+            {
+                Element audiosink = null;
+
+                // Default to GConfAudioSink, which should Do The Right Thing.
+                audiosink = ElementFactory.Make ("gconfaudiosink", "audiosink");
+                if (audiosink == null) {
+                    // Try DirectSoundSink, which should work on Windows
+                    audiosink = ElementFactory.Make ("directsoundsink", "audiosink");
+                    if (audiosink != null) {
+                        // The unmanaged code sets the volume on the directsoundsink here.
+                        // Presumably this fixes a problem, but there's no reference as to what it is.
+                        audiosink["volume"] = 1.0;
+                    } else {
+                        audiosink = ElementFactory.Make ("autoaudiosink", "audiosink");
+                        if (audiosink == null) {
+                            // As a last-ditch effort try ALSA.
+                            audiosink = ElementFactory.Make ("alsasink", "audiosink");
+                        }
+                    }
+                }
+                return audiosink;
+            }
+        }
+
         PlayBin2 playbin;
+        AudioSinkBin audio_sink;
         uint iterate_timeout_id = 0;
         List<string> missing_details = new List<string> ();
         ManualResetEvent next_track_set;
@@ -85,6 +122,10 @@ namespace Banshee.GStreamerSharp
             playbin = new PlayBin2 ();
 
             next_track_set = new ManualResetEvent (false);
+
+            audio_sink = new AudioSinkBin ("audiobin");
+
+            playbin["audio-sink"] = audio_sink;
 
             // Remember the volume from last time
             Volume = (ushort)PlayerEngineService.VolumeSchema.Get ();
