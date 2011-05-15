@@ -56,12 +56,55 @@ namespace Banshee.GStreamerSharp
         private class AudioSinkBin : Bin
         {
             Element hw_audio_sink;
+            Element volume;
+            Element first;
+
             public AudioSinkBin (string elementName) : base(elementName)
             {
                 hw_audio_sink = SelectAudioSink ();
                 Add (hw_audio_sink);
+                first = hw_audio_sink;
 
-                AddPad (new GhostPad ("sink", hw_audio_sink.GetStaticPad ("sink")));
+                volume = FindVolumeProvider (hw_audio_sink);
+                if (volume != null) {
+                    // If the sink provides its own volume property we assume that it will
+                    // also save that value across program runs.  Pulsesink has this behaviour.
+                    VolumeNeedsSaving = false;
+                } else {
+                    volume = ElementFactory.Make ("volume", "volume");
+                    VolumeNeedsSaving = true;
+                    Add (volume);
+                    volume.Link (hw_audio_sink);
+                    first = volume;
+                }
+
+                AddPad (new GhostPad ("sink", first.GetStaticPad ("sink")));
+            }
+
+            static Element FindVolumeProvider (Element sink)
+            {
+                Element volumeProvider = null;
+                // Sinks which automatically select between a number of possibilities
+                // (such as autoaudiosink and gconfaudiosink) need to be at least in
+                // the Ready state before they'll contain an actual sink.
+                sink.SetState (State.Ready);
+
+                if (sink.HasProperty ("volume")) {
+                    volumeProvider = sink;
+                    Log.DebugFormat ("Sink {0} has native volume.", volumeProvider.Name);
+                } else {
+                    var sinkBin = sink as Bin;
+                    if (sinkBin != null) {
+                        foreach (Element e in sinkBin.ElementsRecurse) {
+                            if (e.HasProperty ("volume")) {
+                                volumeProvider = e;
+                                Log.DebugFormat ("Found volume provider {0} in {1}.",
+                                    volumeProvider.Name, sink.Name);
+                            }
+                        }
+                    }
+                }
+                return volumeProvider;
             }
 
             static Element SelectAudioSink ()
@@ -87,7 +130,22 @@ namespace Banshee.GStreamerSharp
                 }
                 return audiosink;
             }
+
+            public bool VolumeNeedsSaving { get; private set; }
+            public double Volume {
+                get {
+                    return (double)volume["volume"];
+                }
+                set {
+                    if (value < 0 || value > 10.0) {
+                        throw new ArgumentOutOfRangeException ("value", "Volume must be between 0 and 10.0");
+                    }
+                    Log.DebugFormat ("Setting volume to {0:0.00}", value);
+                    volume["volume"] = value;
+                }
+            }
         }
+
 
         PlayBin2 playbin;
         AudioSinkBin audio_sink;
@@ -127,8 +185,10 @@ namespace Banshee.GStreamerSharp
 
             playbin["audio-sink"] = audio_sink;
 
-            // Remember the volume from last time
-            Volume = (ushort)PlayerEngineService.VolumeSchema.Get ();
+            if (audio_sink.VolumeNeedsSaving) {
+                // Remember the volume from last time
+                Volume = (ushort)PlayerEngineService.VolumeSchema.Get ();
+            }
 
             playbin.AddNotification ("volume", OnVolumeChanged);
             playbin.Bus.AddWatch (OnBusMessage);
@@ -386,9 +446,6 @@ namespace Banshee.GStreamerSharp
 
         public override void Play ()
         {
-            // HACK, I think that directsoundsink has a bug that resets its volume to 1.0 every time
-            // This seems to fix bgo#641427
-            Volume = Volume;
             playbin.SetState (Gst.State.Playing);
             OnStateChanged (PlayerState.Playing);
         }
@@ -414,11 +471,13 @@ namespace Banshee.GStreamerSharp
         }
 
         public override ushort Volume {
-            get { return (ushort) Math.Round (playbin.Volume * 100.0); }
+            get { return (ushort) Math.Round (audio_sink.Volume * 100.0); }
             set {
                 double volume = Math.Min (1.0, Math.Max (0, value / 100.0));
-                playbin.Volume = volume;
-                PlayerEngineService.VolumeSchema.Set (value);
+                audio_sink.Volume = volume;
+                if (audio_sink.VolumeNeedsSaving) {
+                    PlayerEngineService.VolumeSchema.Set (value);
+                }
             }
         }
 
