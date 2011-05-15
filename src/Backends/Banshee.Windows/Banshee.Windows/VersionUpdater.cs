@@ -43,7 +43,8 @@ namespace Banshee.Windows
 {
     public class VersionUpdater : DownloadManager
     {
-        private const string download_url = "http://download.banshee.fm/banshee/";
+        private const string download_url  = "http://ftp.gnome.org/pub/GNOME/sources/banshee/";
+        private const string installer_url = "http://ftp.gnome.org/pub/GNOME/binaries/win32/banshee/";
         private const string doap_filename = "banshee.doap";
         private string temp_doap_path = Path.GetTempPath () + doap_filename;
         private string unstable_version;
@@ -110,7 +111,7 @@ namespace Banshee.Windows
             }
 
             if (update) {
-                string downloadUrl = String.Format ("{0}unstable/{1}/Banshee-{1}.msi", download_url, unstable_version);
+                string downloadUrl = String.Format ("{0}/Banshee-{1}.msi", installer_url, unstable_version);
 
                 var downloader = new HttpFileDownloader () {
                     Uri = new Uri (downloadUrl),
