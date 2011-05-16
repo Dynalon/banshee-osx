@@ -140,8 +140,10 @@ namespace Banshee.GStreamerSharp
                 set {
                     if (value && rgvolume == null) {
                         visible_sink.SetBlocked (true, InsertReplayGain);
+                        Log.Debug ("Enabled ReplayGain volume scaling.");
                     } else if (!value && rgvolume != null) {
                         visible_sink.SetBlocked (false, RemoveReplayGain);
+                        Log.Debug ("Disabled ReplayGain volume scaling.");
                     }
                 }
             }
@@ -229,8 +231,6 @@ namespace Banshee.GStreamerSharp
 
             audio_sink = new AudioSinkBin ("audiobin");
 
-            audio_sink.ReplayGainEnabled = true;
-
             playbin["audio-sink"] = audio_sink;
 
             if (audio_sink.VolumeNeedsSaving) {
@@ -243,6 +243,25 @@ namespace Banshee.GStreamerSharp
             playbin.AboutToFinish += OnAboutToFinish;
 
             OnStateChanged (PlayerState.Ready);
+        }
+
+        protected override bool DelayedInitialize {
+            get {
+                return true;
+            }
+        }
+
+        protected override void Initialize ()
+        {
+            base.Initialize ();
+            InstallPreferences ();
+            audio_sink.ReplayGainEnabled = ReplayGainEnabledSchema.Get ();
+        }
+
+        public override void Dispose ()
+        {
+            UninstallPreferences ();
+            base.Dispose ();
         }
 
         void OnAboutToFinish (object o, Gst.GLib.SignalArgs args)
@@ -595,5 +614,40 @@ namespace Banshee.GStreamerSharp
             set { playbin.Suburi = value.AbsoluteUri; }
             get { return new SafeUri (playbin.Suburi); }
         }
+
+        private PreferenceBase replaygain_preference;
+
+        private void InstallPreferences ()
+        {
+            PreferenceService service = ServiceManager.Get<PreferenceService> ();
+            if (service == null) {
+                return;
+            }
+
+            replaygain_preference = service["general"]["misc"].Add (new SchemaPreference<bool> (ReplayGainEnabledSchema,
+                Catalog.GetString ("_Enable ReplayGain correction"),
+                Catalog.GetString ("For tracks that have ReplayGain data, automatically scale (normalize) playback volume"),
+                delegate { audio_sink.ReplayGainEnabled = ReplayGainEnabledSchema.Get (); }
+            ));
+        }
+
+        private void UninstallPreferences ()
+        {
+            PreferenceService service = ServiceManager.Get<PreferenceService> ();
+            if (service == null) {
+                return;
+            }
+
+            service["general"]["misc"].Remove (replaygain_preference);
+            replaygain_preference = null;
+        }
+
+        public static readonly SchemaEntry<bool> ReplayGainEnabledSchema = new SchemaEntry<bool> (
+            "player_engine", "replay_gain_enabled",
+            false,
+            "Enable ReplayGain",
+            "If ReplayGain data is present on tracks when playing, allow volume scaling"
+        );
+
     }
 }
