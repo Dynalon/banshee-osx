@@ -57,7 +57,10 @@ namespace Banshee.GStreamerSharp
         {
             Element hw_audio_sink;
             Element volume;
+            Element rgvolume;
             Element first;
+            GhostPad visible_sink;
+            object pipeline_lock = new object ();
 
             public AudioSinkBin (string elementName) : base(elementName)
             {
@@ -78,7 +81,8 @@ namespace Banshee.GStreamerSharp
                     first = volume;
                 }
 
-                AddPad (new GhostPad ("sink", first.GetStaticPad ("sink")));
+                visible_sink = new GhostPad ("sink", first.GetStaticPad ("sink"));
+                AddPad (visible_sink);
             }
 
             static Element FindVolumeProvider (Element sink)
@@ -131,6 +135,48 @@ namespace Banshee.GStreamerSharp
                 return audiosink;
             }
 
+            public bool ReplayGainEnabled {
+                get { return rgvolume != null; }
+                set {
+                    if (value && rgvolume == null) {
+                        visible_sink.SetBlocked (true, InsertReplayGain);
+                    } else if (!value && rgvolume != null) {
+                        visible_sink.SetBlocked (false, RemoveReplayGain);
+                    }
+                }
+            }
+
+            void InsertReplayGain (Pad pad, bool blocked)
+            {
+                lock (pipeline_lock) {
+                    if (rgvolume == null) {
+                        rgvolume = ElementFactory.Make ("rgvolume", "rgvolume");
+                        Add (rgvolume);
+                        rgvolume.SyncStateWithParent ();
+                        visible_sink.SetTarget (rgvolume.GetStaticPad ("sink"));
+                        rgvolume.Link (first);
+                        first = rgvolume;
+                    }
+                }
+                visible_sink.SetBlocked (false, (_, __) => { });
+            }
+
+            void RemoveReplayGain (Pad pad, bool blocked)
+            {
+                lock (pipeline_lock) {
+                    if (rgvolume != null) {
+                        first = rgvolume.GetStaticPad ("src").Peer.Parent as Element;
+                        rgvolume.Unlink (first);
+                        rgvolume.SetState (State.Null);
+                        Remove (rgvolume);
+                        rgvolume = null;
+                        visible_sink.SetTarget (first.GetStaticPad ("sink"));
+                    }
+                }
+                visible_sink.SetBlocked (false, (_, __) => { });
+            }
+
+
             public bool VolumeNeedsSaving { get; private set; }
             public double Volume {
                 get {
@@ -182,6 +228,8 @@ namespace Banshee.GStreamerSharp
             next_track_set = new ManualResetEvent (false);
 
             audio_sink = new AudioSinkBin ("audiobin");
+
+            audio_sink.ReplayGainEnabled = true;
 
             playbin["audio-sink"] = audio_sink;
 
