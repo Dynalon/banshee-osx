@@ -51,13 +51,17 @@ using Banshee.Preferences;
 
 namespace Banshee.GStreamerSharp
 {
-    public class PlayerEngine : Banshee.MediaEngine.PlayerEngine
+    public class PlayerEngine : Banshee.MediaEngine.PlayerEngine, IEqualizer
     {
         private class AudioSinkBin : Bin
         {
             Element hw_audio_sink;
             Element volume;
             Element rgvolume;
+            Element equalizer;
+            Element preamp;
+            Element eq_audioconvert;
+            Element eq_audioconvert2;
             Element first;
             GhostPad visible_sink;
             object pipeline_lock = new object ();
@@ -79,6 +83,26 @@ namespace Banshee.GStreamerSharp
                     Add (volume);
                     volume.Link (hw_audio_sink);
                     first = volume;
+                }
+
+                equalizer = ElementFactory.Make ("equalizer-10bands", "equalizer-10bands");
+                if (equalizer != null) {
+                    eq_audioconvert = ElementFactory.Make ("audioconvert", "audioconvert");
+                    eq_audioconvert2 = ElementFactory.Make ("audioconvert", "audioconvert2");
+                    preamp = ElementFactory.Make ("volume", "preamp");
+
+                    Add (eq_audioconvert);
+                    Add (preamp);
+                    Add (equalizer);
+                    Add (eq_audioconvert2);
+
+                    eq_audioconvert.Link (preamp);
+                    preamp.Link (equalizer);
+                    equalizer.Link (eq_audioconvert2);
+                    eq_audioconvert2.Link (first);
+
+                    first = eq_audioconvert;
+                    Log.Debug ("Built and linked Equalizer");
                 }
 
                 visible_sink = new GhostPad ("sink", first.GetStaticPad ("sink"));
@@ -192,6 +216,72 @@ namespace Banshee.GStreamerSharp
                     volume["volume"] = value;
                 }
             }
+
+            public bool SupportsEqualizer { get {return preamp != null && equalizer != null;} }
+
+            public double AmplifierLevel {
+                set { preamp ["volume"] = Math.Pow (10.0, value / 20.0); }
+            }
+
+            public int [] BandRange {
+                get {
+                    int min = -1;
+                    int max = -1;
+
+                    PropertyInfo pspec = new PropertyInfo();
+
+                    if (equalizer.HasProperty ("band0::gain")) {
+                        pspec = equalizer.GetPropertyInfo ("band0::gain");
+                    } else if (equalizer.HasProperty ("band0")) {
+                        pspec = equalizer.GetPropertyInfo ("band0");
+                    }
+
+                    if (pspec.Name != null) {
+                        min = (int)((double)pspec.Min);
+                        max = (int)((double)pspec.Max);
+                    }
+
+                    return new int [] { min, max };
+                }
+            }
+
+            private uint GetNBands ()
+            {
+                if (equalizer == null) {
+                    return 0;
+                }
+
+                return ChildProxyAdapter.GetObject (equalizer).ChildrenCount;
+            }
+
+            public uint [] EqualizerFrequencies {
+                get {
+                    uint count = GetNBands ();
+                    uint[] ret = new uint[count];
+
+                    if (equalizer != null) {
+                        ChildProxy equalizer_child_proxy = ChildProxyAdapter.GetObject (equalizer);
+                        for (uint i = 0; i < count; i++) {
+                            Gst.Object band = equalizer_child_proxy.GetChildByIndex (i);
+                            ret [i] = (uint)(double)band ["freq"];
+                        }
+                    }
+
+                    return ret;
+                }
+            }
+
+            public void SetEqualizerGain (uint band, double value)
+            {
+                if (equalizer != null) {
+                    if (band >= GetNBands ()) {
+                        throw new ArgumentOutOfRangeException ("band", "Attempt to set out-of-range equalizer band");
+                    }
+                    Gst.Object the_band = ChildProxyAdapter.GetObject (equalizer).GetChildByIndex (band);
+                    the_band ["gain"] = value;
+                }
+            }
+
         }
 
 
@@ -591,7 +681,39 @@ namespace Banshee.GStreamerSharp
         }
 
         public override bool SupportsEqualizer {
-            get { return false; }
+            get { return audio_sink != null && audio_sink.SupportsEqualizer; }
+        }
+
+        public double AmplifierLevel {
+            set {
+                if (SupportsEqualizer) {
+                    audio_sink.AmplifierLevel = value;
+                }
+            }
+        }
+        public int [] BandRange {
+            get {
+                if (SupportsEqualizer) {
+                    return audio_sink.BandRange;
+                }
+                return new int [] {};
+            }
+        }
+
+        public uint [] EqualizerFrequencies {
+            get {
+                if (SupportsEqualizer) {
+                    return audio_sink.EqualizerFrequencies;
+                }
+                return new uint [] {};
+            }
+        }
+
+        public void SetEqualizerGain (uint band, double gain)
+        {
+            if (SupportsEqualizer) {
+                audio_sink.SetEqualizerGain (band, gain);
+            }
         }
 
         public override VideoDisplayContextType VideoDisplayContextType {
