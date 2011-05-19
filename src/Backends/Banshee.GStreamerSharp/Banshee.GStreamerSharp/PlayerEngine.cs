@@ -60,8 +60,6 @@ namespace Banshee.GStreamerSharp
             Element rgvolume;
             Element equalizer;
             Element preamp;
-            Element eq_audioconvert;
-            Element eq_audioconvert2;
             Element first;
             GhostPad visible_sink;
             object pipeline_lock = new object ();
@@ -87,19 +85,12 @@ namespace Banshee.GStreamerSharp
 
                 equalizer = ElementFactory.Make ("equalizer-10bands", "equalizer-10bands");
                 if (equalizer != null) {
-                    eq_audioconvert = ElementFactory.Make ("audioconvert", "audioconvert");
-                    eq_audioconvert2 = ElementFactory.Make ("audioconvert", "audioconvert2");
+                    Element eq_audioconvert = ElementFactory.Make ("audioconvert", "audioconvert");
+                    Element eq_audioconvert2 = ElementFactory.Make ("audioconvert", "audioconvert2");
                     preamp = ElementFactory.Make ("volume", "preamp");
 
-                    Add (eq_audioconvert);
-                    Add (preamp);
-                    Add (equalizer);
-                    Add (eq_audioconvert2);
-
-                    eq_audioconvert.Link (preamp);
-                    preamp.Link (equalizer);
-                    equalizer.Link (eq_audioconvert2);
-                    eq_audioconvert2.Link (first);
+                    Add (eq_audioconvert, preamp, equalizer, eq_audioconvert2);
+                    Element.Link (eq_audioconvert, preamp, equalizer, eq_audioconvert2, first);
 
                     first = eq_audioconvert;
                     Log.Debug ("Built and linked Equalizer");
