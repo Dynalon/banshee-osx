@@ -5,6 +5,7 @@ INSTALL_DIR = $(BACKENDS_INSTALL_DIR)
 
 SOURCES =  \
 	Banshee.GStreamerSharp/BpmDetector.cs \
+	Banshee.GStreamerSharp/CddaManager.cs \
 	Banshee.GStreamerSharp/PlayerEngine.cs
 
 RESOURCES = Banshee.GStreamerSharp.addin.xml

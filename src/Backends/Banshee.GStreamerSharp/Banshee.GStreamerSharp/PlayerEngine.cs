@@ -281,6 +281,7 @@ namespace Banshee.GStreamerSharp
         uint iterate_timeout_id = 0;
         List<string> missing_details = new List<string> ();
         ManualResetEvent next_track_set;
+        CddaManager cdda_manager;
 
         public PlayerEngine ()
         {
@@ -323,6 +324,7 @@ namespace Banshee.GStreamerSharp
             playbin.Bus.AddWatch (OnBusMessage);
             playbin.AboutToFinish += OnAboutToFinish;
 
+            cdda_manager = new CddaManager (playbin);
             OnStateChanged (PlayerState.Ready);
         }
 
@@ -585,6 +587,12 @@ namespace Banshee.GStreamerSharp
 
         protected override void OpenUri (SafeUri uri, bool maybeVideo)
         {
+            if (cdda_manager.HandleURI (playbin, uri.AbsoluteUri)) {
+                return;
+            } else if (playbin == null) {
+                throw new ApplicationException ("Could not open resource");
+            }
+
             if (playbin.CurrentState == State.Playing || playbin.CurrentState == State.Paused) {
                 playbin.SetState (Gst.State.Ready);
             }
