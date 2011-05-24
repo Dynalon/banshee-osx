@@ -346,6 +346,7 @@ src/Extensions/Banshee.Sample/Makefile
 src/Extensions/Banshee.Torrent/Makefile
 src/Extensions/Banshee.RemoteAudio/Makefile
 src/Extensions/Banshee.UbuntuOneMusicStore/Makefile
+src/Extensions/Banshee.UPnPClient/Makefile
 src/Extensions/Banshee.Wikipedia/Makefile
 src/Extensions/Banshee.YouTube/Makefile
 
