@@ -4,6 +4,7 @@ LINK = $(REF_BACKEND_GSTREAMER) $(GST_SHARP_LIBS)
 INSTALL_DIR = $(BACKENDS_INSTALL_DIR)
 
 SOURCES =  \
+	Banshee.GStreamerSharp/AudioCdRipper.cs \
 	Banshee.GStreamerSharp/BpmDetector.cs \
 	Banshee.GStreamerSharp/CddaManager.cs \
 	Banshee.GStreamerSharp/PlayerEngine.cs
