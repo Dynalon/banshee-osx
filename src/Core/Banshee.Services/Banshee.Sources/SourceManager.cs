@@ -55,6 +55,7 @@ namespace Banshee.Sources
     public class SourceManager : /*ISourceManager,*/ IInitializeService, IRequiredService, IDBusExportable, IDisposable
     {
         private List<Source> sources = new List<Source>();
+        private List<GroupSource> group_sources = new List<GroupSource> ();
         private Dictionary<string, Source> extension_sources = new Dictionary<string, Source> ();
 
         private Source active_source;
@@ -81,8 +82,9 @@ namespace Banshee.Sources
             // things that depend on being loaded before the music library is added.
             //AddSource (music_library = new MusicLibrarySource (), true);
             //AddSource (video_library = new VideoLibrarySource (), false);
-            AddSource (new GroupSource (Catalog.GetString ("Libraries"), 39));
-            AddSource (new GroupSource (Catalog.GetString ("Online Media"), 60));
+
+            group_sources.Add (new GroupSource (Catalog.GetString ("Online Media"), 60));
+            group_sources.Add (new GroupSource (Catalog.GetString ("Libraries"), 39));
         }
 
         internal void LoadExtensionSources ()
@@ -154,6 +156,14 @@ namespace Banshee.Sources
                 return;
             }
 
+            GroupSource group_source = source as GroupSource;
+            if (group_source != null && !group_sources.Contains (group_source)) {
+                group_sources.Add (group_source);
+                return;
+            }
+
+            AddSource (FindAssociatedGroupSource (source.Order));
+
             int position = FindSourceInsertPosition(source);
             sources.Insert(position, source);
 
@@ -211,6 +221,11 @@ namespace Banshee.Sources
             source.ChildSourceRemoved -= OnChildSourceRemoved;
 
             sources.Remove(source);
+
+            GroupSource associated_groupsource = FindAssociatedGroupSource (source.Order);
+            if (!GroupSourceHasMembers (associated_groupsource)) {
+                RemoveSource (associated_groupsource, recursivelyDispose);
+            }
 
             foreach(Source child_source in source.Children) {
                 RemoveSource (child_source, recursivelyDispose);
@@ -286,6 +301,41 @@ namespace Banshee.Sources
         private void OnChildSourceRemoved(SourceEventArgs args)
         {
             RemoveSource (args.Source);
+        }
+
+
+        private GroupSource FindAssociatedGroupSource (int order)
+        {
+            int current_order = -1;
+            GroupSource associated_groupsource = null;
+            foreach (GroupSource source in group_sources){
+                if (order == source.Order) {
+                    return null;
+                }
+
+                if (order > source.Order && current_order < source.Order) {
+                    associated_groupsource = source;
+                    current_order = source.Order;
+                }
+            }
+            return associated_groupsource;
+        }
+
+        private bool GroupSourceHasMembers (GroupSource group_source) {
+            Source source = group_source as Source;
+            if (group_source == null || !sources.Contains (source)) {
+                return false;
+            }
+
+            int source_index = FindSourceInsertPosition (source);
+
+            if (source_index < sources.Count - 1) {
+                Source next_source = sources[source_index + 1];
+                GroupSource associated_groupsource = FindAssociatedGroupSource (next_source.Order);
+                return group_source.Equals (associated_groupsource);
+            } else {
+                return false;
+            }
         }
 
         private int FindSourceInsertPosition(Source source)
