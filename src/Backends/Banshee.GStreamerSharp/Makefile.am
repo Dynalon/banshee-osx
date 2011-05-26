@@ -7,7 +7,8 @@ SOURCES =  \
 	Banshee.GStreamerSharp/AudioCdRipper.cs \
 	Banshee.GStreamerSharp/BpmDetector.cs \
 	Banshee.GStreamerSharp/CddaManager.cs \
-	Banshee.GStreamerSharp/PlayerEngine.cs
+	Banshee.GStreamerSharp/PlayerEngine.cs \
+	Banshee.GStreamerSharp/Transcoder.cs
 
 RESOURCES = Banshee.GStreamerSharp.addin.xml
 
