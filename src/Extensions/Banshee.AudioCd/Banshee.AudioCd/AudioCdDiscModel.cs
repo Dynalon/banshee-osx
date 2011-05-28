@@ -123,10 +123,15 @@ namespace Banshee.AudioCd
 
                 OnMetadataQueryStarted (mb_disc);
 
-                Release release = Release.Query (mb_disc).PerfectMatch ();
+                Release release = Release.Query (mb_disc).First ();
 
+                if (release == null || release.Score < 100) {
+                    OnMetadataQueryFinished (false);
+                    return;
+                }
+                
                 var tracks = release.GetTracks ();
-                if (release == null || tracks.Count != Count) {
+                if (tracks.Count != Count) {
                     OnMetadataQueryFinished (false);
                     return;
                 }
