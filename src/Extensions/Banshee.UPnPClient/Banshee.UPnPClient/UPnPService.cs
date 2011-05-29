@@ -29,6 +29,9 @@
 using System;
 
 using Mono.Addins;
+using Mono.Ssdp;
+using Mono.Upnp;
+using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1;
 
 using Banshee.Base;
 using Banshee.Sources.Gui;
@@ -41,15 +44,18 @@ namespace Banshee.UPnPClient
 {
     public class UPnPService : IExtensionService, IDisposable
     {
+        private Mono.Upnp.Client client;
         private UPnPContainerSource container;
 
         void IExtensionService.Initialize ()
         {
             container = new UPnPContainerSource();
-            container.AddChildSource (new UPnPSource("First test uPnP Client", "localhost-1"));
-            container.AddChildSource (new UPnPSource("Second test uPnP Client", "localhost-2"));
-
             ServiceManager.SourceManager.AddSource(container);
+
+            client = new Mono.Upnp.Client ();
+            client.DeviceAdded += DeviceAdded;
+
+            client.Browse(Mono.Upnp.Dcp.MediaServer1.MediaServer.DeviceType);
         }
 		
 		public void Dispose ()
@@ -62,6 +68,14 @@ namespace Banshee.UPnPClient
                 ServiceManager.SourceManager.RemoveSource(container);
                 container = null;
             }
+        }
+
+        void DeviceAdded (object sender, DeviceEventArgs e)
+        {
+            Hyena.Log.Debug ("UPnPService.DeviceAdded (" + e.Device.ToString() + ") (" + e.Device.Type + ")");
+            Device device = e.Device.GetDevice();
+
+            container.AddChildSource (new UPnPSource(device.FriendlyName, device.Udn));
         }
 		
         string IService.ServiceName {
