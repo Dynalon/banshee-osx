@@ -8,14 +8,17 @@ SOURCES =  \
 	Banshee.GStreamerSharp/BpmDetector.cs \
 	Banshee.GStreamerSharp/CddaManager.cs \
 	Banshee.GStreamerSharp/PlayerEngine.cs \
-	Banshee.GStreamerSharp/Transcoder.cs
+	Banshee.GStreamerSharp/Transcoder.cs \
+	Banshee.GStreamerSharp/VideoManager.cs
 
 RESOURCES = Banshee.GStreamerSharp.addin.xml
 
 if ENABLE_GST_SHARP
 include $(top_srcdir)/build/build.mk
+EXTRA_DIST += Banshee.GStreamerSharp.dll.config
+module_SCRIPTS += Banshee.GStreamerSharp.dll.config
 else
-EXTRA_DIST = $(SOURCES) $(RESOURCES)
+EXTRA_DIST = $(SOURCES) $(RESOURCES) Banshee.GStreamerSharp.dll.config
 endif
 
 if ENABLE_GAPLESS

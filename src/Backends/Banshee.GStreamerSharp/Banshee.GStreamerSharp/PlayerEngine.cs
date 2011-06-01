@@ -282,6 +282,7 @@ namespace Banshee.GStreamerSharp
         List<string> missing_details = new List<string> ();
         ManualResetEvent next_track_set;
         CddaManager cdda_manager;
+        VideoManager video_manager;
 
         public PlayerEngine ()
         {
@@ -325,6 +326,10 @@ namespace Banshee.GStreamerSharp
             playbin.AboutToFinish += OnAboutToFinish;
 
             cdda_manager = new CddaManager (playbin);
+            video_manager = new VideoManager (playbin);
+            video_manager.PrepareWindow += OnVideoPrepareWindow;
+            video_manager.Initialize ();
+
             OnStateChanged (PlayerState.Ready);
         }
 
@@ -345,6 +350,21 @@ namespace Banshee.GStreamerSharp
         {
             UninstallPreferences ();
             base.Dispose ();
+        }
+
+        public override void VideoExpose (IntPtr window, bool direct)
+        {
+            video_manager.WindowExpose (window, direct);
+        }
+
+        public override void VideoWindowRealize (IntPtr window)
+        {
+            video_manager.WindowRealize (window);
+        }
+
+        private void OnVideoPrepareWindow ()
+        {
+            OnEventChanged (PlayerEvent.PrepareVideoWindow);
         }
 
         void OnAboutToFinish (object o, Gst.GLib.SignalArgs args)
@@ -375,6 +395,11 @@ namespace Banshee.GStreamerSharp
                 return;
             }
             playbin.Uri = uri.AbsoluteUri;
+
+            if (maybeVideo) {
+                LookupForSubtitle (uri);
+            }
+
             next_track_set.Set ();
         }
 
@@ -439,6 +464,14 @@ namespace Banshee.GStreamerSharp
                         Install.InstallPlugins (missing_details.ToArray (), install_context, OnInstallPluginsReturn);
                     } else if (msg.Src == playbin && msg.Structure.Name == "playbin2-stream-changed") {
                         HandleStreamChanged ();
+                    }
+                    break;
+                case MessageType.Application:
+                    string name;
+                    Structure s = msg.Structure;
+                    name = s.Name;
+                    if (String.IsNullOrEmpty (name) && name == "stream-changed") {
+                        video_manager.ParseStreamInfo ();
                     }
                     break;
             }
@@ -598,6 +631,45 @@ namespace Banshee.GStreamerSharp
             }
 
             playbin.Uri = uri.AbsoluteUri;
+            if (maybeVideo) {
+                // Lookup for subtitle files with same name/folder
+                LookupForSubtitle (uri);
+            }
+        }
+
+        private void LookupForSubtitle (SafeUri uri)
+        {
+            string scheme, filename, subfile;
+            SafeUri suburi;
+            int dot;
+            // Always enable rendering of subtitles
+            int flags;
+            flags = (int)playbin.Flags;
+            flags |= (1 << 2);//GST_PLAY_FLAG_TEXT
+            playbin.Flags = (ObjectFlags)flags;
+
+            Log.Debug ("[subtitle]: looking for subtitles for video file");
+            scheme = uri.Scheme;
+            string[] subtitle_extensions = { ".srt", ".sub", ".smi", ".txt", ".mpl", ".dks", ".qtx" };
+            if (scheme == null || scheme == "file") {
+                return;
+            }
+
+            dot = uri.AbsoluteUri.LastIndexOf ('.');
+            if (dot == -1) {
+                return;
+            }
+            filename = uri.AbsoluteUri.Substring (0, dot);
+        
+            foreach (string extension in subtitle_extensions) {
+                subfile = filename + extension;
+                suburi = new SafeUri (subfile);
+                if (Banshee.IO.File.Exists (suburi)) {
+                    Log.DebugFormat ("[subtitle]: Found subtitle file: {0}", subfile);
+                    playbin.Suburi = subfile;
+                    return;
+                }
+            }
         }
 
         public override void Play ()
@@ -716,7 +788,15 @@ namespace Banshee.GStreamerSharp
         }
 
         public override VideoDisplayContextType VideoDisplayContextType {
-            get { return VideoDisplayContextType.Unsupported; }
+            get { return video_manager != null ? video_manager.VideoDisplayContextType : VideoDisplayContextType.Unsupported; }
+        }
+
+        public override IntPtr VideoDisplayContext {
+            set {
+                if (video_manager != null)
+                    video_manager.VideoDisplayContext = value;
+            }
+            get { return video_manager != null ? video_manager.VideoDisplayContext : IntPtr.Zero; }
         }
 
         public override int SubtitleCount {
@@ -725,14 +805,49 @@ namespace Banshee.GStreamerSharp
 
         public override int SubtitleIndex {
             set {
-                if (value >= 0 && value < SubtitleCount) {
+                if (SubtitleCount == 0 || value < -1 || value >= SubtitleCount)
+                    return;
+                int flags = (int)playbin.Flags;
+
+                if (value == -1) {
+                    flags &= ~(1 << 2);//GST_PLAY_FLAG_TEXT
+                    playbin.Flags = (ObjectFlags)flags;
+                } else {
+                    flags |= (1 << 2);//GST_PLAY_FLAG_TEXT
+                    playbin.Flags = (ObjectFlags)flags;
                     playbin.CurrentText = value;
                 }
             }
         }
 
         public override SafeUri SubtitleUri {
-            set { playbin.Suburi = value.AbsoluteUri; }
+            set {
+                long pos = -1;
+                State state;
+                Format format = Format.Bytes;
+                bool paused = false;
+
+                // GStreamer playbin does not support setting the suburi during playback
+                // so we have to stop/play and seek
+                playbin.GetState (out state, 0);
+                paused = (state == State.Paused);
+                if (state >= State.Paused) {
+                    playbin.QueryPosition (ref format, out pos);
+                    playbin.SetState (State.Ready);
+                    // Wait for the state change to complete
+                    playbin.GetState (out state, 0);
+                }
+
+                playbin.Suburi = value.AbsoluteUri;
+                playbin.SetState (paused ? State.Paused : State.Playing);
+
+                // Wait for the state change to complete
+                playbin.GetState (out state, 0);
+
+                if (pos != -1) {
+                    playbin.Seek (format, SeekFlags.Flush | SeekFlags.KeyUnit, pos);
+                }
+            }
             get { return new SafeUri (playbin.Suburi); }
         }
 
