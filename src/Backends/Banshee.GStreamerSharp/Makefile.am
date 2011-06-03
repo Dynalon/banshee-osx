@@ -9,7 +9,8 @@ SOURCES =  \
 	Banshee.GStreamerSharp/CddaManager.cs \
 	Banshee.GStreamerSharp/PlayerEngine.cs \
 	Banshee.GStreamerSharp/Transcoder.cs \
-	Banshee.GStreamerSharp/VideoManager.cs
+	Banshee.GStreamerSharp/VideoManager.cs \
+	Banshee.GStreamerSharp/Visualization.cs
 
 RESOURCES = Banshee.GStreamerSharp.addin.xml
 
