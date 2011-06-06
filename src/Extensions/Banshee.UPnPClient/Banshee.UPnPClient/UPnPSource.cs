@@ -31,6 +31,10 @@ using System;
 using Mono.Unix;
 using Mono.Addins;
 
+using Mono.Upnp;
+using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1;
+using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.AV;
+
 using Hyena.Collections;
 
 using Banshee.Base;
@@ -47,13 +51,11 @@ namespace Banshee.UPnPClient
     public class UPnPSource : PrimarySource
     {
         const int sort_order = 190;
-        private string uuid;
 
-        public UPnPSource (string name, string uuid) : base (Catalog.GetString ("Music Share"), name, uuid, sort_order)
+        public UPnPSource (Device device, RemoteContentDirectory contentDirectory) : base (Catalog.GetString ("Music Share"), device.FriendlyName, device.Udn, sort_order)
         {
-            Hyena.Log.Information ("UPnPSource.Added(\"" + this.Name + "\", \"" + uuid + "\")");
+            Hyena.Log.Information ("UPnPSource.Added(\"" + this.Name + "\", \"" + this.UniqueId + "\")");
 
-            this.uuid = uuid;
             Properties.SetStringList ("Icon.Name", "computer", "network-server");
 
             // Remove tracks previously associated with this source, we do this to be sure they are non-existant before we refresh.
@@ -78,7 +80,7 @@ namespace Banshee.UPnPClient
 
         public void Disconnect()
         {
-            Hyena.Log.Information ("UPnPSource.Disconnect(\"" + this.Name + "\", \"" + uuid + "\")");
+            Hyena.Log.Information ("UPnPSource.Disconnect(\"" + this.Name + "\", \"" + this.UniqueId + "\")");
 
             // Stop currently playing track if its from us.
             try {

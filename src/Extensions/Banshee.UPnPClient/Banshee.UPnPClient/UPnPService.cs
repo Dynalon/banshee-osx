@@ -29,7 +29,7 @@
 using System;
 
 using Mono.Addins;
-using Mono.Ssdp;
+
 using Mono.Upnp;
 using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1;
 
@@ -74,8 +74,17 @@ namespace Banshee.UPnPClient
         {
             Hyena.Log.Debug ("UPnPService.DeviceAdded (" + e.Device.ToString() + ") (" + e.Device.Type + ")");
             Device device = e.Device.GetDevice();
+            
+            RemoteContentDirectory contentDirectory = null;
+            
+            foreach (Service service in device.Services) {
+                Hyena.Log.Debug ("UPnPService " + device.FriendlyName + " Implements " + service.Type);
+                if (service.Type.Equals(Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.ContentDirectory.ServiceType))
+                    contentDirectory = new RemoteContentDirectory(new ContentDirectoryController(service.GetController()));
+            }
 
-            container.AddChildSource (new UPnPSource(device.FriendlyName, device.Udn));
+            if (contentDirectory != null)
+                container.AddChildSource (new UPnPSource(device, contentDirectory));
         }
 		
         string IService.ServiceName {
