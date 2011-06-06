@@ -28,6 +28,7 @@
 
 using System;
 using Mono.Unix;
+using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1;
 using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.AV;
 
 using Hyena;
@@ -54,7 +55,19 @@ namespace Banshee.UPnPClient
                 Genre = track.Genres.Count > 0 ? track.Genres[0] : "";
 
                 if (track.Resources.Count > 0)
-                    Uri = new SafeUri(track.Resources[0].Uri);
+                {
+                    Resource resource = track.Resources[0];
+
+                    BitRate = (int)resource.BitRate.GetValueOrDefault();
+                    BitsPerSample = (int)resource.BitsPerSample.GetValueOrDefault();
+                    Duration = resource.Duration.GetValueOrDefault();
+                    SampleRate = (int)resource.SampleFrequency.GetValueOrDefault();
+                    FileSize = (int)resource.Size.GetValueOrDefault();
+
+                    Uri = new SafeUri(resource.Uri);
+                }
+                else
+                    CanPlay = false;
             }
 
             ExternalId = ++id;
