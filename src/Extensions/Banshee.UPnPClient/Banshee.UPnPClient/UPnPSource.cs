@@ -123,7 +123,7 @@ namespace Banshee.UPnPClient
 
         private void ParseContainer(RemoteContentDirectory contentDirectory, Container container, int depth)
         {
-            if (depth > 10 || container.ChildCount == 0)
+            if (depth > 10 || (container.ChildCount.HasValue && container.ChildCount == 0))
                 return;
             
             foreach (var item in contentDirectory.GetChildren<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object>(container))
