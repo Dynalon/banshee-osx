@@ -201,7 +201,7 @@ namespace Banshee.InternetRadio
 
             error_container.Add (error_box);
 
-            table.Attach (error_container, 0, 2, 4, 5, AttachOptions.Expand | AttachOptions.Fill, AttachOptions.Shrink, 0, 0);
+            table.Attach (error_container, 0, 2, 6, 7, AttachOptions.Expand | AttachOptions.Fill, AttachOptions.Shrink, 0, 0);
 
             genre_entry.Entry.Changed += OnFieldsChanged;
             name_entry.Changed += OnFieldsChanged;
