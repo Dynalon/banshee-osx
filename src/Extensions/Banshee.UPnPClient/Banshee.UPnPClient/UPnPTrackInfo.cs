@@ -48,13 +48,16 @@ namespace Banshee.UPnPClient
                 ArtistName = track.Artists.Count > 0 ? track.Artists[0].Name : "";
                 AlbumTitle = track.Albums.Count > 0 ? track.Albums[0] : "";
                 TrackTitle = track.Title;
+
+                Genre = track.Genres.Count > 0 ? track.Genres[0] : "";
+
+                if (track.Resources.Count > 0)
+                    Uri = new SafeUri(track.Resources[0].Uri);
             }
 
             ExternalId = ++id;
 
             PrimarySource = source;
-
-            Uri = new SafeUri ("file://~/song.flac");
         }
     }
 }
