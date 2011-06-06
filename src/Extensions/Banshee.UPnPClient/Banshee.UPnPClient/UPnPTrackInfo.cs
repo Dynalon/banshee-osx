@@ -28,6 +28,8 @@
 
 using System;
 using Mono.Unix;
+using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.AV;
+
 using Hyena;
 
 using Banshee.Collection;
@@ -37,13 +39,18 @@ namespace Banshee.UPnPClient
 {
     public class UPnPTrackInfo : DatabaseTrackInfo
     {
-        public UPnPTrackInfo (UPnPSource source) : base()
-        {
-            ArtistName = "Artist";
-            AlbumTitle = "Album";
-            TrackTitle = "Song";
+        static long id = 0;
 
-            ExternalId = 1;
+        public UPnPTrackInfo (MusicTrack track, UPnPSource source) : base()
+        {
+            if (track != null)
+            {
+                ArtistName = track.Artists.Count > 0 ? track.Artists[0].Name : "";
+                AlbumTitle = track.Albums.Count > 0 ? track.Albums[0] : "";
+                TrackTitle = track.Title;
+            }
+
+            ExternalId = ++id;
 
             PrimarySource = source;
 

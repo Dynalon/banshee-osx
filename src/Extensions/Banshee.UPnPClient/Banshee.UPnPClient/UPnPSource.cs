@@ -63,8 +63,28 @@ namespace Banshee.UPnPClient
 
             AfterInitialized ();
 
-            UPnPTrackInfo track = new UPnPTrackInfo (this);
-            track.Save();
+            try
+            {
+                Container root = contentDirectory.GetRootObject();
+
+                if (root.IsSearchable)
+                {
+                    Hyena.Log.Debug("UPnPSource: " + this.UniqueId + " have searchable root");
+
+                    foreach (MusicTrack track in contentDirectory.Search<MusicTrack>(root, visitor => visitor.VisitAllResults(), new ResultsSettings()))
+                        AddTrack(track);
+                }
+                else
+                {
+                    Hyena.Log.Debug("UPnPSource: " + this.UniqueId + " does not contain a searchable root, need to recursive browse");
+
+                    ParseContainer(contentDirectory, root, 0);
+                }
+            }
+            catch (Exception exception)
+            {
+                Hyena.Log.DebugException(exception);
+            }
         }
 
         ~UPnPSource()
@@ -99,6 +119,26 @@ namespace Banshee.UPnPClient
         public override bool CanDeleteTracks
         {
             get { return false; }
+        }
+
+        private void ParseContainer(RemoteContentDirectory contentDirectory, Container container, int depth)
+        {
+            if (depth > 10 || container.ChildCount == 0)
+                return;
+            
+            foreach (var item in contentDirectory.GetChildren<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object>(container))
+            {
+                if (item is MusicTrack)
+                    AddTrack(item as MusicTrack);
+                else if (item is Container)
+                    ParseContainer(contentDirectory, item as Container, depth + 1);
+            }
+        }
+
+        private void AddTrack(MusicTrack basetrack)
+        {
+            UPnPTrackInfo track = new UPnPTrackInfo (basetrack, this);
+            track.Save();
         }
     }
 }
