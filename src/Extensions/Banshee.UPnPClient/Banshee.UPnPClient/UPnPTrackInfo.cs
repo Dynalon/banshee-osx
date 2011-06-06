@@ -48,6 +48,8 @@ namespace Banshee.UPnPClient
                 ArtistName = track.Artists.Count > 0 ? track.Artists[0].Name : "";
                 AlbumTitle = track.Albums.Count > 0 ? track.Albums[0] : "";
                 TrackTitle = track.Title;
+                
+                TrackNumber = track.OriginalTrackNumber.GetValueOrDefault();
 
                 Genre = track.Genres.Count > 0 ? track.Genres[0] : "";
 
