@@ -151,7 +151,7 @@ namespace Banshee.Library
             new SmartPlaylistDefinition (
                 Catalog.GetString ("Least Favorite"),
                 Catalog.GetString ("Songs rated one or two stars or that you have frequently skipped"),
-                "rating<3 or skips>4"),
+                "rating=1 or rating=2 or skips>4"),
 
             new SmartPlaylistDefinition (
                 Catalog.GetString ("700 MB of Favorites"),
