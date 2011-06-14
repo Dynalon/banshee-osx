@@ -130,14 +130,25 @@ namespace Banshee.UPnPClient
             
             foreach (var item in contentDirectory.GetChildren<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object>(container))
             {
-                if (item is MusicTrack)
-                    AddTrack(item as MusicTrack);
+                if (item is AudioItem)
+                {
+                    if (item is MusicTrack)
+                        AddMusicTrack(item as MusicTrack);
+                    else
+                        AddAudioItem(item as AudioItem);
+                }
                 else if (item is Container)
                     ParseContainer(contentDirectory, item as Container, depth + 1);
             }
         }
 
-        private void AddTrack(MusicTrack basetrack)
+        private void AddMusicTrack(MusicTrack basetrack)
+        {
+            UPnPTrackInfo track = new UPnPTrackInfo (basetrack, this);
+            track.Save();
+        }
+
+        private void AddAudioItem(AudioItem basetrack)
         {
             UPnPTrackInfo track = new UPnPTrackInfo (basetrack, this);
             track.Save();

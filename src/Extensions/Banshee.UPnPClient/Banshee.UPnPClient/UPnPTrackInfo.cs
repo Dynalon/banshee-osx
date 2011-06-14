@@ -42,6 +42,33 @@ namespace Banshee.UPnPClient
     {
         static long id = 0;
 
+        public UPnPTrackInfo (AudioItem track, UPnPSource source) : base()
+        {
+            if (track != null)
+            {
+                TrackTitle = track.Title;
+
+                if (track.Resources.Count > 0)
+                {
+                    Resource resource = track.Resources[0];
+
+                    BitRate = (int)resource.BitRate.GetValueOrDefault();
+                    BitsPerSample = (int)resource.BitsPerSample.GetValueOrDefault();
+                    Duration = resource.Duration.GetValueOrDefault();
+                    SampleRate = (int)resource.SampleFrequency.GetValueOrDefault();
+                    FileSize = (int)resource.Size.GetValueOrDefault();
+
+                    Uri = new SafeUri(resource.Uri);
+                }
+                else
+                    CanPlay = false;
+            }
+
+            ExternalId = ++id;
+
+            PrimarySource = source;
+        }
+
         public UPnPTrackInfo (MusicTrack track, UPnPSource source) : base()
         {
             if (track != null)
