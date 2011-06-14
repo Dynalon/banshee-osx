@@ -85,6 +85,8 @@ namespace Banshee.UPnPClient
             {
                 Hyena.Log.DebugException(exception);
             }
+
+            Hyena.Log.Information ("UPnPSource \"" + this.Name + "\", \"" + this.UniqueId + "\" parsed");
         }
 
         ~UPnPSource()
