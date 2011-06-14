@@ -66,7 +66,7 @@ namespace Banshee.UPnPClient
             try
             {
                 Container root = contentDirectory.GetRootObject();
-
+                /*
                 if (root.IsSearchable)
                 {
                     Hyena.Log.Debug("UPnPSource: " + this.UniqueId + " have searchable root");
@@ -75,6 +75,7 @@ namespace Banshee.UPnPClient
                         AddTrack(track);
                 }
                 else
+                */
                 {
                     Hyena.Log.Debug("UPnPSource: " + this.UniqueId + " does not contain a searchable root, need to recursive browse");
 
