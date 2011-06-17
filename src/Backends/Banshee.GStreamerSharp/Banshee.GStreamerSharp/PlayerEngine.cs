@@ -67,7 +67,7 @@ namespace Banshee.GStreamerSharp
 
             public AudioSinkBin (IntPtr o) : base(o)
             {
-
+                Name = "audiobin";
             }
 
             public AudioSinkBin (string elementName) : base(elementName)
@@ -305,7 +305,7 @@ namespace Banshee.GStreamerSharp
         List<string> missing_details = new List<string> ();
         ManualResetEvent next_track_set;
         CddaManager cdda_manager;
-        VideoManager video_manager;
+        VideoManager video_manager = null;
         Visualization visualization;
 
         public PlayerEngine ()
@@ -353,9 +353,10 @@ namespace Banshee.GStreamerSharp
             playbin.AboutToFinish += OnAboutToFinish;
 
             cdda_manager = new CddaManager (playbin);
-            video_manager = new VideoManager (playbin);
-            video_manager.PrepareWindow += OnVideoPrepareWindow;
-            video_manager.Initialize ();
+            // FIXME: Disable video stuff until GLib# 3 is used instead of the sopy bundled in GStreamerSharp
+            //video_manager = new VideoManager (playbin);
+            //video_manager.PrepareWindow += OnVideoPrepareWindow;
+            //video_manager.Initialize ();
 
             OnStateChanged (PlayerState.Ready);
         }
