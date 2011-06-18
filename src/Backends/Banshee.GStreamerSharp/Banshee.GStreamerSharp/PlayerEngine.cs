@@ -739,7 +739,7 @@ namespace Banshee.GStreamerSharp
         public override ushort Volume {
             get { return (ushort) Math.Round (audio_sink.Volume * 100.0); }
             set {
-                double volume = Math.Min (1.0, Math.Max (0, value / 100.0));
+                double volume = ((double)value) / 100.0;
                 audio_sink.Volume = volume;
                 if (audio_sink.VolumeNeedsSaving) {
                     PlayerEngineService.VolumeSchema.Set (value);
