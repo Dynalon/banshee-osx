@@ -38,6 +38,7 @@ using Mono.Unix;
 using Gst;
 using Gst.PbUtils;
 using Gst.BasePlugins;
+using Gst.CorePlugins;
 
 using Hyena;
 using Hyena.Data;
@@ -62,7 +63,7 @@ namespace Banshee.GStreamerSharp
             Element preamp;
             Element first;
             GhostPad visible_sink;
-            Element audiotee;
+            Tee audiotee;
             object pipeline_lock = new object ();
 
             public AudioSinkBin (IntPtr o) : base(o)
@@ -77,9 +78,11 @@ namespace Banshee.GStreamerSharp
                 first = hw_audio_sink;
 
                 // Our audio sink is a tee, so plugins can attach their own pipelines
-                audiotee = ElementFactory.Make ("tee", "audiotee");
+                audiotee = ElementFactory.Make ("tee", "audiotee") as Tee;
                 if (audiotee == null) {
                     Log.Error ("Can not create audio tee!");
+                } else {
+                    Add (audiotee);
                 }
 
                 volume = FindVolumeProvider (hw_audio_sink);
@@ -111,7 +114,7 @@ namespace Banshee.GStreamerSharp
                 // Link the first tee pad to the primary audio sink queue
                 Pad sinkpad = first.GetStaticPad ("sink");
                 Pad pad = audiotee.GetRequestPad ("src%d");
-                audiotee ["alloc-pad"] = pad;
+                audiotee.AllocPad = pad;
                 pad.Link (sinkpad);
                 first = audiotee;
 
