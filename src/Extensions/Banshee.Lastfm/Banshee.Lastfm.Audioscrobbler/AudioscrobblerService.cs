@@ -132,7 +132,7 @@ namespace Banshee.Lastfm.Audioscrobbler
 
             actions.Add (new ToggleActionEntry [] {
                 new ToggleActionEntry ("AudioscrobblerEnableAction", null,
-                    Catalog.GetString ("_Enable Song Reporting"), "<control>U",
+                    Catalog.GetString ("_Enable Song Reporting"), null,
                     Catalog.GetString ("Enable song reporting"), OnToggleEnabled, Enabled)
             });
 
