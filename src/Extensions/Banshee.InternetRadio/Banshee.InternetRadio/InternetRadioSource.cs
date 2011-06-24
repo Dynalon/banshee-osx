@@ -144,7 +144,8 @@ namespace Banshee.InternetRadio
                     radio_track.ParentTrack as DatabaseTrackInfo, a);
             };
 
-            if (new XspfMigrator (this).Migrate ()) {
+            var migrator = new XspfMigrator (this);
+            if (migrator.Migrate () | migrator.LoadDefaults ()) {
                 Reload ();
             }
         }
