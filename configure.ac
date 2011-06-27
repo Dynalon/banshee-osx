@@ -132,6 +132,9 @@ BANSHEE_CHECK_GTK_SHARP
 dnl OS X (optional through --enable-osx)
 BANSHEE_CHECK_OSX
 
+dnl Mono.Upnp libraries
+BANSHEE_CHECK_MONO_UPNP
+
 PKG_CHECK_MODULES(SQLITE, sqlite3 >= 3.4)
 
 dnl GNOME (optional)
