@@ -145,12 +145,18 @@ namespace Banshee.UPnPClient
 
         private void AddMusicTrack(MusicTrack basetrack)
         {
-            UPnPTrackInfo track = new UPnPTrackInfo (basetrack, this);
+            if (basetrack.IsReference)
+                return;
+
+			UPnPTrackInfo track = new UPnPTrackInfo (basetrack, this);
             track.Save();
         }
 
         private void AddAudioItem(AudioItem basetrack)
         {
+            if (basetrack.IsReference)
+                return;
+
             UPnPTrackInfo track = new UPnPTrackInfo (basetrack, this);
             track.Save();
         }
