@@ -42,60 +42,40 @@ namespace Banshee.UPnPClient
     {
         static long id = 0;
 
-        public UPnPTrackInfo (AudioItem track, UPnPSource source) : base()
+        public UPnPTrackInfo (MusicTrack track, UPnPSource source) : this (track as AudioItem, source)
         {
-            if (track != null)
-            {
-                TrackTitle = track.Title;
+            ArtistName = track.Artists.Count > 0 ? track.Artists[0].Name : "";
+            AlbumTitle = track.Albums.Count > 0 ? track.Albums[0] : "";
+            
+            TrackNumber = track.OriginalTrackNumber.GetValueOrDefault();
 
-                if (track.Resources.Count > 0)
-                {
-                    Resource resource = track.Resources[0];
-
-                    BitRate = (int)resource.BitRate.GetValueOrDefault();
-                    BitsPerSample = (int)resource.BitsPerSample.GetValueOrDefault();
-                    Duration = resource.Duration.GetValueOrDefault();
-                    SampleRate = (int)resource.SampleFrequency.GetValueOrDefault();
-                    FileSize = (int)resource.Size.GetValueOrDefault();
-
-                    Uri = new SafeUri(resource.Uri);
-                }
-                else
-                    CanPlay = false;
-            }
-
-            ExternalId = ++id;
-
-            PrimarySource = source;
+            Genre = track.Genres.Count > 0 ? track.Genres[0] : "";
         }
 
-        public UPnPTrackInfo (MusicTrack track, UPnPSource source) : base()
+        public UPnPTrackInfo (AudioItem track, UPnPSource source) : base ()
         {
-            if (track != null)
+            if (track == null)
+              throw new ArgumentNullException("track");
+
+            if (source == null)
+              throw new ArgumentNullException("source");
+
+            TrackTitle = track.Title;
+
+            if (track.Resources.Count > 0)
             {
-                ArtistName = track.Artists.Count > 0 ? track.Artists[0].Name : "";
-                AlbumTitle = track.Albums.Count > 0 ? track.Albums[0] : "";
-                TrackTitle = track.Title;
-                
-                TrackNumber = track.OriginalTrackNumber.GetValueOrDefault();
+                Resource resource = track.Resources[0];
 
-                Genre = track.Genres.Count > 0 ? track.Genres[0] : "";
+                BitRate = (int)resource.BitRate.GetValueOrDefault();
+                BitsPerSample = (int)resource.BitsPerSample.GetValueOrDefault();
+                Duration = resource.Duration.GetValueOrDefault();
+                SampleRate = (int)resource.SampleFrequency.GetValueOrDefault();
+                FileSize = (int)resource.Size.GetValueOrDefault();
 
-                if (track.Resources.Count > 0)
-                {
-                    Resource resource = track.Resources[0];
-
-                    BitRate = (int)resource.BitRate.GetValueOrDefault();
-                    BitsPerSample = (int)resource.BitsPerSample.GetValueOrDefault();
-                    Duration = resource.Duration.GetValueOrDefault();
-                    SampleRate = (int)resource.SampleFrequency.GetValueOrDefault();
-                    FileSize = (int)resource.Size.GetValueOrDefault();
-
-                    Uri = new SafeUri(resource.Uri);
-                }
-                else
-                    CanPlay = false;
+                Uri = new SafeUri(resource.Uri);
             }
+            else
+                CanPlay = false;
 
             ExternalId = ++id;
 
