@@ -27,11 +27,13 @@
 //
 
 using System;
+using System.Collections.Generic;
 
 using Mono.Addins;
 
 using Mono.Upnp;
 using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1;
+using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.AV;
 
 using Banshee.Base;
 using Banshee.Sources.Gui;
@@ -57,8 +59,8 @@ namespace Banshee.UPnPClient
 
             client.Browse(Mono.Upnp.Dcp.MediaServer1.MediaServer.DeviceType);
         }
-		
-		public void Dispose ()
+    
+        public void Dispose ()
         {
             if (container != null)
             {
@@ -75,20 +77,79 @@ namespace Banshee.UPnPClient
             Hyena.Log.Debug ("UPnPService.DeviceAdded (" + e.Device.ToString() + ") (" + e.Device.Type + ")");
             Device device = e.Device.GetDevice();
             
-            RemoteContentDirectory contentDirectory = null;
+            ContentDirectoryController contentDirectory = null;
             
             foreach (Service service in device.Services) {
                 Hyena.Log.Debug ("UPnPService \"" + device.FriendlyName + "\" Implements " + service.Type);
-                if (service.Type.Equals(Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.ContentDirectory.ServiceType))
-                    contentDirectory = new RemoteContentDirectory(new ContentDirectoryController(service.GetController()));
+                if (service.Type.Equals (Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.ContentDirectory.ServiceType))
+                    contentDirectory = new ContentDirectoryController (service.GetController());
             }
 
             if (contentDirectory != null)
-                container.AddChildSource (new UPnPSource(device, contentDirectory));
+            {
+                UPnPSource source = new UPnPSource(device);
+                container.AddChildSource (source);
+                Parse(source, contentDirectory);
+            }
         }
-		
+
+
+        static void Parse (UPnPSource source, ContentDirectoryController contentDirectory)
+        {
+            RemoteContentDirectory remoteContentDirectory = new RemoteContentDirectory (contentDirectory);
+            List<MusicTrack> musicTracks = new List<MusicTrack>();
+            DateTime begin = DateTime.Now;
+            Container root = remoteContentDirectory.GetRootObject();
+            bool recursiveBrowse = !contentDirectory.CanSearch;
+
+            if (!recursiveBrowse) {
+                try {
+                    Hyena.Log.Debug ("Searchable, lets search");
+					foreach (var item in remoteContentDirectory.Search<MusicTrack>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.audioItem.musicTrack"), new ResultsSettings())) {
+                        musicTracks.Add(item as MusicTrack);
+					}
+                } catch (Exception exception) {
+                    Hyena.Log.Exception (exception);
+                    recursiveBrowse = true;
+                }
+            }
+            if (recursiveBrowse) {
+                try {
+                    Hyena.Log.Debug ("Not searchable, lets recursive browse");
+                    ParseContainer (source, remoteContentDirectory, root, 0, musicTracks);
+                } catch (Exception exception) {
+                    Hyena.Log.Exception (exception);
+                }
+            }
+
+            source.AddTracks (musicTracks);
+            Hyena.Log.Debug ("Found all items on the service, took " + (DateTime.Now - begin).ToString());
+        }
+
+        static void ParseContainer (UPnPSource source, RemoteContentDirectory remoteContentDirectory, Container container, int depth, List<MusicTrack> musicTracks)
+        {
+            if (depth > 10 || (container.ChildCount != null && container.ChildCount == 0))
+                return;
+
+            foreach (var upnp_object in remoteContentDirectory.GetChildren<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object>(container)) {
+                if (upnp_object is Item) {
+                    Item item = upnp_object as Item;
+
+                    if (item.IsReference || item.Resources.Count == 0)
+                      continue;
+
+                    if (item is MusicTrack) {
+                        musicTracks.Add(item as MusicTrack);
+                    }
+                }
+                else if (upnp_object is Container) {
+                    ParseContainer (source, remoteContentDirectory, upnp_object as Container, depth + 1, musicTracks);
+                }
+            }
+        }
+    
         string IService.ServiceName {
             get { return "uPnP Client service"; }
         }
-	}
+  }
 }

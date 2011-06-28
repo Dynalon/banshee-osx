@@ -27,6 +27,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 
 using Mono.Unix;
 using Mono.Addins;
@@ -51,46 +52,23 @@ namespace Banshee.UPnPClient
     public class UPnPSource : PrimarySource
     {
         const int sort_order = 190;
+        private Dictionary<string, UPnPTrackInfo> music_tracks;
 
-        public UPnPSource (Device device, RemoteContentDirectory contentDirectory) : base (Catalog.GetString ("Music Share"), device.FriendlyName, device.Udn, sort_order)
+        public UPnPSource (Device device) : base (Catalog.GetString ("Music Share"), device.FriendlyName, device.Udn, sort_order)
         {
             Hyena.Log.Information ("UPnPSource.Added(\"" + this.Name + "\", \"" + this.UniqueId + "\")");
 
             Properties.SetStringList ("Icon.Name", "computer", "network-server");
 
+            music_tracks = new Dictionary<string, UPnPTrackInfo>();
+
             // Remove tracks previously associated with this source, we do this to be sure they are non-existant before we refresh.
             PurgeTracks();
-
             AfterInitialized ();
-
-            try
-            {
-                Container root = contentDirectory.GetRootObject();
-                /*
-                if (root.IsSearchable)
-                {
-                    Hyena.Log.Debug("UPnPSource: " + this.UniqueId + " have searchable root");
-
-                    foreach (MusicTrack track in contentDirectory.Search<MusicTrack>(root, visitor => visitor.VisitAllResults(), new ResultsSettings()))
-                        AddTrack(track);
-                }
-                else
-                */
-                {
-                    Hyena.Log.Debug("UPnPSource: " + this.UniqueId + " does not contain a searchable root, need to recursive browse");
-
-                    ParseContainer(contentDirectory, root, 0);
-                }
-            }
-            catch (Exception exception)
-            {
-                Hyena.Log.DebugException(exception);
-            }
-
-            Hyena.Log.Information ("UPnPSource \"" + this.Name + "\", \"" + this.UniqueId + "\" parsed");
+            OnTracksRemoved ();
         }
 
-        ~UPnPSource()
+        ~UPnPSource ()
         {
             Dispose ();
         }
@@ -101,7 +79,7 @@ namespace Banshee.UPnPClient
             base.Dispose ();
         }
 
-        public void Disconnect()
+        public void Disconnect ()
         {
             Hyena.Log.Information ("UPnPSource.Disconnect(\"" + this.Name + "\", \"" + this.UniqueId + "\")");
 
@@ -124,41 +102,17 @@ namespace Banshee.UPnPClient
             get { return false; }
         }
 
-        private void ParseContainer(RemoteContentDirectory contentDirectory, Container container, int depth)
+        public void AddTracks (List<MusicTrack> tracks)
         {
-            if (depth > 10 || (container.ChildCount.HasValue && container.ChildCount == 0))
-                return;
-            
-            foreach (var item in contentDirectory.GetChildren<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object>(container))
-            {
-                if (item is AudioItem)
-                {
-                    if (item is MusicTrack)
-                        AddMusicTrack(item as MusicTrack);
-                    else
-                        AddAudioItem(item as AudioItem);
-                }
-                else if (item is Container)
-                    ParseContainer(contentDirectory, item as Container, depth + 1);
+            foreach (var track in tracks) {
+                if (music_tracks.ContainsKey(track.Id))
+                    continue;
+
+                UPnPTrackInfo track_info = new UPnPTrackInfo (track, this);
+                track_info.Save (false);
             }
-        }
 
-        private void AddMusicTrack(MusicTrack basetrack)
-        {
-            if (basetrack.IsReference)
-                return;
-
-			UPnPTrackInfo track = new UPnPTrackInfo (basetrack, this);
-            track.Save();
-        }
-
-        private void AddAudioItem(AudioItem basetrack)
-        {
-            if (basetrack.IsReference)
-                return;
-
-            UPnPTrackInfo track = new UPnPTrackInfo (basetrack, this);
-            track.Save();
+            OnTracksAdded ();
         }
     }
 }
