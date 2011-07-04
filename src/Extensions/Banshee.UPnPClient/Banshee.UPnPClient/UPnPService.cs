@@ -122,7 +122,9 @@ namespace Banshee.UPnPClient
                 }
             }
 
-            source.AddTracks (musicTracks);
+            if (musicTracks.Count > 0)
+                source.AddTracks (musicTracks);
+
             Hyena.Log.Debug ("Found all items on the service, took " + (DateTime.Now - begin).ToString());
         }
 
@@ -144,6 +146,11 @@ namespace Banshee.UPnPClient
                 }
                 else if (upnp_object is Container) {
                     ParseContainer (source, remoteContentDirectory, upnp_object as Container, depth + 1, musicTracks);
+                }
+
+                if (musicTracks.Count > 500) {
+                    source.AddTracks (musicTracks);
+                    musicTracks.Clear();
                 }
             }
         }
