@@ -42,7 +42,7 @@ namespace Banshee.UPnPClient
     {
         static long id = 0;
 
-        public UPnPTrackInfo (MusicTrack track, UPnPSource source) : this (track as AudioItem, source)
+        public UPnPTrackInfo (MusicTrack track, UPnPMusicSource source) : this (track as AudioItem, source)
         {
             ArtistName = track.Artists.Count > 0 ? track.Artists[0].Name : "";
             AlbumTitle = track.Albums.Count > 0 ? track.Albums[0] : "";
@@ -52,7 +52,7 @@ namespace Banshee.UPnPClient
             Genre = track.Genres.Count > 0 ? track.Genres[0] : "";
         }
 
-        public UPnPTrackInfo (AudioItem track, UPnPSource source) : base ()
+        public UPnPTrackInfo (AudioItem track, UPnPMusicSource source) : base ()
         {
             if (track == null)
               throw new ArgumentNullException("track");

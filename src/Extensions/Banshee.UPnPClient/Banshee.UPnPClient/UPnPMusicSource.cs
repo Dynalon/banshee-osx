@@ -49,12 +49,12 @@ using Banshee.PlaybackController;
 
 namespace Banshee.UPnPClient
 {
-    public class UPnPSource : PrimarySource
+    public class UPnPMusicSource : PrimarySource
     {
         const int sort_order = 190;
         private Dictionary<string, UPnPTrackInfo> music_tracks;
 
-        public UPnPSource (Device device) : base (Catalog.GetString ("Music Share"), device.FriendlyName, device.Udn, sort_order)
+        public UPnPMusicSource (Device device) : base (Catalog.GetString ("Music Share"), device.FriendlyName, device.Udn, sort_order)
         {
             Hyena.Log.Information ("UPnPSource.Added(\"" + this.Name + "\", \"" + this.UniqueId + "\")");
 
@@ -68,7 +68,7 @@ namespace Banshee.UPnPClient
             OnTracksRemoved ();
         }
 
-        ~UPnPSource ()
+        ~UPnPMusicSource ()
         {
             Dispose ();
         }

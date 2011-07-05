@@ -64,7 +64,7 @@ namespace Banshee.UPnPClient
         {
             if (container != null)
             {
-                foreach (UPnPSource source in container.Children)
+                foreach (UPnPMusicSource source in container.Children)
                     source.Disconnect();
 
                 ServiceManager.SourceManager.RemoveSource(container);
@@ -87,14 +87,14 @@ namespace Banshee.UPnPClient
 
             if (contentDirectory != null)
             {
-                UPnPSource source = new UPnPSource(device);
+                UPnPMusicSource source = new UPnPMusicSource(device);
                 container.AddChildSource (source);
                 Parse(source, contentDirectory);
             }
         }
 
 
-        static void Parse (UPnPSource source, ContentDirectoryController contentDirectory)
+        static void Parse (UPnPMusicSource source, ContentDirectoryController contentDirectory)
         {
             RemoteContentDirectory remoteContentDirectory = new RemoteContentDirectory (contentDirectory);
             List<MusicTrack> musicTracks = new List<MusicTrack>();
@@ -141,7 +141,7 @@ namespace Banshee.UPnPClient
             Hyena.Log.Debug ("Found all items on the service, took " + (DateTime.Now - begin).ToString());
         }
 
-        static void ParseContainer (UPnPSource source, RemoteContentDirectory remoteContentDirectory, Container container, int depth, List<MusicTrack> musicTracks)
+        static void ParseContainer (UPnPMusicSource source, RemoteContentDirectory remoteContentDirectory, Container container, int depth, List<MusicTrack> musicTracks)
         {
             if (depth > 10 || (container.ChildCount != null && container.ChildCount == 0))
                 return;

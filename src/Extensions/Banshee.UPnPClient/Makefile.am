@@ -6,7 +6,7 @@ INSTALL_DIR = $(EXTENSIONS_INSTALL_DIR)
 SOURCES =  \
 	Banshee.UPnPClient/UPnPContainerSource.cs \
 	Banshee.UPnPClient/UPnPService.cs \
-	Banshee.UPnPClient/UPnPSource.cs \
+	Banshee.UPnPClient/UPnPMusicSource.cs \
 	Banshee.UPnPClient/UPnPTrackInfo.cs
 
 RESOURCES = Banshee.UPnPClient.addin.xml
