@@ -113,8 +113,11 @@ namespace Banshee.UPnPClient
                             musicTracks.Add(item as MusicTrack);
 					    }
 
-                        if (results.HasMoreResults)
+                        if (results.HasMoreResults) {
                             results = results.GetMoreResults(remoteContentDirectory);
+                            source.AddTracks (musicTracks);
+                            musicTracks.Clear();
+                        }
                         else
                             hasresults = false;
                     }
