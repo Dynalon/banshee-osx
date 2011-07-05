@@ -105,9 +105,19 @@ namespace Banshee.UPnPClient
             if (!recursiveBrowse) {
                 try {
                     Hyena.Log.Debug ("Searchable, lets search");
-					foreach (var item in remoteContentDirectory.Search<MusicTrack>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.audioItem.musicTrack"), new ResultsSettings())) {
-                        musicTracks.Add(item as MusicTrack);
-					}
+                    Results<MusicTrack> results = remoteContentDirectory.Search<MusicTrack>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.audioItem.musicTrack"), new ResultsSettings());
+                    bool hasresults = results.Count > 0;
+
+                    while (hasresults) {
+					    foreach (var item in results) {
+                            musicTracks.Add(item as MusicTrack);
+					    }
+
+                        if (results.HasMoreResults)
+                            results = results.GetMoreResults(remoteContentDirectory);
+                        else
+                            hasresults = false;
+                    }
                 } catch (Exception exception) {
                     Hyena.Log.Exception (exception);
                     recursiveBrowse = true;
@@ -132,26 +142,34 @@ namespace Banshee.UPnPClient
         {
             if (depth > 10 || (container.ChildCount != null && container.ChildCount == 0))
                 return;
+            Results<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object> results = remoteContentDirectory.GetChildren<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object>(container);
+            bool hasresults = results.Count > 0;
+            while (hasresults) {
+                foreach (var upnp_object in results) {
+                    if (upnp_object is Item) {
+                        Item item = upnp_object as Item;
 
-            foreach (var upnp_object in remoteContentDirectory.GetChildren<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object>(container)) {
-                if (upnp_object is Item) {
-                    Item item = upnp_object as Item;
+                        if (item.IsReference || item.Resources.Count == 0)
+                          continue;
 
-                    if (item.IsReference || item.Resources.Count == 0)
-                      continue;
+                        if (item is MusicTrack) {
+                            musicTracks.Add(item as MusicTrack);
+                        }
+                    }
+                    else if (upnp_object is Container) {
+                        ParseContainer (source, remoteContentDirectory, upnp_object as Container, depth + 1, musicTracks);
+                    }
 
-                    if (item is MusicTrack) {
-                        musicTracks.Add(item as MusicTrack);
+                    if (musicTracks.Count > 500) {
+                        source.AddTracks (musicTracks);
+                        musicTracks.Clear();
                     }
                 }
-                else if (upnp_object is Container) {
-                    ParseContainer (source, remoteContentDirectory, upnp_object as Container, depth + 1, musicTracks);
-                }
 
-                if (musicTracks.Count > 500) {
-                    source.AddTracks (musicTracks);
-                    musicTracks.Clear();
-                }
+                if (results.HasMoreResults)
+                    results = results.GetMoreResults(remoteContentDirectory);
+                else
+                    hasresults = false;
             }
         }
     
