@@ -54,10 +54,8 @@ namespace Banshee.UPnPClient
         const int sort_order = 190;
         private Dictionary<string, UPnPTrackInfo> music_tracks;
 
-        public UPnPMusicSource (Device device) : base (Catalog.GetString ("Music Share"), device.FriendlyName, device.Udn, sort_order)
+        public UPnPMusicSource (string udn) : base (Catalog.GetString ("Music"), Catalog.GetString ("Music"), udn + "-music", sort_order)
         {
-            Hyena.Log.Information ("UPnPSource.Added(\"" + this.Name + "\", \"" + this.UniqueId + "\")");
-
             Properties.SetStringList ("Icon.Name", "computer", "network-server");
 
             music_tracks = new Dictionary<string, UPnPTrackInfo>();
@@ -81,8 +79,6 @@ namespace Banshee.UPnPClient
 
         public void Disconnect ()
         {
-            Hyena.Log.Information ("UPnPSource.Disconnect(\"" + this.Name + "\", \"" + this.UniqueId + "\")");
-
             // Stop currently playing track if its from us.
             try {
                 if (ServiceManager.PlayerEngine.CurrentState == Banshee.MediaEngine.PlayerState.Playing) {

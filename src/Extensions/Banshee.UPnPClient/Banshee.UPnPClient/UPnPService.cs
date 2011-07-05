@@ -77,105 +77,10 @@ namespace Banshee.UPnPClient
             Hyena.Log.Debug ("UPnPService.DeviceAdded (" + e.Device.ToString() + ") (" + e.Device.Type + ")");
             Device device = e.Device.GetDevice();
             
-            ContentDirectoryController contentDirectory = null;
-            
-            foreach (Service service in device.Services) {
-                Hyena.Log.Debug ("UPnPService \"" + device.FriendlyName + "\" Implements " + service.Type);
-                if (service.Type.Equals (Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.ContentDirectory.ServiceType))
-                    contentDirectory = new ContentDirectoryController (service.GetController());
-            }
-
-            if (contentDirectory != null)
-            {
-                UPnPMusicSource source = new UPnPMusicSource(device);
-                container.AddChildSource (source);
-                Parse(source, contentDirectory);
-            }
+            UPnPServerSource source = new UPnPServerSource(device);
+            container.AddChildSource (source);
         }
 
-
-        static void Parse (UPnPMusicSource source, ContentDirectoryController contentDirectory)
-        {
-            RemoteContentDirectory remoteContentDirectory = new RemoteContentDirectory (contentDirectory);
-            List<MusicTrack> musicTracks = new List<MusicTrack>();
-            DateTime begin = DateTime.Now;
-            Container root = remoteContentDirectory.GetRootObject();
-            bool recursiveBrowse = !contentDirectory.CanSearch;
-
-            if (!recursiveBrowse) {
-                try {
-                    Hyena.Log.Debug ("Searchable, lets search");
-                    Results<MusicTrack> results = remoteContentDirectory.Search<MusicTrack>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.audioItem.musicTrack"), new ResultsSettings());
-                    bool hasresults = results.Count > 0;
-
-                    while (hasresults) {
-					    foreach (var item in results) {
-                            musicTracks.Add(item as MusicTrack);
-					    }
-
-                        if (results.HasMoreResults) {
-                            results = results.GetMoreResults(remoteContentDirectory);
-                            source.AddTracks (musicTracks);
-                            musicTracks.Clear();
-                        }
-                        else
-                            hasresults = false;
-                    }
-                } catch (Exception exception) {
-                    Hyena.Log.Exception (exception);
-                    recursiveBrowse = true;
-                }
-            }
-            if (recursiveBrowse) {
-                try {
-                    Hyena.Log.Debug ("Not searchable, lets recursive browse");
-                    ParseContainer (source, remoteContentDirectory, root, 0, musicTracks);
-                } catch (Exception exception) {
-                    Hyena.Log.Exception (exception);
-                }
-            }
-
-            if (musicTracks.Count > 0)
-                source.AddTracks (musicTracks);
-
-            Hyena.Log.Debug ("Found all items on the service, took " + (DateTime.Now - begin).ToString());
-        }
-
-        static void ParseContainer (UPnPMusicSource source, RemoteContentDirectory remoteContentDirectory, Container container, int depth, List<MusicTrack> musicTracks)
-        {
-            if (depth > 10 || (container.ChildCount != null && container.ChildCount == 0))
-                return;
-            Results<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object> results = remoteContentDirectory.GetChildren<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object>(container);
-            bool hasresults = results.Count > 0;
-            while (hasresults) {
-                foreach (var upnp_object in results) {
-                    if (upnp_object is Item) {
-                        Item item = upnp_object as Item;
-
-                        if (item.IsReference || item.Resources.Count == 0)
-                          continue;
-
-                        if (item is MusicTrack) {
-                            musicTracks.Add(item as MusicTrack);
-                        }
-                    }
-                    else if (upnp_object is Container) {
-                        ParseContainer (source, remoteContentDirectory, upnp_object as Container, depth + 1, musicTracks);
-                    }
-
-                    if (musicTracks.Count > 500) {
-                        source.AddTracks (musicTracks);
-                        musicTracks.Clear();
-                    }
-                }
-
-                if (results.HasMoreResults)
-                    results = results.GetMoreResults(remoteContentDirectory);
-                else
-                    hasresults = false;
-            }
-        }
-    
         string IService.ServiceName {
             get { return "uPnP Client service"; }
         }
