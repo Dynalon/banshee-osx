@@ -39,7 +39,7 @@ namespace Banshee.UPnPClient
 {
     public class UPnPContainerSource : Source
     {
-        public UPnPContainerSource () :  base (Catalog.GetString ("Shared Music"), Catalog.GetString ("Shared Music"), 300)
+        public UPnPContainerSource () :  base (Catalog.GetString ("Shared Media"), Catalog.GetString ("Shared Media"), 300)
         {
             Properties.SetStringList ("Icon.Name", "applications-internet", "network-server");
             TypeUniqueId = "upnp-container";
