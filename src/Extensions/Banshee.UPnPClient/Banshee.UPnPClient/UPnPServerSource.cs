@@ -41,6 +41,8 @@ using Banshee.Configuration;
 using Banshee.Sources;
 using Banshee.ServiceStack;
 
+using Hyena;
+
 namespace Banshee.UPnPClient
 {
     public class UPnPServerSource : Source
@@ -68,7 +70,10 @@ namespace Banshee.UPnPClient
             music_source = new UPnPMusicSource(device.Udn);
             AddChildSource (music_source);
 
-            Parse (contentDirectory);
+            ThreadAssist.Spawn (delegate {
+                Parse (contentDirectory);
+            });
+            
         }
 
         void Parse (ContentDirectoryController contentDirectory)
