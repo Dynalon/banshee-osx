@@ -56,7 +56,7 @@ namespace Banshee.UPnPClient
 
         public UPnPMusicSource (string udn) : base (Catalog.GetString ("Music"), Catalog.GetString ("Music"), udn + "-music", sort_order)
         {
-            Properties.SetStringList ("Icon.Name", "computer", "network-server");
+            Properties.SetStringList ("Icon.Name", "audio-x-generic", "source-library");
 
             music_tracks = new Dictionary<string, UPnPTrackInfo>();
 
