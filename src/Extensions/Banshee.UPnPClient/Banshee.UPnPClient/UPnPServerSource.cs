@@ -82,6 +82,20 @@ namespace Banshee.UPnPClient
             music_source = null;
         }
 
+        delegate void ChunkHandler<T> (Results<T> results);
+        void HandleResults<T> (Results<T> results, RemoteContentDirectory remoteContentDirectory, ChunkHandler<T> chunkHandler)
+        {
+            bool hasresults = results.Count > 0;
+
+            while (hasresults) {
+                chunkHandler(results);
+
+                hasresults = results.HasMoreResults;
+                if (hasresults)
+                    results = results.GetMoreResults(remoteContentDirectory);
+            }
+        }
+
         void Parse (ContentDirectoryController contentDirectory)
         {
             RemoteContentDirectory remoteContentDirectory = new RemoteContentDirectory (contentDirectory);
@@ -93,22 +107,15 @@ namespace Banshee.UPnPClient
             if (!recursiveBrowse) {
                 try {
                     Hyena.Log.Debug ("Searchable, lets search");
-                    Results<MusicTrack> results = remoteContentDirectory.Search<MusicTrack>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.audioItem.musicTrack"), new ResultsSettings());
-                    bool hasresults = results.Count > 0;
 
-                    while (hasresults) {
-                        foreach (var item in results) {
-                            musicTracks.Add(item as MusicTrack);
-                        }
+                    HandleResults<MusicTrack> (remoteContentDirectory.Search<MusicTrack>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.audioItem.musicTrack"), new ResultsSettings()),
+                                               remoteContentDirectory,
+                                               chunk => {
+                                                            foreach (var item in chunk)
+                                                                musicTracks.Add(item as MusicTrack);
 
-                        if (results.HasMoreResults) {
-                            results = results.GetMoreResults(remoteContentDirectory);
-                            music_source.AddTracks (musicTracks);
-                            musicTracks.Clear();
-                        }
-                        else
-                            hasresults = false;
-                    }
+                                                            music_source.AddTracks (musicTracks);
+                                                        });
                 } catch (Exception exception) {
                     Hyena.Log.Exception (exception);
                     recursiveBrowse = true;
@@ -133,35 +140,32 @@ namespace Banshee.UPnPClient
         {
             if (depth > 10 || (container.ChildCount != null && container.ChildCount == 0))
                 return;
-            Results<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object> results = remoteContentDirectory.GetChildren<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object>(container);
-            bool hasresults = results.Count > 0;
-            while (hasresults) {
-                foreach (var upnp_object in results) {
-                    if (upnp_object is Item) {
-                        Item item = upnp_object as Item;
 
-                        if (item.IsReference || item.Resources.Count == 0)
-                          continue;
+            HandleResults<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object> (
+                                       remoteContentDirectory.GetChildren<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object>(container),
+                                       remoteContentDirectory,
+                                       chunk => {
+                                                    foreach (var upnp_object in chunk) {
+                                                        if (upnp_object is Item) {
+                                                            Item item = upnp_object as Item;
 
-                        if (item is MusicTrack) {
-                            musicTracks.Add(item as MusicTrack);
-                        }
-                    }
-                    else if (upnp_object is Container) {
-                        ParseContainer (remoteContentDirectory, upnp_object as Container, depth + 1, musicTracks);
-                    }
+                                                            if (item.IsReference || item.Resources.Count == 0)
+                                                              continue;
 
-                    if (musicTracks.Count > 500) {
-                        music_source.AddTracks (musicTracks);
-                        musicTracks.Clear();
-                    }
-                }
+                                                            if (item is MusicTrack) {
+                                                                musicTracks.Add(item as MusicTrack);
+                                                            }
+                                                        }
+                                                        else if (upnp_object is Container) {
+                                                            ParseContainer (remoteContentDirectory, upnp_object as Container, depth + 1, musicTracks);
+                                                        }
 
-                if (results.HasMoreResults)
-                    results = results.GetMoreResults(remoteContentDirectory);
-                else
-                    hasresults = false;
-            }
+                                                        if (musicTracks.Count > 500) {
+                                                            music_source.AddTracks (musicTracks);
+                                                            musicTracks.Clear();
+                                                        }
+                                                    }
+                                                });
         }
 
         public void Disconnect ()
