@@ -150,7 +150,7 @@ namespace Banshee.UPnPClient
                                                             Item item = upnp_object as Item;
 
                                                             if (item.IsReference || item.Resources.Count == 0)
-                                                              continue;
+                                                                continue;
 
                                                             if (item is MusicTrack) {
                                                                 musicTracks.Add(item as MusicTrack);
