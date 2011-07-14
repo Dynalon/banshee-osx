@@ -111,6 +111,14 @@ namespace Banshee.UPnPClient
             PurgeTracks();
         }
 
+        public override bool ShowBrowser {
+            get { return false; }
+        }
+
+        protected override bool HasArtistAlbum {
+            get { return false; }
+        }
+
         public override bool CanDeleteTracks
         {
             get { return false; }
