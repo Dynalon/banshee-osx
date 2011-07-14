@@ -64,7 +64,7 @@ namespace Banshee.UPnPClient
         {
             if (container != null)
             {
-                foreach (UPnPMusicSource source in container.Children)
+                foreach (UPnPServerSource source in container.Children)
                     source.Disconnect();
 
                 ServiceManager.SourceManager.RemoveSource(container);
