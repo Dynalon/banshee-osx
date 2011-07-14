@@ -91,9 +91,9 @@ namespace Banshee.UPnPClient
                     bool hasresults = results.Count > 0;
 
                     while (hasresults) {
-					    foreach (var item in results) {
+                        foreach (var item in results) {
                             musicTracks.Add(item as MusicTrack);
-					    }
+                        }
 
                         if (results.HasMoreResults) {
                             results = results.GetMoreResults(remoteContentDirectory);
