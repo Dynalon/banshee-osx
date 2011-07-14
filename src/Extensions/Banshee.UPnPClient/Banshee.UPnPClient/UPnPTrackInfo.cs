@@ -35,6 +35,7 @@ using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.AV;
 
 using Hyena;
 
+using Banshee.Sources;
 using Banshee.Collection;
 using Banshee.Collection.Database;
 
@@ -44,7 +45,7 @@ namespace Banshee.UPnPClient
     {
         static long id = 0;
 
-        public UPnPTrackInfo (MusicTrack track, UPnPMusicSource source) : this (track as AudioItem, source)
+        public UPnPTrackInfo (MusicTrack track, UPnPMusicSource source) : this (track as Item, source)
         {
             ArtistName = track.Artists.Count > 0 ? track.Artists[0].Name : "";
             AlbumTitle = track.Albums.Count > 0 ? track.Albums[0] : "";
@@ -54,7 +55,14 @@ namespace Banshee.UPnPClient
             Genre = track.Genres.Count > 0 ? track.Genres[0] : "";
         }
 
-        public UPnPTrackInfo (AudioItem track, UPnPMusicSource source) : base ()
+        public UPnPTrackInfo (VideoItem track, UPnPVideoSource source) : this (track as Item, source)
+        {
+            ArtistName = track.Producers.Count > 0 ? track.Producers[0] : "";
+
+            Genre = track.Genres.Count > 0 ? track.Genres[0] : "";
+        }
+
+        public UPnPTrackInfo (Item track, PrimarySource source) : base()
         {
             if (track == null)
               throw new ArgumentNullException("track");
