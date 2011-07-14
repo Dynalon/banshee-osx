@@ -76,6 +76,12 @@ namespace Banshee.UPnPClient
             
         }
 
+        ~UPnPServerSource ()
+        {
+            RemoveChildSource (music_source);
+            music_source = null;
+        }
+
         void Parse (ContentDirectoryController contentDirectory)
         {
             RemoteContentDirectory remoteContentDirectory = new RemoteContentDirectory (contentDirectory);
