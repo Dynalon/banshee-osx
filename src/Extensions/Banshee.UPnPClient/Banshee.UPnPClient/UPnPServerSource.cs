@@ -52,7 +52,7 @@ namespace Banshee.UPnPClient
 
         public UPnPServerSource (Device device) :  base (Catalog.GetString ("UPnP Share"), device.FriendlyName, 300)
         {
-            Properties.SetStringList ("Icon.Name", "applications-internet", "network-server");
+            Properties.SetStringList ("Icon.Name", "computer", "network-server");
             TypeUniqueId = "upnp-container";
             expanded_schema = new SchemaEntry<bool> ("plugins.upnp." + device.Udn, "expanded", true, "UPnP Share expanded", "UPnP Share expanded" );
 
