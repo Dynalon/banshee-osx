@@ -99,7 +99,6 @@ namespace Banshee.UPnPClient
         void Parse (ContentDirectoryController contentDirectory)
         {
             RemoteContentDirectory remoteContentDirectory = new RemoteContentDirectory (contentDirectory);
-            List<MusicTrack> musicTracks = new List<MusicTrack>();
             DateTime begin = DateTime.Now;
             Container root = remoteContentDirectory.GetRootObject();
             bool recursiveBrowse = !contentDirectory.CanSearch;
@@ -111,6 +110,7 @@ namespace Banshee.UPnPClient
                     HandleResults<MusicTrack> (remoteContentDirectory.Search<MusicTrack>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.audioItem.musicTrack"), new ResultsSettings()),
                                                remoteContentDirectory,
                                                chunk => {
+                                                            List<MusicTrack> musicTracks = new List<MusicTrack>();
                                                             foreach (var item in chunk)
                                                                 musicTracks.Add(item as MusicTrack);
 
@@ -124,14 +124,14 @@ namespace Banshee.UPnPClient
             if (recursiveBrowse) {
                 try {
                     Hyena.Log.Debug ("Not searchable, lets recursive browse");
+                    List<MusicTrack> musicTracks = new List<MusicTrack>();
                     ParseContainer (remoteContentDirectory, root, 0, musicTracks);
+                    if (musicTracks.Count > 0)
+                        music_source.AddTracks (musicTracks);
                 } catch (Exception exception) {
                     Hyena.Log.Exception (exception);
                 }
             }
-
-            if (musicTracks.Count > 0)
-                music_source.AddTracks (musicTracks);
 
             Hyena.Log.Debug ("Found all items on the service, took " + (DateTime.Now - begin).ToString());
         }
