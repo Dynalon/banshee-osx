@@ -27,6 +27,8 @@
 //
 
 using System;
+using System.Collections.Generic;
+
 using Mono.Unix;
 using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1;
 using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.AV;
@@ -62,10 +64,10 @@ namespace Banshee.UPnPClient
 
             TrackTitle = track.Title;
 
-            if (track.Resources.Count > 0)
-            {
-                Resource resource = track.Resources[0];
+            Resource resource = FindSuitableResource(track.Resources);
 
+            if (resource != null)
+            {
                 BitRate = (int)resource.BitRate.GetValueOrDefault();
                 BitsPerSample = (int)resource.BitsPerSample.GetValueOrDefault();
                 Duration = resource.Duration.GetValueOrDefault();
@@ -80,6 +82,16 @@ namespace Banshee.UPnPClient
             ExternalId = ++id;
 
             PrimarySource = source;
+        }
+
+        private Resource FindSuitableResource (IList<Resource> resources)
+        {
+            foreach (Resource resource in resources) {
+                if (resource.Uri != null && resource.Uri.Scheme == System.Uri.UriSchemeHttp)
+                    return resource;
+            }
+
+            return null;
         }
     }
 }
