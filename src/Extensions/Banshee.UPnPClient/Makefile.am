@@ -8,6 +8,7 @@ SOURCES =  \
 	Banshee.UPnPClient/UPnPService.cs \
     Banshee.UPnPClient/UPnPServerSource.cs \
 	Banshee.UPnPClient/UPnPMusicSource.cs \
+	Banshee.UPnPClient/UPnPVideoSource.cs \
 	Banshee.UPnPClient/UPnPTrackInfo.cs
 
 RESOURCES = Banshee.UPnPClient.addin.xml
