@@ -106,6 +106,8 @@ namespace Banshee.UPnPClient
             if (device.ModelName == "MediaTomb" && device.ModelNumber == "0.12.1") {
                 core.Add(new string[2] { "Audio", "Albums" });
                 core.Add(new string[2] { "Video", "All Video" });
+            } else if (device.ModelName == "Coherence UPnP A/V MediaServer" && device.ModelNumber == "0.6.6.2") {
+                core.Add(new string[1] { "Albums" });
             } else {
               core.Add(new string[0]);
             }
