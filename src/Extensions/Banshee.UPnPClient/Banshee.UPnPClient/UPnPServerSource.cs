@@ -75,7 +75,7 @@ namespace Banshee.UPnPClient
             AddChildSource (video_source);
 
             ThreadAssist.Spawn (delegate {
-                Parse (contentDirectory);
+                Parse (device, contentDirectory);
             });
             
         }
@@ -100,7 +100,14 @@ namespace Banshee.UPnPClient
             }
         }
 
-        void Parse (ContentDirectoryController contentDirectory)
+        List<string[]> FindBrowseQuirks (Device device)
+        {
+            List<string[]> core = new List<string[]>();
+            core.Add(new string[0]);
+            return core;
+        }
+
+        void Parse (Device device, ContentDirectoryController contentDirectory)
         {
             RemoteContentDirectory remoteContentDirectory = new RemoteContentDirectory (contentDirectory);
             DateTime begin = DateTime.Now;
@@ -142,7 +149,9 @@ namespace Banshee.UPnPClient
                     List<MusicTrack> musicTracks = new List<MusicTrack>();
                     List<VideoItem> videoTracks = new List<VideoItem>();
 
-                    ParseContainer (remoteContentDirectory, root, 0, musicTracks, videoTracks);
+                    foreach (var hierarchy in FindBrowseQuirks(device)) {
+                        TraverseContainer(remoteContentDirectory, root, hierarchy, 0, musicTracks, videoTracks);
+                    }
 
                     if (musicTracks.Count > 0)
                         music_source.AddTracks (musicTracks);
@@ -154,6 +163,24 @@ namespace Banshee.UPnPClient
             }
 
             Hyena.Log.Debug ("Found all items on the service, took " + (DateTime.Now - begin).ToString());
+        }
+
+        void TraverseContainer (RemoteContentDirectory remoteContentDirectory, Container container, string[] hierarchy, int position, List<MusicTrack> musicTracks, List<VideoItem> videoTracks)
+        {
+            if (hierarchy != null && hierarchy.Length > position) {
+                HandleResults<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object> (
+                                           remoteContentDirectory.GetChildren<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object>(container),
+                                           remoteContentDirectory,
+                                           chunk => {
+                                                        foreach (var upnp_object in chunk) {
+                                                            if (upnp_object is Container && upnp_object.Title == hierarchy[position]) {
+                                                                TraverseContainer (remoteContentDirectory, upnp_object as Container, hierarchy, position + 1, musicTracks, videoTracks);
+                                                            }
+                                                        }
+                                                    });
+            } else {
+                ParseContainer (remoteContentDirectory, container, 0, musicTracks, videoTracks);
+            }
         }
 
         void ParseContainer (RemoteContentDirectory remoteContentDirectory, Container container, int depth, List<MusicTrack> musicTracks, List<VideoItem> videoTracks)
