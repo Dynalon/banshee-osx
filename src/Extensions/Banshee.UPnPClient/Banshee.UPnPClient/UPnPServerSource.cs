@@ -103,7 +103,13 @@ namespace Banshee.UPnPClient
         List<string[]> FindBrowseQuirks (Device device)
         {
             List<string[]> core = new List<string[]>();
-            core.Add(new string[0]);
+            if (device.ModelName == "MediaTomb" && device.ModelNumber == "0.12.1") {
+                core.Add(new string[2] { "Audio", "Albums" });
+                core.Add(new string[2] { "Video", "All Video" });
+            } else {
+              core.Add(new string[0]);
+            }
+
             return core;
         }
 
