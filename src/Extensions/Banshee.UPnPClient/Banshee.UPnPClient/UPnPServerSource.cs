@@ -107,36 +107,37 @@ namespace Banshee.UPnPClient
             Container root = remoteContentDirectory.GetRootObject();
             bool recursiveBrowse = !contentDirectory.CanSearch;
 
-            if (!recursiveBrowse) {
-                try {
-                    Hyena.Log.Debug ("Searchable, lets search");
+            try {
+                if (!recursiveBrowse) {
+                    try {
+                        Hyena.Log.Debug ("Searchable, lets search");
 
-                    HandleResults<MusicTrack> (remoteContentDirectory.Search<MusicTrack>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.audioItem.musicTrack"), new ResultsSettings()),
-                                               remoteContentDirectory,
-                                               chunk => {
-                                                            List<MusicTrack> musicTracks = new List<MusicTrack>();
-                                                            foreach (var item in chunk)
-                                                                musicTracks.Add(item as MusicTrack);
+                        HandleResults<MusicTrack> (remoteContentDirectory.Search<MusicTrack>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.audioItem.musicTrack"), new ResultsSettings()),
+                                                   remoteContentDirectory,
+                                                   chunk => {
+                                                                List<MusicTrack> musicTracks = new List<MusicTrack>();
+                                                                foreach (var item in chunk)
+                                                                    musicTracks.Add(item as MusicTrack);
 
-                                                            music_source.AddTracks (musicTracks);
-                                                        });
+                                                                music_source.AddTracks (musicTracks);
+                                                            });
 
-                    HandleResults<VideoItem>  (remoteContentDirectory.Search<VideoItem>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.videoItem"), new ResultsSettings()),
-                                               remoteContentDirectory,
-                                               chunk => {
-                                                            List<VideoItem> videoTracks = new List<VideoItem>();
-                                                            foreach (var item in chunk)
-                                                                videoTracks.Add(item as VideoItem);
+                        HandleResults<VideoItem>  (remoteContentDirectory.Search<VideoItem>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.videoItem"), new ResultsSettings()),
+                                                   remoteContentDirectory,
+                                                   chunk => {
+                                                                List<VideoItem> videoTracks = new List<VideoItem>();
+                                                                foreach (var item in chunk)
+                                                                    videoTracks.Add(item as VideoItem);
 
-                                                            video_source.AddTracks (videoTracks);
-                                                        });
-                } catch (Exception exception) {
-                    Hyena.Log.Exception (exception);
-                    recursiveBrowse = true;
+                                                                video_source.AddTracks (videoTracks);
+                                                            });
+                    } catch (System.InvalidCastException exception) {
+                        Hyena.Log.Exception (exception);
+                        recursiveBrowse = true;
+                    }
                 }
-            }
-            if (recursiveBrowse) {
-                try {
+
+                if (recursiveBrowse) {
                     Hyena.Log.Debug ("Not searchable, lets recursive browse");
                     List<MusicTrack> musicTracks = new List<MusicTrack>();
                     List<VideoItem> videoTracks = new List<VideoItem>();
@@ -147,9 +148,9 @@ namespace Banshee.UPnPClient
                         music_source.AddTracks (musicTracks);
                     if (videoTracks.Count > 0)
                         video_source.AddTracks (videoTracks);
-                } catch (Exception exception) {
-                    Hyena.Log.Exception (exception);
                 }
+            } catch (Exception exception) {
+                Hyena.Log.Exception (exception);
             }
 
             Hyena.Log.Debug ("Found all items on the service, took " + (DateTime.Now - begin).ToString());
