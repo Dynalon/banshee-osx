@@ -47,7 +47,8 @@ namespace Banshee.UPnPClient
 {
     public class UPnPServerSource : Source
     {
-        UPnPMusicSource music_source;
+        private string udn;
+        private UPnPMusicSource music_source;
         private UPnPVideoSource video_source;
         private SchemaEntry<bool> expanded_schema;
 
@@ -56,6 +57,7 @@ namespace Banshee.UPnPClient
             Properties.SetStringList ("Icon.Name", "computer", "network-server");
             TypeUniqueId = "upnp-container";
             expanded_schema = new SchemaEntry<bool> ("plugins.upnp." + device.Udn, "expanded", true, "UPnP Share expanded", "UPnP Share expanded" );
+            udn = device.Udn;
 
             ContentDirectoryController contentDirectory = null;
 
@@ -68,12 +70,6 @@ namespace Banshee.UPnPClient
             if (contentDirectory == null)
                 throw new ArgumentNullException("contentDirectory");
 
-            music_source = new UPnPMusicSource(device.Udn);
-            AddChildSource (music_source);
-
-            video_source = new UPnPVideoSource(device.Udn);
-            AddChildSource (video_source);
-
             ThreadAssist.Spawn (delegate {
                 Parse (device, contentDirectory);
             });
@@ -82,8 +78,15 @@ namespace Banshee.UPnPClient
 
         ~UPnPServerSource ()
         {
-            RemoveChildSource (music_source);
-            music_source = null;
+            if (music_source != null) {
+                RemoveChildSource (music_source);
+                music_source = null;
+            }
+
+            if (video_source != null) {
+                RemoveChildSource (video_source);
+                video_source = null;
+            }
         }
 
         delegate void ChunkHandler<T> (Results<T> results);
@@ -134,7 +137,7 @@ namespace Banshee.UPnPClient
                                                                 foreach (var item in chunk)
                                                                     musicTracks.Add(item as MusicTrack);
 
-                                                                music_source.AddTracks (musicTracks);
+                                                                AddMusic (musicTracks);
                                                             });
 
                         HandleResults<VideoItem>  (remoteContentDirectory.Search<VideoItem>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.videoItem"), new ResultsSettings()),
@@ -144,7 +147,7 @@ namespace Banshee.UPnPClient
                                                                 foreach (var item in chunk)
                                                                     videoTracks.Add(item as VideoItem);
 
-                                                                video_source.AddTracks (videoTracks);
+                                                                AddVideo (videoTracks);
                                                             });
                     } catch (System.InvalidCastException exception) {
                         Hyena.Log.Exception (exception);
@@ -218,11 +221,11 @@ namespace Banshee.UPnPClient
                                                         }
 
                                                         if (musicTracks.Count > 500) {
-                                                            music_source.AddTracks (musicTracks);
+                                                            AddMusic (musicTracks);
                                                             musicTracks.Clear();
                                                         }
                                                         if (videoTracks.Count > 100) {
-                                                            video_source.AddTracks (videoTracks);
+                                                            AddVideo (videoTracks);
                                                             videoTracks.Clear();
                                                         }
                                                     }
@@ -231,8 +234,31 @@ namespace Banshee.UPnPClient
 
         public void Disconnect ()
         {
-            music_source.Disconnect ();
-            video_source.Disconnect ();
+            if (music_source != null)
+                music_source.Disconnect ();
+
+            if (video_source != null)
+                video_source.Disconnect ();
+        }
+
+        private void AddMusic (List<MusicTrack> tracks)
+        {
+            if (music_source == null) {
+              music_source = new UPnPMusicSource(udn);
+              AddChildSource (music_source);
+            }
+
+            music_source.AddTracks (tracks);
+        }
+
+        private void AddVideo (List<VideoItem> tracks)
+        {
+            if (video_source == null) {
+              video_source = new UPnPVideoSource(udn);
+              AddChildSource (video_source);
+            }
+
+            video_source.AddTracks (tracks);
         }
 
         public override bool? AutoExpand {
