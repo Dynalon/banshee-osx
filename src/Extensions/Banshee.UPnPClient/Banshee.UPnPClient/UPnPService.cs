@@ -57,7 +57,7 @@ namespace Banshee.UPnPClient
             client = new Mono.Upnp.Client ();
             client.DeviceAdded += DeviceAdded;
 
-            client.Browse(Mono.Upnp.Dcp.MediaServer1.MediaServer.DeviceType);
+            client.BrowseAll();
         }
     
         public void Dispose ()
@@ -74,11 +74,14 @@ namespace Banshee.UPnPClient
 
         void DeviceAdded (object sender, DeviceEventArgs e)
         {
-            Hyena.Log.Debug ("UPnPService.DeviceAdded (" + e.Device.ToString() + ") (" + e.Device.Type + ")");
+            Hyena.Log.Debug ("UPnPService.DeviceFound (" + e.Device.ToString() + ") (" + e.Device.Type + ")");
             Device device = e.Device.GetDevice();
-            
-            UPnPServerSource source = new UPnPServerSource(device);
-            container.AddChildSource (source);
+
+            if (device.Type.Type == "MediaServer") {
+                Hyena.Log.Debug ("UPnPService MediaServer Found");
+                UPnPServerSource source = new UPnPServerSource(device);
+                container.AddChildSource (source);
+            }
         }
 
         string IService.ServiceName {

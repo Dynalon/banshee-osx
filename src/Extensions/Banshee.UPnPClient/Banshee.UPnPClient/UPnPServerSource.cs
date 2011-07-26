@@ -58,10 +58,10 @@ namespace Banshee.UPnPClient
             expanded_schema = new SchemaEntry<bool> ("plugins.upnp." + device.Udn, "expanded", true, "UPnP Share expanded", "UPnP Share expanded" );
 
             ContentDirectoryController contentDirectory = null;
-            
+
             foreach (Service service in device.Services) {
                 Hyena.Log.Debug ("UPnPService \"" + device.FriendlyName + "\" Implements " + service.Type);
-                if (service.Type.Equals (Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.ContentDirectory.ServiceType))
+                if (service.Type.Type == "ContentDirectory")
                     contentDirectory = new ContentDirectoryController (service.GetController());
             }
 
