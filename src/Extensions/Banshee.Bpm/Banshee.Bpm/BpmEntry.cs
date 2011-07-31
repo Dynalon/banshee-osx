@@ -182,9 +182,24 @@ namespace Banshee.Bpm
         private void OnPlayClicked (object o, EventArgs args)
         {
             if (track != null) {
-                ServiceManager.PlayerEngine.Open (track);
-                Gtk.ActionGroup actions = ServiceManager.Get<InterfaceActionService> ().PlaybackActions;
-                (actions["StopWhenFinishedAction"] as Gtk.ToggleAction).Active = true;
+                // Pause playback only if the selected track is playing.
+                if (ServiceManager.PlayerEngine.CurrentTrack == track
+                    && ServiceManager.PlayerEngine.CurrentState == PlayerState.Playing) {
+                    ServiceManager.PlayerEngine.Pause ();
+                    Image play = new Image ();
+                    play.IconName = "media-playback-start";
+                    play.IconSize = (int)IconSize.Menu;
+                    ((Button)o).Image = play;
+                } else {
+                    ServiceManager.PlayerEngine.Open (track);
+                    Gtk.ActionGroup actions = ServiceManager.Get<InterfaceActionService> ().PlaybackActions;
+                    (actions["StopWhenFinishedAction"] as Gtk.ToggleAction).Active = true;
+                    ServiceManager.PlayerEngine.Play ();
+                    Image stop = new Image ();
+                    stop.IconName = "media-playback-stop";
+                    stop.IconSize = (int)IconSize.Menu;
+                    ((Button)o).Image = stop;
+                }
             }
         }
 
