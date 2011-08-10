@@ -273,7 +273,9 @@ namespace Banshee.Collection.Database
                 bool found = (reloadTrigger == null);
                 foreach (IFilterListModel filter in source.CurrentFilters) {
                     if (found) {
-                        reload_models.Add (filter);
+                        if (filter != null) {
+                            reload_models.Add (filter);
+                        }
                     } else if (filter == reloadTrigger) {
                         found = true;
                     }
