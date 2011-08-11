@@ -51,6 +51,7 @@ namespace Banshee.Dap.MassStorage
             bool in_value = false;
             bool in_quotes = false;
             char c;
+            string value;
 
             while ((c = Read ()) != Char.MaxValue) {
                 if (c == '"') {
@@ -67,7 +68,7 @@ namespace Banshee.Dap.MassStorage
                         continue;
                     }
 
-                    string value = Collect ();
+                    value = Collect ();
                     if (!String.IsNullOrEmpty (value)) {
                         values.Add (value);
                     }
@@ -85,6 +86,11 @@ namespace Banshee.Dap.MassStorage
                         builder.Append (c);
                     }
                 }
+            }
+
+            value = Collect ();
+            if (!String.IsNullOrEmpty (value)) {
+                values.Add (value);
             }
 
             Commit ();
