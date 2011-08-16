@@ -54,8 +54,8 @@ namespace Banshee.Database
         // NOTE: Whenever there is a change in ANY of the database schema,
         //       this version MUST be incremented and a migration method
         //       MUST be supplied to match the new version number
-        protected const int CURRENT_VERSION = 43;
-        protected const int CURRENT_METADATA_VERSION = 7;
+        protected const int CURRENT_VERSION = 44;
+        protected const int CURRENT_METADATA_VERSION = 8;
 
 #region Migration Driver
 
@@ -949,6 +949,15 @@ namespace Banshee.Database
             return true;
         }
 
+#region Version 44
+        [DatabaseVersion (44)]
+        private bool Migrate_44 ()
+        {
+            Execute ("ALTER TABLE CoreAlbums ADD COLUMN ArtworkID TEXT");
+            return true;
+        }
+#endregion
+
 #pragma warning restore 0169
 
 #region Fresh database setup
@@ -1074,7 +1083,9 @@ namespace Banshee.Database
                     ArtistNameSort      TEXT,
                     ArtistNameSortKey   BLOB,
 
-                    Rating              INTEGER
+                    Rating              INTEGER,
+
+                    ArtworkID           TEXT
                 )
             ");
             Execute ("CREATE INDEX CoreAlbumsIndex ON CoreAlbums(ArtistID, TitleSortKey)");
