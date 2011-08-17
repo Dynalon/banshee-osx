@@ -216,6 +216,7 @@ namespace Booter
                     new LayoutOption ("debug-sql", Catalog.GetString ("Enable debugging output of SQL queries")),
                     new LayoutOption ("debug-addins", Catalog.GetString ("Enable debugging output of Mono.Addins")),
                     new LayoutOption ("db=FILE", Catalog.GetString ("Specify an alternate database to use")),
+                    new LayoutOption ("fetch-artwork", Catalog.GetString ("Force fetching of missing cover artwork")),
                     new LayoutOption ("gconf-base-key=KEY", Catalog.GetString ("Specify an alternate key, default is /apps/banshee-1/")),
                     new LayoutOption ("uninstalled", Catalog.GetString ("Optimize instance for running uninstalled; " +
                         "most notably, this will create an alternate Mono.Addins database in the working directory")),
