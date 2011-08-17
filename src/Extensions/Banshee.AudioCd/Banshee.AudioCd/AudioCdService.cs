@@ -230,7 +230,7 @@ namespace Banshee.AudioCd
 
             service.InstallWidgetAdapters += OnPreferencesServiceInstallWidgetAdapters;
 
-            pref_page = new Banshee.Preferences.SourcePage ("audio-cd", Catalog.GetString ("Audio CDs"), "media-cdrom", 400);
+            pref_page = new Banshee.Preferences.SourcePage ("audio-cd", Catalog.GetString ("Audio CDs"), "media-optical", 400);
 
             pref_section = pref_page.Add (new Section ("audio-cd", Catalog.GetString ("Audio CD Importing"), 20));
             pref_section.ShowLabel = false;
