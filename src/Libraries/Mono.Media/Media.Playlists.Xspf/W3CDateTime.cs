@@ -239,7 +239,8 @@ namespace Media.Playlists.Xspf
                 int hour = m.Groups["hour"].Success ? Int32.Parse(m.Groups["hour"].Value) : 0;
                 int min = m.Groups["min"].Success ? Int32.Parse(m.Groups["min"].Value) : 0;
                 int sec = m.Groups["sec"].Success ? Int32.Parse(m.Groups["sec"].Value) : 0;
-                int ms = m.Groups["ms"].Success ? (int)Math.Round(1000 * Double.Parse(m.Groups["ms"].Value)) : 0;
+                int ms = m.Groups["ms"].Success ? (int)Math.Round(1000 * Double.Parse(m.Groups["ms"].Value,
+                    System.Globalization.NumberFormatInfo.InvariantInfo)) : 0;
 
                 TimeSpan offset = TimeSpan.Zero;
                 if(m.Groups["ofs"].Success) {
