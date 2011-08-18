@@ -126,7 +126,9 @@ namespace Banshee.GStreamerSharp
             encoder_pipeline = null;
             output_extension = null;
 
-            timer.Stop ();
+            if (timer != null) {
+                timer.Stop ();
+            }
 
             if (pipeline != null && pipeline is Element) {
                 pipeline.SetState (State.Null);
