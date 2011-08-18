@@ -63,7 +63,6 @@ namespace Banshee.GStreamerSharp
 
         public BpmDetector ()
         {
-            Console.WriteLine ("Trying to make bpm dtector...");
             try {
                 pipeline = new Pipeline ();
                 filesrc          = new FileSrc ();
