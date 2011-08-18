@@ -54,6 +54,10 @@ namespace Banshee.AudioCd
 
         public void Initialize ()
         {
+            if (ServiceManager.HardwareManager == null) {
+                throw new NotSupportedException ("AudioCdService cannot work when no HardwareManager is available");
+            }
+
             lock (this) {
                 InstallPreferences ();
 
