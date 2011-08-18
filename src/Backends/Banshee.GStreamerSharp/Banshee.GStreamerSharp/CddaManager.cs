@@ -137,7 +137,7 @@ namespace Banshee.GStreamerSharp
             }
 
             p = uri.IndexOf ('#');
-            if (p == -1 || p + 2 < uri.Length) {
+            if (p == -1 || p + 2 > uri.Length) {
                 // Unset the cached device node if the URI doesn't
                 // have its own valid device node
                 Device = null;
