@@ -295,6 +295,7 @@ src/Backends/Banshee.Unix/Makefile
 src/Backends/Banshee.Osx/Makefile
 src/Backends/Banshee.NowPlaying.X11/Makefile
 src/Backends/Banshee.NowPlaying.X11/libbnpx11/Makefile
+src/Backends/Banshee.Windows/Makefile
 
 src/Libraries/Makefile
 src/Libraries/Lastfm/Makefile
