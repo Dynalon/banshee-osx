@@ -294,7 +294,7 @@ namespace Banshee.Mpris
                 return;
             }
 
-            if (String.IsNullOrEmpty (trackid) || trackid != (string)Metadata["trackid"]) {
+            if (String.IsNullOrEmpty (trackid) || trackid != (string)Metadata["mpris:trackid"]) {
                 return;
             }
 
