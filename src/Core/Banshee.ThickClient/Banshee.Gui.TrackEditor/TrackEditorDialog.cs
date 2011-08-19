@@ -214,6 +214,7 @@ namespace Banshee.Gui.TrackEditor
         private void BuildNotebook ()
         {
             notebook = new Notebook ();
+            notebook.Scrollable = true;
             notebook.Show ();
 
             Gtk.Widget page_to_focus = null;
