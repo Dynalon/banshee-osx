@@ -107,8 +107,8 @@ namespace Banshee.ServiceStack
                     active_connections.Add (serviceName);
                     return true;
                 }
-            } catch {
-                Log.Warning ("DBus support could not be started. Disabling for this session.");
+            } catch (Exception e) {
+                Log.Exception ("DBus support could not be started. Disabling for this session.", e);
                 enabled = false;
             }
 
