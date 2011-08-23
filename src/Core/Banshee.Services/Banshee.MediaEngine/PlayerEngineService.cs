@@ -288,12 +288,19 @@ namespace Banshee.MediaEngine
             if (uri == null || !File.Exists (uri.AbsolutePath)) {
                 return;
             }
-            // Try to find uri in the library
-            int track_id = DatabaseTrackInfo.GetTrackIdForUri (uri);
-            if (track_id > 0) {
-                DatabaseTrackInfo track_db = DatabaseTrackInfo.Provider.FetchSingle (track_id);
-                Open (track_db);
-            } else {
+
+            bool found = false;
+            if (ServiceManager.DbConnection != null) {
+                // Try to find uri in the library
+                int track_id = DatabaseTrackInfo.GetTrackIdForUri (uri);
+                if (track_id > 0) {
+                    DatabaseTrackInfo track_db = DatabaseTrackInfo.Provider.FetchSingle (track_id);
+                    found = true;
+                    Open (track_db);
+                }
+            }
+            
+            if (!found) {
                 // Not in the library, get info from the file
                 TrackInfo track = new TrackInfo ();
                 using (var file = StreamTagger.ProcessUri (uri)) {
