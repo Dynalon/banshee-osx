@@ -1,62 +1,47 @@
 ===============================================================================
-Banshee 2.1.0 - 2011-05-12
+Banshee 2.1.3 - 2011-08-24
 ===============================================================================
 
-    Banshee 2.1.0 is the first release in the 2.1 development series leading up
-    to 2.2.  It brings a significant change in dependency policy.  We will be
-    dropping legacy dependencies, and bump other deps to recent versions.  To
-    support users on older distros, we'll publish a Linux bundle.
+    Banshee 2.1.3 is the second release in the 2.1 development series leading up
+    to 2.2 (versions 2.1.1 and 2.1.2 were not released).
 
     New Features:
 
-      * eMusic Store
+      * New custom support for the Barnes & Noble Nook
+      * Support default internet radio stations. At first start, XSPF playlists
+        in $datadir/banshee/stations/ are imported automatically. We don't
+        provide default radio stations ourselves but this allows distros or
+        other third parties to do so.
 
     Enhancements:
 
-      * ArtworkManager: add --fetch-artwork argument
-      * bgo#647754: Xperia X12 support
-      * bgo#508713: MiniMode: Reduce height of window
-      * bgo#648941: Support .spc files
-      * bgo#649401: Set UserAgent when doing MusicBrainz queries
+      * bgo#549173: Add "Stop when finished" option in the notification popup menu
+      * bgo#636071: Get info from the database or the file when opening a URI
+      * bgo#639805: Hide labels in the source pane when the group is empty
+      * bgo#647306: Add support for the Notion Ink Adam tablet
+      * bgo#651497: Motorola Atrix support
+      * bgo#653255: Samsung Galaxy S2 support
+      * bgo#653284: Remove keyboard shortcut for toggling scrobbling
+      * bgo#653997: Samsung Galaxy Ace support
+      * bgo#656526: Add "Smiley Face Curve" default equalizer
+      * bgo#656670: Cache the ArtworkID in the database for faster startup
+      * Various enhancements to our experimental GStreamer# backend, bringing it
+        close to feature parity with our current C backend. It is still not
+        built by default and not recommended for daily use, but testing is welcome.
 
-    Notable Bugs Fixed (51 fixed since 2.0):
+    Notable Bugs Fixed (39 fixed since 2.1.0):
 
-      * Windows installer fixes
-      * bgo#647059: Fix Remote Daap crash
-      * bgo#647089: Daap: Bind to IPAddress.Loopback instead of Any
-      * bgo#644648: libbanshee fixes
-      * bgo#642113: Change Remote dialog's button from Ok to Add
-      * bgo#647144: StreamPositionLabel fixes
-      * AmazonMp3.Store: Fix signed-in detection for UK store
-      * bgo#633552: AppleDevice: Ensure m4a/mp3 are supported
-      * bgo#634647: Have ctrl-a select text in SearchEntry
-      * bgo#642140: Last.fm: Close HTTP streams when finished with them
-      * bgo#648133: build: Don't delete gnome-doc-utils.make during distclean
-      * bgo#647932: DatabaseSource: Fix NRE in SkipTrackIfRemoved
-      * bgo#646991: AlbumListView: Fix disappearing option in Preferences
-      * bgo#647024: Lastfm: Fix NRE crash
-      * bgo#636057: Fix rendering glitch
-      * PodcastFeedPropertiesDialog: Fix display of feed URL
-      * bgo#648458: PlsPlaylistFormat: Make parsing the header case-insensitive
-      * bgo#611489: GStreamer: Use Banshee.IO instead of System.IO
-      * bgo#641748: ViewActions: enable eq once we know backend supports it
-      * bgo#638889: Banshee.Services: Avoid creating dupes after moves
-
-    Packaging Changes:
-
-      * HAL dependency dropped
-      * ipod-sharp and podsleuth dependencies dropped
-      * NDesk.DBus dependency dropped
-      * dbus-sharp >= 0.7 and dbus-sharp-glib >= 0.5 required
-        (available from http://mono.github.com/dbus-sharp/)
-      * Gtk# >= 2.12.10 required
-      * Mono >= 2.4.3 required
-      * GStreamer >= 0.10.26 required
-      * Various configure flags removed:
-        * --disable-ipod
-        * --disable-hal
-        * --disable-podcasts
-      * Banshee releases now hosted on ftp.gnome.org
+      * bgo#587264: Fix metadata fetching from MusicBrainz
+      * bgo#647111: Put the Audio CD source label in the right place
+      * bgo#647202: Fix space usage reporting for some DAP devices
+      * bgo#648498: Make sure the MPRIS sends the new metadata on track change
+      * bgo#650011: Fix items disappearing in playlists when re-connecting iPod
+      * bgo#650184: Fix XSPF playlist importing error
+      * bgo#651914: Fix "Least Favorite" smart playlist to not pick unrated songs
+      * bgo#654524: Fix the SetPosition method in the MPRIS interface
+      * bgo#656176: Don't ignore the last value of the .is_audio_player file
+      * bgo#656246: Fix random crash while changing tracks
+      * EqualizerSetting: Set the amplifier level for default equalizers
 
 ===============================================================================
 SOURCES / PACKAGES
@@ -65,10 +50,10 @@ SOURCES / PACKAGES
 Sources
 -------
 
-    * Banshee 2.1.0 Tarballs:
-      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.1/banshee-2.1.0.tar.bz2
-      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.1/banshee-2.1.0.tar.gz
-      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.1/banshee-2.1.0.sha256sum
+    * Banshee 2.1.3 Tarballs:
+      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.1/banshee-2.1.3.tar.bz2
+      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.1/banshee-2.1.3.tar.gz
+      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.1/banshee-2.1.3.sha256sum
 
 Packages
 --------
@@ -91,7 +76,7 @@ REPORT BUGS - HELP THE PROJECT - GROW THE COMMUNITY
     hesitate to file bugs!
 
     * http://banshee.fm/contribute/file-bugs
-    * http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&version=2.1.0
+    * http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&version=2.1.3
 
 
 ===============================================================================
@@ -104,17 +89,19 @@ Contributors For This Release
     The following people directly contributed to the release of this version
     of Banshee. Without their help, there would be no release!
 
-      Alexander Kojevnikov, Andrés G. Aragoneses, Bertrand Lorentz,
-      Chow Loong Jin, Christopher James Halse Rogers, David Nielsen,
-      Dustin C. Hatch, Frank Ziegler, Gabriel Burt, Hajime Mizuno,
-      Jérémie Laval, Jonas Urth Olsen, Mackenan Grassi, Michael Martin-Smucker,
-      Olivier Dufour, Pete Johanson, Rodney Dawes, Sjoerd Simons, Will Thompson
+      Abner Silva, Alban Crequy, Alberto Gonzalez, Alex Launi,
+      Alexander Kojevnikov, Andres G. Aragoneses, Andy Street, Bertrand Lorentz,
+      Carlos Sanchez, Chase Geigle, Chow Loong Jin,
+      Christopher James Halse Rogers, Corec, Dinh Ngoc Tu, Gabriel Burt,
+      Hajime Mizuno, Johannes Koch, Marek Černocký, Mark Saunders, Martin Pitt,
+      Olivier Dufour, Travis Patterson, Victor Vargas, Will Thompson,
+      William Witt
 
     The following people contributed updated translations to this release.
     Without them, our project's reach would be much more limited.
 
-      Andrej Žnidaršič, Benjamín Valero, Bruno Brouard, Changwoo Ryu,
-      Daniel Korostil, Djavan Fagundes, Fran Diéguez, Gabor Kelemen,
-      Hajime Taira, krishnababu k, Kristjan SCHMIDT, Lê Hoàng Phương,
-      Mario Blättermann, Marek Černocký, Markus Schley, Michael Kotsarinis,
-      Nguyễn Thái Ngọc Duy, Rudolfs Mazurs, Wouter Bolsterlee, Yuri Myasoedov
+      Andrej Žnidaršič, Benjamín Valero, Bruno Brouard, Emmanouel Kapernaros,
+      Fran Dieguez, Gabor Kelemen, Gianvito Cavasoli, Hajime Taira,
+      Isabell Long, Jordi Mas, Kristjan SCHMIDT, Lucian Adrian Grijincu,
+      Marek Černocký, Mario Blättermann, Pavol Klačanský, Piotr Drąg,
+      Wouter Bolsterlee, Yaron Shahrabani, longxin, Мирослав Николић
