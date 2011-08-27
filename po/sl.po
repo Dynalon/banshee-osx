@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-07-10 13:12+0000\n"
-"PO-Revision-Date: 2011-08-18 17:49+0100\n"
+"POT-Creation-Date: 2011-08-27 02:28+0000\n"
+"PO-Revision-Date: 2011-08-27 08:47+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: \n"
@@ -597,6 +597,7 @@ msgstr "Predvajajte in organizirajte svojo zbirko predstavnostnih datotek"
 
 #: ../libbanshee/banshee-bpmdetector.c:202
 #: ../libbanshee/banshee-ripper.c:270
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:240
 msgid "Could not create pipeline"
 msgstr "Cevovoda ni mogoče ustvariti"
 
@@ -623,10 +624,12 @@ msgstr "Vstavka lažnega korita ni mogoče ustvariti"
 #: ../libbanshee/banshee-bpmdetector.c:241
 #: ../libbanshee/banshee-bpmdetector.c:250
 #: ../libbanshee/banshee-ripper.c:311
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:281
 msgid "Could not link pipeline elements"
 msgstr "Predmetov cevovoda ni mogoče povezati"
 
 #: ../libbanshee/banshee-ripper.c:276
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:246
 msgid "Could not initialize element from cdda URI"
 msgstr "Predmeta iz cdda URI ni mogoče zagnati"
 
@@ -635,22 +638,27 @@ msgid "Could not create encoder pipeline"
 msgstr "Cevovoda kodirnika ni mogoče ustvariti"
 
 #: ../libbanshee/banshee-ripper.c:296
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:266
 msgid "Could not create queue plugin"
 msgstr "Vstavka za razvrščanje ni mogoče ustvariti"
 
 #: ../libbanshee/banshee-ripper.c:304
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:274
 msgid "Could not create filesink plugin"
 msgstr "Vstavka datotečnega korita ni mogoče najti"
 
 #: ../libbanshee/banshee-transcoder.c:240
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:181
 msgid "Could not create source element"
 msgstr "Predmeta izvira ni mogoče ustvariti"
 
 #: ../libbanshee/banshee-transcoder.c:246
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:187
 msgid "Could not create 'decodebin2' plugin"
 msgstr "Vstavka 'decodebin2' ni mogoče ustvariti"
 
 #: ../libbanshee/banshee-transcoder.c:252
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:63
 msgid "Could not create sink element"
 msgstr "Predmeta korita ni mogoče ustvariti"
 
@@ -659,10 +667,12 @@ msgid "Could not create 'sinkben' plugin"
 msgstr "Vstavka 'sinkben' ni mogoče ustvariti"
 
 #: ../libbanshee/banshee-transcoder.c:264
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:68
 msgid "Could not create 'audioconvert' plugin"
 msgstr "Vstavka 'audioconvert' ni mogoče ustvariti"
 
 #: ../libbanshee/banshee-transcoder.c:270
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:73
 msgid "Could not create 'audioresample' plugin"
 msgstr "Vstavka 'audioresample' ni mogoče ustvariti"
 
@@ -671,10 +681,12 @@ msgid "Could not create encoding pipeline"
 msgstr "Kodirnega cevovoda ni mogoče ustvariti"
 
 #: ../libbanshee/banshee-transcoder.c:282
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:85
 msgid "Could not get sink pad from encoder"
 msgstr "Odtočnega kolena kodirnika ni mogoče določiti"
 
 #: ../libbanshee/banshee-transcoder.c:345
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:269
 msgid "Could not construct pipeline"
 msgstr "Cevovoda ni mogoče izgraditi"
 
@@ -699,6 +711,7 @@ msgid "Fullscreen video playback active"
 msgstr "Celozaslonsko predvajanja videa je dejavno"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/AudioCdRipper.cs:89
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:96
 msgid "Could not find an encoder for ripping."
 msgstr "Kodirnika za zajemanje ni mogoče najti."
 
@@ -707,6 +720,7 @@ msgid "Could not create CD ripping driver."
 msgstr "Gonilnika za zajemanje CD-jev ni mogoče ustvariti."
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/BpmDetector.cs:71
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/BpmDetector.cs:107
 msgid "Could not create BPM detection driver."
 msgstr "Gonilnika zaznavanja UNM ni mogoče ustvariti."
 
@@ -725,15 +739,17 @@ msgid "Could not initialize GStreamer library"
 msgstr "Knjižnice GStreamer ni mogoče zagnati"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:451
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:147
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:547
 msgid "Unknown Error"
 msgstr "Neznana napaka"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:823
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:905
 msgid "_Enable ReplayGain correction"
 msgstr "_Omogoči popravek ReplayGain"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:824
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:906
 msgid "For tracks that have ReplayGain data, automatically scale (normalize) playback volume"
 msgstr "Samodejno izravnaj glasnost predvajanja skladb s podatki ReplayGain"
 
@@ -745,9 +761,23 @@ msgstr "Odstrani majhen premor predvajanja ob spremembi skladb. Uporabno za tema
 msgid "Could not create transcoder"
 msgstr "Prekodirnika ni mogoče ustvariti"
 
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:348
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:259
+#, csharp-format
+msgid "Could not create encoder pipeline : {0}"
+msgstr "Cevovoda kodirnika ni mogoče ustvariti : {0}"
+
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:792
 msgid "GStreamer# 0.10"
 msgstr "Uporabljen Gstreamer 0.10."
+
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:79
+#, csharp-format
+msgid "Could not create encoding pipeline : {0}"
+msgstr "Cevovoda kodiranja ni mogoče ustvariti : {0}"
+
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:198
+msgid "Could not create 'sinkbin' plugin"
+msgstr "Vstavka 'sinkbin' ni mogoče ustvariti"
 
 #: ../src/Backends/Banshee.Osx/Banshee.OsxBackend/OsxService.cs:91
 #: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:132
@@ -1066,23 +1096,27 @@ msgid "Specify an alternate database to use"
 msgstr "Navedite dodatno zbirko podatkov za uporabo"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:219
+msgid "Force fetching of missing cover artwork"
+msgstr "Prisili pridobivanje manjkajočih naslovnic"
+
+#: ../src/Clients/Booter/Booter/Entry.cs:220
 msgid "Specify an alternate key, default is /apps/banshee-1/"
 msgstr "Navadite dodaten ključ, privzet je /apps/banshee-1/"
 
-#: ../src/Clients/Booter/Booter/Entry.cs:220
+#: ../src/Clients/Booter/Booter/Entry.cs:221
 msgid "Optimize instance for running uninstalled; most notably, this will create an alternate Mono.Addins database in the working directory"
 msgstr "Optimiziraj program za nenameščeno delovanje; možnost ustvari dodatno podatkovno zbirko vstavka Mono v delovni mapi"
 
-#: ../src/Clients/Booter/Booter/Entry.cs:222
+#: ../src/Clients/Booter/Booter/Entry.cs:223
 msgid "Disable DBus support completely"
 msgstr "Popolno onemogočenje podpore DBus"
 
-#: ../src/Clients/Booter/Booter/Entry.cs:224
+#: ../src/Clients/Booter/Booter/Entry.cs:225
 #, csharp-format
 msgid "Skip loading a custom gtkrc file ({0}) if it exists"
 msgstr "Preskoči nalaganje datoteke gtkrc po meri ({0}), če obstaja"
 
-#: ../src/Clients/Booter/Booter/Entry.cs:255
+#: ../src/Clients/Booter/Booter/Entry.cs:256
 #, csharp-format
 msgid "The following help arguments are invalid: {0}"
 msgstr "Naslednji argumenti pomoči so neveljavni: {0}"
@@ -1346,7 +1380,7 @@ msgid "Scanning for media"
 msgstr "Preiskovanje za predstavnostne datoteke"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection/ImportManager.cs:188
-#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1384
+#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1395
 msgid "Scanning..."
 msgstr "Preiskovanje ..."
 
@@ -1384,7 +1418,7 @@ msgstr "Nadgrajevanje podatkovne zbirke Banshee"
 msgid "Please wait while your old Banshee database is migrated to the new format."
 msgstr "Počakajte, da se stara podatkovna zbirka Banshee pretvori v novo vrsto zapisa."
 
-#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1381
+#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1392
 msgid "Refreshing Metadata"
 msgstr "Osveževanje metapodatkov"
 
@@ -1445,14 +1479,18 @@ msgid "Ska"
 msgstr "Ska"
 
 #: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:294
+msgid "Smiley Face Curve"
+msgstr "Krivulja smeška"
+
+#: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:297
 msgid "Soft"
 msgstr "Mehko"
 
-#: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:297
+#: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:300
 msgid "Soft Rock"
 msgstr "Mehki rock"
 
-#: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:300
+#: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:303
 msgid "Techno"
 msgstr "Tehno"
 
@@ -1693,15 +1731,15 @@ msgstr "Neogledano"
 msgid "Videos that haven't been played yet"
 msgstr "Nepredvajani videoposnetki"
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:98
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:99
 msgid "Default player engine"
 msgstr "Privzeti programnik predvajalnika"
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:105
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:106
 msgid "No player engines were found. Please ensure Banshee has been cleanly installed."
 msgstr "Programnikov predvajalnika ni mogoče najti. Prepričajte se, da je bil Banshee pravilno nameščen."
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:349
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:373
 msgid "Problem with Player Engine"
 msgstr "Težave s programnikom predvajalnika"
 
@@ -2441,7 +2479,7 @@ msgid "Delete Smart Playlist"
 msgstr "Izbriši pameten seznam predvajanja"
 
 #: ../src/Core/Banshee.Services/Banshee.Sources/DatabaseSource.cs:148
-#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:160
+#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:161
 #, csharp-format
 msgid "All Genres ({0})"
 msgstr "Vse zvrsti ({0})"
@@ -2562,13 +2600,13 @@ msgstr[3] "{0} predmeti"
 #. things that depend on being loaded before the music library is added.
 #. AddSource (music_library = new MusicLibrarySource (), true);
 #. AddSource (video_library = new VideoLibrarySource (), false);
-#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:84
-msgid "Libraries"
-msgstr "Knjižnice"
-
-#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:85
+#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:86
 msgid "Online Media"
 msgstr "Spletne predstavnostne datoteke"
+
+#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:87
+msgid "Libraries"
+msgstr "Knjižnice"
 
 #: ../src/Core/Banshee.Services/Banshee.Streaming/RadioTrackInfo.cs:82
 #: ../src/Core/Banshee.Services/Banshee.Streaming/RadioTrackInfo.cs:91
@@ -3665,20 +3703,20 @@ msgstr "Izvajalec:"
 msgid "Album:"
 msgstr "Album:"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:313
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:314
 msgid "Sync all field _values"
 msgstr "Usklajevanje vseh vrednosti _polj"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:318
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:319
 msgid "Apply the values of all common fields set for this track to all of the tracks selected in this editor"
 msgstr "Uveljavi vrednosti vseh nastavljenih skupnih polj te skladbe za vse skladbe izbrane v urejevalniku"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:418
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:419
 #, csharp-format
 msgid "<i>Editing {0} of {1} items</i>"
 msgstr "<i>Urejanje {0} od {1} predmetov</i>"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:698
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:699
 #, csharp-format
 msgid "Save the changes made to the open track?"
 msgid_plural "Save the changes made to {0} of {1} open tracks?"
@@ -3687,11 +3725,11 @@ msgstr[1] "Ali naj bodo spremembe {0} od {1} odprte skladbe shranjene?"
 msgstr[2] "Ali naj bodo spremembe {0} od {1} odprtih skladb shranjene?"
 msgstr[3] "Ali naj bodo spremembe {0} od {1} odprtih skladb shranjene?"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:715
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:716
 msgid "Close _without Saving"
 msgstr "Zapri _brez shranjevanja"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:752
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:753
 #, csharp-format
 msgid "If you don't save, changes from the last {0} will be permanently lost."
 msgstr "V primeru, da datoteke ne shranite, bo zadnjih {0} sprememb trajno izgubljenih."
@@ -4077,29 +4115,29 @@ msgstr "Podpira ovitke"
 msgid "Supports photos"
 msgstr "Podpira fotografije"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:452
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:453
 msgid "Track duration is zero"
 msgstr "Trajanje skladbe je nič"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:555
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:556
 msgid "Syncing iPod"
 msgstr "Usklajevanje iPoda"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:556
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:557
 msgid "Preparing to synchronize..."
 msgstr "Pripravljanje na usklajevanje ..."
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:559
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:560
 #, csharp-format
 msgid "Adding track {0} of {1}"
 msgstr "Dodajanje skladbe {0} od {1}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:595
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:596
 #, csharp-format
 msgid "Removing track {0} of {1}"
 msgstr "Odstranjevanje skladbe {0} od {1}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:648
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:649
 msgid "Writing media database"
 msgstr "Zapisovanje podatkovne zbirke predstavnostnih datotek"
 
@@ -4115,9 +4153,7 @@ msgid "{0} to add, {1} to remove, {2} to update"
 msgstr "{0} za dodajanje, {1} za odstranitev, {2} za posodobitev"
 
 #. This group source gives us a seperator for DAPs in the source view.
-#. We add it when we get our first dap source, and then remove it when
-#. we lose the last one.
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapService.cs:63
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapService.cs:64
 msgid "Devices"
 msgstr "Naprave"
 
@@ -4527,56 +4563,56 @@ msgstr "<i>{0}</i> se uvaža v knjižnico. Ali želite postopek prekiniti?"
 msgid "Cannot Import CD"
 msgstr "CD-ja ni mogoče uvoziti"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:233
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:237
 msgid "Audio CDs"
 msgstr "Zvočni CD-ji"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:235
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:239
 msgid "Audio CD Importing"
 msgstr "Uvažanje zvočnega CD-ja"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:238
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:242
 msgid "_Import format"
 msgstr "Vrsta zapisa _uvoza"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:242
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:246
 msgid "_Automatically import audio CDs when inserted"
 msgstr "_Samodejno uvažanje zvočnih CD-jev ob vstavitvi v pogon"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:243
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:247
 msgid "When an audio CD is inserted, automatically begin importing it if metadata can be found and it is not already in the library."
 msgstr "Ob vstavitvi v pogon začne samodejno uvažanje CD-ja, če je mogoče najti metapodatke in CD še ni na voljo v knjižnici."
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:247
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:251
 msgid "_Eject when done importing"
 msgstr "_Izvrži po uvažanju"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:248
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:252
 msgid "When an audio CD has been imported, automatically eject it."
 msgstr "Zvočni CD naj se po končanem uvažanju samodejno izvrže."
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:251
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:255
 msgid "Use error correction when importing"
 msgstr "Ob uvažanju uporabi popravljanje napak"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:252
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:256
 msgid "Error correction tries to work around problem areas on a disc, such as surface scratches, but will slow down importing substantially."
 msgstr "Popravljanje napak poskuša zaobiti območja diska, ki so poškodovana, vendar močno upočasni delovanje in uvoz glasbe."
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:320
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:324
 #: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdSource.cs:441
 msgid "Import CD"
 msgstr "Uvozi CD"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:321
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:325
 msgid "Import this audio CD to the library"
 msgstr "Uvoz tega zvočnega CD-ja v knjižnico"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:327
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:331
 msgid "Duplicate CD"
 msgstr "Podvoji CD"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:328
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:332
 msgid "Duplicate this audio CD"
 msgstr "Podvojitev tega zvočnega CD-ja"
 
@@ -5485,7 +5521,7 @@ msgstr "Uredi postajo"
 msgid "Station"
 msgstr "Postaja"
 
-#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:154
+#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:155
 #, csharp-format
 msgid "{0} station"
 msgid_plural "{0} stations"
@@ -5494,15 +5530,15 @@ msgstr[1] "{0} postaja"
 msgstr[2] "{0} postaji"
 msgstr[3] "{0} postaje"
 
-#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:240
+#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:241
 msgid "Please provide a valid station URI"
 msgstr "Vnesti je treba veljaven URI postaje"
 
-#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:253
+#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:254
 msgid "Please provide a station genre"
 msgstr "Vnesti je treba zvrst postaje"
 
-#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:261
+#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:262
 msgid "Please provide a station title"
 msgstr "Vnesti je treba naslov postaje"
 
@@ -6954,8 +6990,8 @@ msgstr "Neznan podcast"
 #~ "GStreamer multimedia services including playback, CD ripping, and "
 #~ "transcoding."
 #~ msgstr ""
-#~ "Predstavnostne storitve GStreamer vključno s predvajanjem, CD zajemom "
-#~ "in prekodiranjem."
+#~ "Predstavnostne storitve GStreamer vključno s predvajanjem, CD zajemom in "
+#~ "prekodiranjem."
 #~ msgid "Provides hardware support through HAL."
 #~ msgstr "Zagotovi strojno podporo s HAL."
 #~ msgid ""
