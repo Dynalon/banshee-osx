@@ -512,9 +512,13 @@ namespace Banshee.SmartPlaylist
             }
         }
 
-        public override void SetParentSource (Source parent)
+        public override bool SetParentSource (Source parent)
         {
             base.SetParentSource (parent);
+            if (IsHiddenWhenEmpty && Count == 0) {
+                return false;
+            }
+            return true;
         }
 
 #endregion
