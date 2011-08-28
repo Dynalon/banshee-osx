@@ -123,11 +123,11 @@ namespace Banshee.Gui
                     Catalog.GetString ("View information on selected tracks"), OnTrackProperties),
 
                 new ActionEntry ("PlayTrack", null,
-                    Catalog.GetString ("_Play"), null,
+                    Catalog.GetString ("_Play"), "",
                     Catalog.GetString ("Play the selected item"), OnPlayTrack),
 
                 new ActionEntry ("AddToPlaylistAction", null,
-                    Catalog.GetString ("Add _to Playlist"), null,
+                    Catalog.GetString ("Add _to Playlist"), "",
                     Catalog.GetString ("Append selected items to playlist or create new playlist from selection"),
                     OnAddToPlaylistMenu),
 
@@ -145,11 +145,11 @@ namespace Banshee.Gui
                     Catalog.GetString ("Remove selected track(s) from library"), OnRemoveTracksFromLibrary),
 
                 new ActionEntry ("OpenContainingFolderAction", null,
-                    Catalog.GetString ("_Open Containing Folder"), null,
+                    Catalog.GetString ("_Open Containing Folder"), "",
                     Catalog.GetString ("Open the folder that contains the selected item"), OnOpenContainingFolder),
 
                 new ActionEntry ("DeleteTracksFromDriveAction", null,
-                    Catalog.GetString ("_Delete From Drive"), null,
+                    Catalog.GetString ("_Delete From Drive"), "",
                     Catalog.GetString ("Permanently delete selected item(s) from medium"), OnDeleteTracksFromDrive),
 
                 new ActionEntry ("RateTracksAction", null,
@@ -160,11 +160,11 @@ namespace Banshee.Gui
                     Catalog.GetString ("Search for items matching certain criteria"), null),
 
                 new ActionEntry ("SearchForSameAlbumAction", null,
-                    Catalog.GetString ("By Matching _Album"), null,
+                    Catalog.GetString ("By Matching _Album"), "",
                     Catalog.GetString ("Search all songs of this album"), OnSearchForSameAlbum),
 
                 new ActionEntry ("SearchForSameArtistAction", null,
-                    Catalog.GetString ("By Matching A_rtist"), null,
+                    Catalog.GetString ("By Matching A_rtist"), "",
                     Catalog.GetString ("Search all songs of this artist"), OnSearchForSameArtist),
             });
 
