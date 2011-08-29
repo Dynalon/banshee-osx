@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: banshee-master-po-gl-3484\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-07-10 13:12+0000\n"
-"PO-Revision-Date: 2011-08-16 19:40+0200\n"
+"POT-Creation-Date: 2011-08-18 19:48+0000\n"
+"PO-Revision-Date: 2011-08-29 10:46+0200\n"
 "Last-Translator: Fran Diéguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -623,6 +623,7 @@ msgid "Play and organize your media collection"
 msgstr "Reproduzca e organice a súa colección multimedia"
 
 #: ../libbanshee/banshee-bpmdetector.c:202 ../libbanshee/banshee-ripper.c:270
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:240
 msgid "Could not create pipeline"
 msgstr "Non foi posíbel crear a tubería"
 
@@ -648,10 +649,12 @@ msgstr "Non foi posíbel crear o engadido fakesink"
 
 #: ../libbanshee/banshee-bpmdetector.c:241
 #: ../libbanshee/banshee-bpmdetector.c:250 ../libbanshee/banshee-ripper.c:311
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:281
 msgid "Could not link pipeline elements"
 msgstr "Non foi posíbel ligar os elementos da tubería"
 
 #: ../libbanshee/banshee-ripper.c:276
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:246
 msgid "Could not initialize element from cdda URI"
 msgstr "Non foi posíbel inicializar o elemento desde o URI cdda"
 
@@ -660,22 +663,27 @@ msgid "Could not create encoder pipeline"
 msgstr "Non foi posíbel crear unha tubería para o codificador"
 
 #: ../libbanshee/banshee-ripper.c:296
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:266
 msgid "Could not create queue plugin"
 msgstr "Non foi posíbel crear o engadido de colas"
 
 #: ../libbanshee/banshee-ripper.c:304
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:274
 msgid "Could not create filesink plugin"
 msgstr "Non foi posíbel crear o engadido filesink"
 
 #: ../libbanshee/banshee-transcoder.c:240
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:181
 msgid "Could not create source element"
 msgstr "Non foi posíbel crear o elemento de orixe"
 
 #: ../libbanshee/banshee-transcoder.c:246
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:187
 msgid "Could not create 'decodebin2' plugin"
 msgstr "Non foi posíbel crear o engadido «decodebin2»"
 
 #: ../libbanshee/banshee-transcoder.c:252
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:63
 msgid "Could not create sink element"
 msgstr "Non foi posíbel crear o elemento sumideiro"
 
@@ -684,10 +692,12 @@ msgid "Could not create 'sinkben' plugin"
 msgstr "Non foi posíbel crear o engadido 'sinkben'"
 
 #: ../libbanshee/banshee-transcoder.c:264
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:68
 msgid "Could not create 'audioconvert' plugin"
 msgstr "Non foi posíbel crear o engadido 'audioconvert'"
 
 #: ../libbanshee/banshee-transcoder.c:270
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:73
 msgid "Could not create 'audioresample' plugin"
 msgstr "Non foi posíbel crear o engadido 'audioresample'"
 
@@ -696,10 +706,12 @@ msgid "Could not create encoding pipeline"
 msgstr "Non foi posíbel crear a tubería de codificación"
 
 #: ../libbanshee/banshee-transcoder.c:282
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:85
 msgid "Could not get sink pad from encoder"
 msgstr "Non foi posíbel obter o sink pad do codificador"
 
 #: ../libbanshee/banshee-transcoder.c:345
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:269
 msgid "Could not construct pipeline"
 msgstr "Non foi posíbel crear a tubería"
 
@@ -724,6 +736,7 @@ msgid "Fullscreen video playback active"
 msgstr "Reprodución de vídeo a pantalla completa activa"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/AudioCdRipper.cs:89
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:96
 msgid "Could not find an encoder for ripping."
 msgstr "Non foi posíbel encontrar un codificador para a extracción."
 
@@ -732,6 +745,7 @@ msgid "Could not create CD ripping driver."
 msgstr "Non foi posíbel crear o controlador extractor de CD."
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/BpmDetector.cs:71
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/BpmDetector.cs:107
 msgid "Could not create BPM detection driver."
 msgstr "Non foi posíbel crear o controlador de detección de BPM."
 
@@ -754,15 +768,17 @@ msgid "Could not initialize GStreamer library"
 msgstr "Non foi posíbel inicializar a biblioteca de GStreamer"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:451
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:147
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:547
 msgid "Unknown Error"
 msgstr "Erro descoñecido"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:823
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:905
 msgid "_Enable ReplayGain correction"
 msgstr "_Activar a corrección ReplayGain"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:824
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:906
 msgid ""
 "For tracks that have ReplayGain data, automatically scale (normalize) "
 "playback volume"
@@ -782,9 +798,26 @@ msgstr ""
 msgid "Could not create transcoder"
 msgstr "Non foi posíbel crear o transcodificador"
 
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:348
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:259
+#, csharp-format
+#| msgid "Could not create encoder pipeline"
+msgid "Could not create encoder pipeline : {0}"
+msgstr "Non foi posíbel crear a tubería do codificador: {0}"
+
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:792
 msgid "GStreamer# 0.10"
 msgstr "GStreamer# 0.10"
+
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:79
+#, csharp-format
+#| msgid "Could not create encoding pipeline"
+msgid "Could not create encoding pipeline : {0}"
+msgstr "Non foi posíbel crear a tubería de codificación: {0}"
+
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:198
+#| msgid "Could not create 'sinkben' plugin"
+msgid "Could not create 'sinkbin' plugin"
+msgstr "Non foi posíbel crear o engadido 'sinkbin'"
 
 #: ../src/Backends/Banshee.Osx/Banshee.OsxBackend/OsxService.cs:91
 #: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:132
@@ -801,7 +834,6 @@ msgid "Close"
 msgstr "Pechar"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:72
-#| msgid "Check for New Episodes"
 msgid "Can't check for updates"
 msgstr "Non é posíbel comprobar as anovacións"
 
@@ -814,7 +846,6 @@ msgstr ""
 "Ténteo máis tarde."
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:95
-#| msgid "No description available"
 msgid "No update available"
 msgstr "Non hai anovacións dispoñíbeis"
 
@@ -829,24 +860,20 @@ msgstr ""
 "Existe unha nova versión de Banshee ({0}) dispoñíbel.{1}Desexa actualizar?"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:108
-#| msgid "Banshee Media Player"
 msgid "Banshee update available"
 msgstr "Anovación de Banshee dispoñíbel"
 
 #. Translators: {0} is the filename, eg Banshee-1.9.5.msi
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:129
 #, csharp-format
-#| msgid "Downloading"
 msgid "Downloading {0}"
 msgstr "Descargando {0}"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:152
-#| msgid "Not Downloaded"
 msgid "Update download failed"
 msgstr "Fallou a descarga da anovación"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:152
-#| msgid "Server error, please try again later."
 msgid "The download failed. Please try again later."
 msgstr "A descarga da anovación fallou. Ténteo máis tarde."
 
@@ -864,7 +891,6 @@ msgid "Update finished downloading"
 msgstr "Rematouse de descargar a anovación"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/WindowsService.cs:109
-#| msgid "Check for New Episodes"
 msgid "Check for Updates"
 msgstr "Comprobar novas anovacións"
 
@@ -1135,10 +1161,14 @@ msgid "Specify an alternate database to use"
 msgstr "Especifica unha base de datos alternativa para usar"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:219
+msgid "Force fetching of missing cover artwork"
+msgstr "Forza a descarga das portadas que faltan"
+
+#: ../src/Clients/Booter/Booter/Entry.cs:220
 msgid "Specify an alternate key, default is /apps/banshee-1/"
 msgstr "Especifica unha tecla alternativa, a predeterminada é /apps/banshee-1/"
 
-#: ../src/Clients/Booter/Booter/Entry.cs:220
+#: ../src/Clients/Booter/Booter/Entry.cs:221
 msgid ""
 "Optimize instance for running uninstalled; most notably, this will create an "
 "alternate Mono.Addins database in the working directory"
@@ -1146,16 +1176,16 @@ msgstr ""
 "Optimiza a instancia para executarse sen instalación; en particular, isto "
 "crea unha base de datos de Mono.Addins alternativa no directorio de traballo"
 
-#: ../src/Clients/Booter/Booter/Entry.cs:222
+#: ../src/Clients/Booter/Booter/Entry.cs:223
 msgid "Disable DBus support completely"
 msgstr "Desactiva completamente a compatibilidade con DBus"
 
-#: ../src/Clients/Booter/Booter/Entry.cs:224
+#: ../src/Clients/Booter/Booter/Entry.cs:225
 #, csharp-format
 msgid "Skip loading a custom gtkrc file ({0}) if it exists"
 msgstr "Omitir a carga dun ficheiro gtkrc personalizado ({0}) se existe"
 
-#: ../src/Clients/Booter/Booter/Entry.cs:255
+#: ../src/Clients/Booter/Booter/Entry.cs:256
 #, csharp-format
 msgid "The following help arguments are invalid: {0}"
 msgstr "Os seguintes argumentos para a axuda non son válidos: {0}"
@@ -1427,7 +1457,7 @@ msgid "Scanning for media"
 msgstr "Analizando o contido multimedia"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection/ImportManager.cs:188
-#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1384
+#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1395
 msgid "Scanning..."
 msgstr "Analizando..."
 
@@ -1468,7 +1498,7 @@ msgstr ""
 "Espera mentras se migra a súa base de datos antiga de Banshee ao novo "
 "formato."
 
-#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1381
+#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1392
 msgid "Refreshing Metadata"
 msgstr "Actualizando os metadatos"
 
@@ -1529,14 +1559,18 @@ msgid "Ska"
 msgstr "Ska"
 
 #: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:294
+msgid "Smiley Face Curve"
+msgstr "Curva de cara sorinte"
+
+#: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:297
 msgid "Soft"
 msgstr "Suave"
 
-#: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:297
+#: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:300
 msgid "Soft Rock"
 msgstr "Rock suave"
 
-#: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:300
+#: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:303
 msgid "Techno"
 msgstr "Tecno"
 
@@ -1775,11 +1809,11 @@ msgstr "Sen ver"
 msgid "Videos that haven't been played yet"
 msgstr "Vídeos que aínda non foron reproducidos"
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:98
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:99
 msgid "Default player engine"
 msgstr "Motor de reprodución predeterminado"
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:105
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:106
 msgid ""
 "No player engines were found. Please ensure Banshee has been cleanly "
 "installed."
@@ -1787,7 +1821,7 @@ msgstr ""
 "Non se encontrou ningún motor de reprodución. Asegúrese de que Banshee se "
 "instalou correctamente."
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:349
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:366
 msgid "Problem with Player Engine"
 msgstr "Problema co motor de reprodución"
 
@@ -2657,13 +2691,13 @@ msgstr[1] "{0} elementos"
 #. things that depend on being loaded before the music library is added.
 #. AddSource (music_library = new MusicLibrarySource (), true);
 #. AddSource (video_library = new VideoLibrarySource (), false);
-#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:84
-msgid "Libraries"
-msgstr "Coleccións"
-
-#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:85
+#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:86
 msgid "Online Media"
 msgstr "Multimedia en liña"
+
+#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:87
+msgid "Libraries"
+msgstr "Coleccións"
 
 #: ../src/Core/Banshee.Services/Banshee.Streaming/RadioTrackInfo.cs:82
 #: ../src/Core/Banshee.Services/Banshee.Streaming/RadioTrackInfo.cs:91
@@ -4240,9 +4274,7 @@ msgid "{0} to add, {1} to remove, {2} to update"
 msgstr "{0} para engadir, {1} para eliminar, {2} para actualizar"
 
 #. This group source gives us a seperator for DAPs in the source view.
-#. We add it when we get our first dap source, and then remove it when
-#. we lose the last one.
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapService.cs:63
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapService.cs:64
 msgid "Devices"
 msgstr "Dispositivos"
 
