@@ -476,7 +476,7 @@ bp_get_subtitle_uri (BansheePlayer *player)
 P_INVOKE gchar *
 bp_get_subtitle_description (BansheePlayer *player, int i)
 {
-    gchar *code;
+    gchar *code = NULL;
     gchar *desc = NULL;
     GstTagList *tags = NULL;
 
@@ -491,6 +491,7 @@ bp_get_subtitle_description (BansheePlayer *player, int i)
 
         // ISO 639-2 undetermined language
         if (strcmp ((const gchar *)code, "und") == 0) {
+            g_free (code);
             return NULL;
         }
         bp_debug ("[subtitle]: iso 639-2 subtitle code %s", code);
