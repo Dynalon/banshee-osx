@@ -428,6 +428,8 @@ namespace Banshee.Widgets
                 //DrawAsRadio = true;
             }
 
+            protected FilterMenuItem(IntPtr ptr) : base (ptr) {}
+
             public int ID {
                 get { return id; }
             }
