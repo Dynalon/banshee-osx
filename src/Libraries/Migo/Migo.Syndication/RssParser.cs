@@ -48,6 +48,9 @@ namespace Migo.Syndication
             this.url = url;
             xml = xml.TrimStart ();
             doc = new XmlDocument ();
+            // Don't resolve any external references, see bgo#601554
+            doc.XmlResolver = null;
+            
             try {
                 doc.LoadXml (xml);
             } catch (XmlException e) {
