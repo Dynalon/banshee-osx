@@ -58,6 +58,10 @@ namespace Banshee.InternetRadio
             DatabaseConfigurationClient.Client.Set<bool> ("InternetRadio.SystemXspfLoaded", true);
 
             string xspf_system_path = Hyena.Paths.GetInstalledDataDirectory ("stations");
+            if (!Directory.Exists (xspf_system_path)) {
+                return false;
+            }
+            
             try {
                 foreach (string file in Directory.GetFiles (xspf_system_path, "*.xspf")) {
                     Log.DebugFormat ("Loading default Internet Radio Stations from {0}", file);
