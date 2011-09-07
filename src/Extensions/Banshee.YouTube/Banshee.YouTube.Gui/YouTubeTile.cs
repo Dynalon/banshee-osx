@@ -91,13 +91,8 @@ namespace Banshee.YouTube.Gui
                 Log.DebugException (e);
             }
 
-            try {
-                DataFetch df = new DataFetch ();
-                Thumbnail = df.DownloadContent (video.Thumbnails[0].Url, CacheDuration.Normal);
-            } catch (Exception e) {
-                Log.DebugException (e);
-                Thumbnail = null;
-            }
+            DataFetch df = new DataFetch ();
+            Thumbnail = df.DownloadContent (video.Thumbnails[0].Url, CacheDuration.Normal);
         }
 
         private static string GetPlaybackUri (Video yt_video)

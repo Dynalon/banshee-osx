@@ -126,6 +126,7 @@ namespace Banshee.YouTube.Data
                 }
             } catch (Exception e) {
                 Log.DebugException (e);
+                cache_file = null;
             }
             return cache_file;
         }
