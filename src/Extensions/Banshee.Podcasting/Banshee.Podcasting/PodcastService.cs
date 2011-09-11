@@ -51,6 +51,7 @@ using Banshee.Podcasting.Gui;
 using Banshee.Podcasting.Data;
 using Banshee.Collection.Database;
 using Banshee.Configuration;
+using Banshee.Preferences;
 
 namespace Banshee.Podcasting
 {
@@ -237,6 +238,11 @@ namespace Banshee.Podcasting
             ServiceManager.SourceManager.AddSource (source);
 
             InitializeInterface ();
+
+            var preference = source.PreferencesPage["library-location"]["library-location"] as SchemaPreference<string>;
+            preference.ValueChanged += delegate (Root obj) {
+                feeds_manager.PodcastStorageDirectory = preference.Value;
+            };
 
             ThreadAssist.SpawnFromMain (delegate {
                 feeds_manager.PodcastStorageDirectory = source.BaseDirectory;
