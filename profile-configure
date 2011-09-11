@@ -33,7 +33,7 @@ for ((i=0; i<${#profiles[@]}; i++)); do
 			configure="$configure ${profile[$j]}"
 		done
 		if [ -d .git ]; then
-			configure="$configure --enable-maintainer-mode"
+			configure="$configure"
 		fi
 		echo "Running $configure $@"
 		$configure $@

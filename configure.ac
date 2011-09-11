@@ -28,7 +28,7 @@ AC_PREREQ(2.52)
 AC_INIT([banshee], banshee_version, [http://bugzilla.gnome.org/enter_bug.cgi?product=banshee])
 
 AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-bzip2 tar-ustar foreign])
-AM_MAINTAINER_MODE
+AM_MAINTAINER_MODE([enable])
 AM_CONFIG_HEADER([config.h])
 AC_CONFIG_MACRO_DIR([build/m4])
 AC_SUBST([ACLOCAL_AMFLAGS], ["-I build/m4/shamrock -I build/m4/banshee -I build/m4/shave \${ACLOCAL_FLAGS}"])

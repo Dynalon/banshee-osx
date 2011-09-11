@@ -95,4 +95,4 @@ EOF
 } > reautogen.sh
 chmod +x reautogen.sh
 
-run ./configure --enable-maintainer-mode $@
+run ./configure $@
