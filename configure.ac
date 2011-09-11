@@ -27,7 +27,7 @@ m4_define([banshee_asm_version], [banshee_api_version.0.0])
 AC_PREREQ(2.52)
 AC_INIT([banshee], banshee_version, [http://bugzilla.gnome.org/enter_bug.cgi?product=banshee])
 
-AM_INIT_AUTOMAKE([1.9 dist-bzip2 tar-ustar dist-zip foreign])
+AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-bzip2 tar-ustar foreign])
 AM_MAINTAINER_MODE
 AM_CONFIG_HEADER([config.h])
 AC_CONFIG_MACRO_DIR([build/m4])
