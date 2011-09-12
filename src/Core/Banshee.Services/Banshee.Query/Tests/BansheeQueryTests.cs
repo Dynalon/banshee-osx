@@ -27,6 +27,7 @@
 using System;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
+using Banshee.Configuration.Schema;
 
 namespace Banshee.Query.Tests
 {
@@ -53,16 +54,16 @@ namespace Banshee.Query.Tests
         [TestFixtureSetUp]
         public void SetSortAlbumByYearOff ()
         {
-            original_sort_album_by_year = Banshee.Configuration.Schema.LibrarySchema.SortByAlbumYear.Get ();
+            original_sort_album_by_year = LibrarySchema.SortByAlbumYear.Get ();
             if (original_sort_album_by_year) {
-                Banshee.Configuration.Schema.LibrarySchema.SortByAlbumYear.Set (false);
+                LibrarySchema.SortByAlbumYear.Set (false);
             }
         }
 
         [TestFixtureTearDown]
         public void RecoverSortAlbumByYearSetting ()
         {
-            Banshee.Configuration.Schema.LibrarySchema.SortByAlbumYear.Set (original_sort_album_by_year);
+            LibrarySchema.SortByAlbumYear.Set (original_sort_album_by_year);
         }
 
         [Test]
@@ -874,16 +875,16 @@ namespace Banshee.Query.Tests
         [TestFixtureSetUp]
         public void SetSortAlbumByYearOn ()
         {
-            original_sort_album_by_year = Banshee.Configuration.Schema.LibrarySchema.SortByAlbumYear.Get ();
+            original_sort_album_by_year = LibrarySchema.SortByAlbumYear.Get ();
             if (!original_sort_album_by_year) {
-                Banshee.Configuration.Schema.LibrarySchema.SortByAlbumYear.Set (true);
+                LibrarySchema.SortByAlbumYear.Set (true);
             }
         }
 
         [TestFixtureTearDown]
         public void RecoverSortAlbumByYearSetting ()
         {
-            Banshee.Configuration.Schema.LibrarySchema.SortByAlbumYear.Set (original_sort_album_by_year);
+            LibrarySchema.SortByAlbumYear.Set (original_sort_album_by_year);
         }
 
         [Test]
