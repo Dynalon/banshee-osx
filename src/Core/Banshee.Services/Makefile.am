@@ -175,6 +175,7 @@ SOURCES =  \
 	Banshee.Query/PlaylistQueryValue.cs \
 	Banshee.Query/RatingQueryValue.cs \
 	Banshee.Query/SmartPlaylistQueryValue.cs \
+	Banshee.Query/Tests/BansheeQueryTests.cs \
 	Banshee.Query/YearQueryValue.cs \
 	Banshee.ServiceStack/Application.cs \
 	Banshee.ServiceStack/BatchUserJob.cs \

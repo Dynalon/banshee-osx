@@ -321,6 +321,7 @@
     <Compile Include="Banshee.Hardware\UsbPortInfo.cs" />
     <Compile Include="Banshee.MediaEngine\Tests.cs" />
     <Compile Include="Banshee.Sources\Tests.cs" />
+    <Compile Include="Banshee.Query\Tests\BansheeQueryTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Banshee.Services.addin.xml">
@@ -348,4 +349,7 @@
     </MonoDevelop>
     <VisualStudio />
   </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="Banshee.Query\Tests\" />
+  </ItemGroup>
 </Project>
