@@ -632,56 +632,6 @@ namespace Banshee.Query.Tests
         }
 
         [Test]
-        public void GetSortForSkipCountAsc ()
-        {
-            string sort = BansheeQuery.GetSort ("SkipCount", true);
-            AssertAreEquivalent (@"CoreTracks.SkipCount ASC,
-                                   CoreAlbums.ArtistNameSortKey ASC,
-                                   CoreAlbums.TitleSortKey ASC,
-                                   CoreTracks.Disc ASC,
-                                   CoreTracks.TrackNumber ASC",
-                                 sort);
-        }
-
-        [Test]
-        public void GetSortForSkipCountDesc ()
-        {
-            string sort = BansheeQuery.GetSort ("SkipCount", false);
-            AssertAreEquivalent (@"CoreTracks.SkipCount DESC,
-                                   CoreAlbums.ArtistNameSortKey ASC,
-                                   CoreAlbums.TitleSortKey ASC,
-                                   CoreTracks.Disc ASC,
-                                   CoreTracks.TrackNumber ASC",
-                                 sort);
-        }
-
-        [Test]
-        public void GetSortForScoreAsc ()
-        {
-            string sort = BansheeQuery.GetSort ("Score", true);
-            AssertAreEquivalent (@"CoreTracks.Score ASC,
-                                   CoreTracks.Playcount ASC,
-                                   CoreAlbums.ArtistNameSortKey ASC,
-                                   CoreAlbums.TitleSortKey ASC,
-                                   CoreTracks.Disc ASC,
-                                   CoreTracks.TrackNumber ASC",
-                                 sort);
-        }
-
-        [Test]
-        public void GetSortForScoreDesc ()
-        {
-            string sort = BansheeQuery.GetSort ("Score", false);
-            AssertAreEquivalent (@"CoreTracks.Score DESC,
-                                   CoreTracks.Playcount DESC,
-                                   CoreAlbums.ArtistNameSortKey ASC,
-                                   CoreAlbums.TitleSortKey ASC,
-                                   CoreTracks.Disc ASC,
-                                   CoreTracks.TrackNumber ASC",
-                                 sort);
-        }
-
-        [Test]
         public void GetSortForRandomAsc ()
         {
             string sort = FullTrim (BansheeQuery.GetSort ("Random", true));
@@ -743,6 +693,56 @@ namespace Banshee.Query.Tests
                                  sort);
         }
 
+
+        [Test]
+        public void GetSortForScoreAsc ()
+        {
+            string sort = BansheeQuery.GetSort ("Score", true);
+            AssertAreEquivalent (@"CoreTracks.Score ASC,
+                                   CoreTracks.Playcount ASC,
+                                   CoreAlbums.ArtistNameSortKey ASC,
+                                   CoreAlbums.TitleSortKey ASC,
+                                   CoreTracks.Disc ASC,
+                                   CoreTracks.TrackNumber ASC",
+                                 sort);
+        }
+
+        [Test]
+        public void GetSortForScoreDesc ()
+        {
+            string sort = BansheeQuery.GetSort ("Score", false);
+            AssertAreEquivalent (@"CoreTracks.Score DESC,
+                                   CoreTracks.Playcount DESC,
+                                   CoreAlbums.ArtistNameSortKey ASC,
+                                   CoreAlbums.TitleSortKey ASC,
+                                   CoreTracks.Disc ASC,
+                                   CoreTracks.TrackNumber ASC",
+                                 sort);
+        }
+
+        [Test]
+        public void GetSortForSkipCountAsc ()
+        {
+            string sort = BansheeQuery.GetSort ("SkipCount", true);
+            AssertAreEquivalent (@"CoreTracks.SkipCount ASC,
+                                   CoreAlbums.ArtistNameSortKey ASC,
+                                   CoreAlbums.TitleSortKey ASC,
+                                   CoreTracks.Disc ASC,
+                                   CoreTracks.TrackNumber ASC",
+                                 sort);
+        }
+
+        [Test]
+        public void GetSortForSkipCountDesc ()
+        {
+            string sort = BansheeQuery.GetSort ("SkipCount", false);
+            AssertAreEquivalent (@"CoreTracks.SkipCount DESC,
+                                   CoreAlbums.ArtistNameSortKey ASC,
+                                   CoreAlbums.TitleSortKey ASC,
+                                   CoreTracks.Disc ASC,
+                                   CoreTracks.TrackNumber ASC",
+                                 sort);
+        }
 
         [Test]
         public void GetSortForTitleAsc ()
@@ -1501,60 +1501,6 @@ namespace Banshee.Query.Tests
         }
 
         [Test]
-        public void GetSortForSkipCountAsc ()
-        {
-            string sort = BansheeQuery.GetSort ("SkipCount", true);
-            AssertAreEquivalent (@"CoreTracks.SkipCount ASC,
-                                   CoreAlbums.ArtistNameSortKey ASC,
-                                   CoreTracks.Year ASC,
-                                   CoreAlbums.TitleSortKey ASC,
-                                   CoreTracks.Disc ASC,
-                                   CoreTracks.TrackNumber ASC",
-                                 sort);
-        }
-
-        [Test]
-        public void GetSortForSkipCountDesc ()
-        {
-            string sort = BansheeQuery.GetSort ("SkipCount", false);
-            AssertAreEquivalent (@"CoreTracks.SkipCount DESC,
-                                   CoreAlbums.ArtistNameSortKey ASC,
-                                   CoreTracks.Year ASC,
-                                   CoreAlbums.TitleSortKey ASC,
-                                   CoreTracks.Disc ASC,
-                                   CoreTracks.TrackNumber ASC",
-                                 sort);
-        }
-
-        [Test]
-        public void GetSortForScoreAsc ()
-        {
-            string sort = BansheeQuery.GetSort ("Score", true);
-            AssertAreEquivalent (@"CoreTracks.Score ASC,
-                                   CoreTracks.Playcount ASC,
-                                   CoreAlbums.ArtistNameSortKey ASC,
-                                   CoreTracks.Year ASC,
-                                   CoreAlbums.TitleSortKey ASC,
-                                   CoreTracks.Disc ASC,
-                                   CoreTracks.TrackNumber ASC",
-                                 sort);
-        }
-
-        [Test]
-        public void GetSortForScoreDesc ()
-        {
-            string sort = BansheeQuery.GetSort ("Score", false);
-            AssertAreEquivalent (@"CoreTracks.Score DESC,
-                                   CoreTracks.Playcount DESC,
-                                   CoreAlbums.ArtistNameSortKey ASC,
-                                   CoreTracks.Year ASC,
-                                   CoreAlbums.TitleSortKey ASC,
-                                   CoreTracks.Disc ASC,
-                                   CoreTracks.TrackNumber ASC",
-                                 sort);
-        }
-
-        [Test]
         public void GetSortForRandomAsc ()
         {
             string sort = FullTrim (BansheeQuery.GetSort ("Random", true));
@@ -1620,6 +1566,59 @@ namespace Banshee.Query.Tests
                                  sort);
         }
 
+        [Test]
+        public void GetSortForScoreAsc ()
+        {
+            string sort = BansheeQuery.GetSort ("Score", true);
+            AssertAreEquivalent (@"CoreTracks.Score ASC,
+                                   CoreTracks.Playcount ASC,
+                                   CoreAlbums.ArtistNameSortKey ASC,
+                                   CoreTracks.Year ASC,
+                                   CoreAlbums.TitleSortKey ASC,
+                                   CoreTracks.Disc ASC,
+                                   CoreTracks.TrackNumber ASC",
+                                 sort);
+        }
+
+        [Test]
+        public void GetSortForScoreDesc ()
+        {
+            string sort = BansheeQuery.GetSort ("Score", false);
+            AssertAreEquivalent (@"CoreTracks.Score DESC,
+                                   CoreTracks.Playcount DESC,
+                                   CoreAlbums.ArtistNameSortKey ASC,
+                                   CoreTracks.Year ASC,
+                                   CoreAlbums.TitleSortKey ASC,
+                                   CoreTracks.Disc ASC,
+                                   CoreTracks.TrackNumber ASC",
+                                 sort);
+        }
+
+        [Test]
+        public void GetSortForSkipCountAsc ()
+        {
+            string sort = BansheeQuery.GetSort ("SkipCount", true);
+            AssertAreEquivalent (@"CoreTracks.SkipCount ASC,
+                                   CoreAlbums.ArtistNameSortKey ASC,
+                                   CoreTracks.Year ASC,
+                                   CoreAlbums.TitleSortKey ASC,
+                                   CoreTracks.Disc ASC,
+                                   CoreTracks.TrackNumber ASC",
+                                 sort);
+        }
+
+        [Test]
+        public void GetSortForSkipCountDesc ()
+        {
+            string sort = BansheeQuery.GetSort ("SkipCount", false);
+            AssertAreEquivalent (@"CoreTracks.SkipCount DESC,
+                                   CoreAlbums.ArtistNameSortKey ASC,
+                                   CoreTracks.Year ASC,
+                                   CoreAlbums.TitleSortKey ASC,
+                                   CoreTracks.Disc ASC,
+                                   CoreTracks.TrackNumber ASC",
+                                 sort);
+        }
 
         [Test]
         public void GetSortForTitleAsc ()
