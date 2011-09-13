@@ -115,7 +115,7 @@ namespace Banshee.Collection.Database
                 // Not already playing this track, so load it up
                 //Console.WriteLine ("JumpTo: not already playing, loading it up");
                 ServiceManager.PlayerEngine.ConnectEvent (HandleStateChanged, PlayerEvent.StateChange);
-                ServiceManager.PlayerEngine.Open (track);
+                ServiceManager.PlayerEngine.OpenPlay (track);
             } else {
                 // Already playing this track, so just seek to the right position
                 if (ServiceManager.PlayerEngine.CanSeek) {
