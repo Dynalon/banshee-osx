@@ -78,6 +78,9 @@ namespace Banshee.Playlists.Formats
 
         protected virtual Uri ResolveUri(string uri)
         {
+            if (!uri.Contains ("/") && uri.Contains ("\\")) {
+                uri = uri.Replace ("\\", "/");
+            }
             return BaseUri == null ? new Uri(uri) : new Uri(BaseUri, uri);
         }
 
