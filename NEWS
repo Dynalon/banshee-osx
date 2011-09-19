@@ -2,8 +2,8 @@
 Banshee 2.2.0 - 2011-09-21
 ===============================================================================
 
-    Banshee 2.2 is the culmination of six months' work by NN developers and
-    dozens of translators, bug reporters, and testers. It is a stable release,
+    Banshee 2.2 is the culmination of six months' work by 35 developers, 38
+    translators and dozens of bug reporters and testers. It is a stable release,
     the successor to Banshee 2.0.
 
     New Features:
@@ -26,27 +26,27 @@ Banshee 2.2.0 - 2011-09-21
 
     Enhancements:
 
-      * ArtworkManager: add --fetch-artwork argument
+      * Add "Stop when finished" option in the notification popup menu
+      * Hide labels in the source pane when the group is empty
       * New Devices Supported:
         - Motorola Atrix
         - Notion Ink Adam
         - Samsung Galaxy Ace
         - Samsung Galaxy S2
         - Xperia X12
+      * Add "Smiley Face Curve" default equalizer
+      * ArtworkManager: add --fetch-artwork argument
       * MiniMode: Reduce height of window
       * Support .spc files
       * Set UserAgent when doing MusicBrainz queries
-      * Add "Stop when finished" option in the notification popup menu
       * Get info from the database or the file when opening a URI
-      * Hide labels in the source pane when the group is empty
       * Remove keyboard shortcut for toggling scrobbling
-      * Add "Smiley Face Curve" default equalizer
       * Cache the ArtworkID in the database for faster startup
       * Various enhancements to our experimental GStreamer# backend, bringing it
         close to feature parity with our current C backend. It is still not
         built by default and not recommended for daily use, but testing is welcome.
 
-    Notable Bugs Fixed ( fixed since 1.8.0):
+    Notable Bugs Fixed (108 fixed since 2.0.0):
 
       * Windows installer fixes
       * AmazonMp3.Store: Fix signed-in detection for UK store
@@ -75,15 +75,15 @@ Banshee 2.2.0 - 2011-09-21
       * bgo#647111: Put the Audio CD source label in the right place
       * bgo#647202: Fix space usage reporting for some DAP devices
       * bgo#648498: Make sure the MPRIS sends the new metadata on track change
+      * bgo#654524: Fix the SetPosition method in the MPRIS interface
       * bgo#650011: Fix items disappearing in playlists when re-connecting iPod
       * bgo#650184: Fix XSPF playlist importing error
       * bgo#651914: Fix "Least Favorite" smart playlist to not pick unrated songs
-      * bgo#654524: Fix the SetPosition method in the MPRIS interface
       * bgo#656176: Don't ignore the last value of the .is_audio_player file
       * bgo#656246: Fix random crash while changing tracks
       * bgo#658509: PodcastService: Update podcast storage location immediately
       * bgo#657565: TrackActions: Make sure keyboard accelerators are editable
-      * bgo#658110: Banshee.Services: Replace DOS folder separators with UNIX
+      * bgo#658110: Playlists: Replace DOS folder separators in URLs
 
 ===============================================================================
 SOURCES / PACKAGES
@@ -131,9 +131,26 @@ Contributors For This Release
     The following people directly contributed to the release of this version
     of Banshee. Without their help, there would be no release!
 
-      
+     Abner Silva, Alban Crequy, Alberto Gonzalez, Alex Launi,
+     Alexander Kojevnikov, Andrés G. Aragoneses, Andy Street, Bertrand Lorentz,
+     Carlos Sanchez, Chase Geigle, Chow Loong Jin,
+     Christopher James Halse Rogers, Corec, David Nielsen, Dinh Ngoc Tu,
+     Dustin C. Hatch, Frank Ziegler, Gabriel Burt, Hajime Mizuno, Jérémie Laval,
+     Johannes Koch, Jonas Urth Olsen, Kentaro KAZUHAMA, Mackenan Grassi,
+     Mark Saunders, Martin Pitt, Michael Martin-Smucker, Olivier Dufour,
+     Pete Johanson, Rodney Dawes, Sjoerd Simons, Travis Patterson,
+     Victor Vargas, Will Thompson, William Witt
 
     The following people contributed updated translations to this release.
     Without them, our project's reach would be much more limited.
 
-     
+     Andrej Žnidaršič, António Lima, Benjamin Valero, Bruno Brouard,
+     Changwoo Ryu, Cheng-Chia Tseng, Daniel Korostil, Daniel Nylander,
+     Djavan Fagundes, Emmanouel Kapernaros, Fran Diéguez, Gabor Kelemen,
+     Gianvito Cavasoli, Hajime Taira, Isabell Long, Joe Hansen, Jordi Mas,
+     Kjartan Maraas, Kristjan SCHMIDT, Lucian Adrian Grijincu, Lê Hoàng Phương,
+     Marek Černocký, Mario Blättermann, Markus Schley, Martin Srebotnjak,
+     Matej Urbančič, Michael Kotsarinis, Nguyễn Thái Ngọc Duy, Pavol Klačanský,
+     Piotr Drąg, Rudolfs Mazurs, Wouter Bolsterlee, Yaron Shahrabani,
+     Yuri Myasoedov, dmustieles, krishnababu k, longxin, Мирослав Николић
+
