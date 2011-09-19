@@ -399,7 +399,7 @@ namespace Banshee.Query
         public static string GetSort (QueryField field, bool asc)
         {
             if (field == null) {
-                throw new ArgumentNullException ("key");
+                throw new ArgumentNullException ("field");
             }
 
             bool sort_by_year = Banshee.Configuration.Schema.LibrarySchema.SortByAlbumYear.Get ();
