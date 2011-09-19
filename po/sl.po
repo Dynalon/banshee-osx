@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2011-09-04 12:17+0000\n"
-"PO-Revision-Date: 2011-09-15 22:13+0100\n"
+"PO-Revision-Date: 2011-09-18 20:50+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: \n"
@@ -131,7 +131,7 @@ msgstr "Skripte Boo"
 
 #: ../data/addin-xml-strings.cs:49
 msgid "Customize and extend Banshee with Boo-language scripts."
-msgstr "Prilagajanje in razširjanje Banshee s skriptami v jeziku Boo."
+msgstr "Prilagajanje in razširjanje predvajalnika Banshee s skriptami v jeziku Boo."
 
 #: ../data/addin-xml-strings.cs:50
 #: ../data/addin-xml-strings.cs:55
@@ -265,7 +265,7 @@ msgstr "Majhen način"
 
 #: ../data/addin-xml-strings.cs:114
 msgid "Control Banshee through a small window with only playback controls and track information."
-msgstr "Nadzor Banshee skozi majhno okno z le nadzorom predvajanja in podrobnostmi skladbe."
+msgstr "Nadzor predvajalnika Banshee skozi majhno okno z le nadzorom predvajanja in podrobnostmi skladbe."
 
 #. ../src/Extensions/Banshee.MiroGuide/Banshee.MiroGuide.addin.xml
 #: ../data/addin-xml-strings.cs:118
@@ -283,16 +283,16 @@ msgstr "Vmesnik MPRIS D-Bus"
 
 #: ../data/addin-xml-strings.cs:124
 msgid "Control Banshee using the MPRIS D-Bus interface."
-msgstr "Nadzirajte Banshee preko vmesnika D-Bus MPRIS."
+msgstr "Nadzirajte predvajalnik Banshee preko vmesnika D-Bus MPRIS."
 
 #. ../src/Extensions/Banshee.MultimediaKeys/Banshee.MultimediaKeys.addin.xml
 #: ../data/addin-xml-strings.cs:128
 msgid "Multimedia Keys"
-msgstr "Predstavnostne tipke"
+msgstr "Predstavne tipke"
 
 #: ../data/addin-xml-strings.cs:129
 msgid "Control playback via the multimedia keys on your keyboard."
-msgstr "Nadzor predvajanja preko predstavnostih tipk na vaši tipkovnici."
+msgstr "Nadzor predvajanja preko predstavnih tipk na vaši tipkovnici."
 
 #. ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea.addin.xml
 #: ../data/addin-xml-strings.cs:133
@@ -301,7 +301,7 @@ msgstr "Ikona opozorilnega področja"
 
 #: ../data/addin-xml-strings.cs:134
 msgid "Display an icon in the notification area for controlling Banshee."
-msgstr "Prikaz ikone za nadzor Banshee v obvestilnem področju."
+msgstr "Prikaz ikone za nadzor predvajalnika Banshee v obvestilnem področju."
 
 #. ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration.addin.xml
 #: ../data/addin-xml-strings.cs:138
@@ -343,7 +343,7 @@ msgstr "Vključitev v zvočni meni"
 
 #: ../data/addin-xml-strings.cs:154
 msgid "Control Banshee from the Sound Menu."
-msgstr "Nadzirajte Banshee iz zvočnega menija."
+msgstr "Nadzor nad predvajalnikom Banshee iz zvočnega menija."
 
 #. ../src/Extensions/Banshee.Torrent/Banshee.Torrent.addin.xml
 #: ../data/addin-xml-strings.cs:158
@@ -584,7 +584,7 @@ msgstr "Windows zvočna datoteka"
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/BaseClientWindow.cs:206
 #: ../src/Extensions/Banshee.MiniMode/Banshee.MiniMode/MiniModeWindow.cs:60
 msgid "Banshee Media Player"
-msgstr "Banshee predvajalnik"
+msgstr "Predvajalnik Banshee"
 
 #: ../data/desktop-files/common.desktop.in.h:2
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:193
@@ -807,16 +807,16 @@ msgstr "Ni posodobitev na voljo"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:95
 msgid "You already have the latest version of Banshee installed."
-msgstr "Že imate nameščeno zadnjo različico Banshee."
+msgstr "Nameščena je zadnja različica predvajalnika Banshee."
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:106
 #, csharp-format
 msgid "A new version of Banshee ({0}) is available.{1}Do you want to update?"
-msgstr "Nova različica Banshee ({0}) je na voljo. {1}Ali želite program posodobiti?"
+msgstr "Na voljo je nova različica predvajalnika Banshee ({0}). {1}Ali želite program posodobiti?"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:108
 msgid "Banshee update available"
-msgstr "Na voljo je posodobitev Banshee"
+msgstr "Na voljo je posodobitev za predvajalnik Banshee"
 
 #. Translators: {0} is the filename, eg Banshee-1.9.5.msi
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:129
@@ -835,7 +835,7 @@ msgstr "Prejem je spodletel. Poskusite ponovno kasneje."
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:165
 #, csharp-format
 msgid "The update finished downloading.{0}Do you want to shutdown Banshee and run the installer?"
-msgstr "Prejem posodobitve se je končal. {0} Ali želite izklopiti Banshee in pognati namestilnik?"
+msgstr "Prejemanje posodobitve je končano. {0} Ali želite izklopiti Banshee in zagnati namestilnik?"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:167
 msgid "Update finished downloading"
@@ -1412,11 +1412,11 @@ msgstr "Ponovno preiskovanje {0} od {1}"
 
 #: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:232
 msgid "Upgrading your Banshee Database"
-msgstr "Nadgrajevanje podatkovne zbirke Banshee"
+msgstr "Nadgrajevanje podatkovne zbirke predvajalnika Banshee"
 
 #: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:233
 msgid "Please wait while your old Banshee database is migrated to the new format."
-msgstr "Počakajte, da se stara podatkovna zbirka Banshee pretvori v novo vrsto zapisa."
+msgstr "Počakajte, da se stara podatkovna zbirka predvajalnika Banshee pretvori v novejšo različico."
 
 #: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1392
 msgid "Refreshing Metadata"
@@ -1737,7 +1737,7 @@ msgstr "Privzeti programnik predvajalnika"
 
 #: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:106
 msgid "No player engines were found. Please ensure Banshee has been cleanly installed."
-msgstr "Programnikov predvajalnika ni mogoče najti. Prepričajte se, da je bil Banshee pravilno nameščen."
+msgstr "Programnikov predvajalnika ni mogoče najti. Prepričajte se, da je bil predvajalnik Banshee pravilno nameščen."
 
 #: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:373
 msgid "Problem with Player Engine"
@@ -1823,7 +1823,7 @@ msgstr "Išče po temu seznamu predvajanja"
 
 #: ../src/Core/Banshee.Services/Banshee.Playlist/AbstractPlaylistSource.cs:228
 msgid "The track's rating was set differently on the device and in Banshee"
-msgstr "Ocena skladbe v Banshee se razlikuje od ocene na napravi"
+msgstr "Ocena skladbe v predvajalniku Banshee se razlikuje od ocene na napravi"
 
 #: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:58
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:309
@@ -1893,7 +1893,7 @@ msgstr "Med uvažanjem _kopiraj datoteke v predstavnostne mape"
 
 #: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:69
 msgid "Improve Banshee by sending anonymous usage data"
-msgstr "Izboljšajte Banshee s pošiljanjem anonimnih podatkov o uporabi"
+msgstr "Izboljšajte predvajalnik Banshee s pošiljanjem anonimnih podatkov o uporabi"
 
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:63
 msgid "items"
@@ -2816,7 +2816,7 @@ msgstr "Sodelavci"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/AboutDialog.cs:96
 msgid "Extraordinary Multimedia Management and Playback"
-msgstr "Izredno upravljanje in predvajanje predstavnostnih datotek"
+msgstr "Izredno upravljanje in predvajanje predstavnih datotek"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/AboutDialog.cs:98
 #, csharp-format
@@ -2851,11 +2851,11 @@ msgstr "Nadaljuj izvajanje programa"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/DefaultApplicationHelperDialog.cs:69
 msgid "Make Banshee the default media player?"
-msgstr "Ali naj bo Banshee privzeti predvajalnik predstavnostnih datotek?"
+msgstr "Ali naj bo Banshee privzeti predvajalnik predstavnih datotek?"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/DefaultApplicationHelperDialog.cs:70
 msgid "Currently another program is configured as the default media player.  Would you prefer Banshee to be the default?"
-msgstr "Trenutno je kot privzeti predvajalnik predstavnostnih datotek nastavljen drug program. Ali želite, da Banshee postane privzeti program?"
+msgstr "Trenutno je kot privzeti predvajalnik predstavnih datotek nastavljen drug program. Ali želite, da predvajalnika Banshee postane privzeti program?"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/DefaultApplicationHelperDialog.cs:72
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:435
@@ -2865,7 +2865,7 @@ msgstr "Tega ne sprašuj več"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/DefaultApplicationHelperDialog.cs:86
 msgid "Make Banshee the Default"
-msgstr "Nastavi Banshee kot privzeti program"
+msgstr "Nastavi predvajalnik Banshee kot privzeti program"
 
 #. Translators: verb
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/FileChooserDialog.cs:53
@@ -4673,7 +4673,7 @@ msgstr "_Udarjaj"
 
 #: ../src/Extensions/Banshee.Bpm/Banshee.Bpm/BpmEntry.cs:112
 msgid "Have Banshee attempt to auto-detect the BPM of this song"
-msgstr "Naj Banshee poskusi samodejno zaznati UNM te skladbe"
+msgstr "Naj predvajalnik Banshee poskusi samodejno zaznati UNM te skladbe"
 
 #: ../src/Extensions/Banshee.Bpm/Banshee.Bpm/BpmEntry.cs:114
 msgid "Play this song"
@@ -5707,7 +5707,7 @@ msgstr "Vpis v Last.fm"
 
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:254
 msgid "Open Last.fm in a browser, giving you the option to authorize Banshee to work with your account"
-msgstr "Odpre Last.fm v brskalniku in vam ponudi možnost pooblastitve Banshee za delo z vašim računom"
+msgstr "Odpre Last.fm v brskalniku in vam ponudi možnost pooblastitve predvajalnika Banshee za delo z vašim računom"
 
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:265
 #: ../src/Libraries/Lastfm.Gui/Lastfm.Gui/AccountLoginDialog.cs:49
@@ -5718,7 +5718,7 @@ msgstr "Prijava v Last.fm"
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:294
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:321
 msgid "You need to allow Banshee to access your Last.fm account."
-msgstr "Banshee morate dovoliti dostop do vašega računa Last.fm."
+msgstr "Predvajalniku Banshee mora biti dodeljeno dovoljenje za dostop do vašega računa Last.fm."
 
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:296
 msgid "Finish Logging In"
@@ -5996,7 +5996,7 @@ msgstr "Knjižnica"
 
 #: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MediaPanelContents.cs:132
 msgid "Launch the Banshee Media Player"
-msgstr "Zaženi predvajalnik predstavnostnih datotek Banshee"
+msgstr "Zaženi predvajalnik predstavnih datotek Banshee"
 
 #: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MediaPanelContents.cs:165
 #: ../src/Extensions/Banshee.NowPlaying/Banshee.NowPlaying/NowPlayingSource.cs:50
@@ -6159,7 +6159,7 @@ msgstr "Predvajalnik iTunes"
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:134
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:394
 msgid "Banshee is not familiar with this version of the iTunes library format. Importing may or may not work as expected, or at all. Would you like to attempt to import anyway?"
-msgstr "Banshee ne pozna te različice zapisa knjižnice iTunes. Uvažanje morda ne bo delovalo po pričakovanjih ali pa sploh ne. Ali želite vseeno poskusiti z uvozom?"
+msgstr "Predvajalnik Banshee ne pozna te različice zapisa knjižnice iTunes. Uvoz morda ne bo deloval po pričakovanjih ali pa sploh ne. Ali želite vseeno poskusiti z uvozom?"
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:439
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:235
@@ -6453,7 +6453,7 @@ msgstr "Občasno preveri za nove epizode"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastFeedPropertiesDialog.cs:106
 msgid "If checked, Banshee will check every hour to see if this podcast has new episodes"
-msgstr "Izbrana možnost določi, da Banshee vsako uro preveri, če ima podcast nove epizode"
+msgstr "Izbrana možnost določi, da predvajalnik Banshee vsako uro preveri, če ima podcast nove epizode"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastFeedPropertiesDialog.cs:109
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastSubscribeDialog.cs:136
@@ -6568,7 +6568,7 @@ msgstr "_Prikaži Banshee v zvočnem meniju"
 
 #: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:363
 msgid "Control Banshee through the sound menu"
-msgstr "Nadzirajte Banshee v zvočnem meniju"
+msgstr "Nadzor predvajalnika Banshee v zvočnem meniju"
 
 #: ../src/Extensions/Banshee.SqlDebugConsole/Banshee.SqlDebugConsole/SqlActions.cs:59
 msgid "Show SQL Console"
@@ -6805,7 +6805,7 @@ msgstr "Pooblasti za Last.fm"
 
 #: ../src/Libraries/Lastfm/Lastfm/AudioscrobblerConnection.cs:449
 msgid "Last.fm username is invalid or Banshee is not authorized to access your account."
-msgstr "Uporabniško ime za Last.fm je neveljavno ali pa Banshee ni pooblaščen za dostop do vašega računa."
+msgstr "Uporabniško ime za Last.fm je neveljavno ali pa predvajalnik Banshee ni pooblaščen za dostop do vašega računa."
 
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:271
 msgid "This service does not exist."
@@ -6896,3 +6896,4 @@ msgstr "Povezano z Last.fm"
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:100
 msgid "Unknown Podcast"
 msgstr "Neznan podcast"
+
