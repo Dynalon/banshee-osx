@@ -142,8 +142,8 @@ namespace Banshee.Collection.Database
             SortQuery = (SortColumn == null || SortColumn.SortType == SortType.None)
                 ? (SortColumn != null && source is Banshee.Playlist.PlaylistSource)
                     ? "CorePlaylistEntries.ViewOrder ASC, CorePlaylistEntries.EntryID ASC"
-                    : BansheeQuery.GetSort ("Artist", true)
-                : BansheeQuery.GetSort (SortColumn.SortKey, SortColumn.SortType == SortType.Ascending);
+                    : BansheeQuery.GetSort (BansheeQuery.ArtistField, true)
+                : BansheeQuery.GetSort (SortColumn.Field, SortColumn.SortType == SortType.Ascending);
         }
 
         private SortType last_sort_type = SortType.None;

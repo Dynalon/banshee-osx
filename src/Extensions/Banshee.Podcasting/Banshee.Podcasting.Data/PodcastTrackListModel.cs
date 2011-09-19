@@ -80,9 +80,14 @@ namespace Banshee.Podcasting.Gui
 
         protected override void GenerateSortQueryPart ()
         {
+            bool asc = SortColumn.SortType == Hyena.Data.SortType.Ascending;
             SortQuery = (SortColumn == null)
                 ? GetSort ("PublishedDate", false)
-                : GetSort (SortColumn.SortKey, SortColumn.SortType == Hyena.Data.SortType.Ascending);
+                : GetSort (SortColumn.SortKey, asc);
+
+            if (SortQuery == null) {
+                SortQuery =  Banshee.Query.BansheeQuery.GetSort (SortColumn.Field, asc);
+            }
         }
 
         public override void UpdateUnfilteredAggregates ()
@@ -124,7 +129,7 @@ namespace Banshee.Podcasting.Gui
                     break;
             }
 
-            return sort_query ?? Banshee.Query.BansheeQuery.GetSort (key, asc);
+            return sort_query;
         }
     }
 }
