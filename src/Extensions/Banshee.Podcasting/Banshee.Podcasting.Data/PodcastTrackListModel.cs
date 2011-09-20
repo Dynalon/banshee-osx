@@ -80,13 +80,15 @@ namespace Banshee.Podcasting.Gui
 
         protected override void GenerateSortQueryPart ()
         {
-            bool asc = SortColumn.SortType == Hyena.Data.SortType.Ascending;
-            SortQuery = (SortColumn == null)
-                ? GetSort ("PublishedDate", false)
-                : GetSort (SortColumn.SortKey, asc);
-
-            if (SortQuery == null) {
-                SortQuery =  Banshee.Query.BansheeQuery.GetSort (SortColumn.Field, asc);
+            bool asc = false;
+            if (SortColumn == null) {
+                SortQuery = GetSort ("PublishedDate", asc);
+            } else {
+                asc = SortColumn.SortType == Hyena.Data.SortType.Ascending;
+                SortQuery = GetSort (SortColumn.SortKey, asc);
+                if (SortQuery == null && SortColumn.Field != null) {
+                    SortQuery =  Banshee.Query.BansheeQuery.GetSort (SortColumn.Field, asc);
+                }
             }
         }
 
