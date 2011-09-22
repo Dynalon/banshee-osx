@@ -58,7 +58,8 @@ namespace Banshee.Preferences
                 Catalog.GetString ("Co_py files to media folders when importing")));
 
             policies.Add (Banshee.Metadata.SaveTrackMetadataService.WriteMetadataEnabled);
-            policies.Add (Banshee.Metadata.SaveTrackMetadataService.WriteRatingsAndPlayCountsEnabled);
+            policies.Add (Banshee.Metadata.SaveTrackMetadataService.WriteRatingsEnabled);
+            policies.Add (Banshee.Metadata.SaveTrackMetadataService.WritePlayCountsEnabled);
             policies.Add (Banshee.Metadata.SaveTrackMetadataService.RenameEnabled);
 
             // Misc section

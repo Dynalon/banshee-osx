@@ -282,7 +282,7 @@ namespace Banshee.Streaming
             } catch {}
         }
 
-        public static bool SaveToFile (TrackInfo track, bool write_metadata, bool write_rating_and_play_count)
+        public static bool SaveToFile (TrackInfo track, bool write_metadata, bool write_rating, bool write_play_count)
         {
             // Note: this should be kept in sync with the metadata read in StreamTagger.cs
             TagLib.File file = ProcessUri (track.Uri);
@@ -321,9 +321,12 @@ namespace Banshee.Streaming
                 SaveIsCompilation (file, track.IsCompilation);
             }
 
-            if (write_rating_and_play_count) {
+            if (write_rating) {
                 // FIXME move StreamRatingTagger to taglib#
-                StreamRatingTagger.StoreRatingAndPlayCount (track.Rating, track.PlayCount, file);
+                StreamRatingTagger.StoreRating (track.Rating, file);
+            }
+            if (write_play_count){
+                StreamRatingTagger.StorePlayCount (track.PlayCount,file);
             }
 
             file.Save ();

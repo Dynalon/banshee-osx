@@ -89,15 +89,19 @@ namespace Banshee.Collection.Database
                 BansheeQuery.RatingField
             };
             Action<Root> handler = delegate {
-                if (SaveTrackMetadataService.WriteRatingsAndPlayCountsEnabled.Value) {
-                    transient_fields.Remove (BansheeQuery.PlayCountField);
+                if (SaveTrackMetadataService.WriteRatingsEnabled.Value) {
                     transient_fields.Remove (BansheeQuery.RatingField);
                 } else {
-                    transient_fields.Add (BansheeQuery.PlayCountField);
                     transient_fields.Add (BansheeQuery.RatingField);
                 }
+                if (SaveTrackMetadataService.WritePlayCountsEnabled.Value) {
+                    transient_fields.Remove (BansheeQuery.PlayCountField);
+                } else {
+                    transient_fields.Add (BansheeQuery.PlayCountField);
+                }
             };
-            SaveTrackMetadataService.WriteRatingsAndPlayCountsEnabled.ValueChanged += handler;
+            SaveTrackMetadataService.WritePlayCountsEnabled.ValueChanged += handler;
+            SaveTrackMetadataService.WriteRatingsEnabled.ValueChanged += handler;
             handler (null);
         }
 
