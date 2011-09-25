@@ -15,14 +15,14 @@ msgstr ""
 "Project-Id-Version: banshee master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-05-07 19:58+0000\n"
-"PO-Revision-Date: 2011-05-04 19:22+0900\n"
-"Last-Translator: Hajime Taira <htaira@redhat.com>\n"
+"POT-Creation-Date: 2011-09-25 09:18+0000\n"
+"PO-Revision-Date: 2011-09-25 18:41+0900\n"
+"Last-Translator: Kentaro KAZUHAMA <kazken3@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
-"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice.addin.xml
@@ -353,9 +353,9 @@ msgstr "ポッドキャストからBitTorrentファイルのダウンロード�
 
 #. ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore.addin.xml
 #: ../data/addin-xml-strings.cs:163
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:52
 #: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:53
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:109
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:54
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:140
 msgid "Ubuntu One Music Store"
 msgstr "Ubuntu One Music Store"
 
@@ -619,6 +619,7 @@ msgid "Play and organize your media collection"
 msgstr "メディアコレクションを再生したりまとめたりします"
 
 #: ../libbanshee/banshee-bpmdetector.c:202 ../libbanshee/banshee-ripper.c:270
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:240
 msgid "Could not create pipeline"
 msgstr "パイプラインを生成できませんでした"
 
@@ -644,10 +645,12 @@ msgstr "fakesinkプラグインを生成できませんでした"
 
 #: ../libbanshee/banshee-bpmdetector.c:241
 #: ../libbanshee/banshee-bpmdetector.c:250 ../libbanshee/banshee-ripper.c:311
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:281
 msgid "Could not link pipeline elements"
 msgstr "パイプラインエレメントへのリンクを生成できませんでした"
 
 #: ../libbanshee/banshee-ripper.c:276
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:246
 msgid "Could not initialize element from cdda URI"
 msgstr "cdda URIからエレメント初期化できませんでした"
 
@@ -656,22 +659,27 @@ msgid "Could not create encoder pipeline"
 msgstr "エンコーダ用のパイプラインを生成できませんでした"
 
 #: ../libbanshee/banshee-ripper.c:296
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:266
 msgid "Could not create queue plugin"
 msgstr "queueプラグインを生成できませんでした"
 
 #: ../libbanshee/banshee-ripper.c:304
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:274
 msgid "Could not create filesink plugin"
 msgstr "filesinkプラグインを生成できませんでした"
 
 #: ../libbanshee/banshee-transcoder.c:240
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:181
 msgid "Could not create source element"
 msgstr "sourceエレメントを生成できません"
 
 #: ../libbanshee/banshee-transcoder.c:246
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:187
 msgid "Could not create 'decodebin2' plugin"
 msgstr " 'decodebin2'プラグインを生成できませんでした"
 
 #: ../libbanshee/banshee-transcoder.c:252
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:63
 msgid "Could not create sink element"
 msgstr "sinkエレメントを生成できません"
 
@@ -680,10 +688,12 @@ msgid "Could not create 'sinkben' plugin"
 msgstr " 'sinkben'プラグインを生成できませんでした"
 
 #: ../libbanshee/banshee-transcoder.c:264
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:68
 msgid "Could not create 'audioconvert' plugin"
 msgstr " 'audioconvert'プラグインを生成できませんでした"
 
 #: ../libbanshee/banshee-transcoder.c:270
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:73
 msgid "Could not create 'audioresample' plugin"
 msgstr " 'audioconvert'プラグインを生成できませんでした"
 
@@ -692,10 +702,12 @@ msgid "Could not create encoding pipeline"
 msgstr "エンコード用のパイプラインを生成できませんでした"
 
 #: ../libbanshee/banshee-transcoder.c:282
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:85
 msgid "Could not get sink pad from encoder"
 msgstr "エンコーダからsink padを取得できませんでした"
 
 #: ../libbanshee/banshee-transcoder.c:345
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:269
 msgid "Could not construct pipeline"
 msgstr "パイプラインを構築できませんでした"
 
@@ -720,6 +732,7 @@ msgid "Fullscreen video playback active"
 msgstr "フルスクリーンのビデオ再生がアクティブです"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/AudioCdRipper.cs:89
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:96
 msgid "Could not find an encoder for ripping."
 msgstr "リッピング用のエンコーダを見つけることができませんでした。"
 
@@ -728,6 +741,7 @@ msgid "Could not create CD ripping driver."
 msgstr "CDリッピングドライバを生成できませんでした。"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/BpmDetector.cs:71
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/BpmDetector.cs:107
 msgid "Could not create BPM detection driver."
 msgstr "BPM検出ドライバを生成できませんでした。"
 
@@ -750,15 +764,17 @@ msgid "Could not initialize GStreamer library"
 msgstr "GStreamerライブラリを初期化できませんでした"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:451
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:147
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:547
 msgid "Unknown Error"
 msgstr "未知のエラー"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:823
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:905
 msgid "_Enable ReplayGain correction"
 msgstr "ReplayGain補正を有効にする(_E)"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:824
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:906
 msgid ""
 "For tracks that have ReplayGain data, automatically scale (normalize) "
 "playback volume"
@@ -777,9 +793,23 @@ msgstr ""
 msgid "Could not create transcoder"
 msgstr "エンコーダを生成できませんでした"
 
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:348
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:259
+#, csharp-format
+msgid "Could not create encoder pipeline : {0}"
+msgstr "エンコーダ用のパイプラインを生成できませんでした : {0}"
+
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:792
 msgid "GStreamer# 0.10"
 msgstr "GStreamer# 0.10"
+
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:79
+#, csharp-format
+msgid "Could not create encoding pipeline : {0}"
+msgstr "エンコード用のパイプラインを生成できませんでしたi : {0}"
+
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:198
+msgid "Could not create 'sinkbin' plugin"
+msgstr " 'sinkbin'プラグインを生成できませんでした"
 
 #: ../src/Backends/Banshee.Osx/Banshee.OsxBackend/OsxService.cs:91
 #: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:132
@@ -794,6 +824,69 @@ msgstr "閉じる(_C)"
 #: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:111
 msgid "Close"
 msgstr "閉じる"
+
+#: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:72
+msgid "Can't check for updates"
+msgstr "アップデートを確認できません"
+
+#: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:73
+msgid ""
+"We're currently not able to check if there's a new version available. Please "
+"try again later."
+msgstr ""
+"新しいバージョンが提供されているか確認することができません。しばらくしてから"
+"もう一度お試しください。"
+
+#: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:95
+msgid "No update available"
+msgstr "アップデートはありません"
+
+#: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:95
+msgid "You already have the latest version of Banshee installed."
+msgstr ""
+"お使いの環境にはBansheeの最新バージョンがすでにインストールされています。"
+
+#: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:106
+#, csharp-format
+msgid "A new version of Banshee ({0}) is available.{1}Do you want to update?"
+msgstr ""
+"Bansheeの新しいバージョン ({0}) が提供されています。{1}アップデートを行います"
+"か?"
+
+#: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:108
+msgid "Banshee update available"
+msgstr "Bansheeのアップデートがあります"
+
+#. Translators: {0} is the filename, eg Banshee-1.9.5.msi
+#: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:129
+#, csharp-format
+msgid "Downloading {0}"
+msgstr "{0} をダウンロード中"
+
+#: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:152
+msgid "Update download failed"
+msgstr "アップデートのダウンロードに失敗しました"
+
+#: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:152
+msgid "The download failed. Please try again later."
+msgstr "ダウンロードに失敗しました。しばらくしてからもう一度お試しください。"
+
+#: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:165
+#, csharp-format
+msgid ""
+"The update finished downloading.{0}Do you want to shutdown Banshee and run "
+"the installer?"
+msgstr ""
+"{0} のアップデートのダウンロードを完了しました。Bansheeを終了してインストー"
+"ラーを起動しますか?"
+
+#: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:167
+msgid "Update finished downloading"
+msgstr "アップデートのダウンロードを完了しました"
+
+#: ../src/Backends/Banshee.Windows/Banshee.Windows/WindowsService.cs:109
+msgid "Check for Updates"
+msgstr "アップデートをチェック"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:152
 msgid "Help Options"
@@ -957,13 +1050,13 @@ msgstr "時間"
 
 #. Translators: noun
 #: ../src/Clients/Booter/Booter/Entry.cs:194
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:117
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:119
 msgid "Track Number"
 msgstr "トラック番号"
 
 #. Translators: noun
 #: ../src/Clients/Booter/Booter/Entry.cs:195
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:126
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:128
 msgid "Track Count"
 msgstr "トラック数"
 
@@ -976,7 +1069,7 @@ msgstr "ディスク番号"
 #: ../src/Clients/Booter/Booter/Entry.cs:197
 #: ../src/Clients/Nereid/Nereid/ViewContainer.cs:142
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:113
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:177
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:179
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:78
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/SearchView.cs:132
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Field.cs:77
@@ -985,7 +1078,7 @@ msgid "Year"
 msgstr "年"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:198
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:230
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:232
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/SearchView.cs:131
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Field.cs:60
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Sort.cs:96
@@ -993,13 +1086,13 @@ msgid "Rating"
 msgstr "評価"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:199
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:322
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:324
 msgid "Score"
 msgstr "スコア"
 
 #. Translators: noun
 #: ../src/Clients/Booter/Booter/Entry.cs:200
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:143
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:145
 msgid "Bit Rate"
 msgstr "ビットレート"
 
@@ -1060,10 +1153,14 @@ msgid "Specify an alternate database to use"
 msgstr "利用する代わりのデータベースを指定する"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:219
+msgid "Force fetching of missing cover artwork"
+msgstr "失ったカバーアートを強制的に取得"
+
+#: ../src/Clients/Booter/Booter/Entry.cs:220
 msgid "Specify an alternate key, default is /apps/banshee-1/"
 msgstr "代替キーを指定します。デフォルトは /apps/banshee-1/ です"
 
-#: ../src/Clients/Booter/Booter/Entry.cs:220
+#: ../src/Clients/Booter/Booter/Entry.cs:221
 msgid ""
 "Optimize instance for running uninstalled; most notably, this will create an "
 "alternate Mono.Addins database in the working directory"
@@ -1071,18 +1168,18 @@ msgstr ""
 "アンインストール実行時のインスタンス最適化をおこないます。とりわけ作業ディレ"
 "クトリでMono.Addinsデータベースの代わりを作成します"
 
-#: ../src/Clients/Booter/Booter/Entry.cs:222
+#: ../src/Clients/Booter/Booter/Entry.cs:223
 msgid "Disable DBus support completely"
 msgstr "DBusサポートを完全に無効にする"
 
-#: ../src/Clients/Booter/Booter/Entry.cs:224
+#: ../src/Clients/Booter/Booter/Entry.cs:225
 #, csharp-format
 msgid "Skip loading a custom gtkrc file ({0}) if it exists"
 msgstr ""
 "gtkrcファイルが存在する場合、カスタムのgtkrcファイル({0})のロードをスキップす"
 "る"
 
-#: ../src/Clients/Booter/Booter/Entry.cs:255
+#: ../src/Clients/Booter/Booter/Entry.cs:256
 #, csharp-format
 msgid "The following help arguments are invalid: {0}"
 msgstr "以下のヘルプ引数は無効です: {0}"
@@ -1141,21 +1238,21 @@ msgstr "アーティスト、アルバム、タイトル"
 #: ../src/Clients/Nereid/Nereid/ViewContainer.cs:139
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:72
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:78
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:82
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:84
 msgid "Album Artist"
 msgstr "アーティスト"
 
 #: ../src/Clients/Nereid/Nereid/ViewContainer.cs:141
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:98
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:185
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:364
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:187
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:366
 #: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/SearchEntry.cs:91
 msgid "Genre"
 msgstr "ジャンル"
 
 #. Translators: noun
 #: ../src/Clients/Nereid/Nereid/ViewContainer.cs:143
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:214
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:216
 msgid "Comment"
 msgstr "コメント"
 
@@ -1347,7 +1444,7 @@ msgid "Scanning for media"
 msgstr "メディアをスキャンしています"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection/ImportManager.cs:188
-#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1384
+#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1395
 msgid "Scanning..."
 msgstr "スキャン中..."
 
@@ -1387,7 +1484,7 @@ msgid ""
 msgstr ""
 "古いBansheeデータベースが新しいフォーマットに移るまでの間お待ちください。"
 
-#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1381
+#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1392
 msgid "Refreshing Metadata"
 msgstr "メタデータの更新"
 
@@ -1448,14 +1545,18 @@ msgid "Ska"
 msgstr "スカ"
 
 #: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:294
+msgid "Smiley Face Curve"
+msgstr "Smiley Face Curve"
+
+#: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:297
 msgid "Soft"
 msgstr "ソフト"
 
-#: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:297
+#: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:300
 msgid "Soft Rock"
 msgstr "ソフトロック"
 
-#: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:300
+#: ../src/Core/Banshee.Services/Banshee.Equalizer/EqualizerManager.cs:303
 msgid "Techno"
 msgstr "テクノ"
 
@@ -1478,18 +1579,18 @@ msgid "Album Artist Initial"
 msgstr "アルバム・アーティストの頭文字"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:88
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:199
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:201
 msgid "Conductor"
 msgstr "指揮者"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:93
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:192
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:194
 msgid "Composer"
 msgstr "作曲者"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:103
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:92
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:360
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:94
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:362
 msgid "Album"
 msgstr "アルバム"
 
@@ -1522,13 +1623,13 @@ msgid "Number (unsorted)"
 msgstr "トラック番号(未ソート)"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:143
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:108
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:110
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:108
 msgid "Disc Count"
 msgstr "ディスク数"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:155
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:206
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:208
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:120
 msgid "Grouping"
 msgstr "グループ"
@@ -1545,7 +1646,7 @@ msgstr "音楽を検索"
 
 #. Misc section
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:80
-#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:65
+#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:66
 msgid "Miscellaneous"
 msgstr "その他のセクション"
 
@@ -1690,11 +1791,11 @@ msgstr "注目されていない"
 msgid "Videos that haven't been played yet"
 msgstr "まだ再生されていないビデオ"
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:98
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:99
 msgid "Default player engine"
 msgstr "デフォルト再生エンジン"
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:105
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:106
 msgid ""
 "No player engines were found. Please ensure Banshee has been cleanly "
 "installed."
@@ -1702,7 +1803,7 @@ msgstr ""
 "再生エンジンが見つかりませんでした。Bansheeが正しくインストールされているかど"
 "うか確認してください。"
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:349
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:373
 msgid "Problem with Player Engine"
 msgstr "再生エンジンでエラー"
 
@@ -1734,27 +1835,39 @@ msgid "Save tags and other metadata inside supported media files"
 msgstr "タグや他のメタデータをサポートしているメディアファイル内に保存します"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:55
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:174
-msgid "Write _ratings and play counts to files"
-msgstr "評価と再生数をファイルに書き込む(_R)"
+msgid "Write _ratings to files"
+msgstr "ファイルに評価を書き込む(_R)"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:56
-msgid ""
-"Enable this option to save rating and playcount metadata inside supported "
-"audio files"
+msgid "Enable this option to save rating metadata inside supported audio files"
 msgstr ""
-"評価と再生数をメタデータでサポートしているオーディオファイルに保存するにはこ"
-"のオプションを有効にします"
+"評価をメタデータでサポートしているオーディオファイルに保存するにはこのオプ"
+"ションを有効にします"
 
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:60
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:61
+msgid "Write play counts to files"
+msgstr "再生数をファイルに書き込む"
+
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:62
+msgid ""
+"Enable this option to save playcount metadata inside supported audio files"
+msgstr ""
+"再生数をメタデータでサポートしているオーディオファイルに保存するにはこのオプ"
+"ションを有効にします"
+
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:67
 msgid "_Update file and folder names"
 msgstr "ファイルとフォルダー名をアップデートする(_U)"
 
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:61
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:68
 msgid "Rename files and folders according to media metadata"
 msgstr "メディアのメタデータに従いファイルとフォルダー名を変更します"
 
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:175
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:184
+msgid "Write _ratings and play counts to files"
+msgstr "評価と再生数をファイルに書き込む(_R)"
+
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:185
 msgid ""
 "Enable this option to save rating and play count metadata inside supported "
 "audio files whenever the rating is changed."
@@ -1762,11 +1875,11 @@ msgstr ""
 "評価が変更されたらいつでも、サポートされた音楽ファイルの内部にあるメタデータ"
 "に評価と再生数を保存するにはこのオプションを有効にします。"
 
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:176
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:186
 msgid "Import _ratings"
 msgstr "評価のインポート(_R)"
 
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:177
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:187
 msgid "Import play _counts"
 msgstr "再生数のインポート(_C)"
 
@@ -1803,7 +1916,7 @@ msgid "The track's rating was set differently on the device and in Banshee"
 msgstr "このトラックの評価はデバイスとBansheeで異なっています"
 
 #: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:58
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:309
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:311
 msgid "Playlist"
 msgstr "プレイリスト"
 
@@ -1868,241 +1981,241 @@ msgstr "ファイルポリシー"
 msgid "Co_py files to media folders when importing"
 msgstr "インポートしたファイルをメディアフォルダーへコピーする(_P)"
 
-#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:69
+#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:70
 msgid "Improve Banshee by sending anonymous usage data"
 msgstr "匿名の利用データを送信してBansheeの改良に役立てる"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:63
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:65
 msgid "items"
 msgstr "アイテム"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:64
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:66
 #: ../src/Hyena/Hyena.Gui/Hyena.Query.Gui/TimeSpanQueryValueEntry.cs:60
 msgid "minutes"
 msgstr "分"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:65
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:67
 #: ../src/Hyena/Hyena.Gui/Hyena.Query.Gui/TimeSpanQueryValueEntry.cs:61
 msgid "hours"
 msgstr "時間"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:66
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:68
 #: ../src/Hyena/Hyena.Gui/Hyena.Query.Gui/FileSizeQueryValueEntry.cs:63
 msgid "MB"
 msgstr "MB"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:67
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:69
 #: ../src/Hyena/Hyena.Gui/Hyena.Query.Gui/FileSizeQueryValueEntry.cs:64
 msgid "GB"
 msgstr "GB"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:74
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:361
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:76
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:363
 msgid "Artist"
 msgstr "アーティスト"
 
 #. Translators: These are unique search aliases for "artist". You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:76
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:78
 msgid "artist"
 msgstr "artist"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:76
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:78
 msgid "by"
 msgstr "by"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:76
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:78
 msgid "artists"
 msgstr "artists"
 
 #. Translators: These are unique search aliases for "album artist". You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:84
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:86
 msgid "albumartist"
 msgstr "albumartist"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:84
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:86
 msgid "compilationartist"
 msgstr "compilationartist"
 
 #. Translators: These are unique search aliases for "album". You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:94
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:96
 msgid "album"
 msgstr "album"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:94
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:96
 msgid "on"
 msgstr "on"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:94
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:96
 msgid "from"
 msgstr "from"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:100
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:102
 msgid "Disc"
 msgstr "ディスク"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:102
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:104
 msgid "disc"
 msgstr "disc"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:102
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:104
 msgid "cd"
 msgstr "cd"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:102
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:104
 msgid "discnum"
 msgstr "discnum"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:110
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:112
 msgid "discs"
 msgstr "discs"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:110
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:112
 msgid "cds"
 msgstr "cds"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:119
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:121
 msgid "track"
 msgstr "track"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:119
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:121
 msgid "trackno"
 msgstr "trackno"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:119
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:121
 msgid "tracknum"
 msgstr "tracknum"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:128
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:130
 msgid "tracks"
 msgstr "tracks"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:128
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:130
 msgid "trackcount"
 msgstr "trackcount"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:134
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:136
 msgid "Beats per Minute"
 msgstr "BPM"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:136
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:138
 msgid "bpm"
 msgstr "bpm"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:145
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:147
 msgid "bitrate"
 msgstr "bitrate"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:145
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:147
 msgid "kbs"
 msgstr "kbs"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:145
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:147
 msgid "kps"
 msgstr "kps"
 
 #. Translators: noun
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:152
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:154
 msgid "Sample Rate"
 msgstr "サンプルレート"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:154
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:156
 msgid "samplerate"
 msgstr "samplerate"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:154
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:156
 msgid "Hz"
 msgstr "Hz"
 
 #. Translators: noun
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:161
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:163
 msgid "Bits Per Sample"
 msgstr "Bits Per Sample"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:163
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:165
 msgid "bitspersample"
 msgstr "bitspersample"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:163
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:165
 msgid "bitdepth"
 msgstr "bitdepth"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:163
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:165
 msgid "quantization"
 msgstr "quantization"
 
 #. Translators: noun
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:169
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:363
-#: ../src/Core/Banshee.Services/Banshee.Sources/Source.cs:666
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:171
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:365
+#: ../src/Core/Banshee.Services/Banshee.Sources/Source.cs:668
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:95
 msgid "Name"
 msgstr "タイトル"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:171
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:173
 msgid "title"
 msgstr "title"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:171
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:173
 msgid "titled"
 msgstr "titled"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:171
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:173
 msgid "name"
 msgstr "name"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:171
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:173
 msgid "named"
 msgstr "named"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:179
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:181
 msgid "year"
 msgstr "year"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:179
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:181
 msgid "released"
 msgstr "released"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:179
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:181
 msgid "yr"
 msgstr "yr"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:187
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:189
 msgid "genre"
 msgstr "genre"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:194
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:196
 msgid "composer"
 msgstr "composer"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:201
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:203
 msgid "conductor"
 msgstr "conductor"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:208
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:210
 msgid "grouping"
 msgstr "grouping"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:216
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:218
 msgid "comment"
 msgstr "comment"
 
 #. Translators: noun
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:222
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:224
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/SearchView.cs:135
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Field.cs:71
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Field.cs:72
@@ -2110,264 +2223,264 @@ msgid "License"
 msgstr "ライセンス"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:224
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:226
 msgid "license"
 msgstr "license"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:224
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:226
 msgid "licensed"
 msgstr "licensed"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:224
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:226
 msgid "under"
 msgstr "under"
 
 #. , typeof(NullQueryValue)},
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:232
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:234
 msgid "rating"
 msgstr "rating"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:232
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:234
 msgid "stars"
 msgstr "stars"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:238
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:240
 msgid "Play Count"
 msgstr "再生数"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:240
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:242
 msgid "plays"
 msgstr "plays"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:240
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:242
 msgid "playcount"
 msgstr "playcount"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:240
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:242
 msgid "listens"
 msgstr "listens"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:246
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:248
 msgid "Skip Count"
 msgstr "スキップ数"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:248
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:250
 msgid "skips"
 msgstr "skips"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:248
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:250
 msgid "skipcount"
 msgstr "skipcount"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:254
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:256
 msgid "File Size"
 msgstr "ファイルサイズ"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:256
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:258
 msgid "size"
 msgstr "size"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:256
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:258
 msgid "filesize"
 msgstr "ファイルサイズ"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:262
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:264
 msgid "File Location"
 msgstr "ファイルの場所"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:264
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:266
 msgid "uri"
 msgstr "uri"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:264
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:266
 msgid "path"
 msgstr "path"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:264
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:266
 msgid "file"
 msgstr "file"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:264
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:266
 msgid "location"
 msgstr "location"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:270
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:272
 msgid "Time"
 msgstr "再生時間"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:272
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:274
 msgid "duration"
 msgstr "duration"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:272
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:274
 msgid "length"
 msgstr "length"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:272
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:274
 msgid "time"
 msgstr "time"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:278
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:280
 msgid "Mime Type"
 msgstr "MIME型"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:280
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:282
 msgid "type"
 msgstr "type"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:280
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:282
 msgid "mimetype"
 msgstr "mimetype"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:280
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:282
 msgid "format"
 msgstr "format"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:280
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:282
 msgid "ext"
 msgstr "ext"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:286
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:288
 msgid "Last Played"
 msgstr "最終再生日時"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:288
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:290
 msgid "lastplayed"
 msgstr "lastplayed"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:288
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:290
 msgid "played"
 msgstr "played"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:288
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:290
 msgid "playedon"
 msgstr "playedon"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:294
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:296
 msgid "Last Skipped"
 msgstr "最後にスキップ"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:296
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:298
 msgid "lastskipped"
 msgstr "lastskipped"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:296
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:298
 msgid "skipped"
 msgstr "skipped"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:296
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:298
 msgid "skippedon"
 msgstr "skippedon"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:302
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:304
 msgid "Date Added"
 msgstr "追加された日時"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:304
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:306
 msgid "added"
 msgstr "added"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:304
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:306
 msgid "imported"
 msgstr "imported"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:304
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:306
 msgid "addedon"
 msgstr "addedon"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:304
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:306
 msgid "dateadded"
 msgstr "dateadded"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:304
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:306
 msgid "importedon"
 msgstr "importedon"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:315
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:317
 #: ../src/Core/Banshee.Services/Banshee.SmartPlaylist/SmartPlaylistSource.cs:65
 msgid "Smart Playlist"
 msgstr "スマートプレイリスト"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:324
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:326
 msgid "score"
 msgstr "score"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:330
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:332
 msgid "Playback Error"
 msgstr "再生エラー"
 
 #. Translators: These are unique search fields (and nouns). Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:332
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:334
 msgid "playbackerror"
 msgstr "playbackerror"
 
 #. Translators: noun
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:349
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:351
 msgid "BPM"
 msgstr "BPM"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:350
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:352
 msgid "Skips"
 msgstr "Skips"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:351
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:353
 msgid "Plays"
 msgstr "再生"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:356
-msgid "Random"
-msgstr "ランダム"
-
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:366
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:368
 msgid "Highest Rating"
 msgstr "最も高い評価"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:367
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:369
 msgid "Lowest Rating"
 msgstr "最も低い評価"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:369
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:371
 msgid "Highest Score"
 msgstr "最高のスコア"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:370
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:372
 msgid "Lowest Score"
 msgstr "最低のスコア"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:372
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:374
 msgid "Most Often Played"
 msgstr "最も頻繁に再生されている"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:373
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:375
 msgid "Least Often Played"
 msgstr "ほとんど再生されていない"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:375
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:377
 msgid "Most Recently Played"
 msgstr "再生日時が最近"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:376
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:378
 msgid "Least Recently Played"
 msgstr "再生日時が最も古い"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:378
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:380
 msgid "Most Recently Added"
 msgstr "追加日時が最近"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:379
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:381
 msgid "Least Recently Added"
 msgstr "追加日時が最も古い"
+
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:525
+msgid "Random"
+msgstr "ランダム"
 
 #. Translators: These are unique strings for playback errors. Please, no spaces. Blank ok.
 #: ../src/Core/Banshee.Services/Banshee.Query/PlaybackErrorQueryValue.cs:44
@@ -2456,7 +2569,7 @@ msgid "Delete Smart Playlist"
 msgstr "スマートプレイリストを削除"
 
 #: ../src/Core/Banshee.Services/Banshee.Sources/DatabaseSource.cs:148
-#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:160
+#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:161
 #, csharp-format
 msgid "All Genres ({0})"
 msgstr "すべてのジャンル ({0})"
@@ -2544,15 +2657,15 @@ msgstr "{2}に{1}の{0}を追加しています"
 msgid "Deleting {0} of {1} From {2}"
 msgstr "{2}から{1}の{0}を削除しています"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/Source.cs:671
+#: ../src/Core/Banshee.Services/Banshee.Sources/Source.cs:673
 msgid "Size Ascending"
-msgstr "サイズによる昇順"
+msgstr "サイズで昇順"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/Source.cs:676
+#: ../src/Core/Banshee.Services/Banshee.Sources/Source.cs:678
 msgid "Size Descending"
-msgstr "サイズによる降順"
+msgstr "サイズで降順"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/Source.cs:789
+#: ../src/Core/Banshee.Services/Banshee.Sources/Source.cs:791
 #, csharp-format
 msgid "{0} item"
 msgid_plural "{0} items"
@@ -2562,13 +2675,13 @@ msgstr[0] "{0} 個のアイテム"
 #. things that depend on being loaded before the music library is added.
 #. AddSource (music_library = new MusicLibrarySource (), true);
 #. AddSource (video_library = new VideoLibrarySource (), false);
-#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:84
-msgid "Libraries"
-msgstr "ライブラリ"
-
-#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:85
+#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:86
 msgid "Online Media"
 msgstr "オンラインメディア"
+
+#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:87
+msgid "Libraries"
+msgstr "ライブラリ"
 
 #: ../src/Core/Banshee.Services/Banshee.Streaming/RadioTrackInfo.cs:82
 #: ../src/Core/Banshee.Services/Banshee.Streaming/RadioTrackInfo.cs:91
@@ -3162,7 +3275,7 @@ msgstr "プレイリストのエクスポート"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:101
 msgid "Unmap"
-msgstr "Unmap"
+msgstr "アンマップ"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:104
 msgid "Source Properties"
@@ -3170,7 +3283,7 @@ msgstr "ソースプロパティ"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:107
 msgid "Sort Children by"
-msgstr "子要素でソート"
+msgstr "種類をソート"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:111
 msgid "Switch Source"
@@ -3683,11 +3796,11 @@ msgstr "アーティスト:"
 msgid "Album:"
 msgstr "アルバム:"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:313
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:314
 msgid "Sync all field _values"
 msgstr "すべてのフィールドの値を同期する(_V)"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:318
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:319
 msgid ""
 "Apply the values of all common fields set for this track to all of the "
 "tracks selected in this editor"
@@ -3695,22 +3808,22 @@ msgstr ""
 "このエディターで選択したすべてのトラックに、このトラックに設定した値を適用し"
 "ます"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:418
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:419
 #, csharp-format
 msgid "<i>Editing {0} of {1} items</i>"
 msgstr "<i>{1}曲中{0}曲目を編集中</i>"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:698
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:699
 #, csharp-format
 msgid "Save the changes made to the open track?"
 msgid_plural "Save the changes made to {0} of {1} open tracks?"
 msgstr[0] "{1}個のオープントラック中の{0}個の変更を保存しますか?"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:715
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:716
 msgid "Close _without Saving"
 msgstr "保存しないで閉じる(_W)"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:752
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:753
 #, csharp-format
 msgid "If you don't save, changes from the last {0} will be permanently lost."
 msgstr "セーブを行わない場合、{0}前の変更は失われます。"
@@ -4098,29 +4211,29 @@ msgstr "カバーアートをサポート"
 msgid "Supports photos"
 msgstr "写真のサポート"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:452
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:453
 msgid "Track duration is zero"
 msgstr "トラックの時間が0です"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:555
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:556
 msgid "Syncing iPod"
 msgstr "iPodとの同期"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:556
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:557
 msgid "Preparing to synchronize..."
 msgstr "同期の準備中..."
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:559
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:560
 #, csharp-format
 msgid "Adding track {0} of {1}"
 msgstr "追加中 {1} 曲中 {0} 曲目"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:595
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:596
 #, csharp-format
 msgid "Removing track {0} of {1}"
 msgstr "{1}曲中{0}曲目を削除しています"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:648
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:649
 msgid "Writing media database"
 msgstr "メディアデータベースを書き込み中"
 
@@ -4136,9 +4249,7 @@ msgid "{0} to add, {1} to remove, {2} to update"
 msgstr "{0} の追加、 {1} の削除、 {2} のアップデート"
 
 #. This group source gives us a seperator for DAPs in the source view.
-#. We add it when we get our first dap source, and then remove it when
-#. we lose the last one.
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapService.cs:63
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapService.cs:64
 msgid "Devices"
 msgstr "デバイス"
 
@@ -4339,12 +4450,8 @@ msgid "Error Initializing MTP Device Support"
 msgstr "MTPデバイスサポートの初期化エラー"
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:83
-msgid ""
-"There was an error intializing MTP device support.  See http://www.banshee-"
-"project.org/Guide/DAPs/MTP for more information."
-msgstr ""
-"MTPデバイスサポートの初期化でエラーがあります。更なる情報は http://www."
-"banshee-project.org/Guide/DAPs/MTP を見てください。"
+msgid "There was an error intializing MTP device support."
+msgstr "MTPデバイスサポートの初期化エラーあります。"
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:142
 #: ../src/Hyena/Hyena.Gui/Hyena.Gui.Dialogs/VersionInformationDialog.cs:66
@@ -4552,23 +4659,23 @@ msgstr "<i>{0}</i>は音楽ライブラリにインポート中です。停止�
 msgid "Cannot Import CD"
 msgstr "CDをインポートできません"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:233
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:237
 msgid "Audio CDs"
 msgstr "オーディオCD"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:235
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:239
 msgid "Audio CD Importing"
 msgstr "オーディオCDのインポート中"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:238
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:242
 msgid "_Import format"
 msgstr "インポートのフォーマット(_I)"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:242
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:246
 msgid "_Automatically import audio CDs when inserted"
 msgstr "CDを挿入したら自動的にインポートする(_A)"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:243
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:247
 msgid ""
 "When an audio CD is inserted, automatically begin importing it if metadata "
 "can be found and it is not already in the library."
@@ -4576,19 +4683,19 @@ msgstr ""
 "CDを挿入したら、メタデータが存在しメタデータがライブラリに無い場合は自動的に"
 "インポートします。"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:247
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:251
 msgid "_Eject when done importing"
 msgstr "インポートが終了したら取り出す(_E)"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:248
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:252
 msgid "When an audio CD has been imported, automatically eject it."
 msgstr "オーディオCDをインポートしたら、自動的に取り出します。"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:251
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:255
 msgid "Use error correction when importing"
 msgstr "インポート時に誤り補正を使う"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:252
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:256
 msgid ""
 "Error correction tries to work around problem areas on a disc, such as "
 "surface scratches, but will slow down importing substantially."
@@ -4596,20 +4703,20 @@ msgstr ""
 "エラー訂正は、表面上の傷の様なディスク上の問題があるエリアへの回避策を試しま"
 "すが、インポートは大幅に遅くなります。"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:320
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:324
 #: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdSource.cs:441
 msgid "Import CD"
 msgstr "CDのインポート"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:321
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:325
 msgid "Import this audio CD to the library"
 msgstr "オーディオCDをライブラリへインポートします"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:327
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:331
 msgid "Duplicate CD"
 msgstr "CDの複製"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:328
+#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:332
 msgid "Duplicate this audio CD"
 msgstr "このオーディオCDを複製"
 
@@ -5533,21 +5640,21 @@ msgstr "ステーションを編集"
 msgid "Station"
 msgstr "ステーション"
 
-#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:154
+#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:155
 #, csharp-format
 msgid "{0} station"
 msgid_plural "{0} stations"
 msgstr[0] "{0} ステーション"
 
-#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:240
+#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:241
 msgid "Please provide a valid station URI"
 msgstr "正しいステーションURIを提供してください"
 
-#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:253
+#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:254
 msgid "Please provide a station genre"
 msgstr "ステーションジャンルを提供してください"
 
-#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:261
+#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:262
 msgid "Please provide a station title"
 msgstr "ステーション名を入力してください"
 
@@ -6610,7 +6717,7 @@ msgstr "SQLモニターを開始"
 msgid "Stop SQL Monitoring"
 msgstr "SQLモニターを終了"
 
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:108
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:139
 msgid "Track Preview"
 msgstr "Track Preview"
 
@@ -6855,11 +6962,11 @@ msgstr "指定したリソースが無効です。"
 
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:283
 msgid "Server error, please try again later."
-msgstr "サーバエラー、あとで再実行してください。"
+msgstr "サーバエラーです。しばらくしてから再実行してください。"
 
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:285
 msgid "Invalid authentication information, please re-authenticate."
-msgstr "無効な認証情報です、再認証を行ってください。"
+msgstr "認証情報が無効です、再認証を行ってください。"
 
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:287
 msgid "The API key used by this application is invalid."
@@ -6902,7 +7009,7 @@ msgstr "Last.fmへ接続できません。"
 
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:315
 msgid "Account details are needed before you can connect to Last.fm"
-msgstr "Last.fmへ接続する前にアカウントの詳細が必要です"
+msgstr "Last.fmへ接続する前にアカウントの設定が必要です"
 
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:317
 msgid "No network connection detected."
@@ -6921,10 +7028,17 @@ msgid "Connected to Last.fm."
 msgstr "Last.fmへ接続しました。"
 
 #: ../src/Libraries/Migo/Migo.Syndication/Feed.cs:151
-#: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:97
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:100
+#: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:103
 msgid "Unknown Podcast"
 msgstr "不明なポッドキャスト"
+
+#~ msgid ""
+#~ "There was an error intializing MTP device support.  See http://www."
+#~ "banshee-project.org/Guide/DAPs/MTP for more information."
+#~ msgstr ""
+#~ "MTPデバイスサポートの初期化でエラーがあります。更なる情報は http://www."
+#~ "banshee-project.org/Guide/DAPs/MTP を見てください。"
 
 #~ msgid "iPod Support"
 #~ msgstr "iPodサポート"
