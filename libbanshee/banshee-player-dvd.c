@@ -79,9 +79,11 @@ _bp_dvd_elements_process_message (BansheePlayer *player, GstMessage *message)
     GstQuery *query = gst_navigation_query_new_commands();
 
     guint n_cmds, i;
-    //execute query over playbin or navigation ?
-    if (gst_element_query (player->playbin, query)
-        && gst_navigation_query_parse_commands_length (query, &n_cmds)) {
+    if (!player->navigation) {
+        _bp_dvd_find_navigation (player);
+    }
+    if (!(gst_element_query (GST_ELEMENT_CAST (player->navigation), query)
+        && gst_navigation_query_parse_commands_length (query, &n_cmds))) {
         gst_query_unref (query);
         return;
     }
