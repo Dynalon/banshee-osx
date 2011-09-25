@@ -63,7 +63,6 @@ namespace Banshee.OpticalDisc.Dvd
             Properties.SetString ("SourcePreferencesActionLabel", Catalog.GetString ("DVD Preferences"));
             Properties.SetString ("UnmapSourceActionLabel", Catalog.GetString ("Eject Disc"));
             Properties.SetString ("UnmapSourceActionIconName", "media-eject");
-            Properties.SetString ("ActiveSourceUIResource", "ActiveSourceUI.xml");
             Properties.SetString ("GtkActionPath", "/DvdContextMenu");
         }
 
