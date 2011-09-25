@@ -1,0 +1,9 @@
+<ui>
+    <popup name="DvdContextMenu">
+        <menuitem name="GoToMenu" action="GoToMenuAction"/>
+        <menuitem name="AudioTrack" action="AudioTrackAction"/>
+        <menuitem name="SourcePreferences" action="SourcePreferencesAction"/>
+        <separator/>
+        <menuitem name="UnmapSource" action="UnmapSourceAction"/>
+    </popup>
+</ui>

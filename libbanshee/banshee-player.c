@@ -31,6 +31,7 @@
 #include "banshee-player-private.h"
 #include "banshee-player-pipeline.h"
 #include "banshee-player-cdda.h"
+#include "banshee-player-dvd.h"
 #include "banshee-player-missing-elements.h"
 #include "banshee-player-replaygain.h"
 
@@ -110,6 +111,10 @@ bp_destroy (BansheePlayer *player)
     if (player->cdda_device != NULL) {
         g_free (player->cdda_device);
     }
+
+    if (player->dvd_device != NULL) {
+        g_free (player->dvd_device);
+    }
     
     _bp_pipeline_destroy (player);
     _bp_missing_elements_destroy (player);
@@ -154,6 +159,8 @@ bp_open (BansheePlayer *player, const gchar *uri, gboolean maybe_video)
     // Give the CDDA code a chance to intercept the open request
     // in case it is able to perform a fast seek to a track
     if (_bp_cdda_handle_uri (player, uri)) {
+        return TRUE;
+    } else if (_bp_dvd_handle_uri (player, uri)) {
         return TRUE;
     } else if (player->playbin == NULL) {
         return FALSE;

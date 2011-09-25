@@ -3,6 +3,7 @@
 //
 // Author:
 //   Aaron Bockover <abockover@novell.com>
+//   Alex Launi <alex.launi@canonical.com>
 //
 // Copyright (C) 2008 Novell, Inc.
 //
@@ -38,12 +39,10 @@ using Banshee.Preferences;
 using Banshee.Hardware;
 using Banshee.Gui;
 
-namespace Banshee.AudioCd
+namespace Banshee.OpticalDisc.AudioCd
 {
-    public class AudioCdService : IExtensionService, IDisposable
+    public class AudioCdService : DiscService, IService
     {
-        private Dictionary<string, AudioCdSource> sources;
-        private List<DeviceCommand> unhandled_device_commands;
         private SourcePage pref_page;
         private Section pref_section;
         private uint global_interface_id;
@@ -52,129 +51,31 @@ namespace Banshee.AudioCd
         {
         }
 
-        public void Initialize ()
+        public override void Initialize ()
         {
-            if (ServiceManager.HardwareManager == null) {
-                throw new NotSupportedException ("AudioCdService cannot work when no HardwareManager is available");
-            }
-
             lock (this) {
                 InstallPreferences ();
-
-                sources = new Dictionary<string, AudioCdSource> ();
-
-                foreach (ICdromDevice device in ServiceManager.HardwareManager.GetAllCdromDevices ()) {
-                    MapCdromDevice (device);
-                }
-
-                ServiceManager.HardwareManager.DeviceAdded += OnHardwareDeviceAdded;
-                ServiceManager.HardwareManager.DeviceRemoved += OnHardwareDeviceRemoved;
-                ServiceManager.HardwareManager.DeviceCommand += OnDeviceCommand;
-
+                base.Initialize ();
                 SetupActions ();
             }
         }
 
-        public void Dispose ()
+        public override void Dispose ()
         {
             lock (this) {
                 UninstallPreferences ();
-
-                ServiceManager.HardwareManager.DeviceAdded -= OnHardwareDeviceAdded;
-                ServiceManager.HardwareManager.DeviceRemoved -= OnHardwareDeviceRemoved;
-                ServiceManager.HardwareManager.DeviceCommand -= OnDeviceCommand;
-
-                foreach (AudioCdSource source in sources.Values) {
-                    source.Dispose ();
-                    ServiceManager.SourceManager.RemoveSource (source);
-                }
-
-                sources.Clear ();
-                sources = null;
-
+                base.Dispose ();
                 DisposeActions ();
-            }
-        }
-
-        private void MapCdromDevice (ICdromDevice device)
-        {
-            lock (this) {
-                foreach (IVolume volume in device) {
-                    if (volume is IDiscVolume) {
-                        MapDiscVolume ((IDiscVolume)volume);
-                    }
-                }
-            }
-        }
-
-        private void MapDiscVolume (IDiscVolume volume)
-        {
-            lock (this) {
-                if (!sources.ContainsKey (volume.Uuid) && volume.HasAudio) {
-                    AudioCdSource source = new AudioCdSource (this, new AudioCdDiscModel (volume));
-                    sources.Add (volume.Uuid, source);
-                    ServiceManager.SourceManager.AddSource (source);
-
-                    // If there are any queued device commands, see if they are to be
-                    // handled by this new volume (e.g. --device-activate-play=cdda://sr0/)
-                    try {
-                        if (unhandled_device_commands != null) {
-                            foreach (DeviceCommand command in unhandled_device_commands) {
-                                if (DeviceCommandMatchesSource (source, command)) {
-                                    HandleDeviceCommand (source, command.Action);
-                                    unhandled_device_commands.Remove (command);
-                                    if (unhandled_device_commands.Count == 0) {
-                                        unhandled_device_commands = null;
-                                    }
-                                    break;
-                                }
-                            }
-                        }
-                    } catch (Exception e) {
-                        Log.Exception (e);
-                    }
-
-                    Log.DebugFormat ("Mapping audio CD ({0})", volume.Uuid);
-                }
-            }
-        }
-
-        internal void UnmapDiscVolume (string uuid)
-        {
-            lock (this) {
-                if (sources.ContainsKey (uuid)) {
-                    AudioCdSource source = sources[uuid];
-                    source.StopPlayingDisc ();
-                    ServiceManager.SourceManager.RemoveSource (source);
-                    sources.Remove (uuid);
-                    Log.DebugFormat ("Unmapping audio CD ({0})", uuid);
-                }
-            }
-        }
-
-        private void OnHardwareDeviceAdded (object o, DeviceAddedArgs args)
-        {
-            lock (this) {
-                if (args.Device is ICdromDevice) {
-                    MapCdromDevice ((ICdromDevice)args.Device);
-                } else if (args.Device is IDiscVolume) {
-                    MapDiscVolume ((IDiscVolume)args.Device);
-                }
-            }
-        }
-
-        private void OnHardwareDeviceRemoved (object o, DeviceRemovedArgs args)
-        {
-            lock (this) {
-                UnmapDiscVolume (args.DeviceUuid);
             }
         }
 
 #region DeviceCommand Handling
 
-        private bool DeviceCommandMatchesSource (AudioCdSource source, DeviceCommand command)
+        protected override bool DeviceCommandMatchesSource (DiscSource source, DeviceCommand command)
         {
-            if (command.DeviceId.StartsWith ("cdda:")) {
+            AudioCdSource cdSource = source as AudioCdSource;
+
+            if (cdSource != null && command.DeviceId.StartsWith ("cdda:")) {
                 try {
                     Uri uri = new Uri (command.DeviceId);
                     string match_device_node = String.Format ("{0}{1}", uri.Host,
@@ -186,39 +87,6 @@ namespace Banshee.AudioCd
             }
 
             return false;
-        }
-
-        private void HandleDeviceCommand (AudioCdSource source, DeviceCommandAction action)
-        {
-            if ((action & DeviceCommandAction.Activate) != 0) {
-                ServiceManager.SourceManager.SetActiveSource (source);
-            }
-
-            if ((action & DeviceCommandAction.Play) != 0) {
-                ServiceManager.PlaybackController.NextSource = source;
-                if (!ServiceManager.PlayerEngine.IsPlaying ()) {
-                    ServiceManager.PlaybackController.Next ();
-                }
-            }
-        }
-
-        private void OnDeviceCommand (object o, DeviceCommand command)
-        {
-            lock (this) {
-                // Check to see if we have an already mapped disc volume that should
-                // handle this incoming command; if not, queue it for later discs
-                foreach (AudioCdSource source in sources.Values) {
-                    if (DeviceCommandMatchesSource (source, command)) {
-                        HandleDeviceCommand (source, command.Action);
-                        return;
-                    }
-                }
-
-                if (unhandled_device_commands == null) {
-                    unhandled_device_commands = new List<DeviceCommand> ();
-                }
-                unhandled_device_commands.Add (command);
-            }
         }
 
 #endregion
@@ -234,7 +102,7 @@ namespace Banshee.AudioCd
 
             service.InstallWidgetAdapters += OnPreferencesServiceInstallWidgetAdapters;
 
-            pref_page = new Banshee.Preferences.SourcePage ("audio-cd", Catalog.GetString ("Audio CDs"), "media-optical", 400);
+            pref_page = new Banshee.Preferences.SourcePage ("audio-cd", Catalog.GetString ("Audio CDs"), "media-cdrom", 400);
 
             pref_section = pref_page.Add (new Section ("audio-cd", Catalog.GetString ("Audio CD Importing"), 20));
             pref_section.ShowLabel = false;
@@ -375,6 +243,21 @@ namespace Banshee.AudioCd
             }
         }
 
+#endregion
+
+#region implemented abstract members of Banshee.OpticalDisc.DiscService
+
+        protected override DiscSource GetDiscSource (IDiscVolume volume)
+        {
+            if  (volume.HasAudio) {
+                Log.Debug ("Mapping audio cd");
+                return new AudioCdSource (this, new AudioCdDiscModel (volume));
+            } else {
+                Log.Debug ("Can not map to audio cd source.");
+                return null;
+            }
+        }
+        
 #endregion
 
         string IService.ServiceName {

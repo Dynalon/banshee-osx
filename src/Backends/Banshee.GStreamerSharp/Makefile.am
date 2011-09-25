@@ -7,6 +7,7 @@ SOURCES =  \
 	Banshee.GStreamerSharp/AudioCdRipper.cs \
 	Banshee.GStreamerSharp/BpmDetector.cs \
 	Banshee.GStreamerSharp/CddaManager.cs \
+	Banshee.GStreamerSharp/DvdManager.cs \
 	Banshee.GStreamerSharp/PlayerEngine.cs \
 	Banshee.GStreamerSharp/Transcoder.cs \
 	Banshee.GStreamerSharp/VideoManager.cs \

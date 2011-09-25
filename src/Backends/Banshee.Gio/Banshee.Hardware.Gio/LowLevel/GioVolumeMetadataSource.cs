@@ -26,6 +26,7 @@
 
 #if ENABLE_GIO_HARDWARE
 using System;
+using System.Linq;
 
 namespace Banshee.Hardware.Gio
 {
@@ -73,6 +74,19 @@ namespace Banshee.Hardware.Gio
         public override bool PropertyExists (string key)
         {
             throw new NotImplementedException ();
+        }
+
+        private string[] content_types;
+        public string[] MediaContentTypes {
+            get {
+                if (Volume.MountInstance == null) {
+                    content_types = new string[] {};
+                } else if (content_types == null) {
+                    content_types = Volume.MountInstance.GuessContentTypeSync (false, null);
+                }
+
+                return content_types;
+            }
         }
     }
 }

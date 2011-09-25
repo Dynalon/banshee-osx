@@ -2,7 +2,6 @@ SUBDIRS = \
 	Banshee.AmazonMp3 \
 	Banshee.AmazonMp3.Store \
 	Banshee.Audiobook \
-	Banshee.AudioCd \
 	Banshee.BooScript \
 	Banshee.Bpm \
 	Banshee.CoverArt \
@@ -22,6 +21,7 @@ SUBDIRS = \
 	Banshee.MultimediaKeys \
 	Banshee.NotificationArea \
 	Banshee.NowPlaying \
+	Banshee.OpticalDisc \
 	Banshee.PlayerMigration \
 	Banshee.PlayQueue \
 	Banshee.MeeGo \

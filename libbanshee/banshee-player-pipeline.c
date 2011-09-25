@@ -30,6 +30,7 @@
 
 #include "banshee-player-pipeline.h"
 #include "banshee-player-cdda.h"
+#include "banshee-player-dvd.h"
 #include "banshee-player-video.h"
 #include "banshee-player-equalizer.h"
 #include "banshee-player-missing-elements.h"
@@ -213,6 +214,7 @@ bp_pipeline_bus_callback (GstBus *bus, GstMessage *message, gpointer userdata)
                 bp_next_track_starting (player);
             }
             _bp_missing_elements_process_message (player, message);
+            _bp_dvd_elements_process_message (player, message);
             break;
         }
 
@@ -413,7 +415,9 @@ _bp_pipeline_construct (BansheePlayer *player)
 
     // Now allow specialized pipeline setups
     _bp_cdda_pipeline_setup (player);
+    _bp_dvd_pipeline_setup (player);
     _bp_video_pipeline_setup (player, bus);
+    _bp_dvd_find_navigation (player);
 
     return TRUE;
 }

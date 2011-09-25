@@ -42,7 +42,7 @@ using Banshee.Collection;
 using Banshee.Collection.Database;
 using Banshee.MediaEngine;
 
-namespace Banshee.AudioCd
+namespace Banshee.OpticalDisc.AudioCd
 {
     public class AudioCdRipper : IDisposable
     {
@@ -105,7 +105,7 @@ namespace Banshee.AudioCd
         {
             ResetState ();
 
-            foreach (AudioCdTrackInfo track in source.DiscModel) {
+            foreach (AudioCdTrackInfo track in source.Model) {
                 if (track.RipEnabled) {
                     total_duration += track.Duration;
                     queue.Enqueue (track);
@@ -122,7 +122,7 @@ namespace Banshee.AudioCd
                 Catalog.GetString ("Initializing Drive"), "media-import-audio-cd");
             user_job.CancelMessage = String.Format (Catalog.GetString (
                 "<i>{0}</i> is still being imported into the music library. Would you like to stop it?"
-                ), GLib.Markup.EscapeText (source.DiscModel.Title));
+                ), GLib.Markup.EscapeText (source.Model.Title));
             user_job.SetResources (Resource.Cpu);
             user_job.PriorityHints = PriorityHints.SpeedSensitive | PriorityHints.DataLossIfStopped;
             user_job.CanCancel = true;
@@ -130,13 +130,13 @@ namespace Banshee.AudioCd
             user_job.Finished += OnFinished;
             user_job.Register ();
 
-            if (source != null && source.DiscModel != null) {
-                if (!source.DiscModel.LockDoor ()) {
+            if (source != null && source.Model != null) {
+                if (!source.Model.LockDoor ()) {
                     Hyena.Log.Warning ("Could not lock CD-ROM door", false);
                 }
             }
 
-            ripper.Begin (source.DiscModel.Volume.DeviceNode, AudioCdService.ErrorCorrection.Get ());
+            ripper.Begin (source.Model.Volume.DeviceNode, AudioCdService.ErrorCorrection.Get ());
 
             RipNextTrack ();
         }
@@ -145,8 +145,8 @@ namespace Banshee.AudioCd
         {
             ResetState ();
 
-            if (source != null && source.DiscModel != null) {
-                source.DiscModel.UnlockDoor ();
+            if (source != null && source.Model != null) {
+                source.Model.UnlockDoor ();
             }
 
             if (ripper != null) {
@@ -183,7 +183,7 @@ namespace Banshee.AudioCd
             AudioCdTrackInfo track = queue.Dequeue ();
 
             user_job.Title = String.Format (Catalog.GetString ("Importing {0} of {1}"),
-                ++track_index, source.DiscModel.EnabledCount);
+                ++track_index, source.Model.EnabledCount);
             status = String.Format("{0} - {1}", track.ArtistName, track.TrackTitle);
             user_job.Status = status;
 

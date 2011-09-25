@@ -317,7 +317,6 @@ src/Extensions/Makefile
 src/Extensions/Banshee.AmazonMp3/Makefile
 src/Extensions/Banshee.AmazonMp3.Store/Makefile
 src/Extensions/Banshee.Audiobook/Makefile
-src/Extensions/Banshee.AudioCd/Makefile
 src/Extensions/Banshee.BooScript/Makefile
 src/Extensions/Banshee.Bpm/Makefile
 src/Extensions/Banshee.CoverArt/Makefile
@@ -338,6 +337,7 @@ src/Extensions/Banshee.Mpris/Makefile
 src/Extensions/Banshee.MultimediaKeys/Makefile
 src/Extensions/Banshee.NotificationArea/Makefile
 src/Extensions/Banshee.NowPlaying/Makefile
+src/Extensions/Banshee.OpticalDisc/Makefile
 src/Extensions/Banshee.PlayQueue/Makefile
 src/Extensions/Banshee.PlayerMigration/Makefile
 src/Extensions/Banshee.Podcasting/Makefile

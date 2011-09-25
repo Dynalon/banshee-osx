@@ -168,6 +168,7 @@ _bp_vis_pipeline_event_probe (GstPad *pad, GstEvent *event, gpointer data)
         case GST_EVENT_FLUSH_STOP:
         case GST_EVENT_SEEK:
         case GST_EVENT_NEWSEGMENT:
+        case GST_EVENT_CUSTOM_DOWNSTREAM:
             player->vis_thawing = TRUE;
 
         default: break;
@@ -178,9 +179,10 @@ _bp_vis_pipeline_event_probe (GstPad *pad, GstEvent *event, gpointer data)
 
     switch (GST_EVENT_TYPE (event)) {
     case GST_EVENT_EOS:
+    case GST_EVENT_CUSTOM_DOWNSTREAM_OOB:
         _bp_vis_pipeline_set_blocked (player, FALSE);
         break;
-
+    case GST_EVENT_CUSTOM_DOWNSTREAM:
     case GST_EVENT_NEWSEGMENT:
         _bp_vis_pipeline_set_blocked (player, TRUE);
         break;

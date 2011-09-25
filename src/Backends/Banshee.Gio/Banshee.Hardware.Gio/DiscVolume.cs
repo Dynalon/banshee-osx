@@ -26,6 +26,7 @@
 
 #if ENABLE_GIO_HARDWARE
 using System;
+using System.Linq;
 
 using Banshee.Hardware;
 
@@ -33,6 +34,8 @@ namespace Banshee.Hardware.Gio
 {
     class DiscVolume : Volume, IDiscVolume
     {
+        private static string[] video_mime_types;
+
         public static new IDiscVolume Resolve (IDevice device)
         {
             var raw = device as IRawDevice;
@@ -41,6 +44,15 @@ namespace Banshee.Hardware.Gio
             }
 
             return null;
+        }
+
+        static DiscVolume ()
+        {
+            video_mime_types = new string[] {
+                "x-content/video-dvd",
+                "x-content/video-vcd",
+                "x-content/video-svcd"
+            };
         }
 
         public bool HasAudio {
@@ -52,6 +64,14 @@ namespace Banshee.Hardware.Gio
         public bool HasData {
             get {
                 return PropertyExists ("ID_CDROM_MEDIA_TRACK_COUNT_DATA");
+            }
+        }
+
+        public bool HasVideo {
+            get {
+                return ((GioVolumeMetadataSource) this.device.GioMetadata).MediaContentTypes
+                    .Intersect (video_mime_types)
+                    .Any ();
             }
         }
 

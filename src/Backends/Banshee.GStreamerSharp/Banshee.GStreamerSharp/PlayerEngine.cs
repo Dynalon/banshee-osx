@@ -39,6 +39,7 @@ using Gst;
 using Gst.PbUtils;
 using Gst.BasePlugins;
 using Gst.CorePlugins;
+using Gst.Interfaces;
 
 using Hyena;
 using Hyena.Data;
@@ -309,6 +310,7 @@ namespace Banshee.GStreamerSharp
         ManualResetEvent next_track_set;
         CddaManager cdda_manager;
         VideoManager video_manager = null;
+        DvdManager dvd_manager = null;
         Visualization visualization;
 
         public PlayerEngine ()
@@ -356,11 +358,13 @@ namespace Banshee.GStreamerSharp
             playbin.AboutToFinish += OnAboutToFinish;
 
             cdda_manager = new CddaManager (playbin);
+            dvd_manager = new DvdManager (playbin);
             // FIXME: Disable video stuff until GLib# 3 is used instead of the sopy bundled in GStreamerSharp
             //video_manager = new VideoManager (playbin);
             //video_manager.PrepareWindow += OnVideoPrepareWindow;
             //video_manager.Initialize ();
 
+            dvd_manager.FindNavigation (playbin);
             OnStateChanged (PlayerState.Ready);
         }
 
@@ -505,6 +509,8 @@ namespace Banshee.GStreamerSharp
                         Install.InstallPlugins (missing_details.ToArray (), install_context, OnInstallPluginsReturn);
                     } else if (msg.Src == playbin && msg.Structure.Name == "playbin2-stream-changed") {
                         HandleStreamChanged ();
+                    } else if (NavigationMessage.MessageGetType (msg) == NavigationMessageType.CommandsChanged) {
+                        dvd_manager.HandleCommandsChanged (playbin);
                     }
                     break;
                 case MessageType.Application:
@@ -663,6 +669,8 @@ namespace Banshee.GStreamerSharp
         {
             if (cdda_manager.HandleURI (playbin, uri.AbsoluteUri)) {
                 return;
+            } else if (dvd_manager.HandleURI (playbin, uri.AbsoluteUri)) {
+                return;
             } else if (playbin == null) {
                 throw new ApplicationException ("Could not open resource");
             }
@@ -774,7 +782,7 @@ namespace Banshee.GStreamerSharp
             }
         }
 
-        private static string [] source_capabilities = { "file", "http", "cdda" };
+        private static string [] source_capabilities = { "file", "http", "cdda", "dvd", "vcd" };
         public override IEnumerable SourceCapabilities {
             get { return source_capabilities; }
         }
@@ -892,6 +900,71 @@ namespace Banshee.GStreamerSharp
             get { return new SafeUri (playbin.Suburi); }
         }
 
+#region DVD support
+
+        public override void NotifyMouseMove (double x, double y)
+        {
+            dvd_manager.NotifyMouseMove (playbin, x, y);
+        }
+
+        public override void NotifyMouseButtonPressed (int button, double x, double y)
+        {
+            dvd_manager.NotifyMouseButtonPressed (playbin, button, x, y);
+        }
+
+        public override void NotifyMouseButtonReleased (int button, double x, double y)
+        {
+            dvd_manager.NotifyMouseButtonReleased (playbin, button, x, y);
+        }
+
+        public override void NavigateToLeftMenu ()
+        {
+            dvd_manager.NavigateToLeftMenu (playbin);
+        }
+
+        public override void NavigateToRightMenu ()
+        {
+            dvd_manager.NavigateToRightMenu (playbin);
+        }
+
+        public override void NavigateToUpMenu ()
+        {
+            dvd_manager.NavigateToUpMenu (playbin);
+        }
+
+        public override void NavigateToDownMenu ()
+        {
+            dvd_manager.NavigateToDownMenu (playbin);
+        }
+
+        public override void NavigateToMenu ()
+        {
+            dvd_manager.NavigateToMenu (playbin);
+        }
+
+        public override void ActivateCurrentMenu ()
+        {
+            dvd_manager.ActivateCurrentMenu (playbin);
+        }
+
+        public override void GoToNextChapter ()
+        {
+            dvd_manager.GoToNextChapter (playbin);
+        }
+
+        public override void GoToPreviousChapter ()
+        {
+            dvd_manager.GoToPreviousChapter (playbin);
+        }
+
+        public override bool InDvdMenu {
+            get { return dvd_manager.InDvdMenu; }
+        }
+
+#endregion
+
+#region Preferences
+
         private PreferenceBase replaygain_preference;
 
         private void InstallPreferences ()
@@ -926,5 +999,6 @@ namespace Banshee.GStreamerSharp
             "If ReplayGain data is present on tracks when playing, allow volume scaling"
         );
 
+#endregion
     }
 }

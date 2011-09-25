@@ -1,10 +1,10 @@
 //
-// IDiscVolume.cs
+// banshee-player-dvd.h
 //
 // Author:
-//   Aaron Bockover <abockover@novell.com>
+//   Alex Launi <alex.launi@canonical.com>
 //
-// Copyright (C) 2008 Novell, Inc.
+// Copyright (C) 2010 Alex Launi
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the
@@ -26,17 +26,14 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-using System;
+#ifndef _BANSHEE_PLAYER_DVD_H
+#define _BANSHEE_PLAYER_DVD_H
 
-namespace Banshee.Hardware
-{
-    public interface IDiscVolume : IVolume
-    {
-        bool HasAudio { get; }
-        bool HasData { get; }
-        bool HasVideo { get; }
-        bool IsRewritable { get; }
-        bool IsBlank { get; }
-        ulong MediaCapacity { get; }
-    }
-}
+#include "banshee-player-private.h"
+
+void      _bp_dvd_pipeline_setup            (BansheePlayer *player);
+gboolean  _bp_dvd_handle_uri                (BansheePlayer *player, const gchar *uri);
+void      _bp_dvd_find_navigation           (BansheePlayer *player);
+void      _bp_dvd_elements_process_message  (BansheePlayer *player, GstMessage *message);
+
+#endif /* _BANSHEE_PLAYER_DVD_H */
