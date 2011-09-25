@@ -139,8 +139,10 @@ namespace Banshee.GStreamerSharp
             Gst.Query query = NavigationQuery.NewCommands ();
 
             NavigationCommand[] cmds;
-            //execute query over playbin or navigation ?
-            if (!playbin.Query (query) || !NavigationQuery.ParseCommands (query, out cmds)) {
+            if (Navigation == null) {
+                FindNavigation (playbin);
+            }
+            if (!(((Element)Navigation).Query (query) && NavigationQuery.ParseCommands (query, out cmds))) {
                 return;
             }
             foreach (NavigationCommand cmd in cmds) {
