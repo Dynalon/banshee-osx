@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-09-04 12:17+0000\n"
-"PO-Revision-Date: 2011-09-12 15:16+0200\n"
+"POT-Creation-Date: 2011-09-22 18:14+0000\n"
+"PO-Revision-Date: 2011-09-25 14:37+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -805,7 +805,6 @@ msgstr "Nelze vytvořit transkodér"
 
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:259
 #, csharp-format
-#| msgid "Could not create encoder pipeline"
 msgid "Could not create encoder pipeline : {0}"
 msgstr "Nelze vytvořit rouru kodéru: {0}"
 
@@ -815,12 +814,10 @@ msgstr "GStreamer# 0.10"
 
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:79
 #, csharp-format
-#| msgid "Could not create encoding pipeline"
 msgid "Could not create encoding pipeline : {0}"
 msgstr "Nelze vytvořit kódovací rouru: {0}"
 
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:198
-#| msgid "Could not create 'sinkben' plugin"
 msgid "Could not create 'sinkbin' plugin"
 msgstr "Nelze vytvořit zásuvný modul „sinkbin“"
 
@@ -1064,13 +1061,13 @@ msgstr "Délka"
 
 #. Translators: noun
 #: ../src/Clients/Booter/Booter/Entry.cs:194
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:117
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:119
 msgid "Track Number"
 msgstr "Číslo stopy"
 
 #. Translators: noun
 #: ../src/Clients/Booter/Booter/Entry.cs:195
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:126
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:128
 msgid "Track Count"
 msgstr "Počet stop"
 
@@ -1083,7 +1080,7 @@ msgstr "Číslo disku"
 #: ../src/Clients/Booter/Booter/Entry.cs:197
 #: ../src/Clients/Nereid/Nereid/ViewContainer.cs:142
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:113
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:177
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:179
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:78
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/SearchView.cs:132
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Field.cs:77
@@ -1092,7 +1089,7 @@ msgid "Year"
 msgstr "Rok"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:198
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:230
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:232
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/SearchView.cs:131
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Field.cs:60
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Sort.cs:96
@@ -1100,13 +1097,13 @@ msgid "Rating"
 msgstr "Hodnocení"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:199
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:322
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:324
 msgid "Score"
 msgstr "Bodování"
 
 #. Translators: noun
 #: ../src/Clients/Booter/Booter/Entry.cs:200
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:143
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:145
 msgid "Bit Rate"
 msgstr "Datový tok"
 
@@ -1250,21 +1247,21 @@ msgstr "Umělec, album nebo název"
 #: ../src/Clients/Nereid/Nereid/ViewContainer.cs:139
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:72
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:78
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:82
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:84
 msgid "Album Artist"
 msgstr "Umělec alba"
 
 #: ../src/Clients/Nereid/Nereid/ViewContainer.cs:141
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:98
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:185
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:364
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:187
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:366
 #: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/SearchEntry.cs:91
 msgid "Genre"
 msgstr "Žánr"
 
 #. Translators: noun
 #: ../src/Clients/Nereid/Nereid/ViewContainer.cs:143
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:214
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:216
 msgid "Comment"
 msgstr "Poznámka"
 
@@ -1595,18 +1592,18 @@ msgid "Album Artist Initial"
 msgstr "Iniciály umělce alba"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:88
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:199
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:201
 msgid "Conductor"
 msgstr "Dirigent"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:93
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:192
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:194
 msgid "Composer"
 msgstr "Skladatel"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:103
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:92
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:360
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:94
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:362
 msgid "Album"
 msgstr "Album"
 
@@ -1639,13 +1636,13 @@ msgid "Number (unsorted)"
 msgstr "Číslo (neseřazeno)"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:143
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:108
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:110
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:108
 msgid "Disc Count"
 msgstr "Počet disků"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:155
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:206
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:208
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:120
 msgid "Grouping"
 msgstr "Seskupení"
@@ -1662,7 +1659,7 @@ msgstr "Hledat svoji hudbu"
 
 #. Misc section
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:80
-#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:65
+#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:66
 msgid "Miscellaneous"
 msgstr "Různé"
 
@@ -1856,27 +1853,39 @@ msgstr ""
 "Ukládat značky a jiná metadata uvnitř podporovaných multimediálních souborů"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:55
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:174
-msgid "Write _ratings and play counts to files"
-msgstr "Zapisovat _hodnocení a počet přehrání do souborů"
+msgid "Write _ratings to files"
+msgstr "Zapisovat _hodnocení do souborů"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:56
-msgid ""
-"Enable this option to save rating and playcount metadata inside supported "
-"audio files"
+msgid "Enable this option to save rating metadata inside supported audio files"
 msgstr ""
-"Chcete-li ukládat hodnocení a počet přehrání jako metadata uvnitř "
-"podporovaných zvukových souborů, zapněte tuto volbu."
+"Zapněte tuto volbu, pokud chcete ukládat metadata s hodnocením do "
+"podporovaných zvukových souborů"
 
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:60
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:61
+msgid "Write play counts to files"
+msgstr "Zapisovat počet přehrání do souborů"
+
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:62
+msgid ""
+"Enable this option to save playcount metadata inside supported audio files"
+msgstr ""
+"Zapněte tuto volbu, pokud chcete ukládat metadata s počtem přehrání do "
+"podporovaných zvukových souborů"
+
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:67
 msgid "_Update file and folder names"
 msgstr "_Aktualizovat názvy souborů a složek"
 
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:61
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:68
 msgid "Rename files and folders according to media metadata"
 msgstr "Přejmenovat soubory a složky podle metadat média"
 
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:175
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:184
+msgid "Write _ratings and play counts to files"
+msgstr "Zapisovat _hodnocení a počet přehrání do souborů"
+
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:185
 msgid ""
 "Enable this option to save rating and play count metadata inside supported "
 "audio files whenever the rating is changed."
@@ -1885,11 +1894,11 @@ msgstr ""
 "podporovaných zvukových souborů, kdykoliv se změní hodnocení, zapněte tuto "
 "volbu."
 
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:176
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:186
 msgid "Import _ratings"
 msgstr "Importovat _hodnocení"
 
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:177
+#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:187
 msgid "Import play _counts"
 msgstr "Importovat _počet přehrání"
 
@@ -1926,7 +1935,7 @@ msgid "The track's rating was set differently on the device and in Banshee"
 msgstr "Hodnocení stopy je jinak nastavené v zařízení a jinak v Banshee"
 
 #: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:58
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:309
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:311
 msgid "Playlist"
 msgstr "Seznam skladeb"
 
@@ -1991,241 +2000,241 @@ msgstr "Pravidla souborů"
 msgid "Co_py files to media folders when importing"
 msgstr "Při importu ko_pírovat soubory do složek médií"
 
-#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:69
+#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:70
 msgid "Improve Banshee by sending anonymous usage data"
 msgstr "Zdokonalte Banshee zasíláním anonymních dat o používání"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:63
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:65
 msgid "items"
 msgstr "položky"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:64
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:66
 #: ../src/Hyena/Hyena.Gui/Hyena.Query.Gui/TimeSpanQueryValueEntry.cs:60
 msgid "minutes"
 msgstr "minuty"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:65
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:67
 #: ../src/Hyena/Hyena.Gui/Hyena.Query.Gui/TimeSpanQueryValueEntry.cs:61
 msgid "hours"
 msgstr "hodiny"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:66
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:68
 #: ../src/Hyena/Hyena.Gui/Hyena.Query.Gui/FileSizeQueryValueEntry.cs:63
 msgid "MB"
 msgstr "MB"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:67
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:69
 #: ../src/Hyena/Hyena.Gui/Hyena.Query.Gui/FileSizeQueryValueEntry.cs:64
 msgid "GB"
 msgstr "GB"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:74
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:361
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:76
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:363
 msgid "Artist"
 msgstr "Umělec"
 
 #. Translators: These are unique search aliases for "artist". You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:76
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:78
 msgid "artist"
 msgstr "umelec"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:76
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:78
 msgid "by"
 msgstr "od"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:76
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:78
 msgid "artists"
 msgstr "umělci"
 
 #. Translators: These are unique search aliases for "album artist". You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:84
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:86
 msgid "albumartist"
 msgstr "umelec_alba"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:84
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:86
 msgid "compilationartist"
 msgstr "uměleckompilace"
 
 #. Translators: These are unique search aliases for "album". You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:94
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:96
 msgid "album"
 msgstr "album"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:94
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:96
 msgid "on"
 msgstr "na"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:94
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:96
 msgid "from"
 msgstr "z"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:100
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:102
 msgid "Disc"
 msgstr "Disk"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:102
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:104
 msgid "disc"
 msgstr "disk"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:102
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:104
 msgid "cd"
 msgstr "cd"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:102
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:104
 msgid "discnum"
 msgstr "cislo_disku"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:110
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:112
 msgid "discs"
 msgstr "disku"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:110
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:112
 msgid "cds"
 msgstr "pocet_cd"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:119
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:121
 msgid "track"
 msgstr "stopa"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:119
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:121
 msgid "trackno"
 msgstr "stopa_cislo"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:119
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:121
 msgid "tracknum"
 msgstr "cislo_stopy"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:128
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:130
 msgid "tracks"
 msgstr "stop"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:128
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:130
 msgid "trackcount"
 msgstr "pocet_stop"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:134
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:136
 msgid "Beats per Minute"
 msgstr "Úderů za minutu"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:136
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:138
 msgid "bpm"
 msgstr "uzm"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:145
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:147
 msgid "bitrate"
 msgstr "datovy_tok"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:145
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:147
 msgid "kbs"
 msgstr "kb/s"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:145
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:147
 msgid "kps"
 msgstr "kps"
 
 #. Translators: noun
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:152
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:154
 msgid "Sample Rate"
 msgstr "Vzorkovací frekvence"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:154
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:156
 msgid "samplerate"
 msgstr "vzorkovaci_frekvence"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:154
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:156
 msgid "Hz"
 msgstr "Hz"
 
 #. Translators: noun
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:161
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:163
 msgid "Bits Per Sample"
 msgstr "Bitů na vzorek"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:163
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:165
 msgid "bitspersample"
 msgstr "bitu_na_vzorek"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:163
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:165
 msgid "bitdepth"
 msgstr "bitova_hloubka"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:163
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:165
 msgid "quantization"
 msgstr "kvantovani"
 
 #. Translators: noun
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:169
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:363
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:171
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:365
 #: ../src/Core/Banshee.Services/Banshee.Sources/Source.cs:668
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:95
 msgid "Name"
 msgstr "Název"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:171
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:173
 msgid "title"
 msgstr "nazev"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:171
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:173
 msgid "titled"
 msgstr "nazvano"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:171
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:173
 msgid "name"
 msgstr "nazev"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:171
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:173
 msgid "named"
 msgstr "pojmenovano"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:179
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:181
 msgid "year"
 msgstr "rok"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:179
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:181
 msgid "released"
 msgstr "vydano"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:179
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:181
 msgid "yr"
 msgstr "roku"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:187
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:189
 msgid "genre"
 msgstr "zanr"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:194
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:196
 msgid "composer"
 msgstr "skladatel"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:201
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:203
 msgid "conductor"
 msgstr "dirigent"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:208
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:210
 msgid "grouping"
 msgstr "seskupeni"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:216
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:218
 msgid "comment"
 msgstr "poznamka"
 
 #. Translators: noun
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:222
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:224
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/SearchView.cs:135
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Field.cs:71
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Field.cs:72
@@ -2233,264 +2242,264 @@ msgid "License"
 msgstr "Licence"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:224
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:226
 msgid "license"
 msgstr "licence"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:224
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:226
 msgid "licensed"
 msgstr "licencovano"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:224
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:226
 msgid "under"
 msgstr "pod"
 
 #. , typeof(NullQueryValue)},
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:232
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:234
 msgid "rating"
 msgstr "hodnoceni"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:232
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:234
 msgid "stars"
 msgstr "hvezdicek"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:238
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:240
 msgid "Play Count"
 msgstr "Počet přehrání"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:240
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:242
 msgid "plays"
 msgstr "prehrani"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:240
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:242
 msgid "playcount"
 msgstr "pocet_prehrani"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:240
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:242
 msgid "listens"
 msgstr "poslechu"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:246
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:248
 msgid "Skip Count"
 msgstr "Počet přeskočení"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:248
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:250
 msgid "skips"
 msgstr "preskoceni"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:248
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:250
 msgid "skipcount"
 msgstr "pocet_preskoceni"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:254
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:256
 msgid "File Size"
 msgstr "Velikost souboru"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:256
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:258
 msgid "size"
 msgstr "velikost"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:256
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:258
 msgid "filesize"
 msgstr "velikost_souboru"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:262
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:264
 msgid "File Location"
 msgstr "Umístění souboru"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:264
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:266
 msgid "uri"
 msgstr "uri"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:264
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:266
 msgid "path"
 msgstr "cesta"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:264
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:266
 msgid "file"
 msgstr "soubor"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:264
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:266
 msgid "location"
 msgstr "umisteni"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:270
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:272
 msgid "Time"
 msgstr "Čas"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:272
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:274
 msgid "duration"
 msgstr "trvani"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:272
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:274
 msgid "length"
 msgstr "delka"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:272
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:274
 msgid "time"
 msgstr "cas"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:278
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:280
 msgid "Mime Type"
 msgstr "Typ MIME"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:280
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:282
 msgid "type"
 msgstr "typ"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:280
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:282
 msgid "mimetype"
 msgstr "typ_mime"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:280
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:282
 msgid "format"
 msgstr "format"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:280
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:282
 msgid "ext"
 msgstr "pripona"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:286
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:288
 msgid "Last Played"
 msgstr "Naposledy přehráno"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:288
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:290
 msgid "lastplayed"
 msgstr "naposledy_prehrano"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:288
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:290
 msgid "played"
 msgstr "prehrano"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:288
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:290
 msgid "playedon"
 msgstr "prehrano_na"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:294
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:296
 msgid "Last Skipped"
 msgstr "Naposledy přeskočeno"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:296
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:298
 msgid "lastskipped"
 msgstr "naposledy_preskoceno"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:296
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:298
 msgid "skipped"
 msgstr "preskoceno"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:296
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:298
 msgid "skippedon"
 msgstr "preskoceno_na"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:302
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:304
 msgid "Date Added"
 msgstr "Datum přidání"
 
 #. Translators: These are unique search fields. You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:304
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:306
 msgid "added"
 msgstr "pridano"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:304
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:306
 msgid "imported"
 msgstr "importovano"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:304
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:306
 msgid "addedon"
 msgstr "pridano_na"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:304
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:306
 msgid "dateadded"
 msgstr "datum_pridani"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:304
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:306
 msgid "importedon"
 msgstr "importovano_na"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:315
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:317
 #: ../src/Core/Banshee.Services/Banshee.SmartPlaylist/SmartPlaylistSource.cs:65
 msgid "Smart Playlist"
 msgstr "Chytrý seznam skladeb"
 
 #. Translators: These are unique search fields (and nouns). You can use CSV for synonyms. Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:324
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:326
 msgid "score"
 msgstr "bodovani"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:330
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:332
 msgid "Playback Error"
 msgstr "Chyba přehrávání"
 
 #. Translators: These are unique search fields (and nouns). Please, no spaces. Blank ok.
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:332
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:334
 msgid "playbackerror"
 msgstr "chyba_prehravani"
 
 #. Translators: noun
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:349
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:351
 msgid "BPM"
 msgstr "BPM"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:350
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:352
 msgid "Skips"
 msgstr "Přeskočení"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:351
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:353
 msgid "Plays"
 msgstr "Přehrání"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:356
-msgid "Random"
-msgstr "Náhodně"
-
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:366
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:368
 msgid "Highest Rating"
 msgstr "Nejvyšší hodnocení"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:367
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:369
 msgid "Lowest Rating"
 msgstr "Nejnižší hodnocení"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:369
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:371
 msgid "Highest Score"
 msgstr "Nejvyšší bodování"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:370
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:372
 msgid "Lowest Score"
 msgstr "Nejnižší bodování"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:372
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:374
 msgid "Most Often Played"
 msgstr "Nejvíce přehrávaná"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:373
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:375
 msgid "Least Often Played"
 msgstr "Nejméně přehrávaná"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:375
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:377
 msgid "Most Recently Played"
 msgstr "Naposledy přehráno"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:376
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:378
 msgid "Least Recently Played"
 msgstr "Přehráno před nejdelší dobou"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:378
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:380
 msgid "Most Recently Added"
 msgstr "Naposledy přidáno"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:379
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:381
 msgid "Least Recently Added"
 msgstr "Přidáno před nejdelší dobou"
+
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:525
+msgid "Random"
+msgstr "Náhodně"
 
 #. Translators: These are unique strings for playback errors. Please, no spaces. Blank ok.
 #: ../src/Core/Banshee.Services/Banshee.Query/PlaybackErrorQueryValue.cs:44
@@ -4482,7 +4491,6 @@ msgid "Error Initializing MTP Device Support"
 msgstr "Chyba během inicializace podpory MTP zařízení"
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:83
-#| msgid "Error Initializing MTP Device Support"
 msgid "There was an error intializing MTP device support."
 msgstr "Chyba během inicializace podpory MTP zařízení."
 
@@ -7098,7 +7106,7 @@ msgid "Connected to Last.fm."
 msgstr "Připojeno k Last.fm."
 
 #: ../src/Libraries/Migo/Migo.Syndication/Feed.cs:151
-#: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:97
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:100
+#: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:103
 msgid "Unknown Podcast"
 msgstr "Neznámý podcast"
