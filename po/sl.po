@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-09-25 20:41+0000\n"
-"PO-Revision-Date: 2011-09-26 12:32+0100\n"
+"POT-Creation-Date: 2011-09-26 13:34+0000\n"
+"PO-Revision-Date: 2011-09-27 09:56+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -297,11 +297,9 @@ msgstr "Prikaz ikone za nadzor predvajalnika Banshee v obvestilnem področju."
 #. ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.addin.xml
 #: ../data/addin-xml-strings.cs:133
 msgid "DVD and Audio CD Support"
-msgstr "Podpora DVD-jev in zvočnih CD-jev"
+msgstr "Podpora za DVD in zvočne nosilce CD"
 
 #: ../data/addin-xml-strings.cs:134
-#, fuzzy
-#| msgid "Listen to and rip Audio CDs."
 msgid "Watch DVDs, listen to and rip Audio CDs."
 msgstr "Gledanje DVD-jev, poslušanje in zajemanje zvočnih CD-jev."
 
@@ -6104,23 +6102,21 @@ msgstr "Uvozi ‟{0}”"
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc/DiscSource.cs:171
 #, csharp-format
 msgid "Could not eject {0}: {1}"
-msgstr "{0} ni mogoče izvreči: {1}"
+msgstr "Ni mogoče izvreči {0}: {1}"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdService.cs:91
 msgid "Go to Menu"
-msgstr "Pojdi v meni"
+msgstr "Pojdi na meni"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdService.cs:92
 msgid "Naviguate to menu"
-msgstr "Prekrmari do menija"
+msgstr "Krmari do menija"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:38
-#, fuzzy
 msgid "Dvd"
 msgstr "DVD"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:63
-#| msgid "Preferences"
 msgid "DVD Preferences"
 msgstr "Možnosti DVD"
 
@@ -6923,3 +6919,9 @@ msgstr "Povezano z Last.fm"
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:103
 msgid "Unknown Podcast"
 msgstr "Neznan podcast"
+
+#~ msgid "Ejecting audio CD..."
+#~ msgstr "Izmetavanje zvočnega CD-ja ..."
+
+#~ msgid "Could not eject audio CD: {0}"
+#~ msgstr "Zvočnega CD-ja ni mogoče izvreči: {0}"
