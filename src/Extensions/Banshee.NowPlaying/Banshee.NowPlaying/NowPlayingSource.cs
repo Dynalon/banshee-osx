@@ -57,7 +57,7 @@ namespace Banshee.NowPlaying
 
             var actions = new BansheeActionGroup ("NowPlaying");
             actions.AddImportant (new ToggleActionEntry ("SimplifyNowPlaying", null, Catalog.GetString ("Simplify"),
-                "F9", Catalog.GetString ("Simplify the Now Playing interface by hiding the source list and more"),
+                "F9", Catalog.GetString ("Hide/Show the source list, menu, toolbar, and status bar"),
                 delegate {
                     bool simple = !Properties.Get<bool> ("Nereid.SimpleUI");
                     Properties.Set<bool> ("Nereid.SimpleUI", simple);
