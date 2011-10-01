@@ -7,24 +7,24 @@
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004, 2005, 2006.
 # Maria Majadas <maria.majadas@hispalinux.es>, 2005, 2006, 2007.
 # Andrés Herrera <andres@usr.cl>, 2008.
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010.
 # Benjamín Valero Espinosa <benjavalero@gmail.com>, 2008, 2009, 2010, 2011.
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: banshee.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-09-25 20:41+0000\n"
-"PO-Revision-Date: 2011-09-27 12:34+0200\n"
-"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"POT-Creation-Date: 2011-10-01 10:03+0000\n"
+"PO-Revision-Date: 2011-10-01 14:15+0200\n"
+"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #. ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice.addin.xml
 #: ../data/addin-xml-strings.cs:8
@@ -293,12 +293,10 @@ msgstr "Mostrar un icono en el área de notificación para controlar Banshee."
 
 #. ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.addin.xml
 #: ../data/addin-xml-strings.cs:133
-#| msgid "Audio CD Support"
 msgid "DVD and Audio CD Support"
 msgstr "Soporte para CD de sonido y DVD"
 
 #: ../data/addin-xml-strings.cs:134
-#| msgid "Listen to and rip Audio CDs."
 msgid "Watch DVDs, listen to and rip Audio CDs."
 msgstr "Ver DVD, escuchar y extraer CD de sonido."
 
@@ -942,8 +940,8 @@ msgstr "Opciones de control de reproducción"
 msgid ""
 "Play the next track, optionally restarting if the 'restart' value is set"
 msgstr ""
-"Reproduce la pista siguiente, reiniciando opcionalmente si el valor «restart» "
-"está establecido"
+"Reproduce la pista siguiente, reiniciando opcionalmente si el valor "
+"«restart» está establecido"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:165
 msgid ""
@@ -1860,28 +1858,20 @@ msgstr ""
 "soportados"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:55
-#| msgid "Write _metadata to files"
 msgid "Write _ratings to files"
 msgstr "Escribir _valoración en los archivos"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:56
-#| msgid ""
-#| "Enable this option to save rating and playcount metadata inside supported "
-#| "audio files"
 msgid "Enable this option to save rating metadata inside supported audio files"
 msgstr ""
 "Activar esta opción para guardar metadatos de valoración dentro de los "
 "archivos de sonido soportados"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:61
-#| msgid "Write _ratings and play counts to files"
 msgid "Write play counts to files"
 msgstr "Escribir número de reproducciones en los archivos"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:62
-#| msgid ""
-#| "Enable this option to save rating and playcount metadata inside supported "
-#| "audio files"
 msgid ""
 "Enable this option to save playcount metadata inside supported audio files"
 msgstr ""
@@ -6167,10 +6157,10 @@ msgid "Simplify"
 msgstr "Simplificar"
 
 #: ../src/Extensions/Banshee.NowPlaying/Banshee.NowPlaying/NowPlayingSource.cs:60
-msgid "Simplify the Now Playing interface by hiding the source list and more"
+msgid "Hide/Show the source list, menu, toolbar, and status bar"
 msgstr ""
-"Simplificar la interfaz de En reproducción ocultando la lista de fuentes y "
-"más"
+"Mostrar/Ocultar la lista de fuentes, menú, barra de herramientas y barra de "
+"estado"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdDiscModel.cs:75
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:54
@@ -6302,7 +6292,6 @@ msgstr "Importar «{0}»"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc/DiscSource.cs:171
 #, csharp-format
-#| msgid "Could not disconnect {0}: {1}"
 msgid "Could not eject {0}: {1}"
 msgstr "No se pudo expulsar {0}: {1}"
 
@@ -6319,7 +6308,6 @@ msgid "Dvd"
 msgstr "DVD"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:63
-#| msgid "Preferences"
 msgid "DVD Preferences"
 msgstr "Preferencias de DVD"
 
@@ -6378,8 +6366,9 @@ msgid ""
 "The iTunes library refers to your music directory as \"{0}\" but Banshee was "
 "not able to infer the location of this directory. Please locate it."
 msgstr ""
-"La colección de iTunes indica que su carpeta de música es «{0}», pero Banshee "
-"no ha podido deducir la ubicación de esta carpeta. Por favor, localícela."
+"La colección de iTunes indica que su carpeta de música es «{0}», pero "
+"Banshee no ha podido deducir la ubicación de esta carpeta. Por favor, "
+"localícela."
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:74
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:392
@@ -7142,6 +7131,12 @@ msgstr "Conectado a Last.fm"
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:103
 msgid "Unknown Podcast"
 msgstr "Podcast desconocido"
+
+#~ msgid ""
+#~ "Simplify the Now Playing interface by hiding the source list and more"
+#~ msgstr ""
+#~ "Simplificar la interfaz de En reproducción ocultando la lista de fuentes "
+#~ "y más"
 
 #~ msgid "Ejecting audio CD..."
 #~ msgstr "Expulsando CD de sonido…"
