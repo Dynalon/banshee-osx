@@ -38,6 +38,8 @@ using Hyena;
 using Banshee.Base;
 using Banshee.Streaming;
 using Banshee.ServiceStack;
+using Banshee.Sources;
+using Banshee.Query;
 using Banshee.Metadata;
 using Banshee.Configuration;
 using Banshee.Collection;
@@ -696,6 +698,13 @@ namespace Banshee.MediaEngine
                 if (CurrentTrack != null) {
                     CurrentTrack.Rating = (int)Math.Min (5u, value);
                     CurrentTrack.Save ();
+
+                    foreach (var source in ServiceManager.SourceManager.Sources) {
+                        var psource = source as PrimarySource;
+                        if (psource != null) {
+                            psource.NotifyTracksChanged (BansheeQuery.RatingField);
+                        }
+                    }
                 }
             }
         }
