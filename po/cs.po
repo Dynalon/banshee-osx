@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-09-25 20:41+0000\n"
-"PO-Revision-Date: 2011-09-28 07:41+0200\n"
+"POT-Creation-Date: 2011-10-01 10:03+0000\n"
+"PO-Revision-Date: 2011-10-04 10:54+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -294,12 +294,10 @@ msgstr ""
 
 #. ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.addin.xml
 #: ../data/addin-xml-strings.cs:133
-#| msgid "Audio CD Support"
 msgid "DVD and Audio CD Support"
 msgstr "Podpora pro DVD a zvuková CD"
 
 #: ../data/addin-xml-strings.cs:134
-#| msgid "Listen to and rip Audio CDs."
 msgid "Watch DVDs, listen to and rip Audio CDs."
 msgstr "Sledování DVD, poslech a extrahování zvukových CD."
 
@@ -6155,10 +6153,8 @@ msgid "Simplify"
 msgstr "Zjednodušit"
 
 #: ../src/Extensions/Banshee.NowPlaying/Banshee.NowPlaying/NowPlayingSource.cs:60
-msgid "Simplify the Now Playing interface by hiding the source list and more"
-msgstr ""
-"Zjednodušit rozhraní „Právě se přehrává“ tím, že se skryje seznam skladeb "
-"apod."
+msgid "Hide/Show the source list, menu, toolbar, and status bar"
+msgstr "Skrýt/zobrazit seznam zdrojů, nabídku, lištu nástrojů a stavovou lištu"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdDiscModel.cs:75
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:54
@@ -6287,7 +6283,6 @@ msgstr "Importovat „{0}“"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc/DiscSource.cs:171
 #, csharp-format
-#| msgid "Could not disconnect {0}: {1}"
 msgid "Could not eject {0}: {1}"
 msgstr "Nelze vysunout {0}: {1}"
 
@@ -6304,7 +6299,6 @@ msgid "Dvd"
 msgstr "DVD"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:63
-#| msgid "Preferences"
 msgid "DVD Preferences"
 msgstr "Předvolby DVD"
 
