@@ -127,7 +127,7 @@ namespace Banshee.CoverArt
 
         public void FetchCoverArt (bool force)
         {
-            if (job == null && ServiceManager.Get<Network> ().Connected) {
+            if (job == null) {
                 DateTime last_scan = DateTime.MinValue;
 
                 if (!force) {
