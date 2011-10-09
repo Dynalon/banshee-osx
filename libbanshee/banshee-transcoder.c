@@ -243,7 +243,7 @@ gst_transcoder_create_pipeline(GstTranscoder *transcoder,
 
     decoder_elem = gst_element_factory_make("decodebin2", "decodebin2");
     if(decoder_elem == NULL) {
-        gst_transcoder_raise_error(transcoder, _("Could not create 'decodebin2' plugin"), NULL);
+        gst_transcoder_raise_error(transcoder, _("Could not create decodebin2 plugin"), NULL);
         return FALSE;
     }
     
@@ -255,19 +255,19 @@ gst_transcoder_create_pipeline(GstTranscoder *transcoder,
     
     transcoder->sink_bin = gst_bin_new("sinkbin");
     if(transcoder->sink_bin == NULL) {
-        gst_transcoder_raise_error(transcoder, _("Could not create 'sinkben' plugin"), NULL);
+        gst_transcoder_raise_error(transcoder, _("Could not create sinkbin plugin"), NULL);
         return FALSE;
     }
     
     conv_elem = gst_element_factory_make("audioconvert", "audioconvert");
     if(conv_elem == NULL) {
-        gst_transcoder_raise_error(transcoder, _("Could not create 'audioconvert' plugin"), NULL);
+        gst_transcoder_raise_error(transcoder, _("Could not create audioconvert plugin"), NULL);
         return FALSE;
     }
     
     resample_elem = gst_element_factory_make("audioresample", "audioresample");
     if(resample_elem == NULL) {
-        gst_transcoder_raise_error(transcoder, _("Could not create 'audioresample' plugin"), NULL);
+        gst_transcoder_raise_error(transcoder, _("Could not create audioresample plugin"), NULL);
         return FALSE;
     }
 

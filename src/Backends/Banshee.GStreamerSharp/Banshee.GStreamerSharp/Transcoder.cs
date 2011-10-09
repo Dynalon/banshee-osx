@@ -65,12 +65,12 @@ namespace Banshee.GStreamerSharp
 
                 conv_elem = ElementFactory.Make ("audioconvert", "audioconvert");
                 if (conv_elem == null) {
-                    throw new Exception (Catalog.GetString ("Could not create 'audioconvert' plugin"));
+                    throw new Exception (Catalog.GetString ("Could not create audioconvert plugin"));
                 }
 
                 resample_elem = ElementFactory.Make ("audioresample", "audioresample");
                 if (resample_elem == null) {
-                    throw new Exception (Catalog.GetString ("Could not create 'audioresample' plugin"));
+                    throw new Exception (Catalog.GetString ("Could not create audioresample plugin"));
                 }
 
                 try {
@@ -184,7 +184,7 @@ namespace Banshee.GStreamerSharp
 
             decoder_elem = ElementFactory.Make ("decodebin2", "decodebin2");
             if (decoder_elem == null) {
-                RaiseError (current_track, Catalog.GetString ("Could not create 'decodebin2' plugin"));
+                RaiseError (current_track, Catalog.GetString ("Could not create decodebin2 plugin"));
                 return false;
             }
 
@@ -195,7 +195,7 @@ namespace Banshee.GStreamerSharp
             }
 
             if (sink_bin == null) {
-                RaiseError (current_track, Catalog.GetString ("Could not create 'sinkbin' plugin"));
+                RaiseError (current_track, Catalog.GetString ("Could not create sinkbin plugin"));
                 return false;
             }
 
