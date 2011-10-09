@@ -158,20 +158,10 @@ namespace Migo.Syndication
             if (filename.EndsWith (".torrent", StringComparison.OrdinalIgnoreCase)) {
                 filename = filename.Substring(0, filename.Length - 8);
             }
-            string tmpLocalPath;
-            string fullPath = path;
             string localEnclosurePath = Item.Feed.LocalEnclosurePath;
 
-            if (!localEnclosurePath.EndsWith (Path.DirectorySeparatorChar.ToString ())) {
-                localEnclosurePath += Path.DirectorySeparatorChar;
-            }
-
-            if (!fullPath.EndsWith (Path.DirectorySeparatorChar.ToString ())) {
-                fullPath += Path.DirectorySeparatorChar;
-            }
-
-            fullPath += filename;
-            tmpLocalPath = localEnclosurePath+filename;
+            string fullPath = Path.Combine (path, filename);
+            string tmpLocalPath = Path.Combine (localEnclosurePath, filename);
 
             try {
                 if (!Directory.Exists (path)) {
