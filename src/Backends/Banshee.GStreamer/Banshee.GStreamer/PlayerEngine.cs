@@ -80,9 +80,6 @@ namespace Banshee.GStreamer
     public class PlayerEngine : Banshee.MediaEngine.PlayerEngine,
         IEqualizer, IVisualizationDataSource, ISupportClutter
     {
-        internal static string reserved1 = Catalog.GetString ("Enable _gapless playback");
-        internal static string reserved2 = Catalog.GetString ("Eliminate the small playback gap on track change.  Useful for concept albums and classical music");
-
         private uint GST_CORE_ERROR = 0;
         private uint GST_LIBRARY_ERROR = 0;
         private uint GST_RESOURCE_ERROR = 0;
@@ -886,7 +883,7 @@ namespace Banshee.GStreamer
             if (bp_supports_gapless (handle)) {
                 gapless_preference = service["general"]["misc"].Add (new SchemaPreference<bool> (GaplessEnabledSchema,
                         Catalog.GetString ("Enable _gapless playback"),
-                        Catalog.GetString ("Eliminate the small playback gap on track change.  Useful for concept albums and classical music."),
+                        Catalog.GetString ("Eliminate the small playback gap on track change. Useful for concept albums and classical music"),
                         delegate { GaplessEnabled = GaplessEnabledSchema.Get (); }
                 ));
             }
@@ -918,7 +915,7 @@ namespace Banshee.GStreamer
             "player_engine", "gapless_playback_enabled",
             true,
             "Enable gapless playback",
-            "Eliminate the small playback gap on track change.  Useful for concept albums & classical music."
+            "Eliminate the small playback gap on track change. Useful for concept albums and classical music"
         );
 
 
