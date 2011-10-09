@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: banshee.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-10-01 10:03+0000\n"
-"PO-Revision-Date: 2011-10-01 14:15+0200\n"
+"POT-Creation-Date: 2011-10-09 08:55+0000\n"
+"PO-Revision-Date: 2011-10-09 12:16+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -1812,11 +1812,11 @@ msgstr "No vistos"
 msgid "Videos that haven't been played yet"
 msgstr "Vídeos que no han sido reproducidos aún"
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:99
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:101
 msgid "Default player engine"
 msgstr "Motor de reproducción predeterminado"
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:106
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:108
 msgid ""
 "No player engines were found. Please ensure Banshee has been cleanly "
 "installed."
@@ -1824,7 +1824,7 @@ msgstr ""
 "No se ha encontrado ningún motor de reproducción. Asegúrese de que Banshee "
 "se ha instalado correctamente."
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:373
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:375
 msgid "Problem with Player Engine"
 msgstr "Problema con el motor de reproducción"
 
@@ -4747,20 +4747,27 @@ msgid "Back"
 msgstr "Atrás"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:101
+#| msgid ""
+#| "iTunes® 7 introduced new compatibility issues and currently only works "
+#| "with other iTunes® 7 clients.\n"
+#| "\n"
+#| "No third-party clients can connect to iTunes® music shares anymore. This "
+#| "is an intentional limitation by Apple in iTunes® 7 and we apologize for "
+#| "the unfortunate inconvenience."
 msgid ""
 "iTunes® 7 introduced new compatibility issues and currently only works with "
 "other iTunes® 7 clients.\n"
 "\n"
 "No third-party clients can connect to iTunes® music shares anymore. This is "
-"an intentional limitation by Apple in iTunes® 7 and we apologize for the "
-"unfortunate inconvenience."
+"an intentional limitation by Apple in iTunes® 7 and newer, we apologize for "
+"the unfortunate inconvenience."
 msgstr ""
 "iTunes® 7 introdujo nuevos problemas de compatibilidad y actualmente sólo "
 "funciona con otros clientes iTunes® 7.\n"
 "\n"
 "Ningún cliente de terceros puede conectarse ya a la compartición de música "
 "de iTunes®. Esta es una limitación intencionada de Apple en iTunes® 7 y "
-"pedimos disculpas por este desafortunado inconveniente."
+"superior, y pedimos disculpas por este desafortunado inconveniente."
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:111
 msgid "Common reasons for connection failures:"
@@ -4787,8 +4794,9 @@ msgid "Try connecting again"
 msgstr "Intente conectar de nuevo"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:139
-msgid "The music share is hosted by iTunes® 7"
-msgstr "La compartición de música está albergada en iTunes® 7"
+#| msgid "The music share is hosted by iTunes® 7"
+msgid "The music share is hosted by iTunes® 7 or newer"
+msgstr "La compartición de música está albergada en iTunes® 7 o superior"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapLoginDialog.cs:47
 msgid "Login to Music Share"
