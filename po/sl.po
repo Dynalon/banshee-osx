@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-10-01 12:16+0000\n"
-"PO-Revision-Date: 2011-10-08 14:30+0100\n"
+"POT-Creation-Date: 2011-10-09 14:59+0000\n"
+"PO-Revision-Date: 2011-10-09 20:24+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: \n"
@@ -606,10 +606,14 @@ msgid "Could not create filesrc element"
 msgstr "Predmeta filesrc ni mogoče ustvariti"
 
 #: ../libbanshee/banshee-bpmdetector.c:214
+#: ../libbanshee/banshee-transcoder.c:246
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:187
 msgid "Could not create decodebin2 plugin"
 msgstr "Vstavka decodebin2 ni mogoče ustvariti"
 
 #: ../libbanshee/banshee-bpmdetector.c:220
+#: ../libbanshee/banshee-transcoder.c:264
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:68
 msgid "Could not create audioconvert plugin"
 msgstr "Vstavka pretvorbe zvoka ni mogoče ustvariti"
 
@@ -652,28 +656,19 @@ msgstr "Vstavka datotečnega korita ni mogoče najti"
 msgid "Could not create source element"
 msgstr "Predmeta izvira ni mogoče ustvariti"
 
-#: ../libbanshee/banshee-transcoder.c:246
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:187
-msgid "Could not create 'decodebin2' plugin"
-msgstr "Vstavka 'decodebin2' ni mogoče ustvariti"
-
 #: ../libbanshee/banshee-transcoder.c:252
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:63
 msgid "Could not create sink element"
 msgstr "Predmeta korita ni mogoče ustvariti"
 
 #: ../libbanshee/banshee-transcoder.c:258
-msgid "Could not create 'sinkben' plugin"
-msgstr "Vstavka 'sinkben' ni mogoče ustvariti"
-
-#: ../libbanshee/banshee-transcoder.c:264
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:68
-msgid "Could not create 'audioconvert' plugin"
-msgstr "Vstavka 'audioconvert' ni mogoče ustvariti"
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:198
+msgid "Could not create sinkbin plugin"
+msgstr "Vstavka 'sinkbin' ni mogoče ustvariti"
 
 #: ../libbanshee/banshee-transcoder.c:270
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:73
-msgid "Could not create 'audioresample' plugin"
+msgid "Could not create audioresample plugin"
 msgstr "Vstavka 'audioresample' ni mogoče ustvariti"
 
 #: ../libbanshee/banshee-transcoder.c:276
@@ -724,38 +719,33 @@ msgstr "Gonilnika za zajemanje CD-jev ni mogoče ustvariti."
 msgid "Could not create BPM detection driver."
 msgstr "Gonilnika zaznavanja UNM ni mogoče ustvariti."
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:83
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:888
-msgid "Enable _gapless playback"
-msgstr "Omogoči predvajanje _brez premora"
-
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:84
-msgid "Eliminate the small playback gap on track change.  Useful for concept albums and classical music"
-msgstr "Odstrani majhen premor predvajanja ob spremembi skladb. Uporabno za tematske albume in klasično glasbo"
-
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:152
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:194
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:149
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:191
 msgid "Could not initialize GStreamer library"
 msgstr "Knjižnice GStreamer ni mogoče zagnati"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:506
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:503
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:553
 msgid "Unknown Error"
 msgstr "Neznana napaka"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:882
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:879
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:978
 msgid "_Enable ReplayGain correction"
 msgstr "_Omogoči popravek ReplayGain"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:883
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:880
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:979
 msgid "For tracks that have ReplayGain data, automatically scale (normalize) playback volume"
 msgstr "Samodejno izravnaj glasnost predvajanja skladb s podatki ReplayGain"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:889
-msgid "Eliminate the small playback gap on track change.  Useful for concept albums and classical music."
-msgstr "Prezri premor predvajanja ob spremembi skladbe. Uporabno pri poslušanju tematskih albumov ali pa klasične glasbe."
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:885
+msgid "Enable _gapless playback"
+msgstr "Omogoči predvajanje _brez premora"
+
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:886
+msgid "Eliminate the small playback gap on track change. Useful for concept albums and classical music"
+msgstr "Odstrani premor predvajanja ob spremembi skladbe. Uporabno za tematske albume in pri poslušanju klasične glasbe."
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/Transcoder.cs:63
 msgid "Could not create transcoder"
@@ -774,10 +764,6 @@ msgstr "Uporabljen Gstreamer 0.10."
 #, csharp-format
 msgid "Could not create encoding pipeline : {0}"
 msgstr "Cevovoda kodiranja ni mogoče ustvariti : {0}"
-
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:198
-msgid "Could not create 'sinkbin' plugin"
-msgstr "Vstavka 'sinkbin' ni mogoče ustvariti"
 
 #: ../src/Backends/Banshee.Osx/Banshee.OsxBackend/OsxService.cs:91
 #: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:132
@@ -1731,15 +1717,15 @@ msgstr "Neogledano"
 msgid "Videos that haven't been played yet"
 msgstr "Nepredvajani videoposnetki"
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:99
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:101
 msgid "Default player engine"
 msgstr "Privzeti programnik predvajalnika"
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:106
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:108
 msgid "No player engines were found. Please ensure Banshee has been cleanly installed."
 msgstr "Programnikov predvajalnika ni mogoče najti. Prepričajte se, da je bil predvajalnik Banshee pravilno nameščen."
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:373
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:375
 msgid "Problem with Player Engine"
 msgstr "Težave s programnikom predvajalnika"
 
@@ -4608,11 +4594,11 @@ msgstr "Nazaj"
 msgid ""
 "iTunes® 7 introduced new compatibility issues and currently only works with other iTunes® 7 clients.\n"
 "\n"
-"No third-party clients can connect to iTunes® music shares anymore. This is an intentional limitation by Apple in iTunes® 7 and we apologize for the unfortunate inconvenience."
+"No third-party clients can connect to iTunes® music shares anymore. This is an intentional limitation by Apple in iTunes® 7 and newer, we apologize for the unfortunate inconvenience."
 msgstr ""
 "Z iTunes® 7 so se pojavile težave združljivosti. Trenutno iTunes® 7 delujejo le z ostalimi odjemalci  iTunes® 7.\n"
 "\n"
-"Drugi uporabniki se ne morejo povezati v iTunes® souporabo glasbe. To je namerna omejitev Appla v iTunes® 7."
+"Odjemalci tretjih virov ne podpirajo povezav v iTunes® souporabo glasbe. To je namerna omejitev, ki jo je vpeljalo podjetje Apple v iTunes® 7."
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:111
 msgid "Common reasons for connection failures:"
@@ -4639,8 +4625,8 @@ msgid "Try connecting again"
 msgstr "Poskusite se ponovno povezati"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:139
-msgid "The music share is hosted by iTunes® 7"
-msgstr "Souporabo glasbe gosti iTunes® 7"
+msgid "The music share is hosted by iTunes® 7 or newer"
+msgstr "Souporabo glasbe gosti iTunes® 7 ali novejšo različico."
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapLoginDialog.cs:47
 msgid "Login to Music Share"
@@ -6919,6 +6905,22 @@ msgstr "Povezava z Last.fm"
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:103
 msgid "Unknown Podcast"
 msgstr "Neznan podcast"
+
+#~ msgid "Could not create 'decodebin2' plugin"
+#~ msgstr "Vstavka 'decodebin2' ni mogoče ustvariti"
+
+#~ msgid "Could not create 'sinkben' plugin"
+#~ msgstr "Vstavka 'sinkben' ni mogoče ustvariti"
+
+#~ msgid "Could not create 'audioconvert' plugin"
+#~ msgstr "Vstavka 'audioconvert' ni mogoče ustvariti"
+
+#~ msgid ""
+#~ "Eliminate the small playback gap on track change.  Useful for concept "
+#~ "albums and classical music."
+#~ msgstr ""
+#~ "Prezri premor predvajanja ob spremembi skladbe. Uporabno pri poslušanju "
+#~ "tematskih albumov ali pa klasične glasbe."
 
 #~ msgid ""
 #~ "Simplify the Now Playing interface by hiding the source list and more"
