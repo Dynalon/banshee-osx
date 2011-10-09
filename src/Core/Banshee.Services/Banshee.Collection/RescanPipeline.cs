@@ -196,7 +196,7 @@ namespace Banshee.Collection
                             if (similar_track == null) {
                                 //Hyena.Log.DebugFormat ("Couldn't find it, so queueing to import it");
                                 status = System.IO.Path.GetFileNameWithoutExtension (file_path);
-                                ServiceManager.Get<Banshee.Library.LibraryImportManager> ().ImportTrack (file_path);
+                                ServiceManager.Get<Banshee.Library.LibraryImportManager> ().ImportTrack (uri);
                             }
                         }
                     }
