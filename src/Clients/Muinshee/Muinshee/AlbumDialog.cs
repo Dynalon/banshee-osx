@@ -80,8 +80,10 @@ namespace Muinshee
 
         protected override Widget GetItemWidget ()
         {
-            AlbumListView album_view = new AlbumListView ();
+            AlbumListView album_view = new MuinsheeAlbumView ();
             album_view.SetModel (album_model);
+
+            album_view.RowActivated += OnRowActivated;
             return album_view;
         }
 
@@ -100,5 +102,10 @@ namespace Muinshee
             base.Destroy ();
         }
 
+        protected void OnRowActivated (object o, EventArgs args)
+        {
+            Play ();
+            Destroy ();
+        }
     }
 }

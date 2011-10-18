@@ -110,7 +110,7 @@ namespace Muinshee
             Music.FilterQuery = search_entry.Query;
         }
 
-        private void Play ()
+        protected void Play ()
         {
             TrackInfo to_play = FirstTrack;
             Hyena.Log.InformationFormat  ("first to play is {0}", to_play);
