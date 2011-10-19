@@ -85,6 +85,11 @@ namespace Banshee.UbuntuOneMusicStore
 
         private void OnDefaultStoreUrlLoaded (object o, UbuntuOne.UrlLoadedArgs args)
         {
+            if (args == null || args.Url == null) {
+                //may happen when there is no internet connection
+                return;
+            }
+
             if (args.Url.StartsWith( "http://stores.7digital.com/default")) {
                 // we just do this the first time we load the default store view
                 // so that we can switch to the passed u1ms uri and not have it switch out on us.
