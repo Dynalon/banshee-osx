@@ -47,7 +47,6 @@ namespace Banshee.UbuntuOneMusicStore
         // In the sources TreeView, sets the order value for this source, small on top
         const int sort_order = 190;
         CustomView custom_view;
-        string cached_startup_uri;
 
         public UbuntuOneMusicStoreSource () : base (
             Catalog.GetString ("Ubuntu One Music Store"),
@@ -62,12 +61,11 @@ namespace Banshee.UbuntuOneMusicStore
 
             // So we can handle u1ms:// URIs
             ServiceManager.Get<DBusCommandService> ().ArgumentPushed += OnCommandLineArgument;
-            custom_view.store.UrlLoaded += OnDefaultStoreUrlLoaded;
 
             // make sure that the u1ms uri gets handled on banshee startup
             foreach (string uri in ApplicationContext.CommandLine.Files) {
                 if (IsU1msUri (uri)) {
-                    cached_startup_uri = uri;
+                    LoadU1msUri (uri);
                     break;
                 }
             }
@@ -81,22 +79,6 @@ namespace Banshee.UbuntuOneMusicStore
         // A count of 0 will be hidden in the source TreeView
         public override int Count {
             get { return 0; }
-        }
-
-        private void OnDefaultStoreUrlLoaded (object o, UbuntuOne.UrlLoadedArgs args)
-        {
-            if (args == null || args.Url == null) {
-                //may happen when there is no internet connection
-                return;
-            }
-
-            if (args.Url.StartsWith( "http://stores.7digital.com/default")) {
-                // we just do this the first time we load the default store view
-                // so that we can switch to the passed u1ms uri and not have it switch out on us.
-                custom_view.store.UrlLoaded -= OnDefaultStoreUrlLoaded;
-                if (!string.IsNullOrEmpty (cached_startup_uri))
-                    LoadU1msUri (cached_startup_uri);
-            }
         }
 
         private void OnCommandLineArgument (string uri, object value, bool isFile)
