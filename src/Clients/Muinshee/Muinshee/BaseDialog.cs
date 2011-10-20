@@ -48,6 +48,19 @@ using Banshee.MediaEngine;
 
 namespace Muinshee
 {
+    internal class MuinsheeSearchEntry : SearchEntry
+    {
+        protected override bool OnKeyPressEvent (Gdk.EventKey evnt)
+        {
+            // The default behavior is to have Esc clear the search entry
+            // Close the dialog if there is already nothing in the search entry
+            if (evnt.Key == Gdk.Key.Escape && String.IsNullOrEmpty (Query)) {
+                return false;
+            }
+            return base.OnKeyPressEvent (evnt);
+        }
+    }
+
     public abstract class BaseDialog : BansheeDialog
     {
         private SearchEntry search_entry;
@@ -65,7 +78,7 @@ namespace Muinshee
             Label search_label = new Label ("_Search:");
             filter_box.PackStart (search_label, false, false, 0);
 
-            search_entry = new SearchEntry ();
+            search_entry = new MuinsheeSearchEntry ();
             search_entry.Show ();
             search_entry.Changed += OnFilterChanged;
             search_entry.Ready = true;
