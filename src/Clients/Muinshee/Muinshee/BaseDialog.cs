@@ -102,20 +102,24 @@ namespace Muinshee
             window_controller = new PersistentWindowController (this, String.Format ("muinshee.{0}", addType), 500, 475, WindowPersistOptions.Size);
             window_controller.Restore ();
             ShowAll ();
+
+            Response += OnResponse;
         }
 
-        public void TryRun ()
+        private void OnResponse (object o, ResponseArgs args)
         {
-            try {
-                var response = Run ();
-                if (response == ResponseType.Apply) {
-                    Queue ();
-                } else if (response == ResponseType.Ok) {
-                    Play ();
-                }
-            } finally {
-                Destroy ();
+            ResponseType response = args.ResponseId;
+
+            if (response == ResponseType.Apply) {
+                Queue ();
+                return;
             }
+
+            if (response == ResponseType.Ok) {
+                Play ();
+            }
+
+            Destroy ();
         }
 
         private void OnFilterChanged (object o, EventArgs args)

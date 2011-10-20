@@ -65,12 +65,12 @@ namespace Muinshee
 
         private void OnPlaySong (object sender, EventArgs args)
         {
-            new SongDialog (queue).TryRun ();
+            new SongDialog (queue).Show ();
         }
 
         private void OnPlayAlbum (object sender, EventArgs args)
         {
-            new AlbumDialog (queue).TryRun ();
+            new AlbumDialog (queue).Show ();
         }
     }
 }
