@@ -93,7 +93,7 @@ namespace Muinshee
 
             AddDefaultCloseButton ();
 
-            Button queue_button = new ImageButton (Catalog.GetString ("En_queue"), "stock_timer");
+            Button queue_button = new ImageButton (Catalog.GetString ("En_queue"), "gtk-add");
             AddActionWidget (queue_button, Gtk.ResponseType.Apply);
 
             Button play_button = new ImageButton (Catalog.GetString ("_Play"), "media-playback-start");
