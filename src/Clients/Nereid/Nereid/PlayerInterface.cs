@@ -577,7 +577,7 @@ namespace Nereid
 
             var title_widget = source.Properties.Get<Widget> ("Nereid.SourceContents.TitleWidget");
             if (title_widget != null) {
-                Hyena.Log.Warning ("Nereid.SourceContents.TitleWidget is no longer used (from {0})", source.Name);
+                Hyena.Log.WarningFormat ("Nereid.SourceContents.TitleWidget is no longer used (from {0})", source.Name);
             }
 
             Widget header_widget = null;
