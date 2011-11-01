@@ -411,7 +411,7 @@ namespace Banshee.Sources
             if(handler != null) {
                 SourceEventArgs args = new SourceEventArgs();
                 args.Source = active_source;
-                GLib.Idle.Add (delegate { handler(args); return false; });
+                handler(args);
             }
 
             source.Activate();
