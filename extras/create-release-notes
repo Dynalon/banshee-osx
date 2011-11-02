@@ -8,8 +8,12 @@ while (my $line = readline(IN)) {
 close (IN);
 
 # Parse various bits out of NEWS
-$news =~ m/Banshee ([\S]+) - ([^\n]+)$/ms;                $version = $1; $release_date = $2;
-$version =~ m/(\d+\.\d+)\./; $series = $1;
+$news =~ m/Banshee ([\S]+) - ([^\n]+)$/ms;
+$version = $1;
+$release_date = $2;
+
+$version =~ m/(\d+\.\d+)\./;
+$series = $1;
 
 $news =~ m/[=]+\n\n(.+)New Features[^:]*:(.+)Enhancements/ms;
 $desc = $1;
@@ -55,9 +59,10 @@ $features
 <ul>
     $bugs
 </ul>
-
+<br>
 <h4>Banshee has a lot more to offer! Check out the previous major release notes...</h4>
 <ul>
+	<li><a href="/download/archives/2.0.0">Read about features added in Banshee 2.2.0</a></li>
 	<li><a href="/download/archives/2.0.0">Read about features added in Banshee 2.0.0</a></li>
 	<li><a href="/download/archives/1.8.0">Read about features added in Banshee 1.8.0</a></li>
 	<li><a href="/download/archives/1.6.0">Read about features added in Banshee 1.6.0</a></li>
@@ -72,7 +77,7 @@ $features
 	<li>GLib 2.22</li>
 	<li>dbus-sharp 0.7</li>
 	<li>dbus-sharp-glib 0.5</li>
-	<li>Mono.Addins (mono-addins) 0.3.1</li>
+	<li>Mono.Addins (mono-addins) 0.6.2</li>
 	<li>TagLib# (taglib-sharp) &gt;= 2.0.3.7</li>
 	<li>Required to build default feature stack:
 <ul>
@@ -110,6 +115,7 @@ The following people contributed updated translations to this release.    Withou
 <blockquote>
     
 </blockquote>
+
 <h4>Reporting Bugs, Joining the Community</h4>
 If you encounter any bad behavior with this release, please do not hesitate to <a href="/contribute/file-bugs/">file bugs</a>!
 
