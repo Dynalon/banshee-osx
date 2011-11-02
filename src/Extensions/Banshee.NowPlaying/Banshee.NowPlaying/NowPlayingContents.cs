@@ -72,6 +72,7 @@ namespace Banshee.NowPlaying
 
             //TODO stop tracking mouse when no more in menu
             video_event.ButtonPressEvent += OnButtonPress;
+            video_event.ButtonReleaseEvent += OnButtonRelease;
             video_event.MotionNotifyEvent += OnMouseMove;
             video_event.KeyPressEvent += OnKeyPress;
 
@@ -112,6 +113,7 @@ namespace Banshee.NowPlaying
         public override void Dispose ()
         {
             video_event.ButtonPressEvent -= OnButtonPress;
+            video_event.ButtonReleaseEvent -= OnButtonRelease;
             video_event.MotionNotifyEvent -= OnMouseMove;
             video_event.KeyPressEvent -= OnKeyPress;
 
@@ -196,6 +198,13 @@ namespace Banshee.NowPlaying
                         ServiceManager.PlayerEngine.NotifyMouseButtonPressed ((int)args.Event.Button, args.Event.X, args.Event.Y);
                     }
                     break;
+            }
+        }
+
+        [GLib.ConnectBefore]
+        void OnButtonRelease (object o, ButtonReleaseEventArgs args)
+        {
+            switch (args.Event.Type) {
                 case Gdk.EventType.ButtonRelease:
                     if (ServiceManager.PlayerEngine.InDvdMenu) {
                         ServiceManager.PlayerEngine.NotifyMouseButtonReleased ((int)args.Event.Button, args.Event.X, args.Event.Y);
