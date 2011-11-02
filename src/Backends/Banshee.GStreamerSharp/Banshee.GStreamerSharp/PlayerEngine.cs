@@ -787,7 +787,7 @@ namespace Banshee.GStreamerSharp
             get { return source_capabilities; }
         }
 
-        private static string [] decoder_capabilities = { "ogg", "wma", "asf", "flac", "mp3", "" };
+        private static string [] decoder_capabilities = { "ogg", "wma", "asf", "flac" };
         public override IEnumerable ExplicitDecoderCapabilities {
             get { return decoder_capabilities; }
         }
