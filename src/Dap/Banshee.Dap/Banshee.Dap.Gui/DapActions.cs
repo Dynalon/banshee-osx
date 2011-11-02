@@ -31,6 +31,7 @@ using Mono.Unix;
 using Gtk;
 
 using Hyena;
+using Hyena.Widgets;
 
 using Banshee.Dap;
 using Banshee.Gui;
@@ -95,6 +96,38 @@ namespace Banshee.Dap.Gui
             if (dap != null) {
                 dap.Sync.Sync ();
             }
+        }
+
+        internal static bool ConfirmUserAction (int tracks_to_remove)
+        {
+            string header = String.Format (
+                Catalog.GetPluralString (
+                    // singular form unused b/c we know it's > 1, but we still need GetPlural
+                    "The sync operation will remove one track from your device.",
+                    "The sync operation will remove {0} tracks from your device.",
+                    tracks_to_remove),
+                tracks_to_remove);
+            string message = Catalog.GetString ("Are you sure you want to continue?");
+
+            var md = new HigMessageDialog (
+                ServiceManager.Get<GtkElementsService> ().PrimaryWindow,
+                DialogFlags.DestroyWithParent, MessageType.Warning,
+                ButtonsType.None, header, message
+            );
+            md.AddButton ("gtk-cancel", ResponseType.No, true);
+            md.AddButton (Catalog.GetString ("Remove tracks"), ResponseType.Yes, false);
+
+            bool remove_tracks = false;
+            ThreadAssist.BlockingProxyToMain (() => {
+                try {
+                    if (md.Run () == (int) ResponseType.Yes) {
+                        remove_tracks = true;
+                    }
+                } finally {
+                    md.Destroy ();
+                }
+            });
+            return remove_tracks;
         }
     }
 }
