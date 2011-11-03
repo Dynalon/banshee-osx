@@ -78,7 +78,8 @@ namespace Banshee.Collection.Database
             this.provider = provider;
             this.source = source;
 
-            SelectAggregates = "SUM(CoreTracks.Duration), SUM(CoreTracks.FileSize)";
+            SelectAggregates = String.Format ("SUM({0}), SUM({1})",
+                                              BansheeQuery.DurationField.Column, BansheeQuery.FileSizeField.Column);
 
             Selection.Changed += delegate {
                 if (SelectionAggregatesHandler != null) {
@@ -240,7 +241,8 @@ namespace Banshee.Collection.Database
         public virtual void UpdateUnfilteredAggregates ()
         {
             HyenaSqliteCommand count_command = new HyenaSqliteCommand (String.Format (
-                "SELECT COUNT(*), SUM(CoreTracks.FileSize), SUM(CoreTracks.Duration) {0}", UnfilteredQuery
+                "SELECT COUNT(*), SUM({0}), SUM({1}) {2}",
+                BansheeQuery.FileSizeField.Column, BansheeQuery.DurationField.Column, UnfilteredQuery
             ));
 
             using (HyenaDataReader reader = new HyenaDataReader (connection.Query (count_command))) {

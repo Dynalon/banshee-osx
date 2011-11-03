@@ -353,7 +353,7 @@ namespace Banshee.Query
             PlayCountField.ShortLabel   = Catalog.GetString ("Plays");
 
             default_sort = String.Format (default_sort_template, "");
-            default_sort_by_year = String.Format (default_sort_template, "CoreTracks.Year ASC, ");
+            default_sort_by_year = String.Format (default_sort_template, YearField.Column + " ASC, ");
 
             RandomOrder = CreateRandomQueryOrder ();
 
@@ -403,7 +403,7 @@ namespace Banshee.Query
             }
 
             bool sort_by_year = Banshee.Configuration.Schema.LibrarySchema.SortByAlbumYear.Get ();
-            string sort_by_year_part = sort_by_year ? "CoreTracks.Year ASC," : "";
+            string sort_by_year_part = sort_by_year ? YearField.Column + " ASC," : "";
             string sort = sort_by_year ? default_sort_by_year : default_sort;
 
             string ascDesc = asc ? "ASC" : "DESC";
@@ -415,9 +415,9 @@ namespace Banshee.Query
                     CoreAlbums.ArtistNameSortKey ASC,
                     {0}
                     CoreAlbums.TitleSortKey ASC,
-                    CoreTracks.Disc ASC,
-                    {1} {2}",
-                    sort_by_year_part, TrackNumberField.Column, ascDesc);
+                    {1} ASC,
+                    {2} {3}",
+                    sort_by_year_part, DiscNumberField.Column, TrackNumberField.Column, ascDesc);
             }
 
             else if (field.Equals (AlbumArtistField)) {
@@ -426,8 +426,9 @@ namespace Banshee.Query
                     CoreAlbums.ArtistNameSortKey {0},
                     {1}
                     CoreAlbums.TitleSortKey ASC,
-                    CoreTracks.Disc ASC,
-                    CoreTracks.TrackNumber ASC", ascDesc, sort_by_year_part);
+                    {2} ASC,
+                    {3} ASC",
+                    ascDesc, sort_by_year_part, DiscNumberField.Column, TrackNumberField.Column);
             }
 
             else if (field.Equals (ArtistField)) {
@@ -436,16 +437,18 @@ namespace Banshee.Query
                     CoreArtists.NameSortKey {0},
                     {1}
                     CoreAlbums.TitleSortKey ASC,
-                    CoreTracks.Disc ASC,
-                    CoreTracks.TrackNumber ASC", ascDesc, sort_by_year_part);
+                    {2} ASC,
+                    {3} ASC",
+                    ascDesc, sort_by_year_part, DiscNumberField.Column, TrackNumberField.Column);
             }
 
             else if (field.Equals (AlbumField)) {
                 sort_query = String.Format (@"
                     CoreAlbums.TitleSortKey {0},
                     {1}
-                    CoreTracks.Disc ASC,
-                    CoreTracks.TrackNumber ASC", ascDesc, sort_by_year_part);
+                    {2} ASC,
+                    {3} ASC",
+                    ascDesc, sort_by_year_part, DiscNumberField.Column, TrackNumberField.Column);
             }
 
             else if (field.Equals (TitleField)) {
@@ -459,10 +462,11 @@ namespace Banshee.Query
             else if (field.Equals (DiscNumberField)) {
                 sort_query = String.Format (@"
                     CoreAlbums.ArtistNameSortKey ASC,
-                    {1}
+                    {0}
                     CoreAlbums.TitleSortKey ASC,
-                    CoreTracks.Disc {0},
-                    CoreTracks.TrackNumber ASC", ascDesc, sort_by_year_part);
+                    {1} {2},
+                    {3} ASC",
+                    sort_by_year_part, DiscNumberField.Column, ascDesc, TrackNumberField.Column);
             }
 
             else if (field.Equals (ScoreField)) {

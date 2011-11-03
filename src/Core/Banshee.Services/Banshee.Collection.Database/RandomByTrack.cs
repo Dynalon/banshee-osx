@@ -48,7 +48,7 @@ namespace Banshee.Collection.Database
             Description = Catalog.GetString ("Play songs randomly from the playlist");
 
             Condition = "1=1";
-            OrderBy = "RANDOM()";
+            OrderBy = Banshee.Query.BansheeQuery.GetRandomSort ();
         }
 
         public override bool Next (DateTime after)

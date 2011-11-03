@@ -200,8 +200,10 @@ namespace Banshee.LibraryWatcher
         private void UpdateTrack (string track)
         {
             using (var reader = ServiceManager.DbConnection.Query (
-                DatabaseTrackInfo.Provider.CreateFetchCommand (
-                "CoreTracks.PrimarySourceID = ? AND CoreTracks.Uri = ? LIMIT 1"), library.DbId, new SafeUri (track).AbsoluteUri)) {
+                DatabaseTrackInfo.Provider.CreateFetchCommand (String.Format (
+                "CoreTracks.PrimarySourceID = ? AND {0} = ? LIMIT 1",
+                Banshee.Query.BansheeQuery.UriField.Column)),
+                library.DbId, new SafeUri (track).AbsoluteUri)) {
                 if (reader.Read ()) {
                     var track_info = DatabaseTrackInfo.Provider.Load (reader);
                     if (Banshee.IO.File.GetModifiedTime (track_info.Uri) > track_info.FileModifiedStamp) {

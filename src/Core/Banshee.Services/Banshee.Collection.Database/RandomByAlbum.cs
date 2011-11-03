@@ -33,6 +33,7 @@ using Hyena;
 using Hyena.Data;
 using Hyena.Data.Sqlite;
 
+using Banshee.Query;
 using Banshee.ServiceStack;
 using Banshee.PlaybackController;
 using Mono.Unix;
@@ -101,28 +102,32 @@ namespace Banshee.Collection.Database
                             SELECT
                                 CoreAlbums.AlbumID,
                                 CoreAlbums.Title,
-                                MAX(CoreTracks.LastPlayedStamp) as LastPlayed,
-                                MAX(CoreTracks.LastSkippedStamp) as LastSkipped
+                                MAX({4}) as LastPlayed,
+                                MAX({5}) as LastSkipped
                             FROM
                                 CoreTracks, CoreAlbums, CoreCache {0}
                             WHERE
                                 {1}
                                 CoreCache.ModelID = {2} AND
                                 CoreTracks.AlbumID = CoreAlbums.AlbumID AND
-                                CoreTracks.LastStreamError = 0
+                                {6} = 0
                                 {3}
                             GROUP BY CoreTracks.AlbumID
                             HAVING
                                 (LastPlayed < ? OR LastPlayed IS NULL) AND
                                 (LastSkipped < ? OR LastSkipped IS NULL)
-                            ORDER BY RANDOM()
+                            ORDER BY {7}
                             LIMIT 1",
                         Model.JoinFragment,
                         Model.CachesJoinTableEntries
                             ? String.Format ("CoreCache.ItemID = {0}.{1} AND", Model.JoinTable, Model.JoinPrimaryKey)
                             : "CoreCache.ItemId = CoreTracks.TrackID AND",
                         Model.CacheId,
-                        Model.ConditionFragment
+                        Model.ConditionFragment,
+                        BansheeQuery.LastPlayedField.Column,
+                        BansheeQuery.LastSkippedField.Column,
+                        BansheeQuery.PlaybackErrorField.Column,
+                        BansheeQuery.GetRandomSort ()
                     ));
                 }
                 return album_query;

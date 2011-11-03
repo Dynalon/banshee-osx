@@ -160,12 +160,13 @@ namespace Banshee.OpticalDisc.AudioCd
         {
             // Make sure the album isn't already in the Library
             TrackInfo track = Model[0];
-            int count = ServiceManager.DbConnection.Query<int> (
+            int count = ServiceManager.DbConnection.Query<int> (String.Format (
                 @"SELECT Count(*) FROM CoreTracks, CoreArtists, CoreAlbums WHERE
                     CoreTracks.PrimarySourceID = ? AND
                     CoreTracks.ArtistID = CoreArtists.ArtistID AND
                     CoreTracks.AlbumID = CoreAlbums.AlbumID AND
-                    CoreArtists.Name = ? AND CoreAlbums.Title = ? AND (CoreTracks.Disc = ? OR CoreTracks.Disc = 0)",
+                    CoreArtists.Name = ? AND CoreAlbums.Title = ? AND ({0} = ? OR {0} = 0)",
+                    Banshee.Query.BansheeQuery.DiscNumberField.Column),
                     ServiceManager.SourceManager.MusicLibrary.DbId,
                     track.ArtistName, track.AlbumTitle, track.DiscNumber
             );

@@ -194,7 +194,7 @@ namespace Banshee.Dap.MassStorage
         public RingtonesGroupSource (DapSource parent)
             : base (parent, Catalog.GetString ("Ringtones"))
         {
-            ConditionSql = "(CoreTracks.Uri LIKE \"%ringtones/%\")";
+            ConditionSql = String.Format ("({0} LIKE \"%ringtones/%\")", Banshee.Query.BansheeQuery.UriField.Column);
         }
     }
 

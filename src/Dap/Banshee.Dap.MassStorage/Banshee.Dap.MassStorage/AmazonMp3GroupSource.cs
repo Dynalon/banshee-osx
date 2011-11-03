@@ -45,7 +45,7 @@ namespace Banshee.Dap.MassStorage
             this.amazon_base_dir = amazon_base_dir;
 
             Properties.SetString ("Icon.Name", "amazon-mp3-source");
-            ConditionSql = String.Format ("(CoreTracks.Uri LIKE \"%{0}%\")", amazon_dir);
+            ConditionSql = String.Format ("({0} LIKE \"%{1}%\")", Banshee.Query.BansheeQuery.UriField.Column, amazon_dir);
         }
 
         public override void Activate ()

@@ -79,8 +79,8 @@ namespace Banshee.CoverArt
                 ServiceManager.SourceManager.MusicLibrary.DbId, last_scan, last_scan - retry_every
             );
 
-            SelectCommand = new HyenaSqliteCommand (@"
-                SELECT DISTINCT CoreAlbums.AlbumID, CoreAlbums.Title, CoreArtists.Name, CoreTracks.Uri, CoreTracks.TrackID
+            SelectCommand = new HyenaSqliteCommand (String.Format (@"
+                SELECT DISTINCT CoreAlbums.AlbumID, CoreAlbums.Title, CoreArtists.Name, {0}, CoreTracks.TrackID
                     FROM CoreTracks, CoreArtists, CoreAlbums
                     WHERE
                         CoreTracks.PrimarySourceID = ? AND
@@ -91,6 +91,7 @@ namespace Banshee.CoverArt
                             SELECT AlbumID FROM CoverArtDownloads WHERE
                                 LastAttempt > ? OR Downloaded = 1)
                     GROUP BY CoreTracks.AlbumID ORDER BY CoreTracks.DateUpdatedStamp DESC LIMIT ?",
+                Banshee.Query.BansheeQuery.UriField.Column),
                 ServiceManager.SourceManager.MusicLibrary.DbId, last_scan, last_scan - retry_every, 1
             );
 

@@ -137,8 +137,9 @@ namespace Banshee.Collection
             this.psource = psource;
             this.scan_started = scan_started;
 
-            fetch_command = DatabaseTrackInfo.Provider.CreateFetchCommand (
-                "CoreTracks.PrimarySourceID = ? AND CoreTracks.Uri = ? LIMIT 1");
+            fetch_command = DatabaseTrackInfo.Provider.CreateFetchCommand (String.Format (
+                "CoreTracks.PrimarySourceID = ? AND {0} = ? LIMIT 1",
+                Banshee.Query.BansheeQuery.UriField.Column));
 
             fetch_similar_command = DatabaseTrackInfo.Provider.CreateFetchCommand (
                 "CoreTracks.PrimarySourceID = ? AND CoreTracks.LastSyncedStamp < ? AND CoreTracks.MetadataHash = ?");
