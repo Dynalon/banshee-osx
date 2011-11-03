@@ -203,8 +203,7 @@ _bp_vis_pipeline_setup (BansheePlayer *player)
     GstCaps *caps;
     GstPad *teepad;
     GstPad *pad;
-    gint wanted_size;
-    
+
     player->vis_buffer = NULL;
     player->vis_fft = gst_fft_f32_new (SLICE_SIZE * 2, FALSE);
     player->vis_fft_buffer = g_new (GstFFTF32Complex, SLICE_SIZE + 1);
@@ -220,9 +219,6 @@ _bp_vis_pipeline_setup (BansheePlayer *player)
     resampler = gst_element_factory_make ("audioresample", "vis-resample");
     converter = gst_element_factory_make ("audioconvert", "vis-convert");
     fakesink = gst_element_factory_make ("fakesink", "vis-sink");
-
-    // channels * slice size * float size = size of chunks we want
-    wanted_size = 2 * SLICE_SIZE * sizeof(gfloat);
 
     if (audiosinkqueue == NULL || resampler == NULL || converter == NULL || fakesink == NULL) {
         bp_debug ("Could not construct visualization pipeline, a fundamental element could not be created");
