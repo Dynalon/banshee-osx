@@ -964,6 +964,15 @@ namespace Banshee.Database
 
         private void InitializeFreshDatabase (bool refresh_metadata)
         {
+            DropTables ();
+
+            CreateConfiguration (refresh_metadata);
+
+            CreateTablesAndIndexes ();
+        }
+
+        private void DropTables ()
+        {
             Execute("DROP TABLE IF EXISTS CoreConfiguration");
             Execute("DROP TABLE IF EXISTS CoreTracks");
             Execute("DROP TABLE IF EXISTS CoreArtists");
@@ -975,7 +984,10 @@ namespace Banshee.Database
             Execute("DROP TABLE IF EXISTS CoreRemovedTracks");
             Execute("DROP TABLE IF EXISTS CoreTracksCache");
             Execute("DROP TABLE IF EXISTS CoreCache");
+        }
 
+        private void CreateConfiguration (bool refresh_metadata)
+        {
             Execute(@"
                 CREATE TABLE CoreConfiguration (
                     EntryID             INTEGER PRIMARY KEY,
@@ -987,7 +999,10 @@ namespace Banshee.Database
             if (!refresh_metadata) {
                 Execute (String.Format ("INSERT INTO CoreConfiguration (EntryID, Key, Value) VALUES (null, 'MetadataVersion', {0})", CURRENT_METADATA_VERSION));
             }
+        }
 
+        private void CreateTablesAndIndexes ()
+        {
             Execute(@"
                 CREATE TABLE CorePrimarySources (
                     PrimarySourceID     INTEGER PRIMARY KEY,
