@@ -52,7 +52,7 @@ namespace Banshee.Collection.Database
             Description = Catalog.GetString ("Play all songs by an artist, then randomly choose another artist");
 
             Condition = "CoreAlbums.ArtistID = ?";
-            OrderBy = String.Format ("{0}, CoreTracks.AlbumID ASC, Disc ASC, TrackNumber ASC", Banshee.Query.BansheeQuery.YearField.Column);
+            OrderBy = String.Format ("{0}, CoreTracks.AlbumID ASC, Disc ASC, TrackNumber ASC", BansheeQuery.YearField.Column);
         }
 
         protected override void OnModelAndCacheUpdated ()
