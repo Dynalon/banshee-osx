@@ -388,7 +388,7 @@ ${PACKAGE}-${VERSION}
       + GNOME Proxy        ${have_libsoup_gnome} (libsoup-gnome-2.4 >= $SOUP_GNOME_MIN_VERSION)
     Boo Scripting:         ${enable_boo}
     DAAP:                  ${enable_daap}
-    GIO Backend:           ${enable_gio} (glib >= 2.22, gtk-sharp-beans, and gio-sharp)
+    GIO Backend:           ${enable_gio} (glib >= 2.22, gio-sharp >= 2.22.3, and gtk-sharp-beans)
     GIO Hardware:          ${enable_gio_hardware} (gudev-sharp, gkeyfile-sharp)
     YouTube:               ${enable_youtube} (gdata-sharp >= 1.4)
     Sound Menu:            ${enable_soundmenu}
