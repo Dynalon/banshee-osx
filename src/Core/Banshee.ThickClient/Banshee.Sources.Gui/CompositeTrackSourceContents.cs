@@ -185,11 +185,7 @@ namespace Banshee.Sources.Gui
 
             ClearFilterSelections ();
 
-            if (BrowserPosition.Get ().Equals ("left")) {
-                LayoutLeft ();
-            } else {
-                LayoutTop ();
-            }
+            Layout ();
 
             ArtistFilterType.Set (args.Current.Value == 1 ? "albumartist" : "artist");
         }

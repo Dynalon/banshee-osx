@@ -88,12 +88,7 @@ namespace Banshee.Sources.Gui
             this.name = name;
             InitializeViews ();
 
-            string position = ForcePosition == null ? BrowserPosition.Get () : ForcePosition;
-            if (position == "top") {
-                LayoutTop ();
-            } else {
-                LayoutLeft ();
-            }
+            string position = Layout ();
 
             if (ForcePosition != null) {
                 return;
@@ -196,12 +191,23 @@ namespace Banshee.Sources.Gui
             }
         }
 
-        protected void LayoutLeft ()
+        protected string Layout ()
+        {
+            string position = ForcePosition == null ? BrowserPosition.Get () : ForcePosition;
+            if (position == "top") {
+                LayoutTop ();
+            } else {
+                LayoutLeft ();
+            }
+            return position;
+        }
+
+        private void LayoutLeft ()
         {
             Layout (false);
         }
 
-        protected void LayoutTop ()
+        private void LayoutTop ()
         {
             Layout (true);
         }
