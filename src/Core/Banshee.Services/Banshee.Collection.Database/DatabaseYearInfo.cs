@@ -57,7 +57,7 @@ namespace Banshee.Collection.Database
             protected set { track_id = value; }
         }
 
-        [DatabaseColumn("Year")]
+        [DatabaseColumn ("Year")]
         private int year;
         public override int Year {
             get { return year; }

@@ -67,13 +67,12 @@ namespace Banshee.Sources.Gui
               <menubar name=""MainMenu"">
                 <menu name=""ViewMenu"" action=""ViewMenuAction"">
                   <placeholder name=""BrowserViews"">
-                    <menu name=""BrowserListsMenu"" action=""BrowserListsMenuAction"">
-                        <menuitem name=""Artist"" action=""ArtistAction"" />
-                        <menuitem name=""AlbumArtist"" action=""AlbumArtistAction"" />
+                    <menu name=""BrowserContentMenu"" action=""BrowserContentMenuAction"">
+                        <menuitem name=""ShowTrackArtistFilter"" action=""ShowTrackArtistFilterAction"" />
+                        <menuitem name=""ShowAlbumArtistFilter"" action=""ShowAlbumArtistFilterAction"" />
                         <separator />
-                        <menuitem name=""Genre"" action=""GenreAction"" />
-                        <separator />
-                        <menuitem name=""Year"" action=""YearAction"" />
+                        <menuitem name=""ShowGenreFilter"" action=""ShowGenreFilterAction"" />
+                        <menuitem name=""ShowYearFilter"" action=""ShowYearFilterAction"" />
                     </menu>
                     <separator />
                   </placeholder>
@@ -91,39 +90,39 @@ namespace Banshee.Sources.Gui
                     configure_browser_actions = new ActionGroup ("BrowserConfiguration");
 
                     configure_browser_actions.Add (new ActionEntry [] {
-                        new ActionEntry ("BrowserListsMenuAction", null,
-                            Catalog.GetString ("Configure Browser"), null,
+                        new ActionEntry ("BrowserContentMenuAction", null,
+                            Catalog.GetString ("Browser Content"), null,
                             Catalog.GetString ("Configure the filters available in the browser"), null)
                     });
 
                     configure_browser_actions.Add (new RadioActionEntry [] {
-                        new RadioActionEntry ("ArtistAction", null,
-                            Catalog.GetString ("Use all available artists"), null,
-                            Catalog.GetString ("Use all available artists in the browser filter list"), 0),
+                        new RadioActionEntry ("ShowTrackArtistFilterAction", null,
+                            Catalog.GetString ("Show all Artists"), null,
+                            Catalog.GetString ("Show all artists in the artist filter"), 0),
 
-                        new RadioActionEntry ("AlbumArtistAction", null,
-                            Catalog.GetString ("Use album artists only"), null,
-                            Catalog.GetString ("Use only album artists, not the ones with only single tracks"), 1),
-                    }, ArtistListViewType.Get ().Equals ("artist") ? 0 : 1 , null);
-
-                    configure_browser_actions.Add (new ToggleActionEntry [] {
-                        new ToggleActionEntry ("GenreAction", null,
-                            Catalog.GetString ("Show Genre filter"), null,
-                            Catalog.GetString ("Show a list of genres to filter by"), null, GenreListShown.Get ())});
+                        new RadioActionEntry ("ShowAlbumArtistFilterAction", null,
+                            Catalog.GetString ("Show Album Artists"), null,
+                            Catalog.GetString ("Show only album artists, not artists with only single tracks"), 1),
+                    }, ArtistFilterType.Get ().Equals ("artist") ? 0 : 1 , null);
 
                     configure_browser_actions.Add (new ToggleActionEntry [] {
-                        new ToggleActionEntry ("YearAction", null,
-                            Catalog.GetString ("Show Year filter"), null,
-                            Catalog.GetString ("Show a list of years to filter by"), null, YearListShown.Get ())});
+                        new ToggleActionEntry ("ShowGenreFilterAction", null,
+                            Catalog.GetString ("Show Genre Filter"), null,
+                            Catalog.GetString ("Show a list of genres to filter by"), null, GenreFilterVisible.Get ())});
+
+                    configure_browser_actions.Add (new ToggleActionEntry [] {
+                        new ToggleActionEntry ("ShowYearFilterAction", null,
+                            Catalog.GetString ("Show Year Filter"), null,
+                            Catalog.GetString ("Show a list of years to filter by"), null, YearFilterVisible.Get ())});
 
                     action_service.AddActionGroup (configure_browser_actions);
                     action_service.UIManager.AddUiFromString (menu_xml);
                 }
 
-                (action_service.FindAction("BrowserConfiguration.ArtistAction") as RadioAction).Changed += OnArtistFilterChanged;
-                //(action_service.FindAction("BrowserConfiguration.AlbumArtistAction") as RadioAction).Changed += OnArtistFilterChanged;
-                action_service.FindAction("BrowserConfiguration.GenreAction").Activated += OnGenreFilterChanged;;
-                action_service.FindAction("BrowserConfiguration.YearAction").Activated += OnYearFilterChanged;;
+                (action_service.FindAction("BrowserConfiguration.ShowTrackArtistFilterAction") as RadioAction).Changed += OnArtistFilterChanged;
+                (action_service.FindAction("BrowserConfiguration.ShowAlbumArtistFilterAction") as RadioAction).Changed += OnArtistFilterChanged;
+                action_service.FindAction("BrowserConfiguration.ShowGenreFilterAction").Activated += OnGenreFilterChanged;;
+                action_service.FindAction("BrowserConfiguration.ShowYearFilterAction").Activated += OnYearFilterChanged;;
             }
         }
 
@@ -133,10 +132,10 @@ namespace Banshee.Sources.Gui
 
             ClearFilterSelections ();
 
-            GenreListShown.Set (action.Active);
+            GenreFilterVisible.Set (action.Active);
 
             Widget genre_view_widget = (Widget)genre_view;
-            genre_view_widget.Parent.Visible = GenreListShown.Get ();
+            genre_view_widget.Parent.Visible = GenreFilterVisible.Get ();
         }
 
         private void OnYearFilterChanged (object o, EventArgs args)
@@ -145,10 +144,10 @@ namespace Banshee.Sources.Gui
 
             ClearFilterSelections ();
 
-            YearListShown.Set (action.Active);
+            YearFilterVisible.Set (action.Active);
 
             Widget year_view_widget = (Widget)year_view;
-            year_view_widget.Parent.Visible = YearListShown.Get ();
+            year_view_widget.Parent.Visible = YearFilterVisible.Get ();
         }
 
         private void OnArtistFilterChanged (object o, ChangedArgs args)
@@ -158,23 +157,28 @@ namespace Banshee.Sources.Gui
 
             List<ScrolledWindow> new_filter_list = new List<ScrolledWindow> ();
             List<ScrolledWindow> old_filter_list = new List<ScrolledWindow> (filter_scrolled_windows);
+
             foreach (ScrolledWindow fw in old_filter_list)
             {
                 bool contains = false;
-                foreach (Widget child in fw.AllChildren)
-                    if (child == old_artist_view)
+                foreach (Widget child in fw.AllChildren) {
+                    if (child == old_artist_view) {
                         contains = true;
-                if (contains)
-                {
+                    }
+                }
+
+                if (contains) {
                     Widget view_widget = (Widget)new_artist_view;
-                    if (view_widget.Parent == null)
-                            SetupFilterView (new_artist_view as ArtistListView);
+                    if (view_widget.Parent == null) {
+                        SetupFilterView (new_artist_view as ArtistListView);
+                    }
 
                     ScrolledWindow win = (ScrolledWindow)view_widget.Parent;
 
                     new_filter_list.Add (win);
-                } else
+                } else {
                     new_filter_list.Add (fw);
+                }
             }
 
             filter_scrolled_windows = new_filter_list;
@@ -187,7 +191,7 @@ namespace Banshee.Sources.Gui
                 LayoutTop ();
             }
 
-            ArtistListViewType.Set (args.Current.Value == 1 ? "albumartist" : "artist");
+            ArtistFilterType.Set (args.Current.Value == 1 ? "albumartist" : "artist");
         }
 
         protected override void InitializeViews ()
@@ -197,10 +201,10 @@ namespace Banshee.Sources.Gui
             SetupFilterView (genre_view = new QueryFilterView<string> (Catalog.GetString ("Not Set")));
             Widget genre_view_widget = (Widget)genre_view;
             genre_view_widget.Parent.Shown += delegate {
-                genre_view_widget.Parent.Visible = GenreListShown.Get ();
+                genre_view_widget.Parent.Visible = GenreFilterVisible.Get ();
             };
 
-            if (ArtistListViewType.Get ().Equals ("artist")) {
+            if (ArtistFilterType.Get ().Equals ("artist")) {
                 SetupFilterView (artist_view = new ArtistListView ());
                 albumartist_view = new ArtistListView ();
             } else {
@@ -211,7 +215,7 @@ namespace Banshee.Sources.Gui
             SetupFilterView (year_view = new YearListView ());
             Widget year_view_widget = (Widget)year_view;
             year_view_widget.Parent.Shown += delegate {
-                year_view_widget.Parent.Visible = YearListShown.Get ();
+                year_view_widget.Parent.Visible = YearFilterVisible.Get ();
             };
 
             SetupFilterView (album_view = new AlbumListView ());
@@ -322,25 +326,25 @@ namespace Banshee.Sources.Gui
 
 #endregion
 
-        public static readonly SchemaEntry<string> ArtistListViewType = new SchemaEntry<string> (
-            "artist_list_view", "type",
+        public static readonly SchemaEntry<string> ArtistFilterType = new SchemaEntry<string> (
+            "browser", "artist_filter_type",
             "artist",
-            "Artist/AlbumArtist List View Type",
-            "The type of the Artist/AlbumArtist list view; either 'artist' or 'albumartist'"
+            "Artist/AlbumArtist Filter Type",
+            "Whether to show all artists or just album artists in the artist filter; either 'artist' or 'albumartist'"
         );
 
-        public static readonly SchemaEntry<bool> GenreListShown = new SchemaEntry<bool> (
-            "genre_list_view", "shown",
+        public static readonly SchemaEntry<bool> GenreFilterVisible = new SchemaEntry<bool> (
+            "browser", "show_genre_filter",
             false,
-            "GenreListView Shown",
-            "Define if the GenreList filter view is shown or not"
+            "Genre Filter Visibility",
+            "Whether or not to show the Genre filter"
         );
 
-        public static readonly SchemaEntry<bool> YearListShown = new SchemaEntry<bool> (
-            "year_list_view", "shown",
+        public static readonly SchemaEntry<bool> YearFilterVisible = new SchemaEntry<bool> (
+            "browser", "show_year_filter",
             false,
-            "YearListView Shown",
-            "Define if the YearList filter view is shown or not"
+            "Year Filter Visibility",
+            "Whether or not to show the Year filter"
         );
     }
 }

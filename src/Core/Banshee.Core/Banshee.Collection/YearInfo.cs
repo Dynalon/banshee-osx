@@ -46,10 +46,11 @@ namespace Banshee.Collection
         private string name;
         public virtual string Name {
             get {
-                if (String.IsNullOrEmpty (name))
+                if (String.IsNullOrEmpty (name)) {
                     return Year == 0 ? UnknownYearTitle : Year.ToString ();
-                else
+                } else {
                     return name;
+                }
             }
             set { name = value; }
         }
