@@ -25,6 +25,7 @@ SOURCES =  \
 	Banshee.Collection/TrackInfo.cs \
 	Banshee.Collection/TrackMediaAttributes.cs \
 	Banshee.Collection/UnknownTrackInfo.cs \
+	Banshee.Collection/YearInfo.cs \
 	Banshee.Configuration.Schema/ImportSchema.cs \
 	Banshee.Configuration/ConfigurationClient.cs \
 	Banshee.Configuration/IConfigurationClient.cs \

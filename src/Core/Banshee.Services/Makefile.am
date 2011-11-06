@@ -20,6 +20,8 @@ SOURCES =  \
 	Banshee.Collection.Database/DatabaseTrackListModel.cs \
 	Banshee.Collection.Database/DatabaseTrackModelCache.cs \
 	Banshee.Collection.Database/DatabaseTrackModelProvider.cs \
+	Banshee.Collection.Database/DatabaseYearInfo.cs \
+	Banshee.Collection.Database/DatabaseYearListModel.cs \
 	Banshee.Collection.Database/FilterModelProvider.cs \
 	Banshee.Collection.Database/IDatabaseTrackModelCache.cs \
 	Banshee.Collection.Database/IDatabaseTrackModelProvider.cs \

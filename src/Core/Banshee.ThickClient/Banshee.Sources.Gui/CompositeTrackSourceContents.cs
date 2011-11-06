@@ -53,6 +53,7 @@ namespace Banshee.Sources.Gui
     public class CompositeTrackSourceContents : FilteredListSourceContents, ITrackModelSourceContents
     {
         private QueryFilterView<string> genre_view;
+        private YearListView year_view;
         private ArtistListView artist_view;
         private ArtistListView albumartist_view;
         private AlbumListView album_view;
@@ -71,6 +72,8 @@ namespace Banshee.Sources.Gui
                         <menuitem name=""AlbumArtist"" action=""AlbumArtistAction"" />
                         <separator />
                         <menuitem name=""Genre"" action=""GenreAction"" />
+                        <separator />
+                        <menuitem name=""Year"" action=""YearAction"" />
                     </menu>
                     <separator />
                   </placeholder>
@@ -108,6 +111,11 @@ namespace Banshee.Sources.Gui
                             Catalog.GetString ("Show Genre filter"), null,
                             Catalog.GetString ("Show a list of genres to filter by"), null, GenreListShown.Get ())});
 
+                    configure_browser_actions.Add (new ToggleActionEntry [] {
+                        new ToggleActionEntry ("YearAction", null,
+                            Catalog.GetString ("Show Year filter"), null,
+                            Catalog.GetString ("Show a list of years to filter by"), null, YearListShown.Get ())});
+
                     action_service.AddActionGroup (configure_browser_actions);
                     action_service.UIManager.AddUiFromString (menu_xml);
                 }
@@ -115,6 +123,7 @@ namespace Banshee.Sources.Gui
                 (action_service.FindAction("BrowserConfiguration.ArtistAction") as RadioAction).Changed += OnArtistFilterChanged;
                 //(action_service.FindAction("BrowserConfiguration.AlbumArtistAction") as RadioAction).Changed += OnArtistFilterChanged;
                 action_service.FindAction("BrowserConfiguration.GenreAction").Activated += OnGenreFilterChanged;;
+                action_service.FindAction("BrowserConfiguration.YearAction").Activated += OnYearFilterChanged;;
             }
         }
 
@@ -128,6 +137,18 @@ namespace Banshee.Sources.Gui
 
             Widget genre_view_widget = (Widget)genre_view;
             genre_view_widget.Parent.Visible = GenreListShown.Get ();
+        }
+
+        private void OnYearFilterChanged (object o, EventArgs args)
+        {
+            ToggleAction action = (ToggleAction)o;
+
+            ClearFilterSelections ();
+
+            YearListShown.Set (action.Active);
+
+            Widget year_view_widget = (Widget)year_view;
+            year_view_widget.Parent.Visible = YearListShown.Get ();
         }
 
         private void OnArtistFilterChanged (object o, ChangedArgs args)
@@ -187,6 +208,12 @@ namespace Banshee.Sources.Gui
                 artist_view = new ArtistListView ();
             }
 
+            SetupFilterView (year_view = new YearListView ());
+            Widget year_view_widget = (Widget)year_view;
+            year_view_widget.Parent.Shown += delegate {
+                year_view_widget.Parent.Visible = YearListShown.Get ();
+            };
+
             SetupFilterView (album_view = new AlbumListView ());
         }
 
@@ -206,6 +233,10 @@ namespace Banshee.Sources.Gui
 
             if (album_view.Model != null) {
                 album_view.Selection.Clear ();
+            }
+
+            if (year_view.Model != null) {
+                year_view.Selection.Clear ();
             }
         }
 
@@ -253,6 +284,8 @@ namespace Banshee.Sources.Gui
 
             SetModel (track_view, track_source.TrackModel);
 
+            bool genre_view_model_set = false;
+
             if (filterable_source != null && filterable_source.CurrentFilters != null) {
                 foreach (IListModel model in filterable_source.CurrentFilters) {
                     if (model is IListModel<ArtistInfo> && model is DatabaseArtistListModel)
@@ -261,8 +294,11 @@ namespace Banshee.Sources.Gui
                         SetModel (albumartist_view, (model as IListModel<ArtistInfo>));
                     else if (model is IListModel<AlbumInfo>)
                         SetModel (album_view, (model as IListModel<AlbumInfo>));
-                    else if (model is IListModel<QueryFilterInfo<string>>)
+                    else if (model is IListModel<QueryFilterInfo<string>> && !genre_view_model_set) {
                         SetModel (genre_view, (model as IListModel<QueryFilterInfo<string>>));
+                        genre_view_model_set = true;
+                    } else if (model is DatabaseYearListModel)
+                        SetModel (year_view, model as IListModel<YearInfo>);
                     // else
                     //    Hyena.Log.DebugFormat ("CompositeTrackSourceContents got non-album/artist filter model: {0}", model);
                 }
@@ -279,6 +315,7 @@ namespace Banshee.Sources.Gui
             SetModel (artist_view, null);
             SetModel (albumartist_view, null);
             SetModel (album_view, null);
+            SetModel (year_view, null);
             SetModel (genre_view, null);
             track_view.HeaderVisible = false;
         }
@@ -297,6 +334,13 @@ namespace Banshee.Sources.Gui
             false,
             "GenreListView Shown",
             "Define if the GenreList filter view is shown or not"
+        );
+
+        public static readonly SchemaEntry<bool> YearListShown = new SchemaEntry<bool> (
+            "year_list_view", "shown",
+            false,
+            "YearListView Shown",
+            "Define if the YearList filter view is shown or not"
         );
     }
 }

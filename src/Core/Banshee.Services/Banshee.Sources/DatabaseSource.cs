@@ -147,6 +147,7 @@ namespace Banshee.Sources
             DatabaseAlbumListModel album_model = new DatabaseAlbumListModel (src, src.DatabaseTrackModel, ServiceManager.DbConnection, src.UniqueId);
             DatabaseQueryFilterModel<string> genre_model = new DatabaseQueryFilterModel<string> (src, src.DatabaseTrackModel, ServiceManager.DbConnection,
                         Catalog.GetString ("All Genres ({0})"), src.UniqueId, BansheeQuery.GenreField, "Genre");
+            DatabaseYearListModel year_model = new DatabaseYearListModel (src, src.DatabaseTrackModel, ServiceManager.DbConnection, src.UniqueId);
 
             if (this == src) {
                 this.artist_model = artist_model;
@@ -157,6 +158,7 @@ namespace Banshee.Sources
             yield return genre_model;
             yield return albumartist_model;
             yield return artist_model;
+            yield return year_model;
             yield return album_model;
         }
 
