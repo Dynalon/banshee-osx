@@ -58,7 +58,7 @@ namespace Banshee.Sources
 
         protected DatabaseTrackListModel track_model;
         protected DatabaseAlbumListModel album_model;
-        protected DatabaseArtistListModel artist_model;
+        protected DatabaseFilterListModel<DatabaseArtistInfo, ArtistInfo> artist_model;
         protected DatabaseQueryFilterModel<string> genre_model;
 
         private RateLimiter reload_limiter;
@@ -142,6 +142,7 @@ namespace Banshee.Sources
                 yield break;
             }
 
+            DatabaseAlbumArtistListModel albumartist_model = new DatabaseAlbumArtistListModel (src, src.DatabaseTrackModel, ServiceManager.DbConnection, src.UniqueId);
             DatabaseArtistListModel artist_model = new DatabaseArtistListModel (src, src.DatabaseTrackModel, ServiceManager.DbConnection, src.UniqueId);
             DatabaseAlbumListModel album_model = new DatabaseAlbumListModel (src, src.DatabaseTrackModel, ServiceManager.DbConnection, src.UniqueId);
             DatabaseQueryFilterModel<string> genre_model = new DatabaseQueryFilterModel<string> (src, src.DatabaseTrackModel, ServiceManager.DbConnection,
@@ -153,9 +154,10 @@ namespace Banshee.Sources
                 this.genre_model = genre_model;
             }
 
+            yield return genre_model;
+            yield return albumartist_model;
             yield return artist_model;
             yield return album_model;
-            yield return genre_model;
         }
 
         protected virtual void AfterInitialized ()

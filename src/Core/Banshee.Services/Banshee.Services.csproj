@@ -322,6 +322,8 @@
     <Compile Include="Banshee.MediaEngine\Tests.cs" />
     <Compile Include="Banshee.Sources\Tests.cs" />
     <Compile Include="Banshee.Query\Tests\BansheeQueryTests.cs" />
+    <Compile Include="Banshee.Collection.Database\DatabaseAlbumArtistInfo.cs" />
+    <Compile Include="Banshee.Collection.Database\DatabaseAlbumArtistListModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Banshee.Services.addin.xml">

@@ -58,7 +58,7 @@ namespace Banshee.Sources.Gui
         private Gtk.ScrolledWindow main_scrolled_window;
 
         private List<object> filter_views = new List<object> ();
-        private List<ScrolledWindow> filter_scrolled_windows = new List<ScrolledWindow> ();
+        protected List<ScrolledWindow> filter_scrolled_windows = new List<ScrolledWindow> ();
 
         private Dictionary<object, double> model_positions = new Dictionary<object, double> ();
 
@@ -196,12 +196,12 @@ namespace Banshee.Sources.Gui
             }
         }
 
-        private void LayoutLeft ()
+        protected void LayoutLeft ()
         {
             Layout (false);
         }
 
-        private void LayoutTop ()
+        protected void LayoutTop ()
         {
             Layout (true);
         }
@@ -325,7 +325,7 @@ namespace Banshee.Sources.Gui
         protected void SetModel<T> (ListView<T> view, IListModel<T> model)
         {
             if (view.Model != null) {
-                model_positions[view.Model] = view.Vadjustment.Value;
+                model_positions[view.Model] = view.Vadjustment != null ? view.Vadjustment.Value : 0;
             }
 
             if (model == null) {

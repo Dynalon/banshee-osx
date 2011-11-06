@@ -6,6 +6,8 @@ SOURCES =  \
 	Banshee.Base/RateLimiter.cs \
 	Banshee.Collection.Database/Bookmark.cs \
 	Banshee.Collection.Database/CachedList.cs \
+	Banshee.Collection.Database/DatabaseAlbumArtistInfo.cs \
+	Banshee.Collection.Database/DatabaseAlbumArtistListModel.cs \
 	Banshee.Collection.Database/DatabaseAlbumInfo.cs \
 	Banshee.Collection.Database/DatabaseAlbumListModel.cs \
 	Banshee.Collection.Database/DatabaseArtistInfo.cs \
