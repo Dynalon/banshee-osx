@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-11-01 20:40+0000\n"
-"PO-Revision-Date: 2011-11-05 22:43+0100\n"
+"POT-Creation-Date: 2011-11-06 14:14+0000\n"
+"PO-Revision-Date: 2011-11-07 19:08+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -328,7 +328,7 @@ msgstr ""
 #: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:200
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/PodcastGroupSource.cs:38
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:107
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:210
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:211
 msgid "Podcasts"
 msgstr "Podcasty"
 
@@ -1249,7 +1249,7 @@ msgstr "Poznámka"
 
 #: ../src/Core/Banshee.Core/Banshee.Base/CoverArtSpec.cs:43
 #: ../src/Core/Banshee.Core/Banshee.Collection/ArtistInfo.cs:37
-#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:137
+#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:138
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Recommendations/RecommendationPane.cs:90
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdDiscModel.cs:101
 msgid "Unknown Artist"
@@ -1257,7 +1257,7 @@ msgstr "Neznámý umělec"
 
 #: ../src/Core/Banshee.Core/Banshee.Base/CoverArtSpec.cs:45
 #: ../src/Core/Banshee.Core/Banshee.Collection/AlbumInfo.cs:40
-#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:136
+#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:137
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdDiscModel.cs:102
 msgid "Unknown Album"
 msgstr "Neznámé album"
@@ -1335,12 +1335,21 @@ msgstr "_Přejít na přehrávanou skladbu"
 msgid "_Jump to Playing Item"
 msgstr "_Přejít na přehrávanou položku"
 
+#: ../src/Core/Banshee.Core/Banshee.Collection/YearInfo.cs:38
+msgid "Unknown Year"
+msgstr "Neznámý rok"
+
 #. Translators: This is used to generate bookmark names. {0} is track title, {1} is minutes
 #. (possibly more than two digits) and {2} is seconds (between 00 and 60).
 #: ../src/Core/Banshee.Services/Banshee.Collection.Database/Bookmark.cs:172
 #, csharp-format
 msgid "{0} ({1}:{2:00})"
 msgstr "{0} ({1}:{2:00})"
+
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseAlbumArtistListModel.cs:76
+#, csharp-format
+msgid "All Album Artists ({0})"
+msgstr "Všichni umělci alb ({0})"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseAlbumListModel.cs:75
 #, csharp-format
@@ -1357,28 +1366,33 @@ msgstr "Všichni umělci ({0})"
 msgid "Value"
 msgstr "Hodnota"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:49
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseYearListModel.cs:66
+#, csharp-format
+msgid "All Years ({0})"
+msgstr "Všechny roky ({0})"
+
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:50
 msgid "Shuffle by A_lbum"
 msgstr "Zamíchat podle a_lba"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:50
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:51
 msgid "by album"
 msgstr "podle alba"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:51
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:52
 msgid "Play all songs from an album, then randomly choose another album"
 msgstr ""
 "Přehrát všechny skladby z jednoho alba a potom náhodně vybrat jiné album"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:49
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:50
 msgid "Shuffle by A_rtist"
 msgstr "Zamíchat podle _umělce"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:50
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:51
 msgid "by artist"
 msgstr "podle umělce"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:51
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:52
 msgid "Play all songs by an artist, then randomly choose another artist"
 msgstr ""
 "Přehrát všechny skladby od jednoho umělce a potom náhodně vybrat jiného "
@@ -1396,28 +1410,28 @@ msgstr "ručně"
 msgid "Do not shuffle playlist"
 msgstr "Nehrát seznam skladeb v náhodném pořadí"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:45
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:46
 msgid "Shuffle by _Rating"
 msgstr "Zamíchat podle _hodnocení"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:46
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:47
 msgid "by rating"
 msgstr "podle hodnocení"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:47
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:48
 msgid "Play songs randomly, prefer higher rated songs"
 msgstr ""
 "Přehrát skladby ze seznamu náhodně, upřednostnit lépe hodnocené skladby"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:42
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:43
 msgid "Shuffle by S_core"
 msgstr "Zamíchat podle _bodování"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:43
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:44
 msgid "by score"
 msgstr "podle bodování"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:44
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:45
 msgid "Play songs randomly, prefer higher scored songs"
 msgstr "Přehrát skladby ze seznamu náhodně, upřednostnit lépe bodované skladby"
 
@@ -1438,7 +1452,7 @@ msgid "Scanning for media"
 msgstr "Vyhledávají se média"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection/ImportManager.cs:188
-#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1395
+#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1410
 msgid "Scanning..."
 msgstr "Prohledává se…"
 
@@ -1479,7 +1493,7 @@ msgstr ""
 "Vyčkejte prosím, dokud nebude vaše stará databáze Banshee převedena do "
 "nového formátu."
 
-#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1392
+#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1407
 msgid "Refreshing Metadata"
 msgstr "Obnovování metadat"
 
@@ -2479,7 +2493,7 @@ msgstr "Naposledy přidáno"
 msgid "Least Recently Added"
 msgstr "Přidáno před nejdelší dobou"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:525
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:529
 msgid "Random"
 msgstr "Náhodně"
 
@@ -2569,7 +2583,7 @@ msgstr "Upravit chytrý seznam skladeb"
 msgid "Delete Smart Playlist"
 msgstr "Odstranit chytrý seznam skladeb"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/DatabaseSource.cs:148
+#: ../src/Core/Banshee.Services/Banshee.Sources/DatabaseSource.cs:149
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:161
 #, csharp-format
 msgid "All Genres ({0})"
@@ -4122,27 +4136,72 @@ msgstr "Otevřít v editoru"
 msgid "Create and save"
 msgstr "Vytvořit a uložit"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:110
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:94
+msgid "Browser Content"
+msgstr "Obsah prohlížeče"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:95
+msgid "Configure the filters available in the browser"
+msgstr "Nastavit filtry dostupné v prohlížeči"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:100
+msgid "Show all Artists"
+msgstr "Zobrazit všechny umělce"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:101
+msgid "Show all artists in the artist filter"
+msgstr "Zobrazit ve filtru umělců všechny umělce"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:104
+msgid "Show Album Artists"
+msgstr "Zobrazit umělce alba"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:105
+msgid "Show only album artists, not artists with only single tracks"
+msgstr "Zobrazit pouze umělce z alb, ne umělce pouze s samostatnými stopami"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:110
+msgid "Show Genre Filter"
+msgstr "Zobrazit filtr žánru"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:111
+msgid "Show a list of genres to filter by"
+msgstr "Zobrazit seznam žánrů, aby šly filtrovat"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:115
+msgid "Show Year Filter"
+msgstr "Zobrazit filtr roku"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:116
+msgid "Show a list of years to filter by"
+msgstr "Zobrazit seznam roků, aby šly filtrovat"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:197
+#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSourceContents.cs:62
+msgid "Not Set"
+msgstr "Nenastaveno"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:105
 msgid "Browser on Left"
 msgstr "Prohlížeč nalevo"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:111
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:106
 msgid "Show the artist/album browser to the left of the track list"
 msgstr "Zobrazit prohlížeč umělců/alb nalevo od seznamu skladeb"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:114
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:109
 msgid "Browser on Top"
 msgstr "Prohlížeč nahoře"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:115
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:110
 msgid "Show the artist/album browser above the track list"
 msgstr "Zobrazit prohlížeč umělců/alb nad seznamem skladeb"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:120
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:115
 msgid "Show Browser"
 msgstr "Zobrazit prohlížeč"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:121
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:116
 msgid "Show or hide the artist/album browser"
 msgstr "Zobrazit nebo skrýt prohlížeč umělců/alb"
 
@@ -4283,7 +4342,7 @@ msgid "Vendor"
 msgstr "Dodavatel"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:284
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:140
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:141
 #, csharp-format
 msgid "Loading {0}"
 msgstr "Probíhá načítání {0}"
@@ -4315,24 +4374,28 @@ msgstr "Podpora převodu formátu souboru není dostupná"
 msgid "Error converting file"
 msgstr "Chyba při převádění souboru"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:137
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:135
 msgid "Sync when first plugged in and when the libraries change"
 msgstr ""
 "Synchronizovat, když je poprvé připojeno a když dojde ke změně v kolekcích"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:138
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:136
 msgid ""
 "Begin synchronizing the device as soon as the device is plugged in or the "
 "libraries change."
 msgstr ""
 "Začít synchronizaci zařízení, jakmile je připojeno nebo se změnily kolekce."
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:141
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:139
 msgid "Sync Preferences"
 msgstr "Předvolby synchronizace"
 
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:53
+msgid "Sync"
+msgstr "Synchronizovat"
+
 #. singular form unused b/c we know it's > 1, but we still need GetPlural
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:365
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:106
 #, csharp-format
 msgid "The sync operation will remove one track from your device."
 msgid_plural "The sync operation will remove {0} tracks from your device."
@@ -4340,17 +4403,13 @@ msgstr[0] "Synchronizací se z vašeho zařízení odstraní jedna stopa."
 msgstr[1] "Synchronizací se z vašeho zařízení odstraní {0} stopy."
 msgstr[2] "Synchronizací se z vašeho zařízení odstraní {0} stop."
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:369
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:110
 msgid "Are you sure you want to continue?"
 msgstr "Opravdu chcete pokračovat?"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:377
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:118
 msgid "Remove tracks"
 msgstr "Odstranit stopy"
-
-#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:52
-msgid "Sync"
-msgstr "Synchronizovat"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapInfoBar.cs:68
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:97
@@ -4699,7 +4758,7 @@ msgstr ""
 msgid "Downloading Cover Art"
 msgstr "Stahuje se přebal alba"
 
-#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:128
+#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:129
 #, csharp-format
 msgid "{0} - {1}"
 msgstr "{0} - {1}"
@@ -5050,7 +5109,7 @@ msgstr "Chyba při získávání podrobností položky z Internetového archivu"
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/SearchView.cs:130
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Field.cs:66
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:135
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:280
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:282
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastEpisodePage.cs:89
 msgid "Description"
 msgstr "Popis"
@@ -5523,10 +5582,6 @@ msgstr "Nejnovější"
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Sort.cs:94
 msgid "Oldest"
 msgstr "Nejstarší"
-
-#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSourceContents.cs:62
-msgid "Not Set"
-msgstr "Nenastaveno"
 
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:54
 msgid "Radio"
@@ -6213,7 +6268,7 @@ msgstr ""
 "jsou např. poškrábaná místa. Výrazně však zpomaluje importování."
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:192
-#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:310
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:311
 msgid "Import CD"
 msgstr "Importovat CD"
 
@@ -6237,28 +6292,28 @@ msgstr "Hledají se informace o stopě…"
 msgid "Could not fetch track information"
 msgstr "Nelze získat informace o stopě"
 
-#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:174
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:175
 msgid "Automatic import off since this album is already in the Music Library."
 msgstr "Automaticky vypnout importování, pokud už je album v Hudební kolekci."
 
-#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:197
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:198
 msgid "Could not import CD"
 msgstr "Nelze importovat CD"
 
-#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:214
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:215
 msgid "Could not duplicate audio CD"
 msgstr "Nelze duplikovat hudební CD"
 
-#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:284
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:285
 msgid "Audio CD Preferences"
 msgstr "Předvolby hudebního CD"
 
-#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:285
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:286
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:64
 msgid "Eject Disc"
 msgstr "Vysunout disk"
 
-#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:309
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:310
 #, csharp-format
 msgid "Import ‟{0}”"
 msgstr "Importovat „{0}“"
@@ -6459,7 +6514,7 @@ msgid "Number of _upcoming songs to show"
 msgstr "Počet _nadcházejících skladeb, které se mají zobrazit"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastFeedModel.cs:47
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:279
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:281
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastActions.cs:89
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastEpisodePage.cs:86
 msgid "Podcast"
@@ -6470,61 +6525,61 @@ msgstr "Podcast"
 msgid "All Podcasts ({0})"
 msgstr "Všechny podcasty ({0})"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:102
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:103
 msgid "Podcasts Folder"
 msgstr "Složka s podcasty"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:129
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:130
 msgid "Remove Podcast"
 msgstr "Odebrat podcast"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:134
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:135
 msgid "Disable Auto Updates"
 msgstr "Vypnout automatický aktualizace"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:152
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:153
 #, csharp-format
 msgid "Network error updating {0}"
 msgstr "Síťová chyba při aktualizaci {0}"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:158
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:159
 #, csharp-format
 msgid "Parsing error updating {0}"
 msgstr "Chyba zpracování při aktualizaci {0}"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:161
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:162
 #, csharp-format
 msgid "Authentication error updating {0}"
 msgstr "Chyba ověřování při aktualizaci {0}"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:164
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:165
 #, csharp-format
 msgid "Error updating {0}"
 msgstr "Chyba aktualizace {0}"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:220
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:222
 msgid "Search your podcasts"
 msgstr "Hledat své podcasty"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:222
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:224
 msgid "Episode Properties"
 msgstr "Vlastnosti dílu"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:279
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:281
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastEpisodePage.cs:88
 msgid "Published"
 msgstr "Zveřejněno"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:279
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:281
 msgid "New"
 msgstr "Nový"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:280
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:282
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/ColumnCellPodcastStatusIndicator.cs:66
 msgid "Downloaded"
 msgstr "Stažené"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:306
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:308
 #, csharp-format
 msgid "{0} episode"
 msgid_plural "{0} episodes"
