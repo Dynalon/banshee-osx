@@ -54,7 +54,7 @@ namespace Banshee.Database
         // NOTE: Whenever there is a change in ANY of the database schema,
         //       this version MUST be incremented and a migration method
         //       MUST be supplied to match the new version number
-        protected const int CURRENT_VERSION = 44;
+        protected const int CURRENT_VERSION = 45;
         protected const int CURRENT_METADATA_VERSION = 8;
 
 #region Migration Driver
@@ -958,6 +958,15 @@ namespace Banshee.Database
         }
 #endregion
 
+        [DatabaseVersion (45)]
+        private bool Migrate_45 ()
+        {
+            connection.AddFunction<FixUriEncodingFunction> ();
+            Execute ("UPDATE CoreTracks SET Uri = BANSHEE_FIX_URI_ENCODING (Uri) WHERE Uri LIKE 'file:///%'");
+            connection.RemoveFunction<FixUriEncodingFunction> ();
+            return true;
+        }
+
 #pragma warning restore 0169
 
 #region Fresh database setup
@@ -1488,6 +1497,16 @@ namespace Banshee.Database
             string filename_fragment = (string)args[1];
             string full_path = Paths.Combine (library_path, filename_fragment);
             return SafeUri.FilenameToUri (full_path);
+        }
+    }
+
+    [SqliteFunction (Name = "BANSHEE_FIX_URI_ENCODING", FuncType = FunctionType.Scalar, Arguments = 1)]
+    internal class FixUriEncodingFunction : SqliteFunction
+    {
+        public override object Invoke (object[] args)
+        {
+            string uri = (string)args[0];
+            return SafeUri.FilenameToUri (SafeUri.UriToFilename (uri));
         }
     }
 }
