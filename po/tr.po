@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-10-10 18:12+0000\n"
-"PO-Revision-Date: 2011-11-05 09:45+0200\n"
+"POT-Creation-Date: 2011-11-06 14:14+0000\n"
+"PO-Revision-Date: 2011-11-14 19:21+0200\n"
 "Last-Translator: Muhammet Kara <muhammet.k@gmail.com>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,12 +22,10 @@ msgstr ""
 
 #. ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice.addin.xml
 #: ../data/addin-xml-strings.cs:8
-#| msgid "Device Support"
 msgid "Apple Devices Support"
 msgstr "Apple Aygıtları Desteği"
 
 #: ../data/addin-xml-strings.cs:9
-#| msgid "Support for most iPod devices."
 msgid "Support for most iPod/iPhone/iPad devices."
 msgstr "Çoğu iPod/iPhone/iPad aygıtları için destek."
 
@@ -90,7 +88,6 @@ msgid "Amazon MP3 Import"
 msgstr "Amazon MP3 İçe Aktarımı"
 
 #: ../data/addin-xml-strings.cs:34
-#| msgid "Download and import music purchased from eMusic"
 msgid "Download and import music purchased from Amazon.com."
 msgstr "Amazon.com'dan satın alınan müzikleri indirin ve içe aktarın."
 
@@ -157,7 +154,6 @@ msgstr "Yerel ağınızda paylaşılan müziklere göz atın ve dinleyin."
 
 #. ../src/Extensions/Banshee.Emusic.Store/Banshee.Emusic.Store.addin.xml
 #: ../data/addin-xml-strings.cs:63
-#| msgid "Music Share"
 msgid "eMusic Store"
 msgstr "eMusic Mağazası"
 
@@ -171,7 +167,6 @@ msgid "eMusic Import"
 msgstr "eMusic İçe Aktar"
 
 #: ../data/addin-xml-strings.cs:69
-#| msgid "Download and import music purchased from eMusic"
 msgid "Download and import music purchased from eMusic."
 msgstr "eMusic'ten satın alınan müzikleri indirin ve içe aktarın."
 
@@ -236,7 +231,6 @@ msgid "Library Watcher"
 msgstr "Kütüphane Takipçisi"
 
 #: ../data/addin-xml-strings.cs:104
-#| msgid "Automatically update music and video libraries"
 msgid "Automatically update music and video libraries."
 msgstr "Müzik ve video kütüphanelerini otomatik olarak güncelle."
 
@@ -291,12 +285,10 @@ msgstr "Banshee'yi kontrol etmek için bir uyarı alanı simgesi gösterir."
 
 #. ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.addin.xml
 #: ../data/addin-xml-strings.cs:133
-#| msgid "Audio CD Support"
 msgid "DVD and Audio CD Support"
 msgstr "DVD ve Ses CD'si Desteği"
 
 #: ../data/addin-xml-strings.cs:134
-#| msgid "Listen to and rip Audio CDs."
 msgid "Watch DVDs, listen to and rip Audio CDs."
 msgstr "DVD izle, Ses CD'lerini dinle ve dosyaya aktar."
 
@@ -327,7 +319,7 @@ msgstr ""
 #: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:200
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/PodcastGroupSource.cs:38
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:107
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:210
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:211
 msgid "Podcasts"
 msgstr "Podcast'ler"
 
@@ -355,9 +347,9 @@ msgstr "Podcast'lerden BitTorent dosyalarını indirmek için destek sağlar."
 
 #. ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore.addin.xml
 #: ../data/addin-xml-strings.cs:163
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:52
 #: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:53
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:54
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:140
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:133
 msgid "Ubuntu One Music Store"
 msgstr "Ubuntu One Müzik Mağazası"
 
@@ -390,7 +382,6 @@ msgid "YouTube"
 msgstr "YouTube"
 
 #: ../data/addin-xml-strings.cs:174
-#| msgid "Show related YouTube videos in the context pane"
 msgid "Show related YouTube videos in the context pane."
 msgstr "İlgili YouTube videolarını bağlam bölmesinde göster."
 
@@ -483,7 +474,6 @@ msgid "Constant Bitrate"
 msgstr "Sabit İkili Oran"
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:5
-#| msgid "Syncing iPod"
 msgid "Encoding Mode"
 msgstr "Kodlama Kipi"
 
@@ -639,7 +629,6 @@ msgstr "'filesrc' öğesi oluşturulamadı"
 #: ../libbanshee/banshee-bpmdetector.c:214
 #: ../libbanshee/banshee-transcoder.c:246
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:187
-#| msgid "Could not create decodebin plugin"
 msgid "Could not create decodebin2 plugin"
 msgstr "decodebin2 eklentisi oluşturulamadı"
 
@@ -694,13 +683,11 @@ msgstr "'sink' öğesi oluşturulamadı"
 
 #: ../libbanshee/banshee-transcoder.c:258
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:198
-#| msgid "Could not create 'sinkben' plugin"
 msgid "Could not create sinkbin plugin"
 msgstr "sinkbin eklentisi oluşturulamadı"
 
 #: ../libbanshee/banshee-transcoder.c:270
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:73
-#| msgid "Could not create audioconvert plugin"
 msgid "Could not create audioresample plugin"
 msgstr "audioresample eklentisi oluşturulamadı"
 
@@ -781,9 +768,6 @@ msgid "Enable _gapless playback"
 msgstr "_Aralıksız çalma etkinleştir"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:886
-#| msgid ""
-#| "Eliminate the small playback gap on track change.  Useful for concept "
-#| "albums and classical music"
 msgid ""
 "Eliminate the small playback gap on track change. Useful for concept albums "
 "and classical music"
@@ -797,7 +781,6 @@ msgstr "Kodlama değiştirici oluşturulamadı"
 
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:259
 #, csharp-format
-#| msgid "Could not create encoder pipeline"
 msgid "Could not create encoder pipeline : {0}"
 msgstr "Kodlayıcı boru hattı oluşturulamadı : {0}"
 
@@ -807,7 +790,6 @@ msgstr "GStreamer# 0.10"
 
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:79
 #, csharp-format
-#| msgid "Could not create encoding pipeline"
 msgid "Could not create encoding pipeline : {0}"
 msgstr "Kodlama boru hattı oluşturulamadı : {0}"
 
@@ -826,7 +808,6 @@ msgid "Close"
 msgstr "Kapat"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:72
-#| msgid "Check for New Episodes"
 msgid "Can't check for updates"
 msgstr "Güncellemeler denetlenemiyor"
 
@@ -839,7 +820,6 @@ msgstr ""
 "sonra tekrar deneyin."
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:95
-#| msgid "No description available"
 msgid "No update available"
 msgstr "Kullanılabilir güncelleme yok"
 
@@ -853,24 +833,20 @@ msgid "A new version of Banshee ({0}) is available.{1}Do you want to update?"
 msgstr "Banshee'nin yeni bir sürümü ({0}) mevcut.{1}Güncellemek ister misiniz?"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:108
-#| msgid "Banshee Media Player"
 msgid "Banshee update available"
 msgstr "Banshee güncellemesi mevcut"
 
 #. Translators: {0} is the filename, eg Banshee-1.9.5.msi
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:129
 #, csharp-format
-#| msgid "Downloading"
 msgid "Downloading {0}"
 msgstr "{0} indiriliyor"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:152
-#| msgid "Not Downloaded"
 msgid "Update download failed"
 msgstr "Güncelleme indirmesi başarısız oldu"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:152
-#| msgid "Server error, please try again later."
 msgid "The download failed. Please try again later."
 msgstr "İndirme başarısız oldu. Lütfen daha sonra tekrar deneyin."
 
@@ -888,7 +864,6 @@ msgid "Update finished downloading"
 msgstr "Güncellemenin indirilmesi tamamlandı"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/WindowsService.cs:109
-#| msgid "Check for New Episodes"
 msgid "Check for Updates"
 msgstr "Güncellemeleri Denetle"
 
@@ -1191,11 +1166,11 @@ msgstr "İzleyen yardım parametreleri geçersiz: {0}"
 msgid "Play Album"
 msgstr "Albümü Çal"
 
-#: ../src/Clients/Muinshee/Muinshee/BaseDialog.cs:83
+#: ../src/Clients/Muinshee/Muinshee/BaseDialog.cs:96
 msgid "En_queue"
 msgstr "Kuyruğa _al"
 
-#: ../src/Clients/Muinshee/Muinshee/BaseDialog.cs:86
+#: ../src/Clients/Muinshee/Muinshee/BaseDialog.cs:99
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackActions.cs:73
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackActions.cs:210
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:126
@@ -1261,7 +1236,7 @@ msgstr "Açıklama"
 
 #: ../src/Core/Banshee.Core/Banshee.Base/CoverArtSpec.cs:43
 #: ../src/Core/Banshee.Core/Banshee.Collection/ArtistInfo.cs:37
-#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:137
+#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:138
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Recommendations/RecommendationPane.cs:90
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdDiscModel.cs:101
 msgid "Unknown Artist"
@@ -1269,7 +1244,7 @@ msgstr "Bilinmeyen Sanatçı"
 
 #: ../src/Core/Banshee.Core/Banshee.Base/CoverArtSpec.cs:45
 #: ../src/Core/Banshee.Core/Banshee.Collection/AlbumInfo.cs:40
-#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:136
+#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:137
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdDiscModel.cs:102
 msgid "Unknown Album"
 msgstr "Bilinmeyen Albüm"
@@ -1347,12 +1322,23 @@ msgstr "Çalan Şarkıya _Atla"
 msgid "_Jump to Playing Item"
 msgstr "Çalan Öğeye _Atla"
 
+#: ../src/Core/Banshee.Core/Banshee.Collection/YearInfo.cs:38
+#| msgid "Unknown error"
+msgid "Unknown Year"
+msgstr "Bilinmeyen Yıl"
+
 #. Translators: This is used to generate bookmark names. {0} is track title, {1} is minutes
 #. (possibly more than two digits) and {2} is seconds (between 00 and 60).
 #: ../src/Core/Banshee.Services/Banshee.Collection.Database/Bookmark.cs:172
 #, csharp-format
 msgid "{0} ({1}:{2:00})"
 msgstr "{0} ({1}:{2:00})"
+
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseAlbumArtistListModel.cs:76
+#, csharp-format
+#| msgid "All Artists ({0})"
+msgid "All Album Artists ({0})"
+msgstr "Tüm Albüm Sanatçıları ({0})"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseAlbumListModel.cs:75
 #, csharp-format
@@ -1369,27 +1355,33 @@ msgstr "Tüm Sanatçılar ({0})"
 msgid "Value"
 msgstr "Değer"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:49
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseYearListModel.cs:66
+#, csharp-format
+#| msgid "All Genres ({0})"
+msgid "All Years ({0})"
+msgstr "Tüm Yıllar ({0})"
+
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:50
 msgid "Shuffle by A_lbum"
 msgstr "Al_büme göre Karıştır"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:50
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:51
 msgid "by album"
 msgstr "albüme göre"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:51
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:52
 msgid "Play all songs from an album, then randomly choose another album"
 msgstr "Bir albümden tüm şarkıları çal sonra rastgele başka bir albüm seç"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:49
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:50
 msgid "Shuffle by A_rtist"
 msgstr "_Sanatçıya göre Karıştır"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:50
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:51
 msgid "by artist"
 msgstr "sanatçıya göre"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:51
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:52
 msgid "Play all songs by an artist, then randomly choose another artist"
 msgstr ""
 "Bir sanatçının tüm şarkılarını çal sonra rastgele başka bir sanatçı seç"
@@ -1406,28 +1398,28 @@ msgstr "el ile"
 msgid "Do not shuffle playlist"
 msgstr "Çalma listesini karışık çalma"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:45
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:46
 msgid "Shuffle by _Rating"
 msgstr "_Değerlendirmeye göre Karıştır"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:46
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:47
 msgid "by rating"
 msgstr "değerlendirmeye göre"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:47
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:48
 msgid "Play songs randomly, prefer higher rated songs"
 msgstr ""
 "Şarkıları çalma listesinden rastgele çal, yüksek beğenili parçaları tercih et"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:42
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:43
 msgid "Shuffle by S_core"
 msgstr "_Puana göre Karıştır"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:43
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:44
 msgid "by score"
 msgstr "puana göre"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:44
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:45
 msgid "Play songs randomly, prefer higher scored songs"
 msgstr ""
 "Şarkıları çalma listesinden rastgele çal, yüksek puanlı parçaları tercih et"
@@ -1449,7 +1441,7 @@ msgid "Scanning for media"
 msgstr "Ortam taranıyor"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection/ImportManager.cs:188
-#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1395
+#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1410
 msgid "Scanning..."
 msgstr "Taranıyor..."
 
@@ -1488,7 +1480,7 @@ msgid ""
 "Please wait while your old Banshee database is migrated to the new format."
 msgstr "Eski Banshee veritabanı yeni biçime aktarılırken lütfen bekleyin."
 
-#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1392
+#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1407
 msgid "Refreshing Metadata"
 msgstr "Üstveri Yenileniyor"
 
@@ -1660,15 +1652,11 @@ msgstr "_Sanatçının albumlerini yıllara göre sırala, başlığa göre değ
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:93
 #, csharp-format
-#| msgid "{0} second"
-#| msgid_plural "{0} seconds"
 msgid "{0} song"
 msgid_plural "{0} songs"
 msgstr[0] "{0} şarkılar"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:114
-#| msgid "Audio Folder"
-#| msgid_plural "Audio Folders"
 msgid "Music Folder"
 msgstr "Müzik Klasörü"
 
@@ -1699,12 +1687,10 @@ msgid "Songs imported within the last week"
 msgstr "Son haftada içe aktarılan şarkılar"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:134
-#| msgid "Most Recently Played"
 msgid "Recently Played"
 msgstr "Son Çalınanlar"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:135
-#| msgid "Recently Played Tracks"
 msgid "Recently played songs"
 msgstr "Son çalınan şarkılar"
 
@@ -1781,15 +1767,11 @@ msgstr "Hazırlayan"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:70
 #, csharp-format
-#| msgid "{0} item"
-#| msgid_plural "{0} items"
 msgid "{0} video"
 msgid_plural "{0} videos"
 msgstr[0] "{0} video"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:90
-#| msgid "Video Folder"
-#| msgid_plural "Video Folders"
 msgid "Videos Folder"
 msgstr "Videolar Klasörü"
 
@@ -1851,28 +1833,20 @@ msgstr ""
 "Desteklenen ortam dosyalarının içinde etiketleri ve diğer üst verileri kaydet"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:55
-#| msgid "Write _metadata to files"
 msgid "Write _ratings to files"
 msgstr "_Değerlendirmeleri dosyalara yaz"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:56
-#| msgid ""
-#| "Enable this option to save rating and playcount metadata inside supported "
-#| "audio files"
 msgid "Enable this option to save rating metadata inside supported audio files"
 msgstr ""
 "Değerlendirme üst verisini desteklenen ses dosyalarına kaydetmek için bu "
 "seçeneği etkinleştirin"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:61
-#| msgid "Write _ratings and play counts to files"
 msgid "Write play counts to files"
 msgstr "Çalma sayaçlarını dosyalara yaz"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:62
-#| msgid ""
-#| "Enable this option to save rating and playcount metadata inside supported "
-#| "audio files"
 msgid ""
 "Enable this option to save playcount metadata inside supported audio files"
 msgstr ""
@@ -1933,7 +1907,6 @@ msgstr ""
 "bağlantısına gerek duyuyor"
 
 #: ../src/Core/Banshee.Services/Banshee.Playlist/AbstractPlaylistSource.cs:159
-#| msgid "Smart Playlist"
 msgid "Search this playlist"
 msgstr "Bu çalma listesinde ara"
 
@@ -2504,7 +2477,7 @@ msgstr "Son Zamanlarda Eklenen"
 msgid "Least Recently Added"
 msgstr "Daha Önceleri Eklenen"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:525
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:529
 msgid "Random"
 msgstr "Rastgele"
 
@@ -2594,7 +2567,7 @@ msgstr "Akıllı Çalma Listesini Düzenle"
 msgid "Delete Smart Playlist"
 msgstr "Akıllı Çalma Listesini Sil"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/DatabaseSource.cs:148
+#: ../src/Core/Banshee.Services/Banshee.Sources/DatabaseSource.cs:149
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:161
 #, csharp-format
 msgid "All Genres ({0})"
@@ -2702,12 +2675,10 @@ msgstr[0] "{0} öğe"
 #. AddSource (music_library = new MusicLibrarySource (), true);
 #. AddSource (video_library = new VideoLibrarySource (), false);
 #: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:86
-#| msgid "Online Sources"
 msgid "Online Media"
 msgstr "Çevrimiçi Ortam"
 
 #: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:87
-#| msgid "Library"
 msgid "Libraries"
 msgstr "Kütüphaneler"
 
@@ -2785,7 +2756,7 @@ msgstr ""
 #. Translators: this is {track number} of {track count}
 #: ../src/Core/Banshee.ThickClient/Banshee.Collection.Gui/ColumnCellDiscAndCount.cs:40
 #: ../src/Core/Banshee.ThickClient/Banshee.Collection.Gui/ColumnCellTrackAndCount.cs:40
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:170
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:174
 #: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapPropertiesDialog.cs:148
 #, csharp-format
 msgid "{0} of {1}"
@@ -2804,7 +2775,6 @@ msgid "Protected"
 msgstr "Korundu"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Collection.Gui/ColumnCellStatusIndicator.cs:224
-#| msgid "Extra processing"
 msgid "External Document"
 msgstr "Harici Belge"
 
@@ -2870,21 +2840,16 @@ msgstr "Ön Amfi"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Equalizer.Gui/EqualizerView.cs:100
 #, csharp-format
-#| msgid "{0} day"
-#| msgid_plural "{0} days"
 msgid "+{0} dB"
 msgstr "+{0} dB"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Equalizer.Gui/EqualizerView.cs:102
 #, csharp-format
-#| msgid "{0} day"
-#| msgid_plural "{0} days"
 msgid "{0} dB"
 msgstr "{0} dB"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Equalizer.Gui/EqualizerView.cs:124
 #, csharp-format
-#| msgid "{0} Hz"
 msgid "{0} kHz"
 msgstr "{0} kHz"
 
@@ -3093,7 +3058,6 @@ msgid "_Help"
 msgstr "_Yardım"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:91
-#| msgid "Concerts"
 msgid "_Contents"
 msgstr "_İçindekiler"
 
@@ -3140,7 +3104,6 @@ msgid "Playlists"
 msgstr "Çalma Listeleri"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackActions.cs:69
-#| msgid "Play or pause the current item"
 msgid "Play the current item"
 msgstr "Geçerli öğeyi çal"
 
@@ -3193,7 +3156,6 @@ msgid "_Pause"
 msgstr "_Duraklat"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackActions.cs:205
-#| msgid "Play or pause the current item"
 msgid "Pause the current item"
 msgstr "Geçerli öğeyi duraklat"
 
@@ -3238,12 +3200,10 @@ msgstr "Karışık"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackSubtitleActions.cs:62
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackSubtitleActions.cs:63
-#| msgid "title"
 msgid "Subtitle"
 msgstr "Altyazı"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackSubtitleActions.cs:65
-#| msgid "Loading..."
 msgid "Load File..."
 msgstr "Dosya Yükle..."
 
@@ -3252,23 +3212,19 @@ msgid "Load subtitle file"
 msgstr "Altyazı dosyası yükle"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackSubtitleActions.cs:79
-#| msgid "Local Files"
 msgid "Load Subtitle File"
 msgstr "Altyazı Dosyası Yükle"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackSubtitleActions.cs:88
-#| msgid "Loved"
 msgid "L_oad"
 msgstr "Y_ükle"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackSubtitleActions.cs:97
-#| msgid "Select Files"
 msgid "Subtitle files"
 msgstr "Altyazı dosyaları"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackSubtitleActions.cs:128
 #, csharp-format
-#| msgid "Stop {0}"
 msgid "Subtitle {0}"
 msgstr "Altyazı {0}"
 
@@ -3413,7 +3369,6 @@ msgid "View information on selected tracks"
 msgstr "Seçilen parçalardaki bilgiyi görüntüle"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:127
-#| msgid "Play the next item"
 msgid "Play the selected item"
 msgstr "Seçilen öğeyi çal"
 
@@ -3913,7 +3868,7 @@ msgstr "_Albüm Kapağı Göster"
 msgid "Toggle display of album cover art"
 msgstr "Albüm kapağı göstermeyi seç"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.Widgets/TaskStatusIcon.cs:92
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.Widgets/TaskStatusIcon.cs:96
 msgid "Active Task Running"
 msgid_plural "Active Tasks Running"
 msgstr[0] "Çalışan Etkin Görevler"
@@ -3954,7 +3909,7 @@ msgstr "{0}Sanatçı:{1} {2} {0}Albüm:{1} {3}"
 #. Translators: {0} and {1} are for markup so ignore them, {2} is for Album Title;
 #. e.g. 'from Killing with a Smile'
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Widgets/TrackInfoDisplay.cs:589
-#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:525
+#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:518
 #, csharp-format
 msgid "{0}from{1} {2}"
 msgstr "{0}Albüm:{1} {2}"
@@ -3962,7 +3917,7 @@ msgstr "{0}Albüm:{1} {2}"
 #. Translators: {0} and {1} are for markup so ignore them, {2} is for Artist Name;
 #. e.g. 'by Parkway Drive'
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Widgets/TrackInfoDisplay.cs:593
-#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:529
+#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:522
 #, csharp-format
 msgid "{0}by{1} {2}"
 msgstr "{0}Sanatçı:{1} {2}"
@@ -4016,7 +3971,6 @@ msgid "Files"
 msgstr "Dosyalar"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FileImportSource.cs:63
-#| msgid "C_hoose Files"
 msgid "C_hoose Files..."
 msgstr "Dosyaları _Seç..."
 
@@ -4045,7 +3999,6 @@ msgid "Folders"
 msgstr "Klasörler"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FolderImportSource.cs:57
-#| msgid "C_hoose Folders"
 msgid "C_hoose Folders..."
 msgstr "Klasörleri _Seç..."
 
@@ -4156,33 +4109,83 @@ msgstr "Düzenleyicide aç"
 msgid "Create and save"
 msgstr "Oluştur ve kaydet"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:110
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:94
+#| msgid "Browser on Left"
+msgid "Browser Content"
+msgstr "Tarayıcı İçeriği"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:95
+msgid "Configure the filters available in the browser"
+msgstr "Tarayıcıdaki kullanılabilir filtreleri yapılandır"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:100
+#| msgid "Sort Track Artist:"
+msgid "Show all Artists"
+msgstr "Tüm Sanatçıları Göster"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:101
+#| msgid "Set all track artists to this value"
+msgid "Show all artists in the artist filter"
+msgstr "Sanatçı filtresindeki tüm sanatçıları göster"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:104
+#| msgid "Sort Album Artist:"
+msgid "Show Album Artists"
+msgstr "Albüm Sanatçılarını Göster"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:105
+msgid "Show only album artists, not artists with only single tracks"
+msgstr ""
+"Tek bir parçası olan sanatçıları değil, sadece albüm sanatçılarını göster"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:110
+#| msgid "Show the next track"
+msgid "Show Genre Filter"
+msgstr "Tür Filtresini Göster"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:111
+msgid "Show a list of genres to filter by"
+msgstr "Filtreleme için bir tür listesi göster"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:115
+msgid "Show Year Filter"
+msgstr "Yıl Filtresini Göster"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:116
+msgid "Show a list of years to filter by"
+msgstr "Filtreleme için bir yıl listesi göster"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:197
+#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSourceContents.cs:62
+msgid "Not Set"
+msgstr "Ayarlanmadı"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:105
 msgid "Browser on Left"
 msgstr "Gezgin Solda"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:111
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:106
 msgid "Show the artist/album browser to the left of the track list"
 msgstr "Sanatçı/Albüm gezginini parça listesinin solunda göster"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:114
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:109
 msgid "Browser on Top"
 msgstr "Gezgin Üstte"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:115
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:110
 msgid "Show the artist/album browser above the track list"
 msgstr "Sanatçı/Albüm gezginini parça listesinin üstünde göster"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:120
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:115
 msgid "Show Browser"
 msgstr "Gezgini Göster"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:121
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:116
 msgid "Show or hide the artist/album browser"
 msgstr "Sanatçı/Albüm gezginini gösterir ya da gizler"
 
 #: ../src/Core/Banshee.WebBrowser/Banshee.WebSource/WebBrowserShell.cs:121
 #, csharp-format
-#| msgid "Loading {0}"
 msgid "Loading {0}..."
 msgstr "{0} Yükleniyor..."
 
@@ -4195,7 +4198,6 @@ msgstr ""
 "Disk"
 
 #: ../src/Core/Banshee.Widgets/Banshee.Widgets/SearchEntry.cs:95
-#| msgid "Folder hie_rarchy"
 msgid "Clear search"
 msgstr "Aramayı temizle"
 
@@ -4203,16 +4205,16 @@ msgstr "Aramayı temizle"
 msgid "Seek"
 msgstr "Atla"
 
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:146
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:150
 msgid "Idle"
 msgstr "Boşta"
 
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:147
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:151
 #: ../src/Extensions/Banshee.AmazonMp3/Banshee.AmazonMp3/AmazonDownloadManager.cs:58
 msgid "Contacting..."
 msgstr "Bağlanılıyor..."
 
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:157
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:161
 msgid "Buffering"
 msgstr "Tamponlanıyor"
 
@@ -4243,7 +4245,6 @@ msgid "Capacity"
 msgstr "Kapasite"
 
 #: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:115
-#| msgid "Disable"
 msgid "Available"
 msgstr "Uygun"
 
@@ -4279,18 +4280,15 @@ msgstr "Eşlemeye hazırlanılıyor..."
 
 #: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:560
 #, csharp-format
-#| msgid "Adding {0} of {1} to {2}"
 msgid "Adding track {0} of {1}"
 msgstr "Parça ekleniyor {0} / {1}"
 
 #: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:596
 #, csharp-format
-#| msgid "Importing {0} of {1}"
 msgid "Removing track {0} of {1}"
 msgstr "Parça kaldırılıyor {0} / {1}"
 
 #: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:649
-#| msgid "Saving new database..."
 msgid "Writing media database"
 msgstr "Ortam veritabanı yazılıyor"
 
@@ -4307,7 +4305,6 @@ msgstr "{0} eklenecek, {1} kaldırılacak, {2} güncellenecek"
 
 #. This group source gives us a seperator for DAPs in the source view.
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/DapService.cs:64
-#| msgid "Device"
 msgid "Devices"
 msgstr "Aygıtlar"
 
@@ -4324,7 +4321,7 @@ msgid "Vendor"
 msgstr "Sağlayıcı"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:284
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:140
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:141
 #, csharp-format
 msgid "Loading {0}"
 msgstr "{0} Yükleniyor"
@@ -4356,38 +4353,38 @@ msgstr "Dosya biçimi dönüştürme desteği kullanılır değil"
 msgid "Error converting file"
 msgstr "Dosya dönüştürülürken hata"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:137
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:135
 msgid "Sync when first plugged in and when the libraries change"
 msgstr "Aygıt takıldığında ya da kütüphaneler değiştiğinde kendiliğinden eşle"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:138
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:136
 msgid ""
 "Begin synchronizing the device as soon as the device is plugged in or the "
 "libraries change."
 msgstr "Aygıt takılınca ya da kütüphaneler değiştiğinde hemen eşlemeye başla."
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:141
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:139
 msgid "Sync Preferences"
 msgstr "Eşleme Tercihleri"
 
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:53
+msgid "Sync"
+msgstr "Eşle"
+
 #. singular form unused b/c we know it's > 1, but we still need GetPlural
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:365
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:106
 #, csharp-format
 msgid "The sync operation will remove one track from your device."
 msgid_plural "The sync operation will remove {0} tracks from your device."
 msgstr[0] "Eşleme işlemi {0} parçayı aygıttan silecek."
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:369
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:110
 msgid "Are you sure you want to continue?"
 msgstr "Devam etmek istediğinize emin misiniz?"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:377
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:118
 msgid "Remove tracks"
 msgstr "Parçaları sil"
-
-#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:52
-msgid "Sync"
-msgstr "Eşle"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapInfoBar.cs:68
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:97
@@ -4506,7 +4503,6 @@ msgid "Error Initializing MTP Device Support"
 msgstr "MTP Aygıt Desteği Başlatılırken Hata"
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:83
-#| msgid "Error Initializing MTP Device Support"
 msgid "There was an error intializing MTP device support."
 msgstr "MTP aygıt desteği ilklendirilirken bir hata oluştu."
 
@@ -4562,7 +4558,6 @@ msgid "Amazon MP3 Store"
 msgstr "Amazon MP3 Mağazası"
 
 #: ../src/Extensions/Banshee.AmazonMp3.Store/Banshee.AmazonMp3.Store/StoreSourcePreferences.cs:57
-#| msgid "Count"
 msgid "Country"
 msgstr "Ülke"
 
@@ -4666,20 +4661,16 @@ msgid "Audiobooks"
 msgstr "Sesli Kitaplar"
 
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:75
-#| msgid "_Restart Audiobook"
 msgid "Search your audiobooks"
 msgstr "Sesli kitaplarınızda arayın"
 
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:146
 #, csharp-format
-#| msgid "{0} ago"
 msgid "{0} book"
 msgid_plural "{0} books"
 msgstr[0] "{0} kitap"
 
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:150
-#| msgid "Audio Folder"
-#| msgid_plural "Audio Folders"
 msgid "Audiobooks Folder"
 msgstr "Sesli Kitaplar Klasörü"
 
@@ -4731,7 +4722,7 @@ msgstr ""
 msgid "Downloading Cover Art"
 msgstr "Albüm Kapağı İndiriliyor"
 
-#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:128
+#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:129
 #, csharp-format
 msgid "{0} - {1}"
 msgstr "{0} - {1}"
@@ -4753,13 +4744,6 @@ msgid "Back"
 msgstr "Geri"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:101
-#| msgid ""
-#| "iTunes® 7 introduced new compatibility issues and currently only works "
-#| "with other iTunes® 7 clients.\n"
-#| "\n"
-#| "No third-party clients can connect to iTunes® music shares anymore. This "
-#| "is an intentional limitation by Apple in iTunes® 7 and we apologize for "
-#| "the unfortunate inconvenience."
 msgid ""
 "iTunes® 7 introduced new compatibility issues and currently only works with "
 "other iTunes® 7 clients.\n"
@@ -4768,13 +4752,12 @@ msgid ""
 "an intentional limitation by Apple in iTunes® 7 and newer, we apologize for "
 "the unfortunate inconvenience."
 msgstr ""
-"iTunes® 7 yeni uyumluluk düzenlemelerini getiriyor ve bunlar şu anda yalnızca "
-"iTunes® 7 istemcileri ile çalışmaktadır.\n"
+"iTunes® 7 yeni uyumluluk düzenlemelerini getiriyor ve bunlar şu anda "
+"yalnızca iTunes® 7 istemcileri ile çalışmaktadır.\n"
 "\n"
-"Üçüncü parti istemciler iTunes® müzik paylaşımlarına artık bağlanamayacak. Bu "
-"Apple tarafından iTunes® 7 ve daha yeni sürümleri için uygulanan kasıtlı bir "
-"sınırlamadır; bu "
-"talihsiz rahatsızlık için özür dileriz."
+"Üçüncü parti istemciler iTunes® müzik paylaşımlarına artık bağlanamayacak. "
+"Bu Apple tarafından iTunes® 7 ve daha yeni sürümleri için uygulanan kasıtlı "
+"bir sınırlamadır; bu talihsiz rahatsızlık için özür dileriz."
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:111
 msgid "Common reasons for connection failures:"
@@ -4801,10 +4784,10 @@ msgid "Try connecting again"
 msgstr "Yeniden bağlanmayı dene"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:139
-#| msgid "The music share is hosted by iTunes® 7"
 msgid "The music share is hosted by iTunes® 7 or newer"
 msgstr ""
-"Müzik paylaşımı iTunes® 7 ya da daha yeni bir sürümü tarafından barındırılıyor"
+"Müzik paylaşımı iTunes® 7 ya da daha yeni bir sürümü tarafından "
+"barındırılıyor"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapLoginDialog.cs:47
 msgid "Login to Music Share"
@@ -4921,13 +4904,11 @@ msgstr "eMusic Parçaları"
 
 #: ../src/Extensions/Banshee.Emusic.Store/Banshee.Emusic.Store/StoreSource.cs:42
 #: ../src/Extensions/Banshee.Emusic.Store/Banshee.Emusic.Store/StoreWebBrowserShell.cs:41
-#| msgid "Music"
 msgid "eMusic"
 msgstr "eMusic"
 
 #: ../src/Extensions/Banshee.Emusic.Store/Banshee.Emusic.Store/StoreWebBrowserShell.cs:45
 #, csharp-format
-#| msgid "Search Results"
 msgid "Search eMusic"
 msgstr "eMusic'te Ara"
 
@@ -4959,7 +4940,6 @@ msgid "Clear the file system queue when quitting"
 msgstr "Çıkarken dosya sistemi kuyruğunu temizle"
 
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/AlbumDuplicateSolver.cs:46
-#| msgid "Duplicate CD"
 msgid "Duplicate Albums"
 msgstr "Mükerrer Albümler"
 
@@ -4973,7 +4953,6 @@ msgstr ""
 "eylem yapılmaması için işaretini kaldırın."
 
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/ArtistDuplicateSolver.cs:46
-#| msgid "Duplicate CD"
 msgid "Duplicate Artists"
 msgstr "Mükerrer Sanatçılar"
 
@@ -4991,7 +4970,6 @@ msgid "Fix Music Metadata..."
 msgstr "Müzik Meta Verilerini Düzelt..."
 
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/FixSource.cs:48
-#| msgid "Saving Metadata to File"
 msgid "Metadata Fixer"
 msgstr "Meta Veri Düzeltici"
 
@@ -5000,12 +4978,10 @@ msgid "Problem Type:"
 msgstr "Sorun Türü:"
 
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/FixSource.cs:66
-#| msgid "Select Files"
 msgid "Apply Selected Fixes"
 msgstr "Seçilen Düzeltmeleri Uygula"
 
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/GenreDuplicateSolver.cs:46
-#| msgid "Duplicate CD"
 msgid "Duplicate Genres"
 msgstr "Mükerrer Tarzlar"
 
@@ -5033,7 +5009,6 @@ msgstr "bir|bir|"
 #. suffixing an article, eg in English: ", The"
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/Solver.cs:202
 #, csharp-format
-#| msgid "{0}:"
 msgid ", {0}"
 msgstr ", {0}"
 
@@ -5060,13 +5035,11 @@ msgid "Subscribe"
 msgstr "Kaydol"
 
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/Actions.cs:84
-#| msgid "Subscribe to a new podcast"
 msgid "Subscribe to this search as a podcast"
 msgstr "Bu aramaya podcast olarak abone ol"
 
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/Actions.cs:88
 #, csharp-format
-#| msgid "Internet Archive"
 msgid "Internet Archive: {0}"
 msgstr "İnternet Arşivi: {0}"
 
@@ -5096,7 +5069,7 @@ msgstr "İnternet Arşivi'nden öğe ayrıntıları alınırken hata"
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/SearchView.cs:130
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Field.cs:66
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:135
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:280
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:282
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastEpisodePage.cs:89
 msgid "Description"
 msgstr "Açıklama"
@@ -5566,10 +5539,6 @@ msgstr "En Yeniler"
 msgid "Oldest"
 msgstr "En Eskiler"
 
-#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSourceContents.cs:62
-msgid "Not Set"
-msgstr "Ayarlanmadı"
-
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:54
 msgid "Radio"
 msgstr "Radyo"
@@ -5583,7 +5552,6 @@ msgid "Add a new Internet Radio station or playlist"
 msgstr "Yeni bir İnternet Radyo istasyonu ya da çalma listesi ekle"
 
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:82
-#| msgid "Sort Stations by"
 msgid "Search your stations"
 msgstr "İstasyonlarınızda arayın"
 
@@ -5598,8 +5566,6 @@ msgstr "İstasyon"
 
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:155
 #, csharp-format
-#| msgid "{0} second"
-#| msgid_plural "{0} seconds"
 msgid "{0} station"
 msgid_plural "{0} stations"
 msgstr[0] "{0} istasyon"
@@ -6119,7 +6085,6 @@ msgid "Open Miro Guide"
 msgstr "Miro Rehberini Aç"
 
 #: ../src/Extensions/Banshee.MiroGuide/Banshee.MiroGuide/View.cs:57
-#| msgid "Refresh All Podcasts"
 msgid "Search for podcasts"
 msgstr "Podcast ara"
 
@@ -6159,7 +6124,7 @@ msgstr "Bildirim gösterilemedi"
 #. Translators: {0} and {1} are for markup so ignore them, {2} and {3}
 #. are Artist Name and Album Title, respectively;
 #. e.g. 'by Parkway Drive from Killing with a Smile'
-#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:521
+#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:514
 #, csharp-format
 msgid ""
 "{0}by{1} {2}\n"
@@ -6254,7 +6219,7 @@ msgstr ""
 "çalışmayı dener ancak içe aktarmayı oldukça yavaşlatacaktır."
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:192
-#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:310
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:311
 msgid "Import CD"
 msgstr "CD'yi İçe Aktar"
 
@@ -6271,46 +6236,43 @@ msgid "Duplicate this audio CD"
 msgstr "Bu ses CD'sini çoğalt"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:113
-#| msgid "Searching for CD metadata..."
 msgid "Searching for track information..."
 msgstr "Parça bilgisi aranıyor..."
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:146
-#| msgid "Could not fetch metadata for CD."
 msgid "Could not fetch track information"
 msgstr "Parça bilgisi alınamadı"
 
-#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:174
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:175
 msgid "Automatic import off since this album is already in the Music Library."
 msgstr ""
 "Bu albüm Müzik Kütüphanesinde olduğundan beri kendiliğinden içe aktarma "
 "kapalı."
 
-#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:197
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:198
 msgid "Could not import CD"
 msgstr "CD içe aktarılamadı"
 
-#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:214
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:215
 msgid "Could not duplicate audio CD"
 msgstr "Ses CD'si çoğaltılamadı"
 
-#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:284
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:285
 msgid "Audio CD Preferences"
 msgstr "Ses CD'si Tercihleri"
 
-#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:285
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:286
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:64
 msgid "Eject Disc"
 msgstr "Diski Çıkart"
 
-#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:309
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:310
 #, csharp-format
 msgid "Import ‟{0}”"
 msgstr "İçe Aktar ‟{0}”"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc/DiscSource.cs:171
 #, csharp-format
-#| msgid "Could not disconnect {0}: {1}"
 msgid "Could not eject {0}: {1}"
 msgstr "{0} çıkarılamadı: {1}"
 
@@ -6327,7 +6289,6 @@ msgid "Dvd"
 msgstr "Dvd"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:63
-#| msgid "Preferences"
 msgid "DVD Preferences"
 msgstr "DVD Tercihleri"
 
@@ -6436,47 +6397,37 @@ msgid "Append selected songs to the play queue"
 msgstr "Seçilen şarkıları çalma kuyruğuna ekle"
 
 #: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueActions.cs:57
-#| msgid "after"
 msgid "Play After"
 msgstr "Sonrasında Çal"
 
 #: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueActions.cs:58
-#| msgid ""
-#| "Enable or disable playback stopping after the currently playing track "
-#| "(value should be either 'true' or 'false')"
 msgid "Add selected songs after the currently playing track, album, or artist"
 msgstr ""
 "Seçilen şarkıları şu an çalan parça, albüm veya sanatçının sonrasına ekle"
 
 #: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueActions.cs:62
-#| msgid "Current source:"
 msgid "Current Track"
 msgstr "Geçerli Parça"
 
 #: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueActions.cs:63
-#| msgid "Append selected songs to the play queue"
 msgid "Add selected songs to the play queue after the currently playing song"
 msgstr ""
 "Seçilen şarkıları, şu an çalmakta olan şarkıdan sonra çalma kuyruğuna ekle"
 
 #: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueActions.cs:67
-#| msgid "Current source:"
 msgid "Current Album"
 msgstr "Geçerli Albüm"
 
 #: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueActions.cs:68
-#| msgid "Append selected songs to the play queue"
 msgid "Add selected songs to the play queue after the currently playing album"
 msgstr ""
 "Seçilen şarkıları, şu an çalmakta olan albümden sonra çalma kuyruğuna ekle"
 
 #: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueActions.cs:72
-#| msgid "Current player state"
 msgid "Current Artist"
 msgstr "Geçerli Sanatçı"
 
 #: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueActions.cs:73
-#| msgid "Append selected songs to the play queue"
 msgid "Add selected songs to the play queue after the currently playing artist"
 msgstr ""
 "Seçilen şarkıları, şu an çalmakta olan sanatçıdan sonra çalma kuyruğuna ekle"
@@ -6486,7 +6437,6 @@ msgid "Refresh random tracks in the play queue"
 msgstr "Çalma kuyruğundaki rastgele parçaları güncelle"
 
 #: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueActions.cs:85
-#| msgid "Refresh random tracks in the play queue"
 msgid "Randomize the playback order of items in the play queue"
 msgstr "Çalma kuyruğundaki ögelerin çalma sırasını rastgele değiştir"
 
@@ -6519,7 +6469,7 @@ msgid "Number of _upcoming songs to show"
 msgstr "_Gelecek parçaların sayısını göster"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastFeedModel.cs:47
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:279
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:281
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastActions.cs:89
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastEpisodePage.cs:86
 msgid "Podcast"
@@ -6530,69 +6480,62 @@ msgstr "Podcast"
 msgid "All Podcasts ({0})"
 msgstr "Tüm Podcast'ler ({0})"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:102
-#| msgid "Local Folders"
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:103
 msgid "Podcasts Folder"
 msgstr "Podcastler Klasörü"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:129
-#| msgid "_Restart Podcast"
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:130
 msgid "Remove Podcast"
 msgstr "Podcast'i Kaldır"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:134
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:135
 msgid "Disable Auto Updates"
 msgstr "Otomatik Güncellemeleri Kapat"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:152
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:153
 #, csharp-format
 msgid "Network error updating {0}"
 msgstr "{0} güncellenirken ağ hatası"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:158
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:159
 #, csharp-format
 msgid "Parsing error updating {0}"
 msgstr "{0} güncellenirken ayrıştırma hatası"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:161
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:162
 #, csharp-format
-#| msgid "Authentication Required"
 msgid "Authentication error updating {0}"
 msgstr "{0} güncellenirken kimlik doğrulama hatası"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:164
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:165
 #, csharp-format
-#| msgid "Loading {0}"
 msgid "Error updating {0}"
 msgstr "{0} güncellenirken hata"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:220
-#| msgid "Refresh All Podcasts"
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:222
 msgid "Search your podcasts"
 msgstr "Podcastlerinizde arayın"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:222
-#| msgid "Source Properties"
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:224
 msgid "Episode Properties"
 msgstr "Bölüm Özellikleri"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:279
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:281
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastEpisodePage.cs:88
 msgid "Published"
 msgstr "Yayınlanmış"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:279
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:281
 msgid "New"
 msgstr "Yeni"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:280
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:282
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/ColumnCellPodcastStatusIndicator.cs:66
 msgid "Downloaded"
 msgstr "İndirilen"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:306
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:308
 #, csharp-format
-#| msgid "{0} Folder"
 msgid "{0} episode"
 msgid_plural "{0} episodes"
 msgstr[0] "{0} bölüm"
@@ -6633,12 +6576,10 @@ msgstr "Tüm Podcast indirmelerinden vazgeçilsin mi?"
 
 #. "<control><shift>U",
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastActions.cs:73
-#| msgid "Check for New Episodes"
 msgid "Check all podcasts for new episodes"
 msgstr "Tüm podcastleri yeni bölümler için denetle"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastActions.cs:78
-#| msgid "Podcast"
 msgid "Add Podcast..."
 msgstr "Podcast Ekle..."
 
@@ -6663,7 +6604,6 @@ msgid "Visit Podcast Homepage"
 msgstr "Podcast Ana Sayfasına Git"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastActions.cs:123
-#| msgid "Source Properties"
 msgid "Podcast Properties"
 msgstr "Podcast Özellikleri"
 
@@ -6672,13 +6612,11 @@ msgid "Mark as New"
 msgstr "Yeni olarak İşaretle"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastActions.cs:134
-#| msgid "Drive"
 msgid "Archive"
 msgstr "Arşiv"
 
 #. Translators: this is a verb used as a button name, not a noun
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastActions.cs:140
-#| msgid "Downloads"
 msgid "Download"
 msgstr "İndir"
 
@@ -6691,13 +6629,11 @@ msgid "Visit Website"
 msgstr "Siteyi Ziyaret Et"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastActions.cs:170
-#| msgid "Podcast"
 msgid "Add Podcast"
 msgstr "Podcast Ekle"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastActions.cs:268
 #, csharp-format
-#| msgid "Select Files"
 msgid "Delete File"
 msgid_plural "Delete Files"
 msgstr[0] "Dosyaları Sil"
@@ -6715,7 +6651,6 @@ msgid "Episode Details"
 msgstr "Bölüm Ayrıntıları"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastFeedPropertiesDialog.cs:105
-#| msgid "Check for New Episodes"
 msgid "Check periodically for new episodes"
 msgstr "Yeni bölümleri belli aralıklarla denetle"
 
@@ -6729,7 +6664,6 @@ msgstr ""
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastFeedPropertiesDialog.cs:109
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastSubscribeDialog.cs:136
-#| msgid "Download all episodes"
 msgid "Download new episodes"
 msgstr "Yeni bölümleri indir"
 
@@ -6744,12 +6678,10 @@ msgid "No description available"
 msgstr "Açıklama yok"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastFeedPropertiesDialog.cs:156
-#| msgid "Name"
 msgid "Name:"
 msgstr "Ad:"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastFeedPropertiesDialog.cs:157
-#| msgid "Visit Website"
 msgid "Website:"
 msgstr "Web sitesi:"
 
@@ -6759,27 +6691,22 @@ msgstr "Ziyaret et"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastFeedPropertiesDialog.cs:167
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastSubscribeDialog.cs:133
-#| msgid "Subscribe to a new podcast"
 msgid "Subscription Options"
 msgstr "Abonelik Seçenekleri"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastFeedPropertiesDialog.cs:170
-#| msgid "License URL:"
 msgid "Feed URL:"
 msgstr "Besleme URL'si:"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastFeedPropertiesDialog.cs:171
-#| msgid "Refresh"
 msgid "Last Refreshed:"
 msgstr "Son Tazeleme:"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastFeedPropertiesDialog.cs:173
-#| msgid "Creator:"
 msgid "Category:"
 msgstr "Kategori:"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastFeedPropertiesDialog.cs:175
-#| msgid "Copyrig_ht:"
 msgid "Copyright:"
 msgstr "Telif Hakkı:"
 
@@ -6826,7 +6753,6 @@ msgstr "Örnek"
 #. e.g. 'by Parkway Drive from Killing with a Smile'
 #: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:243
 #, csharp-format
-#| msgid "{0} of {1}"
 msgid "by '{0}' from '{1}'"
 msgstr "'{0}'ın '{1}' albümünden"
 
@@ -6841,7 +6767,6 @@ msgstr "'{0}' albümünden"
 #. e.g. 'by Parkway Drive'
 #: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:253
 #, csharp-format
-#| msgid "Sync {0}"
 msgid "by '{0}'"
 msgstr "'{0}' sanatçısının"
 
@@ -6865,8 +6790,7 @@ msgstr "SQL İzlemeyi Başlat"
 msgid "Stop SQL Monitoring"
 msgstr "SQL İzlemeyi Durdur"
 
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:139
-#| msgid "Track Properties"
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:132
 msgid "Track Preview"
 msgstr "Parça Önizlemesi"
 
@@ -6908,7 +6832,6 @@ msgstr "Gizle <i>{0}</i>"
 #. Translators: {0} is substituted with the application name
 #: ../src/Hyena/Hyena.Gui/Hyena.Gui.Dialogs/ExceptionDialog.cs:53
 #, csharp-format
-#| msgid "Banshee Encountered a Fatal Error"
 msgid "{0} Encountered a Fatal Error"
 msgstr "{0} Ölümcül Bir Hata İle Karşılaştı"
 
@@ -7095,7 +7018,6 @@ msgid "This service does not exist."
 msgstr "Servis mevcut değil."
 
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:275
-#| msgid "This station is only available to subscribers."
 msgid "Stations are only available to paying Last.fm subscribers."
 msgstr "İstasyonlar, sadece ödeme yapan Last.fm abonelerine açıktır."
 
