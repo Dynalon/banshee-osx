@@ -52,6 +52,7 @@ SOURCES =  \
 	Banshee.Collection/IFilterListModel.cs \
 	Banshee.Collection/ImportEventHandler.cs \
 	Banshee.Collection/ImportManager.cs \
+	Banshee.Collection/InvalidFileException.cs \
 	Banshee.Collection/MemoryTrackListModel.cs \
 	Banshee.Collection/ModelHelper.cs \
 	Banshee.Collection/RescanPipeline.cs \
