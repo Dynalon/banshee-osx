@@ -137,7 +137,7 @@ namespace Banshee.Collection.Database
 
                 OnImportResult (track, path, null);
             } catch (Exception e) {
-                LogError (path, e);
+                LogError (SafeUri.UriToFilename (path), e);
                 UpdateProgress (null);
                 OnImportResult (null, path, e);
             }
