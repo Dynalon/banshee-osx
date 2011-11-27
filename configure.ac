@@ -138,8 +138,7 @@ dnl GNOME (optional)
 AC_ARG_ENABLE(gnome, AC_HELP_STRING([--disable-gnome], [Disable GNOME support]), , enable_gnome="yes")
 if test "x$enable_gnome" = "xyes"; then
 	BANSHEE_CHECK_GNOME_SHARP
-	AC_PATH_PROG(GCONFTOOL, gconftool-2, no)
-	AM_GCONF_SOURCE_2
+	BANSHEE_CHECK_GCONF
 	AM_CONDITIONAL(ENABLE_GNOME, true)
 else
 	AM_CONDITIONAL(GCONF_SCHEMAS_INSTALL, false)
