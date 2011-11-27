@@ -68,7 +68,7 @@ namespace Banshee.Sources
 
         public delegate void OpenPropertiesDelegate ();
 
-        protected Source (string generic_name, string name, int order) : this (generic_name, name, order, null)
+        protected Source (string generic_name, string name, int order) : this (generic_name, name, order, order.ToString ())
         {
         }
 
