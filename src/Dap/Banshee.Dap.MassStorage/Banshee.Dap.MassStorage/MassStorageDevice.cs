@@ -203,6 +203,10 @@ namespace Banshee.Dap.MassStorage
             get { return folder_depth; }
         }
 
+        internal virtual int MinimumFolderDepth {
+            get { return FolderDepth; }
+        }
+
         protected virtual string [] DefaultAudioFolders {
             get { return new string[0]; }
         }

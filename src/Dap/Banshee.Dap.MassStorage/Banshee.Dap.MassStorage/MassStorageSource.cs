@@ -633,6 +633,9 @@ namespace Banshee.Dap.MassStorage
                 // the exact given depth (not including the mount point/audio_folder).
                 if (FolderDepth != -1) {
                     int depth = FolderDepth;
+
+                    bool is_album_unknown = String.IsNullOrEmpty (track.AlbumTitle);
+
                     string album_artist = FileNamePattern.Escape (track.DisplayAlbumArtistName);
                     string track_album  = FileNamePattern.Escape (track.DisplayAlbumTitle);
                     string track_number = FileNamePattern.Escape (String.Format ("{0:00}", track.TrackNumber));
@@ -641,15 +644,21 @@ namespace Banshee.Dap.MassStorage
                     if (depth == 0) {
                         // Artist - Album - 01 - Title
                         string track_artist = FileNamePattern.Escape (track.DisplayArtistName);
-                        file_path = String.Format ("{0} - {1} - {2} - {3}", track_artist, track_album, track_number, track_title);
+                        file_path = is_album_unknown ?
+                            String.Format ("{0} - {1} - {2}", track_artist, track_number, track_title) :
+                            String.Format ("{0} - {1} - {2} - {3}", track_artist, track_album, track_number, track_title);
                     } else if (depth == 1) {
                         // Artist - Album/01 - Title
-                        file_path = String.Format ("{0} - {1}", album_artist, track_album);
+                        file_path = is_album_unknown ?
+                            album_artist :
+                            String.Format ("{0} - {1}", album_artist, track_album);
                         file_path = System.IO.Path.Combine (file_path, String.Format ("{0} - {1}", track_number, track_title));
                     } else if (depth == 2) {
                         // Artist/Album/01 - Title
                         file_path = album_artist;
-                        file_path = System.IO.Path.Combine (file_path, track_album);
+                        if (!is_album_unknown || ms_device.MinimumFolderDepth == depth) {
+                            file_path = System.IO.Path.Combine (file_path, track_album);
+                        }
                         file_path = System.IO.Path.Combine (file_path, String.Format ("{0} - {1}", track_number, track_title));
                     } else {
                         // If the *required* depth is more than 2..go nuts!

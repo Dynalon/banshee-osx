@@ -122,6 +122,10 @@ namespace Banshee.Dap.MassStorage
             get { return 2; }
         }
 
+        internal override int MinimumFolderDepth {
+            get { return 1; }
+        }
+
         protected override string DefaultCoverArtFileName {
             get { return "cover.jpg"; }
         }
