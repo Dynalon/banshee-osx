@@ -42,15 +42,15 @@ namespace Banshee.Collection.Database
             : base (Banshee.Query.BansheeQuery.AlbumArtistField.Name, Banshee.Query.BansheeQuery.AlbumArtistField.Label,
                     source, trackModel, connection, DatabaseAlbumArtistInfo.Provider, new ArtistInfo (null, null), uuid)
         {
-            QueryFields = new QueryFieldSet (Banshee.Query.BansheeQuery.AlbumArtistField);
+            QueryFields = new QueryFieldSet (Banshee.Query.BansheeQuery.ArtistField);
             ReloadFragmentFormat = @"
-                FROM (SELECT DISTINCT ArtistID, ArtistNameSortKey FROM CoreAlbums) CoreArtists WHERE CoreArtists.ArtistID IN
+                FROM CoreArtists WHERE CoreArtists.ArtistID IN
                     (SELECT CoreAlbums.ArtistID FROM CoreAlbums, CoreTracks, CoreCache{0}
                         WHERE CoreCache.ModelID = {1} AND
                               CoreTracks.AlbumID = CoreAlbums.AlbumID AND
                               EXISTS (SELECT 1 FROM CoreArtists WHERE ArtistID = CoreAlbums.ArtistID) AND
                               CoreCache.ItemID = {2} {3})
-                        ORDER BY ArtistNameSortKey";
+                        ORDER BY NameSortKey";
         }
 
         public override string FilterColumn {
