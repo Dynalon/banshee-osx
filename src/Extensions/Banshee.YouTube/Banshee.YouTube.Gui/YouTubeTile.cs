@@ -78,6 +78,16 @@ namespace Banshee.YouTube.Gui
         public int RatingValue { get; private set; }
         public string Thumbnail { get; private set; }
 
+        // FIXME: The YouTubeQuery.VideoFormat enum values are wrong in google-gdata <= 1.9,
+        // so we use our own, with correct values.
+        // See http://code.google.com/p/google-gdata/issues/detail?id=553 and bgo#651743.
+        private enum YouTubeVideoFormat {
+            FormatUndefined = 0,
+            RTSP = 1,
+            Embeddable = 5,
+            Mobile = 6,
+        }
+
         public YouTubeTileData (Video video)
         {
             BansheePlaybackUri = GetPlaybackUri (video);
@@ -97,8 +107,8 @@ namespace Banshee.YouTube.Gui
 
         private static string GetPlaybackUri (Video yt_video)
         {
-            int flv = (int)YouTubeQuery.VideoFormat.Embeddable;
-            int mobile = (int)YouTubeQuery.VideoFormat.Mobile;
+            int flv = (int)YouTubeVideoFormat.Embeddable;
+            int mobile = (int)YouTubeVideoFormat.Mobile;
             const string format_param = "&fmt=18"; // Assumes user has broadband connection
             string video_id = yt_video.VideoId;
             string playback_uri = String.Empty;
