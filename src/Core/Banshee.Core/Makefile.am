@@ -8,7 +8,6 @@ SOURCES =  \
 	Banshee.Base/Localization.cs \
 	Banshee.Base/NamingUtil.cs \
 	Banshee.Base/PathPattern.cs \
-	Banshee.Base/PlatformHacks.cs \
 	Banshee.Base/ProductInformation.cs \
 	Banshee.Base/Resource.cs \
 	Banshee.Base/Tests/CoverArtSpecTests.cs \
