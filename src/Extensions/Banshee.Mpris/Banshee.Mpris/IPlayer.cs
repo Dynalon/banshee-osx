@@ -62,7 +62,7 @@ namespace Banshee.Mpris
         void Stop ();
         void Play ();
         void Seek (long offset);
-        void SetPosition (string trackid, long position);
+        void SetPosition (ObjectPath trackid, long position);
         void OpenUri (string uri);
     }
 }

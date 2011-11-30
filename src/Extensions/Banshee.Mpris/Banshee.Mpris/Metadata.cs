@@ -53,7 +53,7 @@ namespace Banshee.Mpris
             }
 
             // The trackid must be formatted like a dbus object path
-            data_store["mpris:trackid"] = String.Concat (object_path, track.CacheModelId, track.CacheEntryId);
+            data_store["mpris:trackid"] = new DBus.ObjectPath (String.Concat (object_path, track.CacheModelId, track.CacheEntryId));
             SetInfo ("mpris:length", (long)track.Duration.TotalMilliseconds * 1000);
             SetInfo ("xesam:url", track.Uri.ToString ());
             SetInfo ("xesam:title", track.TrackTitle);

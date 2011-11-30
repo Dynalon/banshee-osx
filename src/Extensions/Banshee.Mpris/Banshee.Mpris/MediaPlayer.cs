@@ -288,13 +288,13 @@ namespace Banshee.Mpris
             engine_service.Play ();
         }
 
-        public void SetPosition (string trackid, long position)
+        public void SetPosition (ObjectPath trackid, long position)
         {
             if (!CanSeek) {
                 return;
             }
 
-            if (String.IsNullOrEmpty (trackid) || trackid != (string)Metadata["mpris:trackid"]) {
+            if (trackid == null || trackid != (ObjectPath)Metadata["mpris:trackid"]) {
                 return;
             }
 
