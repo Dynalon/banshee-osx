@@ -94,6 +94,17 @@ namespace Banshee.Playlists.Formats.Tests
         }
 
         [Test]
+        public void ReadAsxEntryRef ()
+        {
+            PlaylistParser parser = new PlaylistParser ();
+            parser.BaseUri = BaseUri;
+
+            parser.Parse (new SafeUri ("http://download.banshee.fm/test/remote.asx"));
+            IPlaylistFormat plref = LoadPlaylist (new AsxPlaylistFormat (), "entryref.asx");
+            Assert.AreEqual (parser.Elements, plref.Elements);
+        }
+
+        [Test]
         public void ReadM3uSimple ()
         {
             LoadTest (new M3uPlaylistFormat (), "simple.m3u", false);
