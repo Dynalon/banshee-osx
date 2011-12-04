@@ -141,7 +141,7 @@ namespace Banshee.Windows
             string rate = Math.Round (obj.State.TransferRate / 1024d, 1).ToString ("F1");
 
             job.Progress = obj.State.PercentComplete;
-            job.Status = String.Format ("{0} MB / {1} MB ({2} KB/s)", downloaded, total, rate);
+            job.Status = String.Format (Catalog.GetString ("{0} MB / {1} MB ({2} KB/s)"), downloaded, total, rate);
         }
 
         void OnInstallerDownloaderFinished (HttpDownloader obj)
