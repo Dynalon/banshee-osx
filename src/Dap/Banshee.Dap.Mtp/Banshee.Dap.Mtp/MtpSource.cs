@@ -80,7 +80,7 @@ namespace Banshee.Dap.Mtp
                 Log.Exception (e);
                 Log.Error (
                     Catalog.GetString ("Error Initializing MTP Device Support"),
-                    Catalog.GetString ("There was an error intializing MTP device support."), true
+                    Catalog.GetString ("There was an error initializing MTP device support."), true
                 );
                 throw new InvalidDeviceException ();
             } catch (Exception e) {

@@ -89,7 +89,7 @@ namespace Banshee.OpticalDisc.Dvd
             uia_service.GlobalActions.AddImportant (new Gtk.ActionEntry [] {
                 new Gtk.ActionEntry ("GoToMenuAction", null,
                     Catalog.GetString ("Go to Menu"), null,
-                    Catalog.GetString ("Naviguate to menu"),
+                    Catalog.GetString ("Navigate to menu"),
                     (object o, EventArgs args) => { ServiceManager.PlayerEngine.NavigateToMenu (); })
             });
 
