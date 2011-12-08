@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: banshee master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-09-25 09:18+0000\n"
-"PO-Revision-Date: 2011-09-25 18:41+0900\n"
+"POT-Creation-Date: 2011-12-04 03:03+0000\n"
+"PO-Revision-Date: 2011-11-27 17:32+0900\n"
 "Last-Translator: Kentaro KAZUHAMA <kazken3@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -80,9 +80,9 @@ msgid "Browse, search, and purchase music from the Amazon MP3 store."
 msgstr "Amazon MP3ストアから音楽を聞いたり、探したり、購入したりします。"
 
 #: ../data/addin-xml-strings.cs:30 ../data/addin-xml-strings.cs:35
-#: ../data/addin-xml-strings.cs:70 ../data/addin-xml-strings.cs:75
-#: ../data/addin-xml-strings.cs:90 ../data/addin-xml-strings.cs:100
-#: ../data/addin-xml-strings.cs:105 ../data/addin-xml-strings.cs:120
+#: ../data/addin-xml-strings.cs:65 ../data/addin-xml-strings.cs:70
+#: ../data/addin-xml-strings.cs:85 ../data/addin-xml-strings.cs:95
+#: ../data/addin-xml-strings.cs:100 ../data/addin-xml-strings.cs:115
 #: ../data/addin-xml-strings.cs:165
 msgid "Online Sources"
 msgstr "オンライン上の情報"
@@ -105,196 +105,196 @@ msgstr "オーディオブックライブラリ"
 msgid "Organize audiobooks, lectures, etc."
 msgstr "オーディオブック、講義などをまとめます。"
 
-#: ../data/addin-xml-strings.cs:40 ../data/addin-xml-strings.cs:45
-#: ../data/addin-xml-strings.cs:80 ../data/addin-xml-strings.cs:95
+#: ../data/addin-xml-strings.cs:40 ../data/addin-xml-strings.cs:75
+#: ../data/addin-xml-strings.cs:90 ../data/addin-xml-strings.cs:135
 #: ../data/addin-xml-strings.cs:145 ../data/addin-xml-strings.cs:150
 msgid "Core"
 msgstr "コア"
 
-#. ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd.addin.xml
-#: ../data/addin-xml-strings.cs:43
-msgid "Audio CD Support"
-msgstr "オーディオCDサポート"
-
-#: ../data/addin-xml-strings.cs:44
-msgid "Listen to and rip Audio CDs."
-msgstr "オーディオCDを聴いたり、リッピングしたりします。"
-
 #. ../src/Extensions/Banshee.BooScript/Banshee.BooScript.addin.xml
-#: ../data/addin-xml-strings.cs:48
+#: ../data/addin-xml-strings.cs:43
 msgid "Boo Scripting"
 msgstr "Booスクリプト"
 
-#: ../data/addin-xml-strings.cs:49
+#: ../data/addin-xml-strings.cs:44
 msgid "Customize and extend Banshee with Boo-language scripts."
 msgstr "Boo言語スクリプトでBansheeのカスタマイズや拡張を行います。"
 
-#: ../data/addin-xml-strings.cs:50 ../data/addin-xml-strings.cs:55
-#: ../data/addin-xml-strings.cs:60 ../data/addin-xml-strings.cs:65
-#: ../data/addin-xml-strings.cs:85 ../data/addin-xml-strings.cs:110
-#: ../data/addin-xml-strings.cs:115 ../data/addin-xml-strings.cs:125
-#: ../data/addin-xml-strings.cs:130 ../data/addin-xml-strings.cs:135
+#: ../data/addin-xml-strings.cs:45 ../data/addin-xml-strings.cs:50
+#: ../data/addin-xml-strings.cs:55 ../data/addin-xml-strings.cs:60
+#: ../data/addin-xml-strings.cs:80 ../data/addin-xml-strings.cs:105
+#: ../data/addin-xml-strings.cs:110 ../data/addin-xml-strings.cs:120
+#: ../data/addin-xml-strings.cs:125 ../data/addin-xml-strings.cs:130
 #: ../data/addin-xml-strings.cs:140 ../data/addin-xml-strings.cs:155
 #: ../data/addin-xml-strings.cs:160
 msgid "Utilities"
 msgstr "ユーティリティ"
 
 #. ../src/Extensions/Banshee.Bpm/Banshee.Bpm.addin.xml
-#: ../data/addin-xml-strings.cs:53
+#: ../data/addin-xml-strings.cs:48
 msgid "BPM Detection"
 msgstr "BPM検出"
 
-#: ../data/addin-xml-strings.cs:54
+#: ../data/addin-xml-strings.cs:49
 msgid "Detect the beats per minute (BPM) of your music."
 msgstr "曲のテンポ(BPM)を検出します。"
 
 #. ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt.addin.xml
-#: ../data/addin-xml-strings.cs:58
+#: ../data/addin-xml-strings.cs:53
 msgid "Cover Art Fetching"
 msgstr "カバーアート取得"
 
-#: ../data/addin-xml-strings.cs:59
+#: ../data/addin-xml-strings.cs:54
 msgid "Fetch cover art for all items in your library."
 msgstr "ライブラリのすべてのアイテム向けにカバーアートを取得します。"
 
 #. ../src/Extensions/Banshee.Daap/Banshee.Daap.addin.xml
-#: ../data/addin-xml-strings.cs:63
+#: ../data/addin-xml-strings.cs:58
 msgid "DAAP Sharing"
 msgstr "DAAP共有"
 
-#: ../data/addin-xml-strings.cs:64
+#: ../data/addin-xml-strings.cs:59
 msgid "Browse and listen to music shared over your local network."
 msgstr "ローカルネットワークを越えて共有された音楽を閲覧したり聴いたりします。"
 
 #. ../src/Extensions/Banshee.Emusic.Store/Banshee.Emusic.Store.addin.xml
-#: ../data/addin-xml-strings.cs:68
+#: ../data/addin-xml-strings.cs:63
 msgid "eMusic Store"
 msgstr "eMusicストア"
 
-#: ../data/addin-xml-strings.cs:69
+#: ../data/addin-xml-strings.cs:64
 msgid "Browse, search, and purchase music and audiobooks from eMusic"
 msgstr "eMusicストアから音楽を聞いたり、探したり、購入したりします。"
 
 #. ../src/Extensions/Banshee.Emusic/Banshee.Emusic.addin.xml
-#: ../data/addin-xml-strings.cs:73
+#: ../data/addin-xml-strings.cs:68
 msgid "eMusic Import"
 msgstr "eMusicインポート"
 
-#: ../data/addin-xml-strings.cs:74
+#: ../data/addin-xml-strings.cs:69
 msgid "Download and import music purchased from eMusic."
 msgstr "eMusicから購入した音楽をダウンロードしてインポートします。"
 
 #. ../src/Extensions/Banshee.FileSystemQueue/Banshee.FileSystemQueue.addin.xml
-#: ../data/addin-xml-strings.cs:78
+#: ../data/addin-xml-strings.cs:73
 msgid "File System Preview Queue"
 msgstr "ファイルシステム・プレビューキュー"
 
-#: ../data/addin-xml-strings.cs:79
+#: ../data/addin-xml-strings.cs:74
 msgid "Preview files without importing to your library."
 msgstr "ライブラリへインポートせずにファイルをプレビューします。"
 
 #. ../src/Extensions/Banshee.Fixup/Banshee.Fixup.addin.xml
-#: ../data/addin-xml-strings.cs:83
+#: ../data/addin-xml-strings.cs:78
 msgid "Metadata Fixup"
 msgstr "Metadataの修復"
 
-#: ../data/addin-xml-strings.cs:84
+#: ../data/addin-xml-strings.cs:79
 msgid "Fix broken and missing metadata using bulk operations."
 msgstr "壊れたり、失われたメタデータを一括操作で修復します。"
 
 #. ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive.addin.xml
-#: ../data/addin-xml-strings.cs:88
+#: ../data/addin-xml-strings.cs:83
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HomeSource.cs:58
 msgid "Internet Archive"
 msgstr "インターネット・アーカイブ"
 
-#: ../data/addin-xml-strings.cs:89
+#: ../data/addin-xml-strings.cs:84
 msgid "Browse and search the Internet Archive's vast media collection."
 msgstr ""
 "インターネット・アーカイブの膨大なメディアコレクションを閲覧・検索します。"
 
 #. ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio.addin.xml
-#: ../data/addin-xml-strings.cs:93
+#: ../data/addin-xml-strings.cs:88
 msgid "Internet Radio"
 msgstr "インターネットラジオ"
 
-#: ../data/addin-xml-strings.cs:94
+#: ../data/addin-xml-strings.cs:89
 msgid "Listen to and organize Internet Radio stations."
 msgstr "インターネットラジオステーションを聴いたりまとめたりします。"
 
 #. ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.addin.xml
-#: ../data/addin-xml-strings.cs:98
+#: ../data/addin-xml-strings.cs:93
 msgid "Last.fm Scrobbling"
 msgstr "Last.fmのScrobbling"
 
-#: ../data/addin-xml-strings.cs:99
+#: ../data/addin-xml-strings.cs:94
 msgid "Last.fm scrobbling and context pane recommendations."
 msgstr "Last.fmのscrobblingとコンテキストペインにおすすめを提供します。"
 
 #. ../src/Extensions/Banshee.LastfmStreaming/Banshee.LastfmStreaming.addin.xml
-#: ../data/addin-xml-strings.cs:103
+#: ../data/addin-xml-strings.cs:98
 msgid "Last.fm Radio"
 msgstr "Last.fmラジオ"
 
-#: ../data/addin-xml-strings.cs:104
+#: ../data/addin-xml-strings.cs:99
 msgid "Last.fm streaming radio for paid subscribers."
 msgstr "有料契約者向けのLast.fmストリーミングラジオ"
 
 #. ../src/Extensions/Banshee.LibraryWatcher/Banshee.LibraryWatcher.addin.xml
-#: ../data/addin-xml-strings.cs:108
+#: ../data/addin-xml-strings.cs:103
 msgid "Library Watcher"
 msgstr "ライブラリウォッチャー"
 
-#: ../data/addin-xml-strings.cs:109
+#: ../data/addin-xml-strings.cs:104
 msgid "Automatically update music and video libraries."
 msgstr "自動的に音楽とビデオライブラリを更新します。"
 
 #. ../src/Extensions/Banshee.MiniMode/Banshee.MiniMode.addin.xml
-#: ../data/addin-xml-strings.cs:113
+#: ../data/addin-xml-strings.cs:108
 msgid "Mini Mode"
 msgstr "ミニモード"
 
-#: ../data/addin-xml-strings.cs:114
+#: ../data/addin-xml-strings.cs:109
 msgid ""
 "Control Banshee through a small window with only playback controls and track "
 "information."
 msgstr "再生操作とトラック情報だけの小さなウィンドウで表示します。"
 
 #. ../src/Extensions/Banshee.MiroGuide/Banshee.MiroGuide.addin.xml
-#: ../data/addin-xml-strings.cs:118
+#: ../data/addin-xml-strings.cs:113
 msgid "Miro Guide Podcast Directory"
 msgstr "Miro Guideポッドキャスト ディレクトリ"
 
-#: ../data/addin-xml-strings.cs:119
+#: ../data/addin-xml-strings.cs:114
 msgid "Browse and subscribe to thousands of audio and video podcasts."
 msgstr "数千ものオーディオやビデオポッドキャストを見たり購読したりします。"
 
 #. ../src/Extensions/Banshee.Mpris/Banshee.Mpris.addin.xml
-#: ../data/addin-xml-strings.cs:123
+#: ../data/addin-xml-strings.cs:118
 msgid "MPRIS D-Bus interface"
 msgstr "MPRIS D-Busインターフェース"
 
-#: ../data/addin-xml-strings.cs:124
+#: ../data/addin-xml-strings.cs:119
 msgid "Control Banshee using the MPRIS D-Bus interface."
 msgstr "BansheeをMPRIS D-Busインターフェースでコントロールします。"
 
 #. ../src/Extensions/Banshee.MultimediaKeys/Banshee.MultimediaKeys.addin.xml
-#: ../data/addin-xml-strings.cs:128
+#: ../data/addin-xml-strings.cs:123
 msgid "Multimedia Keys"
 msgstr "マルチメディアキー"
 
-#: ../data/addin-xml-strings.cs:129
+#: ../data/addin-xml-strings.cs:124
 msgid "Control playback via the multimedia keys on your keyboard."
 msgstr "キーボードのマルチメディアキーを使って再生を操作します。"
 
 #. ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea.addin.xml
-#: ../data/addin-xml-strings.cs:133
+#: ../data/addin-xml-strings.cs:128
 msgid "Notification Area Icon"
 msgstr "通知領域アイコン"
 
-#: ../data/addin-xml-strings.cs:134
+#: ../data/addin-xml-strings.cs:129
 msgid "Display an icon in the notification area for controlling Banshee."
 msgstr "通知領域内にBansheeのアイコンを表示します。"
+
+#. ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.addin.xml
+#: ../data/addin-xml-strings.cs:133
+msgid "DVD and Audio CD Support"
+msgstr "DVDとオーディオCDサポート"
+
+#: ../data/addin-xml-strings.cs:134
+msgid "Watch DVDs, listen to and rip Audio CDs."
+msgstr "DVDをみたり、オーディオCDを聴いたり、リッピングしたりします。"
 
 #. ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration.addin.xml
 #: ../data/addin-xml-strings.cs:138
@@ -323,7 +323,7 @@ msgstr ""
 #: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:200
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/PodcastGroupSource.cs:38
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:107
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:210
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:211
 msgid "Podcasts"
 msgstr "ポッドキャスト"
 
@@ -353,9 +353,9 @@ msgstr "ポッドキャストからBitTorrentファイルのダウンロード�
 
 #. ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore.addin.xml
 #: ../data/addin-xml-strings.cs:163
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:52
 #: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:53
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:54
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:140
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:134
 msgid "Ubuntu One Music Store"
 msgstr "Ubuntu One Music Store"
 
@@ -628,10 +628,14 @@ msgid "Could not create filesrc element"
 msgstr "filesrcエレメントを生成できませんでした"
 
 #: ../libbanshee/banshee-bpmdetector.c:214
+#: ../libbanshee/banshee-transcoder.c:246
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:187
 msgid "Could not create decodebin2 plugin"
 msgstr "decodebin2プラグインを生成できませんでした"
 
 #: ../libbanshee/banshee-bpmdetector.c:220
+#: ../libbanshee/banshee-transcoder.c:264
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:68
 msgid "Could not create audioconvert plugin"
 msgstr "audioconvertプラグインを生成できませんでした"
 
@@ -673,29 +677,20 @@ msgstr "filesinkプラグインを生成できませんでした"
 msgid "Could not create source element"
 msgstr "sourceエレメントを生成できません"
 
-#: ../libbanshee/banshee-transcoder.c:246
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:187
-msgid "Could not create 'decodebin2' plugin"
-msgstr " 'decodebin2'プラグインを生成できませんでした"
-
 #: ../libbanshee/banshee-transcoder.c:252
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:63
 msgid "Could not create sink element"
 msgstr "sinkエレメントを生成できません"
 
 #: ../libbanshee/banshee-transcoder.c:258
-msgid "Could not create 'sinkben' plugin"
-msgstr " 'sinkben'プラグインを生成できませんでした"
-
-#: ../libbanshee/banshee-transcoder.c:264
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:68
-msgid "Could not create 'audioconvert' plugin"
-msgstr " 'audioconvert'プラグインを生成できませんでした"
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:198
+msgid "Could not create sinkbin plugin"
+msgstr "sinkbinプラグインを生成できませんでした"
 
 #: ../libbanshee/banshee-transcoder.c:270
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:73
-msgid "Could not create 'audioresample' plugin"
-msgstr " 'audioconvert'プラグインを生成できませんでした"
+msgid "Could not create audioresample plugin"
+msgstr "audioresampleプラグインを生成できませんでした"
 
 #: ../libbanshee/banshee-transcoder.c:276
 msgid "Could not create encoding pipeline"
@@ -745,46 +740,37 @@ msgstr "CDリッピングドライバを生成できませんでした。"
 msgid "Could not create BPM detection driver."
 msgstr "BPM検出ドライバを生成できませんでした。"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:83
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:829
-msgid "Enable _gapless playback"
-msgstr "ギャップレス再生を有効にする(_G)"
-
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:84
-msgid ""
-"Eliminate the small playback gap on track change.  Useful for concept albums "
-"and classical music"
-msgstr ""
-"トラック変更時の無音部分を取り除きます。コンセプトアルバムやクラシック音楽な"
-"どに役に立ちます"
-
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:152
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:194
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:149
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:191
 msgid "Could not initialize GStreamer library"
 msgstr "GStreamerライブラリを初期化できませんでした"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:451
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:547
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:503
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:553
 msgid "Unknown Error"
 msgstr "未知のエラー"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:823
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:905
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:879
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:978
 msgid "_Enable ReplayGain correction"
 msgstr "ReplayGain補正を有効にする(_E)"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:824
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:906
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:880
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:979
 msgid ""
 "For tracks that have ReplayGain data, automatically scale (normalize) "
 "playback volume"
 msgstr ""
 "ReplayGainデータを持つトラック向けに、自動的に再生音量を(標準に)調整します"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:830
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:885
+msgid "Enable _gapless playback"
+msgstr "ギャップレス再生を有効にする(_G)"
+
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:886
 msgid ""
-"Eliminate the small playback gap on track change.  Useful for concept albums "
-"and classical music."
+"Eliminate the small playback gap on track change. Useful for concept albums "
+"and classical music"
 msgstr ""
 "トラック変更時の無音部分を取り除きます。コンセプトアルバムやクラシック音楽な"
 "どに役に立ちます"
@@ -798,7 +784,7 @@ msgstr "エンコーダを生成できませんでした"
 msgid "Could not create encoder pipeline : {0}"
 msgstr "エンコーダ用のパイプラインを生成できませんでした : {0}"
 
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:792
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:800
 msgid "GStreamer# 0.10"
 msgstr "GStreamer# 0.10"
 
@@ -806,10 +792,6 @@ msgstr "GStreamer# 0.10"
 #, csharp-format
 msgid "Could not create encoding pipeline : {0}"
 msgstr "エンコード用のパイプラインを生成できませんでしたi : {0}"
-
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:198
-msgid "Could not create 'sinkbin' plugin"
-msgstr " 'sinkbin'プラグインを生成できませんでした"
 
 #: ../src/Backends/Banshee.Osx/Banshee.OsxBackend/OsxService.cs:91
 #: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:132
@@ -862,6 +844,12 @@ msgstr "Bansheeのアップデートがあります"
 #, csharp-format
 msgid "Downloading {0}"
 msgstr "{0} をダウンロード中"
+
+#: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:144
+#, fuzzy, csharp-format
+#| msgid "{0} by {1} on {2}"
+msgid "{0} MB / {1} MB ({2} KB/s)"
+msgstr "{0} by {1} on {2}"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:152
 msgid "Update download failed"
@@ -1188,11 +1176,11 @@ msgstr "以下のヘルプ引数は無効です: {0}"
 msgid "Play Album"
 msgstr "アルバムを再生"
 
-#: ../src/Clients/Muinshee/Muinshee/BaseDialog.cs:83
+#: ../src/Clients/Muinshee/Muinshee/BaseDialog.cs:96
 msgid "En_queue"
 msgstr "キューに入れる(_Q)"
 
-#: ../src/Clients/Muinshee/Muinshee/BaseDialog.cs:86
+#: ../src/Clients/Muinshee/Muinshee/BaseDialog.cs:99
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackActions.cs:73
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/PlaybackActions.cs:210
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:126
@@ -1258,16 +1246,16 @@ msgstr "コメント"
 
 #: ../src/Core/Banshee.Core/Banshee.Base/CoverArtSpec.cs:43
 #: ../src/Core/Banshee.Core/Banshee.Collection/ArtistInfo.cs:37
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdDiscModel.cs:102
-#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:137
+#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:138
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Recommendations/RecommendationPane.cs:90
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdDiscModel.cs:101
 msgid "Unknown Artist"
 msgstr "不明なアーティスト"
 
 #: ../src/Core/Banshee.Core/Banshee.Base/CoverArtSpec.cs:45
 #: ../src/Core/Banshee.Core/Banshee.Collection/AlbumInfo.cs:40
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdDiscModel.cs:103
-#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:136
+#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:137
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdDiscModel.cs:102
 msgid "Unknown Album"
 msgstr "不明なアルバム"
 
@@ -1344,12 +1332,21 @@ msgstr "再生中の曲へジャンプ(_J)"
 msgid "_Jump to Playing Item"
 msgstr "再生中のアイテムへジャンプ(_J)"
 
+#: ../src/Core/Banshee.Core/Banshee.Collection/YearInfo.cs:38
+msgid "Unknown Year"
+msgstr "不明な年"
+
 #. Translators: This is used to generate bookmark names. {0} is track title, {1} is minutes
 #. (possibly more than two digits) and {2} is seconds (between 00 and 60).
 #: ../src/Core/Banshee.Services/Banshee.Collection.Database/Bookmark.cs:172
 #, csharp-format
 msgid "{0} ({1}:{2:00})"
 msgstr "{0} ({1}:{2:00})"
+
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseAlbumArtistListModel.cs:76
+#, csharp-format
+msgid "All Album Artists ({0})"
+msgstr "すべてのアルバムアーティスト ({0})"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseAlbumListModel.cs:75
 #, csharp-format
@@ -1361,32 +1358,42 @@ msgstr "すべてのアルバム({0})"
 msgid "All Artists ({0})"
 msgstr "すべてのアーティスト ({0})"
 
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseImportManager.cs:173
+#, csharp-format
+msgid "File is empty so it could not be imported: {0}"
+msgstr ""
+
 #: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseQueryFilterModel.cs:48
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:96
 msgid "Value"
 msgstr "Value"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:49
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseYearListModel.cs:66
+#, csharp-format
+msgid "All Years ({0})"
+msgstr "すべての年 ({0})"
+
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:50
 msgid "Shuffle by A_lbum"
 msgstr "アルバムでシャッフル(_L)"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:50
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:51
 msgid "by album"
 msgstr "アルバムで"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:51
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByAlbum.cs:52
 msgid "Play all songs from an album, then randomly choose another album"
 msgstr "アルバムからすべての曲を再生し、他のアルバムをランダムに選択する"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:49
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:50
 msgid "Shuffle by A_rtist"
 msgstr "アーティストでシャッフル(_R)"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:50
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:51
 msgid "by artist"
 msgstr "アーティストで"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:51
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:52
 msgid "Play all songs by an artist, then randomly choose another artist"
 msgstr ""
 "アーティストごとにすべての曲を再生し、他のアーティストをランダムで選択する"
@@ -1403,27 +1410,27 @@ msgstr "手動"
 msgid "Do not shuffle playlist"
 msgstr "プレイリストをシャッフルしない"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:45
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:46
 msgid "Shuffle by _Rating"
 msgstr "評価でシャッフル(_R)"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:46
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:47
 msgid "by rating"
 msgstr "評価で"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:47
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByRating.cs:48
 msgid "Play songs randomly, prefer higher rated songs"
 msgstr "曲をランダムに再生し、高い評価の曲を選ぶ"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:42
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:43
 msgid "Shuffle by S_core"
 msgstr "スコアでシャッフル(_C)"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:43
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:44
 msgid "by score"
 msgstr "スコアで"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:44
+#: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByScore.cs:45
 msgid "Play songs randomly, prefer higher scored songs"
 msgstr "曲をランダムに再生し、高いスコアの曲を選ぶ"
 
@@ -1444,7 +1451,7 @@ msgid "Scanning for media"
 msgstr "メディアをスキャンしています"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection/ImportManager.cs:188
-#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1395
+#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1419
 msgid "Scanning..."
 msgstr "スキャン中..."
 
@@ -1464,7 +1471,7 @@ msgstr "インポート処理が実行中です。停止しますか?"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection/ImportManager.cs:251
 #: ../src/Core/Banshee.Services/Banshee.Library/ThreadPoolImportSource.cs:81
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdRipper.cs:185
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdRipper.cs:185
 #, csharp-format
 msgid "Importing {0} of {1}"
 msgstr "{1}曲中{0}曲目をインポートしています"
@@ -1484,7 +1491,7 @@ msgid ""
 msgstr ""
 "古いBansheeデータベースが新しいフォーマットに移るまでの間お待ちください。"
 
-#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1392
+#: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1416
 msgid "Refreshing Metadata"
 msgstr "メタデータの更新"
 
@@ -1791,11 +1798,11 @@ msgstr "注目されていない"
 msgid "Videos that haven't been played yet"
 msgstr "まだ再生されていないビデオ"
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:99
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:101
 msgid "Default player engine"
 msgstr "デフォルト再生エンジン"
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:106
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:108
 msgid ""
 "No player engines were found. Please ensure Banshee has been cleanly "
 "installed."
@@ -1803,7 +1810,7 @@ msgstr ""
 "再生エンジンが見つかりませんでした。Bansheeが正しくインストールされているかど"
 "うか確認してください。"
 
-#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:373
+#: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:375
 msgid "Problem with Player Engine"
 msgstr "再生エンジンでエラー"
 
@@ -1943,7 +1950,7 @@ msgstr "新しいプレイリスト"
 msgid "Windows Media ASX"
 msgstr "Windows Media ASX"
 
-#: ../src/Core/Banshee.Services/Banshee.Playlists.Formats/AsxPlaylistFormat.cs:46
+#: ../src/Core/Banshee.Services/Banshee.Playlists.Formats/AsxPlaylistFormat.cs:48
 msgid "Windows Media ASX (*.asx)"
 msgstr "Windows Media ASX (*.asx)"
 
@@ -2478,7 +2485,7 @@ msgstr "追加日時が最近"
 msgid "Least Recently Added"
 msgstr "追加日時が最も古い"
 
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:525
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:529
 msgid "Random"
 msgstr "ランダム"
 
@@ -2538,7 +2545,7 @@ msgstr "drm"
 #. Translators: These are unique strings for playback errors. Please, no spaces. Blank ok.
 #: ../src/Core/Banshee.Services/Banshee.Query/PlaybackErrorQueryValue.cs:64
 #: ../src/Core/Banshee.Services/Banshee.Query/PlaybackErrorQueryValue.cs:66
-#: ../src/Core/Banshee.Services/Banshee.ServiceStack/Application.cs:367
+#: ../src/Core/Banshee.Services/Banshee.ServiceStack/Application.cs:363
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:234
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:236
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:238
@@ -2568,7 +2575,7 @@ msgstr "スマートプレイリストを編集"
 msgid "Delete Smart Playlist"
 msgstr "スマートプレイリストを削除"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/DatabaseSource.cs:148
+#: ../src/Core/Banshee.Services/Banshee.Sources/DatabaseSource.cs:149
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:161
 #, csharp-format
 msgid "All Genres ({0})"
@@ -2675,11 +2682,11 @@ msgstr[0] "{0} 個のアイテム"
 #. things that depend on being loaded before the music library is added.
 #. AddSource (music_library = new MusicLibrarySource (), true);
 #. AddSource (video_library = new VideoLibrarySource (), false);
-#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:86
+#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:85
 msgid "Online Media"
 msgstr "オンラインメディア"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:87
+#: ../src/Core/Banshee.Services/Banshee.Sources/SourceManager.cs:86
 msgid "Libraries"
 msgstr "ライブラリ"
 
@@ -2757,7 +2764,7 @@ msgstr ""
 #. Translators: this is {track number} of {track count}
 #: ../src/Core/Banshee.ThickClient/Banshee.Collection.Gui/ColumnCellDiscAndCount.cs:40
 #: ../src/Core/Banshee.ThickClient/Banshee.Collection.Gui/ColumnCellTrackAndCount.cs:40
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:170
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:174
 #: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapPropertiesDialog.cs:148
 #, csharp-format
 msgid "{0} of {1}"
@@ -3864,7 +3871,7 @@ msgstr "カバーアートを表示(_A)"
 msgid "Toggle display of album cover art"
 msgstr "アルバムのカバーアート表示を切り替えます"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.Widgets/TaskStatusIcon.cs:92
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.Widgets/TaskStatusIcon.cs:96
 msgid "Active Task Running"
 msgid_plural "Active Tasks Running"
 msgstr[0] "アクティブなタスクが実行中"
@@ -3905,7 +3912,7 @@ msgstr "{0}by{1} {2} {0}from{1} {3}"
 #. Translators: {0} and {1} are for markup so ignore them, {2} is for Album Title;
 #. e.g. 'from Killing with a Smile'
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Widgets/TrackInfoDisplay.cs:589
-#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:525
+#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:518
 #, csharp-format
 msgid "{0}from{1} {2}"
 msgstr "{0}from{1} {2}"
@@ -3913,7 +3920,7 @@ msgstr "{0}from{1} {2}"
 #. Translators: {0} and {1} are for markup so ignore them, {2} is for Artist Name;
 #. e.g. 'by Parkway Drive'
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Widgets/TrackInfoDisplay.cs:593
-#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:529
+#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:522
 #, csharp-format
 msgid "{0}by{1} {2}"
 msgstr "{0}by{1} {2}"
@@ -4105,27 +4112,73 @@ msgstr "編集"
 msgid "Create and save"
 msgstr "作成と保存"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:110
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:94
+msgid "Browser Content"
+msgstr "ブラウザーのコンテンツ"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:95
+msgid "Configure the filters available in the browser"
+msgstr "ブラウザーで利用可能なフィルターの設定"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:100
+msgid "Show all Artists"
+msgstr "すべてのアーティストを表示"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:101
+msgid "Show all artists in the artist filter"
+msgstr "アーティストフィルターにあるすべてのアーティストを表示"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:104
+msgid "Show Album Artists"
+msgstr "アルバムアーティストを表示"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:105
+msgid "Show only album artists, not artists with only single tracks"
+msgstr ""
+"アルバムアーティストのみを表示し、シングルトラックのアーティストは表示しない"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:110
+msgid "Show Genre Filter"
+msgstr "ジャンルフィルターを表示"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:111
+msgid "Show a list of genres to filter by"
+msgstr "ジャンルでフィルターしたリストを表示"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:115
+msgid "Show Year Filter"
+msgstr "年のフィルターを表示"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:116
+msgid "Show a list of years to filter by"
+msgstr "年代でフィルターしたリストを表示"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:197
+#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSourceContents.cs:62
+msgid "Not Set"
+msgstr "未設定"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:105
 msgid "Browser on Left"
 msgstr "ブラウザーを左に"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:111
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:106
 msgid "Show the artist/album browser to the left of the track list"
 msgstr "トラックリストの左にアーティスト/アルバムブラウザーを表示"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:114
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:109
 msgid "Browser on Top"
 msgstr "ブラウザーを上に"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:115
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:110
 msgid "Show the artist/album browser above the track list"
 msgstr "トラックリストの上にアーティスト/アルバムブラウザーを表示"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:120
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:115
 msgid "Show Browser"
 msgstr "ブラウザーを表示"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:121
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:116
 msgid "Show or hide the artist/album browser"
 msgstr "アーティスト/アルバムブラウザーを表示/隠す"
 
@@ -4150,16 +4203,16 @@ msgstr "検索をクリア"
 msgid "Seek"
 msgstr "シーク"
 
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:146
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:150
 msgid "Idle"
 msgstr "待機中"
 
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:147
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:151
 #: ../src/Extensions/Banshee.AmazonMp3/Banshee.AmazonMp3/AmazonDownloadManager.cs:58
 msgid "Contacting..."
 msgstr "接続中です..."
 
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:157
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:161
 msgid "Buffering"
 msgstr "バッファリング"
 
@@ -4266,7 +4319,7 @@ msgid "Vendor"
 msgstr "ベンダー"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:284
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:140
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:141
 #, csharp-format
 msgid "Loading {0}"
 msgstr "ロード中 {0}"
@@ -4298,11 +4351,11 @@ msgstr "ファイルフォーマット変換サポートは利用できません
 msgid "Error converting file"
 msgstr "ファイルの変換エラー"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:137
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:135
 msgid "Sync when first plugged in and when the libraries change"
 msgstr "初めて差し込んだときとライブラリが変更されたときに同期する"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:138
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:136
 msgid ""
 "Begin synchronizing the device as soon as the device is plugged in or the "
 "libraries change."
@@ -4310,28 +4363,28 @@ msgstr ""
 "デバイスが差し込まれるかライブラリが変更されたらすぐにデバイスの同期を開始す"
 "る。"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:141
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:139
 msgid "Sync Preferences"
 msgstr "設定の同期"
 
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:53
+msgid "Sync"
+msgstr "同期"
+
 #. singular form unused b/c we know it's > 1, but we still need GetPlural
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:365
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:106
 #, csharp-format
 msgid "The sync operation will remove one track from your device."
 msgid_plural "The sync operation will remove {0} tracks from your device."
 msgstr[0] "同期操作でデバイスから {0} トラックを削除します。"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:369
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:110
 msgid "Are you sure you want to continue?"
 msgstr "本当に続けますか?"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:377
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:118
 msgid "Remove tracks"
 msgstr "トラックを削除"
-
-#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:52
-msgid "Sync"
-msgstr "同期"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapInfoBar.cs:68
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:97
@@ -4450,7 +4503,9 @@ msgid "Error Initializing MTP Device Support"
 msgstr "MTPデバイスサポートの初期化エラー"
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:83
-msgid "There was an error intializing MTP device support."
+#, fuzzy
+#| msgid "There was an error intializing MTP device support."
+msgid "There was an error initializing MTP device support."
 msgstr "MTPデバイスサポートの初期化エラーあります。"
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:142
@@ -4630,140 +4685,6 @@ msgstr "再生を再開する"
 msgid "No Bookmark Set"
 msgstr "ブックマークは設定されていません"
 
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdDiscModel.cs:76
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdSource.cs:56
-msgid "Audio CD"
-msgstr "オーディオCD"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdDiscModel.cs:104
-#, csharp-format
-msgid "Track {0}"
-msgstr "トラック番号 {0}"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdRipper.cs:121
-msgid "Importing Audio CD"
-msgstr "オーディオCDをインポートしています"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdRipper.cs:122
-msgid "Initializing Drive"
-msgstr "ドライブを初期化中"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdRipper.cs:124
-#, csharp-format
-msgid ""
-"<i>{0}</i> is still being imported into the music library. Would you like to "
-"stop it?"
-msgstr "<i>{0}</i>は音楽ライブラリにインポート中です。停止しますか?"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdRipper.cs:254
-msgid "Cannot Import CD"
-msgstr "CDをインポートできません"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:237
-msgid "Audio CDs"
-msgstr "オーディオCD"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:239
-msgid "Audio CD Importing"
-msgstr "オーディオCDのインポート中"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:242
-msgid "_Import format"
-msgstr "インポートのフォーマット(_I)"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:246
-msgid "_Automatically import audio CDs when inserted"
-msgstr "CDを挿入したら自動的にインポートする(_A)"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:247
-msgid ""
-"When an audio CD is inserted, automatically begin importing it if metadata "
-"can be found and it is not already in the library."
-msgstr ""
-"CDを挿入したら、メタデータが存在しメタデータがライブラリに無い場合は自動的に"
-"インポートします。"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:251
-msgid "_Eject when done importing"
-msgstr "インポートが終了したら取り出す(_E)"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:252
-msgid "When an audio CD has been imported, automatically eject it."
-msgstr "オーディオCDをインポートしたら、自動的に取り出します。"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:255
-msgid "Use error correction when importing"
-msgstr "インポート時に誤り補正を使う"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:256
-msgid ""
-"Error correction tries to work around problem areas on a disc, such as "
-"surface scratches, but will slow down importing substantially."
-msgstr ""
-"エラー訂正は、表面上の傷の様なディスク上の問題があるエリアへの回避策を試しま"
-"すが、インポートは大幅に遅くなります。"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:324
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdSource.cs:441
-msgid "Import CD"
-msgstr "CDのインポート"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:325
-msgid "Import this audio CD to the library"
-msgstr "オーディオCDをライブラリへインポートします"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:331
-msgid "Duplicate CD"
-msgstr "CDの複製"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdService.cs:332
-msgid "Duplicate this audio CD"
-msgstr "このオーディオCDを複製"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdSource.cs:131
-msgid "Searching for track information..."
-msgstr "トラック情報を検索しています..."
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdSource.cs:164
-msgid "Could not fetch track information"
-msgstr "トラック情報を取得できませんでした"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdSource.cs:192
-msgid "Automatic import off since this album is already in the Music Library."
-msgstr ""
-"このアルバムはすでに音楽ライブラリにあるため、自動インポートをオフにしまし"
-"た。"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdSource.cs:215
-msgid "Could not import CD"
-msgstr "CDをインポートできません"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdSource.cs:232
-msgid "Could not duplicate audio CD"
-msgstr "オーディオCDの複製ができませんでした"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdSource.cs:364
-msgid "Ejecting audio CD..."
-msgstr "オーディオCDを取り出しています..."
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdSource.cs:382
-#, csharp-format
-msgid "Could not eject audio CD: {0}"
-msgstr "オーディオCDを取り出せません: {0}"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdSource.cs:415
-msgid "Audio CD Preferences"
-msgstr "オーディオCDの設定"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdSource.cs:416
-msgid "Eject Disc"
-msgstr "ディスクの取り出し"
-
-#: ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd/AudioCdSource.cs:440
-#, csharp-format
-msgid "Import ‟{0}”"
-msgstr "‟{0}” のインポート"
-
 #: ../src/Extensions/Banshee.Bpm/Banshee.Bpm/BpmDetectJob.cs:64
 msgid "Detecting BPM"
 msgstr "BPMの検出"
@@ -4802,7 +4723,7 @@ msgstr "まだ値が設定されていないすべての曲のBPMを検出する
 msgid "Downloading Cover Art"
 msgstr "カバーアートをダウンロード中"
 
-#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:128
+#: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:129
 #, csharp-format
 msgid "{0} - {1}"
 msgstr "{0} - {1}"
@@ -4829,12 +4750,15 @@ msgid ""
 "other iTunes® 7 clients.\n"
 "\n"
 "No third-party clients can connect to iTunes® music shares anymore. This is "
-"an intentional limitation by Apple in iTunes® 7 and we apologize for the "
-"unfortunate inconvenience."
+"an intentional limitation by Apple in iTunes® 7 and newer, we apologize for "
+"the unfortunate inconvenience."
 msgstr ""
-"iTunes® 7はiTunes® 7のクライアントとしか通信できません。サードパーティーのク"
-"ライアントはiTunes®音楽共有に接続できません。これはアップルがiTunes® 7に加え"
-"た意図的な制限です。御不便をおかけしてしまい申し訳ありません。"
+"iTunes® 7は新しい互換性の問題を導入したため、他のiTunes® 7のクライアントとし"
+"か通信できません。\n"
+"\n"
+"サードパーティーのクライアントはiTunes®音楽共有に接続できません。これはアップ"
+"ルがiTunes® 7以降に加えた意図的な制限です。ご不便をおかけして申し訳ありませ"
+"ん。"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:111
 msgid "Common reasons for connection failures:"
@@ -4861,8 +4785,8 @@ msgid "Try connecting again"
 msgstr "もう一度接続してください"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:139
-msgid "The music share is hosted by iTunes® 7"
-msgstr "この音楽共有はiTunes® 7によってホストされています"
+msgid "The music share is hosted by iTunes® 7 or newer"
+msgstr "この音楽共有はiTunes® 7以上でホストされています"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapLoginDialog.cs:47
 msgid "Login to Music Share"
@@ -5141,7 +5065,7 @@ msgstr "インターネット・アーカイブからアイテムの詳細を取
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/SearchView.cs:130
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Field.cs:66
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:135
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:280
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:282
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastEpisodePage.cs:89
 msgid "Description"
 msgstr "説明"
@@ -5610,10 +5534,6 @@ msgstr "最も新しい"
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Sort.cs:94
 msgid "Oldest"
 msgstr "最も古い"
-
-#: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSourceContents.cs:62
-msgid "Not Set"
-msgstr "未設定"
 
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSource.cs:54
 msgid "Radio"
@@ -6202,7 +6122,7 @@ msgstr "通知を表示できません"
 #. Translators: {0} and {1} are for markup so ignore them, {2} and {3}
 #. are Artist Name and Album Title, respectively;
 #. e.g. 'by Parkway Drive from Killing with a Smile'
-#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:521
+#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:514
 #, csharp-format
 msgid ""
 "{0}by{1} {2}\n"
@@ -6220,8 +6140,157 @@ msgid "Simplify"
 msgstr "Simplify"
 
 #: ../src/Extensions/Banshee.NowPlaying/Banshee.NowPlaying/NowPlayingSource.cs:60
-msgid "Simplify the Now Playing interface by hiding the source list and more"
-msgstr "Simplifyはソースリストなどを隠したNow Playingインターフェースです"
+msgid "Hide/Show the source list, menu, toolbar, and status bar"
+msgstr "ソースリスト、メニュー、ツールバー、ステータスバーの表示を切り替え"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdDiscModel.cs:75
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:54
+msgid "Audio CD"
+msgstr "オーディオCD"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdDiscModel.cs:103
+#, csharp-format
+msgid "Track {0}"
+msgstr "トラック番号 {0}"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdRipper.cs:121
+msgid "Importing Audio CD"
+msgstr "オーディオCDをインポートしています"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdRipper.cs:122
+msgid "Initializing Drive"
+msgstr "ドライブを初期化中"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdRipper.cs:124
+#, csharp-format
+msgid ""
+"<i>{0}</i> is still being imported into the music library. Would you like to "
+"stop it?"
+msgstr "<i>{0}</i>は音楽ライブラリにインポート中です。停止しますか?"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdRipper.cs:254
+msgid "Cannot Import CD"
+msgstr "CDをインポートできません"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:105
+msgid "Audio CDs"
+msgstr "オーディオCD"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:107
+msgid "Audio CD Importing"
+msgstr "オーディオCDのインポート中"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:110
+msgid "_Import format"
+msgstr "インポートのフォーマット(_I)"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:114
+msgid "_Automatically import audio CDs when inserted"
+msgstr "CDを挿入したら自動的にインポートする(_A)"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:115
+msgid ""
+"When an audio CD is inserted, automatically begin importing it if metadata "
+"can be found and it is not already in the library."
+msgstr ""
+"CDを挿入したら、メタデータが存在しメタデータがライブラリに無い場合は自動的に"
+"インポートします。"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:119
+msgid "_Eject when done importing"
+msgstr "インポートが終了したら取り出す(_E)"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:120
+msgid "When an audio CD has been imported, automatically eject it."
+msgstr "オーディオCDをインポートしたら、自動的に取り出します。"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:123
+msgid "Use error correction when importing"
+msgstr "インポート時に誤り補正を使う"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:124
+msgid ""
+"Error correction tries to work around problem areas on a disc, such as "
+"surface scratches, but will slow down importing substantially."
+msgstr ""
+"エラー訂正は、表面上の傷の様なディスク上の問題があるエリアへの回避策を試しま"
+"すが、インポートは大幅に遅くなります。"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:192
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:311
+msgid "Import CD"
+msgstr "CDのインポート"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:193
+msgid "Import this audio CD to the library"
+msgstr "オーディオCDをライブラリへインポートします"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:199
+msgid "Duplicate CD"
+msgstr "CDの複製"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:200
+msgid "Duplicate this audio CD"
+msgstr "このオーディオCDを複製"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:113
+msgid "Searching for track information..."
+msgstr "トラック情報を検索しています..."
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:146
+msgid "Could not fetch track information"
+msgstr "トラック情報を取得できませんでした"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:175
+msgid "Automatic import off since this album is already in the Music Library."
+msgstr ""
+"このアルバムはすでに音楽ライブラリにあるため、自動インポートをオフにしまし"
+"た。"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:198
+msgid "Could not import CD"
+msgstr "CDをインポートできません"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:215
+msgid "Could not duplicate audio CD"
+msgstr "オーディオCDの複製ができませんでした"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:285
+msgid "Audio CD Preferences"
+msgstr "オーディオCDの設定"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:286
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:64
+msgid "Eject Disc"
+msgstr "ディスクの取り出し"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:310
+#, csharp-format
+msgid "Import ‟{0}”"
+msgstr "‟{0}” のインポート"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc/DiscSource.cs:171
+#, csharp-format
+msgid "Could not eject {0}: {1}"
+msgstr "取り出しできません {0}: {1}"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdService.cs:91
+msgid "Go to Menu"
+msgstr "メニューに移動"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdService.cs:92
+#, fuzzy
+#| msgid "Naviguate to menu"
+msgid "Navigate to menu"
+msgstr "メニューを操作"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:38
+msgid "Dvd"
+msgstr "Dvd"
+
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:63
+msgid "DVD Preferences"
+msgstr "DVD設定"
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/AmarokPlayerImportSource.cs:143
 #, csharp-format
@@ -6396,7 +6465,7 @@ msgid "Number of _upcoming songs to show"
 msgstr "これから再生する曲の表示数(_U)"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastFeedModel.cs:47
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:279
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:281
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastActions.cs:89
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastEpisodePage.cs:86
 msgid "Podcast"
@@ -6407,61 +6476,61 @@ msgstr "ポッドキャスト"
 msgid "All Podcasts ({0})"
 msgstr "すべてのポッドキャスト ({0})"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:102
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:103
 msgid "Podcasts Folder"
 msgstr "ポッドキャストフォルダー"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:129
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:130
 msgid "Remove Podcast"
 msgstr "ポッドキャストを削除"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:134
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:135
 msgid "Disable Auto Updates"
 msgstr "自動アップデートを無効にする"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:152
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:153
 #, csharp-format
 msgid "Network error updating {0}"
 msgstr " {0} アップデート中のネットワークエラー"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:158
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:159
 #, csharp-format
 msgid "Parsing error updating {0}"
 msgstr " {0} アップデート中のパースエラー"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:161
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:162
 #, csharp-format
 msgid "Authentication error updating {0}"
 msgstr "{0} のアップデート認証エラー"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:164
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:165
 #, csharp-format
 msgid "Error updating {0}"
 msgstr "{0} のアップデートエラー"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:220
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:222
 msgid "Search your podcasts"
 msgstr "あなたのポッドキャストを検索"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:222
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:224
 msgid "Episode Properties"
 msgstr "エピソードのプロパティ"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:279
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:281
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastEpisodePage.cs:88
 msgid "Published"
 msgstr "公開日"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:279
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:281
 msgid "New"
 msgstr "新規"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:280
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:282
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/ColumnCellPodcastStatusIndicator.cs:66
 msgid "Downloaded"
 msgstr "ダウンロード済み"
 
-#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:306
+#: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:308
 #, csharp-format
 msgid "{0} episode"
 msgid_plural "{0} episodes"
@@ -6717,7 +6786,7 @@ msgstr "SQLモニターを開始"
 msgid "Stop SQL Monitoring"
 msgstr "SQLモニターを終了"
 
-#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:139
+#: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:133
 msgid "Track Preview"
 msgstr "Track Preview"
 
@@ -7032,6 +7101,32 @@ msgstr "Last.fmへ接続しました。"
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:103
 msgid "Unknown Podcast"
 msgstr "不明なポッドキャスト"
+
+#~ msgid "Could not create 'decodebin2' plugin"
+#~ msgstr " 'decodebin2'プラグインを生成できませんでした"
+
+#~ msgid "Could not create 'sinkben' plugin"
+#~ msgstr " 'sinkben'プラグインを生成できませんでした"
+
+#~ msgid "Could not create 'audioconvert' plugin"
+#~ msgstr " 'audioconvert'プラグインを生成できませんでした"
+
+#~ msgid ""
+#~ "Eliminate the small playback gap on track change.  Useful for concept "
+#~ "albums and classical music."
+#~ msgstr ""
+#~ "トラック変更時の無音部分を取り除きます。コンセプトアルバムやクラシック音楽"
+#~ "などに役に立ちます"
+
+#~ msgid "Ejecting audio CD..."
+#~ msgstr "オーディオCDを取り出しています..."
+
+#~ msgid "Could not eject audio CD: {0}"
+#~ msgstr "オーディオCDを取り出せません: {0}"
+
+#~ msgid ""
+#~ "Simplify the Now Playing interface by hiding the source list and more"
+#~ msgstr "Simplifyはソースリストなどを隠したNow Playingインターフェースです"
 
 #~ msgid ""
 #~ "There was an error intializing MTP device support.  See http://www."
