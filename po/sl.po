@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-12-01 11:01+0000\n"
-"PO-Revision-Date: 2011-12-02 16:27+0100\n"
+"POT-Creation-Date: 2011-12-08 00:38+0000\n"
+"PO-Revision-Date: 2011-12-08 21:49+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: \n"
@@ -809,6 +809,11 @@ msgstr "Na voljo je posodobitev za predvajalnik Banshee"
 #, csharp-format
 msgid "Downloading {0}"
 msgstr "Prejemanje {0}"
+
+#: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:144
+#, csharp-format
+msgid "{0} MB / {1} MB ({2} KB/s)"
+msgstr "{0} MB / {1} MB ({2} KB/s)"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:152
 msgid "Update download failed"
@@ -4416,7 +4421,7 @@ msgid "Error Initializing MTP Device Support"
 msgstr "Napaka med zaganjanjem podpore napravam MTP"
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:83
-msgid "There was an error intializing MTP device support."
+msgid "There was an error initializing MTP device support."
 msgstr "Prišlo je do napake med zaganjanjem podpore napravam MTP."
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:142
@@ -6155,8 +6160,8 @@ msgid "Go to Menu"
 msgstr "Pojdi na meni"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdService.cs:92
-msgid "Naviguate to menu"
-msgstr "Krmari do menija"
+msgid "Navigate to menu"
+msgstr "Pojdi na meni"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:38
 msgid "Dvd"
