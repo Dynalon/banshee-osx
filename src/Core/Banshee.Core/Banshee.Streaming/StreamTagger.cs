@@ -144,10 +144,10 @@ namespace Banshee.Streaming
 
         public static void TrackInfoMerge (TrackInfo track, TagLib.File file, bool preferTrackInfo)
         {
-            TrackInfoMerge (track, file, preferTrackInfo, false);
+            TrackInfoMerge (track, file, preferTrackInfo, false, false);
         }
 
-        public static void TrackInfoMerge (TrackInfo track, TagLib.File file, bool preferTrackInfo, bool import_rating_and_play_count)
+        public static void TrackInfoMerge (TrackInfo track, TagLib.File file, bool preferTrackInfo, bool import_rating, bool import_play_count)
         {
             // TODO support these as arrays:
             // Performers[] (track artists), AlbumArtists[], Composers[], Genres[]
@@ -192,11 +192,16 @@ namespace Banshee.Streaming
                 track.Year = Choose ((int)file.Tag.Year, track.Year, preferTrackInfo);
                 track.Bpm = Choose ((int)file.Tag.BeatsPerMinute, track.Bpm, preferTrackInfo);
 
-                if (import_rating_and_play_count) {
+                if (import_rating || import_play_count) {
                     int file_rating = 0, file_playcount = 0;
                     StreamRatingTagger.GetRatingAndPlayCount (file, ref file_rating, ref file_playcount);
-                    track.Rating = Choose (file_rating, track.Rating, preferTrackInfo);
-                    track.PlayCount = Choose (file_playcount, track.PlayCount, preferTrackInfo);
+                    if (import_rating) {
+                        Log.DebugFormat ("### Importing rating for {0}", track.TrackTitle);
+                        track.Rating = Choose (file_rating, track.Rating, preferTrackInfo);
+                    }
+                    if (import_play_count) {
+                        track.PlayCount = Choose (file_playcount, track.PlayCount, preferTrackInfo);
+                    }
                 }
             } else {
                 track.MediaAttributes = TrackMediaAttributes.AudioStream;

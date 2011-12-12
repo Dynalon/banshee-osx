@@ -191,7 +191,7 @@ namespace Banshee.Metadata
             // Read changes
             file = StreamTagger.ProcessUri (uri);
             track = new TrackInfo ();
-            StreamTagger.TrackInfoMerge (track, file, false, true);
+            StreamTagger.TrackInfoMerge (track, file, false, true, true);
             file.Dispose ();
 
             // Verify changes

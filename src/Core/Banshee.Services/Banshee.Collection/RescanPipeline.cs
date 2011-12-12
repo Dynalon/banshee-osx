@@ -39,6 +39,7 @@ using Banshee.Base;
 using Banshee.Sources;
 using Banshee.Collection.Database;
 using Banshee.Library;
+using Banshee.Metadata;
 using Banshee.ServiceStack;
 
 namespace Banshee.Collection
@@ -215,7 +216,9 @@ namespace Banshee.Collection
             // If the file was modified since we last scanned, parse the file's metadata
             if (mtime > track.FileModifiedStamp) {
                 using (var file = Banshee.Streaming.StreamTagger.ProcessUri (track.Uri)) {
-                    Banshee.Streaming.StreamTagger.TrackInfoMerge (track, file, false);
+                    Banshee.Streaming.StreamTagger.TrackInfoMerge (track, file, false,
+                        SaveTrackMetadataService.WriteRatingsEnabled.Value,
+                        SaveTrackMetadataService.WritePlayCountsEnabled.Value);
                 }
             }
         }

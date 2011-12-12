@@ -41,6 +41,7 @@ using Banshee.Base;
 using Banshee.Collection;
 using Banshee.Collection.Database;
 using Banshee.Library;
+using Banshee.Metadata;
 using Banshee.ServiceStack;
 using Banshee.Sources;
 using Banshee.Streaming;
@@ -208,7 +209,9 @@ namespace Banshee.LibraryWatcher
                     var track_info = DatabaseTrackInfo.Provider.Load (reader);
                     if (Banshee.IO.File.GetModifiedTime (track_info.Uri) > track_info.FileModifiedStamp) {
                         using (var file = StreamTagger.ProcessUri (track_info.Uri)) {
-                            StreamTagger.TrackInfoMerge (track_info, file, false);
+                            StreamTagger.TrackInfoMerge (track_info, file, false,
+                                SaveTrackMetadataService.WriteRatingsEnabled.Value,
+                                SaveTrackMetadataService.WritePlayCountsEnabled.Value);
                         }
                         track_info.LastSyncedStamp = DateTime.Now;
                         track_info.Save (false);
