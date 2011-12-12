@@ -152,7 +152,7 @@ namespace Banshee.Streaming
             // TODO support these as arrays:
             // Performers[] (track artists), AlbumArtists[], Composers[], Genres[]
 
-            // Note: this should be kept in sync with the metadata written in SaveTrackMetadataJob.cs
+            // Note: this should be kept in sync with the metadata written in the SaveToFile method
 
             if (file != null) {
                 track.Uri = new SafeUri (file.Name);
@@ -211,8 +211,8 @@ namespace Banshee.Streaming
 
             if (String.IsNullOrEmpty (track.TrackTitle)) {
                 try {
-                    string filename = System.Web.HttpUtility.UrlDecode
-			    (System.IO.Path.GetFileNameWithoutExtension (track.Uri.AbsoluteUri));
+                    string filename = System.Web.HttpUtility.UrlDecode (
+                        System.IO.Path.GetFileNameWithoutExtension (track.Uri.AbsoluteUri));
                     if (!String.IsNullOrEmpty (filename)) {
                         track.TrackTitle = filename;
                     }
