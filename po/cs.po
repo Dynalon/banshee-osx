@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-11-30 19:32+0000\n"
-"PO-Revision-Date: 2011-12-01 11:59+0100\n"
+"POT-Creation-Date: 2011-12-12 15:58+0000\n"
+"PO-Revision-Date: 2011-12-13 20:01+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -852,6 +852,12 @@ msgstr "Je dostupná aktualizace Banshee"
 msgid "Downloading {0}"
 msgstr "Stahuje se {0}"
 
+#: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:144
+#, csharp-format
+#| msgid "{0} by {1} on {2}"
+msgid "{0} MB / {1} MB ({2} KB/s)"
+msgstr "{0} MB / {1} MB ({2} kB/s)"
+
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:152
 msgid "Update download failed"
 msgstr "Stažení aktualizace selhalo"
@@ -1482,7 +1488,7 @@ msgstr "Právě probíhá import. Chcete jej zastavit?"
 msgid "Importing {0} of {1}"
 msgstr "Importuje se {0} z {1}"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection/RescanPipeline.cs:78
+#: ../src/Core/Banshee.Services/Banshee.Collection/RescanPipeline.cs:79
 #, csharp-format
 msgid "Rescanning {0} of {1}"
 msgstr "Opětovné prohledávání {0} z {1}"
@@ -1882,27 +1888,6 @@ msgstr "_Aktualizovat názvy souborů a složek"
 msgid "Rename files and folders according to media metadata"
 msgstr "Přejmenovat soubory a složky podle metadat média"
 
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:184
-msgid "Write _ratings and play counts to files"
-msgstr "Zapisovat _hodnocení a počet přehrání do souborů"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:185
-msgid ""
-"Enable this option to save rating and play count metadata inside supported "
-"audio files whenever the rating is changed."
-msgstr ""
-"Chcete-li ukládat hodnocení a počet přehrání jako metadata uvnitř "
-"podporovaných zvukových souborů, kdykoliv se změní hodnocení, zapněte tuto "
-"volbu."
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:186
-msgid "Import _ratings"
-msgstr "Importovat _hodnocení"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:187
-msgid "Import play _counts"
-msgstr "Importovat _počet přehrání"
-
 #: ../src/Core/Banshee.Services/Banshee.Networking/Network.cs:52
 msgid "There is no available network connection"
 msgstr "Není dostupné žádné síťové připojení"
@@ -1963,7 +1948,7 @@ msgstr "Nový seznam skladeb"
 msgid "Windows Media ASX"
 msgstr "Windows Media ASX"
 
-#: ../src/Core/Banshee.Services/Banshee.Playlists.Formats/AsxPlaylistFormat.cs:46
+#: ../src/Core/Banshee.Services/Banshee.Playlists.Formats/AsxPlaylistFormat.cs:48
 msgid "Windows Media ASX (*.asx)"
 msgstr "Windows Media ASX (*.asx)"
 
@@ -4534,11 +4519,12 @@ msgstr "Vyzváněcí tóny"
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:82
 msgid "Error Initializing MTP Device Support"
-msgstr "Chyba během inicializace podpory MTP zařízení"
+msgstr "Chyba během inicializace podpory zařízení MTP"
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:83
-msgid "There was an error intializing MTP device support."
-msgstr "Chyba během inicializace podpory MTP zařízení."
+#| msgid "There was an error intializing MTP device support."
+msgid "There was an error initializing MTP device support."
+msgstr "Vyskytla se chyba během inicializace podpory zařízení MTP."
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:142
 #: ../src/Hyena/Hyena.Gui/Hyena.Gui.Dialogs/VersionInformationDialog.cs:66
@@ -6333,7 +6319,8 @@ msgid "Go to Menu"
 msgstr "Přejít do nabídky"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdService.cs:92
-msgid "Naviguate to menu"
+#| msgid "Naviguate to menu"
+msgid "Navigate to menu"
 msgstr "Nasměrovat do nabídky"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:38
