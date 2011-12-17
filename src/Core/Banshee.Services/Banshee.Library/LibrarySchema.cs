@@ -72,22 +72,22 @@ namespace Banshee.Configuration.Schema
         public static readonly SchemaEntry<bool> WriteMetadata = new SchemaEntry<bool>(
             "library", "write_metadata",
             false,
-            "Write metadata back to audio files",
-            "If enabled, metadata (tags) will be written back to audio files when using the track metadata editor."
+            "Sync metadata between library and supported files",
+            "If enabled, metadata will be synced between the library and media files."
         );
 
         public static readonly SchemaEntry<bool> WriteRatings = new SchemaEntry<bool>(
             "library", "write_rating",
             false,
-            "Store ratings within supported files",
-            "If enabled, rating metadata will be written back to audio files."
+            "Sync ratings between library and supported files",
+            "If enabled, rating metadata will be synced between the library and audio files."
         );
 
         public static readonly SchemaEntry<bool> WritePlayCounts = new SchemaEntry<bool>(
             "library", "write_count",
             false,
-            "Store playcount within supported files",
-            "If enabled, playcount metadata will be written back to audio files."
+            "Sync play counts between library and supported files",
+            "If enabled, playcount metadata will be synced between the library and audio files."
         );
 
         public static readonly SchemaEntry<bool> SortByAlbumYear = new SchemaEntry<bool>(

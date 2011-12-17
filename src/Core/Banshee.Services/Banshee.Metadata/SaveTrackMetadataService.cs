@@ -46,20 +46,20 @@ namespace Banshee.Metadata
     {
         public static SchemaPreference<bool> WriteMetadataEnabled = new SchemaPreference<bool> (
                 LibrarySchema.WriteMetadata,
-                Catalog.GetString ("Write _metadata to files"),
-                Catalog.GetString ("Save tags and other metadata inside supported media files")
+                Catalog.GetString ("Sync _metadata between library and files"),
+                Catalog.GetString ("Enable this option to have metadata in sync between your library and supported media files")
         );
 
         public static SchemaPreference<bool> WriteRatingsEnabled = new SchemaPreference<bool> (
                 LibrarySchema.WriteRatings,
-                Catalog.GetString ("Write _ratings to files"),
-                Catalog.GetString ("Enable this option to save rating metadata inside supported audio files")
+                Catalog.GetString ("Sync _ratings between library and files"),
+                Catalog.GetString ("Enable this option to have rating metadata synced between your library and supported audio files")
         );
 
         public static SchemaPreference<bool> WritePlayCountsEnabled = new SchemaPreference<bool> (
                 LibrarySchema.WritePlayCounts,
-                Catalog.GetString ("Write play counts to files"),
-                Catalog.GetString ("Enable this option to save playcount metadata inside supported audio files")
+                Catalog.GetString ("Sync play counts between library and files"),
+                Catalog.GetString ("Enable this option to have playcount metadata synced between your library and supported audio files")
         );
 
         public static SchemaPreference<bool> RenameEnabled = new SchemaPreference<bool> (
