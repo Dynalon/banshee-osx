@@ -34,9 +34,6 @@ namespace Banshee.Configuration.Schema
 {
     public static class LibrarySchema
     {
-        // Deprecated, don't use in new code
-        internal static readonly SchemaEntry<string> Location = new SchemaEntry<string> ("library", "base_location", null, null, null);
-
         public static readonly SchemaEntry<string> FolderPattern = new SchemaEntry<string>(
             "library", "folder_pattern",
             "%album_artist%%path_sep%%album%",
