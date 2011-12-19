@@ -136,6 +136,10 @@ namespace Banshee.Dap.MassStorage
                 case "Google Nexus One":
                     icon_names[0] = "phone-google-nexus-one";
                     break;
+                case "Xperia arc":
+                case "Xperia X10":
+                    icon_names[0] = "phone-xperia-arc";
+                    break;
                 default:
                     icon_names[0] = "phone-htc-g1-white";
                     break;
