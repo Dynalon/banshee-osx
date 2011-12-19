@@ -98,7 +98,6 @@ namespace Banshee.Emusic.Store
                 Log.Debug ("OssiferWebView: downloaded purchase list", destinationUri);
                 Banshee.ServiceStack.ServiceManager.Get<EmusicService> ()
                     .ImportEmx (new SafeUri (destinationUri).LocalPath);
-                Reload ();
             }
         }
 
