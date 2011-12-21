@@ -60,9 +60,6 @@ namespace Banshee.Audiobook
 
         public BookPlaylist PlaybackSource { get; private set; }
 
-        Gtk.HBox title_switcher;
-        Gtk.Label book_label;
-
         public Actions Actions { get; private set; }
 
         public AudiobookLibrarySource () : base (Catalog.GetString ("Audiobooks"), "AudiobookLibrary", 49)
@@ -106,17 +103,6 @@ namespace Banshee.Audiobook
             Properties.SetString ("ActiveSourceUIResource", "ActiveSourceUI.xml");
             Properties.Set<bool> ("ActiveSourceUIResourcePropagate", true);
             Properties.Set<System.Action> ("ActivationAction", delegate { SwitchToGridView (); });
-
-            title_switcher = new Gtk.HBox () { Spacing = 0 };
-            var title_label = new Gtk.Label () { Markup = String.Format ("<b>{0}</b>", GLib.Markup.EscapeText (this.Name)) };
-            var b = new Gtk.Button (title_label) { Relief = Gtk.ReliefStyle.None };
-            b.Clicked += delegate { SwitchToGridView (); };
-            title_switcher.PackStart (b);
-
-            title_switcher.ShowAll ();
-            book_label = new Gtk.Label () { Visible = false };
-            title_switcher.PackStart (book_label);
-            Properties.Set<Gtk.Widget> ("Nereid.SourceContents.TitleWidget", title_switcher);
 
             TracksAdded += (o, a) => {
                 if (!IsAdding) {
@@ -170,7 +156,6 @@ namespace Banshee.Audiobook
             var last_book = CurrentViewBook;
             if (last_book != null) {
                 CurrentViewBook = null;
-                book_label.Visible = false;
                 Properties.Set<ISourceContents> ("Nereid.SourceContents", grid_view);
                 Actions.UpdateActions ();
             }
@@ -178,10 +163,8 @@ namespace Banshee.Audiobook
 
         public void SwitchToBookView (DatabaseAlbumInfo book)
         {
-            if (!book_label.Visible) {
+            if (CurrentViewBook == null) {
                 CurrentViewBook = book;
-                book_label.Text = String.Format (" »  {0}", book.DisplayTitle);
-                book_label.Visible = true;
                 book_view.SetSource (this);
                 book_view.Contents.SetBook (book);
                 Properties.Set<ISourceContents> ("Nereid.SourceContents", book_view);
