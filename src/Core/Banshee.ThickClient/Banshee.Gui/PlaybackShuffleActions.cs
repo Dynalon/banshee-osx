@@ -157,12 +157,14 @@ namespace Banshee.Gui
             if (shuffle_modes[active_action.Value] != args.Value) {
                 // This happens only when changing the mode using DBus.
                 // In this case we need to locate the action by its value.
-                foreach (RadioAction action in this) {
-                    if (shuffle_modes[action.Value] == args.Value) {
-                        active_action = action;
-                        break;
+                ThreadAssist.ProxyToMain (delegate {
+                    foreach (RadioAction action in this) {
+                        if (shuffle_modes[action.Value] == args.Value) {
+                            active_action = action;
+                            break;
+                        }
                     }
-                }
+                });
             }
 
             if (saved_action == null) {
