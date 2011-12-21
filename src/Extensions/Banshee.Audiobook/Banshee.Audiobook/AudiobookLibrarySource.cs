@@ -338,6 +338,12 @@ namespace Banshee.Audiobook
             yield return books_model;
         }
 
+        public override bool AcceptsInputFromSource (Source source)
+        {
+            return CanAddTracks && source != this && source.Parent != this
+                && (source.Parent is PrimarySource || source is PrimarySource);
+        }
+
         #region IBasicPlaybackController implementation
 
         public bool First ()
