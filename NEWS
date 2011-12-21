@@ -1,34 +1,23 @@
 ===============================================================================
-Banshee 2.3.2 - 2011-11-30
+Banshee 2.3.3 - 2011-12-21
 ===============================================================================
 
-    Banshee 2.3.2 is part of the 2.3 development series leading up to 2.4,
+    Banshee 2.3.3 is part of the 2.3 development series leading up to 2.4,
     scheduled for March 2012.
-
-    New Features:
-
-      * Configurable browser filters
-
-            You can now display the genres and years in the browser, in
-            addition to the artists and the albums, and use them to filter your
-            music library. You can also choose to only display album artists
-            in the artist filter, instead of all artists in your library.
 
     Enhancements:
 
-      * bgo#664424: AsxPlaylistFormat: Add support for external ASX playlists
-      * bgo#664642: Add support for the NEC LifeTouch Note
-      * Dap.MassStorage: Don't sync 'unknown album' metadata
+      * StreamPositionLabel: Fix label when loading
+      * Preferences: Change wording of Metadata settings
+      * bgo#608389: AudiobookLibrarySource: Accept tracks dragged from playlists
+      * bgo#666493: Emusic.Store: Remove unneeded refresh
+      * bgo#666488: Dap.MassStorage: Add and use specific icons for Xperia phones
 
-    Notable Bugs Fixed (36 fixed since 2.2.0):
+    Notable Bugs Fixed (11 fixed since 2.3.2):
 
-      * Mpris: Change trackid type from string to DBus object path
-      * Gio: Fix encoding of URIs in Directory class and fix values in database
-      * bgo#662883: Fix activation of UbuntuOneMusicStore source on startup
-      * bgo#651743: YouTubeTile: Fix construction of the playback URI
-      * bgo#664381: Dap.MassStorage: Rename Xperia X12 to Xperia arc
-      * bgo#664079: Skip empty files when importing and show error
-      * Importing: when showing an error, use file paths, not URIs
+      * bgo#644145: Fix FileLocation queries for the StartsWith operator
+      * bgo#638130: Fix importing of rating and play count when updating track
+      * bgo#656439: Audiobook: Add a button to go back to the list of audiobooks
 
 ===============================================================================
 SOURCES / PACKAGES
@@ -37,9 +26,9 @@ SOURCES / PACKAGES
 Sources
 -------
 
-    * Banshee 2.3.2 Tarballs:
-      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.3/banshee-2.3.2.tar.xz
-      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.3/banshee-2.3.2.sha256sum
+    * Banshee 2.3.3 Tarballs:
+      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.3/banshee-2.3.3.tar.xz
+      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.3/banshee-2.3.3.sha256sum
 
 Packages
 --------
@@ -62,7 +51,7 @@ REPORT BUGS - HELP THE PROJECT - GROW THE COMMUNITY
     hesitate to file bugs!
 
     * http://banshee.fm/contribute/file-bugs
-    * http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&version=2.3.2
+    * http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&version=2.3.3
 
 
 ===============================================================================
@@ -75,14 +64,12 @@ Contributors For This Release
     The following people directly contributed to the release of this version
     of Banshee. Without their help, there would be no release!
 
-     Alexander Kojevnikov, Andres G. Aragoneses, Bertrand Lorentz,
-     Chow Loong Jin, Frank Ziegler, James Otting, Kentaro KAZUHAMA,
-     Roderich Schupp, Rodney Dawes
+     Andres G. Aragoneses, Bertrand Lorentz, Felipe Castillo, Jordi Mas,
+     Olivier Dufour, Will Thompson
 
     The following people contributed updated translations to this release.
     Without them, our project's reach would be much more limited.
 
-     Andrej Žnidaršič, Benjamín Valero Espinosa, Marek Černocký,
-     Mario Blättermann, Matej Urbančič, Misha Shnurapet, Muhammet Kara,
-     Pavol Klačanský, Piotr Drąg, Yuri Myasoedov
+     Daniel Mustieles, Funda Wang, Gabor Kelemen, Hendrik Knackstedt, Jordi Mas,
+     Kentaro KAZUHAMA, Marek Černocký, Mario Blättermann, Matej Urbančič
 
