@@ -569,10 +569,9 @@ namespace Banshee.Sources
             return true;
         }
 
-        private static HyenaSqliteCommand get_track_id_cmd = new HyenaSqliteCommand ("SELECT TrackID FROM CoreTracks WHERE PrimarySourceId = ? AND Uri = ? LIMIT 1");
         public int GetTrackIdForUri (string uri)
         {
-            return ServiceManager.DbConnection.Query<int> (get_track_id_cmd, DbId, new SafeUri (uri).AbsoluteUri);
+            return DatabaseTrackInfo.GetTrackIdForUri (new SafeUri (uri), DbId);
         }
 
         private bool is_adding;

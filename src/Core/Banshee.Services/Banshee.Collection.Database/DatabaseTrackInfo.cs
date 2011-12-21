@@ -787,7 +787,7 @@ namespace Banshee.Collection.Database
             "SELECT COUNT('x') FROM CoreTracks WHERE PrimarySourceId IN (?) AND MetadataHash = ?"
         );
 
-        public static int GetTrackIdForUri (SafeUri uri, int [] primary_sources)
+        public static int GetTrackIdForUri (SafeUri uri, params int [] primary_sources)
         {
             return ServiceManager.DbConnection.Query<int> (get_track_id_by_uri,
                 primary_sources, uri.AbsoluteUri);
