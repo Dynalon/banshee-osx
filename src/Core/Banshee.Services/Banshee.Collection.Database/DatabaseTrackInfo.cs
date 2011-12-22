@@ -770,15 +770,21 @@ namespace Banshee.Collection.Database
             return copy_success;
         }
 
-        private static HyenaSqliteCommand get_uri_id_cmd = new HyenaSqliteCommand ("SELECT TrackID FROM CoreTracks WHERE Uri = ? LIMIT 1");
         public static int GetTrackIdForUri (string uri)
         {
-            return ServiceManager.DbConnection.Query<int> (get_uri_id_cmd, new SafeUri (uri).AbsoluteUri);
+            return GetTrackIdForUri (new SafeUri (uri));
         }
 
-        private static HyenaSqliteCommand get_track_id_by_uri = new HyenaSqliteCommand (
-            "SELECT TrackID FROM CoreTracks WHERE PrimarySourceId IN (?) AND Uri = ? LIMIT 1"
-        );
+        private static string get_track_id_by_uri =
+            "SELECT TrackID FROM CoreTracks WHERE {0} {1} = ? LIMIT 1";
+
+        private static HyenaSqliteCommand get_track_id_by_uri_primarysources = new HyenaSqliteCommand (String.Format (
+            get_track_id_by_uri, "PrimarySourceId IN (?) AND", BansheeQuery.UriField.Column
+        ));
+
+        private static HyenaSqliteCommand get_track_id_by_uri_plain = new HyenaSqliteCommand (String.Format (
+            get_track_id_by_uri, string.Empty, BansheeQuery.UriField.Column
+        ));
 
         private static string get_track_by_metadata_hash =
             "SELECT {0} FROM {1} WHERE {2} AND PrimarySourceId IN (?) AND MetadataHash = ? LIMIT 1";
@@ -789,8 +795,12 @@ namespace Banshee.Collection.Database
 
         public static int GetTrackIdForUri (SafeUri uri, params int [] primary_sources)
         {
-            return ServiceManager.DbConnection.Query<int> (get_track_id_by_uri,
-                primary_sources, uri.AbsoluteUri);
+            if (primary_sources == null || primary_sources.Length == 0) {
+                return ServiceManager.DbConnection.Query<int> (get_track_id_by_uri_plain, uri.AbsoluteUri);
+            }
+            return ServiceManager.DbConnection.Query<int> (
+                get_track_id_by_uri_primarysources, primary_sources, uri.AbsoluteUri
+            );
         }
 
         public static int GetTrackIdForUri (string absoluteUri, int [] primary_sources)
