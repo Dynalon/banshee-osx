@@ -103,7 +103,7 @@ namespace Banshee.Collection
             // Delete tracks that are under the BaseDirectory and that weren't rescanned just now
             string condition = String.Format (
                 @"WHERE PrimarySourceID = ? AND {0} LIKE ? ESCAPE '\' AND {1} IS NOT NULL AND {1} < ?",
-                Banshee.Query.BansheeQuery.UriField, "CoreTracks.LastSyncedStamp"
+                Banshee.Query.BansheeQuery.UriField.Column, "CoreTracks.LastSyncedStamp"
             );
             string uri = Hyena.StringUtil.EscapeLike (new SafeUri (psource.BaseDirectoryWithSeparator).AbsoluteUri) + "%";
 
