@@ -101,8 +101,10 @@ namespace Banshee.Collection
             //Hyena.Log.DebugFormat ("Have {0} items before delete", ServiceManager.DbConnection.Query<int>("select count(*) from coretracks where primarysourceid=?", psource.DbId));
 
             // Delete tracks that are under the BaseDirectory and that weren't rescanned just now
-            string condition =
-                @"WHERE PrimarySourceID = ? AND Uri LIKE ? ESCAPE '\' AND LastSyncedStamp IS NOT NULL AND LastSyncedStamp < ?";
+            string condition = String.Format (
+                @"WHERE PrimarySourceID = ? AND {0} LIKE ? ESCAPE '\' AND {1} IS NOT NULL AND {1} < ?",
+                Banshee.Query.BansheeQuery.UriField, "CoreTracks.LastSyncedStamp"
+            );
             string uri = Hyena.StringUtil.EscapeLike (new SafeUri (psource.BaseDirectoryWithSeparator).AbsoluteUri) + "%";
 
             ServiceManager.DbConnection.Execute (String.Format (@"BEGIN;

@@ -92,7 +92,9 @@ namespace Banshee.Sources
         protected bool error_source_visible = false;
 
         protected string remove_range_sql = @"
-            INSERT INTO CoreRemovedTracks (DateRemovedStamp, TrackID, Uri) SELECT ?, TrackID, Uri FROM CoreTracks WHERE TrackID IN (SELECT {0});
+            INSERT INTO CoreRemovedTracks (DateRemovedStamp, TrackID, Uri)
+                SELECT ?, TrackID, " + BansheeQuery.UriField.Column + @"
+                FROM CoreTracks WHERE TrackID IN (SELECT {0});
             DELETE FROM CoreTracks WHERE TrackID IN (SELECT {0})";
 
         protected HyenaSqliteCommand remove_list_command = new HyenaSqliteCommand (@"
