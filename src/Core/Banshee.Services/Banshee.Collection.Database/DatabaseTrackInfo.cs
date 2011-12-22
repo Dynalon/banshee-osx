@@ -770,11 +770,6 @@ namespace Banshee.Collection.Database
             return copy_success;
         }
 
-        public static int GetTrackIdForUri (string uri)
-        {
-            return GetTrackIdForUri (new SafeUri (uri));
-        }
-
         private static string get_track_id_by_uri =
             "SELECT TrackID FROM CoreTracks WHERE {0} {1} = ? LIMIT 1";
 
@@ -793,20 +788,24 @@ namespace Banshee.Collection.Database
             "SELECT COUNT('x') FROM CoreTracks WHERE PrimarySourceId IN (?) AND MetadataHash = ?"
         );
 
-        public static int GetTrackIdForUri (SafeUri uri, params int [] primary_sources)
+        public static int GetTrackIdForUri (string uri)
         {
-            if (primary_sources == null || primary_sources.Length == 0) {
-                return ServiceManager.DbConnection.Query<int> (get_track_id_by_uri_plain, uri.AbsoluteUri);
-            }
-            return ServiceManager.DbConnection.Query<int> (
-                get_track_id_by_uri_primarysources, primary_sources, uri.AbsoluteUri
-            );
+            return GetTrackIdForUri (new SafeUri (uri));
         }
 
-        public static int GetTrackIdForUri (string absoluteUri, int [] primary_sources)
+        public static int GetTrackIdForUri (SafeUri uri, params int [] primary_sources)
         {
-            return ServiceManager.DbConnection.Query<int> (get_track_id_by_uri,
-                primary_sources, absoluteUri);
+            return GetTrackIdForUri (uri.AbsoluteUri, primary_sources);
+        }
+
+        public static int GetTrackIdForUri (string absoluteUri, params int [] primary_sources)
+        {
+            if (primary_sources == null || primary_sources.Length == 0) {
+                return ServiceManager.DbConnection.Query<int> (get_track_id_by_uri_plain, absoluteUri);
+            }
+            return ServiceManager.DbConnection.Query<int> (
+                get_track_id_by_uri_primarysources, primary_sources, absoluteUri
+            );
         }
 
         private static IDataReader FindTrackByMetadataHash (string metadata_hash, int [] primary_sources)

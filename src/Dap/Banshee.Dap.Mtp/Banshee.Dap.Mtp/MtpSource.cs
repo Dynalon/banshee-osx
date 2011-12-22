@@ -177,7 +177,7 @@ namespace Banshee.Dap.Mtp
 
                 foreach (Track mtp_track in files) {
                     int track_id;
-                    if ((track_id = DatabaseTrackInfo.GetTrackIdForUri (MtpTrackInfo.GetPathFromMtpTrack (mtp_track), new int [] { DbId } )) > 0) {
+                    if ((track_id = DatabaseTrackInfo.GetTrackIdForUri (MtpTrackInfo.GetPathFromMtpTrack (mtp_track), DbId )) > 0) {
                         track_map[track_id] = mtp_track;
                     } else {
                         MtpTrackInfo track = new MtpTrackInfo (mtp_device, mtp_track);
