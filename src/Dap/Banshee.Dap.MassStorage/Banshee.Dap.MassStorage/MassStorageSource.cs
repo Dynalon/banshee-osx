@@ -164,7 +164,6 @@ namespace Banshee.Dap.MassStorage
             if (CanSyncPlaylists) {
                 var insert_cmd = new Hyena.Data.Sqlite.HyenaSqliteCommand (
                     "INSERT INTO CorePlaylistEntries (PlaylistID, TrackID) VALUES (?, ?)");
-                int [] psources = new int [] {DbId};
                 foreach (string playlist_path in PlaylistFiles) {
                     IPlaylistFormat loaded_playlist = PlaylistFileUtil.Load (playlist_path, new Uri (PlaylistsPath));
                     if (loaded_playlist == null)
@@ -176,7 +175,7 @@ namespace Banshee.Dap.MassStorage
                     //Hyena.Data.Sqlite.HyenaSqliteCommand.LogAll = true;
                     foreach (Dictionary<string, object> element in loaded_playlist.Elements) {
                         string track_path = (element["uri"] as Uri).LocalPath;
-                        int track_id = DatabaseTrackInfo.GetTrackIdForUri (new SafeUri (track_path), psources);
+                        int track_id = DatabaseTrackInfo.GetTrackIdForUri (new SafeUri (track_path), DbId);
                         if (track_id == 0) {
                             Log.DebugFormat ("Failed to find track {0} in DAP library to load it into playlist {1}", track_path, playlist_path);
                         } else {

@@ -129,11 +129,10 @@ namespace Banshee.Podcasting
                     ");
 
                     // Finally, move podcast items from the Music Library to the Podcast source
-                    int [] primary_source_ids = new int [] { ServiceManager.SourceManager.MusicLibrary.DbId };
                     int moved = 0;
                     foreach (FeedEnclosure enclosure in FeedEnclosure.Provider.FetchAllMatching ("LocalPath IS NOT NULL AND LocalPath != ''")) {
                         SafeUri uri = new SafeUri (enclosure.LocalPath);
-                        int track_id = DatabaseTrackInfo.GetTrackIdForUri (uri, primary_source_ids);
+                        int track_id = DatabaseTrackInfo.GetTrackIdForUri (uri, ServiceManager.SourceManager.MusicLibrary.DbId);
 
                         if (track_id > 0) {
                             PodcastTrackInfo pi = new PodcastTrackInfo (DatabaseTrackInfo.Provider.FetchSingle (track_id));
