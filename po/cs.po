@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-12-12 15:58+0000\n"
-"PO-Revision-Date: 2011-12-13 20:01+0100\n"
+"POT-Creation-Date: 2011-12-21 19:14+0000\n"
+"PO-Revision-Date: 2011-12-25 08:34+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -854,7 +854,6 @@ msgstr "Stahuje se {0}"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:144
 #, csharp-format
-#| msgid "{0} by {1} on {2}"
 msgid "{0} MB / {1} MB ({2} KB/s)"
 msgstr "{0} MB / {1} MB ({2} kB/s)"
 
@@ -1851,34 +1850,40 @@ msgid "Saving Metadata to File"
 msgstr "Ukládají se metadata do souboru"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:49
-msgid "Write _metadata to files"
-msgstr "Zapisovat _metadata do souborů"
+msgid "Sync _metadata between library and files"
+msgstr "Synchronizovat _metadata mezi kolekcí a soubory"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:50
-msgid "Save tags and other metadata inside supported media files"
+msgid ""
+"Enable this option to have metadata in sync between your library and "
+"supported media files"
 msgstr ""
-"Ukládat značky a jiná metadata uvnitř podporovaných multimediálních souborů"
+"Zapněte tuto volbu, pokud chcete mít metadata synchronizována mezi vaší "
+"kolekcí a podporovanými mediálními soubory"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:55
-msgid "Write _ratings to files"
-msgstr "Zapisovat _hodnocení do souborů"
+msgid "Sync _ratings between library and files"
+msgstr "Synch_ronizovat hodnocení mezi kolekcí a soubory"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:56
-msgid "Enable this option to save rating metadata inside supported audio files"
+msgid ""
+"Enable this option to have rating metadata synced between your library and "
+"supported audio files"
 msgstr ""
-"Zapněte tuto volbu, pokud chcete ukládat metadata s hodnocením do "
-"podporovaných zvukových souborů"
+"Zapněte tuto volbu, pokud chcete mít hodnocení synchronizována mezi vaší "
+"kolekcí a podporovanými mediálními soubory"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:61
-msgid "Write play counts to files"
-msgstr "Zapisovat počet přehrání do souborů"
+msgid "Sync play counts between library and files"
+msgstr "Synchronizovat počet přehrání mezi kolekcí a soubory"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:62
 msgid ""
-"Enable this option to save playcount metadata inside supported audio files"
+"Enable this option to have playcount metadata synced between your library "
+"and supported audio files"
 msgstr ""
-"Zapněte tuto volbu, pokud chcete ukládat metadata s počtem přehrání do "
-"podporovaných zvukových souborů"
+"Zapněte tuto volbu, pokud chcete mít počty přehrání synchronizovány mezi "
+"vaší kolekcí a podporovanými mediálními soubory"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:67
 msgid "_Update file and folder names"
@@ -2660,12 +2665,12 @@ msgstr "Hie_rarchie složek"
 msgid "File _name"
 msgstr "Ná_zev souboru"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:671
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:670
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "Přidává se {0} z {1} do {2}"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:690
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:689
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "Odstraňuje se {0} z {1} z {2}"
@@ -2847,6 +2852,7 @@ msgid "Waiting for playback to begin..."
 msgstr "Čeká se, až začne přehrávání…"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.ContextPane/ContextPane.cs:150
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:152
 msgid "Loading..."
 msgstr "Načítá se…"
 
@@ -4225,7 +4231,7 @@ msgstr "Nečinný"
 msgid "Contacting..."
 msgstr "Připojuje se…"
 
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:161
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:162
 msgid "Buffering"
 msgstr "Načítá se do vyrovnávací paměti"
 
@@ -4522,7 +4528,6 @@ msgid "Error Initializing MTP Device Support"
 msgstr "Chyba během inicializace podpory zařízení MTP"
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:83
-#| msgid "There was an error intializing MTP device support."
 msgid "There was an error initializing MTP device support."
 msgstr "Vyskytla se chyba během inicializace podpory zařízení MTP."
 
@@ -4628,6 +4633,10 @@ msgstr "Otevřít knihu"
 msgid "Merge Discs..."
 msgstr "Sloučit disky…"
 
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:57
+msgid "Go to Audiobooks"
+msgstr "Přejít na mluvené knihy"
+
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:61
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:65
 msgid "Resume"
@@ -4638,7 +4647,7 @@ msgstr "Pokračovat"
 msgid "Resume playback of this audiobook"
 msgstr "Pokračovat v přehrávání této mluvené knihy"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:138
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:139
 #, csharp-format
 msgid "Merge the {0} selected discs into one book?"
 msgid_plural "Merge the {0} selected discs into one book?"
@@ -4646,7 +4655,7 @@ msgstr[0] "Sloučit {0} vybraný disk do knihy?"
 msgstr[1] "Sloučit {0} vybrané disky do knihy?"
 msgstr[2] "Sloučit {0} vybraných disků do knihy?"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:143
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:144
 msgid ""
 "This will ensure the disc numbers are all set properly, and then set the "
 "author and book title for all tracks on all these discs to the values below"
@@ -4655,16 +4664,16 @@ msgstr ""
 "nastaví autor a název knihy pro všechny stopy na všech těchto discích na "
 "následující hodnoty"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:152
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:153
 msgid "Author:"
 msgstr "Autor:"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:159
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:160
 msgid "Book Title:"
 msgstr "Název knihy:"
 
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:57
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:92
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:89
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastEpisodePage.cs:87
 msgid "Author"
 msgstr "Autor"
@@ -4678,16 +4687,16 @@ msgstr "Iniciály autora"
 msgid "Book Title"
 msgstr "Název knihy"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:68
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:65
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HomeView.cs:307
 msgid "Audiobooks"
 msgstr "Mluvené knihy"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:75
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:72
 msgid "Search your audiobooks"
 msgstr "Hledat své mluvené knihy"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:146
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:132
 #, csharp-format
 msgid "{0} book"
 msgid_plural "{0} books"
@@ -4695,7 +4704,7 @@ msgstr[0] "{0} kniha"
 msgstr[1] "{0} knihy"
 msgstr[2] "{0} knih"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:150
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:136
 msgid "Audiobooks Folder"
 msgstr "Složka s mluvenými knihami"
 
@@ -6319,7 +6328,6 @@ msgid "Go to Menu"
 msgstr "Přejít do nabídky"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdService.cs:92
-#| msgid "Naviguate to menu"
 msgid "Navigate to menu"
 msgstr "Nasměrovat do nabídky"
 
