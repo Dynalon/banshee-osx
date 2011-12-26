@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-12-08 00:38+0000\n"
-"PO-Revision-Date: 2011-12-08 21:49+0100\n"
+"POT-Creation-Date: 2011-12-26 16:09+0000\n"
+"PO-Revision-Date: 2011-12-26 17:49+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: \n"
@@ -1415,7 +1415,7 @@ msgstr "Izvaja se postopek uvoza. Ali ga želite zaustaviti?"
 msgid "Importing {0} of {1}"
 msgstr "Uvažanje {0} od {1}"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection/RescanPipeline.cs:78
+#: ../src/Core/Banshee.Services/Banshee.Collection/RescanPipeline.cs:79
 #, csharp-format
 msgid "Rescanning {0} of {1}"
 msgstr "Ponovno preiskovanje {0} od {1}"
@@ -1771,28 +1771,28 @@ msgid "Saving Metadata to File"
 msgstr "Shranjevanje metapodatkov v datoteko"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:49
-msgid "Write _metadata to files"
-msgstr "Zapiši _metapodatke v datoteke"
+msgid "Sync _metadata between library and files"
+msgstr "Uskladi _metapodatke med knjižnico in datotekami"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:50
-msgid "Save tags and other metadata inside supported media files"
-msgstr "Shrani oznake in druge metapodatke v podprte predstavne datoteke"
+msgid "Enable this option to have metadata in sync between your library and supported media files"
+msgstr "Izbrana možnost omogoča usklajevanje metapodatkov med knjižnico in podprtimi zvočnimi datotekami"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:55
-msgid "Write _ratings to files"
-msgstr "Zapiši _ocene v datoteke"
+msgid "Sync _ratings between library and files"
+msgstr "Uskladi _ocene med knjižnico in datotekami"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:56
-msgid "Enable this option to save rating metadata inside supported audio files"
-msgstr "Izbrana možnost omogoča shranjevanje ocen v podprte zvočne datoteke"
+msgid "Enable this option to have rating metadata synced between your library and supported audio files"
+msgstr "Izbrana možnost omogoča usklajevanje metapodatkov ocen med knjižnico in podprtimi zvočnimi datotekami"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:61
-msgid "Write play counts to files"
-msgstr "Zapiši _število predvajanj v datoteke"
+msgid "Sync play counts between library and files"
+msgstr "Uskladi _števec predvajanja med knjižnico in datotekami"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:62
-msgid "Enable this option to save playcount metadata inside supported audio files"
-msgstr "Izbrana možnost omogoča shranjevanje metapodatkov predvajanja v podprte zvočne datoteke"
+msgid "Enable this option to have playcount metadata synced between your library and supported audio files"
+msgstr "Izbrana možnost omogoča usklajevanje metapodatkov števca predvajanja med knjižnico in podprtimi zvočnimi datotekami"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:67
 msgid "_Update file and folder names"
@@ -1801,22 +1801,6 @@ msgstr "_Posodobi imena datotek in map"
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:68
 msgid "Rename files and folders according to media metadata"
 msgstr "Preimenovanje datotek in map glede na metapodatke predstavnih datotek"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:184
-msgid "Write _ratings and play counts to files"
-msgstr "Zapiši _ocene in števila predvajanj v datoteke"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:185
-msgid "Enable this option to save rating and play count metadata inside supported audio files whenever the rating is changed."
-msgstr "Ta možnost omogoča shranjevanje metapodatkov ocen in števila predvajanj v podprte zvočne datoteke kadarkoli je ocena spremenjena."
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:186
-msgid "Import _ratings"
-msgstr "Uvozi _ocene"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:187
-msgid "Import play _counts"
-msgstr "Uvozi _števila predvajanj"
 
 #: ../src/Core/Banshee.Services/Banshee.Networking/Network.cs:52
 msgid "There is no available network connection"
@@ -2565,37 +2549,37 @@ msgstr "Napaka"
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:152
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:154
 msgid "Errors"
 msgstr "Napake"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:205
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:207
 msgid "Sort Playlists By"
 msgstr "Razvrsti sezname predvajanja po"
 
 #. Translators: this is a noun, referring to the harddisk
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:214
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:216
 msgid "Drive"
 msgstr "Pogon"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:238
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:240
 msgid "File Organization"
 msgstr "Urejanje datotek"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:239
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:241
 msgid "Folder hie_rarchy"
 msgstr "Hie_rarhija map"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:240
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:242
 msgid "File _name"
 msgstr "Ime _datoteke"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:671
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:672
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "Dodajanje {0} od {1} v {2}"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:690
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:691
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "Brisanje {0} od {1} iz {2}"
@@ -2774,6 +2758,7 @@ msgid "Waiting for playback to begin..."
 msgstr "Čakanje na začetek predvajanja ..."
 
 #: ../src/Core/Banshee.ThickClient/Banshee.ContextPane/ContextPane.cs:150
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:152
 msgid "Loading..."
 msgstr "Nalaganje ..."
 
@@ -4129,7 +4114,7 @@ msgstr "Nedejavno"
 msgid "Contacting..."
 msgstr "Vzpostavljanje stika ..."
 
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:161
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:162
 msgid "Buffering"
 msgstr "Polnjenje medpomnilnika"
 
@@ -4526,6 +4511,10 @@ msgstr "Odpri knjigo"
 msgid "Merge Discs..."
 msgstr "Združi diske ..."
 
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:57
+msgid "Go to Audiobooks"
+msgstr "Pojdi na zvočne knjige"
+
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:61
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:65
 msgid "Resume"
@@ -4536,7 +4525,7 @@ msgstr "Nadaljuj"
 msgid "Resume playback of this audiobook"
 msgstr "Nadaljuj predvajanje te zvočne knjige"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:138
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:139
 #, csharp-format
 msgid "Merge the {0} selected discs into one book?"
 msgid_plural "Merge the {0} selected discs into one book?"
@@ -4545,20 +4534,20 @@ msgstr[1] "Združitev {0} izbranega diska v eno knjigo?"
 msgstr[2] "Združitev {0} izbranih diskov v eno knjigo?"
 msgstr[3] "Združitev {0} izbranih diskov v eno knjigo?"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:143
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:144
 msgid "This will ensure the disc numbers are all set properly, and then set the author and book title for all tracks on all these discs to the values below"
 msgstr "To bo zagotovilo pravilno nastavitev vseh števil diskov in nato nastavilo avtorja in naslov knjige na vrednosti spodaj za vse skladbe na teh diskih"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:152
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:153
 msgid "Author:"
 msgstr "Avtor:"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:159
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:160
 msgid "Book Title:"
 msgstr "Naslov knjige:"
 
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:57
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:92
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:89
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastEpisodePage.cs:87
 msgid "Author"
 msgstr "Avtor"
@@ -4572,16 +4561,16 @@ msgstr "Začetnice avtorja"
 msgid "Book Title"
 msgstr "Naslov knjige"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:68
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:65
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HomeView.cs:307
 msgid "Audiobooks"
 msgstr "Zvočne knjige"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:75
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:72
 msgid "Search your audiobooks"
 msgstr "Iskanje po posnetkih zvočnih knjig"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:146
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:132
 #, csharp-format
 msgid "{0} book"
 msgid_plural "{0} books"
@@ -4590,7 +4579,7 @@ msgstr[1] "{0} knjiga"
 msgstr[2] "{0} knjigi"
 msgstr[3] "{0} knjige"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:150
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:136
 msgid "Audiobooks Folder"
 msgstr "Mapa zvočnih knjig"
 
@@ -6970,6 +6959,34 @@ msgstr "Povezava z Last.fm"
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:103
 msgid "Unknown Podcast"
 msgstr "Neznan podcast"
+
+#~ msgid "Write _metadata to files"
+#~ msgstr "Zapiši _metapodatke v datoteke"
+
+#~ msgid "Save tags and other metadata inside supported media files"
+#~ msgstr "Shrani oznake in druge metapodatke v podprte predstavne datoteke"
+
+#~ msgid "Write _ratings to files"
+#~ msgstr "Zapiši _ocene v datoteke"
+
+#~ msgid "Write play counts to files"
+#~ msgstr "Zapiši _število predvajanj v datoteke"
+
+#~ msgid "Write _ratings and play counts to files"
+#~ msgstr "Zapiši _ocene in števila predvajanj v datoteke"
+
+#~ msgid ""
+#~ "Enable this option to save rating and play count metadata inside "
+#~ "supported audio files whenever the rating is changed."
+#~ msgstr ""
+#~ "Ta možnost omogoča shranjevanje metapodatkov ocen in števila predvajanj v "
+#~ "podprte zvočne datoteke kadarkoli je ocena spremenjena."
+
+#~ msgid "Import _ratings"
+#~ msgstr "Uvozi _ocene"
+
+#~ msgid "Import play _counts"
+#~ msgstr "Uvozi _števila predvajanj"
 
 #~ msgid "Could not create 'decodebin2' plugin"
 #~ msgstr "Vstavka 'decodebin2' ni mogoče ustvariti"
