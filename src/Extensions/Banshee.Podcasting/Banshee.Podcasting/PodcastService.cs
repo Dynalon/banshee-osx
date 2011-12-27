@@ -263,8 +263,10 @@ namespace Banshee.Podcasting
                             ServiceManager.DbConnection.Execute (String.Format (
                                 "UPDATE {0} SET LocalPath = REPLACE(LocalPath, ?, ?) WHERE LocalPath IS NOT NULL",
                                 FeedEnclosure.Provider.TableName), old_path, new_path);
-                            ServiceManager.DbConnection.Execute (
-                                "UPDATE CoreTracks SET Uri = REPLACE(Uri, ?, ?) WHERE Uri LIKE 'file://%' AND PrimarySourceId = ?",
+                            ServiceManager.DbConnection.Execute (String.Format (
+                                    "UPDATE CoreTracks SET Uri = REPLACE ({0}, ?, ?)" +
+                                    "WHERE {0} LIKE 'file://%' AND PrimarySourceId = ?",
+                                    Banshee.Query.BansheeQuery.UriField.Column),
                                 old_uri.AbsoluteUri, new_uri.AbsoluteUri, source.DbId);
                             Hyena.Log.DebugFormat ("Moved Podcasts from {0} to {1}", old_path, new_path);
                         }

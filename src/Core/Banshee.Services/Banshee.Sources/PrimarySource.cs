@@ -97,10 +97,11 @@ namespace Banshee.Sources
                 FROM CoreTracks WHERE TrackID IN (SELECT {0});
             DELETE FROM CoreTracks WHERE TrackID IN (SELECT {0})";
 
-        protected HyenaSqliteCommand remove_list_command = new HyenaSqliteCommand (@"
-            INSERT INTO CoreRemovedTracks (DateRemovedStamp, TrackID, Uri) SELECT ?, TrackID, Uri FROM CoreTracks WHERE TrackID IN (SELECT ItemID FROM CoreCache WHERE ModelID = ?);
+        protected HyenaSqliteCommand remove_list_command = new HyenaSqliteCommand (String.Format (@"
+            INSERT INTO CoreRemovedTracks (DateRemovedStamp, TrackID, Uri)
+                SELECT ?, TrackID, {0} FROM CoreTracks WHERE TrackID IN (SELECT ItemID FROM CoreCache WHERE ModelID = ?);
             DELETE FROM CoreTracks WHERE TrackID IN (SELECT ItemID FROM CoreCache WHERE ModelID = ?)
-        ");
+        ", BansheeQuery.UriField.Column));
 
         protected HyenaSqliteCommand prune_artists_albums_command = new HyenaSqliteCommand (@"
             DELETE FROM CoreArtists WHERE ArtistID NOT IN (SELECT ArtistID FROM CoreTracks);

@@ -76,10 +76,10 @@ namespace Banshee.Bpm
             ));
 
             SelectCommand = new HyenaSqliteCommand (String.Format (@"
-                SELECT DISTINCT Uri, TrackID
+                SELECT DISTINCT {0}, TrackID
                 FROM CoreTracks
-                WHERE PrimarySourceID IN ({0}) AND (BPM = 0 OR BPM IS NULL) LIMIT 1",
-                music_library.DbId
+                WHERE PrimarySourceID IN ({1}) AND (BPM IS NULL OR BPM = 0) LIMIT 1",
+                Banshee.Query.BansheeQuery.UriField.Column, music_library.DbId
             ));
 
             Register ();

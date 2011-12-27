@@ -42,6 +42,7 @@ using Banshee.Collection;
 using Banshee.Collection.Database;
 using Banshee.Library;
 using Banshee.Metadata;
+using Banshee.Query;
 using Banshee.ServiceStack;
 using Banshee.Sources;
 using Banshee.Streaming;
@@ -203,7 +204,7 @@ namespace Banshee.LibraryWatcher
             using (var reader = ServiceManager.DbConnection.Query (
                 DatabaseTrackInfo.Provider.CreateFetchCommand (String.Format (
                 "CoreTracks.PrimarySourceID = ? AND {0} = ? LIMIT 1",
-                Banshee.Query.BansheeQuery.UriField.Column)),
+                BansheeQuery.UriField.Column)),
                 library.DbId, new SafeUri (track).AbsoluteUri)) {
                 if (reader.Read ()) {
                     var track_info = DatabaseTrackInfo.Provider.Load (reader);
@@ -226,17 +227,21 @@ namespace Banshee.LibraryWatcher
 
             // Trigger file rename.
             string uri = new SafeUri(track).AbsoluteUri;
-            HyenaSqliteCommand command = new HyenaSqliteCommand (@"
+            var command = new HyenaSqliteCommand (String.Format (@"
                 UPDATE CoreTracks
                 SET DateUpdatedStamp = LastSyncedStamp + 1
-                WHERE Uri = ?", uri);
+                WHERE {0} = ?",
+                BansheeQuery.UriField.Column), uri);
             ServiceManager.DbConnection.Execute (command);
         }
 
         private void RemoveTrack (string track)
         {
             string uri = new SafeUri(track).AbsoluteUri;
-            const string hash_sql = @"SELECT TrackID, MetadataHash FROM CoreTracks WHERE Uri = ? LIMIT 1";
+            const string hash_sql = String.Format (
+                @"SELECT TrackID, MetadataHash FROM CoreTracks WHERE {0} = ? LIMIT 1",
+                BansheeQuery.UriField.Column
+            );
             int track_id = 0;
             string hash = null;
             using (var reader = new HyenaDataReader (ServiceManager.DbConnection.Query (hash_sql, uri))) {
@@ -260,7 +265,8 @@ namespace Banshee.LibraryWatcher
 
             const string delete_sql = @"
                 INSERT INTO CoreRemovedTracks (DateRemovedStamp, TrackID, Uri)
-                SELECT ?, TrackID, Uri FROM CoreTracks WHERE TrackID IN ({0})
+                    SELECT ?, TrackID, " + BansheeQuery.UriField.Column + @"
+                    FROM CoreTracks WHERE TrackID IN ({0})
                 ;
                 DELETE FROM CoreTracks WHERE TrackID IN ({0})";
 
@@ -272,7 +278,9 @@ namespace Banshee.LibraryWatcher
             } else {
                 string pattern = StringUtil.EscapeLike (uri) + "/_%";
                 delete_command = new HyenaSqliteCommand (String.Format (delete_sql,
-                    @"SELECT TrackID FROM CoreTracks WHERE Uri LIKE ? ESCAPE '\'"), DateTime.Now, pattern, pattern);
+                    @"SELECT TrackID FROM CoreTracks
+                      WHERE " + BansheeQuery.UriField.Column + " LIKE ? ESCAPE '\'"),
+                    DateTime.Now, pattern, pattern);
             }
 
             ServiceManager.DbConnection.Execute (delete_command);
@@ -287,10 +295,12 @@ namespace Banshee.LibraryWatcher
             string old_uri = new SafeUri (oldFullPath).AbsoluteUri;
             string new_uri = new SafeUri (fullPath).AbsoluteUri;
             string pattern = StringUtil.EscapeLike (old_uri) + "%";
-            HyenaSqliteCommand rename_command = new HyenaSqliteCommand (@"
+            var rename_command = new HyenaSqliteCommand (String.Format (@"
                 UPDATE CoreTracks
-                SET Uri = REPLACE(Uri, ?, ?), DateUpdatedStamp = ?
-                WHERE Uri LIKE ? ESCAPE '\'",
+                SET Uri = REPLACE ({0}, ?, ?),
+                    DateUpdatedStamp = ?
+                WHERE {0} LIKE ? ESCAPE '\'",
+                BansheeQuery.UriField.Column),
                 old_uri, new_uri, DateTime.Now, pattern);
             ServiceManager.DbConnection.Execute (rename_command);
         }
