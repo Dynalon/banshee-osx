@@ -238,7 +238,7 @@ namespace Banshee.LibraryWatcher
         private void RemoveTrack (string track)
         {
             string uri = new SafeUri(track).AbsoluteUri;
-            const string hash_sql = String.Format (
+            string hash_sql = String.Format (
                 @"SELECT TrackID, MetadataHash FROM CoreTracks WHERE {0} = ? LIMIT 1",
                 BansheeQuery.UriField.Column
             );
@@ -263,7 +263,7 @@ namespace Banshee.LibraryWatcher
                 }
             }
 
-            const string delete_sql = @"
+            string delete_sql = @"
                 INSERT INTO CoreRemovedTracks (DateRemovedStamp, TrackID, Uri)
                     SELECT ?, TrackID, " + BansheeQuery.UriField.Column + @"
                     FROM CoreTracks WHERE TrackID IN ({0})
