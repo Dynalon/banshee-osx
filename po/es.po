@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: banshee.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-12-04 03:03+0000\n"
-"PO-Revision-Date: 2011-12-04 11:23+0100\n"
+"POT-Creation-Date: 2011-12-29 08:13+0000\n"
+"PO-Revision-Date: 2011-12-29 15:33+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -855,7 +855,6 @@ msgstr "Descargando {0}"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:144
 #, csharp-format
-#| msgid "{0} by {1} on {2}"
 msgid "{0} MB / {1} MB ({2} KB/s)"
 msgstr "{0} MB / {1} MB ({2} KB/s)"
 
@@ -928,8 +927,8 @@ msgstr "Opciones de control de reproducción"
 msgid ""
 "Play the next track, optionally restarting if the 'restart' value is set"
 msgstr ""
-"Reproduce la pista siguiente, reiniciando opcionalmente si el valor "
-"«restart» está establecido"
+"Reproduce la pista siguiente, reiniciando opcionalmente si el valor «restart» "
+"está establecido"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:165
 msgid ""
@@ -1495,7 +1494,7 @@ msgstr "El proceso de importación está ejecutándose. ¿Quiere pararlo?"
 msgid "Importing {0} of {1}"
 msgstr "Importando {0} de {1}"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection/RescanPipeline.cs:78
+#: ../src/Core/Banshee.Services/Banshee.Collection/RescanPipeline.cs:79
 #, csharp-format
 msgid "Rescanning {0} of {1}"
 msgstr "Reanalizando {0} de {1}"
@@ -1855,35 +1854,41 @@ msgid "Saving Metadata to File"
 msgstr "Guardando los metadatos en el archivo"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:49
-msgid "Write _metadata to files"
-msgstr "Escribir _metadatos en los archivos"
+msgid "Sync _metadata between library and files"
+msgstr "Sincronizar _metadatos entre la biblioteca y los archivos"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:50
-msgid "Save tags and other metadata inside supported media files"
+msgid ""
+"Enable this option to have metadata in sync between your library and "
+"supported media files"
 msgstr ""
-"Guardar etiquetas y otros metadatos dentro de los archivos multimedia "
-"soportados"
+"Active esta opción para mantener sincronizados los metadatos entre su "
+"biblioteca y los archivos multimedia soportados"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:55
-msgid "Write _ratings to files"
-msgstr "Escribir _valoración en los archivos"
+msgid "Sync _ratings between library and files"
+msgstr "Sincronizar _valoraciones entre la biblioteca y los archivos"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:56
-msgid "Enable this option to save rating metadata inside supported audio files"
+msgid ""
+"Enable this option to have rating metadata synced between your library and "
+"supported audio files"
 msgstr ""
-"Activar esta opción para guardar metadatos de valoración dentro de los "
-"archivos de sonido soportados"
+"Active esta opción para mantener sincronizados los metadatos de valoración "
+"entre su biblioteca y los archivos multimedia soportados"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:61
-msgid "Write play counts to files"
-msgstr "Escribir número de reproducciones en los archivos"
+msgid "Sync play counts between library and files"
+msgstr ""
+"Sincronizar el número de reproducciones entre la biblioteca y los archivos"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:62
 msgid ""
-"Enable this option to save playcount metadata inside supported audio files"
+"Enable this option to have playcount metadata synced between your library "
+"and supported audio files"
 msgstr ""
-"Activar esta opción para guardar metadatos de número de reproducciones "
-"dentro de los archivos de sonido soportados"
+"Active esta opción para mantener sincronizados los metadatos de número de "
+"reproducciones entre su biblioteca y los archivos multimedia soportados"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:67
 msgid "_Update file and folder names"
@@ -1892,27 +1897,6 @@ msgstr "Act_ualizar los nombres de los archivos y las carpetas"
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:68
 msgid "Rename files and folders according to media metadata"
 msgstr "Renombrar los archivos y carpetas conforme a los metadatos"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:184
-msgid "Write _ratings and play counts to files"
-msgstr "Escribir _valoraciones y número de reproducciones en los archivos"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:185
-msgid ""
-"Enable this option to save rating and play count metadata inside supported "
-"audio files whenever the rating is changed."
-msgstr ""
-"Activar esta opción para guardar los metadatos de valoraciones y número de "
-"reproducciones dentro de los archivos de sonido soportados cuando se cambie "
-"la valoración."
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:186
-msgid "Import _ratings"
-msgstr "Importar valo_raciones"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:187
-msgid "Import play _counts"
-msgstr "Importar número de reprodu_cciones"
 
 #: ../src/Core/Banshee.Services/Banshee.Networking/Network.cs:52
 msgid "There is no available network connection"
@@ -2659,37 +2643,37 @@ msgstr "Error"
 msgid "Details"
 msgstr "Detalles"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:152
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:155
 msgid "Errors"
 msgstr "Errores"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:205
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:208
 msgid "Sort Playlists By"
 msgstr "Ordenar listas de reproducción por"
 
 #. Translators: this is a noun, referring to the harddisk
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:214
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:217
 msgid "Drive"
 msgstr "Unidad"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:238
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:241
 msgid "File Organization"
 msgstr "Organización de los archivos"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:239
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:242
 msgid "Folder hie_rarchy"
 msgstr "Je_rarquía de carpetas"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:240
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:243
 msgid "File _name"
 msgstr "_Nombre del archivo"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:671
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:673
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "Añadiendo {0} de {1} a {2}"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:690
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:692
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "Eliminando {0} de {1} desde {2}"
@@ -2873,6 +2857,7 @@ msgid "Waiting for playback to begin..."
 msgstr "Esperando a que empiece la reproducción…"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.ContextPane/ContextPane.cs:150
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:152
 msgid "Loading..."
 msgstr "Cargando…"
 
@@ -4256,7 +4241,7 @@ msgstr "En reposo"
 msgid "Contacting..."
 msgstr "Contactando…"
 
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:161
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:162
 msgid "Buffering"
 msgstr "Buffering"
 
@@ -4553,7 +4538,6 @@ msgid "Error Initializing MTP Device Support"
 msgstr "Error inicializando el soporte de dispositivos MTP"
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:83
-#| msgid "There was an error intializing MTP device support."
 msgid "There was an error initializing MTP device support."
 msgstr "Hubo un error al inicializar el soporte de dispositivos MTP."
 
@@ -4659,6 +4643,10 @@ msgstr "Abrir libro"
 msgid "Merge Discs..."
 msgstr "Mezclar discos…"
 
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:57
+msgid "Go to Audiobooks"
+msgstr "Ir a Audiolibros"
+
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:61
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:65
 msgid "Resume"
@@ -4669,14 +4657,14 @@ msgstr "Reanudar"
 msgid "Resume playback of this audiobook"
 msgstr "Reanudar la reproducción de este audiolibro"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:138
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:139
 #, csharp-format
 msgid "Merge the {0} selected discs into one book?"
 msgid_plural "Merge the {0} selected discs into one book?"
 msgstr[0] "¿Mezclar los {0} discos seleccionados en un solo libro?"
 msgstr[1] "¿Mezclar los {0} discos seleccionados en un solo libro?"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:143
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:144
 msgid ""
 "This will ensure the disc numbers are all set properly, and then set the "
 "author and book title for all tracks on all these discs to the values below"
@@ -4685,16 +4673,16 @@ msgstr ""
 "luego establece el autor y el título del libro para todas las pistas en "
 "todos estos discos con los valores de abajo"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:152
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:153
 msgid "Author:"
 msgstr "Autor:"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:159
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:160
 msgid "Book Title:"
 msgstr "Título del libro:"
 
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:57
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:92
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:89
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastEpisodePage.cs:87
 msgid "Author"
 msgstr "Autor"
@@ -4708,23 +4696,23 @@ msgstr "Inicial del autor"
 msgid "Book Title"
 msgstr "Título del libro"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:68
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:65
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HomeView.cs:307
 msgid "Audiobooks"
 msgstr "Audiolibros"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:75
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:72
 msgid "Search your audiobooks"
 msgstr "Buscar en sus audiolibros"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:146
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:132
 #, csharp-format
 msgid "{0} book"
 msgid_plural "{0} books"
 msgstr[0] "{0} libro"
 msgstr[1] "{0} libros"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:150
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:136
 msgid "Audiobooks Folder"
 msgstr "Carpeta de audiolibros"
 
@@ -6349,7 +6337,6 @@ msgid "Go to Menu"
 msgstr "Ir al menú"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdService.cs:92
-#| msgid "Naviguate to menu"
 msgid "Navigate to menu"
 msgstr "Navegar al menú"
 
@@ -6416,9 +6403,8 @@ msgid ""
 "The iTunes library refers to your music directory as \"{0}\" but Banshee was "
 "not able to infer the location of this directory. Please locate it."
 msgstr ""
-"La colección de iTunes indica que su carpeta de música es «{0}», pero "
-"Banshee no ha podido deducir la ubicación de esta carpeta. Por favor, "
-"localícela."
+"La colección de iTunes indica que su carpeta de música es «{0}», pero Banshee "
+"no ha podido deducir la ubicación de esta carpeta. Por favor, localícela."
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:74
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:392
@@ -7181,6 +7167,37 @@ msgstr "Conectado a Last.fm"
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:103
 msgid "Unknown Podcast"
 msgstr "Podcast desconocido"
+
+#~ msgid "Write _metadata to files"
+#~ msgstr "Escribir _metadatos en los archivos"
+
+#~ msgid "Save tags and other metadata inside supported media files"
+#~ msgstr ""
+#~ "Guardar etiquetas y otros metadatos dentro de los archivos multimedia "
+#~ "soportados"
+
+#~ msgid "Write _ratings to files"
+#~ msgstr "Escribir _valoración en los archivos"
+
+#~ msgid "Write play counts to files"
+#~ msgstr "Escribir número de reproducciones en los archivos"
+
+#~ msgid "Write _ratings and play counts to files"
+#~ msgstr "Escribir _valoraciones y número de reproducciones en los archivos"
+
+#~ msgid ""
+#~ "Enable this option to save rating and play count metadata inside "
+#~ "supported audio files whenever the rating is changed."
+#~ msgstr ""
+#~ "Activar esta opción para guardar los metadatos de valoraciones y número "
+#~ "de reproducciones dentro de los archivos de sonido soportados cuando se "
+#~ "cambie la valoración."
+
+#~ msgid "Import _ratings"
+#~ msgstr "Importar valo_raciones"
+
+#~ msgid "Import play _counts"
+#~ msgstr "Importar número de reprodu_cciones"
 
 #~ msgid "Could not create 'decodebin2' plugin"
 #~ msgstr "No se pudo crear el complemento «decodebin2»"
