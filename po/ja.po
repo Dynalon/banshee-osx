@@ -5,7 +5,7 @@
 # Koike Kazuhiko <kazhik@mozilla.gr.jp>, 2005-2007.
 # Kentaro KAZUHAMA <kazken3@gmail.com>, 2010-2011.
 # Kiyotaka NISHIBORI <ml.nishibori.kiyotaka@gmail.com>, 2011.
-# Jiro Matsuzawa <matsuzawa.jr@gmail.com>, 2011.
+# Jiro Matsuzawa <jmatsuzawa@src.gnome.org>, 2011.
 # OKANO Takayoshi <kano@na.rim.or.jp>, 2010.
 # Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2010.
 # Hajime Taira <htaira@redhat.com>, 2011.
@@ -15,9 +15,9 @@ msgstr ""
 "Project-Id-Version: banshee master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-12-04 03:03+0000\n"
-"PO-Revision-Date: 2011-11-27 17:32+0900\n"
-"Last-Translator: Kentaro KAZUHAMA <kazken3@gmail.com>\n"
+"POT-Creation-Date: 2011-12-29 14:35+0000\n"
+"PO-Revision-Date: 2012-01-01 19:54+0900\n"
+"Last-Translator: Jiro Matsuzawa <jmatsuzawa@src.gnome.org>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -345,7 +345,7 @@ msgstr "Bansheeをサウンドメニューからコントロールします。"
 #. ../src/Extensions/Banshee.Torrent/Banshee.Torrent.addin.xml
 #: ../data/addin-xml-strings.cs:158
 msgid "Torrent Downloader"
-msgstr "Torrentダウンローダ"
+msgstr "Torrentダウンローダー"
 
 #: ../data/addin-xml-strings.cs:159
 msgid "Support downloading BitTorrent files from podcasts."
@@ -395,7 +395,7 @@ msgstr "3GPP"
 
 #: ../data/audio-profiles/aac-novell.xml.in.h:2
 msgid "AAC (Novell Encoder)"
-msgstr "AAC(Novellエンコーダ)"
+msgstr "AAC(Novellエンコーダー)"
 
 #: ../data/audio-profiles/aac-novell.xml.in.h:3
 #: ../data/audio-profiles/mp3-lame.xml.in.h:3
@@ -482,7 +482,7 @@ msgstr "エンコーディングモード"
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:6
 msgid "MP3 (LAME Encoder)"
-msgstr "MP3(LAMEエンコーダ)"
+msgstr "MP3(LAMEエンコーダー)"
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:7
 msgid "VBR Quality"
@@ -501,7 +501,7 @@ msgstr "最低"
 
 #: ../data/audio-profiles/mp3-xing.xml.in.h:3
 msgid "MP3 (Xing Encoder)"
-msgstr "MP3(Xingエンコーダ)"
+msgstr "MP3(Xingエンコーダー)"
 
 #: ../data/audio-profiles/vorbis.xml.in.h:1
 msgid "Audio quality"
@@ -660,7 +660,7 @@ msgstr "cdda URIからエレメント初期化できませんでした"
 
 #: ../libbanshee/banshee-ripper.c:290
 msgid "Could not create encoder pipeline"
-msgstr "エンコーダ用のパイプラインを生成できませんでした"
+msgstr "エンコーダー用のパイプラインを生成できませんでした"
 
 #: ../libbanshee/banshee-ripper.c:296
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:266
@@ -699,7 +699,7 @@ msgstr "エンコード用のパイプラインを生成できませんでした
 #: ../libbanshee/banshee-transcoder.c:282
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:85
 msgid "Could not get sink pad from encoder"
-msgstr "エンコーダからsink padを取得できませんでした"
+msgstr "エンコーダーからsink padを取得できませんでした"
 
 #: ../libbanshee/banshee-transcoder.c:345
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:269
@@ -729,16 +729,16 @@ msgstr "フルスクリーンのビデオ再生がアクティブです"
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/AudioCdRipper.cs:89
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:96
 msgid "Could not find an encoder for ripping."
-msgstr "リッピング用のエンコーダを見つけることができませんでした。"
+msgstr "リッピング用のエンコーダーを見つけることができませんでした。"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/AudioCdRipper.cs:108
 msgid "Could not create CD ripping driver."
-msgstr "CDリッピングドライバを生成できませんでした。"
+msgstr "CDリッピングドライバーを生成できませんでした。"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/BpmDetector.cs:71
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/BpmDetector.cs:107
 msgid "Could not create BPM detection driver."
-msgstr "BPM検出ドライバを生成できませんでした。"
+msgstr "BPM検出ドライバーを生成できませんでした。"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:149
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:191
@@ -777,12 +777,12 @@ msgstr ""
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/Transcoder.cs:63
 msgid "Could not create transcoder"
-msgstr "エンコーダを生成できませんでした"
+msgstr "エンコーダーを生成できませんでした"
 
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:259
 #, csharp-format
 msgid "Could not create encoder pipeline : {0}"
-msgstr "エンコーダ用のパイプラインを生成できませんでした : {0}"
+msgstr "エンコーダー用のパイプラインを生成できませんでした : {0}"
 
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:800
 msgid "GStreamer# 0.10"
@@ -1476,7 +1476,7 @@ msgstr "インポート処理が実行中です。停止しますか?"
 msgid "Importing {0} of {1}"
 msgstr "{1}曲中{0}曲目をインポートしています"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection/RescanPipeline.cs:78
+#: ../src/Core/Banshee.Services/Banshee.Collection/RescanPipeline.cs:79
 #, csharp-format
 msgid "Rescanning {0} of {1}"
 msgstr "{1}曲中{0}曲目を再スキャンしています"
@@ -1834,30 +1834,46 @@ msgid "Saving Metadata to File"
 msgstr "メタデータをファイルに保存中"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:49
-msgid "Write _metadata to files"
-msgstr "メタデータをファイルに書き込む(_M)"
+msgid "Sync _metadata between library and files"
+msgstr ""
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:50
-msgid "Save tags and other metadata inside supported media files"
-msgstr "タグや他のメタデータをサポートしているメディアファイル内に保存します"
+#, fuzzy
+#| msgid ""
+#| "Enable this option to save rating metadata inside supported audio files"
+msgid ""
+"Enable this option to have metadata in sync between your library and "
+"supported media files"
+msgstr ""
+"評価をメタデータでサポートしているオーディオファイルに保存するにはこのオプ"
+"ションを有効にします"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:55
-msgid "Write _ratings to files"
-msgstr "ファイルに評価を書き込む(_R)"
+msgid "Sync _ratings between library and files"
+msgstr ""
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:56
-msgid "Enable this option to save rating metadata inside supported audio files"
+#, fuzzy
+#| msgid ""
+#| "Enable this option to save rating metadata inside supported audio files"
+msgid ""
+"Enable this option to have rating metadata synced between your library and "
+"supported audio files"
 msgstr ""
 "評価をメタデータでサポートしているオーディオファイルに保存するにはこのオプ"
 "ションを有効にします"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:61
-msgid "Write play counts to files"
-msgstr "再生数をファイルに書き込む"
+msgid "Sync play counts between library and files"
+msgstr ""
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:62
+#, fuzzy
+#| msgid ""
+#| "Enable this option to save playcount metadata inside supported audio files"
 msgid ""
-"Enable this option to save playcount metadata inside supported audio files"
+"Enable this option to have playcount metadata synced between your library "
+"and supported audio files"
 msgstr ""
 "再生数をメタデータでサポートしているオーディオファイルに保存するにはこのオプ"
 "ションを有効にします"
@@ -1869,26 +1885,6 @@ msgstr "ファイルとフォルダー名をアップデートする(_U)"
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:68
 msgid "Rename files and folders according to media metadata"
 msgstr "メディアのメタデータに従いファイルとフォルダー名を変更します"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:184
-msgid "Write _ratings and play counts to files"
-msgstr "評価と再生数をファイルに書き込む(_R)"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:185
-msgid ""
-"Enable this option to save rating and play count metadata inside supported "
-"audio files whenever the rating is changed."
-msgstr ""
-"評価が変更されたらいつでも、サポートされた音楽ファイルの内部にあるメタデータ"
-"に評価と再生数を保存するにはこのオプションを有効にします。"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:186
-msgid "Import _ratings"
-msgstr "評価のインポート(_R)"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:187
-msgid "Import play _counts"
-msgstr "再生数のインポート(_C)"
 
 #: ../src/Core/Banshee.Services/Banshee.Networking/Network.cs:52
 msgid "There is no available network connection"
@@ -2629,37 +2625,37 @@ msgstr "エラー"
 msgid "Details"
 msgstr "詳細情報"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:152
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:155
 msgid "Errors"
 msgstr "エラー"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:205
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:208
 msgid "Sort Playlists By"
 msgstr "プレイリストをソート"
 
 #. Translators: this is a noun, referring to the harddisk
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:214
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:217
 msgid "Drive"
 msgstr "ドライブ"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:238
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:241
 msgid "File Organization"
 msgstr "ファイル構成"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:239
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:242
 msgid "Folder hie_rarchy"
 msgstr "フォルダー階層(_R)"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:240
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:243
 msgid "File _name"
 msgstr "ファイル名(_N)"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:671
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:673
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "{2}に{1}の{0}を追加しています"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:690
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:692
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "{2}から{1}の{0}を削除しています"
@@ -2758,7 +2754,7 @@ msgid ""
 "header until the sort arrow goes away."
 msgstr ""
 "プレイリストを手動のソートモードにするには、ソートの矢印が消えるまで現在の"
-"ソート済み列のヘッダをクリックします。"
+"ソート済み列のヘッダーをクリックします。"
 
 #. Translators: this is {disc number} of {disc count}
 #. Translators: this is {track number} of {track count}
@@ -2839,6 +2835,7 @@ msgid "Waiting for playback to begin..."
 msgstr "再生開始を待っています..."
 
 #: ../src/Core/Banshee.ThickClient/Banshee.ContextPane/ContextPane.cs:150
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:152
 msgid "Loading..."
 msgstr "ロード中..."
 
@@ -4212,7 +4209,7 @@ msgstr "待機中"
 msgid "Contacting..."
 msgstr "接続中です..."
 
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:161
+#: ../src/Core/Banshee.Widgets/Banshee.Widgets/StreamPositionLabel.cs:162
 msgid "Buffering"
 msgstr "バッファリング"
 
@@ -4610,6 +4607,12 @@ msgstr "Bookを開く"
 msgid "Merge Discs..."
 msgstr "ディスクをマージ..."
 
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:57
+#, fuzzy
+#| msgid "Audiobooks"
+msgid "Go to Audiobooks"
+msgstr "オーディオブック"
+
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:61
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:65
 msgid "Resume"
@@ -4620,13 +4623,13 @@ msgstr "再開"
 msgid "Resume playback of this audiobook"
 msgstr "このオーディオブックを再開する"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:138
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:139
 #, csharp-format
 msgid "Merge the {0} selected discs into one book?"
 msgid_plural "Merge the {0} selected discs into one book?"
 msgstr[0] "選択した {0} のディスクを1つのブックにまとめますか?"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:143
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:144
 msgid ""
 "This will ensure the disc numbers are all set properly, and then set the "
 "author and book title for all tracks on all these discs to the values below"
@@ -4635,16 +4638,16 @@ msgstr ""
 "らすべてのディスク上にある、すべてのトラックの作者とブックタイトルを設定しま"
 "す"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:152
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:153
 msgid "Author:"
 msgstr "作者:"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:159
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:160
 msgid "Book Title:"
 msgstr "ブックタイトル:"
 
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:57
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:92
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:89
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastEpisodePage.cs:87
 msgid "Author"
 msgstr "作者"
@@ -4658,22 +4661,22 @@ msgstr "作者の頭文字"
 msgid "Book Title"
 msgstr "ブックタイトル"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:68
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:65
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HomeView.cs:307
 msgid "Audiobooks"
 msgstr "オーディオブック"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:75
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:72
 msgid "Search your audiobooks"
 msgstr "あなたのオーディオブックを検索"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:146
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:132
 #, csharp-format
 msgid "{0} book"
 msgid_plural "{0} books"
 msgstr[0] "{0} 個のブック"
 
-#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:150
+#: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookLibrarySource.cs:136
 msgid "Audiobooks Folder"
 msgstr "オーディオブックフォルダー"
 
@@ -4818,11 +4821,11 @@ msgstr "{0}に接続中"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:187
 msgid "Add Remote DAAP Server"
-msgstr "リモートのDAAPサーバを追加"
+msgstr "リモートのDAAPサーバーを追加"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:188
 msgid "Add a new remote DAAP server"
-msgstr "新しいリモートのDAAPサーバを追加"
+msgstr "新しいリモートのDAAPサーバーを追加"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapSource.cs:60
 msgid "Music Share"
@@ -4845,11 +4848,11 @@ msgstr "プレイリストをロード"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/OpenRemoteServer.cs:46
 msgid "Open remote DAAP server"
-msgstr "リモートのDAAPサーバを開く"
+msgstr "リモートのDAAPサーバーを開く"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/OpenRemoteServer.cs:51
 msgid "Enter server IP address and port:"
-msgstr "サーバのIPアドレスとポートを入力:"
+msgstr "サーバーのIPアドレスとポートを入力:"
 
 #: ../src/Extensions/Banshee.Emusic/Banshee.Emusic/DownloadManager/DownloadUserJob.cs:46
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/SearchView.cs:133
@@ -7023,7 +7026,7 @@ msgstr "このステーションは利用できません。"
 
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:279
 msgid "The request is missing a required parameter."
-msgstr "このリクエストは必要なパラメータが足りません。"
+msgstr "このリクエストは必要なパラメーターが足りません。"
 
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:281
 msgid "The specified resource is invalid."
@@ -7031,7 +7034,7 @@ msgstr "指定したリソースが無効です。"
 
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:283
 msgid "Server error, please try again later."
-msgstr "サーバエラーです。しばらくしてから再実行してください。"
+msgstr "サーバーエラーです。しばらくしてから再実行してください。"
 
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:285
 msgid "Invalid authentication information, please re-authenticate."
@@ -7101,6 +7104,35 @@ msgstr "Last.fmへ接続しました。"
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:103
 msgid "Unknown Podcast"
 msgstr "不明なポッドキャスト"
+
+#~ msgid "Write _metadata to files"
+#~ msgstr "メタデータをファイルに書き込む(_M)"
+
+#~ msgid "Save tags and other metadata inside supported media files"
+#~ msgstr ""
+#~ "タグや他のメタデータをサポートしているメディアファイル内に保存します"
+
+#~ msgid "Write _ratings to files"
+#~ msgstr "ファイルに評価を書き込む(_R)"
+
+#~ msgid "Write play counts to files"
+#~ msgstr "再生数をファイルに書き込む"
+
+#~ msgid "Write _ratings and play counts to files"
+#~ msgstr "評価と再生数をファイルに書き込む(_R)"
+
+#~ msgid ""
+#~ "Enable this option to save rating and play count metadata inside "
+#~ "supported audio files whenever the rating is changed."
+#~ msgstr ""
+#~ "評価が変更されたらいつでも、サポートされた音楽ファイルの内部にあるメタデー"
+#~ "タに評価と再生数を保存するにはこのオプションを有効にします。"
+
+#~ msgid "Import _ratings"
+#~ msgstr "評価のインポート(_R)"
+
+#~ msgid "Import play _counts"
+#~ msgstr "再生数のインポート(_C)"
 
 #~ msgid "Could not create 'decodebin2' plugin"
 #~ msgstr " 'decodebin2'プラグインを生成できませんでした"
