@@ -277,9 +277,9 @@ namespace Banshee.LibraryWatcher
                     "?"), DateTime.Now, track_id, track_id);
             } else {
                 string pattern = StringUtil.EscapeLike (uri) + "/_%";
-                delete_command = new HyenaSqliteCommand (String.Format (delete_sql,
-                    @"SELECT TrackID FROM CoreTracks
-                      WHERE " + BansheeQuery.UriField.Column + " LIKE ? ESCAPE '\'"),
+                string select_sql = String.Format (@"SELECT TrackID FROM CoreTracks WHERE {0} LIKE ? ESCAPE '\'",
+                                                   BansheeQuery.UriField.Column);
+                delete_command = new HyenaSqliteCommand (String.Format (delete_sql, select_sql),
                     DateTime.Now, pattern, pattern);
             }
 
