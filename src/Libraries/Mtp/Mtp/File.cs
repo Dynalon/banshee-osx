@@ -67,9 +67,8 @@ namespace Mtp
 	{
 		public int item_id;
 		public int parent_id;
-#ifdef LIBMTP8
 		public int storage_id;
-#endif
+
 		[MarshalAs(UnmanagedType.LPStr)]public string filename;
 		public long filesize;
 		public FileType filetype;
