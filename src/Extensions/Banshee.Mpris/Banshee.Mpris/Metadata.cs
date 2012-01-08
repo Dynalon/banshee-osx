@@ -79,6 +79,11 @@ namespace Banshee.Mpris
                 SetInfo ("xesam:contentCreated", track.ReleaseDate.ToString ("s"));
             }
 
+            if (track.Rating > 0) {
+                // Scale is 0.0 to 1.0
+                SetInfo ("xesam:userRating", (double)track.Rating / 5);
+            }
+
             string artid = track.ArtworkId;
             if (artid != null) {
                 SetInfo ("mpris:artUrl", String.Concat ("file://", CoverArtSpec.GetPath (artid)));
