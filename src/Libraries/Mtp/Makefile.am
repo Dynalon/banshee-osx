@@ -17,6 +17,7 @@ SOURCES =  \
 	Mtp/Album.cs \
 	Mtp/Error.cs \
 	Mtp/ErrorCode.cs \
+	Mtp/File.cs \
 	Mtp/FileSampleData.cs \
 	Mtp/FileType.cs \
 	Mtp/Folder.cs \
