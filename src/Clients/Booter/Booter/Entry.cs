@@ -79,7 +79,7 @@ namespace Booter
                 return;
             }
 
-            if (DBusConnection.ApplicationInstanceAlreadyRunning) {
+            if (!DBusConnection.GrabDefaultName ()) {
                 // DBus Command/Query/File Proxy Client
                 BootClient ("Halie");
                 NotifyStartupComplete ();
