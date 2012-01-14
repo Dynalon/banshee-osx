@@ -56,22 +56,25 @@ namespace Banshee.UPnPClient
         {
             Properties.SetStringList ("Icon.Name", "computer", "network-server");
             TypeUniqueId = "upnp-container";
-            expanded_schema = new SchemaEntry<bool> ("plugins.upnp." + device.Udn, "expanded", true, "UPnP Share expanded", "UPnP Share expanded" );
+            expanded_schema = new SchemaEntry<bool> ("plugins.upnp." + device.Udn, "expanded", true,
+                                                     "UPnP Share expanded", "UPnP Share expanded" );
             udn = device.Udn;
 
-            ContentDirectoryController contentDirectory = null;
+            ContentDirectoryController content_directory = null;
 
             foreach (Service service in device.Services) {
-                Hyena.Log.Debug ("UPnPService \"" + device.FriendlyName + "\" Implements " + service.Type);
-                if (service.Type.Type == "ContentDirectory")
-                    contentDirectory = new ContentDirectoryController (service.GetController());
+                Log.Debug ("UPnPService \"" + device.FriendlyName + "\" Implements " + service.Type);
+                if (service.Type.Type == "ContentDirectory") {
+                    content_directory = new ContentDirectoryController (service.GetController());
+                }
             }
 
-            if (contentDirectory == null)
-                throw new ArgumentNullException("contentDirectory");
+            if (content_directory == null) {
+                throw new ArgumentNullException("content_directory");
+            }
 
             ThreadAssist.Spawn (delegate {
-                Parse (device, contentDirectory);
+                Parse (device, content_directory);
             });
             
         }
@@ -90,16 +93,18 @@ namespace Banshee.UPnPClient
         }
 
         delegate void ChunkHandler<T> (Results<T> results);
-        void HandleResults<T> (Results<T> results, RemoteContentDirectory remoteContentDirectory, ChunkHandler<T> chunkHandler)
+
+        void HandleResults<T> (Results<T> results, RemoteContentDirectory remote_dir, ChunkHandler<T> chunkHandler)
         {
-            bool hasresults = results.Count > 0;
+            bool has_results = results.Count > 0;
 
-            while (hasresults) {
-                chunkHandler(results);
+            while (has_results) {
+                chunkHandler (results);
 
-                hasresults = results.HasMoreResults;
-                if (hasresults)
-                    results = results.GetMoreResults(remoteContentDirectory);
+                has_results = results.HasMoreResults;
+                if (has_results) {
+                    results = results.GetMoreResults (remote_dir);
+                }
             }
         }
 
@@ -107,145 +112,152 @@ namespace Banshee.UPnPClient
         {
             List<string[]> core = new List<string[]>();
             if (device.ModelName == "MediaTomb" && device.ModelNumber == "0.12.1") {
-                core.Add(new string[2] { "Audio", "Albums" });
-                core.Add(new string[2] { "Video", "All Video" });
+                core.Add (new string[2] { "Audio", "Albums" });
+                core.Add (new string[2] { "Video", "All Video" });
             } else if (device.ModelName == "Coherence UPnP A/V MediaServer" && device.ModelNumber == "0.6.6.2") {
-                core.Add(new string[1] { "Albums" });
+                core.Add (new string[1] { "Albums" });
             } else {
-              core.Add(new string[0]);
+              core.Add (new string[0]);
             }
 
             return core;
         }
 
-        void Parse (Device device, ContentDirectoryController contentDirectory)
+        void Parse (Device device, ContentDirectoryController content_directory)
         {
-            RemoteContentDirectory remoteContentDirectory = new RemoteContentDirectory (contentDirectory);
+            RemoteContentDirectory remote_dir = new RemoteContentDirectory (content_directory);
             DateTime begin = DateTime.Now;
-            Container root = remoteContentDirectory.GetRootObject();
-            bool recursiveBrowse = !contentDirectory.CanSearch;
+            Container root = remote_dir.GetRootObject ();
+            bool recursive_browse = !content_directory.CanSearch;
 
             try {
-                if (!recursiveBrowse) {
+                if (!recursive_browse) {
                     try {
-                        Hyena.Log.Debug ("Searchable, lets search");
+                        Log.Debug ("Content directory is searchable, let's search");
 
-                        HandleResults<MusicTrack> (remoteContentDirectory.Search<MusicTrack>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.audioItem.musicTrack"), new ResultsSettings()),
-                                                   remoteContentDirectory,
+                        HandleResults<MusicTrack> (remote_dir.Search<MusicTrack>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.audioItem.musicTrack"), new ResultsSettings()),
+                                                   remote_dir,
                                                    chunk => {
-                                                                List<MusicTrack> musicTracks = new List<MusicTrack>();
-                                                                foreach (var item in chunk)
-                                                                    musicTracks.Add(item as MusicTrack);
+                                                                List<MusicTrack> music_tracks = new List<MusicTrack>();
+                                                                foreach (var item in chunk) {
+                                                                    music_tracks.Add (item as MusicTrack);
+                                                                }
 
-                                                                AddMusic (musicTracks);
+                                                                AddMusic (music_tracks);
                                                             });
 
-                        HandleResults<VideoItem>  (remoteContentDirectory.Search<VideoItem>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.videoItem"), new ResultsSettings()),
-                                                   remoteContentDirectory,
+                        HandleResults<VideoItem>  (remote_dir.Search<VideoItem>(root, visitor => visitor.VisitDerivedFrom("upnp:class", "object.item.videoItem"), new ResultsSettings()),
+                                                   remote_dir,
                                                    chunk => {
-                                                                List<VideoItem> videoTracks = new List<VideoItem>();
-                                                                foreach (var item in chunk)
-                                                                    videoTracks.Add(item as VideoItem);
+                                                                List<VideoItem> video_tracks = new List<VideoItem>();
+                                                                foreach (var item in chunk) {
+                                                                    video_tracks.Add (item as VideoItem);
+                                                                }
 
-                                                                AddVideo (videoTracks);
+                                                                AddVideo (video_tracks);
                                                             });
                     } catch (System.InvalidCastException exception) {
-                        Hyena.Log.Exception (exception);
-                        recursiveBrowse = true;
+                        Log.Exception (exception);
+                        recursive_browse = true;
                     }
                 }
 
-                if (recursiveBrowse) {
-                    Hyena.Log.Debug ("Not searchable, lets recursive browse");
-                    List<MusicTrack> musicTracks = new List<MusicTrack>();
-                    List<VideoItem> videoTracks = new List<VideoItem>();
+                if (recursive_browse) {
+                    Log.Debug ("Content directory is not searchable, let's browse recursively");
+                    List<MusicTrack> music_tracks = new List<MusicTrack> ();
+                    List<VideoItem> video_tracks = new List<VideoItem> ();
 
-                    foreach (var hierarchy in FindBrowseQuirks(device)) {
-                        TraverseContainer(remoteContentDirectory, root, hierarchy, 0, musicTracks, videoTracks);
+                    foreach (var hierarchy in FindBrowseQuirks (device)) {
+                        TraverseContainer (remote_dir, root, hierarchy, 0, music_tracks, video_tracks);
                     }
 
-                    if (musicTracks.Count > 0)
-                        music_source.AddTracks (musicTracks);
-                    if (videoTracks.Count > 0)
-                        video_source.AddTracks (videoTracks);
+                    if (music_tracks.Count > 0) {
+                        AddMusic (music_tracks);
+                    }
+                    if (video_tracks.Count > 0) {
+                        AddVideo (video_tracks);
+                    }
                 }
             } catch (Exception exception) {
-                Hyena.Log.Exception (exception);
+                Log.Exception (exception);
             }
 
-            Hyena.Log.Debug ("Found all items on the service, took " + (DateTime.Now - begin).ToString());
+            Log.Debug ("Found all items on the service, took " + (DateTime.Now - begin).ToString());
         }
 
-        void TraverseContainer (RemoteContentDirectory remoteContentDirectory, Container container, string[] hierarchy, int position, List<MusicTrack> musicTracks, List<VideoItem> videoTracks)
+        void TraverseContainer (RemoteContentDirectory remote_dir, Container container, string[] hierarchy, int position, List<MusicTrack> music_tracks, List<VideoItem> video_tracks)
         {
             if (hierarchy != null && hierarchy.Length > position) {
                 HandleResults<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object> (
-                                           remoteContentDirectory.GetChildren<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object>(container),
-                                           remoteContentDirectory,
-                                           chunk => {
-                                                        foreach (var upnp_object in chunk) {
-                                                            if (upnp_object is Container && upnp_object.Title == hierarchy[position]) {
-                                                                TraverseContainer (remoteContentDirectory, upnp_object as Container, hierarchy, position + 1, musicTracks, videoTracks);
-                                                            }
-                                                        }
-                                                    });
+                    remote_dir.GetChildren<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object> (container),
+                    remote_dir,
+                    chunk => {
+                        foreach (var upnp_object in chunk) {
+                            if (upnp_object is Container && upnp_object.Title == hierarchy[position]) {
+                                TraverseContainer (remote_dir, upnp_object as Container, hierarchy, position + 1, music_tracks, video_tracks);
+                            }
+                        }
+                    });
             } else {
-                ParseContainer (remoteContentDirectory, container, 0, musicTracks, videoTracks);
+                ParseContainer (remote_dir, container, 0, music_tracks, video_tracks);
             }
         }
 
-        void ParseContainer (RemoteContentDirectory remoteContentDirectory, Container container, int depth, List<MusicTrack> musicTracks, List<VideoItem> videoTracks)
+        void ParseContainer (RemoteContentDirectory remote_dir, Container container, int depth, List<MusicTrack> music_tracks, List<VideoItem> video_tracks)
         {
-            if (depth > 10 || (container.ChildCount != null && container.ChildCount == 0))
+            if (depth > 10 || (container.ChildCount != null && container.ChildCount == 0)) {
                 return;
+            }
 
             HandleResults<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object> (
-                                       remoteContentDirectory.GetChildren<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object>(container),
-                                       remoteContentDirectory,
-                                       chunk => {
-                                                    foreach (var upnp_object in chunk) {
-                                                        if (upnp_object is Item) {
-                                                            Item item = upnp_object as Item;
+                remote_dir.GetChildren<Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.Object> (container),
+                remote_dir,
+                chunk => {
+                    foreach (var upnp_object in chunk) {
+                        if (upnp_object is Item) {
+                            Item item = upnp_object as Item;
 
-                                                            if (item.IsReference || item.Resources.Count == 0)
-                                                                continue;
+                            if (item.IsReference || item.Resources.Count == 0) {
+                                continue;
+                            }
 
-                                                            if (item is MusicTrack) {
-                                                                musicTracks.Add(item as MusicTrack);
-                                                            } else if (item is VideoItem) {
-                                                                videoTracks.Add(item as VideoItem);
-                                                            }
-                                                        }
-                                                        else if (upnp_object is Container) {
-                                                            ParseContainer (remoteContentDirectory, upnp_object as Container, depth + 1, musicTracks, videoTracks);
-                                                        }
+                            if (item is MusicTrack) {
+                                music_tracks.Add (item as MusicTrack);
+                            } else if (item is VideoItem) {
+                                video_tracks.Add (item as VideoItem);
+                            }
+                        } else if (upnp_object is Container) {
+                            ParseContainer (remote_dir, upnp_object as Container, depth + 1, music_tracks, video_tracks);
+                        }
 
-                                                        if (musicTracks.Count > 500) {
-                                                            AddMusic (musicTracks);
-                                                            musicTracks.Clear();
-                                                        }
-                                                        if (videoTracks.Count > 100) {
-                                                            AddVideo (videoTracks);
-                                                            videoTracks.Clear();
-                                                        }
-                                                    }
-                                                });
+                        if (music_tracks.Count > 500) {
+                            AddMusic (music_tracks);
+                            music_tracks.Clear ();
+                        }
+                        if (video_tracks.Count > 100) {
+                            AddVideo (video_tracks);
+                            video_tracks.Clear ();
+                        }
+                    }
+                });
         }
 
         public void Disconnect ()
         {
-            if (music_source != null)
+            if (music_source != null) {
                 music_source.Disconnect ();
+            }
 
-            if (video_source != null)
+            if (video_source != null) {
                 video_source.Disconnect ();
+            }
         }
 
         private void AddMusic (List<MusicTrack> tracks)
         {
             if (music_source == null) {
-              music_source = new UPnPMusicSource(udn);
-              AddChildSource (music_source);
+                music_source = new UPnPMusicSource (udn);
+                AddChildSource (music_source);
             }
 
             music_source.AddTracks (tracks);
@@ -254,8 +266,8 @@ namespace Banshee.UPnPClient
         private void AddVideo (List<VideoItem> tracks)
         {
             if (video_source == null) {
-              video_source = new UPnPVideoSource(udn);
-              AddChildSource (video_source);
+                video_source = new UPnPVideoSource (udn);
+                AddChildSource (video_source);
             }
 
             video_source.AddTracks (tracks);

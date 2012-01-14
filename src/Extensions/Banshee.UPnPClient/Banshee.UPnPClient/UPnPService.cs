@@ -32,8 +32,8 @@ using System.Collections.Generic;
 using Mono.Addins;
 
 using Mono.Upnp;
-using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1;
-using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.AV;
+
+using Hyena;
 
 using Banshee.Base;
 using Banshee.Sources.Gui;
@@ -51,35 +51,36 @@ namespace Banshee.UPnPClient
 
         void IExtensionService.Initialize ()
         {
-            container = new UPnPContainerSource();
-            ServiceManager.SourceManager.AddSource(container);
+            container = new UPnPContainerSource ();
+            ServiceManager.SourceManager.AddSource (container);
 
             client = new Mono.Upnp.Client ();
             client.DeviceAdded += DeviceAdded;
 
-            client.BrowseAll();
+            client.BrowseAll ();
         }
     
         public void Dispose ()
         {
             if (container != null)
             {
-                foreach (UPnPServerSource source in container.Children)
-                    source.Disconnect();
+                foreach (UPnPServerSource source in container.Children) {
+                    source.Disconnect ();
+                }
 
-                ServiceManager.SourceManager.RemoveSource(container);
+                ServiceManager.SourceManager.RemoveSource (container);
                 container = null;
             }
         }
 
         void DeviceAdded (object sender, DeviceEventArgs e)
         {
-            Hyena.Log.Debug ("UPnPService.DeviceFound (" + e.Device.ToString() + ") (" + e.Device.Type + ")");
-            Device device = e.Device.GetDevice();
+            Log.DebugFormat ("UPnPService.DeviceFound {0} ({1})",e.Device.ToString (), e.Device.Type);
+            Device device = e.Device.GetDevice ();
 
             if (device.Type.Type == "MediaServer") {
-                Hyena.Log.Debug ("UPnPService MediaServer Found");
-                UPnPServerSource source = new UPnPServerSource(device);
+                Log.DebugFormat ("UPnPService MediaServer Found: {0} {1}", device.ModelName, device.ModelNumber);
+                UPnPServerSource source = new UPnPServerSource (device);
                 container.AddChildSource (source);
             }
         }
@@ -87,5 +88,5 @@ namespace Banshee.UPnPClient
         string IService.ServiceName {
             get { return "uPnP Client service"; }
         }
-  }
+    }
 }

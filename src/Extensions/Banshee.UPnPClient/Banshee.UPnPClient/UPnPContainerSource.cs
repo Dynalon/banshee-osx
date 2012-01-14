@@ -63,7 +63,7 @@ namespace Banshee.UPnPClient
         }
 
         public static readonly SchemaEntry<bool> ExpandedSchema = new SchemaEntry<bool> (
-            "plugins.upnp", "expanded", true, "Shared Music expanded", "Shared Music expanded"
+            "plugins.upnp", "expanded", true, "Shared Media expanded", "Shared Media expanded"
         );
     }
 }

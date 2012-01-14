@@ -76,10 +76,11 @@ namespace Banshee.UPnPClient
                 </column-controller>
             ", Catalog.GetString ("Produced By")));
 
-            video_tracks = new Dictionary<string, UPnPTrackInfo>();
+            video_tracks = new Dictionary<string, UPnPTrackInfo> ();
 
-            // Remove tracks previously associated with this source, we do this to be sure they are non-existant before we refresh.
-            PurgeTracks();
+            // Remove tracks previously associated with this source
+            // we do this to be sure they are non-existant before we refresh.
+            PurgeTracks ();
             AfterInitialized ();
             OnTracksRemoved ();
         }
@@ -108,7 +109,7 @@ namespace Banshee.UPnPClient
             } catch {}
 
             // Remove tracks associated with this source, we will refetch them on next connect
-            PurgeTracks();
+            PurgeTracks ();
         }
 
         public override bool ShowBrowser {
@@ -119,16 +120,16 @@ namespace Banshee.UPnPClient
             get { return false; }
         }
 
-        public override bool CanDeleteTracks
-        {
+        public override bool CanDeleteTracks {
             get { return false; }
         }
 
         public void AddTracks (List<VideoItem> tracks)
         {
             foreach (var track in tracks) {
-                if (video_tracks.ContainsKey(track.Id))
+                if (video_tracks.ContainsKey(track.Id)) {
                     continue;
+                }
 
                 UPnPTrackInfo track_info = new UPnPTrackInfo (track, this);
                 track_info.Save (false);

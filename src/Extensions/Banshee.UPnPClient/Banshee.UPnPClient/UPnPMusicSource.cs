@@ -59,10 +59,11 @@ namespace Banshee.UPnPClient
             Properties.SetStringList ("Icon.Name", "audio-x-generic", "source-library");
             Properties.Set<string> ("SearchEntryDescription", Catalog.GetString ("Search your music"));
 
-            music_tracks = new Dictionary<string, UPnPTrackInfo>();
+            music_tracks = new Dictionary<string, UPnPTrackInfo> ();
 
-            // Remove tracks previously associated with this source, we do this to be sure they are non-existant before we refresh.
-            PurgeTracks();
+            // Remove tracks previously associated with this source
+            // we do this to be sure they are non-existant before we refresh.
+            PurgeTracks ();
             AfterInitialized ();
             OnTracksRemoved ();
         }
@@ -91,19 +92,19 @@ namespace Banshee.UPnPClient
             } catch {}
 
             // Remove tracks associated with this source, we will refetch them on next connect
-            PurgeTracks();
+            PurgeTracks ();
         }
 
-        public override bool CanDeleteTracks
-        {
+        public override bool CanDeleteTracks {
             get { return false; }
         }
 
         public void AddTracks (List<MusicTrack> tracks)
         {
             foreach (var track in tracks) {
-                if (music_tracks.ContainsKey(track.Id))
+                if (music_tracks.ContainsKey(track.Id)) {
                     continue;
+                }
 
                 UPnPTrackInfo track_info = new UPnPTrackInfo (track, this);
                 track_info.Save (false);

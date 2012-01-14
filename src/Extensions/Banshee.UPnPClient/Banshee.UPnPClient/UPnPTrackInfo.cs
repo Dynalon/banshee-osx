@@ -50,7 +50,7 @@ namespace Banshee.UPnPClient
             ArtistName = track.Artists.Count > 0 ? track.Artists[0].Name : "";
             AlbumTitle = track.Albums.Count > 0 ? track.Albums[0] : "";
             
-            TrackNumber = track.OriginalTrackNumber.GetValueOrDefault();
+            TrackNumber = track.OriginalTrackNumber.GetValueOrDefault ();
 
             Genre = track.Genres.Count > 0 ? track.Genres[0] : "";
         }
@@ -62,30 +62,31 @@ namespace Banshee.UPnPClient
             Genre = track.Genres.Count > 0 ? track.Genres[0] : "";
         }
 
-        public UPnPTrackInfo (Item track, PrimarySource source) : base()
+        public UPnPTrackInfo (Item track, PrimarySource source) : base ()
         {
-            if (track == null)
-              throw new ArgumentNullException("track");
+            if (track == null) {
+              throw new ArgumentNullException ("track");
+            }
 
-            if (source == null)
-              throw new ArgumentNullException("source");
+            if (source == null) {
+              throw new ArgumentNullException ("source");
+            }
 
             TrackTitle = track.Title;
 
-            Resource resource = FindSuitableResource(track.Resources);
+            Resource resource = FindSuitableResource (track.Resources);
 
-            if (resource != null)
-            {
-                BitRate = (int)resource.BitRate.GetValueOrDefault();
-                BitsPerSample = (int)resource.BitsPerSample.GetValueOrDefault();
-                Duration = resource.Duration.GetValueOrDefault();
-                SampleRate = (int)resource.SampleFrequency.GetValueOrDefault();
-                FileSize = (int)resource.Size.GetValueOrDefault();
+            if (resource != null) {
+                BitRate = (int)resource.BitRate.GetValueOrDefault ();
+                BitsPerSample = (int)resource.BitsPerSample.GetValueOrDefault ();
+                Duration = resource.Duration.GetValueOrDefault ();
+                SampleRate = (int)resource.SampleFrequency.GetValueOrDefault ();
+                FileSize = (int)resource.Size.GetValueOrDefault ();
 
-                Uri = new SafeUri(resource.Uri);
-            }
-            else
+                Uri = new SafeUri (resource.Uri);
+            } else {
                 CanPlay = false;
+            }
 
             ExternalId = ++id;
 
@@ -95,8 +96,9 @@ namespace Banshee.UPnPClient
         private Resource FindSuitableResource (IList<Resource> resources)
         {
             foreach (Resource resource in resources) {
-                if (resource.Uri != null && resource.Uri.Scheme == System.Uri.UriSchemeHttp)
+                if (resource.Uri != null && resource.Uri.Scheme == System.Uri.UriSchemeHttp) {
                     return resource;
+                }
             }
 
             return null;
