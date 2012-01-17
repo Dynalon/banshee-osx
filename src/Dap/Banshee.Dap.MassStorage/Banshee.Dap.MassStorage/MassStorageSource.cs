@@ -38,6 +38,7 @@ using Banshee.Dap;
 using Banshee.Base;
 using Banshee.ServiceStack;
 using Banshee.Library;
+using Banshee.Query;
 using Banshee.Sources;
 using Banshee.Collection;
 using Banshee.Collection.Database;
@@ -484,6 +485,24 @@ namespace Banshee.Dap.MassStorage
             set { cover_art_file_type = value; }
         }
 
+        public override void UpdateMetadata (DatabaseTrackInfo track)
+        {
+            SafeUri new_uri = new SafeUri (GetTrackPath (track, System.IO.Path.GetExtension (track.Uri)));
+
+            if (new_uri.ToString () != track.Uri.ToString ()) {
+                Directory.Create (System.IO.Path.GetDirectoryName (new_uri.LocalPath));
+                Banshee.IO.File.Move (track.Uri, new_uri);
+
+                //to remove the folder if it's not needed anymore:
+                DeleteTrackFile (track);
+
+                track.Uri = new_uri;
+                track.Save (true, BansheeQuery.UriField);
+            }
+
+            base.UpdateMetadata (track);
+        }
+
         protected override void AddTrackToDevice (DatabaseTrackInfo track, SafeUri fromUri)
         {
             if (track.PrimarySourceId == DbId)
@@ -560,11 +579,16 @@ namespace Banshee.Dap.MassStorage
 
         protected override bool DeleteTrack (DatabaseTrackInfo track)
         {
-            try {
-                if (ms_device != null && !ms_device.DeleteTrackHook (track)) {
-                    return false;
-                }
+            if (ms_device != null && !ms_device.DeleteTrackHook (track)) {
+                return false;
+            }
+            DeleteTrackFile (track);
+            return true;
+        }
 
+        private void DeleteTrackFile (DatabaseTrackInfo track)
+        {
+            try {
                 string track_file = System.IO.Path.GetFileName (track.Uri.LocalPath);
                 string track_dir = System.IO.Path.GetDirectoryName (track.Uri.LocalPath);
                 int files = 0;
@@ -584,12 +608,14 @@ namespace Banshee.Dap.MassStorage
                     System.IO.File.Delete (Paths.Combine (track_dir, CoverArtFileName));
                 }
 
-                Banshee.IO.Utilities.DeleteFileTrimmingParentDirectories (track.Uri);
+                if (Banshee.IO.File.Exists (track.Uri)) {
+                    Banshee.IO.Utilities.DeleteFileTrimmingParentDirectories (track.Uri);
+                } else {
+                    Banshee.IO.Utilities.TrimEmptyDirectories (track.Uri);
+                }
             } catch (System.IO.FileNotFoundException) {
             } catch (System.IO.DirectoryNotFoundException) {
             }
-
-            return true;
         }
 
         protected override void Eject ()
@@ -688,6 +714,10 @@ namespace Banshee.Dap.MassStorage
             file_path += ext;
 
             return file_path;
+        }
+
+        public override bool HasEditableTrackProperties {
+            get { return true; }
         }
     }
 }
