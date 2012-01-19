@@ -27,6 +27,7 @@
 //
 
 using System;
+using System.IO;
 using Mono.Addins;
 
 using Banshee.Hardware;
@@ -63,6 +64,11 @@ namespace Banshee.Dap.MassStorage
                         Source = source
                     };
                 }
+            }
+
+            string path_rockbox = System.IO.Path.Combine (source.Volume.MountPoint, ".rockbox/config.cfg");
+            if (File.Exists (path_rockbox) ) {
+                return new RockBoxDevice (source);
             }
 
             return new MassStorageDevice (source);

@@ -76,35 +76,12 @@ namespace Banshee.Dap.MassStorage
         public virtual bool LoadDeviceConfiguration ()
         {
             string path = IsAudioPlayerPath;
-            string path_rockbox = System.IO.Path.Combine (source.Volume.MountPoint, ".rockbox/config.cfg");
 
-            if (!File.Exists (path) && !File.Exists (path_rockbox) ) {
+            if (!File.Exists (path)) {
                 return false;
             }
 
-            if (File.Exists (path_rockbox) ) {
-                Hyena.Log.DebugFormat ("Found RockBox Device");
-                name = Catalog.GetString ("Rockbox Device");
-                audio_folders = new string [] {"Music/","Videos/"};
-                video_folders = new string [] {"Videos/"};
-                folder_depth = 2;
-                playback_mime_types = new string [] {"application/ogg","audio/x-ms-wma","audio/mpeg","audio/mp4","audio/flac","audio/aac","audio/mp4","audio/x-wav"};
-                playlist_formats = new string [] {"audio/x-mpegurl"};
-                playlist_path = "Playlists/";
-                cover_art_file_name = "cover.jpg";
-                cover_art_file_type = "jpeg";
-                cover_art_size = 320;
-
-            } else {
-                LoadConfig ();
-            }
-
-            return true;
-        }
-
-        protected void LoadConfig ()
-        {
-            var config = new Dictionary<string, string[]> ();
+            IDictionary<string, string[]> config = null;
 
             if (File.Exists (IsAudioPlayerPath)) {
 
@@ -117,6 +94,22 @@ namespace Banshee.Dap.MassStorage
                 } catch (Exception e) {
                     Log.Exception ("Error parsing " + IsAudioPlayerPath, e);
                 }
+            }
+
+            LoadConfig (config);
+
+            return true;
+        }
+
+        protected void LoadConfig ()
+        {
+            LoadConfig (null);
+        }
+
+        private void LoadConfig (IDictionary<string, string[]> config)
+        {
+            if (config == null) {
+                config = new Dictionary<string, string[]> ();
             }
 
             name = GetPreferredValue ("name", config, DefaultName);
