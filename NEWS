@@ -1,24 +1,22 @@
 ===============================================================================
-Banshee 2.3.3 - 2011-12-21
+Banshee 2.3.4 - 2012-01-19
 ===============================================================================
 
-    Banshee 2.3.3 is part of the 2.3 development series leading up to 2.4,
+    Banshee 2.3.4 is part of the 2.3 development series leading up to 2.4,
     scheduled for March 2012.
 
     Enhancements:
 
-      * StreamPositionLabel: Fix label when loading
-      * Preferences: Change wording of Metadata settings
-      * bgo#608389: AudiobookLibrarySource: Accept tracks dragged from playlists
-      * bgo#666493: Emusic.Store: Remove unneeded refresh
-      * bgo#666488: Dap.MassStorage: Add and use specific icons for Xperia phones
+      * Misc code refactorings.
+      * bgo#665997: Mpris: Add xesam:userRating field in track metadata.
+      * bgo#589196: Dap.MassStorage: metadata resync in manual mode.
 
-    Notable Bugs Fixed (11 fixed since 2.3.2):
+    Notable Bugs Fixed (7 fixed since 2.3.3):
 
-      * bgo#638130: Fix importing of rating and play count when updating track
-      * bgo#644145: Fix FileLocation queries for the StartsWith operator
-      * bgo#656439: Audiobook: Add a button to go back to the list of audiobooks
-      * bgo#661322: PlaybackShuffleActions: Fix crash when setting shuffle mode
+      * bgo#648522: Fix race condition when starting multiple instances.
+      * bgo#667355: SourceWatcher: Fix SQL error caused by incorrect escaping.
+      * bgo#667184: Booter: Add missing quote in command line help message.
+      * bgo#667478: Fix build with libmtp 1.1.
 
 ===============================================================================
 SOURCES / PACKAGES
@@ -27,9 +25,9 @@ SOURCES / PACKAGES
 Sources
 -------
 
-    * Banshee 2.3.3 Tarballs:
-      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.3/banshee-2.3.3.tar.xz
-      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.3/banshee-2.3.3.sha256sum
+    * Banshee 2.3.4 Tarballs:
+      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.3/banshee-2.3.4.tar.xz
+      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.3/banshee-2.3.4.sha256sum
 
 Packages
 --------
@@ -52,7 +50,7 @@ REPORT BUGS - HELP THE PROJECT - GROW THE COMMUNITY
     hesitate to file bugs!
 
     * http://banshee.fm/contribute/file-bugs
-    * http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&version=2.3.3
+    * http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&version=2.3.4
 
 
 ===============================================================================
@@ -65,12 +63,12 @@ Contributors For This Release
     The following people directly contributed to the release of this version
     of Banshee. Without their help, there would be no release!
 
-     Andres G. Aragoneses, Bertrand Lorentz, Felipe Castillo, Jordi Mas,
-     Olivier Dufour, Will Thompson
+     Alexander Kojevnikov, Andres G. Aragoneses, Bertrand Lorentz,
+     Okano Takayoshi, Olivier Dufour
 
     The following people contributed updated translations to this release.
     Without them, our project's reach would be much more limited.
 
-     Daniel Mustieles, Funda Wang, Gabor Kelemen, Hendrik Knackstedt, Jordi Mas,
-     Kentaro KAZUHAMA, Marek Černocký, Mario Blättermann, Matej Urbančič
-
+     Benjamín Valero, Daniel Mustieles, Hajime Taira, Jiro Matsuzawa,
+     Marek Černocký, Mario Blättermann, Matej Urbančič, Мирослав Николић,
+     Muhammet Kara, Yuri Myasoedov
