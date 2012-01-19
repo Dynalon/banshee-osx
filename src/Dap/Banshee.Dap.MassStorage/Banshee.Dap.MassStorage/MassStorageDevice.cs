@@ -81,6 +81,13 @@ namespace Banshee.Dap.MassStorage
                 return false;
             }
 
+            LoadConfig ();
+
+            return true;
+        }
+
+        protected void LoadConfig ()
+        {
             IDictionary<string, string[]> config = null;
 
             if (File.Exists (IsAudioPlayerPath)) {
@@ -97,16 +104,9 @@ namespace Banshee.Dap.MassStorage
             }
 
             LoadConfig (config);
-
-            return true;
         }
 
-        protected void LoadConfig ()
-        {
-            LoadConfig (null);
-        }
-
-        private void LoadConfig (IDictionary<string, string[]> config)
+        protected void LoadConfig (IDictionary<string, string[]> config)
         {
             if (config == null) {
                 config = new Dictionary<string, string[]> ();

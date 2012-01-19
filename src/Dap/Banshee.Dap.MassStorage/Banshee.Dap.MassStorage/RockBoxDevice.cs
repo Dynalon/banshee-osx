@@ -78,7 +78,7 @@ namespace Banshee.Dap.MassStorage
         {
             Hyena.Log.DebugFormat ("Found RockBox Device");
 
-            LoadConfig ();
+            LoadConfig (null);
 
             return true;
         }
