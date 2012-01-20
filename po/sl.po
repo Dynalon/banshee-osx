@@ -2,15 +2,15 @@
 # Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the banshee package.
 #
-# Matej Urbančič <mateju@svn.gnome.org>, 2006 - 2011.
-# Andrej Žnidaršič <andrej.znidarsic@gmail.com>, 2009 - 2011.
+# Matej Urbančič <mateju@svn.gnome.org>, 2006 - 2012.
+# Andrej Žnidaršič <andrej.znidarsic@gmail.com>, 2009 - 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: banshee\n"
+"Project-Id-Version: banshee master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-12-26 16:09+0000\n"
-"PO-Revision-Date: 2011-12-26 17:49+0100\n"
+"POT-Creation-Date: 2012-01-20 15:49+0000\n"
+"PO-Revision-Date: 2012-01-20 20:53+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: \n"
@@ -881,8 +881,8 @@ msgid "Play the next track, optionally restarting if the 'restart' value is set"
 msgstr "Predvajanje naslednje skladbe, oziroma ponovno predvajanje trenutne, če je nastavljena vrednost 'restart'"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:165
-msgid "Play the previous track, optionally restarting if the 'restart value is set"
-msgstr "Predvajanje predhodne skladbe, oziroma ponovno predvajanje trenutne skladbe, če je nastavljena vrednost 'restart'"
+msgid "Play the previous track, optionally restarting if the 'restart' value is set"
+msgstr "Predvajanje predhodne skladbe, oziroma ponovno predvajanje, če je nastavljena vrednost 'restart'"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:166
 msgid "If the current song has been played longer than 4 seconds then restart it, otherwise the same as --previous"
@@ -1826,10 +1826,6 @@ msgstr "Nekatere zmožnosti kot so Last.fm ali pridobivanje naslovnic zahtevajo 
 msgid "Search this playlist"
 msgstr "Išče po temu seznamu predvajanja"
 
-#: ../src/Core/Banshee.Services/Banshee.Playlist/AbstractPlaylistSource.cs:228
-msgid "The track's rating was set differently on the device and in Banshee"
-msgstr "Ocena skladbe v predvajalniku Banshee se razlikuje od ocene na napravi"
-
 #: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:58
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:311
 msgid "Playlist"
@@ -1849,7 +1845,7 @@ msgstr "Izbriši seznam predvajanja"
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:176
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:135
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:462
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/SourceView.cs:591
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/SourceView.cs:595
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/SourceView_DragAndDrop.cs:214
 msgid "New Playlist"
 msgstr "Nov seznam predvajanja"
@@ -2549,37 +2545,37 @@ msgstr "Napaka"
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:154
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:155
 msgid "Errors"
 msgstr "Napake"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:207
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:208
 msgid "Sort Playlists By"
 msgstr "Razvrsti sezname predvajanja po"
 
 #. Translators: this is a noun, referring to the harddisk
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:216
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:217
 msgid "Drive"
 msgstr "Pogon"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:240
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:241
 msgid "File Organization"
 msgstr "Urejanje datotek"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:241
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:242
 msgid "Folder hie_rarchy"
 msgstr "Hie_rarhija map"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:242
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:243
 msgid "File _name"
 msgstr "Ime _datoteke"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:672
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:673
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "Dodajanje {0} od {1} v {2}"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:691
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:692
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "Brisanje {0} od {1} iz {2}"
@@ -3884,18 +3880,6 @@ msgstr "Datoteke"
 msgid "C_hoose Files..."
 msgstr "I_zbor datotek ..."
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FileImportSource.cs:81
-msgid "_Files to import:"
-msgstr "_Datoteke za uvoz:"
-
-#: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FileImportSource.cs:82
-msgid "Select Files"
-msgstr "Izbor datotek"
-
-#: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FileImportSource.cs:83
-msgid "(none selected)"
-msgstr "(ni izbranih)"
-
 #: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FolderImportSource.cs:43
 msgid "Import Folders to Library"
 msgstr "Uvoz map v knjižnico"
@@ -3911,14 +3895,6 @@ msgstr "Mape"
 #: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FolderImportSource.cs:57
 msgid "C_hoose Folders..."
 msgstr "I_zbor map ..."
-
-#: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FolderImportSource.cs:75
-msgid "_Folders to import:"
-msgstr "_Mape za uvoz:"
-
-#: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FolderImportSource.cs:76
-msgid "Select Folders"
-msgstr "Izbor map"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/ImportDialog.cs:73
 msgid "<big><b>Import Media to Library</b></big>"
@@ -3938,7 +3914,6 @@ msgstr "Tega okna ne prikaži več"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/ImportDialog.cs:130
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportDialogs.cs:82
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:384
 msgid "_Import"
 msgstr "_Uvozi"
 
@@ -4197,12 +4172,6 @@ msgstr "Zapisovanje podatkovne zbirke predstavnih datotek"
 msgid "Sync {0}"
 msgstr "Uskladitev {0}"
 
-#. Note to translators: {0}, {1} and {2} will be replaced with numbers.
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapLibrarySync.cs:260
-#, csharp-format
-msgid "{0} to add, {1} to remove, {2} to update"
-msgstr "{0} za dodajanje, {1} za odstranitev, {2} za posodobitev"
-
 #. This group source gives us a seperator for DAPs in the source view.
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/DapService.cs:64
 msgid "Devices"
@@ -4367,11 +4336,7 @@ msgstr "{0} ni bilo mogoče odklopiti: {1}"
 msgid "Purchased Music"
 msgstr "Kupljena glasba"
 
-#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageDevice.cs:87
-msgid "Rockbox Device"
-msgstr "Naprava Rockbox"
-
-#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:114
+#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:115
 #, csharp-format
 msgid "Audio Folder"
 msgid_plural "Audio Folders"
@@ -4380,7 +4345,7 @@ msgstr[1] "Zvočna mapa"
 msgstr[2] "Zvočni mapi"
 msgstr[3] "Zvočne mape"
 
-#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:121
+#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:122
 #, csharp-format
 msgid "Video Folder"
 msgid_plural "Video Folders"
@@ -4389,13 +4354,17 @@ msgstr[1] "Video mapa"
 msgstr[2] "Video mapi"
 msgstr[3] "Video mape"
 
-#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:127
+#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:128
 msgid "Required Folder Depth"
 msgstr "Zahtevana globina map"
 
-#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:130
+#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:131
 msgid "Supports Playlists"
 msgstr "Podpira sezname predvajanja"
+
+#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/RockBoxDevice.cs:41
+msgid "Rockbox Device"
+msgstr "Naprava Rockbox"
 
 #: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/WebOSDevice.cs:195
 msgid "Ringtones"
@@ -6175,7 +6144,6 @@ msgstr "Amarok"
 
 #. TODO add Help button and dialog/tooltip
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportDialogs.cs:68
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:383
 msgid "iTunes Importer"
 msgstr "Uvoznik iz iTunes"
 
@@ -6192,51 +6160,40 @@ msgid "Import playlists"
 msgstr "Uvoz seznamov predvajanja"
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportDialogs.cs:120
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:386
 #, csharp-format
 msgid "Locate your \"{0}\" file..."
 msgstr "Poišči datoteko \"{0}\" ..."
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportDialogs.cs:138
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:387
 #, csharp-format
 msgid "Locate \"{0}\""
 msgstr "Poišči \"{0}\""
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportDialogs.cs:167
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:388
 msgid "Locate iTunes Music Directory"
 msgstr "Poišči mapo glasbe iTunes"
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportDialogs.cs:196
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:390
 #, csharp-format
 msgid "The iTunes library refers to your music directory as \"{0}\" but Banshee was not able to infer the location of this directory. Please locate it."
 msgstr "Knjižnica iTunes mapo z glasbo imenuje \"{0}\", vendar mesta te mape ni mogoče najti. Določiti jo je treba ročno."
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:74
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:392
 msgid "iTunes Media Player"
 msgstr "Predvajalnik iTunes"
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:134
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:394
 msgid "Banshee is not familiar with this version of the iTunes library format. Importing may or may not work as expected, or at all. Would you like to attempt to import anyway?"
 msgstr "Predvajalnik Banshee ne pozna te različice zapisa knjižnice iTunes. Uvoz morda ne bo deloval po pričakovanjih ali pa sploh ne. Ali želite vseeno poskusiti z uvozom?"
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:439
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:235
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:396
 msgid "Unable to import song."
 msgstr "Skladbe ni mogoče uvoziti."
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:369
 msgid "Rhythmbox Music Player"
 msgstr "Predvajalnik glasbe Rhythmbox"
-
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:385
-msgid "Import _playlists"
-msgstr "Uvozi sezname _predvajanja"
 
 #: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/HeaderWidget.cs:61
 msgid "_Fill"
@@ -6959,6 +6916,31 @@ msgstr "Povezava z Last.fm"
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:103
 msgid "Unknown Podcast"
 msgstr "Neznan podcast"
+
+#~ msgid "The track's rating was set differently on the device and in Banshee"
+#~ msgstr ""
+#~ "Ocena skladbe v predvajalniku Banshee se razlikuje od ocene na napravi"
+
+#~ msgid "_Files to import:"
+#~ msgstr "_Datoteke za uvoz:"
+
+#~ msgid "Select Files"
+#~ msgstr "Izbor datotek"
+
+#~ msgid "(none selected)"
+#~ msgstr "(ni izbranih)"
+
+#~ msgid "_Folders to import:"
+#~ msgstr "_Mape za uvoz:"
+
+#~ msgid "Select Folders"
+#~ msgstr "Izbor map"
+
+#~ msgid "{0} to add, {1} to remove, {2} to update"
+#~ msgstr "{0} za dodajanje, {1} za odstranitev, {2} za posodobitev"
+
+#~ msgid "Import _playlists"
+#~ msgstr "Uvozi sezname _predvajanja"
 
 #~ msgid "Write _metadata to files"
 #~ msgstr "Zapiši _metapodatke v datoteke"
