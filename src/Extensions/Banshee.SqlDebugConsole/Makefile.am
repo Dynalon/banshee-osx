@@ -9,6 +9,6 @@ RESOURCES =  \
 	Banshee.SqlDebugConsole.addin.xml \
 	Resources/GlobalUI.xml
 
-EXTRA_DIST = $(SOURCES) $(RESOURCES)
+include $(top_srcdir)/build/build.dist.mk
 
 #include $(top_srcdir)/build/build.mk

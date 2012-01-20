@@ -13,5 +13,5 @@ RESOURCES = Banshee.Emusic.Store.addin.xml
 if HAVE_LIBWEBKIT
 include $(top_srcdir)/build/build.mk
 else
-EXTRA_DIST = $(SOURCES) $(RESOURCES)
+include $(top_srcdir)/build/build.dist.mk
 endif

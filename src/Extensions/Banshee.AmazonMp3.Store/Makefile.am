@@ -14,7 +14,7 @@ RESOURCES = Banshee.AmazonMp3.Store.addin.xml
 if HAVE_LIBWEBKIT
 include $(top_srcdir)/build/build.mk
 else
-EXTRA_DIST = $(SOURCES) $(RESOURCES)
+include $(top_srcdir)/build/build.dist.mk
 endif
 
 EXTRA_DIST += ThemeIcons/amazon-mp3-store-source.svg

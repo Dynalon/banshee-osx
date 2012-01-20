@@ -36,7 +36,7 @@ define EXTRA_UNINSTALL_HOOK
 endef
 
 else
-EXTRA_DIST = $(SOURCES) $(RESOURCES)
+include $(top_srcdir)/build/build.dist.mk
 endif
 
 MAINTAINERCLEANFILES = Makefile.in

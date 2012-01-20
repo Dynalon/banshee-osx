@@ -14,6 +14,4 @@ SOURCES =  \
 
 RESOURCES = Banshee.Windows.addin.xml
 
-EXTRA_DIST = $(SOURCES) $(RESOURCES)
-
-MAINTAINERCLEANFILES = Makefile.in
+include $(top_srcdir)/build/build.dist.mk

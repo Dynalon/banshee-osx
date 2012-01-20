@@ -28,11 +28,9 @@ SOURCES =  \
 if ENABLE_MTP
 include $(top_srcdir)/build/build.mk
 module_SCRIPTS += Mtp.dll.config
-EXTRA_DIST += Mtp.dll.config.in
-DISTCLEANFILES += Mtp.dll.config
 else
-EXTRA_DIST = $(SOURCES) Mtp.dll.config.in
-DISTCLEANFILES = Mtp.dll.config
+include $(top_srcdir)/build/build.dist.mk
 endif
 
-
+EXTRA_DIST += Mtp.dll.config.in
+DISTCLEANFILES += Mtp.dll.config

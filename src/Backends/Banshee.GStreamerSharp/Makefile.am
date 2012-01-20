@@ -20,7 +20,8 @@ include $(top_srcdir)/build/build.mk
 EXTRA_DIST += Banshee.GStreamerSharp.dll.config
 module_SCRIPTS += Banshee.GStreamerSharp.dll.config
 else
-EXTRA_DIST = $(SOURCES) $(RESOURCES) Banshee.GStreamerSharp.dll.config
+include $(top_srcdir)/build/build.dist.mk
+EXTRA_DIST += Banshee.GStreamerSharp.dll.config
 endif
 
 if ENABLE_GAPLESS
