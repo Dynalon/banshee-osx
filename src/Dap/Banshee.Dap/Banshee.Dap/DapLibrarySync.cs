@@ -253,8 +253,8 @@ namespace Banshee.Dap
             }
         }
 
-        internal class PossibleUserErrorException : ApplicationException {
-
+        internal class PossibleUserErrorException : ApplicationException
+        {
             internal int TracksToRemove { get; private set; }
 
             public PossibleUserErrorException (int tracksToRemove) : base ()
