@@ -572,7 +572,7 @@ namespace Banshee.Dap.AppleDevice
                     track.Save (false);
                     tracks_map[track.TrackId] = track;
                 } catch (Exception e) {
-                    Log.Exception ("Cannot save track to iPod", e);
+                    Log.Exception ("Cannot save track to the Apple device", e);
                 }
             }
             if (total > 0) {
