@@ -217,7 +217,7 @@ namespace Banshee.Dap
                 sync.Dap.AddAllTracks (to_add);
 
                 if (library.SupportsPlaylists && sync.Dap.SupportsPlaylists) {
-                    SyncPlaylists ();
+                    SnapshotPlaylists ();
                 }
 
                 Hyena.Log.Debug ("Ending DAP sync");
@@ -227,7 +227,7 @@ namespace Banshee.Dap
             }
         }
 
-        private void SyncPlaylists ()
+        private void SnapshotPlaylists ()
         {
             // Now create the playlists, taking snapshots of smart playlists and saving them
             // as normal playlists
