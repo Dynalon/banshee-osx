@@ -329,7 +329,7 @@ namespace Banshee.Dap.MassStorage
                 if (from != null && !String.IsNullOrEmpty (escaped_name)) {
                     from.Reload ();
                     if (playlist_format == null) {
-                         playlist_format = Activator.CreateInstance (PlaylistTypes[0].Type) as PlaylistFormatBase;
+                        playlist_format = Activator.CreateInstance (PlaylistTypes[0].Type) as PlaylistFormatBase;
                     }
 
                     SafeUri playlist_path = new SafeUri (System.IO.Path.Combine (
