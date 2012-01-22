@@ -42,6 +42,7 @@ namespace Banshee.Hardware
         string [] PlaylistFormats { get; }
         string PlaylistPath { get; }
         string [] PlaybackMimeTypes { get; }
+        char FolderSeparator { get; }
         bool IsType (string type);
     }
 }

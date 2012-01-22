@@ -122,6 +122,13 @@ namespace Banshee.Dap.MassStorage
             playlist_formats = MergeValues ("playlist_formats", config, DefaultPlaylistFormats);
             playlist_path = GetPreferredValue ("playlist_path", config, DefaultPlaylistPath);
             folder_depth = GetPreferredValue ("folder_depth", config, DefaultFolderDepth);
+
+            string preferred_folder_separator = GetPreferredValue ("folder_separator", config, DefaultFolderSeparator);
+            if (preferred_folder_separator == "\\" || preferred_folder_separator == "DOS") {
+               folder_separator = '\\';
+            } else {
+                folder_separator = '/';
+            }
         }
 
         private string[] MergeValues (string key, IDictionary<string, string[]> config, string[] defaultValues)
@@ -198,6 +205,15 @@ namespace Banshee.Dap.MassStorage
 
         internal virtual int MinimumFolderDepth {
             get { return FolderDepth; }
+        }
+
+        protected virtual string DefaultFolderSeparator {
+            get { return null; }
+        }
+
+        private char folder_separator;
+        public virtual char FolderSeparator {
+            get { return folder_separator; }
         }
 
         protected virtual string [] DefaultAudioFolders {
