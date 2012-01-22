@@ -330,6 +330,7 @@ namespace Banshee.Dap.MassStorage
                     from.Reload ();
                     if (playlist_format == null) {
                         playlist_format = Activator.CreateInstance (PlaylistTypes[0].Type) as PlaylistFormatBase;
+                        playlist_format.FolderSeparator = MediaCapabilities.FolderSeparator;
                     }
 
                     SafeUri playlist_path = new SafeUri (System.IO.Path.Combine (

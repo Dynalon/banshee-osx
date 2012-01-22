@@ -40,6 +40,9 @@ namespace Banshee.Playlists.Formats
 {
     public class M3uPlaylistFormat : PlaylistFormatBase
     {
+        private const char DosFolderSeparator = '\\';
+        private const char UnixFolderSeparator = '/';
+
         public static readonly PlaylistFormatDescription FormatDescription = new PlaylistFormatDescription(
             typeof(M3uPlaylistFormat), MagicHandler, Catalog.GetString("MPEG Version 3.0 Extended (*.m3u)"),
             "m3u", new string [] {"audio/x-mpegurl", "audio/m3u", "audio/mpeg-url"});
@@ -122,7 +125,11 @@ namespace Banshee.Playlists.Formats
                     }
 
                     writer.WriteLine("#EXTINF:{0},{1} - {2}", duration, track.DisplayArtistName, track.DisplayTrackTitle);
-                    writer.WriteLine(ExportUri(track.Uri));
+                    string trackpath = ExportUri (track.Uri);
+                    if (FolderSeparator == DosFolderSeparator) {
+                        trackpath = trackpath.Replace (UnixFolderSeparator, DosFolderSeparator);
+                    }
+                    writer.WriteLine( trackpath );
                 }
             }
         }

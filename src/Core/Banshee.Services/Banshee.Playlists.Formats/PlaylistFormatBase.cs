@@ -132,5 +132,7 @@ namespace Banshee.Playlists.Formats
             get { return title; }
             set { title = value; }
         }
+
+        public virtual char FolderSeparator { get; set; }
     }
 }
