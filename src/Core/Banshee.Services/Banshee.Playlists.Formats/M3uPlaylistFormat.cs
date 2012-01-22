@@ -40,9 +40,6 @@ namespace Banshee.Playlists.Formats
 {
     public class M3uPlaylistFormat : PlaylistFormatBase
     {
-        private const char DosFolderSeparator = '\\';
-        private const char UnixFolderSeparator = '/';
-
         public static readonly PlaylistFormatDescription FormatDescription = new PlaylistFormatDescription(
             typeof(M3uPlaylistFormat), MagicHandler, Catalog.GetString("MPEG Version 3.0 Extended (*.m3u)"),
             "m3u", new string [] {"audio/x-mpegurl", "audio/m3u", "audio/mpeg-url"});

@@ -39,6 +39,9 @@ namespace Banshee.Playlists.Formats
 {
     public abstract class PlaylistFormatBase : IPlaylistFormat
     {
+        protected const char DosFolderSeparator = '\\';
+        protected const char UnixFolderSeparator = '/';
+
         private Dictionary<string, object> attributes = new Dictionary<string, object>();
         private List<Dictionary<string, object>> elements = new List<Dictionary<string, object>>();
         private Uri base_uri = null;
@@ -78,8 +81,8 @@ namespace Banshee.Playlists.Formats
 
         protected virtual Uri ResolveUri(string uri)
         {
-            if (!uri.Contains ("/") && uri.Contains ("\\")) {
-                uri = uri.Replace ("\\", "/");
+            if (!uri.Contains (UnixFolderSeparator.ToString ()) && uri.Contains (DosFolderSeparator.ToString ())) {
+                uri = uri.Replace (DosFolderSeparator, UnixFolderSeparator);
             }
             return BaseUri == null ? new Uri(uri) : new Uri(BaseUri, uri);
         }
