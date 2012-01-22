@@ -68,6 +68,8 @@ namespace Banshee.Sources.Gui
                 <menu name=""ViewMenu"" action=""ViewMenuAction"">
                   <placeholder name=""BrowserViews"">
                     <menu name=""BrowserContentMenu"" action=""BrowserContentMenuAction"">
+                        <menuitem name=""ShowArtistFilter"" action=""ShowArtistFilterAction"" />
+                        <separator />
                         <menuitem name=""ShowTrackArtistFilter"" action=""ShowTrackArtistFilterAction"" />
                         <menuitem name=""ShowAlbumArtistFilter"" action=""ShowAlbumArtistFilterAction"" />
                         <separator />
@@ -95,6 +97,11 @@ namespace Banshee.Sources.Gui
                             Catalog.GetString ("Configure the filters available in the browser"), null)
                     });
 
+                    configure_browser_actions.Add (new ToggleActionEntry [] {
+                        new ToggleActionEntry ("ShowArtistFilterAction", null,
+                            Catalog.GetString ("Show Artist Filter"), null,
+                            Catalog.GetString ("Show a list of artists to filter by"), null, ArtistFilterVisible.Get ())});
+
                     configure_browser_actions.Add (new RadioActionEntry [] {
                         new RadioActionEntry ("ShowTrackArtistFilterAction", null,
                             Catalog.GetString ("Show all Artists"), null,
@@ -119,11 +126,35 @@ namespace Banshee.Sources.Gui
                     action_service.UIManager.AddUiFromString (menu_xml);
                 }
 
-                (action_service.FindAction("BrowserConfiguration.ShowTrackArtistFilterAction") as RadioAction).Changed += OnArtistFilterChanged;
-                (action_service.FindAction("BrowserConfiguration.ShowAlbumArtistFilterAction") as RadioAction).Changed += OnArtistFilterChanged;
+                action_service.FindAction("BrowserConfiguration.ShowArtistFilterAction").Activated += OnArtistFilterVisibilityChanged;
                 action_service.FindAction("BrowserConfiguration.ShowGenreFilterAction").Activated += OnGenreFilterChanged;;
                 action_service.FindAction("BrowserConfiguration.ShowYearFilterAction").Activated += OnYearFilterChanged;;
+
+                var artist_filter_action = action_service.FindAction("BrowserConfiguration.ShowTrackArtistFilterAction") as RadioAction;
+                var albumartist_filter_action = action_service.FindAction("BrowserConfiguration.ShowAlbumArtistFilterAction") as RadioAction;
+                artist_filter_action.Changed += OnArtistFilterChanged;
+                artist_filter_action.Sensitive = ArtistFilterVisible.Get ();
+                albumartist_filter_action.Changed += OnArtistFilterChanged;
+                albumartist_filter_action.Sensitive = ArtistFilterVisible.Get ();
             }
+        }
+
+        private void OnArtistFilterVisibilityChanged (object o, EventArgs args)
+        {
+            ToggleAction action = (ToggleAction)o;
+
+            ClearFilterSelections ();
+
+            ArtistFilterVisible.Set (action.Active);
+
+            if (artist_view !=null && artist_view.Parent !=null) {
+                artist_view.Parent.Visible = ArtistFilterVisible.Get ();
+            } else if (albumartist_view != null && albumartist_view.Parent != null) {
+                albumartist_view.Parent.Visible = ArtistFilterVisible.Get ();
+            }
+
+            action_service.FindAction("BrowserConfiguration.ShowTrackArtistFilterAction").Sensitive = ArtistFilterVisible.Get ();
+            action_service.FindAction("BrowserConfiguration.ShowAlbumArtistFilterAction").Sensitive = ArtistFilterVisible.Get ();
         }
 
         private void OnGenreFilterChanged (object o, EventArgs args)
@@ -202,9 +233,15 @@ namespace Banshee.Sources.Gui
 
             if (ArtistFilterType.Get ().Equals ("artist")) {
                 SetupFilterView (artist_view = new ArtistListView ());
+                artist_view.Parent.Shown += delegate {
+                    artist_view.Parent.Visible = ArtistFilterVisible.Get ();
+                };
                 albumartist_view = new ArtistListView ();
             } else {
                 SetupFilterView (albumartist_view = new ArtistListView ());
+                albumartist_view.Parent.Shown += delegate {
+                    albumartist_view.Parent.Visible = ArtistFilterVisible.Get ();
+                };
                 artist_view = new ArtistListView ();
             }
 
@@ -321,6 +358,13 @@ namespace Banshee.Sources.Gui
         }
 
 #endregion
+
+        public static readonly SchemaEntry<bool> ArtistFilterVisible = new SchemaEntry<bool> (
+            "browser", "show_artist_filter",
+            true,
+            "Artist Filter Visibility",
+            "Whether or not to show the Artist filter"
+        );
 
         public static readonly SchemaEntry<string> ArtistFilterType = new SchemaEntry<string> (
             "browser", "artist_filter_type",
