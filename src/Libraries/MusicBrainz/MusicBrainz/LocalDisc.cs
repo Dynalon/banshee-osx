@@ -128,16 +128,19 @@ namespace MusicBrainz
 
         public static LocalDisc GetFromDevice (string device)
         {
-            if (device == null) throw new ArgumentNullException ("device");
+            if (device == null) {
+                throw new ArgumentNullException ("device");
+            }
+
             try {
                 switch (Environment.OSVersion.Platform){
                 case PlatformID.Unix:
                     // TODO can we actually detect the environment?
-                    //try {
+                    try {
                         return new DiscLinux (device);
-                    //} catch {
-                    //    return new DiscFreeBSD (device);
-                    //}
+                    } catch {
+                        return new DiscFreeBsd (device);
+                    }
                 //case PlatformID.Win32NT:
                     //return new DiscWin32NT (device);
                 default:

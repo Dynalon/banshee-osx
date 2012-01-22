@@ -4,6 +4,7 @@ LINK = $(REF_MUSICBRAINZ)
 SOURCES =  \
 	MusicBrainz/Artist.cs \
 	MusicBrainz/Disc.cs \
+	MusicBrainz/DiscFreeBsd.cs \
 	MusicBrainz/DiscLinux.cs \
 	MusicBrainz/DiscWin32.cs \
 	MusicBrainz/Event.cs \
