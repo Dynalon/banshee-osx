@@ -39,6 +39,7 @@ using Banshee.Base;
 using Banshee.Hardware;
 using Banshee.Collection;
 using Banshee.Collection.Database;
+using Folder = Banshee.IO.Directory;
 
 namespace Banshee.Dap.MassStorage
 {
@@ -124,10 +125,10 @@ namespace Banshee.Dap.MassStorage
             folder_depth = GetPreferredValue ("folder_depth", config, DefaultFolderDepth);
 
             string preferred_folder_separator = GetPreferredValue ("folder_separator", config, DefaultFolderSeparator);
-            if (preferred_folder_separator == "\\" || preferred_folder_separator == "DOS") {
-               folder_separator = '\\';
+            if (preferred_folder_separator == Folder.DosSeparator.ToString () || preferred_folder_separator == "DOS") {
+                folder_separator = Folder.DosSeparator;
             } else {
-                folder_separator = '/';
+                folder_separator = Folder.UnixSeparator;
             }
         }
 

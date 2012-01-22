@@ -35,6 +35,7 @@ using Mono.Unix;
 using Banshee.Base;
 using Banshee.Collection;
 using Banshee.Sources;
+using Folder = Banshee.IO.Directory;
 
 namespace Banshee.Playlists.Formats
 {
@@ -123,8 +124,8 @@ namespace Banshee.Playlists.Formats
 
                     writer.WriteLine("#EXTINF:{0},{1} - {2}", duration, track.DisplayArtistName, track.DisplayTrackTitle);
                     string trackpath = ExportUri (track.Uri);
-                    if (FolderSeparator == DosFolderSeparator) {
-                        trackpath = trackpath.Replace (UnixFolderSeparator, DosFolderSeparator);
+                    if (FolderSeparator == Folder.DosSeparator) {
+                        trackpath = trackpath.Replace (Folder.UnixSeparator, Folder.DosSeparator);
                     }
                     writer.WriteLine( trackpath );
                 }

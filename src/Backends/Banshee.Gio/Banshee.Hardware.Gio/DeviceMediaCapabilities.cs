@@ -232,7 +232,7 @@ namespace Banshee.Hardware.Gio
                     if (mpi_file.HasKey (PlaylistGroup, "FolderSeparator")) {
                         string folder_separator = mpi_file.GetString (PlaylistGroup, "FolderSeparator");
                         if (folder_separator == "DOS") {
-                            FolderSeparator = '\\';
+                            FolderSeparator = Directory.DosSeparator;
                         }
                     }
                 }
@@ -251,7 +251,7 @@ namespace Banshee.Hardware.Gio
                 OutputFormats = new string[] {};
                 PlaylistFormats = new string[] {};
                 AccessProtocols = new string[] {};
-                FolderSeparator = '/';
+                FolderSeparator = Directory.UnixSeparator;
             }
         }
     }
