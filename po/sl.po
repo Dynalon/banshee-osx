@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: banshee master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-01-20 15:49+0000\n"
-"PO-Revision-Date: 2012-01-20 20:53+0100\n"
+"POT-Creation-Date: 2012-01-24 13:11+0000\n"
+"PO-Revision-Date: 2012-01-24 21:47+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: \n"
@@ -1858,7 +1858,7 @@ msgstr "Windows Media ASX"
 msgid "Windows Media ASX (*.asx)"
 msgstr "Windows Media ASX (*.asx)"
 
-#: ../src/Core/Banshee.Services/Banshee.Playlists.Formats/M3uPlaylistFormat.cs:44
+#: ../src/Core/Banshee.Services/Banshee.Playlists.Formats/M3uPlaylistFormat.cs:45
 msgid "MPEG Version 3.0 Extended (*.m3u)"
 msgstr "MPEG razširjena različica 3.0 (*.m3u)"
 
@@ -2860,7 +2860,7 @@ msgid "Currently another program is configured as the default media player.  Wou
 msgstr "Trenutno je kot privzeti predvajalnik predstavnih datotek nastavljen drug program. Ali želite nastaviti predvajalnik Banshee kot privzeti program?"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/DefaultApplicationHelperDialog.cs:72
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:435
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:443
 #, csharp-format
 msgid "Do not ask me this again"
 msgstr "Ne vprašaj več"
@@ -3238,12 +3238,12 @@ msgstr "Osveži naključno razvrščen pametni seznam predvajanja"
 msgid "Could not export playlist"
 msgstr "Seznama predvajanja ni mogoče izvoziti"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:426
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:434
 #, csharp-format
 msgid "Are you sure you want to delete this {0}?"
 msgstr "Ali res želite izbrisati {0}?"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:469
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:477
 msgid "Separate by Type"
 msgstr "Ločevanje po vrsti"
 
@@ -3990,47 +3990,55 @@ msgstr "Odpri v urejevalniku"
 msgid "Create and save"
 msgstr "Ustvari in shrani"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:94
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:96
 msgid "Browser Content"
 msgstr "Vsebina brskalnika"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:95
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:97
 msgid "Configure the filters available in the browser"
 msgstr "Nastavitev razpoložljivih filtrov brskalnika"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:100
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:102
+msgid "Show Artist Filter"
+msgstr "Pokaži filter izvajalcev"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:103
+msgid "Show a list of artists to filter by"
+msgstr "Pokaži seznam izvajalcev za filtriranje"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:107
 msgid "Show all Artists"
 msgstr "Pokaže vse izvajalce"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:101
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:108
 msgid "Show all artists in the artist filter"
 msgstr "Pokaži vse izvajalce v filtru izvajalcev"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:104
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:111
 msgid "Show Album Artists"
 msgstr "Pokaži izvajalce albuma"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:105
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:112
 msgid "Show only album artists, not artists with only single tracks"
 msgstr "Pokaži le izvajalce albuma in ne tudi izvajalcev le posameznih posnetkov"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:110
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:117
 msgid "Show Genre Filter"
 msgstr "Pokaži filter zvrsti"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:111
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:118
 msgid "Show a list of genres to filter by"
 msgstr "Pokaži seznam zvrsti za filtriranje"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:115
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:122
 msgid "Show Year Filter"
 msgstr "Pokaži filter leta izdaje"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:116
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:123
 msgid "Show a list of years to filter by"
 msgstr "Pokaži seznam let za filtriranje"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:197
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:228
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSourceContents.cs:62
 msgid "Not Set"
 msgstr "Ni nastavljeno"
