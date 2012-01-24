@@ -9,9 +9,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: banshee master\n"
-"POT-Creation-Date: 2012-01-01 17:22+0000\n"
-"PO-Revision-Date: 2012-01-02 12:48+0900\n"
-"Last-Translator: Jiro Matsuzawa <jmatsuzawa@src.gnome.org>\n"
+"POT-Creation-Date: 2012-01-22 16:35+0000\n"
+"PO-Revision-Date: 2012-01-24 19:32+0900\n"
+"Last-Translator: OKANO Takayoshi <kano@na.rim.or.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +26,7 @@ msgstr "@@image: 'figures/banshee.png'; md5=THIS FILE DOESN'T EXIST"
 
 #: C/ui.page:8(desc)
 msgid "An overview of <app>Banshee's</app> user interface."
-msgstr "<app>Banshee</app>のユーザーインターフェイスの概要"
+msgstr "<app>Banshee</app>のユーザーインターフェースの概要"
 
 #: C/ui.page:12(name) C/sync.page:12(name) C/sort.page:12(name)
 #: C/search.page:12(name) C/play.page:12(name) C/play-queue.page:12(name)
@@ -52,7 +52,7 @@ msgstr "pcutler@gnome.org"
 
 #: C/ui.page:24(title)
 msgid "Introduction to the Banshee User Interface"
-msgstr "Bansheeのユーザーインターフェイスについて"
+msgstr "Bansheeのユーザーインターフェースについて"
 
 #: C/ui.page:27(title) C/introduction.page:43(title)
 msgid "<gui>Banshee Media Player</gui> window"
@@ -64,7 +64,7 @@ msgstr "Bansheeメディアプレイヤー"
 
 #: C/ui.page:30(p) C/introduction.page:46(p)
 msgid "<app>Banshee</app> library interface"
-msgstr "<app>Banshee</app>ライブラリのインターフェイス"
+msgstr "<app>Banshee</app>ライブラリのインターフェース"
 
 #: C/ui.page:35(title)
 msgid "Sources"
@@ -133,7 +133,7 @@ msgid ""
 "<guiseq><gui>View</gui><gui>Fullscreen</gui></guiseq> to start Fullscreen "
 "mode."
 msgstr ""
-"再生中にBansheeのユーザーインターフェイスを隠して、フルスクリーンモードに変更"
+"再生中にBansheeのユーザーインターフェースを隠して、フルスクリーンモードに変更"
 "したい場合、<key>F</key>を押すか、Bansheeのウィンドウの右上にある<gui>フルス"
 "クリーン</gui>ボタンを押します。もしくはBansheeのメニューから<guiseq><gui>表"
 "示</gui><gui>フルスクリーン</gui></guiseq>を選ぶとフルスクリーンモードに移行"
@@ -261,10 +261,10 @@ msgid ""
 "If your library is larger than the space on your portable media player, "
 "Banshee will sync media until your player is full and then stop."
 msgstr ""
-"ポータブルメディアプレーヤーに十分な記憶領域自動的にライブラリ全体を同期しま"
-"す。同期対象のライブラリのデータ容量が接続されているポータブルミュージックプ"
-"レイヤーの容量よりも上回る場合、Bansheeは容量が一杯になるまでメディアの同期を"
-"行います。"
+"すべてのライブラリをポータブルメディアプレーヤーに自動的に同期する場合は、"
+"ポータブルメディアプレーヤーに十分な記憶領域を確保してください。同期対象のラ"
+"イブラリのデータ容量が接続されているポータブルミュージックプレイヤーの容量よ"
+"りも上回る場合、Bansheeは容量が一杯になるまでメディアの同期を行います。"
 
 #: C/sync.page:82(p)
 msgid ""
@@ -322,7 +322,7 @@ msgid ""
 "distribution for the necessary codecs as it is outside the scope of this "
 "help and varies by distribution."
 msgstr ""
-"もし、音楽ライブラリの中の音楽ファイルがOGGファイルまたはGLACなど、サポートさ"
+"もし、音楽ライブラリの中の音楽ファイルがOGGファイルまたはFLACなど、サポートさ"
 "れていない形式でエンコードされている場合、ポータブルメディアプレイヤーに転送"
 "する際にBansheeはMP3形式に自動的に変換することができます。（必要なコーデック"
 "がインストールされている必要があります）コーデックについてはディストリビュー"
@@ -353,9 +353,8 @@ msgid ""
 msgstr ""
 "ポータブルミュージックプレイヤーに保存された音楽をBansheeで直接再生することが"
 "できます。左側のメニューにポータブルミュージックプレイヤーのライブラリが表示"
-"されます。Bansheeのメニューからお使いのお使いのプレーヤーを選択してください。"
-"その後、自身のライブラリ内の音楽と同じようにBansheeで音楽を再生することができ"
-"ます。"
+"されます。Bansheeのメニューからお使いのプレーヤーを選択してください。その後、"
+"自身のライブラリ内の音楽と同じようにBansheeで音楽を再生することができます。"
 
 #: C/sync.page:135(title)
 msgid "Remove Music From your Portable Music Player"
@@ -369,10 +368,10 @@ msgid ""
 "choose <guiseq><gui>Edit</gui><gui>Delete</gui></guiseq>."
 msgstr ""
 "ポータブルミュージックプレイヤーに保存した楽曲を削除したい場合、任意のポータ"
-"ブルミュージックプレイヤーを選択し、Bansheeのライブラリーを表示します。次に削"
-"除したいトラックを選択し、右クリックしてメニューから<gui>削除</gui>を選びま"
-"す。もしくはBansheeのメニューから<guiseq><gui>編集</gui><gui>削除</gui></"
-"guiseq>を選びます。"
+"ブルミュージックプレイヤーを選択し、Bansheeのライブラリを表示します。次に削除"
+"したいトラックを選択し、右クリックしてメニューから<gui>削除</gui>を選びます。"
+"もしくはBansheeのメニューから<guiseq><gui>編集</gui><gui>削除</gui></guiseq>"
+"を選びます。"
 
 #: C/sync.page:142(p)
 msgid ""
@@ -400,9 +399,9 @@ msgid ""
 "additional information about the songs in your library or change the way you "
 "can view and sort your songs, artists or albums."
 msgstr ""
-"ライブラリが大きくなるにつれて、ライブラリ内のトラックの情報を追加したり、表"
-"示することができます。また、ライブラリビュー内の曲のタイトル、アーティストや"
-"アルバムをソートする方法を変更することができます。"
+"ライブラリが大きくなるにつれて、ライブラリ内のトラックに追加情報を表示した"
+"り、曲のタイトル、アーティストやアルバムでソートする方法を変更するなど、ライ"
+"ブラリビューを変更したくなることでしょう。"
 
 #: C/sort.page:34(p)
 msgid ""
@@ -497,9 +496,9 @@ msgid ""
 "default, there is no explicit AND operator."
 msgstr ""
 "検索条件の演算子は任意の2つの検索キーワードの間に記述、もしくは検索キーワード"
-"の前に記述します。既定の動作は<gui>AND</gui>となります。その他の演算子は2つの"
-"検索キーワードの間に記述されている時のみ使用されます。AND 演算子もあります。"
-"また、明示的なAND演算子をがあります。"
+"の前に記述します。既定の演算は<gui>AND</gui>であり、2つの検索キーワードの間に"
+"他の演算子がない場合に使用されます。既定でANDになるため、明示的なAND演算子は"
+"ありません。"
 
 #: C/search.page:49(p)
 msgid ""
@@ -507,9 +506,9 @@ msgid ""
 "these three operations can yield very powerful queries to help you search "
 "your media."
 msgstr ""
-"その他の基本的な演算子は、<gui>OR</gui>と<gui>NOT</gui>が含まれています。ま"
-"た、これらの3つの演算子を使うことにより、メディアを検索するため非常に強力な検"
-"索問い合わせを行うことができます。"
+"その他の基本的な演算子は、<gui>OR</gui>と<gui>NOT</gui>があります。また、これ"
+"らの3つの演算を使うことにより、メディアを検索するため非常に強力な検索問い合わ"
+"せを行うことができます。"
 
 #: C/search.page:56(title)
 msgid "Logical Operators and Examples"
@@ -519,7 +518,7 @@ msgstr "論理演算子と検索式の例"
 msgid ""
 "The following is a list of logical operators and examples of the search "
 "results when searching using them."
-msgstr "以下は論理演算子とそれらを使用して検索、検索した結果の例です。"
+msgstr "以下は、論理演算子の一覧、および論理演算子を使用した検索結果の例です。"
 
 #: C/search.page:62(gui)
 msgid "Operator"
@@ -557,12 +556,12 @@ msgid ""
 "Do not display search results with any search term that follows the operator "
 "of NOT, not,<key>-</key>."
 msgstr ""
-"NOT、not、<key>-</key>の演算子を記述することにより、検索キーワードの含む検索"
+"NOT、not、<key>-</key>の演算子を記述することにより、検索キーワードを含む検索"
 "結果を表示しません。"
 
 #: C/search.page:80(p)
 msgid "Examples of logical operations include:"
-msgstr "論理演算子を含む検索式の例:"
+msgstr "論理演算を使用した例:"
 
 #: C/search.page:84(gui)
 msgid "Query"
@@ -614,7 +613,7 @@ msgid ""
 "For more information on performing more complex search queries, see the "
 "<link xref=\"adv-search\"/> page."
 msgstr ""
-"より複雑な検索を行いたい場合、詳しいは、<link xref=\"adv-search\"/>ページを参"
+"より複雑な検索を行いたい場合、詳しくは、<link xref=\"adv-search\"/>ページを参"
 "照してください。"
 
 #: C/rb-import.page:8(desc)
@@ -733,7 +732,7 @@ msgid ""
 "first."
 msgstr ""
 "ポッドキャストのソースは、購読しているすべてのポッドキャストを表示します。"
-"ポッドキャストのブラウザーでは、購読しているすべてのポットキャストが新しいも"
+"ポッドキャストのブラウザーでは、購読しているすべてのポッドキャストが新しいも"
 "のから順にリスト表示されます。"
 
 #: C/play.page:80(p)
@@ -1468,7 +1467,7 @@ msgstr "マークを付けたエピソードは古いものです。"
 
 #: C/keyboardshortcuts.page:103(title)
 msgid "Interface"
-msgstr "インターフェイス"
+msgstr "インターフェース"
 
 #: C/keyboardshortcuts.page:110(key)
 msgid "F"
