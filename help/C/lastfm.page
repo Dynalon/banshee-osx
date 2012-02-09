@@ -37,8 +37,8 @@
   Visit <link href="http://www.last.fm/join">http://www.last.fm/join</link>
    to create an account or choose 
   <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> from the Banshee
-  menu.  Then press the <gui>Source Specific</gui> tab and press the
-  <gui>Source</gui> drop down menu and choose <gui>Last.fm</gui> and select the
+  menu. Once in the preferences select the <gui>Source Specific</gui> tab, press the
+  <gui>Source</gui> drop down menu, choose <gui>Last.fm</gui> and finally select the
   <em>Sign up for Last.fm</em> link.
   </p>
   
@@ -56,14 +56,17 @@
   
   <section id="songreporting">
   <title>Enable Last.fm Song Reporting</title> 
-  <p>After you have successfully linked Banshee to your Last.fm profile, to 
-  enable Banshee to report the songs to your Last.fm profile, in the 
-  <gui>Source Specific</gui> tab in Banshee's preferences, press the 
-  <gui>Enable Song Reporting</gui> checkbox.  If you have an active internet
-  connection, Banshee will now send Last.fm information regarding the songs
-  you play.  To view your play history, visit your profile on the Last.fm 
+  <p>After you have successfully linked Banshee to your Last.fm profile you must
+  ensure that you have enabled Banshee to report your songs.  To enable Banshee to
+  report the songs to your Last.fm profile go to Banshee's preferences, select the
+  <gui>Source Specific</gui> tab, select <gui>Last.fm</gui> from the dropdown, and
+  press the <gui>Enable Song Reporting</gui> checkbox. If you have an active internet
+  connection Banshee will now send Last.fm information regarding the songs
+  you play.  To view your play history visit your profile on the Last.fm
   website.  Last.fm will automatically update your music metadata if any of your
-  artist, song title or album information is incorrect.
+  artist, song title, or album information is incorrect (although we recommend that
+  you use the Metadata Fixer extension to correct your files instead).
+
   </p>
   
   </section>
