@@ -58,7 +58,7 @@ check-bootstrap-env:
 	fi
 
 run: check-bootstrap-env $(MO_FILES)
-	(cd bin; $(MONO) $(BANSHEE_DEV_MONO_OPTIONS) Nereid.exe --uninstalled $(BANSHEE_DEV_OPTIONS))
+	(cd bin; $(MONO) --debug $(BANSHEE_DEV_MONO_OPTIONS) Nereid.exe --debug --uninstalled $(BANSHEE_DEV_OPTIONS))
 
 run-profiled: check-bootstrap-env $(MO_FILES)
 	(cd bin; LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):/usr/local/lib $(MONO) --debug $(BANSHEE_DEV_MONO_OPTIONS) --profile=log:time=fast,calls,noalloc,maxframes=5 Nereid.exe --uninstalled $(BANSHEE_DEV_OPTIONS))
