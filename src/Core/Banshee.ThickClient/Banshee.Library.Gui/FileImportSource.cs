@@ -74,13 +74,5 @@ namespace Banshee.Library.Gui
         public int SortOrder {
             get { return 11; }
         }
-
-        // Reserve strings in preparation for the forthcoming string freeze.
-        public void ReservedStrings ()
-        {
-            Catalog.GetString ("_Files to import:");
-            Catalog.GetString ("Select Files");
-            Catalog.GetString ("(none selected)");
-        }
     }
 }

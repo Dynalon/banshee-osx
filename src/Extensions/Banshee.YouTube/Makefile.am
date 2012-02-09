@@ -16,7 +16,7 @@ RESOURCES = Banshee.YouTube.addin.xml
 if HAVE_GDATA
 include $(top_srcdir)/build/build.mk
 else
-EXTRA_DIST = $(SOURCES) $(RESOURCES)
+include $(top_srcdir)/build/build.dist.mk
 endif
 
 if HAVE_GDATASHARP_1_5

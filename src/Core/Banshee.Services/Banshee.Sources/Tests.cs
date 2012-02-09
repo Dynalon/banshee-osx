@@ -51,6 +51,7 @@ namespace Banshee.Sources
         {
             var sm = new SourceManager ();
             sm.Initialize ();
+            sm.AddSource (new ErrorSource ("Baz"));
             Assert.IsFalse (sm.Sources.Count == 0);
             sm.Dispose ();
             Assert.IsTrue (sm.Sources.Count == 0);
@@ -60,11 +61,11 @@ namespace Banshee.Sources
         public void AddRemove ()
         {
             var sm = new SourceManager ();
-            var src = new SourceManager.GroupSource ("Foo", 1);
+            var src = new ErrorSource ("Foo");
             sm.AddSource (src, false);
-            Assert.IsTrue (sm.Sources.Count == 1);
+            Assert.AreEqual (sm.Sources.Count, 1);
 
-            var src2 = new SourceManager.GroupSource ("Bar", 2);
+            var src2 = new ErrorSource ("Bar");
             sm.AddSource (src2, true);
             Assert.IsTrue (sm.Sources.Count == 2);
             Assert.AreEqual (src2, sm.DefaultSource);

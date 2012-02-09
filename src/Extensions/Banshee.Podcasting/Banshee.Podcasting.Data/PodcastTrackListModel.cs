@@ -40,6 +40,7 @@ using Hyena.Data.Sqlite;
 
 using Banshee.Gui;
 using Banshee.Base;
+using Banshee.Query;
 using Banshee.Database;
 using Banshee.Collection;
 using Banshee.ServiceStack;
@@ -66,7 +67,8 @@ namespace Banshee.Podcasting.Gui
                 Feed.Provider.TableName, FeedItem.Provider.TableName, FeedEnclosure.Provider.TableName, podcast_library_dbid
             ));
 
-            SelectAggregates += ",COUNT(NULLIF(CoreTracks.Uri LIKE 'file:%', 0)), COUNT(NULLIF(CoreTracks.PlayCount = 0, 0)), COUNT(DISTINCT(CoreTracks.AlbumID))";
+            SelectAggregates += String.Format (",COUNT(NULLIF({0} LIKE 'file:%', 0)), COUNT(NULLIF({1} = 0, 0)), COUNT(DISTINCT(CoreTracks.AlbumID))",
+                                               BansheeQuery.UriField.Column, BansheeQuery.PlayCountField.Column);
             SelectionAggregatesHandler = (reader) => {
                 SelectionDownloadedCount = Convert.ToInt32 (reader[3]);
                 SelectionUnheardCount = Convert.ToInt32 (reader[4]);
@@ -80,9 +82,16 @@ namespace Banshee.Podcasting.Gui
 
         protected override void GenerateSortQueryPart ()
         {
-            SortQuery = (SortColumn == null)
-                ? GetSort ("PublishedDate", false)
-                : GetSort (SortColumn.SortKey, SortColumn.SortType == Hyena.Data.SortType.Ascending);
+            bool asc = false;
+            if (SortColumn == null) {
+                SortQuery = GetSort ("PublishedDate", asc);
+            } else {
+                asc = SortColumn.SortType == Hyena.Data.SortType.Ascending;
+                SortQuery = GetSort (SortColumn.SortKey, asc);
+                if (SortQuery == null && SortColumn.Field != null) {
+                    SortQuery =  Banshee.Query.BansheeQuery.GetSort (SortColumn.Field, asc);
+                }
+            }
         }
 
         public override void UpdateUnfilteredAggregates ()
@@ -124,7 +133,7 @@ namespace Banshee.Podcasting.Gui
                     break;
             }
 
-            return sort_query ?? Banshee.Query.BansheeQuery.GetSort (key, asc);
+            return sort_query;
         }
     }
 }

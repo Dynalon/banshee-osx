@@ -106,9 +106,58 @@ namespace Banshee.MediaEngine
             get { return null; }
         }
 
+        public override bool InDvdMenu {
+            get { return false; }
+        }
+
         public override string GetSubtitleDescription (int index)
         {
             return string.Empty;
         }
+
+        public override void NotifyMouseMove (double x, double y)
+        {
+        }
+
+        public override void NotifyMouseButtonPressed (int button, double x, double y)
+        {
+        }
+
+        public override void NotifyMouseButtonReleased (int button, double x, double y)
+        {
+        }
+
+        public override void NavigateToLeftMenu ()
+        {
+        }
+
+        public override void NavigateToRightMenu ()
+        {
+        }
+
+        public override void NavigateToUpMenu ()
+        {
+        }
+
+        public override void NavigateToDownMenu ()
+        {
+        }
+
+        public override void NavigateToMenu ()
+        {
+        }
+
+        public override void ActivateCurrentMenu ()
+        {
+        }
+
+        public override void GoToNextChapter ()
+        {
+        }
+
+        public override void GoToPreviousChapter ()
+        {
+        }
+
     }
 }

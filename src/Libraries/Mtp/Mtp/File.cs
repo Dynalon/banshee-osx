@@ -32,57 +32,60 @@ using System.Runtime.InteropServices;
 
 namespace Mtp
 {
-		[DllImport("libmtp.dll")]
-		private static extern IntPtr LIBMTP_new_file_t (); // LIBMTP_file_t *
+    public class File
+    {
+        [DllImport("libmtp.dll")]
+        private static extern IntPtr LIBMTP_new_file_t (); // LIBMTP_file_t *
 
-		[DllImport("libmtp.dll")]
-		private static extern void LIBMTP_destroy_file_t (ref File file); // LIBMTP_file_t *
+        [DllImport("libmtp.dll")]
+        private static extern void LIBMTP_destroy_file_t (ref File file); // LIBMTP_file_t *
 
-		[DllImport("libmtp.dll")]
-		private static extern string LIBMTP_Get_Filetype_Description (FileType type); // char const *
+        [DllImport("libmtp.dll")]
+        private static extern string LIBMTP_Get_Filetype_Description (FileType type); // char const *
 
-		[DllImport("libmtp.dll")]
-		private static extern IntPtr LIBMTP_Get_Filelisting (MtpDeviceHandle handle); // LIBMTP_file_t *
+        [DllImport("libmtp.dll")]
+        private static extern IntPtr LIBMTP_Get_Filelisting (MtpDeviceHandle handle); // LIBMTP_file_t *
 
-		[DllImport("libmtp.dll")]
-		private static extern IntPtr LIBMTP_Get_Filelisting_With_Callback (MtpDeviceHandle handle, ProgressFunction function, IntPtr data); // LIBMTP_file_t *
+        [DllImport("libmtp.dll")]
+        private static extern IntPtr LIBMTP_Get_Filelisting_With_Callback (MtpDeviceHandle handle, ProgressFunction function, IntPtr data); // LIBMTP_file_t *
 
-		[DllImport("libmtp.dll")]
-		private static extern IntPtr LIBMTP_Get_Filemetadata (MtpDeviceHandle handle, uint fileid); // LIBMTP_file_t *
+        [DllImport("libmtp.dll")]
+        private static extern IntPtr LIBMTP_Get_Filemetadata (MtpDeviceHandle handle, uint fileid); // LIBMTP_file_t *
 
-		[DllImport("libmtp.dll")]
-		private static extern int LIBMTP_Get_File_To_File (MtpDeviceHandle handle, uint fileId, string path, ProgressFunction function, IntPtr data);
+        [DllImport("libmtp.dll")]
+        private static extern int LIBMTP_Get_File_To_File (MtpDeviceHandle handle, uint fileId, string path, ProgressFunction function, IntPtr data);
 
-		[DllImport("libmtp.dll")]
-		public static extern void LIBMTP_destroy_filesampledata_t (ref FileSampleData data); // LIBMTP_filesampledata_t *
+        [DllImport("libmtp.dll")]
+        private static extern void LIBMTP_destroy_filesampledata_t (ref FileSampleData data); // LIBMTP_filesampledata_t *
 
-		[DllImport("libmtp.dll")]
-		public static extern int LIBMTP_Get_Representative_Sample_Format (MtpDeviceHandle handle, FileType type, IntPtr data_array);
+        [DllImport("libmtp.dll")]
+        private static extern int LIBMTP_Get_Representative_Sample_Format (MtpDeviceHandle handle, FileType type, IntPtr data_array);
 
-		[DllImport("libmtp.dll")]
-		public static extern int LIBMTP_Send_Representative_Sample (MtpDeviceHandle handle, uint id, ref FileSampleData sample);
+        [DllImport("libmtp.dll")]
+        private static extern int LIBMTP_Send_Representative_Sample (MtpDeviceHandle handle, uint id, ref FileSampleData sample);
 
-	[StructLayout(LayoutKind.Sequential)]
-	internal struct File
-	{
-		public int item_id;
-		public int parent_id;
-#ifdef LIBMTP8
-		public int storage_id;
-#endif
-		[MarshalAs(UnmanagedType.LPStr)]public string filename;
-		public long filesize;
-		public FileType filetype;
-		public IntPtr next; // LIBMTP_file_t*
-		/*
-		public File? Next
-		{
-			get
-			{
-				if (next == IntPtr.Zero)
-					return null;
-				return (File)Marshal.PtrToStructure(next, typeof(File));
-			}
-		}*/
-	}
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    internal struct FileStruct
+    {
+        public int item_id;
+        public int parent_id;
+        public int storage_id;
+
+        [MarshalAs(UnmanagedType.LPStr)]public string filename;
+        public long filesize;
+        public FileType filetype;
+        public IntPtr next; // LIBMTP_file_t*
+        /*
+        public File? Next
+        {
+            get
+            {
+                if (next == IntPtr.Zero)
+                    return null;
+                return (File)Marshal.PtrToStructure(next, typeof(File));
+            }
+        }*/
+    }
 }

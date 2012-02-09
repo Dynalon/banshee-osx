@@ -1,62 +1,22 @@
 ===============================================================================
-Banshee 2.1.0 - 2011-05-12
+Banshee 2.3.4 - 2012-01-19
 ===============================================================================
 
-    Banshee 2.1.0 is the first release in the 2.1 development series leading up
-    to 2.2.  It brings a significant change in dependency policy.  We will be
-    dropping legacy dependencies, and bump other deps to recent versions.  To
-    support users on older distros, we'll publish a Linux bundle.
-
-    New Features:
-
-      * eMusic Store
+    Banshee 2.3.4 is part of the 2.3 development series leading up to 2.4,
+    scheduled for March 2012.
 
     Enhancements:
 
-      * ArtworkManager: add --fetch-artwork argument
-      * bgo#647754: Xperia X12 support
-      * bgo#508713: MiniMode: Reduce height of window
-      * bgo#648941: Support .spc files
-      * bgo#649401: Set UserAgent when doing MusicBrainz queries
+      * Misc code refactorings.
+      * bgo#665997: Mpris: Add xesam:userRating field in track metadata.
+      * bgo#589196: Dap.MassStorage: metadata resync in manual mode.
 
-    Notable Bugs Fixed (51 fixed since 2.0):
+    Notable Bugs Fixed (7 fixed since 2.3.3):
 
-      * Windows installer fixes
-      * bgo#647059: Fix Remote Daap crash
-      * bgo#647089: Daap: Bind to IPAddress.Loopback instead of Any
-      * bgo#644648: libbanshee fixes
-      * bgo#642113: Change Remote dialog's button from Ok to Add
-      * bgo#647144: StreamPositionLabel fixes
-      * AmazonMp3.Store: Fix signed-in detection for UK store
-      * bgo#633552: AppleDevice: Ensure m4a/mp3 are supported
-      * bgo#634647: Have ctrl-a select text in SearchEntry
-      * bgo#642140: Last.fm: Close HTTP streams when finished with them
-      * bgo#648133: build: Don't delete gnome-doc-utils.make during distclean
-      * bgo#647932: DatabaseSource: Fix NRE in SkipTrackIfRemoved
-      * bgo#646991: AlbumListView: Fix disappearing option in Preferences
-      * bgo#647024: Lastfm: Fix NRE crash
-      * bgo#636057: Fix rendering glitch
-      * PodcastFeedPropertiesDialog: Fix display of feed URL
-      * bgo#648458: PlsPlaylistFormat: Make parsing the header case-insensitive
-      * bgo#611489: GStreamer: Use Banshee.IO instead of System.IO
-      * bgo#641748: ViewActions: enable eq once we know backend supports it
-      * bgo#638889: Banshee.Services: Avoid creating dupes after moves
-
-    Packaging Changes:
-
-      * HAL dependency dropped
-      * ipod-sharp and podsleuth dependencies dropped
-      * NDesk.DBus dependency dropped
-      * dbus-sharp >= 0.7 and dbus-sharp-glib >= 0.5 required
-        (available from http://mono.github.com/dbus-sharp/)
-      * Gtk# >= 2.12.10 required
-      * Mono >= 2.4.3 required
-      * GStreamer >= 0.10.26 required
-      * Various configure flags removed:
-        * --disable-ipod
-        * --disable-hal
-        * --disable-podcasts
-      * Banshee releases now hosted on ftp.gnome.org
+      * bgo#648522: Fix race condition when starting multiple instances.
+      * bgo#667355: SourceWatcher: Fix SQL error caused by incorrect escaping.
+      * bgo#667184: Booter: Add missing quote in command line help message.
+      * bgo#667478: Fix build with libmtp 1.1.
 
 ===============================================================================
 SOURCES / PACKAGES
@@ -65,10 +25,9 @@ SOURCES / PACKAGES
 Sources
 -------
 
-    * Banshee 2.1.0 Tarballs:
-      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.1/banshee-2.1.0.tar.bz2
-      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.1/banshee-2.1.0.tar.gz
-      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.1/banshee-2.1.0.sha256sum
+    * Banshee 2.3.4 Tarballs:
+      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.3/banshee-2.3.4.tar.xz
+      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.3/banshee-2.3.4.sha256sum
 
 Packages
 --------
@@ -91,7 +50,7 @@ REPORT BUGS - HELP THE PROJECT - GROW THE COMMUNITY
     hesitate to file bugs!
 
     * http://banshee.fm/contribute/file-bugs
-    * http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&version=2.1.0
+    * http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&version=2.3.4
 
 
 ===============================================================================
@@ -104,17 +63,12 @@ Contributors For This Release
     The following people directly contributed to the release of this version
     of Banshee. Without their help, there would be no release!
 
-      Alexander Kojevnikov, Andrés G. Aragoneses, Bertrand Lorentz,
-      Chow Loong Jin, Christopher James Halse Rogers, David Nielsen,
-      Dustin C. Hatch, Frank Ziegler, Gabriel Burt, Hajime Mizuno,
-      Jérémie Laval, Jonas Urth Olsen, Mackenan Grassi, Michael Martin-Smucker,
-      Olivier Dufour, Pete Johanson, Rodney Dawes, Sjoerd Simons, Will Thompson
+     Alexander Kojevnikov, Andres G. Aragoneses, Bertrand Lorentz,
+     Okano Takayoshi, Olivier Dufour
 
     The following people contributed updated translations to this release.
     Without them, our project's reach would be much more limited.
 
-      Andrej Žnidaršič, Benjamín Valero, Bruno Brouard, Changwoo Ryu,
-      Daniel Korostil, Djavan Fagundes, Fran Diéguez, Gabor Kelemen,
-      Hajime Taira, krishnababu k, Kristjan SCHMIDT, Lê Hoàng Phương,
-      Mario Blättermann, Marek Černocký, Markus Schley, Michael Kotsarinis,
-      Nguyễn Thái Ngọc Duy, Rudolfs Mazurs, Wouter Bolsterlee, Yuri Myasoedov
+     Benjamín Valero, Daniel Mustieles, Hajime Taira, Jiro Matsuzawa,
+     Marek Černocký, Mario Blättermann, Matej Urbančič, Мирослав Николић,
+     Muhammet Kara, Yuri Myasoedov

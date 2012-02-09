@@ -144,15 +144,15 @@ namespace Banshee.Streaming
 
         public static void TrackInfoMerge (TrackInfo track, TagLib.File file, bool preferTrackInfo)
         {
-            TrackInfoMerge (track, file, preferTrackInfo, false);
+            TrackInfoMerge (track, file, preferTrackInfo, false, false);
         }
 
-        public static void TrackInfoMerge (TrackInfo track, TagLib.File file, bool preferTrackInfo, bool import_rating_and_play_count)
+        public static void TrackInfoMerge (TrackInfo track, TagLib.File file, bool preferTrackInfo, bool import_rating, bool import_play_count)
         {
             // TODO support these as arrays:
             // Performers[] (track artists), AlbumArtists[], Composers[], Genres[]
 
-            // Note: this should be kept in sync with the metadata written in SaveTrackMetadataJob.cs
+            // Note: this should be kept in sync with the metadata written in the SaveToFile method
 
             if (file != null) {
                 track.Uri = new SafeUri (file.Name);
@@ -192,11 +192,16 @@ namespace Banshee.Streaming
                 track.Year = Choose ((int)file.Tag.Year, track.Year, preferTrackInfo);
                 track.Bpm = Choose ((int)file.Tag.BeatsPerMinute, track.Bpm, preferTrackInfo);
 
-                if (import_rating_and_play_count) {
+                if (import_rating || import_play_count) {
                     int file_rating = 0, file_playcount = 0;
                     StreamRatingTagger.GetRatingAndPlayCount (file, ref file_rating, ref file_playcount);
-                    track.Rating = Choose (file_rating, track.Rating, preferTrackInfo);
-                    track.PlayCount = Choose (file_playcount, track.PlayCount, preferTrackInfo);
+                    if (import_rating) {
+                        Log.DebugFormat ("### Importing rating for {0}", track.TrackTitle);
+                        track.Rating = Choose (file_rating, track.Rating, preferTrackInfo);
+                    }
+                    if (import_play_count) {
+                        track.PlayCount = Choose (file_playcount, track.PlayCount, preferTrackInfo);
+                    }
                 }
             } else {
                 track.MediaAttributes = TrackMediaAttributes.AudioStream;
@@ -211,8 +216,8 @@ namespace Banshee.Streaming
 
             if (String.IsNullOrEmpty (track.TrackTitle)) {
                 try {
-                    string filename = System.Web.HttpUtility.UrlDecode
-			    (System.IO.Path.GetFileNameWithoutExtension (track.Uri.AbsoluteUri));
+                    string filename = System.Web.HttpUtility.UrlDecode (
+                        System.IO.Path.GetFileNameWithoutExtension (track.Uri.AbsoluteUri));
                     if (!String.IsNullOrEmpty (filename)) {
                         track.TrackTitle = filename;
                     }
@@ -282,7 +287,7 @@ namespace Banshee.Streaming
             } catch {}
         }
 
-        public static bool SaveToFile (TrackInfo track, bool write_metadata, bool write_rating_and_play_count)
+        public static bool SaveToFile (TrackInfo track, bool write_metadata, bool write_rating, bool write_play_count)
         {
             // Note: this should be kept in sync with the metadata read in StreamTagger.cs
             TagLib.File file = ProcessUri (track.Uri);
@@ -321,9 +326,12 @@ namespace Banshee.Streaming
                 SaveIsCompilation (file, track.IsCompilation);
             }
 
-            if (write_rating_and_play_count) {
+            if (write_rating) {
                 // FIXME move StreamRatingTagger to taglib#
-                StreamRatingTagger.StoreRatingAndPlayCount (track.Rating, track.PlayCount, file);
+                StreamRatingTagger.StoreRating (track.Rating, file);
+            }
+            if (write_play_count){
+                StreamRatingTagger.StorePlayCount (track.PlayCount,file);
             }
 
             file.Save ();

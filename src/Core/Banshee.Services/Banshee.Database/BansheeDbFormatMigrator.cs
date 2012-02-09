@@ -54,8 +54,8 @@ namespace Banshee.Database
         // NOTE: Whenever there is a change in ANY of the database schema,
         //       this version MUST be incremented and a migration method
         //       MUST be supplied to match the new version number
-        protected const int CURRENT_VERSION = 43;
-        protected const int CURRENT_METADATA_VERSION = 7;
+        protected const int CURRENT_VERSION = 45;
+        protected const int CURRENT_METADATA_VERSION = 8;
 
 #region Migration Driver
 
@@ -949,11 +949,38 @@ namespace Banshee.Database
             return true;
         }
 
+#region Version 44
+        [DatabaseVersion (44)]
+        private bool Migrate_44 ()
+        {
+            Execute ("ALTER TABLE CoreAlbums ADD COLUMN ArtworkID TEXT");
+            return true;
+        }
+#endregion
+
+        [DatabaseVersion (45)]
+        private bool Migrate_45 ()
+        {
+            connection.AddFunction<FixUriEncodingFunction> ();
+            Execute ("UPDATE CoreTracks SET Uri = BANSHEE_FIX_URI_ENCODING (Uri) WHERE Uri LIKE 'file:///%'");
+            connection.RemoveFunction<FixUriEncodingFunction> ();
+            return true;
+        }
+
 #pragma warning restore 0169
 
 #region Fresh database setup
 
         private void InitializeFreshDatabase (bool refresh_metadata)
+        {
+            DropTables ();
+
+            CreateConfiguration (refresh_metadata);
+
+            CreateTablesAndIndexes ();
+        }
+
+        private void DropTables ()
         {
             Execute("DROP TABLE IF EXISTS CoreConfiguration");
             Execute("DROP TABLE IF EXISTS CoreTracks");
@@ -966,7 +993,10 @@ namespace Banshee.Database
             Execute("DROP TABLE IF EXISTS CoreRemovedTracks");
             Execute("DROP TABLE IF EXISTS CoreTracksCache");
             Execute("DROP TABLE IF EXISTS CoreCache");
+        }
 
+        private void CreateConfiguration (bool refresh_metadata)
+        {
             Execute(@"
                 CREATE TABLE CoreConfiguration (
                     EntryID             INTEGER PRIMARY KEY,
@@ -978,7 +1008,10 @@ namespace Banshee.Database
             if (!refresh_metadata) {
                 Execute (String.Format ("INSERT INTO CoreConfiguration (EntryID, Key, Value) VALUES (null, 'MetadataVersion', {0})", CURRENT_METADATA_VERSION));
             }
+        }
 
+        private void CreateTablesAndIndexes ()
+        {
             Execute(@"
                 CREATE TABLE CorePrimarySources (
                     PrimarySourceID     INTEGER PRIMARY KEY,
@@ -1074,7 +1107,9 @@ namespace Banshee.Database
                     ArtistNameSort      TEXT,
                     ArtistNameSortKey   BLOB,
 
-                    Rating              INTEGER
+                    Rating              INTEGER,
+
+                    ArtworkID           TEXT
                 )
             ");
             Execute ("CREATE INDEX CoreAlbumsIndex ON CoreAlbums(ArtistID, TitleSortKey)");
@@ -1462,6 +1497,16 @@ namespace Banshee.Database
             string filename_fragment = (string)args[1];
             string full_path = Paths.Combine (library_path, filename_fragment);
             return SafeUri.FilenameToUri (full_path);
+        }
+    }
+
+    [SqliteFunction (Name = "BANSHEE_FIX_URI_ENCODING", FuncType = FunctionType.Scalar, Arguments = 1)]
+    internal class FixUriEncodingFunction : SqliteFunction
+    {
+        public override object Invoke (object[] args)
+        {
+            string uri = (string)args[0];
+            return SafeUri.FilenameToUri (SafeUri.UriToFilename (uri));
         }
     }
 }

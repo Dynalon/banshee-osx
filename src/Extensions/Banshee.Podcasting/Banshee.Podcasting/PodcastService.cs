@@ -51,6 +51,7 @@ using Banshee.Podcasting.Gui;
 using Banshee.Podcasting.Data;
 using Banshee.Collection.Database;
 using Banshee.Configuration;
+using Banshee.Preferences;
 
 namespace Banshee.Podcasting
 {
@@ -128,11 +129,10 @@ namespace Banshee.Podcasting
                     ");
 
                     // Finally, move podcast items from the Music Library to the Podcast source
-                    int [] primary_source_ids = new int [] { ServiceManager.SourceManager.MusicLibrary.DbId };
                     int moved = 0;
                     foreach (FeedEnclosure enclosure in FeedEnclosure.Provider.FetchAllMatching ("LocalPath IS NOT NULL AND LocalPath != ''")) {
                         SafeUri uri = new SafeUri (enclosure.LocalPath);
-                        int track_id = DatabaseTrackInfo.GetTrackIdForUri (uri, primary_source_ids);
+                        int track_id = DatabaseTrackInfo.GetTrackIdForUri (uri, ServiceManager.SourceManager.MusicLibrary.DbId);
 
                         if (track_id > 0) {
                             PodcastTrackInfo pi = new PodcastTrackInfo (DatabaseTrackInfo.Provider.FetchSingle (track_id));
@@ -238,6 +238,11 @@ namespace Banshee.Podcasting
 
             InitializeInterface ();
 
+            var preference = source.PreferencesPage["library-location"]["library-location"] as SchemaPreference<string>;
+            preference.ValueChanged += delegate (Root obj) {
+                feeds_manager.PodcastStorageDirectory = preference.Value;
+            };
+
             ThreadAssist.SpawnFromMain (delegate {
                 feeds_manager.PodcastStorageDirectory = source.BaseDirectory;
                 feeds_manager.FeedManager.ItemAdded += OnItemAdded;
@@ -258,8 +263,10 @@ namespace Banshee.Podcasting
                             ServiceManager.DbConnection.Execute (String.Format (
                                 "UPDATE {0} SET LocalPath = REPLACE(LocalPath, ?, ?) WHERE LocalPath IS NOT NULL",
                                 FeedEnclosure.Provider.TableName), old_path, new_path);
-                            ServiceManager.DbConnection.Execute (
-                                "UPDATE CoreTracks SET Uri = REPLACE(Uri, ?, ?) WHERE Uri LIKE 'file://%' AND PrimarySourceId = ?",
+                            ServiceManager.DbConnection.Execute (String.Format (
+                                    "UPDATE CoreTracks SET Uri = REPLACE ({0}, ?, ?)" +
+                                    "WHERE {0} LIKE 'file://%' AND PrimarySourceId = ?",
+                                    Banshee.Query.BansheeQuery.UriField.Column),
                                 old_uri.AbsoluteUri, new_uri.AbsoluteUri, source.DbId);
                             Hyena.Log.DebugFormat ("Moved Podcasts from {0} to {1}", old_path, new_path);
                         }

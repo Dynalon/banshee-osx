@@ -29,9 +29,10 @@ RESOURCES =  \
 	Resources/NotificationAreaMenu.xml
 
 if PLATFORM_DARWIN
-EXTRA_DIST = $(SOURCES) $(RESOURCES)
+include $(top_srcdir)/build/build.dist.mk
 else
 include $(top_srcdir)/build/build.mk
 module_SCRIPTS += Banshee.NotificationArea.dll.config
-EXTRA_DIST += Banshee.NotificationArea.dll.config $(SOURCES) $(RESOURCES)
 endif
+
+EXTRA_DIST += Banshee.NotificationArea.dll.config

@@ -95,10 +95,13 @@ namespace Banshee.Collection
         public virtual string ArtworkId {
             get {
                 if (artwork_id == null) {
-                    artwork_id = CoverArtSpec.CreateArtistAlbumId (ArtistName, Title);
+                    ArtworkId = CoverArtSpec.CreateArtistAlbumId (ArtistName, Title);
                 }
 
                 return artwork_id;
+            }
+            set {
+                artwork_id = value;
             }
         }
 

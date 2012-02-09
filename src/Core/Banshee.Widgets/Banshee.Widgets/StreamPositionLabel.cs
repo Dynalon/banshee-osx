@@ -57,6 +57,10 @@ namespace Banshee.Widgets
             this.seekRange.ValueChanged += OnSliderUpdated;
         }
 
+        protected StreamPositionLabel (IntPtr raw) : base (raw)
+        {
+        }
+
         protected override void OnRealized ()
         {
             base.OnRealized ();
@@ -145,6 +149,7 @@ namespace Banshee.Widgets
 
         private static string idle = Catalog.GetString ("Idle");
         private static string contacting = Catalog.GetString ("Contacting...");
+        private static string loading = Catalog.GetString ("Loading...");
 
         private void UpdateLabel ()
         {
@@ -158,8 +163,7 @@ namespace Banshee.Widgets
             } else if (IsContacting) {
                 UpdateLabel (contacting);
             } else if (IsLoading) {
-                // TODO replace w/ "Loading..." after string freeze
-                UpdateLabel (contacting);
+                UpdateLabel (loading);
             } else if (IsIdle) {
                 UpdateLabel (idle);
             } else if (seekRange.Duration == Int64.MaxValue) {

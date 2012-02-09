@@ -49,6 +49,31 @@ namespace Banshee.InternetRadio
             this.source = source;
         }
 
+        public bool LoadDefaults ()
+        {
+            // Load system-wide defaults into user DB on first start
+            if (DatabaseConfigurationClient.Client.Get<bool> ("InternetRadio.SystemXspfLoaded", false)) {
+                return false;
+            }
+            DatabaseConfigurationClient.Client.Set<bool> ("InternetRadio.SystemXspfLoaded", true);
+
+            string xspf_system_path = Hyena.Paths.GetInstalledDataDirectory ("stations");
+            if (!Directory.Exists (xspf_system_path)) {
+                return false;
+            }
+            
+            try {
+                foreach (string file in Directory.GetFiles (xspf_system_path, "*.xspf")) {
+                    Log.DebugFormat ("Loading default Internet Radio Stations from {0}", file);
+                    MigrateXspf (file);
+                }
+            } catch (Exception e) {
+                Log.Exception ("Error loading Internet Radio Stations from system default", e);
+            }
+
+            return true;
+        }
+
         public bool Migrate ()
         {
             if (DatabaseConfigurationClient.Client.Get<bool> ("InternetRadio.LegacyXspfMigrated", false)) {
@@ -68,7 +93,7 @@ namespace Banshee.InternetRadio
                     MigrateXspf (file);
                 }
             } catch (Exception e) {
-                Hyena.Log.Exception ("Migrating Internet Radio Stations", e);
+                Log.Exception ("Error migrating Internet Radio Stations", e);
             }
 
             return true;
@@ -88,7 +113,7 @@ namespace Banshee.InternetRadio
                     }
                 }
             } catch (Exception e) {
-                Log.Exception ("Could not migrat XSPF playlist", e);
+                Log.Exception ("Could not migrate XSPF playlist", e);
             }
         }
 

@@ -92,13 +92,16 @@ namespace Banshee.Sources
         protected bool error_source_visible = false;
 
         protected string remove_range_sql = @"
-            INSERT INTO CoreRemovedTracks (DateRemovedStamp, TrackID, Uri) SELECT ?, TrackID, Uri FROM CoreTracks WHERE TrackID IN (SELECT {0});
+            INSERT INTO CoreRemovedTracks (DateRemovedStamp, TrackID, Uri)
+                SELECT ?, TrackID, " + BansheeQuery.UriField.Column + @"
+                FROM CoreTracks WHERE TrackID IN (SELECT {0});
             DELETE FROM CoreTracks WHERE TrackID IN (SELECT {0})";
 
-        protected HyenaSqliteCommand remove_list_command = new HyenaSqliteCommand (@"
-            INSERT INTO CoreRemovedTracks (DateRemovedStamp, TrackID, Uri) SELECT ?, TrackID, Uri FROM CoreTracks WHERE TrackID IN (SELECT ItemID FROM CoreCache WHERE ModelID = ?);
+        protected HyenaSqliteCommand remove_list_command = new HyenaSqliteCommand (String.Format (@"
+            INSERT INTO CoreRemovedTracks (DateRemovedStamp, TrackID, Uri)
+                SELECT ?, TrackID, {0} FROM CoreTracks WHERE TrackID IN (SELECT ItemID FROM CoreCache WHERE ModelID = ?);
             DELETE FROM CoreTracks WHERE TrackID IN (SELECT ItemID FROM CoreCache WHERE ModelID = ?)
-        ");
+        ", BansheeQuery.UriField.Column));
 
         protected HyenaSqliteCommand prune_artists_albums_command = new HyenaSqliteCommand (@"
             DELETE FROM CoreArtists WHERE ArtistID NOT IN (SELECT ArtistID FROM CoreTracks);
@@ -569,10 +572,9 @@ namespace Banshee.Sources
             return true;
         }
 
-        private static HyenaSqliteCommand get_track_id_cmd = new HyenaSqliteCommand ("SELECT TrackID FROM CoreTracks WHERE PrimarySourceId = ? AND Uri = ? LIMIT 1");
         public int GetTrackIdForUri (string uri)
         {
-            return ServiceManager.DbConnection.Query<int> (get_track_id_cmd, DbId, new SafeUri (uri).AbsoluteUri);
+            return DatabaseTrackInfo.GetTrackIdForUri (new SafeUri (uri), DbId);
         }
 
         private bool is_adding;

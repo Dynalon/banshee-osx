@@ -4,8 +4,10 @@
 // Author:
 //   Aaron Bockover <abockover@novell.com>
 //   Gabriel Burt <gburt@novell.com>
+//   Andrés G. Aragoneses <knocte@gmail.com>
 //
 // Copyright (C) 2007-2008 Novell, Inc.
+// Copyright (C) 2011 Andrés G. Aragoneses
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the
@@ -351,9 +353,9 @@ namespace Banshee.Query
             PlayCountField.ShortLabel   = Catalog.GetString ("Plays");
 
             default_sort = String.Format (default_sort_template, "");
-            default_sort_by_year = String.Format (default_sort_template, "CoreTracks.Year ASC, ");
+            default_sort_by_year = String.Format (default_sort_template, YearField.Column + " ASC, ");
 
-            RandomOrder = CreateQueryOrder ("Random", asc, Catalog.GetString ("Random"), null);
+            RandomOrder = CreateRandomQueryOrder ();
 
             Orders = new QueryOrder [] {
                 RandomOrder,
@@ -384,138 +386,147 @@ namespace Banshee.Query
         private static readonly string default_sort;
         private static readonly string default_sort_by_year;
 
-        public static string GetSort (string key)
+        public static string GetSort (QueryField key)
         {
             return GetSort (key, false);
         }
 
-        public static string GetSort (string key, bool asc)
+        public static string GetRandomSort ()
         {
+            return "RANDOM ()";
+        }
+
+        public static string GetSort (QueryField field, bool asc)
+        {
+            if (field == null) {
+                throw new ArgumentNullException ("field");
+            }
+
             bool sort_by_year = Banshee.Configuration.Schema.LibrarySchema.SortByAlbumYear.Get ();
-            string sort_by_year_part = sort_by_year ? "CoreTracks.Year ASC," : "";
+            string sort_by_year_part = sort_by_year ? YearField.Column + " ASC," : "";
             string sort = sort_by_year ? default_sort_by_year : default_sort;
 
             string ascDesc = asc ? "ASC" : "DESC";
             string sort_query = null;
-            // TODO use the QueryFields here instead of matching on a string key
-            string column = null;
-            switch (key.ToLower ()) {
-                case "track":
-                case "grouping":
-                    sort_query = String.Format (@"
-                        CoreAlbums.ArtistNameSortKey ASC,
-                        {1}
-                        CoreAlbums.TitleSortKey ASC,
-                        CoreTracks.Disc ASC,
-                        CoreTracks.TrackNumber {0}", ascDesc, sort_by_year_part);
-                    break;
 
-                case "albumartist":
-                    sort_query = String.Format (@"
-                        CoreAlbums.ArtistNameSortKey {0},
-                        {1}
-                        CoreAlbums.TitleSortKey ASC,
-                        CoreTracks.Disc ASC,
-                        CoreTracks.TrackNumber ASC", ascDesc, sort_by_year_part);
-                    break;
-
-                case "artist":
-                    sort_query = String.Format (@"
-                        CoreArtists.NameSortKey {0},
-                        {1}
-                        CoreAlbums.TitleSortKey ASC,
-                        CoreTracks.Disc ASC,
-                        CoreTracks.TrackNumber ASC", ascDesc, sort_by_year_part);
-                    break;
-
-                case "album":
-                    sort_query = String.Format (@"
-                        CoreAlbums.TitleSortKey {0},
-                        {1}
-                        CoreTracks.Disc ASC,
-                        CoreTracks.TrackNumber ASC", ascDesc, sort_by_year_part);
-                    break;
-
-                case "title":
-                    sort_query = String.Format (@"
-                        CoreTracks.TitleSortKey {0},
-                        CoreAlbums.ArtistNameSortKey ASC,
-                        {1}
-                        CoreAlbums.TitleSortKey ASC", ascDesc, sort_by_year_part);
-                    break;
-
-                case "random":
-                    sort_query = "RANDOM ()";
-                    break;
-
-                case "disc":
-                    sort_query = String.Format (@"
-                        CoreAlbums.ArtistNameSortKey ASC,
-                        {1}
-                        CoreAlbums.TitleSortKey ASC,
-                        CoreTracks.Disc {0},
-                        CoreTracks.TrackNumber ASC", ascDesc, sort_by_year_part);
-                    break;
-
-                // FIXME hacks to aid in migration of these sort keys to actually
-                // using the QueryField (or at least their .Names)
-                case "lastplayed":
-                case "lastskipped":
-                    column = String.Format ("{0}stamp", key);
-                    goto case "year";
-                case "added":
-                    column = "dateaddedstamp";
-                    goto case "year";
-
-                case "conductor":
-                case "genre":
-                case "composer":
-                case "comment":
-                    sort_query = String.Format (
-                        "HYENA_COLLATION_KEY(CoreTracks.{0}) {1}, {2}",
-                        column ?? key, ascDesc, sort
-                    );
-                    break;
-
-                case "score":
-                    sort_query = String.Format (@"
-                        CoreTracks.Score {0},
-                        CoreTracks.Playcount {0}, {1}", ascDesc, sort);
-                    break;
-
-                case "year":
-                case "bitrate":
-                case "samplerate":
-                case "bitspersample":
-                case "bpm":
-                case "trackcount":
-                case "disccount":
-                case "duration":
-                case "rating":
-                case "playcount":
-                case "skipcount":
-                case "filesize":
-                case "lastplayedstamp":
-                case "lastskippedstamp":
-                case "dateaddedstamp":
-                case "uri":
-                case "mimetype":
-                case "licenseuri":
-                    sort_query = String.Format (
-                        "CoreTracks.{0} {1}, {2}",
-                        column ?? key, ascDesc, sort
-                    );
-                    break;
-                default:
-                    Hyena.Log.ErrorFormat ("Unknown sort key passed in! {0} not recognized", key);
-                    break;
+            if (field.Equals (GroupingField) ||
+                field.Equals (TrackNumberField)) {
+                sort_query = String.Format (@"
+                    CoreAlbums.ArtistNameSortKey ASC,
+                    {0}
+                    CoreAlbums.TitleSortKey ASC,
+                    {1} ASC,
+                    {2} {3}",
+                    sort_by_year_part, DiscNumberField.Column, TrackNumberField.Column, ascDesc);
             }
+
+            else if (field.Equals (AlbumArtistField)) {
+
+                sort_query = String.Format (@"
+                    CoreAlbums.ArtistNameSortKey {0},
+                    {1}
+                    CoreAlbums.TitleSortKey ASC,
+                    {2} ASC,
+                    {3} ASC",
+                    ascDesc, sort_by_year_part, DiscNumberField.Column, TrackNumberField.Column);
+            }
+
+            else if (field.Equals (ArtistField)) {
+
+                sort_query = String.Format (@"
+                    CoreArtists.NameSortKey {0},
+                    {1}
+                    CoreAlbums.TitleSortKey ASC,
+                    {2} ASC,
+                    {3} ASC",
+                    ascDesc, sort_by_year_part, DiscNumberField.Column, TrackNumberField.Column);
+            }
+
+            else if (field.Equals (AlbumField)) {
+                sort_query = String.Format (@"
+                    CoreAlbums.TitleSortKey {0},
+                    {1}
+                    {2} ASC,
+                    {3} ASC",
+                    ascDesc, sort_by_year_part, DiscNumberField.Column, TrackNumberField.Column);
+            }
+
+            else if (field.Equals (TitleField)) {
+                sort_query = String.Format (@"
+                    CoreTracks.TitleSortKey {0},
+                    CoreAlbums.ArtistNameSortKey ASC,
+                    {1}
+                    CoreAlbums.TitleSortKey ASC", ascDesc, sort_by_year_part);
+            }
+
+            else if (field.Equals (DiscNumberField)) {
+                sort_query = String.Format (@"
+                    CoreAlbums.ArtistNameSortKey ASC,
+                    {0}
+                    CoreAlbums.TitleSortKey ASC,
+                    {1} {2},
+                    {3} ASC",
+                    sort_by_year_part, DiscNumberField.Column, ascDesc, TrackNumberField.Column);
+            }
+
+            else if (field.Equals (ScoreField)) {
+                sort_query = String.Format (@"
+                    {0} {1},
+                    {2} {1}, {3}",
+                    field.Column, ascDesc, PlayCountField.Column, sort);
+            }
+
+            else if (field.Equals (ComposerField) ||
+                     field.Equals (GenreField)    ||
+                     field.Equals (ComposerField) ||
+                     field.Equals (ConductorField) ||
+                     field.Equals (CommentField)) {
+
+                sort_query = String.Format (
+                    "HYENA_COLLATION_KEY({0}) {1}, {2}",
+                    field.Column, ascDesc, sort
+                );
+            }
+
+            else if (field.Equals (LastPlayedField)    ||
+                     field.Equals (LastSkippedField)   ||
+                     field.Equals (DateAddedField)     ||
+                     field.Equals (YearField)          ||
+                     field.Equals (BitRateField)       ||
+                     field.Equals (SampleRateField)    ||
+                     field.Equals (BitsPerSampleField) ||
+                     field.Equals (BpmField)           ||
+                     field.Equals (TrackCountField)    ||
+                     field.Equals (DiscCountField)     ||
+                     field.Equals (DurationField)      ||
+                     field.Equals (RatingField)        ||
+                     field.Equals (PlayCountField)     ||
+                     field.Equals (SkipCountField)     ||
+                     field.Equals (FileSizeField)      ||
+                     field.Equals (UriField)           ||
+                     field.Equals (MimeTypeField)      ||
+                     field.Equals (LicenseUriField)) {
+                sort_query = String.Format (
+                    "{0} {1}, {2}",
+                    field.Column, ascDesc, sort
+                );
+            }
+
+            else {
+                Hyena.Log.ErrorFormat ("Unknown query field passed in! {0} not recognized", field.Name);
+            }
+
             return sort_query;
         }
 
         private static QueryOrder CreateQueryOrder (string name, bool asc, string label, QueryField field)
         {
-            return new QueryOrder (CreateOrderName (name, asc), label, GetSort (name, asc), field, asc);
+            return new QueryOrder (CreateOrderName (name, asc), label, GetSort (field, asc), field, asc);
+        }
+
+        private static QueryOrder CreateRandomQueryOrder ()
+        {
+            return new QueryOrder (CreateOrderName ("Random", true), Catalog.GetString ("Random"), GetRandomSort (), null, true);
         }
 
         public static QueryLimit FindLimit (string name)

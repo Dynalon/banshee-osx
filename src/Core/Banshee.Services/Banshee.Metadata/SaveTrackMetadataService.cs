@@ -46,14 +46,21 @@ namespace Banshee.Metadata
     {
         public static SchemaPreference<bool> WriteMetadataEnabled = new SchemaPreference<bool> (
                 LibrarySchema.WriteMetadata,
-                Catalog.GetString ("Write _metadata to files"),
-                Catalog.GetString ("Save tags and other metadata inside supported media files")
+                Catalog.GetString ("Sync _metadata between library and files"),
+                Catalog.GetString ("Enable this option to have metadata in sync between your library and supported media files")
         );
 
-        public static SchemaPreference<bool> WriteRatingsAndPlayCountsEnabled = new SchemaPreference<bool> (
-                LibrarySchema.WriteRatingsAndPlayCounts,
-                Catalog.GetString ("Write _ratings and play counts to files"),
-                Catalog.GetString ("Enable this option to save rating and playcount metadata inside supported audio files"));
+        public static SchemaPreference<bool> WriteRatingsEnabled = new SchemaPreference<bool> (
+                LibrarySchema.WriteRatings,
+                Catalog.GetString ("Sync _ratings between library and files"),
+                Catalog.GetString ("Enable this option to have rating metadata synced between your library and supported audio files")
+        );
+
+        public static SchemaPreference<bool> WritePlayCountsEnabled = new SchemaPreference<bool> (
+                LibrarySchema.WritePlayCounts,
+                Catalog.GetString ("Sync play counts between library and files"),
+                Catalog.GetString ("Enable this option to have playcount metadata synced between your library and supported audio files")
+        );
 
         public static SchemaPreference<bool> RenameEnabled = new SchemaPreference<bool> (
                 LibrarySchema.MoveOnInfoSave,
@@ -73,7 +80,8 @@ namespace Banshee.Metadata
         {
             Banshee.ServiceStack.Application.RunTimeout (10000, delegate {
                 WriteMetadataEnabled.ValueChanged += OnEnabledChanged;
-                WriteRatingsAndPlayCountsEnabled.ValueChanged += OnEnabledChanged;
+                WriteRatingsEnabled.ValueChanged += OnEnabledChanged;
+                WritePlayCountsEnabled.ValueChanged += OnEnabledChanged;
                 RenameEnabled.ValueChanged += OnEnabledChanged;
 
                 foreach (var source in ServiceManager.SourceManager.Sources) {
@@ -127,18 +135,20 @@ namespace Banshee.Metadata
 
         private void Save ()
         {
-            if (!(WriteMetadataEnabled.Value || WriteRatingsAndPlayCountsEnabled.Value || RenameEnabled.Value))
+            if (!(WriteMetadataEnabled.Value || WriteRatingsEnabled.Value || WritePlayCountsEnabled.Value || RenameEnabled.Value))
                 return;
 
             lock (sync) {
                 if (job != null) {
                     job.WriteMetadataEnabled = WriteMetadataEnabled.Value;
-                    job.WriteRatingsAndPlayCountsEnabled = WriteRatingsAndPlayCountsEnabled.Value;
+                    job.WriteRatingsEnabled = WriteRatingsEnabled.Value;
+                    job.WritePlayCountsEnabled = WritePlayCountsEnabled.Value;
                     job.RenameEnabled = RenameEnabled.Value;
                 } else {
                     var new_job = new SaveTrackMetadataJob () {
                         WriteMetadataEnabled = WriteMetadataEnabled.Value,
-                        WriteRatingsAndPlayCountsEnabled = WriteRatingsAndPlayCountsEnabled.Value,
+                        WriteRatingsEnabled = WriteRatingsEnabled.Value,
+                        WritePlayCountsEnabled = WritePlayCountsEnabled.Value,
                         RenameEnabled = RenameEnabled.Value
                     };
                     new_job.Finished += delegate { lock (sync) { job = null; } };
@@ -155,7 +165,7 @@ namespace Banshee.Metadata
 
         private void OnEnabledChanged (Root pref)
         {
-            if (WriteMetadataEnabled.Value || WriteRatingsAndPlayCountsEnabled.Value || RenameEnabled.Value) {
+            if (WriteMetadataEnabled.Value || WriteRatingsEnabled.Value || WritePlayCountsEnabled.Value || RenameEnabled.Value) {
                 Save ();
             } else {
                 if (job != null) {
@@ -168,13 +178,5 @@ namespace Banshee.Metadata
             get { return "SaveTrackMetadataService"; }
         }
 
-        // Reserve strings in preparation for the forthcoming string freeze.
-        public void ReservedStrings ()
-        {
-            Catalog.GetString ("Write _ratings and play counts to files");
-            Catalog.GetString ("Enable this option to save rating and play count metadata inside supported audio files whenever the rating is changed.");
-            Catalog.GetString ("Import _ratings");
-            Catalog.GetString ("Import play _counts");
-        }
     }
 }

@@ -24,6 +24,6 @@ uninstall-hook:
 		rm -f $(DESTDIR)$(moduledir)/`basename $$ASM`; \
 	done;
 else
-EXTRA_DIST = $(SOURCES) $(RESOURCES)
+include $(top_srcdir)/build/build.dist.mk
 endif
 

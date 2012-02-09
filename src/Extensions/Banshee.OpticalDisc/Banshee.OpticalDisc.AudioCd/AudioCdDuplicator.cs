@@ -31,7 +31,7 @@ using Mono.Addins;
 
 using Banshee.Hardware;
 
-namespace Banshee.AudioCd
+namespace Banshee.OpticalDisc.AudioCd
 {
     public static class AudioCdDuplicator
     {

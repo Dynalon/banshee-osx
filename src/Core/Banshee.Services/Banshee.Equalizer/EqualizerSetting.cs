@@ -52,6 +52,7 @@ namespace Banshee.Equalizer
             string name, double amp, double [] gains) : this (manager, name)
         {
             IsReadOnly = true;
+            SetAmplifierLevel (amp, false);
             for (uint i = 0; i < gains.Length; i++) {
                 SetGain (i, gains[i], false);
             }

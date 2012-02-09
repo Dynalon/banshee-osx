@@ -130,6 +130,10 @@ namespace Banshee.Sources.Gui
 
             source_column.PackStart (header_renderer, true);
             source_column.SetCellDataFunc (header_renderer, new Gtk.CellLayoutDataFunc ((layout, cell, model, iter) => {
+                if (model == null) {
+                    throw new ArgumentNullException ("model");
+                }
+
                 var type = (SourceModel.EntryType) model.GetValue (iter, (int)SourceModel.Columns.Type);
                 header_renderer.Visible = type == SourceModel.EntryType.Group;
                 source_renderer.Visible = type == SourceModel.EntryType.Source;

@@ -225,6 +225,7 @@ namespace Banshee.MediaEngine
 
             UserJob.Completed++;
             args.Track.MimeType = current_context.Config.Profile.MimeTypes[0];
+            args.Track.FileSize = Banshee.IO.File.GetSize (current_context.OutUri);
             current_context.Handler (args.Track, current_context.OutUri);
 
             ProcessQueue ();

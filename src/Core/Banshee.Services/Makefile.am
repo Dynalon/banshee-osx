@@ -6,6 +6,8 @@ SOURCES =  \
 	Banshee.Base/RateLimiter.cs \
 	Banshee.Collection.Database/Bookmark.cs \
 	Banshee.Collection.Database/CachedList.cs \
+	Banshee.Collection.Database/DatabaseAlbumArtistInfo.cs \
+	Banshee.Collection.Database/DatabaseAlbumArtistListModel.cs \
 	Banshee.Collection.Database/DatabaseAlbumInfo.cs \
 	Banshee.Collection.Database/DatabaseAlbumListModel.cs \
 	Banshee.Collection.Database/DatabaseArtistInfo.cs \
@@ -18,6 +20,8 @@ SOURCES =  \
 	Banshee.Collection.Database/DatabaseTrackListModel.cs \
 	Banshee.Collection.Database/DatabaseTrackModelCache.cs \
 	Banshee.Collection.Database/DatabaseTrackModelProvider.cs \
+	Banshee.Collection.Database/DatabaseYearInfo.cs \
+	Banshee.Collection.Database/DatabaseYearListModel.cs \
 	Banshee.Collection.Database/FilterModelProvider.cs \
 	Banshee.Collection.Database/IDatabaseTrackModelCache.cs \
 	Banshee.Collection.Database/IDatabaseTrackModelProvider.cs \
@@ -48,6 +52,7 @@ SOURCES =  \
 	Banshee.Collection/IFilterListModel.cs \
 	Banshee.Collection/ImportEventHandler.cs \
 	Banshee.Collection/ImportManager.cs \
+	Banshee.Collection/InvalidFileException.cs \
 	Banshee.Collection/MemoryTrackListModel.cs \
 	Banshee.Collection/ModelHelper.cs \
 	Banshee.Collection/RescanPipeline.cs \
@@ -175,6 +180,7 @@ SOURCES =  \
 	Banshee.Query/PlaylistQueryValue.cs \
 	Banshee.Query/RatingQueryValue.cs \
 	Banshee.Query/SmartPlaylistQueryValue.cs \
+	Banshee.Query/Tests/BansheeQueryTests.cs \
 	Banshee.Query/YearQueryValue.cs \
 	Banshee.ServiceStack/Application.cs \
 	Banshee.ServiceStack/BatchUserJob.cs \

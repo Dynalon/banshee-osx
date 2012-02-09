@@ -238,10 +238,11 @@ namespace Banshee.Dap.AppleDevice
 
                 PlaylistSource pl_src = new PlaylistSource (playlist.Name, this);
                 pl_src.Save ();
-                // We use the IPod.Track.Id here b/c we just shoved it into ExternalID above when we loaded
-                // the tracks, however when we sync, the Track.Id values may/will change.
+                // We use the GPod.Track.DBID here b/c we just shoved it into ExternalID above when we loaded
+                // the tracks, however when we sync, the Track.DBID values may/will change.
                 foreach (var track in playlist.Tracks) {
-                    ServiceManager.DbConnection.Execute (insert_cmd, pl_src.DbId, this.DbId, track.DBID);
+                    // DBID will be stored in a long, so we need to cast it. See bgo#650011
+                    ServiceManager.DbConnection.Execute (insert_cmd, pl_src.DbId, this.DbId, (long) track.DBID);
                 }
                 pl_src.UpdateCounts ();
                 AddChildSource (pl_src);
@@ -571,7 +572,7 @@ namespace Banshee.Dap.AppleDevice
                     track.Save (false);
                     tracks_map[track.TrackId] = track;
                 } catch (Exception e) {
-                    Log.Exception ("Cannot save track to iPod", e);
+                    Log.Exception ("Cannot save track to the Apple device", e);
                 }
             }
             if (total > 0) {

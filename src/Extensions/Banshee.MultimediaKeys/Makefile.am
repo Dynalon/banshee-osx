@@ -10,5 +10,5 @@ RESOURCES = Banshee.MultimediaKeys.addin.xml
 if ENABLE_GNOME
 include $(top_srcdir)/build/build.mk
 else
-EXTRA_DIST = $(SOURCES) $(RESOURCES)
+include $(top_srcdir)/build/build.dist.mk
 endif

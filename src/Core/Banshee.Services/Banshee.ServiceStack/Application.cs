@@ -87,8 +87,6 @@ namespace Banshee.ServiceStack
 
         public static void Run ()
         {
-            Banshee.Base.PlatformHacks.TrapMonoJitSegv ();
-
 #if WIN32
             // There are two sets of environement variables we need to impact with our LANG.
             // refer to : http://article.gmane.org/gmane.comp.gnu.mingw.user/8272
@@ -110,8 +108,6 @@ namespace Banshee.ServiceStack
             ServiceManager.SourceManager.AddSource (new MusicLibrarySource (), true);
             ServiceManager.SourceManager.AddSource (new VideoLibrarySource (), false);
             ServiceManager.SourceManager.LoadExtensionSources ();
-
-            Banshee.Base.PlatformHacks.RestoreMonoJitSegv ();
         }
 
         public static bool ShuttingDown {

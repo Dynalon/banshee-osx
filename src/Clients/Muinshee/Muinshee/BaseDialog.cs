@@ -48,6 +48,19 @@ using Banshee.MediaEngine;
 
 namespace Muinshee
 {
+    internal class MuinsheeSearchEntry : SearchEntry
+    {
+        protected override bool OnKeyPressEvent (Gdk.EventKey evnt)
+        {
+            // The default behavior is to have Esc clear the search entry
+            // Close the dialog if there is already nothing in the search entry
+            if (evnt.Key == Gdk.Key.Escape && String.IsNullOrEmpty (Query)) {
+                return false;
+            }
+            return base.OnKeyPressEvent (evnt);
+        }
+    }
+
     public abstract class BaseDialog : BansheeDialog
     {
         private SearchEntry search_entry;
@@ -65,7 +78,7 @@ namespace Muinshee
             Label search_label = new Label ("_Search:");
             filter_box.PackStart (search_label, false, false, 0);
 
-            search_entry = new SearchEntry ();
+            search_entry = new MuinsheeSearchEntry ();
             search_entry.Show ();
             search_entry.Changed += OnFilterChanged;
             search_entry.Ready = true;
@@ -80,7 +93,7 @@ namespace Muinshee
 
             AddDefaultCloseButton ();
 
-            Button queue_button = new ImageButton (Catalog.GetString ("En_queue"), "stock_timer");
+            Button queue_button = new ImageButton (Catalog.GetString ("En_queue"), "gtk-add");
             AddActionWidget (queue_button, Gtk.ResponseType.Apply);
 
             Button play_button = new ImageButton (Catalog.GetString ("_Play"), "media-playback-start");
@@ -89,20 +102,24 @@ namespace Muinshee
             window_controller = new PersistentWindowController (this, String.Format ("muinshee.{0}", addType), 500, 475, WindowPersistOptions.Size);
             window_controller.Restore ();
             ShowAll ();
+
+            Response += OnResponse;
         }
 
-        public void TryRun ()
+        private void OnResponse (object o, ResponseArgs args)
         {
-            try {
-                var response = Run ();
-                if (response == ResponseType.Apply) {
-                    Queue ();
-                } else if (response == ResponseType.Ok) {
-                    Play ();
-                }
-            } finally {
-                Destroy ();
+            ResponseType response = args.ResponseId;
+
+            if (response == ResponseType.Apply) {
+                Queue ();
+                return;
             }
+
+            if (response == ResponseType.Ok) {
+                Play ();
+            }
+
+            Destroy ();
         }
 
         private void OnFilterChanged (object o, EventArgs args)
@@ -110,7 +127,7 @@ namespace Muinshee
             Music.FilterQuery = search_entry.Query;
         }
 
-        private void Play ()
+        protected void Play ()
         {
             TrackInfo to_play = FirstTrack;
             Hyena.Log.InformationFormat  ("first to play is {0}", to_play);

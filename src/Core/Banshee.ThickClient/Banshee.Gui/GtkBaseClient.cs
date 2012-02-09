@@ -152,6 +152,10 @@ namespace Banshee.Gui
             Gdk.Global.ProgramClass = Application.InternalName;
             GLib.Global.ApplicationName = "Banshee";
 
+            // TODO: Set this to "video" when we're playing a video. PulseAudio doesn't treat it differently
+            // than "music" for now, but it would be more correct.
+            Environment.SetEnvironmentVariable ("PULSE_PROP_media.role", "music");
+
             if (ApplicationContext.Debugging) {
                 GLib.Log.SetLogHandler ("Gtk", GLib.LogLevelFlags.Critical, GLib.Log.PrintTraceLogFunction);
                 Gdk.Window.DebugUpdates = !String.IsNullOrEmpty (Environment.GetEnvironmentVariable ("GDK_DEBUG_UPDATES"));

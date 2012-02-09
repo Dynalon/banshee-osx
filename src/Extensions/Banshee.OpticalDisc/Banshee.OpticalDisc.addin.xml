@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Addin 
-    id="Banshee.AudioCd"
+    id="Banshee.OpticalDisc"
     version="1.0"
     compatVersion="1.0"
     copyright="© 2008 Novell Inc. Licensed under the MIT X11 license."
-    name="Audio CD Support"
+    name="DVD and Audio CD Support"
     category="Core"
-    description="Listen to and rip Audio CDs."
+    description="Watch DVDs, listen to and rip Audio CDs."
     author="Aaron Bockover"
     url="http://banshee.fm/"
     defaultEnabled="true">
@@ -16,7 +16,8 @@
   </Dependencies>
 
   <Extension path="/Banshee/ServiceManager/Service">
-    <Service class="Banshee.AudioCd.AudioCdService"/>
+    <Service class="Banshee.OpticalDisc.AudioCd.AudioCdService"/>
+    <Service class="Banshee.OpticalDisc.Dvd.DvdService"/>
   </Extension>
 
 </Addin>

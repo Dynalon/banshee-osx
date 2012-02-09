@@ -80,7 +80,7 @@ namespace Banshee.Dap.Mtp
                 Log.Exception (e);
                 Log.Error (
                     Catalog.GetString ("Error Initializing MTP Device Support"),
-                    Catalog.GetString ("There was an error intializing MTP device support.  See http://www.banshee-project.org/Guide/DAPs/MTP for more information."), true
+                    Catalog.GetString ("There was an error initializing MTP device support."), true
                 );
                 throw new InvalidDeviceException ();
             } catch (Exception e) {
@@ -175,10 +175,9 @@ namespace Banshee.Dap.Mtp
                     }
                 }
 
-                int [] source_ids = new int [] { DbId };
                 foreach (Track mtp_track in files) {
                     int track_id;
-                    if ((track_id = DatabaseTrackInfo.GetTrackIdForUri (MtpTrackInfo.GetPathFromMtpTrack (mtp_track), source_ids)) > 0) {
+                    if ((track_id = DatabaseTrackInfo.GetTrackIdForUri (MtpTrackInfo.GetPathFromMtpTrack (mtp_track), DbId )) > 0) {
                         track_map[track_id] = mtp_track;
                     } else {
                         MtpTrackInfo track = new MtpTrackInfo (mtp_device, mtp_track);

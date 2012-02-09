@@ -42,6 +42,7 @@ using Hyena.Data.Sqlite;
 
 using Banshee.Gui;
 using Banshee.Base;
+using Banshee.Query;
 using Banshee.Database;
 using Banshee.Collection;
 using Banshee.ServiceStack;
@@ -213,7 +214,8 @@ namespace Banshee.Podcasting.Gui
             TrackArtworkIdHandler = GetTrackArtworkId;
             MediaTypes = TrackMediaAttributes.Podcast;
             NotMediaTypes = TrackMediaAttributes.AudioBook;
-            SyncCondition = "(substr(CoreTracks.Uri, 0, 4) != 'http' AND CoreTracks.PlayCount = 0)";
+            SyncCondition = String.Format ("(substr({0}, 0, 4) != 'http' AND {1} = 0)",
+                                           BansheeQuery.UriField.Column, BansheeQuery.PlayCountField.Column);
             TrackModel.Reloaded += OnReloaded;
 
             Properties.SetString ("Icon.Name", "podcast");

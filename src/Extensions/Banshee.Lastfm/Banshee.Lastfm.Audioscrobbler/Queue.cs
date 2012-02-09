@@ -139,15 +139,33 @@ namespace Banshee.Lastfm.Audioscrobbler
 
         public Queue ()
         {
-            string xmlfilepath = Path.Combine (Hyena.Paths.ExtensionCacheRoot, "last.fm");
-            xml_path = Path.Combine (xmlfilepath, "audioscrobbler-queue.xml");
+            string xml_dir_path = Path.Combine (Hyena.Paths.ExtensionCacheRoot, "lastfm");
+            xml_path = Path.Combine (xml_dir_path, "audioscrobbler-queue.xml");
             queue = new List<QueuedTrack> ();
 
-            if (!Directory.Exists(xmlfilepath)) {
-                Directory.CreateDirectory (xmlfilepath);
+            if (!Directory.Exists(xml_dir_path)) {
+                Directory.CreateDirectory (xml_dir_path);
             }
 
+            MigrateQueueFile ();
+
             Load ();
+        }
+
+        private void MigrateQueueFile ()
+        {
+            string old_xml_dir_path = Path.Combine (Hyena.Paths.ExtensionCacheRoot, "last.fm");
+            string old_xml_path = Path.Combine (old_xml_dir_path, "audioscrobbler-queue.xml");
+
+            if (Banshee.IO.Directory.Exists (old_xml_dir_path)) {
+                var old_file = new SafeUri (old_xml_path);
+                var file = new SafeUri (xml_path);
+                if (Banshee.IO.File.Exists (old_file)) {
+                    Banshee.IO.File.Copy (old_file, file, true);
+                    Banshee.IO.File.Delete (old_file);
+                }
+                Banshee.IO.Directory.Delete (old_xml_dir_path, true);
+            }
         }
 
         public void Save ()

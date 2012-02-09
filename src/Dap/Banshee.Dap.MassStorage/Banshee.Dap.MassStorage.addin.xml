@@ -41,7 +41,7 @@
     <!-- 681c/d are the Galaxy Portal -->
     <MassStorageDevice class="Banshee.Dap.MassStorage.AndroidDevice" 
         vendor-name="Samsung" product-name="Samsung Galaxy"
-        vendor-id="0x04e8" product-id="0x6603,0x6601,0x6640,0x681d,0x681c"/>
+        vendor-id="0x04e8" product-id="0x6603,0x6601,0x6640,0x681d,0x681c,0x685b,0x685e,0x689e"/>
     <MassStorageDevice class="Banshee.Dap.MassStorage.AndroidDevice"
         vendor-name="Motorola" product-name="Motorola Droid"
         vendor-id="0x22b8" product-id="0x41d9,0x41db"/>
@@ -52,6 +52,9 @@
         vendor-name="Motorola" product-name="Motorola CLIQ/DEXT"
         vendor-id="0x22b8" product-id="0x2d67"/>
     <MassStorageDevice class="Banshee.Dap.MassStorage.AndroidDevice"
+        vendor-name="Motorola" product-name="Atrix"
+        vendor-id="0x22b8" product-id="0x7086"/>
+    <MassStorageDevice class="Banshee.Dap.MassStorage.AndroidDevice"
         vendor-name="Huawei" product-name="Pulse"
         vendor-id="0x12d1" product-id="0x1501"/>
     <MassStorageDevice class="Banshee.Dap.MassStorage.AndroidDevice"
@@ -61,11 +64,11 @@
         vendor-name="Sony Ericsson" product-name="Xperia X10"
         vendor-id="0x0fce" product-id="0xd12e,0xe12e,0x2138,0x3138"/>
     <MassStorageDevice class="Banshee.Dap.MassStorage.AndroidDevice"
-        vendor-name="Sony Ericsson" product-name="Xperia X12"
+        vendor-name="Sony Ericsson" product-name="Xperia arc"
         vendor-id="0x0fce" product-id="0xe14f,0x614f"/>
     <MassStorageDevice class="Banshee.Dap.MassStorage.AndroidDevice"
-        vendor-name="LG Electronics Inc." product-name="LG Ally"
-        vendor-id="0x1004" product-id="0x618e,0x618f"/>
+        vendor-name="LG Electronics Inc." product-name="LG Android Phone"
+        vendor-id="0x1004" product-id="0x618e,0x618f,61c6"/>
     <MassStorageDevice class="Banshee.Dap.MassStorage.AndroidDevice"
         vendor-name="LG Electronics Inc." product-name="LG Optimus S"
         vendor-id="0x1004" product-id="0x61cc"/>
@@ -78,9 +81,18 @@
     <MassStorageDevice class="Banshee.Dap.MassStorage.AndroidDevice"
         vendor-name="Sharp" product-name="IS03"
         vendor-id="0x04dd" product-id="0x939a"/>
+    <MassStorageDevice class="Banshee.Dap.MassStorage.AndroidDevice"
+        vendor-name="Notion Ink" product-name="Adam"
+        vendor-id="0x0955" product-id="0x7100"/>
+    <MassStorageDevice class="Banshee.Dap.MassStorage.AndroidDevice"
+        vendor-name="NEC Corp." product-name="LifeTouch Note"
+        vendor-id="0x0409" product-id="0x0300,0x0301"/>
     <MassStorageDevice class="Banshee.Dap.MassStorage.WebOSDevice"
         vendor-name="Palm" product-name="Pre"
         vendor-id="0x0830" product-id="0x8004,0x8002"/>
+    <MassStorageDevice class="Banshee.Dap.MassStorage.NookDevice"
+        vendor-name="Barnes and Noble" product-name="Nook Classic"
+        vendor-id="0x2080" product-id="0x001"/>
   </Extension>
 
 </Addin>

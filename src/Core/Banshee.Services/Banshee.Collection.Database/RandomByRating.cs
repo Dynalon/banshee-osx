@@ -33,6 +33,7 @@
 using System;
 using System.Collections.Generic;
 
+using Banshee.Query;
 using Banshee.PlaybackController;
 using Mono.Unix;
 
@@ -46,8 +47,8 @@ namespace Banshee.Collection.Database
             Adverb = Catalog.GetString ("by rating");
             Description = Catalog.GetString ("Play songs randomly, prefer higher rated songs");
 
-            Condition = "(CoreTracks.Rating = ? OR (? = 3 AND CoreTracks.Rating = 0))";
-            OrderBy = "RANDOM()";
+            Condition = String.Format ("({0} = ? OR (? = 3 AND {0} = 0))", BansheeQuery.RatingField.Column);
+            OrderBy = BansheeQuery.GetRandomSort ();
         }
 
         protected override IEnumerable<object> GetConditionParameters (DateTime after)

@@ -38,10 +38,13 @@ using Hyena;
 using Banshee.Base;
 using Banshee.Streaming;
 using Banshee.ServiceStack;
+using Banshee.Sources;
+using Banshee.Query;
 using Banshee.Metadata;
 using Banshee.Configuration;
 using Banshee.Collection;
 using Banshee.Equalizer;
+using Banshee.Collection.Database;
 
 namespace Banshee.MediaEngine
 {
@@ -283,7 +286,30 @@ namespace Banshee.MediaEngine
 
         public void Open (SafeUri uri)
         {
-            Open (new UnknownTrackInfo (uri));
+             // Check if the uri exists
+            if (uri == null || !File.Exists (uri.AbsolutePath)) {
+                return;
+            }
+
+            bool found = false;
+            if (ServiceManager.DbConnection != null) {
+                // Try to find uri in the library
+                int track_id = DatabaseTrackInfo.GetTrackIdForUri (uri);
+                if (track_id > 0) {
+                    DatabaseTrackInfo track_db = DatabaseTrackInfo.Provider.FetchSingle (track_id);
+                    found = true;
+                    Open (track_db);
+                }
+            }
+            
+            if (!found) {
+                // Not in the library, get info from the file
+                TrackInfo track = new TrackInfo ();
+                using (var file = StreamTagger.ProcessUri (uri)) {
+                    StreamTagger.TrackInfoMerge (track, file, false);
+                }
+                Open (track);
+            }
         }
 
         void IPlayerEngineService.Open (string uri)
@@ -541,6 +567,61 @@ namespace Banshee.MediaEngine
             return active_engine.GetSubtitleDescription (index);
         }
 
+        public void NotifyMouseMove (double x, double y)
+        {
+            active_engine.NotifyMouseMove (x, y);
+        }
+
+        public void NotifyMouseButtonPressed (int button, double x, double y)
+        {
+            active_engine.NotifyMouseButtonPressed (button, x, y);
+        }
+
+        public void NotifyMouseButtonReleased (int button, double x, double y)
+        {
+            active_engine.NotifyMouseButtonReleased (button, x, y);
+        }
+
+        public void NavigateToLeftMenu ()
+        {
+            active_engine.NavigateToLeftMenu ();
+        }
+
+        public void NavigateToRightMenu ()
+        {
+            active_engine.NavigateToRightMenu ();
+        }
+
+        public void NavigateToUpMenu ()
+        {
+            active_engine.NavigateToUpMenu ();
+        }
+
+        public void NavigateToDownMenu ()
+        {
+            active_engine.NavigateToDownMenu ();
+        }
+
+        public void NavigateToMenu ()
+        {
+            active_engine.NavigateToMenu ();
+        }
+
+        public void ActivateCurrentMenu ()
+        {
+            active_engine.ActivateCurrentMenu ();
+        }
+
+        public void GoToNextChapter ()
+        {
+            active_engine.GoToNextChapter ();
+        }
+
+        public void GoToPreviousChapter ()
+        {
+            active_engine.GoToPreviousChapter ();
+        }
+
         private void CheckPending ()
         {
             if (pending_engine != null && pending_engine != active_engine) {
@@ -617,6 +698,13 @@ namespace Banshee.MediaEngine
                 if (CurrentTrack != null) {
                     CurrentTrack.Rating = (int)Math.Min (5u, value);
                     CurrentTrack.Save ();
+
+                    foreach (var source in ServiceManager.SourceManager.Sources) {
+                        var psource = source as PrimarySource;
+                        if (psource != null) {
+                            psource.NotifyTracksChanged (BansheeQuery.RatingField);
+                        }
+                    }
                 }
             }
         }
@@ -644,6 +732,10 @@ namespace Banshee.MediaEngine
         public SafeUri SubtitleUri {
             set { active_engine.SubtitleUri = value; }
             get { return active_engine.SubtitleUri; }
+        }
+
+        public bool InDvdMenu {
+            get { return active_engine.InDvdMenu; }
         }
 
         public VideoDisplayContextType VideoDisplayContextType {

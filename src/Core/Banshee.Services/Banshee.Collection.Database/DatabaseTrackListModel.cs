@@ -78,7 +78,8 @@ namespace Banshee.Collection.Database
             this.provider = provider;
             this.source = source;
 
-            SelectAggregates = "SUM(CoreTracks.Duration), SUM(CoreTracks.FileSize)";
+            SelectAggregates = String.Format ("SUM({0}), SUM({1})",
+                                              BansheeQuery.DurationField.Column, BansheeQuery.FileSizeField.Column);
 
             Selection.Changed += delegate {
                 if (SelectionAggregatesHandler != null) {
@@ -142,8 +143,8 @@ namespace Banshee.Collection.Database
             SortQuery = (SortColumn == null || SortColumn.SortType == SortType.None)
                 ? (SortColumn != null && source is Banshee.Playlist.PlaylistSource)
                     ? "CorePlaylistEntries.ViewOrder ASC, CorePlaylistEntries.EntryID ASC"
-                    : BansheeQuery.GetSort ("Artist", true)
-                : BansheeQuery.GetSort (SortColumn.SortKey, SortColumn.SortType == SortType.Ascending);
+                    : BansheeQuery.GetSort (BansheeQuery.ArtistField, true)
+                : BansheeQuery.GetSort (SortColumn.Field, SortColumn.SortType == SortType.Ascending);
         }
 
         private SortType last_sort_type = SortType.None;
@@ -240,7 +241,8 @@ namespace Banshee.Collection.Database
         public virtual void UpdateUnfilteredAggregates ()
         {
             HyenaSqliteCommand count_command = new HyenaSqliteCommand (String.Format (
-                "SELECT COUNT(*), SUM(CoreTracks.FileSize), SUM(CoreTracks.Duration) {0}", UnfilteredQuery
+                "SELECT COUNT(*), SUM({0}), SUM({1}) {2}",
+                BansheeQuery.FileSizeField.Column, BansheeQuery.DurationField.Column, UnfilteredQuery
             ));
 
             using (HyenaDataReader reader = new HyenaDataReader (connection.Query (count_command))) {
@@ -273,7 +275,9 @@ namespace Banshee.Collection.Database
                 bool found = (reloadTrigger == null);
                 foreach (IFilterListModel filter in source.CurrentFilters) {
                     if (found) {
-                        reload_models.Add (filter);
+                        if (filter != null) {
+                            reload_models.Add (filter);
+                        }
                     } else if (filter == reloadTrigger) {
                         found = true;
                     }

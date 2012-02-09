@@ -1,19 +1,9 @@
+include $(top_srcdir)/build/build.dist.mk
+
 UNIQUE_FILTER_PIPE = tr [:space:] \\n | sort | uniq
 BUILD_DATA_DIR = $(top_builddir)/bin/share/$(PACKAGE)
 
-SOURCES_BUILD = $(addprefix $(srcdir)/, $(SOURCES))
-SOURCES_BUILD += $(top_srcdir)/src/AssemblyInfo.cs
-
-RESOURCES_EXPANDED = $(addprefix $(srcdir)/, $(RESOURCES))
-RESOURCES_BUILD = $(foreach resource, $(RESOURCES_EXPANDED), \
-	-resource:$(resource),$(notdir $(resource)))
-
 INSTALL_ICONS = $(top_srcdir)/build/private-icon-theme-installer "$(mkinstalldirs)" "$(INSTALL_DATA)"
-THEME_ICONS_SOURCE = $(wildcard $(srcdir)/ThemeIcons/*/*/*.png) $(wildcard $(srcdir)/ThemeIcons/scalable/*/*.svg)
-THEME_ICONS_RELATIVE = $(subst $(srcdir)/ThemeIcons/, , $(THEME_ICONS_SOURCE))
-
-ASSEMBLY_EXTENSION = $(strip $(patsubst library, dll, $(TARGET)))
-ASSEMBLY_FILE = $(top_builddir)/bin/$(ASSEMBLY).$(ASSEMBLY_EXTENSION)
 
 INSTALL_DIR_RESOLVED = $(firstword $(subst , $(DEFAULT_INSTALL_DIR), $(INSTALL_DIR)))
 
@@ -22,23 +12,15 @@ if ENABLE_TESTS
     ENABLE_TESTS_FLAG = "-define:ENABLE_TESTS"
 endif
 
-if HAVE_GTK3
-    GTK3_FLAG = "-define:GTK3"
-endif
-
 FILTERED_LINK = $(shell echo "$(LINK)" | $(UNIQUE_FILTER_PIPE))
 DEP_LINK = $(shell echo "$(LINK)" | $(UNIQUE_FILTER_PIPE) | sed s,-r:,,g | grep '$(top_builddir)/bin/')
-
-OUTPUT_FILES = \
-	$(ASSEMBLY_FILE) \
-	$(ASSEMBLY_FILE).mdb
 
 moduledir = $(INSTALL_DIR_RESOLVED)
 module_SCRIPTS = $(OUTPUT_FILES)
 
 all: $(ASSEMBLY_FILE) theme-icons
 
-run: 
+run:
 	@pushd $(top_builddir); \
 	make run; \
 	popd;
@@ -64,7 +46,7 @@ $(ASSEMBLY_FILE): $(SOURCES_BUILD) $(RESOURCES_EXPANDED) $(DEP_LINK)
 		$(ASSEMBLY_BUILD_FLAGS) \
 		-nowarn:0278 -nowarn:0078 $$warn \
 		-debug -target:$(TARGET) -out:$@ \
-		$(BUILD_DEFINES) $(ENABLE_TESTS_FLAG) $(GTK3_FLAG) \
+		$(BUILD_DEFINES) $(ENABLE_TESTS_FLAG) \
 		$(FILTERED_LINK) $(RESOURCES_BUILD) $(SOURCES_BUILD)
 	@if [ -e $(srcdir)/$(notdir $@.config) ]; then \
 		cp $(srcdir)/$(notdir $@.config) $(top_builddir)/bin; \
@@ -83,10 +65,4 @@ install-data-hook: $(THEME_ICONS_SOURCE)
 uninstall-hook: $(THEME_ICONS_SOURCE)
 	@$(INSTALL_ICONS) -u "$(DESTDIR)$(pkgdatadir)" "$(srcdir)" $(THEME_ICONS_RELATIVE)
 	$(EXTRA_UNINSTALL_HOOK)
-
-EXTRA_DIST = $(SOURCES_BUILD) $(RESOURCES_EXPANDED) $(THEME_ICONS_SOURCE)
-
-CLEANFILES = $(OUTPUT_FILES)
-DISTCLEANFILES = *.pidb
-MAINTAINERCLEANFILES = Makefile.in
 

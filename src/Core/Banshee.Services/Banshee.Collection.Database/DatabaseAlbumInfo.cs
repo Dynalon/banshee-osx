@@ -140,6 +140,12 @@ namespace Banshee.Collection.Database
                         save = true;
                     }
 
+                    // If the ArtworkId has changed, update the db
+                    if (last_album.ArtworkId != album.ArtworkId) {
+                        last_album.ArtworkId = album.ArtworkId;
+                        save = true;
+                    }
+
                     if (save) {
                         last_album.Save ();
                     }
@@ -170,6 +176,7 @@ namespace Banshee.Collection.Database
                 album.MusicBrainzId = found.MusicBrainzId;
                 album.dbid = found.DbId;
                 album.ArtistId = found.ArtistId;
+                album.ArtworkId = found.ArtworkId;
                 album.Save ();
             }
             return album;
@@ -207,6 +214,12 @@ namespace Banshee.Collection.Database
         public override DateTime ReleaseDate {
             get { return base.ReleaseDate; }
             set { base.ReleaseDate = value; }
+        }
+
+        [DatabaseColumn("ArtworkID")]
+        public override string ArtworkId {
+            get { return base.ArtworkId; }
+            set { base.ArtworkId = value; }
         }
 
         [DatabaseColumn]

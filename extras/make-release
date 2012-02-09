@@ -92,7 +92,6 @@ function prepare_upload () {
 
 	find . -maxdepth 1 \( \
 		-name \*.bz2 -o \
-		-name \*.gz -o \
 		-name \*.dmg \
 		\) -exec cp -a {} release-data \;
 
@@ -135,6 +134,8 @@ function tag_release () {
 }
 
 function post_release () {
+	# This is supposed to be done by ftpadmin on master.gnome.org
+	# But apparently it is not the case
 	xdg-open "http://bugzilla.gnome.org/editversions.cgi?action=new&product=banshee&version=${PACKAGE_VERSION}"
 }
 
@@ -167,8 +168,7 @@ fi
 prepare_upload
 upload_release
 tag_release
-# Done by ftpadmin on master.gnome.org
-#post_release
+post_release
 
 echo
 echo "Congratulations, you have released ${PACKAGE_VERSION}!"

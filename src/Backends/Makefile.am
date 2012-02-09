@@ -5,7 +5,8 @@ SUBDIRS = \
 	Banshee.GStreamerSharp \
 	Banshee.Unix \
 	Banshee.NowPlaying.X11 \
-	Banshee.Osx
+	Banshee.Osx \
+	Banshee.Windows
 
 MAINTAINERCLEANFILES = Makefile.in
 

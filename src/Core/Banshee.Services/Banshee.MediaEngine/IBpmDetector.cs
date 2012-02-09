@@ -54,6 +54,5 @@ namespace Banshee.MediaEngine
         event BpmEventHandler FileFinished;
 
         void ProcessFile (SafeUri uri);
-        void Cancel ();
     }
 }

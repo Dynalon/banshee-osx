@@ -141,6 +141,10 @@ namespace Banshee.Playlists.Formats
                 }
 
                 if (matching_format == null) {
+                    if (partial_read) {
+                        web_stream.Close ();
+                        response.Close ();
+                    }
                     return false;
                 }
 

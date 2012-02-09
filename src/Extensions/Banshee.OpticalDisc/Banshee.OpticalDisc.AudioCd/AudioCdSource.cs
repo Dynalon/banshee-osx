@@ -3,6 +3,7 @@
 //
 // Author:
 //   Aaron Bockover <abockover@novell.com>
+//   Alex Launi <alex.launi@canonical.com>
 //
 // Copyright (C) 2008 Novell, Inc.
 //
@@ -41,25 +42,18 @@ using Banshee.Collection.Database;
 
 using Gtk;
 using Banshee.Gui;
-using Selection = Hyena.Collections.Selection;
 
-namespace Banshee.AudioCd
+namespace Banshee.OpticalDisc.AudioCd
 {
-    public class AudioCdSource : Source, ITrackModelSource, IUnmapableSource,
-        IImportSource, IDurationAggregator, IFileSizeAggregator, IDisposable
+    public class AudioCdSource : DiscSource, IImportSource,
+        IDurationAggregator, IFileSizeAggregator
     {
-        private AudioCdService service;
-        private AudioCdDiscModel disc_model;
         private SourceMessage query_message;
 
         public AudioCdSource (AudioCdService service, AudioCdDiscModel discModel)
-            : base (Catalog.GetString ("Audio CD"), discModel.Title, 400)
+            : base ((DiscService) service, (DiscModel) discModel, Catalog.GetString ("Audio CD"), discModel.Title, 59)
         {
-            this.service = service;
-            this.disc_model = discModel;
-
             TypeUniqueId = "";
-
             Properties.SetString ("TrackView.ColumnControllerXml", String.Format (@"
                 <column-controller>
                   <column>
@@ -69,48 +63,36 @@ namespace Banshee.AudioCd
                 </column-controller>
             "));
 
-            disc_model.MetadataQueryStarted += OnMetadataQueryStarted;
-            disc_model.MetadataQueryFinished += OnMetadataQueryFinished;
-            disc_model.EnabledCountChanged += OnEnabledCountChanged;
-            disc_model.LoadModelFromDisc ();
+            Model.MetadataQueryStarted += OnMetadataQueryStarted;
+            Model.MetadataQueryFinished += OnMetadataQueryFinished;
+            Model.EnabledCountChanged += OnEnabledCountChanged;
+            Model.LoadModelFromDisc ();
 
             SetupGui ();
         }
 
         public TimeSpan Duration {
-            get { return disc_model.Duration; }
+            get { return Model.Duration; }
         }
 
         public long FileSize {
-            get { return disc_model.FileSize; }
+            get { return Model.FileSize; }
         }
 
-        public bool DiscIsPlaying {
-            get {
-                AudioCdTrackInfo playing_track = ServiceManager.PlayerEngine.CurrentTrack as AudioCdTrackInfo;
-                return playing_track != null && playing_track.Model == disc_model;
-            }
+        public new AudioCdDiscModel Model {
+            get { return (AudioCdDiscModel) base.DiscModel; }
+            set { base.DiscModel = value; }
         }
 
-        public void StopPlayingDisc ()
+        public override void Dispose ()
         {
-            if (DiscIsPlaying) {
-                ServiceManager.PlayerEngine.Close (true);
-            }
-        }
-
-        public void Dispose ()
-        {
+            StopPlayingDisc ();
             ClearMessages ();
-            disc_model.MetadataQueryStarted -= OnMetadataQueryStarted;
-            disc_model.MetadataQueryFinished -= OnMetadataQueryFinished;
-            disc_model.EnabledCountChanged -= OnEnabledCountChanged;
-            service = null;
-            disc_model = null;
-        }
-
-        public AudioCdDiscModel DiscModel {
-            get { return disc_model; }
+            Model.MetadataQueryStarted -= OnMetadataQueryStarted;
+            Model.MetadataQueryFinished -= OnMetadataQueryFinished;
+            Model.EnabledCountChanged -= OnEnabledCountChanged;
+            Service = null;
+            Model = null;
         }
 
         private void OnEnabledCountChanged (object o, EventArgs args)
@@ -136,12 +118,12 @@ namespace Banshee.AudioCd
 
         private void OnMetadataQueryFinished (object o, EventArgs args)
         {
-            if (disc_model.Title != Name) {
-                Name = disc_model.Title;
+            if (Model.Title != Name) {
+                Name = Model.Title;
                 OnUpdated ();
             }
 
-            if (disc_model.MetadataQuerySuccess) {
+            if (Model.MetadataQuerySuccess) {
                 DestroyQueryMessage ();
                 if (DiscIsPlaying) {
                     ServiceManager.PlayerEngine.TrackInfoUpdated ();
@@ -177,13 +159,14 @@ namespace Banshee.AudioCd
         private void BeginAutoRip ()
         {
             // Make sure the album isn't already in the Library
-            TrackInfo track = disc_model[0];
-            int count = ServiceManager.DbConnection.Query<int> (
+            TrackInfo track = Model[0];
+            int count = ServiceManager.DbConnection.Query<int> (String.Format (
                 @"SELECT Count(*) FROM CoreTracks, CoreArtists, CoreAlbums WHERE
                     CoreTracks.PrimarySourceID = ? AND
                     CoreTracks.ArtistID = CoreArtists.ArtistID AND
                     CoreTracks.AlbumID = CoreAlbums.AlbumID AND
-                    CoreArtists.Name = ? AND CoreAlbums.Title = ? AND (CoreTracks.Disc = ? OR CoreTracks.Disc = 0)",
+                    CoreArtists.Name = ? AND CoreAlbums.Title = ? AND ({0} = ? OR {0} = 0)",
+                    Banshee.Query.BansheeQuery.DiscNumberField.Column),
                     ServiceManager.SourceManager.MusicLibrary.DbId,
                     track.ArtistName, track.AlbumTitle, track.DiscNumber
             );
@@ -227,7 +210,7 @@ namespace Banshee.AudioCd
         internal void DuplicateDisc ()
         {
             try {
-                AudioCdDuplicator.Duplicate (disc_model);
+                AudioCdDuplicator.Duplicate (Model);
             } catch (Exception e) {
                 Hyena.Log.Error (Catalog.GetString ("Could not duplicate audio CD"), e.Message, true);
                 Hyena.Log.Exception (e);
@@ -238,32 +221,44 @@ namespace Banshee.AudioCd
         {
             StopPlayingDisc ();
 
-            foreach (AudioCdTrackInfo track in disc_model) {
+            foreach (AudioCdTrackInfo track in Model) {
                 track.CanPlay = false;
             }
 
-            disc_model.NotifyUpdated ();
+            Model.NotifyUpdated ();
         }
 
         internal void UnlockAllTracks ()
         {
-            foreach (AudioCdTrackInfo track in disc_model) {
+            foreach (AudioCdTrackInfo track in Model) {
                 track.CanPlay = true;
             }
 
-            disc_model.NotifyUpdated ();
+            Model.NotifyUpdated ();
         }
 
         internal void UnlockTrack (AudioCdTrackInfo track)
         {
             track.CanPlay = true;
-            disc_model.NotifyUpdated ();
+            Model.NotifyUpdated ();
         }
+
+#region DiscSource
+
+        public override bool CanRepeat {
+            get { return true;}
+        }
+
+        public override bool CanShuffle {
+            get { return true; }
+        }
+
+#endregion
 
 #region Source Overrides
 
         public override int Count {
-            get { return disc_model.Count; }
+            get { return Model.Count; }
         }
 
         public override string PreferencesPageId {
@@ -280,138 +275,13 @@ namespace Banshee.AudioCd
 
 #endregion
 
-#region ITrackModelSource Implementation
-
-        public TrackListModel TrackModel {
-            get { return disc_model; }
-        }
-
-        public AlbumListModel AlbumModel {
-            get { return null; }
-        }
-
-        public ArtistListModel ArtistModel {
-            get { return null; }
-        }
-
-        public void Reload ()
-        {
-            disc_model.Reload ();
-        }
-
-        public void RemoveTracks (Selection selection)
-        {
-        }
-
-        public void DeleteTracks (Selection selection)
-        {
-        }
-
-        public bool CanAddTracks {
-            get { return false; }
-        }
-
-        public bool CanRemoveTracks {
-            get { return false; }
-        }
-
-        public bool CanDeleteTracks {
-            get { return false; }
-        }
-
-        public bool ConfirmRemoveTracks {
-            get { return false; }
-        }
-
-        public virtual bool CanRepeat {
-            get { return true; }
-        }
-
-        public virtual bool CanShuffle {
-            get { return true; }
-        }
-
-        public bool ShowBrowser {
-            get { return false; }
-        }
-
-        public bool HasDependencies {
-            get { return false; }
-        }
-
-        public bool Indexable {
-            get { return false; }
-        }
-
-#endregion
-
-#region IUnmapableSource Implementation
-
-        public bool Unmap ()
-        {
-            StopPlayingDisc ();
-
-            foreach (TrackInfo track in disc_model) {
-                track.CanPlay = false;
-            }
-
-            OnUpdated ();
-
-            SourceMessage eject_message = new SourceMessage (this);
-            eject_message.FreezeNotify ();
-            eject_message.IsSpinning = true;
-            eject_message.CanClose = false;
-            eject_message.Text = Catalog.GetString ("Ejecting audio CD...");
-            eject_message.ThawNotify ();
-            PushMessage (eject_message);
-
-            ThreadPool.QueueUserWorkItem (delegate {
-                try {
-                    disc_model.Volume.Unmount ();
-                    disc_model.Volume.Eject ();
-
-                    ThreadAssist.ProxyToMain (delegate {
-                        service.UnmapDiscVolume (disc_model.Volume.Uuid);
-                        Dispose ();
-                    });
-                } catch (Exception e) {
-                    ThreadAssist.ProxyToMain (delegate {
-                        ClearMessages ();
-                        eject_message.IsSpinning = false;
-                        eject_message.SetIconName ("dialog-error");
-                        eject_message.Text = String.Format (Catalog.GetString ("Could not eject audio CD: {0}"), e.Message);
-                        PushMessage (eject_message);
-
-                        foreach (TrackInfo track in disc_model) {
-                            track.CanPlay = true;
-                        }
-                        OnUpdated ();
-                    });
-
-                    Log.Exception (e);
-                }
-            });
-
-            return true;
-        }
-
-        public bool CanUnmap {
-            get { return DiscModel != null ? !DiscModel.IsDoorLocked : true; }
-        }
-
-        public bool ConfirmBeforeUnmap {
-            get { return false; }
-        }
-
-#endregion
-
 #region GUI/ThickClient
 
         private bool actions_loaded = false;
 
         private void SetupGui ()
         {
-            Properties.SetStringList ("Icon.Name", "media-cdrom", "gnome-dev-cdrom-audio", "source-cd-audio");
+            Properties.SetStringList ("Icon.Name", "media-optical-cd-audio", "media-optical-cd", "media-optical", "gnome-dev-cdrom-audio", "source-cd-audio");
             Properties.SetString ("SourcePreferencesActionLabel", Catalog.GetString ("Audio CD Preferences"));
             Properties.SetString ("UnmapSourceActionLabel", Catalog.GetString ("Eject Disc"));
             Properties.SetString ("UnmapSourceActionIconName", "media-eject");
@@ -432,7 +302,7 @@ namespace Banshee.AudioCd
 
             Gtk.Action rip_action = uia_service.GlobalActions["RipDiscAction"];
             if (rip_action != null) {
-                string title = disc_model.Title;
+                string title = Model.Title;
                 int max_title_length = 20;
                 title = title.Length > max_title_length
                     ? String.Format ("{0}\u2026", title.Substring (0, max_title_length).Trim ())
@@ -440,12 +310,12 @@ namespace Banshee.AudioCd
                 rip_action.Label = String.Format (Catalog.GetString ("Import \u201f{0}\u201d"), title);
                 rip_action.ShortLabel = Catalog.GetString ("Import CD");
                 rip_action.IconName = "media-import-audio-cd";
-                rip_action.Sensitive = AudioCdRipper.Supported && disc_model.EnabledCount > 0;
+                rip_action.Sensitive = AudioCdRipper.Supported && Model.EnabledCount > 0;
             }
 
             Gtk.Action duplicate_action = uia_service.GlobalActions["DuplicateDiscAction"];
             if (duplicate_action != null) {
-                duplicate_action.IconName = "media-cdrom";
+                duplicate_action.IconName = "media-optical";
                 duplicate_action.Visible = AudioCdDuplicator.Supported;
             }
         }

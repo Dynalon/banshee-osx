@@ -79,7 +79,7 @@ namespace Booter
                 return;
             }
 
-            if (DBusConnection.ApplicationInstanceAlreadyRunning) {
+            if (!DBusConnection.GrabDefaultName ()) {
                 // DBus Command/Query/File Proxy Client
                 BootClient ("Halie");
                 NotifyStartupComplete ();
@@ -162,7 +162,7 @@ namespace Booter
 
                 new LayoutGroup ("playback", Catalog.GetString ("Playback Control Options"),
                     new LayoutOption ("next", Catalog.GetString ("Play the next track, optionally restarting if the 'restart' value is set")),
-                    new LayoutOption ("previous", Catalog.GetString ("Play the previous track, optionally restarting if the 'restart value is set")),
+                    new LayoutOption ("previous", Catalog.GetString ("Play the previous track, optionally restarting if the 'restart' value is set")),
                     new LayoutOption ("restart-or-previous", Catalog.GetString ("If the current song has been played longer than 4 seconds then restart it, otherwise the same as --previous")),
                     new LayoutOption ("play-enqueued", Catalog.GetString ("Automatically start playing any tracks enqueued on the command line")),
                     new LayoutOption ("play", Catalog.GetString ("Start playback")),
@@ -216,6 +216,7 @@ namespace Booter
                     new LayoutOption ("debug-sql", Catalog.GetString ("Enable debugging output of SQL queries")),
                     new LayoutOption ("debug-addins", Catalog.GetString ("Enable debugging output of Mono.Addins")),
                     new LayoutOption ("db=FILE", Catalog.GetString ("Specify an alternate database to use")),
+                    new LayoutOption ("fetch-artwork", Catalog.GetString ("Force fetching of missing cover artwork")),
                     new LayoutOption ("gconf-base-key=KEY", Catalog.GetString ("Specify an alternate key, default is /apps/banshee-1/")),
                     new LayoutOption ("uninstalled", Catalog.GetString ("Optimize instance for running uninstalled; " +
                         "most notably, this will create an alternate Mono.Addins database in the working directory")),

@@ -9,7 +9,7 @@ SOURCES =  \
 
 RESOURCES = Banshee.Sample.addin.xml
 
-EXTRA_DIST = $(SOURCES) $(RESOURCES)
+include $(top_srcdir)/build/build.dist.mk
 
 # include $(top_srcdir)/build/build.mk
 

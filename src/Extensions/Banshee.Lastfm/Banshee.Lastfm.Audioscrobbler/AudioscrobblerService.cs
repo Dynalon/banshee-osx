@@ -64,7 +64,7 @@ namespace Banshee.Lastfm.Audioscrobbler
         private Account account;
 
         private bool queued; /* if current_track has been queued */
-        private bool now_playing_sent = false; /* self explanitory :) */
+        private bool now_playing_sent = false; /* self-explanatory :) */
         private int iterate_countdown = 4 * 4; /* number of times to wait for iterate event before sending now playing */
 
         private DateTime song_start_time;
@@ -132,7 +132,7 @@ namespace Banshee.Lastfm.Audioscrobbler
 
             actions.Add (new ToggleActionEntry [] {
                 new ToggleActionEntry ("AudioscrobblerEnableAction", null,
-                    Catalog.GetString ("_Enable Song Reporting"), "<control>U",
+                    Catalog.GetString ("_Enable Song Reporting"), null,
                     Catalog.GetString ("Enable song reporting"), OnToggleEnabled, Enabled)
             });
 

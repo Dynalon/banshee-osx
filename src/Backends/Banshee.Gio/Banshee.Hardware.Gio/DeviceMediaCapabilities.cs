@@ -95,6 +95,10 @@ namespace Banshee.Hardware.Gio
             }
         }
 
+        public char FolderSeparator {
+            get { return mpi.FolderSeparator; }
+        }
+
 
         public bool IsType (string type)
         {
@@ -170,6 +174,8 @@ namespace Banshee.Hardware.Gio
                 get; private set;
             }
 
+            public char FolderSeparator { get; private set; }
+
             public string[] AccessProtocols {
                 get; private set;
             }
@@ -218,8 +224,17 @@ namespace Banshee.Hardware.Gio
                     }
                 }
 
-                if (mpi_file.HasGroup (PlaylistGroup) && mpi_file.HasKey (PlaylistGroup, "Formats")) {
-                    PlaylistFormats = mpi_file.GetStringList (PlaylistGroup, "Formats") ?? new string [] {};
+                if (mpi_file.HasGroup (PlaylistGroup)) {
+                    if (mpi_file.HasKey (PlaylistGroup, "Formats")) {
+                        PlaylistFormats = mpi_file.GetStringList (PlaylistGroup, "Formats") ?? new string [] {};
+                    }
+
+                    if (mpi_file.HasKey (PlaylistGroup, "FolderSeparator")) {
+                        string folder_separator = mpi_file.GetString (PlaylistGroup, "FolderSeparator");
+                        if (folder_separator == "DOS") {
+                            FolderSeparator = Directory.DosSeparator;
+                        }
+                    }
                 }
 
                 if (mpi_file.HasGroup (DeviceGroup) && mpi_file.HasKey (DeviceGroup, "AccessProtocols")) {
@@ -236,6 +251,7 @@ namespace Banshee.Hardware.Gio
                 OutputFormats = new string[] {};
                 PlaylistFormats = new string[] {};
                 AccessProtocols = new string[] {};
+                FolderSeparator = Directory.UnixSeparator;
             }
         }
     }

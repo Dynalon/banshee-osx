@@ -34,6 +34,7 @@ using Hyena;
 
 using Banshee.Base;
 using Banshee.Sources;
+using Folder = Banshee.IO.Directory;
 
 namespace Banshee.Playlists.Formats
 {
@@ -78,6 +79,9 @@ namespace Banshee.Playlists.Formats
 
         protected virtual Uri ResolveUri(string uri)
         {
+            if (!uri.Contains (Folder.UnixSeparator.ToString ()) && uri.Contains (Folder.DosSeparator.ToString ())) {
+                uri = uri.Replace (Folder.DosSeparator, Folder.UnixSeparator);
+            }
             return BaseUri == null ? new Uri(uri) : new Uri(BaseUri, uri);
         }
 
@@ -129,5 +133,7 @@ namespace Banshee.Playlists.Formats
             get { return title; }
             set { title = value; }
         }
+
+        public virtual char FolderSeparator { get; set; }
     }
 }

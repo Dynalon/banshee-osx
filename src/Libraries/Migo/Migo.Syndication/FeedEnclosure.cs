@@ -156,55 +156,42 @@ namespace Migo.Syndication
         public void SetFileImpl (string url, string path, string mimeType, string filename)
         {
             if (filename.EndsWith (".torrent", StringComparison.OrdinalIgnoreCase)) {
-                filename = filename.Substring(0, filename.Length - 8);
+                filename = filename.Substring (0, filename.Length - 8);
             }
-            string tmpLocalPath;
-            string fullPath = path;
-            string localEnclosurePath = Item.Feed.LocalEnclosurePath;
+            string local_enclosure_path = Item.Feed.LocalEnclosurePath;
 
-            if (!localEnclosurePath.EndsWith (Path.DirectorySeparatorChar.ToString ())) {
-                localEnclosurePath += Path.DirectorySeparatorChar;
-            }
-
-            if (!fullPath.EndsWith (Path.DirectorySeparatorChar.ToString ())) {
-                fullPath += Path.DirectorySeparatorChar;
-            }
-
-            fullPath += filename;
-            tmpLocalPath = localEnclosurePath+filename;
+            string full_path = Path.Combine (path, filename);
+            string new_local_path = Path.Combine (local_enclosure_path, filename);
 
             try {
                 if (!Directory.Exists (path)) {
-                	throw new InvalidOperationException ("Directory specified by path does not exist");            	
-                } else if (!File.Exists (fullPath)) {
-                	throw new InvalidOperationException (
-                	    String.Format ("File:  {0}, does not exist", fullPath)
-                	);
+                    throw new InvalidOperationException ("Directory specified by path does not exist");
+                } else if (!File.Exists (full_path)) {
+                    throw new InvalidOperationException (String.Format ("File: {0}, does not exist", full_path));
                 }
 
-                if (!Directory.Exists (localEnclosurePath)) {
-                	Directory.CreateDirectory (localEnclosurePath);
+                if (!Directory.Exists (local_enclosure_path)) {
+                    Directory.CreateDirectory (local_enclosure_path);
                 }
 
-                if (File.Exists (tmpLocalPath)) {
-                    int lastDot = tmpLocalPath.LastIndexOf (".");
+                if (File.Exists (new_local_path)) {
+                    int last_dot = new_local_path.LastIndexOf (".");
 
-                    if (lastDot == -1) {
-                        lastDot = tmpLocalPath.Length-1;
+                    if (last_dot == -1) {
+                        last_dot = new_local_path.Length-1;
                     }
 
-                    string rep = String.Format (
-                        "-{0}",
+                    string rep = String.Format ("-{0}",
                         Guid.NewGuid ().ToString ()
                                        .Replace ("-", String.Empty)
                                        .ToLower ()
                     );
 
-                    tmpLocalPath = tmpLocalPath.Insert (lastDot, rep);
+                    new_local_path = new_local_path.Insert (last_dot, rep);
                 }
 
-                File.Move (fullPath, tmpLocalPath);
-                File.SetAttributes (tmpLocalPath, FileAttributes.ReadOnly);
+                File.Move (full_path, new_local_path);
+                File.SetAttributes (new_local_path, FileAttributes.ReadOnly);
 
                 try {
                     Directory.Delete (path);
@@ -216,7 +203,7 @@ namespace Migo.Syndication
                 throw;
             }
 
-            LocalPath = tmpLocalPath;
+            LocalPath = new_local_path;
             Url = url;
             MimeType = mimeType;
 

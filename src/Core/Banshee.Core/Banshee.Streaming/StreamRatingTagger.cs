@@ -34,7 +34,7 @@ using Banshee.Collection;
 
 namespace Banshee.Streaming
 {
-    internal static class ID3v2RatingTagger
+    internal static class ID3v2Tagger
     {
         // What we call ourselves in POPM tags.
         private static string POPM_our_creator_name = "Banshee";
@@ -115,8 +115,7 @@ namespace Banshee.Streaming
         // Overwrites all POPM frames with the new rating and playcount.
         // If no *known-compatible* frames are found, a new "Banshee"-authored
         // frame is also created to store this information.
-        public static void StoreRatingAndPlayCount (int rating, int playcount,
-                                                    TagLib.File to_file)
+        public static void StoreRating (int rating, TagLib.File to_file)
         {
             TagLib.Id3v2.Tag id3v2tag = GetTag (to_file);
             if (id3v2tag == null) {
@@ -132,10 +131,8 @@ namespace Banshee.Streaming
                 }
 
                 popm.Rating = BansheeToPopm (rating);
-                popm.PlayCount = (ulong)playcount;
-                Hyena.Log.DebugFormat ("Exporting ID3v2 Rating={0}({1}) and Playcount={2}({3}) to File \"{4}\" as Creator \"{5}\"",
+                Hyena.Log.DebugFormat ("Exporting ID3v2 Rating={0}({1}) to File \"{2}\" as Creator \"{3}\"",
                                        rating, popm.Rating,
-                                       playcount, popm.PlayCount,
                                        to_file.Name, popm.User);
             }
 
@@ -145,11 +142,41 @@ namespace Banshee.Streaming
                                                                                             POPM_our_creator_name,
                                                                                             true);
                 popm.Rating = BansheeToPopm (rating);
-                popm.PlayCount = (ulong)playcount;
-                Hyena.Log.DebugFormat ("Exporting ID3v2 Rating={0}({1}) and Playcount={2}({3}) to File \"{4}\" as Creator \"{5}\"",
+                Hyena.Log.DebugFormat ("Exporting ID3v2 Rating={0}({1}) to File \"{2}\" as Creator \"{3}\"",
                                        rating, popm.Rating,
-                                       playcount, popm.PlayCount,
                                        to_file.Name, POPM_our_creator_name);
+            }
+        }
+        public static void StorePlayCount (int playcount, TagLib.File to_file)
+        {
+            TagLib.Id3v2.Tag id3v2tag = GetTag (to_file);
+            if (id3v2tag == null) {
+                return;
+            }
+
+            bool known_frames_found = false;
+            foreach (TagLib.Id3v2.PopularimeterFrame popm in
+                     id3v2tag.GetFrames<TagLib.Id3v2.PopularimeterFrame> ()) {
+                if (System.Array.IndexOf (POPM_known_creator_list, popm.User) >= 0) {
+                    // Found a known-good POPM frame, don't need to create a "Banshee" frame.
+                    known_frames_found = true;
+                }
+
+                popm.PlayCount = (ulong)playcount;
+                Hyena.Log.DebugFormat ("Exporting ID3v2 Playcount={0}({1}) to File \"{2}\" as Creator \"{3}\"",
+                                       playcount, popm.PlayCount,
+                                       to_file.Name, popm.User);
+            }
+
+            if (!known_frames_found) {
+                // No known-good frames found, create a new POPM frame (with creator string "Banshee")
+                TagLib.Id3v2.PopularimeterFrame popm = TagLib.Id3v2.PopularimeterFrame.Get (id3v2tag,
+                                                                                            POPM_our_creator_name,
+                                                                                            true);
+                popm.PlayCount = (ulong)playcount;
+                Hyena.Log.DebugFormat ("Exporting ID3v2 Playcount={0}({1}) to File \"{2}\" as Creator \"{3}\"",
+                                       playcount, popm.PlayCount,
+                                       to_file.Name, popm.User);
             }
         }
 
@@ -183,7 +210,7 @@ namespace Banshee.Streaming
     // Applicable for Vorbis, Speex, and many (most?) FLAC files
     // Follows the naming standard established by the Quod Libet team
     // See: http://code.google.com/p/quodlibet/wiki/Specs_VorbisComments
-    internal static class OggRatingTagger
+    internal static class OggTagger
     {
         // What we call ourselves in rating/playcount tags.
         private static string ogg_our_creator_name = "BANSHEE";
@@ -308,8 +335,7 @@ namespace Banshee.Streaming
 
         // Scans the file for ogg rating/playcount tags as defined by the Quod Libet standard
         // All applicable tags are overwritten with the new values, regardless of tag author
-        public static void StoreRatingAndPlayCount (int rating, int playcount,
-                                                    TagLib.File to_file)
+        public static void StoreRating (int rating, TagLib.File to_file)
         {
             TagLib.Ogg.XiphComment xiphtag = GetTag (to_file);
             if (xiphtag == null) {
@@ -317,22 +343,16 @@ namespace Banshee.Streaming
             }
 
             ArrayList rating_fieldnames = new ArrayList ();
-            ArrayList playcount_fieldnames = new ArrayList ();
 
-            // Collect list of rating and playcount tags to be updated:
+            // Collect list of rating tags to be updated:
             foreach (string fieldname in xiphtag) {
                 if (fieldname.ToUpper ().StartsWith (rating_prefix)) {
                     rating_fieldnames.Add (fieldname);
-                } else if (fieldname.ToUpper ().StartsWith (playcount_prefix)) {
-                    playcount_fieldnames.Add (fieldname);
                 }
             }
-            // Add "BANSHEE" tags if no rating/playcount tags were found:
+            // Add "BANSHEE" tags if no rating tags were found:
             if (rating_fieldnames.Count == 0) {
                 rating_fieldnames.Add (rating_prefix+ogg_our_creator_name);
-            }
-            if (playcount_fieldnames.Count == 0) {
-                playcount_fieldnames.Add (playcount_prefix+ogg_our_creator_name);
             }
 
             string ogg_rating = BansheeToOgg (rating);
@@ -343,6 +363,28 @@ namespace Banshee.Streaming
                                        to_file.Name,
                                        ratingname.Substring (rating_prefix.Length));
             }
+        }
+
+        public static void StorePlayCount (int playcount, TagLib.File to_file)
+        {
+            TagLib.Ogg.XiphComment xiphtag = GetTag (to_file);
+            if (xiphtag == null) {
+                return;
+            }
+
+            ArrayList playcount_fieldnames = new ArrayList ();
+
+            // Collect list of  playcount tags to be updated:
+            foreach (string fieldname in xiphtag) {
+                if (fieldname.ToUpper ().StartsWith (playcount_prefix)) {
+                    playcount_fieldnames.Add (fieldname);
+                }
+            }
+            // Add "BANSHEE" tags if no playcount tags were found:
+            if (playcount_fieldnames.Count == 0) {
+                playcount_fieldnames.Add (playcount_prefix+ogg_our_creator_name);
+            }
+
             string ogg_playcount = playcount.ToString ();
             foreach (string playcountname in playcount_fieldnames) {
                 xiphtag.SetField (playcountname, ogg_playcount);
@@ -360,25 +402,32 @@ namespace Banshee.Streaming
                                                   ref int rating, ref int playcount)
         {
             if ((from_file.Tag.TagTypes & TagLib.TagTypes.Id3v2) != 0) {
-                ID3v2RatingTagger.GetRatingAndPlayCount (from_file,
+                ID3v2Tagger.GetRatingAndPlayCount (from_file,
                                                          ref rating, ref playcount);
             }
             if ((from_file.Tag.TagTypes & TagLib.TagTypes.Xiph) != 0) {
-                OggRatingTagger.GetRatingAndPlayCount (from_file,
+                OggTagger.GetRatingAndPlayCount (from_file,
                                                        ref rating, ref playcount);
             }
         }
 
-        public static void StoreRatingAndPlayCount (int rating, int playcount,
-                                                    TagLib.File to_file)
+        public static void StoreRating (int rating, TagLib.File to_file)
         {
             if ((to_file.Tag.TagTypes & TagLib.TagTypes.Id3v2) != 0) {
-                ID3v2RatingTagger.StoreRatingAndPlayCount (rating, playcount,
-                                                           to_file);
+                ID3v2Tagger.StoreRating (rating, to_file);
             }
             if ((to_file.Tag.TagTypes & TagLib.TagTypes.Xiph) != 0) {
-                OggRatingTagger.StoreRatingAndPlayCount (rating, playcount,
-                                                         to_file);
+                OggTagger.StoreRating (rating, to_file);
+            }
+        }
+
+        public static void StorePlayCount (int playcount, TagLib.File to_file)
+        {
+            if ((to_file.Tag.TagTypes & TagLib.TagTypes.Id3v2) != 0) {
+                ID3v2Tagger.StorePlayCount (playcount, to_file);
+            }
+            if ((to_file.Tag.TagTypes & TagLib.TagTypes.Xiph) != 0) {
+                OggTagger.StorePlayCount (playcount, to_file);
             }
         }
     }

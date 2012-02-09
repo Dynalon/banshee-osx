@@ -68,7 +68,7 @@ namespace Banshee.Sources
 
         public delegate void OpenPropertiesDelegate ();
 
-        protected Source (string generic_name, string name, int order) : this (generic_name, name, order, null)
+        protected Source (string generic_name, string name, int order) : this (generic_name, name, order, order.ToString ())
         {
         }
 
@@ -190,9 +190,10 @@ namespace Banshee.Sources
             get { return SourceMergeType.None; }
         }
 
-        public virtual void SetParentSource (Source parent)
+        public virtual bool SetParentSource (Source parent)
         {
             this.parent = parent;
+            return true;
         }
 
         public virtual bool ContainsChildSource (Source child)
@@ -206,9 +207,10 @@ namespace Banshee.Sources
         {
             lock (Children) {
                 if (!child_sources.Contains (child)) {
-                    child.SetParentSource (this);
-                    child_sources.Add (child);
-                    OnChildSourceAdded (child);
+                    if (child.SetParentSource (this)) {
+                        child_sources.Add (child);
+                        OnChildSourceAdded (child);
+                    }
                 }
             }
         }

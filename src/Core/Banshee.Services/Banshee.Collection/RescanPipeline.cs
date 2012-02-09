@@ -39,6 +39,7 @@ using Banshee.Base;
 using Banshee.Sources;
 using Banshee.Collection.Database;
 using Banshee.Library;
+using Banshee.Metadata;
 using Banshee.ServiceStack;
 
 namespace Banshee.Collection
@@ -100,8 +101,10 @@ namespace Banshee.Collection
             //Hyena.Log.DebugFormat ("Have {0} items before delete", ServiceManager.DbConnection.Query<int>("select count(*) from coretracks where primarysourceid=?", psource.DbId));
 
             // Delete tracks that are under the BaseDirectory and that weren't rescanned just now
-            string condition =
-                @"WHERE PrimarySourceID = ? AND Uri LIKE ? ESCAPE '\' AND LastSyncedStamp IS NOT NULL AND LastSyncedStamp < ?";
+            string condition = String.Format (
+                @"WHERE PrimarySourceID = ? AND {0} LIKE ? ESCAPE '\' AND {1} IS NOT NULL AND {1} < ?",
+                Banshee.Query.BansheeQuery.UriField.Column, "CoreTracks.LastSyncedStamp"
+            );
             string uri = Hyena.StringUtil.EscapeLike (new SafeUri (psource.BaseDirectoryWithSeparator).AbsoluteUri) + "%";
 
             ServiceManager.DbConnection.Execute (String.Format (@"BEGIN;
@@ -137,8 +140,9 @@ namespace Banshee.Collection
             this.psource = psource;
             this.scan_started = scan_started;
 
-            fetch_command = DatabaseTrackInfo.Provider.CreateFetchCommand (
-                "CoreTracks.PrimarySourceID = ? AND CoreTracks.Uri = ? LIMIT 1");
+            fetch_command = DatabaseTrackInfo.Provider.CreateFetchCommand (String.Format (
+                "CoreTracks.PrimarySourceID = ? AND {0} = ? LIMIT 1",
+                Banshee.Query.BansheeQuery.UriField.Column));
 
             fetch_similar_command = DatabaseTrackInfo.Provider.CreateFetchCommand (
                 "CoreTracks.PrimarySourceID = ? AND CoreTracks.LastSyncedStamp < ? AND CoreTracks.MetadataHash = ?");
@@ -196,7 +200,7 @@ namespace Banshee.Collection
                             if (similar_track == null) {
                                 //Hyena.Log.DebugFormat ("Couldn't find it, so queueing to import it");
                                 status = System.IO.Path.GetFileNameWithoutExtension (file_path);
-                                ServiceManager.Get<Banshee.Library.LibraryImportManager> ().ImportTrack (file_path);
+                                ServiceManager.Get<Banshee.Library.LibraryImportManager> ().ImportTrack (uri);
                             }
                         }
                     }
@@ -214,7 +218,9 @@ namespace Banshee.Collection
             // If the file was modified since we last scanned, parse the file's metadata
             if (mtime > track.FileModifiedStamp) {
                 using (var file = Banshee.Streaming.StreamTagger.ProcessUri (track.Uri)) {
-                    Banshee.Streaming.StreamTagger.TrackInfoMerge (track, file, false);
+                    Banshee.Streaming.StreamTagger.TrackInfoMerge (track, file, false,
+                        SaveTrackMetadataService.WriteRatingsEnabled.Value,
+                        SaveTrackMetadataService.WritePlayCountsEnabled.Value);
                 }
             }
         }

@@ -8,8 +8,12 @@ while (my $line = readline(IN)) {
 close (IN);
 
 # Parse various bits out of NEWS
-$news =~ m/Banshee ([\S]+) - ([^\n]+)$/ms;                $version = $1; $release_date = $2;
-$version =~ m/(\d+\.\d+)\./; $series = $1;
+$news =~ m/Banshee ([\S]+) - ([^\n]+)$/ms;
+$version = $1;
+$release_date = $2;
+
+$version =~ m/(\d+\.\d+)\./;
+$series = $1;
 
 $news =~ m/[=]+\n\n(.+)New Features[^:]*:(.+)Enhancements/ms;
 $desc = $1;
@@ -34,7 +38,7 @@ $translators = $2;
 $html = <<END;
 <ul>
 	<li><strong>Release Date:</strong> $release_date</li>
-	<li><strong>Source Tarball:</strong> <a href="http://ftp.gnome.org/pub/GNOME/sources/banshee/$series/banshee-$version.tar.bz2">banshee-$version.tar.bz2</a></li>
+	<li><strong>Source Tarball:</strong> <a href="http://ftp.gnome.org/pub/GNOME/sources/banshee/$series/banshee-$version.tar.xz">banshee-$version.tar.xz</a></li>
 	<li><strong>Release Information:</strong>
 <a href="http://ftp.gnome.org/pub/GNOME/sources/banshee/$series/banshee-$version.news">NEWS</a>,
 <a href="http://ftp.gnome.org/pub/GNOME/sources/banshee/$series/banshee-$version.sha256sum">sha256sum</a></li>
@@ -55,9 +59,10 @@ $features
 <ul>
     $bugs
 </ul>
-
+<br>
 <h4>Banshee has a lot more to offer! Check out the previous major release notes...</h4>
 <ul>
+	<li><a href="/download/archives/2.2.0">Read about features added in Banshee 2.2.0</a></li>
 	<li><a href="/download/archives/2.0.0">Read about features added in Banshee 2.0.0</a></li>
 	<li><a href="/download/archives/1.8.0">Read about features added in Banshee 1.8.0</a></li>
 	<li><a href="/download/archives/1.6.0">Read about features added in Banshee 1.6.0</a></li>
@@ -72,16 +77,16 @@ $features
 	<li>GLib 2.22</li>
 	<li>dbus-sharp 0.7</li>
 	<li>dbus-sharp-glib 0.5</li>
-	<li>Mono.Addins (mono-addins) 0.3.1</li>
+	<li>Mono.Addins (mono-addins) 0.6.2</li>
 	<li>TagLib# (taglib-sharp) &gt;= 2.0.3.7</li>
 	<li>Required to build default feature stack:
 <ul>
-	<li>libmtp &gt;= 0.2.0</li>
+	<li>libmtp &gt;= 0.3.0</li>
 	<li>mono-zeroconf &gt;= 0.8.0</li>
 	<li>boo &gt;= 0.8.1</li>
 	<li>webkit-1.0 &gt;= 1.2.2</li>
 	<li>gdata-sharp-youtube &gt;= 1.4</li>
-	<li>gio-sharp &gt;= 2.22.2, gtk-sharp-beans &gt;= 2.14.1, gudev-sharp and gkeyfile-sharp</li>
+	<li>gio-sharp &gt;= 2.22.3, gtk-sharp-beans &gt;= 2.14.1, gudev-sharp and gkeyfile-sharp</li>
 	<li>libgpod-sharp &gt;= 0.7.95</li>
 </ul>
 </li>
@@ -110,6 +115,7 @@ The following people contributed updated translations to this release.    Withou
 <blockquote>
     
 </blockquote>
+
 <h4>Reporting Bugs, Joining the Community</h4>
 If you encounter any bad behavior with this release, please do not hesitate to <a href="/contribute/file-bugs/">file bugs</a>!
 

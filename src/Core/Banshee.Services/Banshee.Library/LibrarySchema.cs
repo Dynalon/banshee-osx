@@ -34,9 +34,6 @@ namespace Banshee.Configuration.Schema
 {
     public static class LibrarySchema
     {
-        // Deprecated, don't use in new code
-        internal static readonly SchemaEntry<string> Location = new SchemaEntry<string> ("library", "base_location", null, null, null);
-
         public static readonly SchemaEntry<string> FolderPattern = new SchemaEntry<string>(
             "library", "folder_pattern",
             "%album_artist%%path_sep%%album%",
@@ -75,15 +72,22 @@ namespace Banshee.Configuration.Schema
         public static readonly SchemaEntry<bool> WriteMetadata = new SchemaEntry<bool>(
             "library", "write_metadata",
             false,
-            "Write metadata back to audio files",
-            "If enabled, metadata (tags) will be written back to audio files when using the track metadata editor."
+            "Sync metadata between library and supported files",
+            "If enabled, metadata will be synced between the library and media files."
         );
 
-        public static readonly SchemaEntry<bool> WriteRatingsAndPlayCounts = new SchemaEntry<bool>(
+        public static readonly SchemaEntry<bool> WriteRatings = new SchemaEntry<bool>(
             "library", "write_rating",
             false,
-            "Store ratings within supported files",
-            "If enabled, rating and playcount metadata will be written back to audio files."
+            "Sync ratings between library and supported files",
+            "If enabled, rating metadata will be synced between the library and audio files."
+        );
+
+        public static readonly SchemaEntry<bool> WritePlayCounts = new SchemaEntry<bool>(
+            "library", "write_count",
+            false,
+            "Sync play counts between library and supported files",
+            "If enabled, playcount metadata will be synced between the library and audio files."
         );
 
         public static readonly SchemaEntry<bool> SortByAlbumYear = new SchemaEntry<bool>(

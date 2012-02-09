@@ -1,11 +1,11 @@
 dnl Granularly define the version components
 dnl Remember to also update the Display Version
 m4_define([banshee_version_major], [2])
-m4_define([banshee_version_minor], [1])
-m4_define([banshee_version_micro], [1])
+m4_define([banshee_version_minor], [3])
+m4_define([banshee_version_micro], [4])
 
 dnl this can sometimes differ manually
-m4_define([banshee_display_version], ["2.1.1"])
+m4_define([banshee_display_version], ["2.3.4"])
 
 dnl set to 0 when doing an official release
 m4_define([banshee_version_pre_release], [0])
@@ -27,8 +27,8 @@ m4_define([banshee_asm_version], [banshee_api_version.0.0])
 AC_PREREQ(2.52)
 AC_INIT([banshee], banshee_version, [http://bugzilla.gnome.org/enter_bug.cgi?product=banshee])
 
-AM_INIT_AUTOMAKE([1.9 dist-bzip2 tar-ustar dist-zip foreign])
-AM_MAINTAINER_MODE
+AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-bzip2 tar-ustar foreign])
+AM_MAINTAINER_MODE([enable])
 AM_CONFIG_HEADER([config.h])
 AC_CONFIG_MACRO_DIR([build/m4])
 AC_SUBST([ACLOCAL_AMFLAGS], ["-I build/m4/shamrock -I build/m4/banshee -I build/m4/shave \${ACLOCAL_FLAGS}"])
@@ -141,8 +141,7 @@ dnl GNOME (optional)
 AC_ARG_ENABLE(gnome, AC_HELP_STRING([--disable-gnome], [Disable GNOME support]), , enable_gnome="yes")
 if test "x$enable_gnome" = "xyes"; then
 	BANSHEE_CHECK_GNOME_SHARP
-	AC_PATH_PROG(GCONFTOOL, gconftool-2, no)
-	AM_GCONF_SOURCE_2
+	BANSHEE_CHECK_GCONF
 	AM_CONDITIONAL(ENABLE_GNOME, true)
 else
 	AM_CONDITIONAL(GCONF_SCHEMAS_INSTALL, false)
@@ -298,6 +297,7 @@ src/Backends/Banshee.Unix/Makefile
 src/Backends/Banshee.Osx/Makefile
 src/Backends/Banshee.NowPlaying.X11/Makefile
 src/Backends/Banshee.NowPlaying.X11/libbnpx11/Makefile
+src/Backends/Banshee.Windows/Makefile
 
 src/Libraries/Makefile
 src/Libraries/Lastfm/Makefile
@@ -319,7 +319,6 @@ src/Extensions/Makefile
 src/Extensions/Banshee.AmazonMp3/Makefile
 src/Extensions/Banshee.AmazonMp3.Store/Makefile
 src/Extensions/Banshee.Audiobook/Makefile
-src/Extensions/Banshee.AudioCd/Makefile
 src/Extensions/Banshee.BooScript/Makefile
 src/Extensions/Banshee.Bpm/Makefile
 src/Extensions/Banshee.CoverArt/Makefile
@@ -340,6 +339,7 @@ src/Extensions/Banshee.Mpris/Makefile
 src/Extensions/Banshee.MultimediaKeys/Makefile
 src/Extensions/Banshee.NotificationArea/Makefile
 src/Extensions/Banshee.NowPlaying/Makefile
+src/Extensions/Banshee.OpticalDisc/Makefile
 src/Extensions/Banshee.PlayQueue/Makefile
 src/Extensions/Banshee.PlayerMigration/Makefile
 src/Extensions/Banshee.Podcasting/Makefile
@@ -391,7 +391,7 @@ ${PACKAGE}-${VERSION}
       + GNOME Proxy        ${have_libsoup_gnome} (libsoup-gnome-2.4 >= $SOUP_GNOME_MIN_VERSION)
     Boo Scripting:         ${enable_boo}
     DAAP:                  ${enable_daap}
-    GIO Backend:           ${enable_gio} (glib >= 2.22, gtk-sharp-beans, and gio-sharp)
+    GIO Backend:           ${enable_gio} (glib >= 2.22, gio-sharp >= 2.22.3, and gtk-sharp-beans)
     GIO Hardware:          ${enable_gio_hardware} (gudev-sharp, gkeyfile-sharp)
     YouTube:               ${enable_youtube} (gdata-sharp >= 1.4)
     Sound Menu:            ${enable_soundmenu}

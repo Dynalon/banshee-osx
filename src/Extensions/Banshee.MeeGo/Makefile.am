@@ -45,14 +45,14 @@ desktopfiles_DATA = $(desktopfiles_files)
 %.desktop.in: %.desktop.in.in Makefile
 	sed -e "s|\@libexecdir\@|$(libexecdir)|" $< > $@
 
+else
+include $(top_srcdir)/build/build.dist.mk
+endif
+
 clean-local:
 	rm -f com.meego.UX.Shell.Panels.banshee.service \
 		meego-panel-banshee.desktop \
 		meego-panel-banshee.desktop.in
-
-else
-EXTRA_DIST = $(SOURCES) $(RESOURCES)
-endif
 
 EXTRA_DIST += \
 	Banshee.MeeGo.dll.config \

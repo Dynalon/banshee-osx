@@ -291,6 +291,9 @@ namespace Banshee.Equalizer
             yield return new EqualizerSetting (this, Catalog.GetString ("Ska"), -1.1, new [] {
                 -2.4, -4.8, -4, -1.1, 4, 5.6, 8.8, 9.6, 11.2, 9.6
             });
+            yield return new EqualizerSetting (this, Catalog.GetString ("Smiley Face Curve"), -7, new [] {
+                12, 8, 6, 3, 0.0, 0.0, 3, 6, 8, 12
+            });
             yield return new EqualizerSetting (this, Catalog.GetString ("Soft"), -1.1, new [] {
                 4.8, 1.6, -1.1, -2.4, -1.1, 4, 8, 9.6, 11.2, 12,
             });

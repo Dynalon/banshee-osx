@@ -63,7 +63,8 @@ namespace Banshee.Metadata
                 @"(DateUpdatedStamp > LastSyncedStamp OR
                   (DateUpdatedStamp IS NOT NULL AND LastSyncedStamp IS NULL))
                   AND PrimarySourceID IN ({0})
-                  AND Uri LIKE '{1}%'", range, "file:");
+                  AND {1} LIKE '{2}%'",
+                range, Banshee.Query.BansheeQuery.UriField.Column, "file:");
 
             CountCommand = new HyenaSqliteCommand (
                 "SELECT COUNT(*) FROM CoreTracks WHERE " + condition);
@@ -72,7 +73,8 @@ namespace Banshee.Metadata
         }
 
         public bool WriteMetadataEnabled { get; set; }
-        public bool WriteRatingsAndPlayCountsEnabled { get; set; }
+        public bool WriteRatingsEnabled { get; set; }
+        public bool WritePlayCountsEnabled { get; set; }
         public bool RenameEnabled { get; set; }
 
         private HyenaSqliteCommand update_synced_at;
@@ -90,9 +92,9 @@ namespace Banshee.Metadata
             bool wrote = false;
             bool renamed = false;
             try {
-                if (WriteMetadataEnabled || WriteRatingsAndPlayCountsEnabled) {
+                if (WriteMetadataEnabled || WriteRatingsEnabled || WritePlayCountsEnabled) {
                     Hyena.Log.DebugFormat ("Saving metadata for {0}", track);
-                    wrote = StreamTagger.SaveToFile (track, WriteMetadataEnabled, WriteRatingsAndPlayCountsEnabled);
+                    wrote = StreamTagger.SaveToFile (track, WriteMetadataEnabled, WriteRatingsEnabled, WritePlayCountsEnabled);
                 }
 
                 // Rename tracks only from the Music Library

@@ -65,7 +65,7 @@ namespace Banshee.Metadata.LastFM
 
             string artwork_id = Track.ArtworkId;
 
-            if (artwork_id == null || CoverArtSpec.CoverExists (artwork_id) || !ServiceManager.Get<Network> ().Connected) {
+            if (artwork_id == null || CoverArtSpec.CoverExists (artwork_id) || !InternetConnected) {
                 return;
             }
 

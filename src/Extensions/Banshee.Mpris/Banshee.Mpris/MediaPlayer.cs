@@ -243,7 +243,7 @@ namespace Banshee.Mpris
 
         public IDictionary<string, object> Metadata {
             get {
-                var metadata = new Metadata (playback_service.CurrentTrack);
+                var metadata = new Metadata (engine_service.CurrentTrack);
                 return metadata.DataStore;
             }
         }
@@ -288,19 +288,19 @@ namespace Banshee.Mpris
             engine_service.Play ();
         }
 
-        public void SetPosition (string trackid, long position)
+        public void SetPosition (ObjectPath trackid, long position)
         {
             if (!CanSeek) {
                 return;
             }
 
-            if (String.IsNullOrEmpty (trackid) || trackid != (string)Metadata["trackid"]) {
+            if (trackid == null || trackid != (ObjectPath)Metadata["mpris:trackid"]) {
                 return;
             }
 
             // position is in microseconds, we speak in milliseconds
             long position_ms = position / 1000;
-            if (position_ms < 0 || position_ms > playback_service.CurrentTrack.Duration.TotalMilliseconds) {
+            if (position_ms < 0 || position_ms > engine_service.CurrentTrack.Duration.TotalMilliseconds) {
                 return;
             }
 

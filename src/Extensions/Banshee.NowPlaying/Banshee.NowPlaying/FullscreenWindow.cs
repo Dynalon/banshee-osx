@@ -83,8 +83,6 @@ namespace Banshee.NowPlaying
                 case Gdk.Key.c:
                 case Gdk.Key.V:
                 case Gdk.Key.v:
-                case Gdk.Key.Return:
-                case Gdk.Key.KP_Enter:
                 case Gdk.Key.Tab:
                     if (controls == null || !controls.Visible) {
                         ShowControls ();
@@ -92,17 +90,51 @@ namespace Banshee.NowPlaying
                         HideControls ();
                     }
                     return true;
+                case Gdk.Key.Return:
+                case Gdk.Key.KP_Enter:
+                    if (ServiceManager.PlayerEngine.InDvdMenu) {
+                       ServiceManager.PlayerEngine.ActivateCurrentMenu ();
+                    } else if (controls == null || !controls.Visible) {
+                        ShowControls ();
+                    } else {
+                        HideControls ();
+                    }
+                    return true;
                 case Gdk.Key.Right:
                 case Gdk.Key.rightarrow:
-                    player.Position += mod ? fast_seek : slow_seek;
-                    ShowControls ();
+                case Gdk.Key.KP_Right:
+                    if (ServiceManager.PlayerEngine.InDvdMenu) {
+                       ServiceManager.PlayerEngine.NavigateToRightMenu ();
+                    } else {
+                        player.Position += mod ? fast_seek : slow_seek;
+                        ShowControls ();
+                    }
                     break;
                 case Gdk.Key.Left:
                 case Gdk.Key.leftarrow:
-                    player.Position -= mod ? fast_seek : slow_seek;
-                    ShowControls ();
+                case Gdk.Key.KP_Left:
+                    if (ServiceManager.PlayerEngine.InDvdMenu) {
+                       ServiceManager.PlayerEngine.NavigateToLeftMenu ();
+                    } else {
+                        player.Position -= mod ? fast_seek : slow_seek;
+                        ShowControls ();
+                    }
                     break;
-            }
+                case Gdk.Key.uparrow:
+                case Gdk.Key.Up:
+                case Gdk.Key.KP_Up:
+                    if (ServiceManager.PlayerEngine.InDvdMenu) {
+                       ServiceManager.PlayerEngine.NavigateToUpMenu ();
+                    }
+                    break;
+                case Gdk.Key.downarrow:
+                case Gdk.Key.Down:
+                case Gdk.Key.KP_Down:
+                    if (ServiceManager.PlayerEngine.InDvdMenu) {
+                       ServiceManager.PlayerEngine.NavigateToDownMenu ();
+                    }
+                    break;
+                }
 
             return base.OnKeyPressEvent (evnt);
         }

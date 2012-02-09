@@ -67,7 +67,7 @@ namespace Banshee.Collection.Database
             "wmd",  "wmv",  "wmx",  "wv",   "wvc",  "wvx",  "yuv",  "f4v",
             "f4a",  "f4b",  "669",  "it",   "med",  "mod",  "mol",  "mtm",
             "nst",  "s3m",  "stm",  "ult",  "wow",  "xm",   "xnm",  "spx",
-            "ts",   "webm", "spc"
+            "ts",   "webm", "spc",  "mka"
         );
 
         public static bool IsWhiteListedFile (string path)
@@ -137,7 +137,7 @@ namespace Banshee.Collection.Database
 
                 OnImportResult (track, path, null);
             } catch (Exception e) {
-                LogError (path, e);
+                LogError (SafeUri.UriToFilename (path), e);
                 UpdateProgress (null);
                 OnImportResult (null, path, e);
             }
@@ -168,9 +168,15 @@ namespace Banshee.Collection.Database
                 return null;
             }
 
+            if (Banshee.IO.File.GetSize (uri) == 0) {
+                throw new InvalidFileException (String.Format (
+                    Catalog.GetString ("File is empty so it could not be imported: {0}"),
+                    Path.GetFileName (uri.LocalPath)));
+            }
+
             DatabaseTrackInfo track = new DatabaseTrackInfo () { Uri = uri };
             using (var file = StreamTagger.ProcessUri (uri)) {
-                StreamTagger.TrackInfoMerge (track, file, false, true);
+                StreamTagger.TrackInfoMerge (track, file, false, true, true);
             }
 
             track.Uri = uri;

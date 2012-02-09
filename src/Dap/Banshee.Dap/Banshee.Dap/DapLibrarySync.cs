@@ -217,33 +217,7 @@ namespace Banshee.Dap
                 sync.Dap.AddAllTracks (to_add);
 
                 if (library.SupportsPlaylists && sync.Dap.SupportsPlaylists) {
-                    // Now create the playlists, taking snapshots of smart playlists and saving them
-                    // as normal playlists
-                    IList<AbstractPlaylistSource> playlists = GetSyncPlaylists ();
-                    foreach (AbstractPlaylistSource from in playlists) {
-                        if (from.Count == 0) {
-                            continue;
-                        }
-                        var to = new SyncPlaylist (from.Name, sync.Dap, this);
-                        to.Save ();
-
-                        ServiceManager.DbConnection.Execute (
-                            String.Format (
-                                @"INSERT INTO CorePlaylistEntries (PlaylistID, TrackID)
-                                    SELECT ?, TrackID FROM CoreTracks WHERE PrimarySourceID = ? AND MetadataHash IN
-                                        (SELECT MetadataHash FROM {0} WHERE {1})",
-                                from.DatabaseTrackModel.ConditionFromFragment, from.DatabaseTrackModel.Condition),
-                            to.DbId, sync.Dap.DbId
-                        );
-                        to.UpdateCounts ();
-
-                        if (to.Count == 0) {
-                            // If it's empty, don't leave it on the device
-                            to.Unmap ();
-                        } else {
-                            sync.Dap.AddChildSource (to);
-                        }
-                    }
+                    SnapshotPlaylists ();
                 }
 
                 Hyena.Log.Debug ("Ending DAP sync");
@@ -253,15 +227,39 @@ namespace Banshee.Dap
             }
         }
 
-        // Reserve strings in preparation for the forthcoming string freeze.
-        public void ReservedStrings ()
+        private void SnapshotPlaylists ()
         {
-            // Note to translators: {0}, {1} and {2} will be replaced with numbers.
-            Catalog.GetString ("{0} to add, {1} to remove, {2} to update");
+            // Now create the playlists, taking snapshots of smart playlists and saving them
+            // as normal playlists
+            IList<AbstractPlaylistSource> playlists = GetSyncPlaylists ();
+            foreach (AbstractPlaylistSource from in playlists) {
+                if (from.Count == 0) {
+                    continue;
+                }
+                var to = new SyncPlaylist (from.Name, sync.Dap, this);
+                to.Save ();
+
+                ServiceManager.DbConnection.Execute (
+                    String.Format (
+                        @"INSERT INTO CorePlaylistEntries (PlaylistID, TrackID)
+                            SELECT ?, TrackID FROM CoreTracks WHERE PrimarySourceID = ? AND MetadataHash IN
+                                (SELECT MetadataHash FROM {0} WHERE {1})",
+                        from.DatabaseTrackModel.ConditionFromFragment, from.DatabaseTrackModel.Condition),
+                    to.DbId, sync.Dap.DbId
+                );
+                to.UpdateCounts ();
+
+                if (to.Count == 0) {
+                    // If it's empty, don't leave it on the device
+                    to.Unmap ();
+                } else {
+                    sync.Dap.AddChildSource (to);
+                }
+            }
         }
 
-        internal class PossibleUserErrorException : ApplicationException {
-
+        internal class PossibleUserErrorException : ApplicationException
+        {
             internal int TracksToRemove { get; private set; }
 
             public PossibleUserErrorException (int tracksToRemove) : base ()

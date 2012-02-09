@@ -11,7 +11,7 @@ AC_DEFUN([BANSHEE_CHECK_GIO_SHARP],
 			enable_gio=yes, enable_gio=no)
 
 		PKG_CHECK_MODULES(GIOSHARP,
-			gio-sharp-2.0 >= 2.22,
+			gio-sharp-2.0 >= 2.22.3,
 			enable_gio="$enable_gio", enable_gio=no)
 
 		asms="`$PKG_CONFIG --variable=Libraries gio-sharp-2.0` `$PKG_CONFIG --variable=Libraries gtk-sharp-beans-2.0`"

@@ -8,7 +8,6 @@ SOURCES =  \
 	Banshee.Base/Localization.cs \
 	Banshee.Base/NamingUtil.cs \
 	Banshee.Base/PathPattern.cs \
-	Banshee.Base/PlatformHacks.cs \
 	Banshee.Base/ProductInformation.cs \
 	Banshee.Base/Resource.cs \
 	Banshee.Base/Tests/CoverArtSpecTests.cs \
@@ -25,6 +24,7 @@ SOURCES =  \
 	Banshee.Collection/TrackInfo.cs \
 	Banshee.Collection/TrackMediaAttributes.cs \
 	Banshee.Collection/UnknownTrackInfo.cs \
+	Banshee.Collection/YearInfo.cs \
 	Banshee.Configuration.Schema/ImportSchema.cs \
 	Banshee.Configuration/ConfigurationClient.cs \
 	Banshee.Configuration/IConfigurationClient.cs \

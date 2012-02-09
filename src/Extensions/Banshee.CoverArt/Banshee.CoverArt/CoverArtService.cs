@@ -33,6 +33,7 @@ using Gtk;
 using Mono.Unix;
 
 using Hyena;
+using Hyena.Data.Sqlite;
 
 using Banshee.Base;
 using Banshee.Collection;
@@ -96,6 +97,7 @@ namespace Banshee.CoverArt
         {
             ServiceManager.SourceManager.MusicLibrary.TracksAdded += OnTracksAdded;
             ServiceManager.SourceManager.MusicLibrary.TracksChanged += OnTracksChanged;
+            ServiceManager.SourceManager.MusicLibrary.TracksDeleted += OnTracksDeleted;
             FetchCoverArt ();
         }
 
@@ -107,6 +109,7 @@ namespace Banshee.CoverArt
 
             ServiceManager.SourceManager.MusicLibrary.TracksAdded -= OnTracksAdded;
             ServiceManager.SourceManager.MusicLibrary.TracksChanged -= OnTracksChanged;
+            ServiceManager.SourceManager.MusicLibrary.TracksDeleted -= OnTracksDeleted;
 
             disposed = true;
         }
@@ -124,7 +127,7 @@ namespace Banshee.CoverArt
 
         public void FetchCoverArt (bool force)
         {
-            if (job == null && ServiceManager.Get<Network> ().Connected) {
+            if (job == null) {
                 DateTime last_scan = DateTime.MinValue;
 
                 if (!force) {
@@ -166,6 +169,14 @@ namespace Banshee.CoverArt
                     }
                 }
             }
+        }
+
+        private static HyenaSqliteCommand delete_query = new HyenaSqliteCommand (
+            "DELETE FROM CoverArtDownloads WHERE AlbumID NOT IN (SELECT AlbumID FROM CoreAlbums)");
+
+        private void OnTracksDeleted (Source sender, TrackEventArgs args)
+        {
+            ServiceManager.DbConnection.Execute (delete_query);
         }
 
         string IService.ServiceName {

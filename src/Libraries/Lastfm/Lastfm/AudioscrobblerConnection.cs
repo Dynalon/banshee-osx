@@ -55,7 +55,7 @@ namespace Lastfm
         private const int FAILURE_LOG_MINUTES = 5; /* 5 minute delay on logging failure to upload information */
         private const int RETRY_SECONDS = 60; /* 60 second delay for transmission retries */
         private const int MAX_RETRY_SECONDS = 7200; /* 2 hours, as defined in the last.fm protocol */
-        private const int TIME_OUT = 5000; /* 5 seconds timeout for webrequests */
+        private const int TIME_OUT = 10000; /* 10 seconds timeout for webrequests */
         private const string CLIENT_ID = "bsh";
         private const string CLIENT_VERSION = "0.1";
         private const string SCROBBLER_URL = "http://post.audioscrobbler.com/";
@@ -241,19 +241,19 @@ namespace Lastfm
                 return;
             }
 
+            string song_transmit_info = queue.GetTransmitInfo  (out num_tracks_transmitted);
+            Log.DebugFormat ("Last.fm scrobbler sending '{0}' to {1}", song_transmit_info, post_url);
+
             StringBuilder sb = new StringBuilder ();
 
             sb.AppendFormat ("s={0}", session_id);
-
-            sb.Append (queue.GetTransmitInfo (out num_tracks_transmitted));
+            sb.Append (song_transmit_info);
 
             current_web_req = (HttpWebRequest) WebRequest.Create (post_url);
             current_web_req.UserAgent = LastfmCore.UserAgent;
             current_web_req.Method = "POST";
             current_web_req.ContentType = "application/x-www-form-urlencoded";
             current_web_req.ContentLength = sb.Length;
-
-            //Console.WriteLine ("Sending {0} ({1} bytes) to {2}", sb.ToString (), sb.Length, post_url);
 
             TransmitState ts = new TransmitState ();
             ts.Count = num_tracks_transmitted;

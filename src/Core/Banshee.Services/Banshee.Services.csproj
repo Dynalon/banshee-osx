@@ -321,6 +321,12 @@
     <Compile Include="Banshee.Hardware\UsbPortInfo.cs" />
     <Compile Include="Banshee.MediaEngine\Tests.cs" />
     <Compile Include="Banshee.Sources\Tests.cs" />
+    <Compile Include="Banshee.Query\Tests\BansheeQueryTests.cs" />
+    <Compile Include="Banshee.Collection.Database\DatabaseAlbumArtistInfo.cs" />
+    <Compile Include="Banshee.Collection.Database\DatabaseAlbumArtistListModel.cs" />
+    <Compile Include="Banshee.Collection.Database\DatabaseYearInfo.cs" />
+    <Compile Include="Banshee.Collection.Database\DatabaseYearListModel.cs" />
+    <Compile Include="Banshee.Collection\InvalidFileException.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Banshee.Services.addin.xml">
@@ -348,4 +354,7 @@
     </MonoDevelop>
     <VisualStudio />
   </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="Banshee.Query\Tests\" />
+  </ItemGroup>
 </Project>

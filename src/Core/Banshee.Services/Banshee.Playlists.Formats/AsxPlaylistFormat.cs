@@ -33,6 +33,8 @@ using System.Collections.Generic;
 
 using Mono.Unix;
 
+using Hyena;
+
 using Banshee.Base;
 using Banshee.Sources;
 
@@ -82,48 +84,81 @@ namespace Banshee.Playlists.Formats
                 throw new InvalidPlaylistException();
             }
 
-            while(xml_reader.Read()) {
-                if(xml_reader.NodeType != XmlNodeType.Element || xml_reader.Depth != 1
-                    || String.Compare(xml_reader.LocalName, "entry", true) != 0) {
+            while (xml_reader.Read ()) {
+                if (xml_reader.NodeType != XmlNodeType.Element || xml_reader.Depth != 1) {
                     continue;
                 }
 
-                Dictionary<string, object> element = AddElement();
+                switch (xml_reader.LocalName.ToLower ()) {
+                    case "title":
+                        try {
+                            xml_reader.Read ();
+                            Title = xml_reader.Value;
+                        }
+                        catch {
+                        }
+                        break;
 
-                do {
-                    try {
-                        xml_reader.Read();
-                    } catch {
-                        xml_reader.Skip();
-                    }
+                    case "entry":
+                        LoadEntry (xml_reader);
+                        break;
 
-                    if(xml_reader.NodeType != XmlNodeType.Element) {
-                        continue;
-                    }
-
-                    switch(xml_reader.LocalName.ToLower()) {
-                        case "title":
-                            xml_reader.Read();
-                            element["title"] = xml_reader.Value;
-                            break;
-                        case "ref":
-                            // asf links say they are http, but are mmsh instead
-                            string uri_aux = xml_reader["HREF"] ?? xml_reader["href"];
-                            if (uri_aux.StartsWith("http", StringComparison.CurrentCultureIgnoreCase))
-                                uri_aux = "mmsh" + uri_aux.Substring(4);
-
-                            element["uri"] = ResolveUri(uri_aux);
-                            break;
-                        case "duration":
-                            try {
-                                xml_reader.Read();
-                                element["duration"] = TimeSpan.Parse(xml_reader.Value);
-                            } catch {
+                    case "entryref":
+                        string href = xml_reader["HREF"] ?? xml_reader["href"];
+                        if (href != null) {
+                            PlaylistParser secondary = new PlaylistParser ();
+                            if (secondary.Parse (new SafeUri (ResolveUri (href)))) {
+                                // splice in Elements of secondary
+                                foreach (Dictionary<string, object> e in secondary.Elements) {
+                                    Elements.Add (e);
+                                }
                             }
-                            break;
-                    }
-                } while(!xml_reader.EOF && xml_reader.Depth > 1);
+                        }
+                        break;
+                }
             }
+        }
+
+        private void LoadEntry (XmlTextReader xml_reader)
+        {
+            Dictionary<string, object> element = AddElement ();
+
+            do {
+                try {
+                    xml_reader.Read ();
+                } catch {
+                    xml_reader.Skip ();
+                }
+
+                if (xml_reader.NodeType != XmlNodeType.Element) {
+                    continue;
+                }
+
+                switch (xml_reader.LocalName.ToLower ()) {
+                    case "title":
+                        xml_reader.Read ();
+                        element["title"] = xml_reader.Value;
+                        break;
+
+                    case "ref":
+                        // asf links say they are http, but are mmsh instead
+                        string uri_aux = xml_reader["HREF"] ?? xml_reader["href"];
+                        if (uri_aux.StartsWith ("http", StringComparison.CurrentCultureIgnoreCase)) {
+                            uri_aux = "mmsh" + uri_aux.Substring (4);
+                    }
+
+                        element["uri"] = ResolveUri (uri_aux);
+                        break;
+
+                    case "duration":
+                        try {
+                            xml_reader.Read ();
+                            element["duration"] = TimeSpan.Parse (xml_reader.Value);
+                        } catch {
+                        }
+                        break;
+                }
+            } while (!xml_reader.EOF && xml_reader.Depth > 1);
         }
 
         public override void Save(Stream stream, ITrackModelSource source)

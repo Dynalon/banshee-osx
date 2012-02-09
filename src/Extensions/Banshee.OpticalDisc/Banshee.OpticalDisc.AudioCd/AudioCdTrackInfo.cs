@@ -33,13 +33,13 @@ using Hyena;
 using Banshee.Collection;
 using Banshee.Collection.Database;
 
-namespace Banshee.AudioCd
+namespace Banshee.OpticalDisc.AudioCd
 {
-    public class AudioCdTrackInfo : DatabaseTrackInfo
+    public class AudioCdTrackInfo : DiscTrackInfo
     {
         public AudioCdTrackInfo (AudioCdDiscModel model, string deviceNode, int index)
+            : base (model)
         {
-            this.model = model;
             this.index_on_disc = index;
 
             Uri = new SafeUri (String.Format ("cdda://{0}#{1}", index_on_disc + 1, deviceNode));
@@ -51,9 +51,10 @@ namespace Banshee.AudioCd
             return cd_track == null ? false : (cd_track.Model == Model && cd_track.IndexOnDisc == IndexOnDisc);
         }
 
-        private AudioCdDiscModel model;
-        public AudioCdDiscModel Model {
-            get { return model; }
+        public new AudioCdDiscModel Model {
+            get {
+                return (AudioCdDiscModel) base.Model;
+            }
         }
 
         private int index_on_disc;
@@ -101,7 +102,7 @@ namespace Banshee.AudioCd
                 }
 
                 rip_enabled = value;
-                model.EnabledCount += rip_enabled ? 1 : -1;
+                Model.EnabledCount += rip_enabled ? 1 : -1;
             }
         }
     }

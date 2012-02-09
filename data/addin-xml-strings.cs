@@ -39,11 +39,6 @@ internal static class AddinXmlStringCatalog
         Catalog.GetString (@"Organize audiobooks, lectures, etc.");
         Catalog.GetString (@"Core");
 
-        // ../src/Extensions/Banshee.AudioCd/Banshee.AudioCd.addin.xml
-        Catalog.GetString (@"Audio CD Support");
-        Catalog.GetString (@"Listen to and rip Audio CDs.");
-        Catalog.GetString (@"Core");
-
         // ../src/Extensions/Banshee.BooScript/Banshee.BooScript.addin.xml
         Catalog.GetString (@"Boo Scripting");
         Catalog.GetString (@"Customize and extend Banshee with Boo-language scripts.");
@@ -133,6 +128,11 @@ internal static class AddinXmlStringCatalog
         Catalog.GetString (@"Notification Area Icon");
         Catalog.GetString (@"Display an icon in the notification area for controlling Banshee.");
         Catalog.GetString (@"Utilities");
+
+        // ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.addin.xml
+        Catalog.GetString (@"DVD and Audio CD Support");
+        Catalog.GetString (@"Watch DVDs, listen to and rip Audio CDs.");
+        Catalog.GetString (@"Core");
 
         // ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration.addin.xml
         Catalog.GetString (@"Importers for Amarok, Rhythmbox and iTunes");

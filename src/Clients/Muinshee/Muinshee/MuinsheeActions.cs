@@ -43,7 +43,7 @@ namespace Muinshee
             this.queue = queue;
             AddImportant (
                 new ActionEntry (
-                    "PlaySongAction", Stock.Add,
+                    "PlaySongAction", null,
                      Catalog.GetString ("Play _Song"), "S",
                      Catalog.GetString ("Add a song to the playlist"), OnPlaySong
                 ),
@@ -54,6 +54,7 @@ namespace Muinshee
                 )
             );
 
+            this["PlaySongAction"].IconName = "audio-x-generic";
             this["PlayAlbumAction"].IconName = "media-optical";
 
             // TODO disable certain actions
@@ -64,12 +65,12 @@ namespace Muinshee
 
         private void OnPlaySong (object sender, EventArgs args)
         {
-            new SongDialog (queue).TryRun ();
+            new SongDialog (queue).Show ();
         }
 
         private void OnPlayAlbum (object sender, EventArgs args)
         {
-            new AlbumDialog (queue).TryRun ();
+            new AlbumDialog (queue).Show ();
         }
     }
 }

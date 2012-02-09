@@ -2,22 +2,21 @@
 # Copyright (C) 2011 banshee's COPYRIGHT HOLDER
 # This file is distributed under the same license as the 'banshee' package.
 # Hajime Taira <htaira@redhat.com>, 2011.
-# Jiro Matsuzawa <matsuzawa.jr@gmail.com>, 2011.
+# Jiro Matsuzawa <jmatsuzawa@src.gnome.org>, 2011.
 # Kentaro KAZUHAMA <kazken3@gmail.com>, 2011.
 # Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: banshee master\n"
-"POT-Creation-Date: 2011-04-26 19:26+0000\n"
-"PO-Revision-Date: 2011-04-27 09:55+0900\n"
-"Last-Translator: Hajime Taira <htaira@redhat.com>\n"
+"POT-Creation-Date: 2012-01-25 11:09+0000\n"
+"PO-Revision-Date: 2012-01-25 20:30+0900\n"
+"Last-Translator: OKANO Takayoshi <kano@na.rim.or.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ja\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -27,7 +26,7 @@ msgstr "@@image: 'figures/banshee.png'; md5=THIS FILE DOESN'T EXIST"
 
 #: C/ui.page:8(desc)
 msgid "An overview of <app>Banshee's</app> user interface."
-msgstr "<app>Banshee</app>のユーザーインターフェイスの概要"
+msgstr "<app>Banshee</app>のユーザーインターフェースの概要"
 
 #: C/ui.page:12(name) C/sync.page:12(name) C/sort.page:12(name)
 #: C/search.page:12(name) C/play.page:12(name) C/play-queue.page:12(name)
@@ -53,7 +52,7 @@ msgstr "pcutler@gnome.org"
 
 #: C/ui.page:24(title)
 msgid "Introduction to the Banshee User Interface"
-msgstr "Bansheeのユーザーインターフェイスについて"
+msgstr "Bansheeのユーザーインターフェースについて"
 
 #: C/ui.page:27(title) C/introduction.page:43(title)
 msgid "<gui>Banshee Media Player</gui> window"
@@ -65,7 +64,7 @@ msgstr "Bansheeメディアプレイヤー"
 
 #: C/ui.page:30(p) C/introduction.page:46(p)
 msgid "<app>Banshee</app> library interface"
-msgstr "<app>Banshee</app>ライブラリのインターフェイス"
+msgstr "<app>Banshee</app>ライブラリのインターフェース"
 
 #: C/ui.page:35(title)
 msgid "Sources"
@@ -90,8 +89,8 @@ msgid ""
 msgstr ""
 "メニューの項目は、選択したソースに応じて変わります。たとえば、ポッドキャスト"
 "を購読するためのメニューを出したい場合、ポッドキャストのソースを選択する必要"
-"があります。ポッドキャストを行動するすためのメニューの項目が表示されている時"
-"には音楽ライブラリやビデオライブラリは利用できません。"
+"があります。ポッドキャストを操作するためのメニューの項目が表示されている時に"
+"は音楽ライブラリやビデオライブラリは利用できません。"
 
 #: C/ui.page:50(title)
 msgid "Library Browser"
@@ -123,8 +122,8 @@ msgid ""
 msgstr ""
 "Bansheeでフルスクリーンモードで使うと、再生中モードを隠して音楽のライブラリを"
 "大きく表示、もしくは再生中のビデオを大きく表示することができます。音楽を再生"
-"中の時、アーティスト名とアルバムのカバーアートが表示されます。もしビデオを見"
-"ている時であれば、フルスクリーンでビデオを楽しめます。"
+"中の時、アーティスト名とアルバムのカバーアートが表示されます。もしビデオを鑑"
+"賞している時であれば、フルスクリーンでビデオを楽しめます。"
 
 #: C/ui.page:65(p)
 msgid ""
@@ -134,7 +133,7 @@ msgid ""
 "<guiseq><gui>View</gui><gui>Fullscreen</gui></guiseq> to start Fullscreen "
 "mode."
 msgstr ""
-"再生中にBansheeのユーザーインターフェイスを隠して、フルスクリーンモードに変更"
+"再生中にBansheeのユーザーインターフェースを隠して、フルスクリーンモードに変更"
 "したい場合、<key>F</key>を押すか、Bansheeのウィンドウの右上にある<gui>フルス"
 "クリーン</gui>ボタンを押します。もしくはBansheeのメニューから<guiseq><gui>表"
 "示</gui><gui>フルスクリーン</gui></guiseq>を選ぶとフルスクリーンモードに移行"
@@ -262,10 +261,10 @@ msgid ""
 "If your library is larger than the space on your portable media player, "
 "Banshee will sync media until your player is full and then stop."
 msgstr ""
-"ポータブルメディアプレーヤーに十分な記憶領域自動的にライブラリ全体を同期しま"
-"す。同期対象のライブラリのデータ容量が接続されているポータブルミュージックプ"
-"レイヤーの容量よりも上回る場合、Bansheeは容量が一杯になるまでメディアの同期を"
-"行います。"
+"すべてのライブラリをポータブルメディアプレーヤーに自動的に同期する場合は、"
+"ポータブルメディアプレーヤーに十分な記憶領域を確保してください。同期対象のラ"
+"イブラリのデータ容量が接続されているポータブルミュージックプレイヤーの容量よ"
+"りも上回る場合、Bansheeは容量が一杯になるまでメディアの同期を行います。"
 
 #: C/sync.page:82(p)
 msgid ""
@@ -276,11 +275,11 @@ msgid ""
 "new playlist to your device every time you plug it in."
 msgstr ""
 "もし、音楽ライブラリの中にプレイリストやスマートプレイリストを作成している場"
-"合、音楽の同期する際にオプションとして表示されます。スマートプレイリストは新"
-"しいコンテンツが追加された場合、ルールに従いプレイリストへ追加してくれるのを"
-"支援する仕組みです。Bansheeにて音楽を同期する際に、ポータブルミュージックプレ"
-"イヤー上に新しいプレイリストを作成する場合、すでに作成してあるスマートプレイ"
-"リストを参考にすることができます。"
+"合、音楽の同期をする際にオプションとして表示されます。スマートプレイリストは"
+"新しいコンテンツが追加された場合、ルールに従いプレイリストへ追加してくれるの"
+"を支援する仕組みです。Bansheeにて音楽を同期する際に、ポータブルミュージックプ"
+"レイヤー上に新しいプレイリストを作成する場合、すでに作成してあるスマートプレ"
+"イリストを参考にすることができます。"
 
 #: C/sync.page:89(p)
 msgid ""
@@ -323,7 +322,7 @@ msgid ""
 "distribution for the necessary codecs as it is outside the scope of this "
 "help and varies by distribution."
 msgstr ""
-"もし、音楽ライブラリの中の音楽ファイルがOGGファイルまたはGLACなど、サポートさ"
+"もし、音楽ライブラリの中の音楽ファイルがOGGファイルまたはFLACなど、サポートさ"
 "れていない形式でエンコードされている場合、ポータブルメディアプレイヤーに転送"
 "する際にBansheeはMP3形式に自動的に変換することができます。（必要なコーデック"
 "がインストールされている必要があります）コーデックについてはディストリビュー"
@@ -354,9 +353,8 @@ msgid ""
 msgstr ""
 "ポータブルミュージックプレイヤーに保存された音楽をBansheeで直接再生することが"
 "できます。左側のメニューにポータブルミュージックプレイヤーのライブラリが表示"
-"されます。Bansheeのメニューからお使いのお使いのプレーヤーを選択してください。"
-"その後、自身のライブラリ内の音楽と同じようにBansheeで音楽を再生することができ"
-"ます。"
+"されます。Bansheeのメニューからお使いのプレーヤーを選択してください。その後、"
+"自身のライブラリ内の音楽と同じようにBansheeで音楽を再生することができます。"
 
 #: C/sync.page:135(title)
 msgid "Remove Music From your Portable Music Player"
@@ -370,10 +368,10 @@ msgid ""
 "choose <guiseq><gui>Edit</gui><gui>Delete</gui></guiseq>."
 msgstr ""
 "ポータブルミュージックプレイヤーに保存した楽曲を削除したい場合、任意のポータ"
-"ブルミュージックプレイヤーを選択し、Bansheeのライブラリーを表示します。次に削"
-"除したいトラックを選択し、右クリックしてメニューから<gui>削除</gui>を選びま"
-"す。もしくはBansheeのメニューから<guiseq><gui>編集</gui><gui>削除</gui></"
-"guiseq>を選びます。"
+"ブルミュージックプレイヤーを選択し、Bansheeのライブラリを表示します。次に削除"
+"したいトラックを選択し、右クリックしてメニューから<gui>削除</gui>を選びます。"
+"もしくはBansheeのメニューから<guiseq><gui>編集</gui><gui>削除</gui></guiseq>"
+"を選びます。"
 
 #: C/sync.page:142(p)
 msgid ""
@@ -401,9 +399,9 @@ msgid ""
 "additional information about the songs in your library or change the way you "
 "can view and sort your songs, artists or albums."
 msgstr ""
-"ライブラリが大きくなるにつれて、ライブラリ内のトラックの情報を追加したり、表"
-"示することができます。また、ライブラリビュー内の曲のタイトル、アーティストや"
-"アルバムをソートする方法を変更することができます。"
+"ライブラリが大きくなるにつれて、ライブラリ内のトラックに追加情報を表示した"
+"り、曲のタイトル、アーティストやアルバムでソートする方法を変更するなど、ライ"
+"ブラリビューを変更したくなることでしょう。"
 
 #: C/sort.page:34(p)
 msgid ""
@@ -498,9 +496,9 @@ msgid ""
 "default, there is no explicit AND operator."
 msgstr ""
 "検索条件の演算子は任意の2つの検索キーワードの間に記述、もしくは検索キーワード"
-"の前に記述します。既定の動作は<gui>AND</gui>となります。その他の演算子は2つの"
-"検索キーワードの間に記述されている時のみ使用されます。AND 演算子もあります。"
-"また、明示的なAND演算子をがあります。"
+"の前に記述します。既定の演算は<gui>AND</gui>であり、2つの検索キーワードの間に"
+"他の演算子がない場合に使用されます。既定でANDになるため、明示的なAND演算子は"
+"ありません。"
 
 #: C/search.page:49(p)
 msgid ""
@@ -508,9 +506,9 @@ msgid ""
 "these three operations can yield very powerful queries to help you search "
 "your media."
 msgstr ""
-"その他の基本的な演算子は、<gui>OR</gui>と<gui>NOT</gui>が含まれています。ま"
-"た、これらの3つの演算子を使うことにより、メディアを検索するため非常に強力な検"
-"索問い合わせを行うことができます。"
+"その他の基本的な演算子は、<gui>OR</gui>と<gui>NOT</gui>があります。また、これ"
+"らの3つの演算を使うことにより、メディアを検索するため非常に強力な検索問い合わ"
+"せを行うことができます。"
 
 #: C/search.page:56(title)
 msgid "Logical Operators and Examples"
@@ -520,7 +518,7 @@ msgstr "論理演算子と検索式の例"
 msgid ""
 "The following is a list of logical operators and examples of the search "
 "results when searching using them."
-msgstr "以下は論理演算子とそれらを使用して検索、検索した結果の例です。"
+msgstr "以下は、論理演算子の一覧、および論理演算子を使用した検索結果の例です。"
 
 #: C/search.page:62(gui)
 msgid "Operator"
@@ -558,12 +556,12 @@ msgid ""
 "Do not display search results with any search term that follows the operator "
 "of NOT, not,<key>-</key>."
 msgstr ""
-"NOT、not、<key>-</key>の演算子を記述することにより、検索キーワードの含む検索"
+"NOT、not、<key>-</key>の演算子を記述することにより、検索キーワードを含む検索"
 "結果を表示しません。"
 
 #: C/search.page:80(p)
 msgid "Examples of logical operations include:"
-msgstr "論理演算子を含む検索式の例:"
+msgstr "論理演算を使用した例:"
 
 #: C/search.page:84(gui)
 msgid "Query"
@@ -615,7 +613,7 @@ msgid ""
 "For more information on performing more complex search queries, see the "
 "<link xref=\"adv-search\"/> page."
 msgstr ""
-"より複雑な検索を行いたい場合、詳しいは、<link xref=\"adv-search\"/>ページを参"
+"より複雑な検索を行いたい場合、詳しくは、<link xref=\"adv-search\"/>ページを参"
 "照してください。"
 
 #: C/rb-import.page:8(desc)
@@ -664,8 +662,8 @@ msgid ""
 "the <key>Spacebar</key>, or choose <guiseq><gui>Playback</gui><gui>Play</"
 "gui></guiseq> from the Banshee menu."
 msgstr ""
-"曲の再生を開始するには、トラック名をダブルクリックを押しての<key>スペースキー"
-"</key>、またはBansheeのメニューから<guiseq><gui>再生</gui><gui>再生</gui></"
+"曲の再生を開始するには、トラック名をダブルクリックを押しての<key>Space</"
+"key>、またはBansheeのメニューから<guiseq><gui>再生</gui><gui>再生</gui></"
 "guiseq>を選びます。"
 
 #: C/play.page:42(p)
@@ -676,8 +674,8 @@ msgid ""
 "guiseq> from the Banshee menu."
 msgstr ""
 "アルバム一覧からアルバムを選択し、曲の名前をマウスでダブルクリックするか、 "
-"<key>スペースバー</key>を押す、もしくはBansheeのメニューから<guiseq><gui>再生"
-"</gui><gui>再生</gui></guiseq>を選ぶことでアルバムを再生することができます。"
+"<key>Space</key>を押す、もしくはBansheeのメニューから<guiseq><gui>再生</"
+"gui><gui>再生</gui></guiseq>を選ぶことでアルバムを再生することができます。"
 
 #: C/play.page:48(p)
 msgid ""
@@ -686,8 +684,8 @@ msgid ""
 "gui><gui>Play</gui></guiseq> from the Banshee menu."
 msgstr ""
 "１人のアーティストに関するすべての曲を再生するには、アーティストのブラウザー"
-"で好きなアーティストを選択して、<key>スペースキー</key>を押すか、Bansheeのメ"
-"ニューから<guiseq><gui>再生</gui><gui>再生</gui>を選びます。"
+"で好きなアーティストを選択して、<key>Space</key>を押すか、Bansheeのメニューか"
+"ら<guiseq><gui>再生</gui><gui>再生</gui>を選びます。"
 
 #: C/play.page:53(p)
 msgid ""
@@ -710,9 +708,9 @@ msgid ""
 "menu."
 msgstr ""
 "インポートしたビデオはアルファベット順に表示されます。ビデオを再生するには、"
-"リストから再生したいビデオを選んだ後に、<key>スペースキー</key>を押すか、また"
-"はBansheeのメニューから<guiseq><gui>再生</gui><gui>再生</gui></guiseq>を選び"
-"ます。"
+"リストから再生したいビデオを選んだ後に、<key>Space</key>を押すか、または"
+"Bansheeのメニューから<guiseq><gui>再生</gui><gui>再生</gui></guiseq>を選びま"
+"す。"
 
 #: C/play.page:68(p)
 msgid ""
@@ -734,7 +732,7 @@ msgid ""
 "first."
 msgstr ""
 "ポッドキャストのソースは、購読しているすべてのポッドキャストを表示します。"
-"ポッドキャストのブラウザーでは、購読しているすべてのポットキャストが新しいも"
+"ポッドキャストのブラウザーでは、購読しているすべてのポッドキャストが新しいも"
 "のから順にリスト表示されます。"
 
 #: C/play.page:80(p)
@@ -744,7 +742,7 @@ msgid ""
 "gui><gui>Play</gui></guiseq> from the Banshee menu."
 msgstr ""
 "ポッドキャストを再生する場合、再生したいポッドキャストを選択した後にエピソー"
-"ドを選び、<key>スペースキー</key>を押すか、もしくはBansheeのメニューから"
+"ドを選び、<key>Space</key>を押すか、もしくはBansheeのメニューから"
 "<guiseq><gui>再生</gui><gui>再生</gui></guiseq>を選びます。"
 
 #: C/play.page:88(title)
@@ -766,7 +764,7 @@ msgid ""
 "<guiseq><gui>Playback</gui><gui>Play</gui></guiseq> from the Banshee menu."
 msgstr ""
 "インターネットラジオステーションを再生するには、再生したいラジオステーション"
-"をリストから選択し、<key>スペースキー</key>を押すか、Bansheeのメニューから"
+"をリストから選択し、<key>Space</key>を押すか、Bansheeのメニューから"
 "<guiseq><gui>再生</gui><gui>再生</gui></guiseq>を選びます。"
 
 #: C/play-queue.page:9(desc)
@@ -830,11 +828,11 @@ msgid ""
 "window pane or right click the tracks and choose <gui>Add to Play Queue</"
 "gui>."
 msgstr ""
-"複数のファイルを選択するには、マウスを使用して<key>Control</key>を押しながら"
-"各ファイルの選択を繰り替えすか、<key>Shift</key>を押しながら始点と終点を決め"
-"て、その範囲のファイルを選択します。そうして、<gui>再生キュー</gui>に選択した"
-"ファイルをドラッグアンドドロップするか、選択したファイルの上で右クリックし"
-"<gui>再生キューへ追加</gui>を選びます。"
+"複数のファイルを選択するには、マウスを使用して<key>Ctrl</key>を押しながら各"
+"ファイルの選択を繰り返すか、<key>Shift</key>を押しながら始点と終点を決めて、"
+"その範囲のファイルを選択します。そうして、<gui>再生キュー</gui>に選択したファ"
+"イルをドラッグアンドドロップするか、選択したファイルの上で右クリックし<gui>再"
+"生キューへ追加</gui>を選びます。"
 
 #: C/play-queue.page:56(title)
 msgid "Organize Your Play Queue"
@@ -1054,7 +1052,7 @@ msgid ""
 "gui> to add them to the playlist. You can repeat this process until you have "
 "added all the tracks you want in the playlist."
 msgstr ""
-"プレイリストを作成するには、トラックを選択した状態で<keyseq><key>Control</"
+"プレイリストを作成するには、トラックを選択した状態で<keyseq><key>Ctrl</"
 "key><key>N</key></keyseq>を押すか、Bansheeのメニューから<guiseq><gui>メディア"
 "</gui><gui>新しいプレイリスト</gui></guiseq>を選びます。選択されたトラックの"
 "上で右クリックを行いメニューから<guiseq><gui>プレイリストへ追加</gui><gui>新"
@@ -1285,11 +1283,12 @@ msgid ""
 "fm</gui> and select the <em>Sign up for Last.fm</em> link."
 msgstr ""
 "Last.fmを最大限に活用するには、Last.fmのプロファイルを作成することになるで"
-"しょう。ウェブブラウザーで<link href=\"http://www.lastfm.jp/join\">にアクセス"
-"し、マイプロフィールを作成するか、Bansheeのメニューから<guiseq><gui>編集</"
-"gui><gui>設定</gui></guiseq>を選択肢、<gui>情報個別の項目</gui>のタブを押し"
-"て、<gui>ソース</gui>のドロップダウンメニューから<gui>Last.fm</gui>を選択しま"
-"す。そして、<em>Last.fmにサインアップする</em>のリンクをクリックします。"
+"しょう。ウェブブラウザーで<link href=\"http://www.lastfm.jp/join\">http://"
+"www.last.fm/join</link>にアクセスし、マイプロフィールを作成するか、Bansheeの"
+"メニューから<guiseq><gui>編集</gui><gui>設定</gui></guiseq>を選択し、<gui>情"
+"報個別の項目</gui>のタブを押して、<gui>ソース</gui>のドロップダウンメニューか"
+"ら<gui>Last.fm</gui>を選択します。そして、<em>Last.fmにサインアップする</em>"
+"のリンクをクリックします。"
 
 #: C/lastfm.page:45(p)
 msgid ""
@@ -1368,9 +1367,9 @@ msgstr ""
 "fmのラジオステーションが表示されます。Last.fmのラジオを聴く際にはインターネッ"
 "ト接続が必要になります。あなたが聴きたいラジオステーションを選択して、Banshee"
 "がLast.fmのラジオステーションと通信してくれるのを待ってください。Bansheeの"
-"<gui>再生</gui>ボタンを押すか、<key>スペースキー</key>を押すとLast.fmのラジオ"
-"ステーションからストリーミングが始まります。Bansheeの<gui>次へ</gui>ボタンを"
-"押すか、<key>N</key>を押す、もしくはBansheeのメニューから<guiseq><gui>再生</"
+"<gui>再生</gui>ボタンを押すか、<key>Space</key>を押すとLast.fmのラジオステー"
+"ションからストリーミングが始まります。Bansheeの<gui>次へ</gui>ボタンを押す"
+"か、<key>N</key>を押す、もしくはBansheeのメニューから<guiseq><gui>再生</"
 "gui><gui>次へ</gui></guiseq>を選ぶとラジオステーションのキューの中で次の曲が"
 "再生されます。"
 
@@ -1401,7 +1400,7 @@ msgstr "アクション"
 
 #: C/keyboardshortcuts.page:35(p)
 msgid "Space Bar"
-msgstr "スペースキー"
+msgstr "Space"
 
 #: C/keyboardshortcuts.page:35(p)
 msgid "Play or Pause the current song"
@@ -1429,7 +1428,7 @@ msgstr "ライブラリの相互作用"
 
 #: C/keyboardshortcuts.page:56(p)
 msgid "<key>/</key>, <keyseq><key>Control</key><key>F</key></keyseq>"
-msgstr "<key>/</key>, <keyseq><key>Control</key><key>F</key></keyseq>"
+msgstr "<key>/</key>, <keyseq><key>Ctrl</key><key>F</key></keyseq>"
 
 #: C/keyboardshortcuts.page:56(p)
 msgid "Move the focus to the search box"
@@ -1440,7 +1439,7 @@ msgstr "検索ボックスにフォーカスを移動します"
 #: C/keyboardshortcuts.page:123(key) C/keyboardshortcuts.page:127(key)
 #: C/keyboardshortcuts.page:132(key) C/keyboardshortcuts.page:137(key)
 msgid "Control"
-msgstr "操作"
+msgstr "Ctrl"
 
 #: C/keyboardshortcuts.page:60(key)
 msgid "I"
@@ -1468,7 +1467,7 @@ msgstr "マークを付けたエピソードは古いものです。"
 
 #: C/keyboardshortcuts.page:103(title)
 msgid "Interface"
-msgstr "インターフェイス"
+msgstr "インターフェース"
 
 #: C/keyboardshortcuts.page:110(key)
 msgid "F"
@@ -1558,9 +1557,9 @@ msgid ""
 "videos, and other media as well sync it with portable devices to take your "
 "media on the go."
 msgstr ""
-"<app>Banshee</app>はメディアプレイヤーです。音楽、ビデオ、その他のメディアの"
-"再生することができます。また、ポータブルデバイスとの同期して、外出先でも音楽"
-"やビデオを楽しめます。"
+"<app>Banshee</app>はメディアプレイヤーです。音楽、ビデオ、その他のメディアを"
+"再生することができます。また、ポータブルデバイスと同期して、外出先でも音楽や"
+"ビデオを楽しめます。"
 
 #: C/introduction.page:31(p)
 msgid ""
@@ -1579,7 +1578,7 @@ msgid ""
 msgstr ""
 "Bansheeはポータブルミュージックプレーヤーやスマートフォンなどの一般的な携帯機"
 "器に対して音楽やビデオを同期することができます。BansheeはほとんどのiPod、"
-"SandiskとCreative MP3プレーヤーなどの一般的なデバイス、また、Androidを搭載し"
+"SanDisk、CreativeのMP3プレーヤーなどの一般的なデバイス、また、Androidを搭載し"
 "た携帯電話をサポートしています。"
 
 #: C/index.page:24(title)
@@ -1609,7 +1608,7 @@ msgstr "一般的な問題"
 #: C/import.page:8(desc)
 msgid "Add music and videos from your computer to your Banshee library."
 msgstr ""
-"コンピュータ上の音楽ファイルやビデオファイルをBansheeのライブラリへ追加しま"
+"コンピューター上の音楽ファイルやビデオファイルをBansheeのライブラリへ追加しま"
 "す。"
 
 #: C/import.page:15(name)
@@ -1630,9 +1629,9 @@ msgid ""
 "Imported files appear in your sources and can be edited and managed like any "
 "other media in Banshee."
 msgstr ""
-"お使いのコンピュータ上に保存された音楽やビデオをBansheeにインポートすることが"
-"できます。インポートされたファイルはソースに存在する既存のファイルと同じく編"
-"集や管理ができます。"
+"お使いのコンピューター上に保存された音楽やビデオをBansheeにインポートすること"
+"ができます。インポートされたファイルはソースに存在する既存のファイルと同じく"
+"編集や管理ができます。"
 
 #: C/import.page:27(p)
 msgid ""
@@ -1640,7 +1639,7 @@ msgid ""
 "gui><gui>Import Media</gui></guiseq>. A dialog will appear with a number of "
 "choices."
 msgstr ""
-"コンピュータ上の音楽ファイルやビデオファイルをインポートするには、"
+"コンピューター上の音楽ファイルやビデオファイルをインポートするには、"
 "<guiseq><gui>メディア</gui><gui>メディアのインポート</gui></guiseq>を選びま"
 "す。ダイアログには選択肢がいくつか表示されます。"
 
@@ -1714,7 +1713,7 @@ msgid ""
 "worrying about duplicate entries in your library."
 msgstr ""
 "ライブラリ内のすでにインポートした重複したエントリを心配することなく、フォル"
-"ダから安全にインポートすることができます。"
+"ダーから安全にインポートすることができます。"
 
 #: C/import.page:68(title)
 msgid "Import from a Playlist"
@@ -1951,7 +1950,7 @@ msgstr ""
 "選択してください。ラジオステーションに対する<gui>ステーション名</gui>を入力す"
 "る必要ががあります。<gui>ストリームURL</gui>にはラジオステーションのURLをウェ"
 "ブブラウザーなどから貼り付けてください。マウスで右クリックして<gui>貼り付け</"
-"gui>を選ぶか、<keyseq><key>Control</key><key>V</key></keyseq>で貼り付けられま"
+"gui>を選ぶか、<keyseq><key>Ctrl</key><key>V</key></keyseq>で貼り付けられま"
 "す。"
 
 #: C/add-radio.page:62(p)
@@ -2027,7 +2026,7 @@ msgstr ""
 "Bansheeのウィンドウの右上にある<gui>新しいポッドキャストで購読</gui>ボタンを"
 "押すか、もしくはBansheeのメニューから<guiseq><gui>メディア</gui><gui>ポッド"
 "キャストで購読</gui></guiseq>、それかキーボードのショートカットで"
-"<keyseq><key>Shift</key><key>Control</key><key>F</key></keyseq>を押します。"
+"<keyseq><key>Shift</key><key>Ctrl</key><key>F</key></keyseq>を押します。"
 
 #: C/add-podcast.page:59(p)
 msgid ""
@@ -2081,6 +2080,6 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Hajime Taira <htaira@redhat.com>, 2011.\n"
-"Jiro Matsuzawa <matsuzawa.jr@gmail.com>, 2011.\n"
+"Jiro Matsuzawa <jmatsuzawa@src.gnome.org>, 2011.\n"
 "Kentaro KAZUHAMA <kazken3@gmail.com>, 2011.\n"
 "Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2011."

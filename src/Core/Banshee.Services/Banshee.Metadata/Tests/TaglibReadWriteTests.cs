@@ -185,13 +185,13 @@ namespace Banshee.Metadata
             change (track);
 
             // Save changes
-            bool saved = StreamTagger.SaveToFile (track, true, true);
+            bool saved = StreamTagger.SaveToFile (track, true, true, true);
             Assert.IsTrue (saved);
 
             // Read changes
             file = StreamTagger.ProcessUri (uri);
             track = new TrackInfo ();
-            StreamTagger.TrackInfoMerge (track, file, false, true);
+            StreamTagger.TrackInfoMerge (track, file, false, true, true);
             file.Dispose ();
 
             // Verify changes

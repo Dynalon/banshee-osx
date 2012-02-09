@@ -34,6 +34,7 @@ SOURCES =  \
 	Banshee.Collection.Gui/TrackFilterListView.cs \
 	Banshee.Collection.Gui/TrackListView.cs \
 	Banshee.Collection.Gui/XmlColumnController.cs \
+	Banshee.Collection.Gui/YearListView.cs \
 	Banshee.ContextPane/BaseContextPage.cs \
 	Banshee.ContextPane/ContextPageManager.cs \
 	Banshee.ContextPane/ContextPane.cs \

@@ -101,7 +101,7 @@ namespace Banshee.Daap
                     "iTunes\u00ae 7 introduced new compatibility issues and currently only " +
                     "works with other iTunes\u00ae 7 clients.\n\n" +
                     "No third-party clients can connect to iTunes\u00ae music shares anymore. " +
-                    "This is an intentional limitation by Apple in iTunes\u00ae 7 and we apologize for " +
+                    "This is an intentional limitation by Apple in iTunes\u00ae 7 and newer, we apologize for " +
                     "the unfortunate inconvenience."
                 ));
             } else {
@@ -136,7 +136,7 @@ namespace Banshee.Daap
                 LinkLabel link = new LinkLabel();
                 link.Xalign = 0.0f;
                 link.Markup = String.Format("<u>{0}</u>", GLib.Markup.EscapeText(Catalog.GetString(
-                    "The music share is hosted by iTunes\u00ae 7")));
+                    "The music share is hosted by iTunes\u00ae 7 or newer")));
 
                 link.Clicked += delegate(object o, EventArgs args) {
                     info_link_clicked = true;

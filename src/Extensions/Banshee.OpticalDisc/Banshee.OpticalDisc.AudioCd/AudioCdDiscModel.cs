@@ -3,6 +3,7 @@
 //
 // Author:
 //   Aaron Bockover <abockover@novell.com>
+//   Alex Launi <alex.launi@canonical.com>
 //
 // Copyright (C) 2008 Novell, Inc.
 //
@@ -40,14 +41,12 @@ using Banshee.Hardware;
 using Banshee.Collection;
 using Banshee.Collection.Database;
 
-namespace Banshee.AudioCd
+namespace Banshee.OpticalDisc.AudioCd
 {
-    public class AudioCdDiscModel : MemoryTrackListModel
+    public class AudioCdDiscModel : DiscModel
     {
         // 44.1 kHz sample rate * 16 bit channel resolution * 2 channels (stereo)
         private const long PCM_FACTOR = 176400;
-
-        private IDiscVolume volume;
 
         public event EventHandler MetadataQueryStarted;
         public event EventHandler MetadataQueryFinished;
@@ -71,8 +70,8 @@ namespace Banshee.AudioCd
         }
 
         public AudioCdDiscModel (IDiscVolume volume)
+            : base (volume)
         {
-            this.volume = volume;
             disc_title = Catalog.GetString ("Audio CD");
 
             MusicBrainzService.UserAgent = Banshee.Web.Browser.UserAgent;
@@ -83,18 +82,18 @@ namespace Banshee.AudioCd
             OnReloaded ();
         }
 
-        public void LoadModelFromDisc ()
+        public override void LoadModelFromDisc ()
         {
             Clear ();
 
-            LocalDisc mb_disc = LocalDisc.GetFromDevice (volume.DeviceNode);
+            LocalDisc mb_disc = LocalDisc.GetFromDevice (Volume.DeviceNode);
             if (mb_disc == null) {
                 throw new ApplicationException ("Could not read contents of the disc. Platform may not be supported.");
             }
 
             TimeSpan[] durations = mb_disc.GetTrackDurations ();
             for (int i = 0, n = durations.Length; i < n; i++) {
-                AudioCdTrackInfo track = new AudioCdTrackInfo (this, volume.DeviceNode, i);
+                AudioCdTrackInfo track = new AudioCdTrackInfo (this, Volume.DeviceNode, i);
                 track.TrackNumber = i + 1;
                 track.TrackCount = n;
                 track.DiscNumber = 1;
@@ -262,35 +261,8 @@ namespace Banshee.AudioCd
             }
         }
 
-        private ICdromDevice Drive {
-            get { return Volume == null ? null : (Volume.Parent as ICdromDevice); }
-        }
-
-        public bool LockDoor ()
-        {
-            ICdromDevice drive = Drive;
-            return drive != null ? drive.LockDoor () : false;
-        }
-
-        public bool UnlockDoor ()
-        {
-            ICdromDevice drive = Drive;
-            return drive != null ? drive.UnlockDoor () : false;
-        }
-
-        public bool IsDoorLocked {
-            get {
-                ICdromDevice drive = Drive;
-                return drive != null ? drive.IsDoorLocked : false;
-            }
-        }
-
-        public IDiscVolume Volume {
-            get { return volume; }
-        }
-
         private string disc_title;
-        public string Title {
+        public override string Title {
             get { return disc_title; }
         }
 

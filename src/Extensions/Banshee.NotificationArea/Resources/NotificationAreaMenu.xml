@@ -2,6 +2,8 @@
   <!-- This is the context menu for the actual notification area -->
   <popup name="NotificationAreaIconMenu" action="NotificationAreaIconMenuAction">
     <menuitem name="PlayPause" action="PlayPauseAction"/>
+    <menuitem name="StopWhenFinished" action="StopWhenFinishedAction"/>
+    <separator/>
     <menuitem name="Next" action="NextAction"/>
     <menuitem name="Previous" action="PreviousAction"/>
     <separator/>
