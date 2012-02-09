@@ -13,5 +13,9 @@ SOURCES =  \
 
 RESOURCES = Banshee.UPnPClient.addin.xml
 
+if UPNP_ENABLED
 include $(top_srcdir)/build/build.mk
+else
+include $(top_srcdir)/build/build.dist.mk
+endif
 

@@ -1,12 +1,22 @@
 AC_DEFUN([BANSHEE_CHECK_MONO_UPNP],
 [
-	PKG_CHECK_MODULES(MONO_SSDP, mono.ssdp >= 0.1)
-	AC_SUBST(MONO_SSDP_LIBS)
+	MONOUPNP_REQUIRED=0.1
 
-	PKG_CHECK_MODULES(MONO_UPNP, mono.upnp >= 0.1)
-	AC_SUBST(MONO_UPNP_LIBS)
+	AC_ARG_ENABLE(upnp, AC_HELP_STRING([--disable-upnp], [Disable UPnP support]), , enable_upnp="yes")
 
-	PKG_CHECK_MODULES(MONO_UPNP_DCP_MEDIASERVER1, mono.upnp.dcp.mediaserver1 >= 0.1)
-	AC_SUBST(MONO_UPNP_DCP_MEDIASERVER1_LIBS)
+	if test "x$enable_upnp" = "xyes"; then
+		has_mono-upnp=no
+		PKG_CHECK_MODULES(MONO_UPNP,
+			mono.ssdp >= $MONOUPNP_REQUIRED
+			mono.upnp >= $MONOUPNP_REQUIRED
+			mono.upnp.dcp.mediaserver1 >= $MONOUPNP_REQUIRED)
+
+		AC_SUBST(MONO_UPNP_LIBS)
+
+		AM_CONDITIONAL(UPNP_ENABLED, true)
+	else
+		AM_CONDITIONAL(UPNP_ENABLED, false)
+	fi
+
 ])
 
