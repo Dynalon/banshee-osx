@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the banshee package.
 # Guillermo Pascual <akira.space@gmail.com>, 2010.
 # Jorge González <jorgegonz@svn.gnome.org>, 2010, 2011.
-# Benjamín Valero Espinosa <benjavalero@gmail.com>, 2010, 2011.
 # Ángel Sanz <mizo0mizo@gmail.com>, 2010, 2011.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
+# Benjamín Valero Espinosa <benjavalero@gmail.com>, 2010, 2011, 2012.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: banshee-help.master\n"
-"POT-Creation-Date: 2011-04-02 11:27+0000\n"
-"PO-Revision-Date: 2011-04-02 13:32+0200\n"
+"POT-Creation-Date: 2012-02-09 21:02+0000\n"
+"PO-Revision-Date: 2012-02-12 18:08+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -1332,16 +1332,18 @@ msgid ""
 "To get the most out of Last.fm, you will want to create a Last.fm profile. "
 "Visit <link href=\"http://www.last.fm/join\">http://www.last.fm/join</link> "
 "to create an account or choose <guiseq><gui>Edit</gui><gui>Preferences</"
-"gui></guiseq> from the Banshee menu. Then press the <gui>Source Specific</"
-"gui> tab and press the <gui>Source</gui> drop down menu and choose <gui>Last."
-"fm</gui> and select the <em>Sign up for Last.fm</em> link."
+"gui></guiseq> from the Banshee menu. Once in the preferences select the "
+"<gui>Source Specific</gui> tab, press the <gui>Source</gui> drop down menu, "
+"choose <gui>Last.fm</gui> and finally select the <em>Sign up for Last.fm</"
+"em> link."
 msgstr ""
 "Para obtener el máximo de Last.fm, querrá crear un perfil de Last.fm. Visite "
 "<link href=\"http://www.last.fm/join\">http://www.last.fm/join</link> para "
 "crear una cuenta o elija <guiseq><gui>Editar</gui><gui>Preferencias</gui></"
-"guiseq> desde el menú de Banshee. Luego pulse la pestaña <gui>Específicas de "
-"las fuentes</gui> y pulse la lista desplegable <gui>Fuente</gui>, elija "
-"<gui>Last.fm</gui> y seleccione el enlace <em>Registrarse en Last.fm</em>."
+"guiseq> desde el menú de Banshee. Una vez que esté en las preferencias, "
+"seleccione la pestaña <gui>Específicas de las fuentes</gui>, pulse la lista "
+"desplegable <gui>Fuente</gui>, elija <gui>Last.fm</gui> y finalmente "
+"seleccione el enlace <em>Registrarse en Last.fm</em>."
 
 #: C/lastfm.page:45(p)
 msgid ""
@@ -1370,30 +1372,36 @@ msgstr "Activar el informe de canciones en Last.fm"
 
 #: C/lastfm.page:59(p)
 msgid ""
-"After you have successfully linked Banshee to your Last.fm profile, to "
-"enable Banshee to report the songs to your Last.fm profile, in the "
-"<gui>Source Specific</gui> tab in Banshee's preferences, press the "
-"<gui>Enable Song Reporting</gui> checkbox. If you have an active internet "
-"connection, Banshee will now send Last.fm information regarding the songs "
-"you play. To view your play history, visit your profile on the Last.fm "
-"website. Last.fm will automatically update your music metadata if any of "
-"your artist, song title or album information is incorrect."
+"After you have successfully linked Banshee to your Last.fm profile you must "
+"ensure that you have enabled Banshee to report your songs. To enable Banshee "
+"to report the songs to your Last.fm profile go to Banshee's preferences, "
+"select the <gui>Source Specific</gui> tab, select <gui>Last.fm</gui> from "
+"the dropdown, and press the <gui>Enable Song Reporting</gui> checkbox. If "
+"you have an active internet connection Banshee will now send Last.fm "
+"information regarding the songs you play. To view your play history visit "
+"your profile on the Last.fm website. Last.fm will automatically update your "
+"music metadata if any of your artist, song title, or album information is "
+"incorrect (although we recommend that you use the Metadata Fixer extension "
+"to correct your files instead)."
 msgstr ""
-"Tras enlazar Banshee con éxito a su perfil de Last.fm, para permitir que "
-"Banshee informe las canciones a su perfil de Last.fm, en la pestaña "
-"<gui>Específicas de las fuentes</gui> en las preferencias de Banshee, pulse "
+"Tras enlazar Banshee con éxito a su perfil de Last.fm, debe asegurarse de "
+"que ha permitido que Banshee informe sobre sus canciones. Para permitir que "
+"Banshee informe las canciones a su perfil de Last.fm, vaya a las "
+"preferencias de Banshee, seleccione la pestaña <gui>Específicas de las "
+"fuentes</gui>, seleccione <gui>Last.fm</gui> en la lista desplegable y pulse "
 "la casilla <gui>Activar informe de canciones</gui>. Si tiene una conexión "
 "activa a Internet, Banhee enviará a Last.fm información relacionada con las "
 "canciones que reproduce. Para ver su histórico de reproducción, visite su "
 "perfil en la página web de Last.fm. Last.fm actualizará automáticamente los "
 "metadatos de su música si la información del artista, canción o álbum no es "
-"correcta."
+"correcta (aunque le recomendamos que en lugar de eso use la extensión "
+"«Reparar metadatos» para corregir sus archivos)."
 
-#: C/lastfm.page:72(title)
+#: C/lastfm.page:75(title)
 msgid "Listen to Last.fm Radio"
 msgstr "Escuchar la radio de Last.fm"
 
-#: C/lastfm.page:73(p)
+#: C/lastfm.page:76(p)
 msgid ""
 "Last.fm radio is free for residents of the United States, United Kingdom and "
 "Germany. Residents of other countries will have to pay for a premium account "
@@ -1408,7 +1416,7 @@ msgstr ""
 "escuchar las listas de reproducción y las emisoras de música que ha "
 "etiquetado o marcado como favoritas."
 
-#: C/lastfm.page:80(p)
+#: C/lastfm.page:83(p)
 msgid ""
 "In Banshee's sources pane on the left hand side, you will now have a Last.fm "
 "section, including your Last.fm radio stations. You will need an active "
