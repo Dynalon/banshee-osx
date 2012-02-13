@@ -132,6 +132,9 @@ BANSHEE_CHECK_GTK_SHARP
 dnl OS X (optional through --enable-osx)
 BANSHEE_CHECK_OSX
 
+dnl Mono.Upnp libraries
+BANSHEE_CHECK_MONO_UPNP
+
 PKG_CHECK_MODULES(SQLITE, sqlite3 >= 3.4)
 
 dnl GNOME (optional)
@@ -346,6 +349,7 @@ src/Extensions/Banshee.Sample/Makefile
 src/Extensions/Banshee.Torrent/Makefile
 src/Extensions/Banshee.RemoteAudio/Makefile
 src/Extensions/Banshee.UbuntuOneMusicStore/Makefile
+src/Extensions/Banshee.UPnPClient/Makefile
 src/Extensions/Banshee.Wikipedia/Makefile
 src/Extensions/Banshee.YouTube/Makefile
 
@@ -392,6 +396,7 @@ ${PACKAGE}-${VERSION}
     YouTube:               ${enable_youtube} (gdata-sharp >= 1.4)
     Sound Menu:            ${enable_soundmenu}
     Ubuntu One Store:      ${enable_ubuntuone} (ubuntuone-sharp >= 0.3.2)
+    UPnP:                  ${enable_upnp} (mono-upnp >= $MONOUPNP_REQUIRED)
 
   Build/Development:
     Unit Tests:            ${do_tests} (nunit >= ${NUNIT_REQUIRED})

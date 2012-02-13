@@ -32,6 +32,7 @@ SUBDIRS = \
 	Banshee.Torrent \
 	Banshee.RemoteAudio \
 	Banshee.UbuntuOneMusicStore \
+	Banshee.UPnPClient \
 	Banshee.Wikipedia \
 	Banshee.YouTube
 
