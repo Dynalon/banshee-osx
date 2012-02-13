@@ -15,6 +15,18 @@ RESOURCES = Banshee.UPnPClient.addin.xml
 
 if UPNP_ENABLED
 include $(top_srcdir)/build/build.mk
+
+define EXTRA_INSTALL_DATA_HOOK
+	for ASM in $(MONOUPNP_ASSEMBLIES); do \
+		$(INSTALL) -m 0755 $$ASM $(DESTDIR)$(moduledir); \
+	done;
+endef
+
+define EXTRA_UNINSTALL_HOOK
+	for ASM in $(MONOUPNP_ASSEMBLIES); do \
+		rm -f $(DESTDIR)$(moduledir)/`basename $$ASM`; \
+	done;
+endef
 else
 include $(top_srcdir)/build/build.dist.mk
 endif

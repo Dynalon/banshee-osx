@@ -13,6 +13,18 @@ AC_DEFUN([BANSHEE_CHECK_MONO_UPNP],
 
 		AC_SUBST(MONO_UPNP_LIBS)
 
+		asms="`$PKG_CONFIG --variable=Libraries mono.ssdp` `$PKG_CONFIG --variable=Libraries mono.upnp` `$PKG_CONFIG --variable=Libraries mono.upnp.dcp.mediaserver1`"
+		for asm in $asms; do
+			FILENAME=`basename $asm`
+			if [[ "`echo $SEENBEFORE | grep $FILENAME`" = "" ]]; then
+				MONOUPNP_ASSEMBLIES="$MONOUPNP_ASSEMBLIES $asm"
+				[[ -r "$asm.config" ]] && MONOUPNP_ASSEMBLIES="$MONOUPNP_ASSEMBLIES $asm.config"
+				[[ -r "$asm.mdb" ]] && MONOUPNP_ASSEMBLIES="$MONOUPNP_ASSEMBLIES $asm.mdb"
+				SEENBEFORE="$SEENBEFORE $FILENAME"
+			fi
+		done
+		AC_SUBST(MONOUPNP_ASSEMBLIES)
+
 		AM_CONDITIONAL(UPNP_ENABLED, true)
 	else
 		AM_CONDITIONAL(UPNP_ENABLED, false)
