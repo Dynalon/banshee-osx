@@ -5,11 +5,11 @@ AC_DEFUN([BANSHEE_CHECK_MONO_UPNP],
 	AC_ARG_ENABLE(upnp, AC_HELP_STRING([--disable-upnp], [Disable UPnP support]), , enable_upnp="yes")
 
 	if test "x$enable_upnp" = "xyes"; then
-		has_mono-upnp=no
 		PKG_CHECK_MODULES(MONO_UPNP,
 			mono.ssdp >= $MONOUPNP_REQUIRED
 			mono.upnp >= $MONOUPNP_REQUIRED
-			mono.upnp.dcp.mediaserver1 >= $MONOUPNP_REQUIRED)
+			mono.upnp.dcp.mediaserver1 >= $MONOUPNP_REQUIRED,
+			enable_upnp=yes, enable_upnp=no)
 
 		AC_SUBST(MONO_UPNP_LIBS)
 
@@ -25,10 +25,9 @@ AC_DEFUN([BANSHEE_CHECK_MONO_UPNP],
 		done
 		AC_SUBST(MONOUPNP_ASSEMBLIES)
 
-		AM_CONDITIONAL(UPNP_ENABLED, true)
+		AM_CONDITIONAL(UPNP_ENABLED, test "x$enable_upnp" = "xyes")
 	else
 		AM_CONDITIONAL(UPNP_ENABLED, false)
 	fi
 
 ])
-
