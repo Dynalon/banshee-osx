@@ -173,17 +173,21 @@ namespace Banshee.LibraryWatcher
                         Thread.Sleep (sleep);
                     }
 
-                    if (item.ChangeType == WatcherChangeTypes.Changed) {
-                        UpdateTrack (item.FullPath);
-                    } else if (item.ChangeType == WatcherChangeTypes.Created) {
-                        AddTrack (item.FullPath);
-                    } else if (item.ChangeType == WatcherChangeTypes.Deleted) {
-                        RemoveTrack (item.FullPath);
-                    } else if (item.ChangeType == WatcherChangeTypes.Renamed) {
-                        RenameTrack (item.OldFullPath, item.FullPath);
+                    try {
+                        if (item.ChangeType == WatcherChangeTypes.Changed) {
+                            UpdateTrack (item.FullPath);
+                        } else if (item.ChangeType == WatcherChangeTypes.Created) {
+                            AddTrack (item.FullPath);
+                        } else if (item.ChangeType == WatcherChangeTypes.Deleted) {
+                            RemoveTrack (item.FullPath);
+                        } else if (item.ChangeType == WatcherChangeTypes.Renamed) {
+                            RenameTrack (item.OldFullPath, item.FullPath);
+                        }
+    
+                        change_types |= item.ChangeType;
+                    } catch (Exception e) {
+                        Log.Error (String.Format ("Watcher: Error processing {0}", item.FullPath), e.Message, false);
                     }
-
-                    change_types |= item.ChangeType;
                 }
 
                 if ((change_types & WatcherChangeTypes.Deleted) > 0) {
