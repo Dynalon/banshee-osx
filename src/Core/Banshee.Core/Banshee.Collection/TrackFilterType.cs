@@ -41,5 +41,6 @@ namespace Banshee.Collection
         Year       = 1 << 4,
         Comment    = 1 << 5,
         AlbumArtist= 1 << 6,
+        Composer   = 1 << 7,
     }
 }
