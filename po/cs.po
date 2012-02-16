@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-01-22 16:00+0000\n"
-"PO-Revision-Date: 2012-02-03 22:42+0100\n"
+"POT-Creation-Date: 2012-02-13 20:43+0000\n"
+"PO-Revision-Date: 2012-02-16 12:41+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -124,7 +124,7 @@ msgstr ""
 #: ../data/addin-xml-strings.cs:110 ../data/addin-xml-strings.cs:120
 #: ../data/addin-xml-strings.cs:125 ../data/addin-xml-strings.cs:130
 #: ../data/addin-xml-strings.cs:140 ../data/addin-xml-strings.cs:155
-#: ../data/addin-xml-strings.cs:160
+#: ../data/addin-xml-strings.cs:160 ../data/addin-xml-strings.cs:170
 msgid "Utilities"
 msgstr "Pomůcky"
 
@@ -370,43 +370,59 @@ msgstr ""
 "Toto rozšíření zajišťuje přístup do obchodu Ubuntu One Music Store, "
 "fungujícím na 7digital."
 
-#. ../src/Extensions/Banshee.Wikipedia/Banshee.Wikipedia.addin.xml
+#. ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient.addin.xml
 #: ../data/addin-xml-strings.cs:168
+msgid "UPnP Client"
+msgstr "Klient UPnP"
+
+#: ../data/addin-xml-strings.cs:169
+msgid ""
+"Browse and play music and videos shared over your local network using UPnP."
+msgstr ""
+"Procházení a přehrávání hudby a videí sdílených přes vaši místní síť pomocí "
+"UPnP."
+
+#. ../src/Extensions/Banshee.Wikipedia/Banshee.Wikipedia.addin.xml
+#: ../data/addin-xml-strings.cs:173
 #: ../src/Extensions/Banshee.Wikipedia/Banshee.Wikipedia/ContextPage.cs:44
 msgid "Wikipedia"
 msgstr "Wikipedie"
 
-#: ../data/addin-xml-strings.cs:169
+#: ../data/addin-xml-strings.cs:174
 msgid "View artist information from Wikipedia in the context pane."
 msgstr ""
 "Zobrazovat v kontextovém panelu informace o umělci z encyklopedie Wikipedie."
 
-#: ../data/addin-xml-strings.cs:170 ../data/addin-xml-strings.cs:175
+#: ../data/addin-xml-strings.cs:175 ../data/addin-xml-strings.cs:180
 msgid "Context Pane"
 msgstr "Kontextový panel"
 
 #. ../src/Extensions/Banshee.YouTube/Banshee.YouTube.addin.xml
-#: ../data/addin-xml-strings.cs:173
+#: ../data/addin-xml-strings.cs:178
 #: ../src/Extensions/Banshee.YouTube/Banshee.YouTube/ContextPage.cs:44
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../data/addin-xml-strings.cs:174
+#: ../data/addin-xml-strings.cs:179
 msgid "Show related YouTube videos in the context pane."
 msgstr "Zobrazit odpovídající videa z YouTube v kontextovém panelu."
 
 #: ../data/audio-profiles/aac-novell.xml.in.h:1
-msgid "3GPP"
-msgstr "3GPP"
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:2
 msgid "AAC (Novell Encoder)"
 msgstr "AAC (kodér od firmy Novell)"
 
+#: ../data/audio-profiles/aac-novell.xml.in.h:2
+msgid ""
+"Designed to be the successor of the MP3 format, AAC generally achieves "
+"better sound quality than MP3 at many bit rates."
+msgstr ""
+"Navržené jako nástupce formátu MP3, dosahuje ACC obecně lepší kvality zvuku "
+"než MP3 u většiny hodnot datových toků."
+
 #: ../data/audio-profiles/aac-novell.xml.in.h:3
-#: ../data/audio-profiles/mp3-lame.xml.in.h:3
-#: ../data/audio-profiles/mp3-xing.xml.in.h:2
-#: ../data/audio-profiles/wavpack.xml.in.h:3
+#: ../data/audio-profiles/mp3-lame.xml.in.h:9
+#: ../data/audio-profiles/mp3-xing.xml.in.h:3
+#: ../data/audio-profiles/wavpack.xml.in.h:13
 #: ../data/audio-profiles/wma.xml.in.h:4
 msgid "Bitrate"
 msgstr "Datový tok"
@@ -416,36 +432,32 @@ msgid "Container"
 msgstr "Kontejner"
 
 #: ../data/audio-profiles/aac-novell.xml.in.h:5
-msgid ""
-"Designed to be the successor of the MP3 format, AAC generally achieves "
-"better sound quality than MP3 at many bit rates."
-msgstr ""
-"Navržené jako nástupce formátu MP3, dosahuje ACC obecně lepší kvality zvuku "
-"než MP3 u většiny hodnot datových toků."
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:6
-msgid "Long Term Prediction"
-msgstr "Odhad dlouho dopředu"
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:7
-msgid "Low Complexity"
-msgstr "Nízká složitost"
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:8
 msgid "MPEG-4 ISO"
 msgstr "MPEG-4 ISO"
 
-#: ../data/audio-profiles/aac-novell.xml.in.h:9
+#: ../data/audio-profiles/aac-novell.xml.in.h:6
 msgid "MPEG-4 QuickTime"
 msgstr "MPEG-4 QuickTime"
 
-#: ../data/audio-profiles/aac-novell.xml.in.h:10
-msgid "Output Format"
-msgstr "Výstupní formát"
+#: ../data/audio-profiles/aac-novell.xml.in.h:7
+msgid "3GPP"
+msgstr "3GPP"
 
-#: ../data/audio-profiles/aac-novell.xml.in.h:11
+#: ../data/audio-profiles/aac-novell.xml.in.h:8
 msgid "Profile"
 msgstr "Profil"
+
+#: ../data/audio-profiles/aac-novell.xml.in.h:9
+msgid "Low Complexity"
+msgstr "Nízká složitost"
+
+#: ../data/audio-profiles/aac-novell.xml.in.h:10
+msgid "Long Term Prediction"
+msgstr "Odhad dlouho dopředu"
+
+#: ../data/audio-profiles/aac-novell.xml.in.h:11
+msgid "Output Format"
+msgstr "Výstupní formát"
 
 #: ../data/audio-profiles/base.xml.in.h:1
 msgid "Channels"
@@ -464,7 +476,11 @@ msgstr ""
 "komprimaci beze ztráty kvality zvuku."
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:1
-#: ../data/audio-profiles/mp3-xing.xml.in.h:1
+msgid "MP3 (LAME Encoder)"
+msgstr "MP3 (kodér LAME)"
+
+#: ../data/audio-profiles/mp3-lame.xml.in.h:2
+#: ../data/audio-profiles/mp3-xing.xml.in.h:2
 msgid ""
 "A proprietary and older, but also popular, lossy audio format that produces "
 "larger files at lower bitrates."
@@ -472,53 +488,45 @@ msgstr ""
 "Proprietární a starší, ale také oblíbený, ztrátový zvukový formát "
 "vytvářející při nižších datových tocích větší soubory."
 
-#: ../data/audio-profiles/mp3-lame.xml.in.h:2
-#: ../data/audio-profiles/vorbis.xml.in.h:2
-#: ../data/audio-profiles/wavpack.xml.in.h:2
-#: ../data/audio-profiles/wma.xml.in.h:3
-msgid "Best"
-msgstr "Nejlepší"
+#: ../data/audio-profiles/mp3-lame.xml.in.h:3
+msgid "Encoding Mode"
+msgstr "Režim kódování"
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:4
 msgid "Constant Bitrate"
 msgstr "Stálý datový tok"
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:5
-msgid "Encoding Mode"
-msgstr "Režim kódování"
-
-#: ../data/audio-profiles/mp3-lame.xml.in.h:6
-msgid "MP3 (LAME Encoder)"
-msgstr "MP3 (kodér LAME)"
-
-#: ../data/audio-profiles/mp3-lame.xml.in.h:7
-msgid "VBR Quality"
-msgstr "Kvalita proměnného datového toku"
-
-#: ../data/audio-profiles/mp3-lame.xml.in.h:8
 msgid "Variable Bitrate"
 msgstr "Proměnný datový tok"
 
-#: ../data/audio-profiles/mp3-lame.xml.in.h:9
-#: ../data/audio-profiles/vorbis.xml.in.h:5
-#: ../data/audio-profiles/wavpack.xml.in.h:15
-#: ../data/audio-profiles/wma.xml.in.h:7
+#: ../data/audio-profiles/mp3-lame.xml.in.h:6
+msgid "VBR Quality"
+msgstr "Kvalita proměnného datového toku"
+
+#: ../data/audio-profiles/mp3-lame.xml.in.h:7
+#: ../data/audio-profiles/vorbis.xml.in.h:4
+#: ../data/audio-profiles/wavpack.xml.in.h:14
+#: ../data/audio-profiles/wma.xml.in.h:6
 msgid "Worst"
 msgstr "Nejhorší"
 
-#: ../data/audio-profiles/mp3-xing.xml.in.h:3
+#: ../data/audio-profiles/mp3-lame.xml.in.h:8
+#: ../data/audio-profiles/vorbis.xml.in.h:5
+#: ../data/audio-profiles/wavpack.xml.in.h:15
+#: ../data/audio-profiles/wma.xml.in.h:7
+msgid "Best"
+msgstr "Nejlepší"
+
+#: ../data/audio-profiles/mp3-xing.xml.in.h:1
 msgid "MP3 (Xing Encoder)"
 msgstr "MP3 (kodér Xing)"
 
 #: ../data/audio-profiles/vorbis.xml.in.h:1
-msgid "Audio quality"
-msgstr "Kvalita zvuku"
-
-#: ../data/audio-profiles/vorbis.xml.in.h:3
 msgid "Ogg Vorbis"
 msgstr "Ogg Vorbis"
 
-#: ../data/audio-profiles/vorbis.xml.in.h:4
+#: ../data/audio-profiles/vorbis.xml.in.h:2
 msgid ""
 "Vorbis is an open source, lossy audio codec with high quality output at a "
 "lower file size than MP3."
@@ -526,7 +534,15 @@ msgstr ""
 "Vorbis je otevřený ztrátový zvukový kodek s vysoce kvalitním výstupem a "
 "menší velikostí souborů ve srovnání s MP3."
 
+#: ../data/audio-profiles/vorbis.xml.in.h:3
+msgid "Audio quality"
+msgstr "Kvalita zvuku"
+
 #: ../data/audio-profiles/wavpack.xml.in.h:1
+msgid "Wavpack"
+msgstr "Wavpack"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:2
 msgid ""
 "A fast and efficient open source audio format offering lossless and high-"
 "quality lossy encoding with great dynamic range."
@@ -534,51 +550,51 @@ msgstr ""
 "Rychlý a úsporný otevřený zvukový formát umožňující bezeztrátové a vysoce "
 "kvalitní ztrátové kódování s velkým dynamickým rozsahem."
 
+#: ../data/audio-profiles/wavpack.xml.in.h:3
+msgid "Mode"
+msgstr "Režim"
+
 #: ../data/audio-profiles/wavpack.xml.in.h:4
-msgid "Default"
-msgstr "Výchozí"
+msgid "Fast Compression"
+msgstr "Rychlá komprimace"
 
 #: ../data/audio-profiles/wavpack.xml.in.h:5
 msgid "Default Compression"
 msgstr "Výchozí komprimace"
 
 #: ../data/audio-profiles/wavpack.xml.in.h:6
-msgid "Extra processing"
-msgstr "Zvláštní zpracování"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:7
-msgid "Fast Compression"
-msgstr "Rychlá komprimace"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:8
 msgid "High Compression"
 msgstr "Vysoká komprimace"
 
-#: ../data/audio-profiles/wavpack.xml.in.h:9
-msgid "Highest"
-msgstr "Nejvyšší"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:10
-msgid "Lossy mode"
-msgstr "Ztrátový režim"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:11
-msgid "Mode"
-msgstr "Režim"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:12
-msgid "Store MD5 sum in the file"
-msgstr "Uložit do souboru součet MD5"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:13
+#: ../data/audio-profiles/wavpack.xml.in.h:7
 msgid "Very High Compression"
 msgstr "Velmi vysoká komprimace"
 
-#: ../data/audio-profiles/wavpack.xml.in.h:14
-msgid "Wavpack"
-msgstr "Wavpack"
+#: ../data/audio-profiles/wavpack.xml.in.h:8
+msgid "Lossy mode"
+msgstr "Ztrátový režim"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:9
+msgid "Store MD5 sum in the file"
+msgstr "Uložit do souboru součet MD5"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:10
+msgid "Extra processing"
+msgstr "Zvláštní zpracování"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:11
+msgid "Default"
+msgstr "Výchozí"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:12
+msgid "Highest"
+msgstr "Nejvyšší"
 
 #: ../data/audio-profiles/wav.xml.in.h:1
+msgid "Waveform PCM"
+msgstr "Waveform PCM"
+
+#: ../data/audio-profiles/wav.xml.in.h:2
 msgid ""
 "WAV+PCM is a lossless format that holds uncompressed, raw pulse-code "
 "modulated (PCM) audio."
@@ -586,11 +602,11 @@ msgstr ""
 "WAV+PCM je bezeztrátový formát obsahující nekomprimovaný surový zvuk s "
 "pulzně kódovou modulací (PCM)."
 
-#: ../data/audio-profiles/wav.xml.in.h:2
-msgid "Waveform PCM"
-msgstr "Waveform PCM"
-
 #: ../data/audio-profiles/wma.xml.in.h:1
+msgid "Windows Media Audio"
+msgstr "Windows Media Audio"
+
+#: ../data/audio-profiles/wma.xml.in.h:2
 msgid ""
 "A proprietary lossy audio format with high quality output at a lower file "
 "size than MP3. A 96 kbps WMA is equivalent to a 128 kbps MP3."
@@ -598,30 +614,26 @@ msgstr ""
 "Proprietární ztrátový zvukový formát s vysoce kvalitním výstupem a oproti "
 "MP3 menší velikostí souboru. WMA s 96 kb/s odpovídá MP3 se 128 kb/s."
 
-#: ../data/audio-profiles/wma.xml.in.h:2
-msgid "Audio Quality"
-msgstr "Kvalita zvuku"
-
-#: ../data/audio-profiles/wma.xml.in.h:5
+#: ../data/audio-profiles/wma.xml.in.h:3
 msgid "Use a variable bitrate"
 msgstr "Použít proměnný datový tok"
 
-#: ../data/audio-profiles/wma.xml.in.h:6
-msgid "Windows Media Audio"
-msgstr "Windows Media Audio"
+#: ../data/audio-profiles/wma.xml.in.h:5
+msgid "Audio Quality"
+msgstr "Kvalita zvuku"
 
 #: ../data/desktop-files/common.desktop.in.h:1
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:193
+msgid "Media Player"
+msgstr "Multimediální přehrávač"
+
+#: ../data/desktop-files/common.desktop.in.h:2
 #: ../src/Clients/Muinshee/Muinshee/PlayerInterface.cs:76
 #: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:107
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/BaseClientWindow.cs:206
 #: ../src/Extensions/Banshee.MiniMode/Banshee.MiniMode/MiniModeWindow.cs:60
 msgid "Banshee Media Player"
 msgstr "Multimediální přehrávač Banshee"
-
-#: ../data/desktop-files/common.desktop.in.h:2
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:193
-msgid "Media Player"
-msgstr "Multimediální přehrávač"
 
 #: ../data/desktop-files/common.desktop.in.h:3
 msgid "Play and organize your media collection"
@@ -1656,10 +1668,12 @@ msgstr "Seskupení"
 #. Catalog.GetString ("Music Library")
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:60
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/MusicGroupSource.cs:39
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:57
 msgid "Music"
 msgstr "Hudba"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:66
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:60
 msgid "Search your music"
 msgstr "Hledat svoji hudbu"
 
@@ -1783,10 +1797,12 @@ msgid "Videos"
 msgstr "Videa"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:48
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:60
 msgid "Search your videos"
 msgstr "Hledat svá videa"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:65
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:77
 msgid "Produced By"
 msgstr "Vytvořil"
 
@@ -1953,7 +1969,7 @@ msgstr "Windows Media ASX"
 msgid "Windows Media ASX (*.asx)"
 msgstr "Windows Media ASX (*.asx)"
 
-#: ../src/Core/Banshee.Services/Banshee.Playlists.Formats/M3uPlaylistFormat.cs:47
+#: ../src/Core/Banshee.Services/Banshee.Playlists.Formats/M3uPlaylistFormat.cs:45
 msgid "MPEG Version 3.0 Extended (*.m3u)"
 msgstr "MPEG verze 3.0 rozšířený (*.m3u)"
 
@@ -4390,6 +4406,7 @@ msgid "Audio"
 msgstr "Zvuk"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapInfoBar.cs:69
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:57
 msgid "Video"
 msgstr "Video"
 
@@ -6073,11 +6090,11 @@ msgid "Now Playing"
 msgstr "Právě se přehrává"
 
 #: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MeeGoPanel.cs:60
-#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:2
+#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:1
 msgid "media"
 msgstr "média"
 
-#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:1
+#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:2
 msgid "Quick access panel for your media"
 msgstr "Lišta rychlého přístupu k vašim médiím"
 
@@ -6807,6 +6824,14 @@ msgstr "Vypnout monitorování SQL"
 #: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:133
 msgid "Track Preview"
 msgstr "Náhled stopy"
+
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPContainerSource.cs:42
+msgid "Shared Media"
+msgstr "Sdílená média"
+
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPServerSource.cs:55
+msgid "UPnP Share"
+msgstr "Sdílení UPnP"
 
 #: ../src/Extensions/Banshee.YouTube/Banshee.YouTube.Gui/VideoStreamTile.cs:136
 msgid "Uploaded by"
