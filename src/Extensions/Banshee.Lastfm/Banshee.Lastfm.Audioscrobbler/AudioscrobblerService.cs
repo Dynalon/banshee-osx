@@ -6,6 +6,7 @@
 //   Chris Toshok <toshok@ximian.com>
 //   Ruben Vermeersch <ruben@savanne.be>
 //   Aaron Bockover <aaron@abock.org>
+//   Phil Trimble <philtrimble@gmail.com>
 //
 // Copyright (C) 2005-2008 Novell, Inc.
 //
@@ -69,6 +70,9 @@ namespace Banshee.Lastfm.Audioscrobbler
 
         private DateTime song_start_time;
         private TrackInfo last_track;
+
+        private readonly TimeSpan MINIMUM_TRACK_DURATION = TimeSpan.FromSeconds (30);
+        private readonly TimeSpan MINIMUM_TRACK_PLAYTIME = TimeSpan.FromSeconds (240);
 
         public AudioscrobblerService ()
         {
@@ -215,9 +219,17 @@ namespace Banshee.Lastfm.Audioscrobbler
 
         SongTimer st = new SongTimer ();
 
+        private bool IsValidForSubmission (TrackInfo track)
+        {
+            return (track.Duration > MINIMUM_TRACK_DURATION &&
+                    (track.MediaAttributes & TrackMediaAttributes.Music) != 0 &&
+                    !String.IsNullOrEmpty (track.ArtistName) &&
+                    !String.IsNullOrEmpty (track.TrackTitle));
+        }
+
         private void Queue (TrackInfo track) {
             if (track == null || st.PlayTime == 0 ||
-                !(actions["AudioscrobblerEnableAction"] as ToggleAction).Active) {
+                !((ToggleAction) actions["AudioscrobblerEnableAction"]).Active) {
 
                 return;
             }
@@ -225,10 +237,9 @@ namespace Banshee.Lastfm.Audioscrobbler
             Log.DebugFormat ("Track {3} had playtime of {0} msec ({4}sec), duration {1} msec, queued: {2}",
                 st.PlayTime, track.Duration.TotalMilliseconds, queued, track, st.PlayTime / 1000);
 
-            if (!queued && track.Duration.TotalSeconds > 30 &&
-                (track.MediaAttributes & TrackMediaAttributes.Music) != 0 &&
-                !String.IsNullOrEmpty (track.ArtistName) && !String.IsNullOrEmpty (track.TrackTitle) &&
-                (st.PlayTime > track.Duration.TotalMilliseconds / 2 || st.PlayTime > 240 * 1000)) {
+            if (!queued && IsValidForSubmission (track) &&
+                (st.PlayTime > track.Duration.TotalMilliseconds / 2 ||
+                 st.PlayTime > MINIMUM_TRACK_PLAYTIME.TotalMilliseconds)) {
                     if (!connection.Started) {
                         connection.Start ();
                     }
@@ -261,9 +272,9 @@ namespace Banshee.Lastfm.Audioscrobbler
                 case PlayerEvent.Iterate:
                     // Queue as now playing
                     if (!now_playing_sent && iterate_countdown == 0) {
-                        if (last_track != null && last_track.Duration.TotalSeconds > 30 &&
-                            (actions["AudioscrobblerEnableAction"] as ToggleAction).Active &&
-                            (last_track.MediaAttributes & TrackMediaAttributes.Music) != 0) {
+                        if (last_track != null &&
+                            IsValidForSubmission (last_track) &&
+                            ((ToggleAction) actions["AudioscrobblerEnableAction"]).Active) {
 
                             connection.NowPlaying (last_track.ArtistName, last_track.TrackTitle,
                                 last_track.AlbumTitle, last_track.Duration.TotalSeconds, last_track.TrackNumber);
@@ -292,14 +303,14 @@ namespace Banshee.Lastfm.Audioscrobbler
 
         private void OnToggleEnabled (object o, EventArgs args)
         {
-            Enabled = (o as ToggleAction).Active;
+            Enabled = ((ToggleAction) o).Active;
         }
 
         internal bool Enabled {
             get { return EngineEnabledSchema.Get (); }
             set {
                 EngineEnabledSchema.Set (value);
-                (actions["AudioscrobblerEnableAction"] as ToggleAction).Active = value;
+                ((ToggleAction) actions["AudioscrobblerEnableAction"]).Active = value;
             }
         }
 
