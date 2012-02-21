@@ -135,7 +135,61 @@ namespace Banshee.LibraryWatcher
 
 #region Private Methods
 
+        private readonly double MAX_TIME_BETWEEN_CHANGED_EVENTS = TimeSpan.FromSeconds (10).TotalMilliseconds;
+
+        Dictionary<string, System.Timers.Timer> created_items_bag = new Dictionary<string, System.Timers.Timer> ();
+
+        private System.Timers.Timer CreateTimer (string fullpath)
+        {
+            var timer = new System.Timers.Timer (MAX_TIME_BETWEEN_CHANGED_EVENTS);
+            timer.Elapsed += (sender, e) => TimeUpForChangedEvent (fullpath);
+            return timer;
+        }
+
+        private void OnCreation (string fullpath)
+        {
+            var timer = CreateTimer (fullpath);
+            lock (created_items_bag) {
+                created_items_bag [fullpath] = timer;
+            }
+            timer.AutoReset = false;
+            timer.Start ();
+        }
+
+        private void TimeUpForChangedEvent (string fullpath)
+        {
+            lock (created_items_bag) {
+                created_items_bag [fullpath].Stop ();
+                created_items_bag [fullpath].Dispose ();
+                created_items_bag.Remove (fullpath);
+            }
+            var fake_args = new FileSystemEventArgs (WatcherChangeTypes.Created,
+                                                     System.IO.Path.GetDirectoryName (fullpath),
+                                                     System.IO.Path.GetFileName (fullpath));
+            EnqueueAffectedElement (fake_args);
+        }
+
         private void OnModified (object source, FileSystemEventArgs args)
+        {
+            if (args.ChangeType == WatcherChangeTypes.Created) {
+                OnCreation (args.FullPath);
+                return;
+            } else if (args.ChangeType == WatcherChangeTypes.Changed) {
+                lock (created_items_bag) {
+                    System.Timers.Timer timer;
+                    if (created_items_bag.TryGetValue (args.FullPath, out timer)) {
+                        // A file we saw being created was modified, restart the timer
+                        timer.Stop ();
+                        timer.Start ();
+                        return;
+                    }
+                }
+            }
+
+            EnqueueAffectedElement (args);
+        }
+
+        private void EnqueueAffectedElement (FileSystemEventArgs args)
         {
             var item = new QueueItem {
                 When = DateTime.Now,
@@ -149,10 +203,8 @@ namespace Banshee.LibraryWatcher
             }
             handle.Set ();
 
-            if (args.ChangeType != WatcherChangeTypes.Changed) {
-                Hyena.Log.DebugFormat ("Watcher: {0} {1}{2}",
-                    item.ChangeType, args is RenamedEventArgs ? item.OldFullPath + " => " : "", item.FullPath);
-            }
+            Hyena.Log.DebugFormat ("Watcher: {0} {1}{2}",
+                item.ChangeType, args is RenamedEventArgs ? item.OldFullPath + " => " : "", item.FullPath);
         }
 
         private void Watch ()
