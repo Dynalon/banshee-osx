@@ -99,10 +99,10 @@ namespace Banshee.LibraryWatcher
 
             watcher = new FileSystemWatcher (path);
             watcher.IncludeSubdirectories = true;
-            watcher.Changed += OnChanged;
-            watcher.Created += OnChanged;
-            watcher.Deleted += OnChanged;
-            watcher.Renamed += OnChanged;
+            watcher.Changed += OnModified;
+            watcher.Created += OnModified;
+            watcher.Deleted += OnModified;
+            watcher.Renamed += OnModified;
 
             active = true;
             watch_thread = new Thread (new ThreadStart (Watch));
@@ -117,10 +117,10 @@ namespace Banshee.LibraryWatcher
         {
             if (!disposed) {
                 active = false;
-                watcher.Changed -= OnChanged;
-                watcher.Created -= OnChanged;
-                watcher.Deleted -= OnChanged;
-                watcher.Renamed -= OnChanged;
+                watcher.Changed -= OnModified;
+                watcher.Created -= OnModified;
+                watcher.Deleted -= OnModified;
+                watcher.Renamed -= OnModified;
 
                 lock (queue) {
                     queue.Clear ();
@@ -135,7 +135,7 @@ namespace Banshee.LibraryWatcher
 
 #region Private Methods
 
-        private void OnChanged (object source, FileSystemEventArgs args)
+        private void OnModified (object source, FileSystemEventArgs args)
         {
             var item = new QueueItem {
                 When = DateTime.Now,
