@@ -8,17 +8,17 @@
 # Maria Majadas <maria.majadas@hispalinux.es>, 2005, 2006, 2007.
 # Andrés Herrera <andres@usr.cl>, 2008.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010, 2011.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012.
 # Benjamín Valero Espinosa <benjavalero@gmail.com>, 2008, 2009, 2010, 2011, 2012.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: banshee.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-01-24 13:11+0000\n"
-"PO-Revision-Date: 2012-01-24 20:58+0100\n"
-"Last-Translator: Benjamín Valero Espinosa <benjavalero@gmail.com>\n"
+"POT-Creation-Date: 2012-02-24 20:18+0000\n"
+"PO-Revision-Date: 2012-02-26 19:56+0100\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -128,7 +128,7 @@ msgstr "Personalizar y extender Banshee con scripts en el lenguaje Boo."
 #: ../data/addin-xml-strings.cs:110 ../data/addin-xml-strings.cs:120
 #: ../data/addin-xml-strings.cs:125 ../data/addin-xml-strings.cs:130
 #: ../data/addin-xml-strings.cs:140 ../data/addin-xml-strings.cs:155
-#: ../data/addin-xml-strings.cs:160
+#: ../data/addin-xml-strings.cs:160 ../data/addin-xml-strings.cs:170
 msgid "Utilities"
 msgstr "Herramientas"
 
@@ -369,43 +369,59 @@ msgstr ""
 "Esta extensión proporciona acceso a Ubuntu One Music Store, gracias a "
 "7digital."
 
-#. ../src/Extensions/Banshee.Wikipedia/Banshee.Wikipedia.addin.xml
+#. ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient.addin.xml
 #: ../data/addin-xml-strings.cs:168
+msgid "UPnP Client"
+msgstr "Cliente UPnP"
+
+#: ../data/addin-xml-strings.cs:169
+msgid ""
+"Browse and play music and videos shared over your local network using UPnP."
+msgstr ""
+"Examinar y reproducir música y vídeos compartidos en su red local usando "
+"UPnP."
+
+#. ../src/Extensions/Banshee.Wikipedia/Banshee.Wikipedia.addin.xml
+#: ../data/addin-xml-strings.cs:173
 #: ../src/Extensions/Banshee.Wikipedia/Banshee.Wikipedia/ContextPage.cs:44
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
-#: ../data/addin-xml-strings.cs:169
+#: ../data/addin-xml-strings.cs:174
 msgid "View artist information from Wikipedia in the context pane."
 msgstr ""
 "Ver información de la Wikipedia sobre el artista en el panel contextual."
 
-#: ../data/addin-xml-strings.cs:170 ../data/addin-xml-strings.cs:175
+#: ../data/addin-xml-strings.cs:175 ../data/addin-xml-strings.cs:180
 msgid "Context Pane"
 msgstr "Panel contextual"
 
 #. ../src/Extensions/Banshee.YouTube/Banshee.YouTube.addin.xml
-#: ../data/addin-xml-strings.cs:173
+#: ../data/addin-xml-strings.cs:178
 #: ../src/Extensions/Banshee.YouTube/Banshee.YouTube/ContextPage.cs:44
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../data/addin-xml-strings.cs:174
+#: ../data/addin-xml-strings.cs:179
 msgid "Show related YouTube videos in the context pane."
 msgstr "Mostrar vídeos de YouTube relacionados en el panel contextual."
 
 #: ../data/audio-profiles/aac-novell.xml.in.h:1
-msgid "3GPP"
-msgstr "3GPP"
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:2
 msgid "AAC (Novell Encoder)"
 msgstr "AAC (Codificador de Novell)"
 
+#: ../data/audio-profiles/aac-novell.xml.in.h:2
+msgid ""
+"Designed to be the successor of the MP3 format, AAC generally achieves "
+"better sound quality than MP3 at many bit rates."
+msgstr ""
+"Diseñado para ser el sucesor del formato MP3, AAC consigue generalmente "
+"mejor calidad de sonido que MP3 para muchas tasas de bits."
+
 #: ../data/audio-profiles/aac-novell.xml.in.h:3
-#: ../data/audio-profiles/mp3-lame.xml.in.h:3
-#: ../data/audio-profiles/mp3-xing.xml.in.h:2
-#: ../data/audio-profiles/wavpack.xml.in.h:3
+#: ../data/audio-profiles/mp3-lame.xml.in.h:9
+#: ../data/audio-profiles/mp3-xing.xml.in.h:3
+#: ../data/audio-profiles/wavpack.xml.in.h:13
 #: ../data/audio-profiles/wma.xml.in.h:4
 msgid "Bitrate"
 msgstr "Tasa de bits"
@@ -415,36 +431,32 @@ msgid "Container"
 msgstr "Contenedor"
 
 #: ../data/audio-profiles/aac-novell.xml.in.h:5
-msgid ""
-"Designed to be the successor of the MP3 format, AAC generally achieves "
-"better sound quality than MP3 at many bit rates."
-msgstr ""
-"Diseñado para ser el sucesor del formato MP3, AAC consigue generalmente "
-"mejor calidad de sonido que MP3 para muchas tasas de bits."
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:6
-msgid "Long Term Prediction"
-msgstr "Predicción a largo plazo"
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:7
-msgid "Low Complexity"
-msgstr "Complejidad baja"
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:8
 msgid "MPEG-4 ISO"
 msgstr "MPEG-4 ISO"
 
-#: ../data/audio-profiles/aac-novell.xml.in.h:9
+#: ../data/audio-profiles/aac-novell.xml.in.h:6
 msgid "MPEG-4 QuickTime"
 msgstr "MPEG-4 QuickTime"
 
-#: ../data/audio-profiles/aac-novell.xml.in.h:10
-msgid "Output Format"
-msgstr "Formato de salida"
+#: ../data/audio-profiles/aac-novell.xml.in.h:7
+msgid "3GPP"
+msgstr "3GPP"
 
-#: ../data/audio-profiles/aac-novell.xml.in.h:11
+#: ../data/audio-profiles/aac-novell.xml.in.h:8
 msgid "Profile"
 msgstr "Perfil"
+
+#: ../data/audio-profiles/aac-novell.xml.in.h:9
+msgid "Low Complexity"
+msgstr "Complejidad baja"
+
+#: ../data/audio-profiles/aac-novell.xml.in.h:10
+msgid "Long Term Prediction"
+msgstr "Predicción a largo plazo"
+
+#: ../data/audio-profiles/aac-novell.xml.in.h:11
+msgid "Output Format"
+msgstr "Formato de salida"
 
 #: ../data/audio-profiles/base.xml.in.h:1
 msgid "Channels"
@@ -463,7 +475,11 @@ msgstr ""
 "códec de código abierto que comprime pero no degrada la calidad del sonido."
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:1
-#: ../data/audio-profiles/mp3-xing.xml.in.h:1
+msgid "MP3 (LAME Encoder)"
+msgstr "MP3 (codificador LAME)"
+
+#: ../data/audio-profiles/mp3-lame.xml.in.h:2
+#: ../data/audio-profiles/mp3-xing.xml.in.h:2
 msgid ""
 "A proprietary and older, but also popular, lossy audio format that produces "
 "larger files at lower bitrates."
@@ -471,53 +487,45 @@ msgstr ""
 "Un formato de sonido con pérdida viejo y propietario, pero también popular, "
 "que produce archivos más grandes a bajas tasas de bits."
 
-#: ../data/audio-profiles/mp3-lame.xml.in.h:2
-#: ../data/audio-profiles/vorbis.xml.in.h:2
-#: ../data/audio-profiles/wavpack.xml.in.h:2
-#: ../data/audio-profiles/wma.xml.in.h:3
-msgid "Best"
-msgstr "Mejor"
+#: ../data/audio-profiles/mp3-lame.xml.in.h:3
+msgid "Encoding Mode"
+msgstr "Modo de codificación"
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:4
 msgid "Constant Bitrate"
 msgstr "Tasa de bits constante"
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:5
-msgid "Encoding Mode"
-msgstr "Modo de codificación"
-
-#: ../data/audio-profiles/mp3-lame.xml.in.h:6
-msgid "MP3 (LAME Encoder)"
-msgstr "MP3 (codificador LAME)"
-
-#: ../data/audio-profiles/mp3-lame.xml.in.h:7
-msgid "VBR Quality"
-msgstr "Calidad VBR"
-
-#: ../data/audio-profiles/mp3-lame.xml.in.h:8
 msgid "Variable Bitrate"
 msgstr "Tasa de bits variable"
 
-#: ../data/audio-profiles/mp3-lame.xml.in.h:9
-#: ../data/audio-profiles/vorbis.xml.in.h:5
-#: ../data/audio-profiles/wavpack.xml.in.h:15
-#: ../data/audio-profiles/wma.xml.in.h:7
+#: ../data/audio-profiles/mp3-lame.xml.in.h:6
+msgid "VBR Quality"
+msgstr "Calidad VBR"
+
+#: ../data/audio-profiles/mp3-lame.xml.in.h:7
+#: ../data/audio-profiles/vorbis.xml.in.h:4
+#: ../data/audio-profiles/wavpack.xml.in.h:14
+#: ../data/audio-profiles/wma.xml.in.h:6
 msgid "Worst"
 msgstr "Peor"
 
-#: ../data/audio-profiles/mp3-xing.xml.in.h:3
+#: ../data/audio-profiles/mp3-lame.xml.in.h:8
+#: ../data/audio-profiles/vorbis.xml.in.h:5
+#: ../data/audio-profiles/wavpack.xml.in.h:15
+#: ../data/audio-profiles/wma.xml.in.h:7
+msgid "Best"
+msgstr "Mejor"
+
+#: ../data/audio-profiles/mp3-xing.xml.in.h:1
 msgid "MP3 (Xing Encoder)"
 msgstr "MP3 (codificador Xing)"
 
 #: ../data/audio-profiles/vorbis.xml.in.h:1
-msgid "Audio quality"
-msgstr "Calidad del sonido"
-
-#: ../data/audio-profiles/vorbis.xml.in.h:3
 msgid "Ogg Vorbis"
 msgstr "Ogg Vorbis"
 
-#: ../data/audio-profiles/vorbis.xml.in.h:4
+#: ../data/audio-profiles/vorbis.xml.in.h:2
 msgid ""
 "Vorbis is an open source, lossy audio codec with high quality output at a "
 "lower file size than MP3."
@@ -525,7 +533,15 @@ msgstr ""
 "Vorbis es un códec de sonido con pérdida de código abierto con una gran "
 "calidad de salida y un tamaño de archivo menor que MP3."
 
+#: ../data/audio-profiles/vorbis.xml.in.h:3
+msgid "Audio quality"
+msgstr "Calidad del sonido"
+
 #: ../data/audio-profiles/wavpack.xml.in.h:1
+msgid "Wavpack"
+msgstr "Wavpack"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:2
 msgid ""
 "A fast and efficient open source audio format offering lossless and high-"
 "quality lossy encoding with great dynamic range."
@@ -533,51 +549,51 @@ msgstr ""
 "Un formato de sonido libre rápido y eficaz que ofrece una codificación sin "
 "pérdida y con pérdida de gran calidad, con un gran rango dinámico."
 
+#: ../data/audio-profiles/wavpack.xml.in.h:3
+msgid "Mode"
+msgstr "Modo"
+
 #: ../data/audio-profiles/wavpack.xml.in.h:4
-msgid "Default"
-msgstr "Predeterminado"
+msgid "Fast Compression"
+msgstr "Compresión rápida"
 
 #: ../data/audio-profiles/wavpack.xml.in.h:5
 msgid "Default Compression"
 msgstr "Compresión predeterminada"
 
 #: ../data/audio-profiles/wavpack.xml.in.h:6
-msgid "Extra processing"
-msgstr "Procesamiento adicional"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:7
-msgid "Fast Compression"
-msgstr "Compresión rápida"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:8
 msgid "High Compression"
 msgstr "Compresión alta"
 
-#: ../data/audio-profiles/wavpack.xml.in.h:9
-msgid "Highest"
-msgstr "El más alto"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:10
-msgid "Lossy mode"
-msgstr "Modo con pérdida"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:11
-msgid "Mode"
-msgstr "Modo"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:12
-msgid "Store MD5 sum in the file"
-msgstr "Almacenar la suma MD5 en el archivo"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:13
+#: ../data/audio-profiles/wavpack.xml.in.h:7
 msgid "Very High Compression"
 msgstr "Compresión muy alta"
 
-#: ../data/audio-profiles/wavpack.xml.in.h:14
-msgid "Wavpack"
-msgstr "Wavpack"
+#: ../data/audio-profiles/wavpack.xml.in.h:8
+msgid "Lossy mode"
+msgstr "Modo con pérdida"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:9
+msgid "Store MD5 sum in the file"
+msgstr "Almacenar la suma MD5 en el archivo"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:10
+msgid "Extra processing"
+msgstr "Procesamiento adicional"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:11
+msgid "Default"
+msgstr "Predeterminado"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:12
+msgid "Highest"
+msgstr "El más alto"
 
 #: ../data/audio-profiles/wav.xml.in.h:1
+msgid "Waveform PCM"
+msgstr "Forma de onda PCM"
+
+#: ../data/audio-profiles/wav.xml.in.h:2
 msgid ""
 "WAV+PCM is a lossless format that holds uncompressed, raw pulse-code "
 "modulated (PCM) audio."
@@ -585,11 +601,11 @@ msgstr ""
 "WAV+PCM es un formato sin pérdida que contiene sonido no comprimido en "
 "modulación de pulsos codificados (PCM)."
 
-#: ../data/audio-profiles/wav.xml.in.h:2
-msgid "Waveform PCM"
-msgstr "Forma de onda PCM"
-
 #: ../data/audio-profiles/wma.xml.in.h:1
+msgid "Windows Media Audio"
+msgstr "Windows Media Audio"
+
+#: ../data/audio-profiles/wma.xml.in.h:2
 msgid ""
 "A proprietary lossy audio format with high quality output at a lower file "
 "size than MP3. A 96 kbps WMA is equivalent to a 128 kbps MP3."
@@ -598,30 +614,26 @@ msgstr ""
 "un tamaño de archivo menor que un MP3. Un WMA a 96 kbps es equivalente a un "
 "MP3 a 128 kbps."
 
-#: ../data/audio-profiles/wma.xml.in.h:2
-msgid "Audio Quality"
-msgstr "Calidad del sonido"
-
-#: ../data/audio-profiles/wma.xml.in.h:5
+#: ../data/audio-profiles/wma.xml.in.h:3
 msgid "Use a variable bitrate"
 msgstr "Usar una tasa de bits variable"
 
-#: ../data/audio-profiles/wma.xml.in.h:6
-msgid "Windows Media Audio"
-msgstr "Windows Media Audio"
+#: ../data/audio-profiles/wma.xml.in.h:5
+msgid "Audio Quality"
+msgstr "Calidad del sonido"
 
 #: ../data/desktop-files/common.desktop.in.h:1
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:193
+msgid "Media Player"
+msgstr "Reproductor multimedia"
+
+#: ../data/desktop-files/common.desktop.in.h:2
 #: ../src/Clients/Muinshee/Muinshee/PlayerInterface.cs:76
 #: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:107
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/BaseClientWindow.cs:206
 #: ../src/Extensions/Banshee.MiniMode/Banshee.MiniMode/MiniModeWindow.cs:60
 msgid "Banshee Media Player"
 msgstr "Reproductor multimedia Banshee"
-
-#: ../data/desktop-files/common.desktop.in.h:2
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:193
-msgid "Media Player"
-msgstr "Reproductor multimedia"
 
 #: ../data/desktop-files/common.desktop.in.h:3
 msgid "Play and organize your media collection"
@@ -927,8 +939,8 @@ msgstr "Opciones de control de reproducción"
 msgid ""
 "Play the next track, optionally restarting if the 'restart' value is set"
 msgstr ""
-"Reproduce la pista siguiente, reiniciando opcionalmente si el valor «restart» "
-"está establecido"
+"Reproduce la pista siguiente, reiniciando opcionalmente si el valor "
+"«restart» está establecido"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:165
 msgid ""
@@ -1067,7 +1079,7 @@ msgid "Disc Number"
 msgstr "Número de disco"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:197
-#: ../src/Clients/Nereid/Nereid/ViewContainer.cs:142
+#: ../src/Clients/Nereid/Nereid/ViewContainer.cs:143
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:113
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:179
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:78
@@ -1242,6 +1254,12 @@ msgid "Album Artist"
 msgstr "Artista del álbum"
 
 #: ../src/Clients/Nereid/Nereid/ViewContainer.cs:141
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:93
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:194
+msgid "Composer"
+msgstr "Compositor"
+
+#: ../src/Clients/Nereid/Nereid/ViewContainer.cs:142
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:98
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:187
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:366
@@ -1250,7 +1268,7 @@ msgid "Genre"
 msgstr "Género"
 
 #. Translators: noun
-#: ../src/Clients/Nereid/Nereid/ViewContainer.cs:143
+#: ../src/Clients/Nereid/Nereid/ViewContainer.cs:144
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:216
 msgid "Comment"
 msgstr "Comentario"
@@ -1608,11 +1626,6 @@ msgstr "Inicial del artista del álbum"
 msgid "Conductor"
 msgstr "Director"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:93
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:194
-msgid "Composer"
-msgstr "Compositor"
-
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:103
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:94
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:362
@@ -1662,10 +1675,12 @@ msgstr "Agrupación"
 #. Catalog.GetString ("Music Library")
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:60
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/MusicGroupSource.cs:39
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:57
 msgid "Music"
 msgstr "Música"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:66
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:60
 msgid "Search your music"
 msgstr "Buscar en su música"
 
@@ -1788,10 +1803,12 @@ msgid "Videos"
 msgstr "Vídeos"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:48
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:60
 msgid "Search your videos"
 msgstr "Buscar en sus vídeos"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:65
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:77
 msgid "Produced By"
 msgstr "Producido por"
 
@@ -1922,7 +1939,7 @@ msgstr ""
 "Algunas características requieren conexión a Internet, como Last.fm o la "
 "descarga de portadas"
 
-#: ../src/Core/Banshee.Services/Banshee.Playlist/AbstractPlaylistSource.cs:159
+#: ../src/Core/Banshee.Services/Banshee.Playlist/AbstractPlaylistSource.cs:153
 msgid "Search this playlist"
 msgstr "Buscar en esta lista de reproducción"
 
@@ -1940,8 +1957,8 @@ msgid "Delete Playlist"
 msgstr "Eliminar la lista de reproducción"
 
 #. TODO generate name based on the track selection, or begin editing it
-#: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:385
-#: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:391
+#: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:397
+#: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:403
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:176
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:135
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:462
@@ -2637,37 +2654,37 @@ msgstr "Error"
 msgid "Details"
 msgstr "Detalles"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:155
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:156
 msgid "Errors"
 msgstr "Errores"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:208
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:213
 msgid "Sort Playlists By"
 msgstr "Ordenar listas de reproducción por"
 
 #. Translators: this is a noun, referring to the harddisk
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:217
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:223
 msgid "Drive"
 msgstr "Unidad"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:241
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:247
 msgid "File Organization"
 msgstr "Organización de los archivos"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:242
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:248
 msgid "Folder hie_rarchy"
 msgstr "Je_rarquía de carpetas"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:243
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:249
 msgid "File _name"
 msgstr "_Nombre del archivo"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:673
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:701
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "Añadiendo {0} de {1} a {2}"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:692
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:720
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "Eliminando {0} de {1} desde {2}"
@@ -4400,6 +4417,7 @@ msgid "Audio"
 msgstr "Sonido"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapInfoBar.cs:69
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:57
 msgid "Video"
 msgstr "Vídeo"
 
@@ -5650,29 +5668,29 @@ msgstr "Descripción:"
 msgid "Rating:"
 msgstr "Valoración:"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:125
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:129
 msgid "_Last.fm"
 msgstr "_Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:126
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:130
 msgid "Configure the Audioscrobbler plugin"
 msgstr "Configurar el complemento de Audioscrobbler"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:129
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:133
 msgid "Visit _User Profile Page"
 msgstr "Visitar la página del perfil de _usuario"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:130
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:134
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:164
 msgid "Visit Your Last.fm Profile Page"
 msgstr "Visitar la página de su perfil de Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:135
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:139
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:91
 msgid "_Enable Song Reporting"
 msgstr "Activar _informe de canciones"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:136
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:140
 msgid "Enable song reporting"
 msgstr "Activar informe de canciones"
 
@@ -6074,11 +6092,11 @@ msgid "Now Playing"
 msgstr "En reproducción"
 
 #: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MeeGoPanel.cs:60
-#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:2
+#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:1
 msgid "media"
 msgstr "multimedia"
 
-#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:1
+#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:2
 msgid "Quick access panel for your media"
 msgstr "Panel de acceso rápido para sus archivos multimedia"
 
@@ -6373,8 +6391,9 @@ msgid ""
 "The iTunes library refers to your music directory as \"{0}\" but Banshee was "
 "not able to infer the location of this directory. Please locate it."
 msgstr ""
-"La colección de iTunes indica que su carpeta de música es «{0}», pero Banshee "
-"no ha podido deducir la ubicación de esta carpeta. Por favor, localícela."
+"La colección de iTunes indica que su carpeta de música es «{0}», pero "
+"Banshee no ha podido deducir la ubicación de esta carpeta. Por favor, "
+"localícela."
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:74
 msgid "iTunes Media Player"
@@ -6815,6 +6834,15 @@ msgstr "Parar la monitorización SQL"
 #: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:133
 msgid "Track Preview"
 msgstr "Vista previa de la pista"
+
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPContainerSource.cs:42
+#| msgid "Shared Music"
+msgid "Shared Media"
+msgstr "Medios compartidos"
+
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPServerSource.cs:55
+msgid "UPnP Share"
+msgstr "Compartición UPnP"
 
 #: ../src/Extensions/Banshee.YouTube/Banshee.YouTube.Gui/VideoStreamTile.cs:136
 msgid "Uploaded by"
