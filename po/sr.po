@@ -1,24 +1,24 @@
 # Serbian translation of banshee
-# Courtesy of Prevod.org team (http://prevod.org/) -- 2006-2009.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2006-2012.
 # This file is distributed under the same license as the banshee package.
 # Maintainer: Горан Ракић <gox@devbase.net>
 # urdated by: Милош Поповић <gpopac@gmail.com> (2009)
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.11.0\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-12-21 19:14+0000\n"
-"PO-Revision-Date: 2011-12-31 12:00+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=banshe"
+"e&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-02-13 20:43+0000\n"
+"PO-Revision-Date: 2012-02-26 13:45+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: Serbian (sr)\n"
-"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 :    n%"
-"10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
 
 #. ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice.addin.xml
@@ -123,7 +123,7 @@ msgstr ""
 #: ../data/addin-xml-strings.cs:110 ../data/addin-xml-strings.cs:120
 #: ../data/addin-xml-strings.cs:125 ../data/addin-xml-strings.cs:130
 #: ../data/addin-xml-strings.cs:140 ../data/addin-xml-strings.cs:155
-#: ../data/addin-xml-strings.cs:160
+#: ../data/addin-xml-strings.cs:160 ../data/addin-xml-strings.cs:170
 msgid "Utilities"
 msgstr "Алатке"
 
@@ -288,12 +288,10 @@ msgstr ""
 
 #. ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.addin.xml
 #: ../data/addin-xml-strings.cs:133
-#| msgid "Audio CD Support"
 msgid "DVD and Audio CD Support"
 msgstr "Подршка за ДВД и звучне дискове"
 
 #: ../data/addin-xml-strings.cs:134
-#| msgid "Listen to and rip Audio CDs."
 msgid "Watch DVDs, listen to and rip Audio CDs."
 msgstr "Гледајте ДВД, слушајте и чупајте податке са звучних дискова."
 
@@ -364,42 +362,59 @@ msgstr ""
 "Ово проширење дозвољава приступ Убунту један музичкој радњи, које погони 7-"
 "дигитал."
 
-#. ../src/Extensions/Banshee.Wikipedia/Banshee.Wikipedia.addin.xml
+#. ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient.addin.xml
 #: ../data/addin-xml-strings.cs:168
+msgid "UPnP Client"
+msgstr "УПнП клијент"
+
+#: ../data/addin-xml-strings.cs:169
+#| msgid "Browse and listen to music shared over your local network."
+msgid ""
+"Browse and play music and videos shared over your local network using UPnP."
+msgstr ""
+"Прегледа и пушта музику и снимке дељене преко ваше локалне мреже користећи "
+"УПнП."
+
+#. ../src/Extensions/Banshee.Wikipedia/Banshee.Wikipedia.addin.xml
+#: ../data/addin-xml-strings.cs:173
 #: ../src/Extensions/Banshee.Wikipedia/Banshee.Wikipedia/ContextPage.cs:44
 msgid "Wikipedia"
 msgstr "Википедија"
 
-#: ../data/addin-xml-strings.cs:169
+#: ../data/addin-xml-strings.cs:174
 msgid "View artist information from Wikipedia in the context pane."
 msgstr "Приказује податке о извођачу са Википедије у додатној површи."
 
-#: ../data/addin-xml-strings.cs:170 ../data/addin-xml-strings.cs:175
+#: ../data/addin-xml-strings.cs:175 ../data/addin-xml-strings.cs:180
 msgid "Context Pane"
 msgstr "Додатна површ"
 
 #. ../src/Extensions/Banshee.YouTube/Banshee.YouTube.addin.xml
-#: ../data/addin-xml-strings.cs:173
+#: ../data/addin-xml-strings.cs:178
 #: ../src/Extensions/Banshee.YouTube/Banshee.YouTube/ContextPage.cs:44
 msgid "YouTube"
 msgstr "ЈуТуб"
 
-#: ../data/addin-xml-strings.cs:174
+#: ../data/addin-xml-strings.cs:179
 msgid "Show related YouTube videos in the context pane."
 msgstr "Приказује одговарајуће видео снимке са ЈуТуба у додатној површи"
 
 #: ../data/audio-profiles/aac-novell.xml.in.h:1
-msgid "3GPP"
-msgstr "3ГПП"
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:2
 msgid "AAC (Novell Encoder)"
 msgstr "ААЦ (Новелов кодер)"
 
+#: ../data/audio-profiles/aac-novell.xml.in.h:2
+msgid ""
+"Designed to be the successor of the MP3 format, AAC generally achieves "
+"better sound quality than MP3 at many bit rates."
+msgstr ""
+"Направљен са циљем да наследи МП3 формат, ААЦ углавном пружа бољи квалитет "
+"звука него МП3 при већем битском протоку."
+
 #: ../data/audio-profiles/aac-novell.xml.in.h:3
-#: ../data/audio-profiles/mp3-lame.xml.in.h:3
-#: ../data/audio-profiles/mp3-xing.xml.in.h:2
-#: ../data/audio-profiles/wavpack.xml.in.h:3
+#: ../data/audio-profiles/mp3-lame.xml.in.h:9
+#: ../data/audio-profiles/mp3-xing.xml.in.h:3
+#: ../data/audio-profiles/wavpack.xml.in.h:13
 #: ../data/audio-profiles/wma.xml.in.h:4
 msgid "Bitrate"
 msgstr "Битски проток"
@@ -409,36 +424,32 @@ msgid "Container"
 msgstr "Садржалац"
 
 #: ../data/audio-profiles/aac-novell.xml.in.h:5
-msgid ""
-"Designed to be the successor of the MP3 format, AAC generally achieves "
-"better sound quality than MP3 at many bit rates."
-msgstr ""
-"Направљен са циљем да наследи МП3 формат, ААЦ углавном пружа бољи квалитет "
-"звука него МП3 при већем битском протоку."
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:6
-msgid "Long Term Prediction"
-msgstr "Дугорочно предвиђање"
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:7
-msgid "Low Complexity"
-msgstr "Ниска сложеност"
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:8
 msgid "MPEG-4 ISO"
 msgstr "МПЕГ-4 ИСО"
 
-#: ../data/audio-profiles/aac-novell.xml.in.h:9
+#: ../data/audio-profiles/aac-novell.xml.in.h:6
 msgid "MPEG-4 QuickTime"
 msgstr "МПЕГ-4 КвикТајм"
 
-#: ../data/audio-profiles/aac-novell.xml.in.h:10
-msgid "Output Format"
-msgstr "Излазни формат"
+#: ../data/audio-profiles/aac-novell.xml.in.h:7
+msgid "3GPP"
+msgstr "3ГПП"
 
-#: ../data/audio-profiles/aac-novell.xml.in.h:11
+#: ../data/audio-profiles/aac-novell.xml.in.h:8
 msgid "Profile"
 msgstr "Профил"
+
+#: ../data/audio-profiles/aac-novell.xml.in.h:9
+msgid "Low Complexity"
+msgstr "Ниска сложеност"
+
+#: ../data/audio-profiles/aac-novell.xml.in.h:10
+msgid "Long Term Prediction"
+msgstr "Дугорочно предвиђање"
+
+#: ../data/audio-profiles/aac-novell.xml.in.h:11
+msgid "Output Format"
+msgstr "Излазни формат"
 
 #: ../data/audio-profiles/base.xml.in.h:1
 msgid "Channels"
@@ -457,7 +468,11 @@ msgstr ""
 "квалитету."
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:1
-#: ../data/audio-profiles/mp3-xing.xml.in.h:1
+msgid "MP3 (LAME Encoder)"
+msgstr "МП3 (ЛАМЕ кодер)"
+
+#: ../data/audio-profiles/mp3-lame.xml.in.h:2
+#: ../data/audio-profiles/mp3-xing.xml.in.h:2
 msgid ""
 "A proprietary and older, but also popular, lossy audio format that produces "
 "larger files at lower bitrates."
@@ -465,54 +480,46 @@ msgstr ""
 "Власнички, нешто старији, али и даље популаран звучни кодек са губицима, "
 "који прави нешто веће датотеке при нижем битском протоку."
 
-#: ../data/audio-profiles/mp3-lame.xml.in.h:2
-#: ../data/audio-profiles/vorbis.xml.in.h:2
-#: ../data/audio-profiles/wavpack.xml.in.h:2
-#: ../data/audio-profiles/wma.xml.in.h:3
-msgid "Best"
-msgstr "Најбоље"
+#: ../data/audio-profiles/mp3-lame.xml.in.h:3
+msgid "Encoding Mode"
+msgstr "Режим шифровања"
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:4
 msgid "Constant Bitrate"
 msgstr "Стални битски проток"
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:5
-msgid "Encoding Mode"
-msgstr "Режим шифровања"
-
-#: ../data/audio-profiles/mp3-lame.xml.in.h:6
-msgid "MP3 (LAME Encoder)"
-msgstr "МП3 (ЛАМЕ кодер)"
-
-#: ../data/audio-profiles/mp3-lame.xml.in.h:7
-msgid "VBR Quality"
-msgstr "Квалитет за ВБР"
-
-#: ../data/audio-profiles/mp3-lame.xml.in.h:8
 msgid "Variable Bitrate"
 msgstr "Променљив битски проток"
 
+#: ../data/audio-profiles/mp3-lame.xml.in.h:6
+msgid "VBR Quality"
+msgstr "Квалитет за ВБР"
+
 # bug(goran) plural
-#: ../data/audio-profiles/mp3-lame.xml.in.h:9
-#: ../data/audio-profiles/vorbis.xml.in.h:5
-#: ../data/audio-profiles/wavpack.xml.in.h:15
-#: ../data/audio-profiles/wma.xml.in.h:7
+#: ../data/audio-profiles/mp3-lame.xml.in.h:7
+#: ../data/audio-profiles/vorbis.xml.in.h:4
+#: ../data/audio-profiles/wavpack.xml.in.h:14
+#: ../data/audio-profiles/wma.xml.in.h:6
 msgid "Worst"
 msgstr "Најгоре"
 
-#: ../data/audio-profiles/mp3-xing.xml.in.h:3
+#: ../data/audio-profiles/mp3-lame.xml.in.h:8
+#: ../data/audio-profiles/vorbis.xml.in.h:5
+#: ../data/audio-profiles/wavpack.xml.in.h:15
+#: ../data/audio-profiles/wma.xml.in.h:7
+msgid "Best"
+msgstr "Најбоље"
+
+#: ../data/audio-profiles/mp3-xing.xml.in.h:1
 msgid "MP3 (Xing Encoder)"
 msgstr "МП3 (Хинг кодер)"
 
 #: ../data/audio-profiles/vorbis.xml.in.h:1
-msgid "Audio quality"
-msgstr "Квалитет звука"
-
-#: ../data/audio-profiles/vorbis.xml.in.h:3
 msgid "Ogg Vorbis"
 msgstr "Огг Ворбис"
 
-#: ../data/audio-profiles/vorbis.xml.in.h:4
+#: ../data/audio-profiles/vorbis.xml.in.h:2
 msgid ""
 "Vorbis is an open source, lossy audio codec with high quality output at a "
 "lower file size than MP3."
@@ -520,7 +527,15 @@ msgstr ""
 "Ворбис је отворени звучни кодек, са губицима, који даје бољи квалитет звука "
 "уз мање датотеке у односу на МП3."
 
+#: ../data/audio-profiles/vorbis.xml.in.h:3
+msgid "Audio quality"
+msgstr "Квалитет звука"
+
 #: ../data/audio-profiles/wavpack.xml.in.h:1
+msgid "Wavpack"
+msgstr "Вејвпак"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:2
 msgid ""
 "A fast and efficient open source audio format offering lossless and high-"
 "quality lossy encoding with great dynamic range."
@@ -528,51 +543,51 @@ msgstr ""
 "Брз и ефикасан отворени формат, који омогућава кодирање без губитка или са "
 "губитком уз добар динамички опсег."
 
+#: ../data/audio-profiles/wavpack.xml.in.h:3
+msgid "Mode"
+msgstr "Режим"
+
 #: ../data/audio-profiles/wavpack.xml.in.h:4
-msgid "Default"
-msgstr "Основно"
+msgid "Fast Compression"
+msgstr "Брзо сажимање"
 
 #: ../data/audio-profiles/wavpack.xml.in.h:5
 msgid "Default Compression"
 msgstr "Основно сажимање"
 
 #: ../data/audio-profiles/wavpack.xml.in.h:6
-msgid "Extra processing"
-msgstr "Додатна обрада"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:7
-msgid "Fast Compression"
-msgstr "Брзо сажимање"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:8
 msgid "High Compression"
 msgstr "Високо сажимање"
 
-#: ../data/audio-profiles/wavpack.xml.in.h:9
-msgid "Highest"
-msgstr "Највише"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:10
-msgid "Lossy mode"
-msgstr "Без губитка"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:11
-msgid "Mode"
-msgstr "Режим"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:12
-msgid "Store MD5 sum in the file"
-msgstr "Сачувај МД5 суму у датотеку"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:13
+#: ../data/audio-profiles/wavpack.xml.in.h:7
 msgid "Very High Compression"
 msgstr "Веома високо сажимање"
 
-#: ../data/audio-profiles/wavpack.xml.in.h:14
-msgid "Wavpack"
-msgstr "Вејвпак"
+#: ../data/audio-profiles/wavpack.xml.in.h:8
+msgid "Lossy mode"
+msgstr "Без губитка"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:9
+msgid "Store MD5 sum in the file"
+msgstr "Сачувај МД5 суму у датотеку"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:10
+msgid "Extra processing"
+msgstr "Додатна обрада"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:11
+msgid "Default"
+msgstr "Основно"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:12
+msgid "Highest"
+msgstr "Највише"
 
 #: ../data/audio-profiles/wav.xml.in.h:1
+msgid "Waveform PCM"
+msgstr "Вејвформ ПЦМ"
+
+#: ../data/audio-profiles/wav.xml.in.h:2
 msgid ""
 "WAV+PCM is a lossless format that holds uncompressed, raw pulse-code "
 "modulated (PCM) audio."
@@ -580,11 +595,11 @@ msgstr ""
 "ВАВ+ПЦМ је формат без губитака који чува несажети, изворни импулсним кодом "
 "модулисани (ПЦМ) звук."
 
-#: ../data/audio-profiles/wav.xml.in.h:2
-msgid "Waveform PCM"
-msgstr "Вејвформ ПЦМ"
-
 #: ../data/audio-profiles/wma.xml.in.h:1
+msgid "Windows Media Audio"
+msgstr "Виндоуз медиа аудио"
+
+#: ../data/audio-profiles/wma.xml.in.h:2
 msgid ""
 "A proprietary lossy audio format with high quality output at a lower file "
 "size than MP3. A 96 kbps WMA is equivalent to a 128 kbps MP3."
@@ -593,30 +608,26 @@ msgstr ""
 "величине датотека у односу на МП3. ВМА од 96 kb/s даје сличан квалитет као "
 "МП3 од 128 kb/s."
 
-#: ../data/audio-profiles/wma.xml.in.h:2
-msgid "Audio Quality"
-msgstr "Квалитет звука"
-
-#: ../data/audio-profiles/wma.xml.in.h:5
+#: ../data/audio-profiles/wma.xml.in.h:3
 msgid "Use a variable bitrate"
 msgstr "Користи променљиви проток"
 
-#: ../data/audio-profiles/wma.xml.in.h:6
-msgid "Windows Media Audio"
-msgstr "Виндоуз медиа аудио"
+#: ../data/audio-profiles/wma.xml.in.h:5
+msgid "Audio Quality"
+msgstr "Квалитет звука"
 
 #: ../data/desktop-files/common.desktop.in.h:1
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:193
+msgid "Media Player"
+msgstr "Музичка и филмска кутија"
+
+#: ../data/desktop-files/common.desktop.in.h:2
 #: ../src/Clients/Muinshee/Muinshee/PlayerInterface.cs:76
 #: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:107
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/BaseClientWindow.cs:206
 #: ../src/Extensions/Banshee.MiniMode/Banshee.MiniMode/MiniModeWindow.cs:60
 msgid "Banshee Media Player"
 msgstr "Злослутничка музичка кутија"
-
-#: ../data/desktop-files/common.desktop.in.h:2
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:193
-msgid "Media Player"
-msgstr "Музичка и филмска кутија"
 
 #: ../data/desktop-files/common.desktop.in.h:3
 msgid "Play and organize your media collection"
@@ -688,13 +699,11 @@ msgstr "Не могу да направим компоненту усаглаш�
 
 #: ../libbanshee/banshee-transcoder.c:258
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:198
-#| msgid "Could not create 'sinkben' plugin"
 msgid "Could not create sinkbin plugin"
 msgstr "Не могу да направим прикључак бен усаглашавања"
 
 #: ../libbanshee/banshee-transcoder.c:270
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:73
-#| msgid "Could not create 'audioresample' plugin"
 msgid "Could not create audioresample plugin"
 msgstr "Не могу да направим прикључак „поновног узорковања звука“"
 
@@ -775,9 +784,6 @@ msgid "Enable _gapless playback"
 msgstr "Без паузе из_међу песмама"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:886
-#| msgid ""
-#| "Eliminate the small playback gap on track change.  Useful for concept "
-#| "albums and classical music"
 msgid ""
 "Eliminate the small playback gap on track change. Useful for concept albums "
 "and classical music"
@@ -791,7 +797,6 @@ msgstr "Не могу да створим преводиоца формата"
 
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:259
 #, csharp-format
-#| msgid "Could not create encoder pipeline"
 msgid "Could not create encoder pipeline : {0}"
 msgstr "Не могу да направим спојку шифрера : {0}"
 
@@ -801,7 +806,6 @@ msgstr "Гстример# 0.10"
 
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:79
 #, csharp-format
-#| msgid "Could not create encoding pipeline"
 msgid "Could not create encoding pipeline : {0}"
 msgstr "Не могу да направим спојку шифрера : {0}"
 
@@ -842,7 +846,8 @@ msgstr "Већ имате инсталирано најновије издање
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:106
 #, csharp-format
 msgid "A new version of Banshee ({0}) is available.{1}Do you want to update?"
-msgstr "Доступно је ново издање Злослутнице ({0}).{1}Да ли желите да ажурирате?"
+msgstr ""
+"Доступно је ново издање Злослутнице ({0}).{1}Да ли желите да ажурирате?"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:108
 msgid "Banshee update available"
@@ -856,7 +861,6 @@ msgstr "Преузимам {0}"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:144
 #, csharp-format
-#| msgid "{0} by {1} on {2}"
 msgid "{0} MB / {1} MB ({2} KB/s)"
 msgstr "{0} MB / {1} MB ({2} KB/s)"
 
@@ -931,9 +935,14 @@ msgid ""
 msgstr "Пушта наредну песму, или понавља тренутну уколико је тако подешено"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:165
+#| msgid ""
+#| "Play the previous track, optionally restarting if the 'restart value is "
+#| "set"
 msgid ""
-"Play the previous track, optionally restarting if the 'restart value is set"
-msgstr "Пушта претходну песму, или понавља тренутну уколико је тако подешено"
+"Play the previous track, optionally restarting if the 'restart' value is set"
+msgstr ""
+"Пушта претходну песму, или понавља тренутну уколико је подешена вредност "
+"„restart“ (поново покрени)"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:166
 msgid ""
@@ -1336,7 +1345,6 @@ msgid "_Jump to Playing Item"
 msgstr "_Иди на пуштену ставку"
 
 #: ../src/Core/Banshee.Core/Banshee.Collection/YearInfo.cs:38
-#| msgid "Unknown error"
 msgid "Unknown Year"
 msgstr "Непозната година"
 
@@ -1349,7 +1357,6 @@ msgstr "{0} ({1}:{2:00})"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseAlbumArtistListModel.cs:76
 #, csharp-format
-#| msgid "All Artists ({0})"
 msgid "All Album Artists ({0})"
 msgstr "Сви извођачи албума ({0})"
 
@@ -1375,7 +1382,6 @@ msgstr "Вредност"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseYearListModel.cs:66
 #, csharp-format
-#| msgid "All Genres ({0})"
 msgid "All Years ({0})"
 msgstr "Све године ({0})"
 
@@ -1649,10 +1655,12 @@ msgstr "Груписање"
 #. Catalog.GetString ("Music Library")
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:60
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/MusicGroupSource.cs:39
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:57
 msgid "Music"
 msgstr "Музика"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:66
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:60
 msgid "Search your music"
 msgstr "Претражите вашу музику"
 
@@ -1778,10 +1786,12 @@ msgid "Videos"
 msgstr "Видео"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:48
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:60
 msgid "Search your videos"
 msgstr "Претражите ваше видео снимке"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:65
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:77
 msgid "Produced By"
 msgstr "Продуцент"
 
@@ -1839,7 +1849,8 @@ msgstr "Покрећем"
 msgid ""
 "Files are currently being converted to another format. Would you like to "
 "stop this?"
-msgstr "Датотеке се тренутно преводе у други формат. Да ли желите да прекинете?"
+msgstr ""
+"Датотеке се тренутно преводе у други формат. Да ли желите да прекинете?"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataJob.cs:52
 msgid "Saving Metadata to File"
@@ -1850,42 +1861,36 @@ msgid "Sync _metadata between library and files"
 msgstr "Усагласи _мета податке између библиотеке и датотека"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:50
-#| msgid ""
-#| "Enable this option to save rating and playcount metadata inside supported "
-#| "audio files"
 msgid ""
 "Enable this option to have metadata in sync between your library and "
 "supported media files"
-msgstr "Укључите ову опцију да бисте имали мета податке усаглашене"
-"између ваше библиотеке и подржаних медијских датотека"
+msgstr ""
+"Укључите ову опцију да бисте имали мета податке усаглашенеизмеђу ваше "
+"библиотеке и подржаних медијских датотека"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:55
 msgid "Sync _ratings between library and files"
 msgstr "Усагласи _оцењивање између библиотеке и датотека"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:56
-#| msgid ""
-#| "Enable this option to save rating and playcount metadata inside supported "
-#| "audio files"
 msgid ""
 "Enable this option to have rating metadata synced between your library and "
 "supported audio files"
-msgstr "Укључите ову опцију да бисте имали мета податке оцењивања"
-"усаглашене између ваше библиотеке и подржаних звучних датотека"
+msgstr ""
+"Укључите ову опцију да бисте имали мета податке оцењивањаусаглашене између "
+"ваше библиотеке и подржаних звучних датотека"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:61
 msgid "Sync play counts between library and files"
 msgstr "Усагласи бројач пуштања између библиотеке и датотека"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:62
-#| msgid ""
-#| "Enable this option to save rating and playcount metadata inside supported "
-#| "audio files"
 msgid ""
 "Enable this option to have playcount metadata synced between your library "
 "and supported audio files"
-msgstr "Укључите ову опцију да бисте имали мета податке о броју пуштања"
-"усаглашене између ваше библиотеке и подржаних звучних датотека"
+msgstr ""
+"Укључите ову опцију да бисте имали мета податке о броју пуштањаусаглашене "
+"између ваше библиотеке и подржаних звучних датотека"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:67
 msgid "_Update file and folder names"
@@ -1923,10 +1928,6 @@ msgstr ""
 msgid "Search this playlist"
 msgstr "Претражи ову листу нумера"
 
-#: ../src/Core/Banshee.Services/Banshee.Playlist/AbstractPlaylistSource.cs:228
-msgid "The track's rating was set differently on the device and in Banshee"
-msgstr "Ова песма је другачије оцењена на уређају него у Злослутници"
-
 #: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:58
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:311
 msgid "Playlist"
@@ -1946,7 +1947,7 @@ msgstr "Обриши листу"
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:176
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:135
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:462
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/SourceView.cs:591
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/SourceView.cs:595
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/SourceView_DragAndDrop.cs:214
 msgid "New Playlist"
 msgstr "Нова листа"
@@ -1959,7 +1960,7 @@ msgstr "Виндоуз медија АСХ"
 msgid "Windows Media ASX (*.asx)"
 msgstr "Виндоуз медија АСХ (*.asx)"
 
-#: ../src/Core/Banshee.Services/Banshee.Playlists.Formats/M3uPlaylistFormat.cs:44
+#: ../src/Core/Banshee.Services/Banshee.Playlists.Formats/M3uPlaylistFormat.cs:45
 msgid "MPEG Version 3.0 Extended (*.m3u)"
 msgstr "Проширено МПЕГ издање 3.0 (*.m3u)"
 
@@ -2650,37 +2651,37 @@ msgstr "Грешка"
 msgid "Details"
 msgstr "Детаљи"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:152
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:155
 msgid "Errors"
 msgstr "Грешке"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:205
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:208
 msgid "Sort Playlists By"
 msgstr "Поређај листе нумера према"
 
 #. Translators: this is a noun, referring to the harddisk
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:214
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:217
 msgid "Drive"
 msgstr "Диск"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:238
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:241
 msgid "File Organization"
 msgstr "Организација датотека"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:239
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:242
 msgid "Folder hie_rarchy"
 msgstr "Хије_рархија фасцикли"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:240
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:243
 msgid "File _name"
 msgstr "Име _датотеке"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:670
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:673
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "Додајем {0} од {1} у {2}"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:689
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:692
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "Бришем {0} од {1} из {2}"
@@ -2985,7 +2986,7 @@ msgstr ""
 "уместо њега поставите Злослутницу?"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/DefaultApplicationHelperDialog.cs:72
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:435
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:443
 #, csharp-format
 msgid "Do not ask me this again"
 msgstr "Не питај ме поново"
@@ -3363,12 +3364,12 @@ msgstr "Освежава ову насумично поређану паметн
 msgid "Could not export playlist"
 msgstr "Не могу да извезем листу"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:426
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:434
 #, csharp-format
 msgid "Are you sure you want to delete this {0}?"
 msgstr "Да ли сигурно хоћете да обришете ово „{0}“?"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:469
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:477
 msgid "Separate by Type"
 msgstr "Раздвој према врсти"
 
@@ -4023,18 +4024,6 @@ msgstr "Датотеке"
 msgid "C_hoose Files..."
 msgstr "_Изабери датотеке..."
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FileImportSource.cs:81
-msgid "_Files to import:"
-msgstr "_Датотеке за увоз:"
-
-#: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FileImportSource.cs:82
-msgid "Select Files"
-msgstr "Изабери датотеке"
-
-#: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FileImportSource.cs:83
-msgid "(none selected)"
-msgstr "(ништа није изабрано)"
-
 #: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FolderImportSource.cs:43
 msgid "Import Folders to Library"
 msgstr "Увези фасцикле у Аудиотеку"
@@ -4050,14 +4039,6 @@ msgstr "Фасцикле"
 #: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FolderImportSource.cs:57
 msgid "C_hoose Folders..."
 msgstr "И_забери фасцикле..."
-
-#: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FolderImportSource.cs:75
-msgid "_Folders to import:"
-msgstr "_Фасцикле за увоз:"
-
-#: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/FolderImportSource.cs:76
-msgid "Select Folders"
-msgstr "Изаберите фасцикле"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/ImportDialog.cs:73
 msgid "<big><b>Import Media to Library</b></big>"
@@ -4081,7 +4062,6 @@ msgstr "Убудуће не приказуј овај прозорчић"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/ImportDialog.cs:130
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportDialogs.cs:82
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:384
 msgid "_Import"
 msgstr "_Увези"
 
@@ -4158,52 +4138,57 @@ msgstr "Отвори у уређивачу"
 msgid "Create and save"
 msgstr "Направи и сачувај"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:94
-#| msgid "Browser on Left"
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:96
 msgid "Browser Content"
 msgstr "Садржај прегледника"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:95
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:97
 msgid "Configure the filters available in the browser"
 msgstr "Подесите филтере доступне у прегледнику"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:100
-#| msgid "Sort Track Artist:"
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:102
+#| msgid "Show Year Filter"
+msgid "Show Artist Filter"
+msgstr "Прикажи филтер извођача"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:103
+#| msgid "Show a list of years to filter by"
+msgid "Show a list of artists to filter by"
+msgstr "Прикажите списак извођача за филтрирање"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:107
 msgid "Show all Artists"
 msgstr "Прикажи све извођаче"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:101
-#| msgid "Set all track artists to this value"
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:108
 msgid "Show all artists in the artist filter"
 msgstr "Прикажите све извођаче у филтеру извођача"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:104
-#| msgid "Sort Album Artist:"
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:111
 msgid "Show Album Artists"
 msgstr "Прикажи извођаче албума"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:105
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:112
 msgid "Show only album artists, not artists with only single tracks"
 msgstr "Прикажите само извођаче албума, а не извођаче са само једном песмом"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:110
-#| msgid "Show the next track"
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:117
 msgid "Show Genre Filter"
 msgstr "Прикажи филтер жанра"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:111
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:118
 msgid "Show a list of genres to filter by"
 msgstr "Прикажите списак жанрова за филтрирање"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:115
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:122
 msgid "Show Year Filter"
 msgstr "Прикажи филтер године"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:116
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:123
 msgid "Show a list of years to filter by"
 msgstr "Прикажите списак година за филтрирање"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:197
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:228
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSourceContents.cs:62
 msgid "Not Set"
 msgstr "Није постављено"
@@ -4347,12 +4332,6 @@ msgstr "Записујем базу података медија"
 msgid "Sync {0}"
 msgstr "Усагласи {0}"
 
-#. Note to translators: {0}, {1} and {2} will be replaced with numbers.
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapLibrarySync.cs:260
-#, csharp-format
-msgid "{0} to add, {1} to remove, {2} to update"
-msgstr "{0} за додавање, {1} за уклањање, {2} за ажурирање"
-
 #. This group source gives us a seperator for DAPs in the source view.
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/DapService.cs:64
 msgid "Devices"
@@ -4447,6 +4426,7 @@ msgid "Audio"
 msgstr "Звучни"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapInfoBar.cs:69
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:57
 msgid "Video"
 msgstr "Видео"
 
@@ -4525,11 +4505,7 @@ msgstr "Не могу да прекинем везу {0}: {1}"
 msgid "Purchased Music"
 msgstr "Купљена музика"
 
-#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageDevice.cs:87
-msgid "Rockbox Device"
-msgstr "Рокбокс уређај"
-
-#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:114
+#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:115
 #, csharp-format
 msgid "Audio Folder"
 msgid_plural "Audio Folders"
@@ -4538,7 +4514,7 @@ msgstr[1] "Аудио фасцикле"
 msgstr[2] "Аудио фасцикле"
 msgstr[3] "Аудио фасцикла"
 
-#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:121
+#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:122
 #, csharp-format
 msgid "Video Folder"
 msgid_plural "Video Folders"
@@ -4547,13 +4523,17 @@ msgstr[1] "Видео фасцикле"
 msgstr[2] "Видео фасцикле"
 msgstr[3] "Видео фасцикла"
 
-#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:127
+#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:128
 msgid "Required Folder Depth"
 msgstr "Неопходна дубина фасцикли"
 
-#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:130
+#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageSource.cs:131
 msgid "Supports Playlists"
 msgstr "Подржава листе песама"
+
+#: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/RockBoxDevice.cs:41
+msgid "Rockbox Device"
+msgstr "Рокбокс уређај"
 
 # bug(goran) plural
 #: ../src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/WebOSDevice.cs:195
@@ -4565,7 +4545,6 @@ msgid "Error Initializing MTP Device Support"
 msgstr "Грешка при покретању подршке за МТП уређај"
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:83
-#| msgid "Error Initializing MTP Device Support"
 msgid "There was an error initializing MTP device support."
 msgstr "Дошло је до грешке при покретању подршке за МТП уређај"
 
@@ -4672,7 +4651,6 @@ msgid "Merge Discs..."
 msgstr "Обједини дискове..."
 
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:57
-#| msgid "Audiobooks"
 msgid "Go to Audiobooks"
 msgstr "Иди у звучне књиге"
 
@@ -4821,13 +4799,6 @@ msgid "Back"
 msgstr "Назад"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:101
-#| msgid ""
-#| "iTunes® 7 introduced new compatibility issues and currently only works "
-#| "with other iTunes® 7 clients.\n"
-#| "\n"
-#| "No third-party clients can connect to iTunes® music shares anymore. This "
-#| "is an intentional limitation by Apple in iTunes® 7 and we apologize for "
-#| "the unfortunate inconvenience."
 msgid ""
 "iTunes® 7 introduced new compatibility issues and currently only works with "
 "other iTunes® 7 clients.\n"
@@ -4868,7 +4839,6 @@ msgid "Try connecting again"
 msgstr "Покушајте повезивање касније"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:139
-#| msgid "The music share is hosted by iTunes® 7"
 msgid "The music share is hosted by iTunes® 7 or newer"
 msgstr "Дељена музика је под програмом iTunes® 7 или новијим"
 
@@ -6149,11 +6119,11 @@ msgid "Now Playing"
 msgstr "Тренутно пуштена"
 
 #: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MeeGoPanel.cs:60
-#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:2
+#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:1
 msgid "media"
 msgstr "медији"
 
-#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:1
+#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:2
 msgid "Quick access panel for your media"
 msgstr "Површ за брзи приступ вашем садржају"
 
@@ -6245,7 +6215,8 @@ msgstr "Поједностави"
 
 #: ../src/Extensions/Banshee.NowPlaying/Banshee.NowPlaying/NowPlayingSource.cs:60
 msgid "Hide/Show the source list, menu, toolbar, and status bar"
-msgstr "Сакријте/прикажите списак извора, изборник, линију алата, и линију стања"
+msgstr ""
+"Сакријте/прикажите списак извора, изборник, линију алата, и линију стања"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdDiscModel.cs:75
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:54
@@ -6375,7 +6346,6 @@ msgstr "Увези „{0}“"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc/DiscSource.cs:171
 #, csharp-format
-#| msgid "Could not disconnect {0}: {1}"
 msgid "Could not eject {0}: {1}"
 msgstr "Не могу да избацим {0}: {1}"
 
@@ -6392,7 +6362,6 @@ msgid "Dvd"
 msgstr "ДВД"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:63
-#| msgid "Preferences"
 msgid "DVD Preferences"
 msgstr "Подешавања ДВД-а"
 
@@ -6411,7 +6380,6 @@ msgstr "Амарок"
 
 #. TODO add Help button and dialog/tooltip
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportDialogs.cs:68
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:383
 msgid "iTunes Importer"
 msgstr "Увожење са иТјунса"
 
@@ -6428,24 +6396,20 @@ msgid "Import playlists"
 msgstr "Увези листу песама"
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportDialogs.cs:120
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:386
 #, csharp-format
 msgid "Locate your \"{0}\" file..."
 msgstr "Пронађите вашу „{0}“ датотеку..."
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportDialogs.cs:138
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:387
 #, csharp-format
 msgid "Locate \"{0}\""
 msgstr "Пронађи „{0}“"
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportDialogs.cs:167
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:388
 msgid "Locate iTunes Music Directory"
 msgstr "Пронађите иТјунс директоријум са музиком"
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportDialogs.cs:196
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:390
 #, csharp-format
 msgid ""
 "The iTunes library refers to your music directory as \"{0}\" but Banshee was "
@@ -6455,12 +6419,10 @@ msgstr ""
 "не може да нађе ово место. Мораћете сами да нађете директоријум."
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:74
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:392
 msgid "iTunes Media Player"
 msgstr "иТјунс музички програм"
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:134
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:394
 msgid ""
 "Banshee is not familiar with this version of the iTunes library format. "
 "Importing may or may not work as expected, or at all. Would you like to "
@@ -6472,17 +6434,12 @@ msgstr ""
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:439
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:235
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:396
 msgid "Unable to import song."
 msgstr "Не могу да увезем песму"
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:369
 msgid "Rhythmbox Music Player"
 msgstr "Ритам машина музички програм"
-
-#: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:385
-msgid "Import _playlists"
-msgstr "Увези _листу песама"
 
 #: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/HeaderWidget.cs:61
 msgid "_Fill"
@@ -6905,6 +6862,15 @@ msgstr "Прекини СКуЛ праћење"
 msgid "Track Preview"
 msgstr "Преглед нумере"
 
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPContainerSource.cs:42
+#| msgid "Shared Music"
+msgid "Shared Media"
+msgstr "Дељени медиј"
+
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPServerSource.cs:55
+msgid "UPnP Share"
+msgstr "УПнП дељење"
+
 #: ../src/Extensions/Banshee.YouTube/Banshee.YouTube.Gui/VideoStreamTile.cs:136
 msgid "Uploaded by"
 msgstr "Послао"
@@ -7225,6 +7191,30 @@ msgstr "Повезани сте на Ласт.фм."
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:103
 msgid "Unknown Podcast"
 msgstr "Непозната подемисија"
+
+#~ msgid "The track's rating was set differently on the device and in Banshee"
+#~ msgstr "Ова песма је другачије оцењена на уређају него у Злослутници"
+
+#~ msgid "_Files to import:"
+#~ msgstr "_Датотеке за увоз:"
+
+#~ msgid "Select Files"
+#~ msgstr "Изабери датотеке"
+
+#~ msgid "(none selected)"
+#~ msgstr "(ништа није изабрано)"
+
+#~ msgid "_Folders to import:"
+#~ msgstr "_Фасцикле за увоз:"
+
+#~ msgid "Select Folders"
+#~ msgstr "Изаберите фасцикле"
+
+#~ msgid "{0} to add, {1} to remove, {2} to update"
+#~ msgstr "{0} за додавање, {1} за уклањање, {2} за ажурирање"
+
+#~ msgid "Import _playlists"
+#~ msgstr "Увези _листу песама"
 
 #~ msgid "Could not create 'decodebin2' plugin"
 #~ msgstr "Не могу да направим „decodebin2“ додатак"
