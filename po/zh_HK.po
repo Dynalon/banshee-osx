@@ -7,11 +7,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Banshee 2.1.3\n"
+"Project-Id-Version: Banshee 2.3.6\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-01-20 01:04+0000\n"
-"PO-Revision-Date: 2012-01-22 21:12+0800\n"
+"POT-Creation-Date: 2012-03-04 21:28+0000\n"
+"PO-Revision-Date: 2012-03-09 20:09+0800\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
 "MIME-Version: 1.0\n"
@@ -120,7 +120,7 @@ msgstr "透過 Boo 語言指令稿來自選並擴展 Banshee 的功能。"
 #: ../data/addin-xml-strings.cs:110 ../data/addin-xml-strings.cs:120
 #: ../data/addin-xml-strings.cs:125 ../data/addin-xml-strings.cs:130
 #: ../data/addin-xml-strings.cs:140 ../data/addin-xml-strings.cs:155
-#: ../data/addin-xml-strings.cs:160
+#: ../data/addin-xml-strings.cs:160 ../data/addin-xml-strings.cs:170
 msgid "Utilities"
 msgstr "公用程式"
 
@@ -354,42 +354,54 @@ msgid ""
 "7digital."
 msgstr "此擴充套件讓你可以前往 Ubuntu One 音樂商店，該商店由 7digital 提供。"
 
-#. ../src/Extensions/Banshee.Wikipedia/Banshee.Wikipedia.addin.xml
+#. ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient.addin.xml
 #: ../data/addin-xml-strings.cs:168
+msgid "UPnP Client"
+msgstr "UPnP 客戶端"
+
+#: ../data/addin-xml-strings.cs:169
+msgid ""
+"Browse and play music and videos shared over your local network using UPnP."
+msgstr "瀏覽並播放你本地端網絡透過 UPnP 分享的音樂與視像。"
+
+#. ../src/Extensions/Banshee.Wikipedia/Banshee.Wikipedia.addin.xml
+#: ../data/addin-xml-strings.cs:173
 #: ../src/Extensions/Banshee.Wikipedia/Banshee.Wikipedia/ContextPage.cs:44
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
-#: ../data/addin-xml-strings.cs:169
+#: ../data/addin-xml-strings.cs:174
 msgid "View artist information from Wikipedia in the context pane."
 msgstr "在情境窗格內檢視 Wikipedia 提供的演出者資訊。"
 
-#: ../data/addin-xml-strings.cs:170 ../data/addin-xml-strings.cs:175
+#: ../data/addin-xml-strings.cs:175 ../data/addin-xml-strings.cs:180
 msgid "Context Pane"
 msgstr "情境窗格"
 
 #. ../src/Extensions/Banshee.YouTube/Banshee.YouTube.addin.xml
-#: ../data/addin-xml-strings.cs:173
+#: ../data/addin-xml-strings.cs:178
 #: ../src/Extensions/Banshee.YouTube/Banshee.YouTube/ContextPage.cs:44
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../data/addin-xml-strings.cs:174
+#: ../data/addin-xml-strings.cs:179
 msgid "Show related YouTube videos in the context pane."
 msgstr "在情境窗格內顯示相關的 YouTube 影片。"
 
 #: ../data/audio-profiles/aac-novell.xml.in.h:1
-msgid "3GPP"
-msgstr "3GPP"
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:2
 msgid "AAC (Novell Encoder)"
 msgstr "AAC (Novell 編碼器)"
 
+#: ../data/audio-profiles/aac-novell.xml.in.h:2
+msgid ""
+"Designed to be the successor of the MP3 format, AAC generally achieves "
+"better sound quality than MP3 at many bit rates."
+msgstr "以 MP3 格式後繼者為目標所設計，AAC 通常在多個位元率上比 MP3 能達到更優的音效品質。"
+
 #: ../data/audio-profiles/aac-novell.xml.in.h:3
-#: ../data/audio-profiles/mp3-lame.xml.in.h:3
-#: ../data/audio-profiles/mp3-xing.xml.in.h:2
-#: ../data/audio-profiles/wavpack.xml.in.h:3
+#: ../data/audio-profiles/mp3-lame.xml.in.h:9
+#: ../data/audio-profiles/mp3-xing.xml.in.h:3
+#: ../data/audio-profiles/wavpack.xml.in.h:13
 #: ../data/audio-profiles/wma.xml.in.h:4
 msgid "Bitrate"
 msgstr "位元率"
@@ -399,34 +411,32 @@ msgid "Container"
 msgstr "容器"
 
 #: ../data/audio-profiles/aac-novell.xml.in.h:5
-msgid ""
-"Designed to be the successor of the MP3 format, AAC generally achieves "
-"better sound quality than MP3 at many bit rates."
-msgstr "以 MP3 格式後繼者為目標所設計，AAC 通常在多個位元率上比 MP3 能達到更優的音效品質。"
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:6
-msgid "Long Term Prediction"
-msgstr "長時間預測"
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:7
-msgid "Low Complexity"
-msgstr "低複雜度"
-
-#: ../data/audio-profiles/aac-novell.xml.in.h:8
 msgid "MPEG-4 ISO"
 msgstr "MPEG-4 ISO"
 
-#: ../data/audio-profiles/aac-novell.xml.in.h:9
+#: ../data/audio-profiles/aac-novell.xml.in.h:6
 msgid "MPEG-4 QuickTime"
 msgstr "MPEG-4 QuickTime"
 
-#: ../data/audio-profiles/aac-novell.xml.in.h:10
-msgid "Output Format"
-msgstr "輸出格式"
+#: ../data/audio-profiles/aac-novell.xml.in.h:7
+msgid "3GPP"
+msgstr "3GPP"
 
-#: ../data/audio-profiles/aac-novell.xml.in.h:11
+#: ../data/audio-profiles/aac-novell.xml.in.h:8
 msgid "Profile"
 msgstr "個人設定檔"
+
+#: ../data/audio-profiles/aac-novell.xml.in.h:9
+msgid "Low Complexity"
+msgstr "低複雜度"
+
+#: ../data/audio-profiles/aac-novell.xml.in.h:10
+msgid "Long Term Prediction"
+msgstr "長時間預測"
+
+#: ../data/audio-profiles/aac-novell.xml.in.h:11
+msgid "Output Format"
+msgstr "輸出格式"
 
 #: ../data/audio-profiles/base.xml.in.h:1
 msgid "Channels"
@@ -443,154 +453,154 @@ msgid ""
 msgstr "自由無損音訊編解碼 (FLAC) 是一項開放源碼的編解碼格式，它並不會降低音樂的品質。"
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:1
-#: ../data/audio-profiles/mp3-xing.xml.in.h:1
+msgid "MP3 (LAME Encoder)"
+msgstr "MP3 (LAME 編碼器)"
+
+#: ../data/audio-profiles/mp3-lame.xml.in.h:2
+#: ../data/audio-profiles/mp3-xing.xml.in.h:2
 msgid ""
 "A proprietary and older, but also popular, lossy audio format that produces "
 "larger files at lower bitrates."
 msgstr "具有專利、較早期的，但也很多人使用的破壞性壓縮音訊格式。它在較低位元率時會產生較大的檔案。"
 
-#: ../data/audio-profiles/mp3-lame.xml.in.h:2
-#: ../data/audio-profiles/vorbis.xml.in.h:2
-#: ../data/audio-profiles/wavpack.xml.in.h:2
-#: ../data/audio-profiles/wma.xml.in.h:3
-msgid "Best"
-msgstr "最佳"
+#: ../data/audio-profiles/mp3-lame.xml.in.h:3
+msgid "Encoding Mode"
+msgstr "編碼模式"
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:4
 msgid "Constant Bitrate"
 msgstr "固定位元率"
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:5
-msgid "Encoding Mode"
-msgstr "編碼模式"
-
-#: ../data/audio-profiles/mp3-lame.xml.in.h:6
-msgid "MP3 (LAME Encoder)"
-msgstr "MP3 (LAME 編碼器)"
-
-#: ../data/audio-profiles/mp3-lame.xml.in.h:7
-msgid "VBR Quality"
-msgstr "VBR 品質"
-
-#: ../data/audio-profiles/mp3-lame.xml.in.h:8
 msgid "Variable Bitrate"
 msgstr "變動位元率"
 
-#: ../data/audio-profiles/mp3-lame.xml.in.h:9
-#: ../data/audio-profiles/vorbis.xml.in.h:5
-#: ../data/audio-profiles/wavpack.xml.in.h:15
-#: ../data/audio-profiles/wma.xml.in.h:7
+#: ../data/audio-profiles/mp3-lame.xml.in.h:6
+msgid "VBR Quality"
+msgstr "VBR 品質"
+
+#: ../data/audio-profiles/mp3-lame.xml.in.h:7
+#: ../data/audio-profiles/vorbis.xml.in.h:4
+#: ../data/audio-profiles/wavpack.xml.in.h:14
+#: ../data/audio-profiles/wma.xml.in.h:6
 msgid "Worst"
 msgstr "最差"
 
-#: ../data/audio-profiles/mp3-xing.xml.in.h:3
+#: ../data/audio-profiles/mp3-lame.xml.in.h:8
+#: ../data/audio-profiles/vorbis.xml.in.h:5
+#: ../data/audio-profiles/wavpack.xml.in.h:15
+#: ../data/audio-profiles/wma.xml.in.h:7
+msgid "Best"
+msgstr "最佳"
+
+#: ../data/audio-profiles/mp3-xing.xml.in.h:1
 msgid "MP3 (Xing Encoder)"
 msgstr "MP3 (Xing 編碼器)"
 
 #: ../data/audio-profiles/vorbis.xml.in.h:1
-msgid "Audio quality"
-msgstr "音訊品質"
-
-#: ../data/audio-profiles/vorbis.xml.in.h:3
 msgid "Ogg Vorbis"
 msgstr "Ogg Vorbis"
 
-#: ../data/audio-profiles/vorbis.xml.in.h:4
+#: ../data/audio-profiles/vorbis.xml.in.h:2
 msgid ""
 "Vorbis is an open source, lossy audio codec with high quality output at a "
 "lower file size than MP3."
 msgstr "Vorbis 是個開放源碼、破壞性壓縮的音訊編解碼格式。它可以輸出高品質且比 MP3 更小的檔案。"
 
+#: ../data/audio-profiles/vorbis.xml.in.h:3
+msgid "Audio quality"
+msgstr "音訊品質"
+
 #: ../data/audio-profiles/wavpack.xml.in.h:1
+msgid "Wavpack"
+msgstr "Wavpack"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:2
 msgid ""
 "A fast and efficient open source audio format offering lossless and high-"
 "quality lossy encoding with great dynamic range."
 msgstr "快速且有效率的開放源碼音訊格式，提供了無失真且高品質與很棒的動態範圍的編碼。"
 
+#: ../data/audio-profiles/wavpack.xml.in.h:3
+msgid "Mode"
+msgstr "模式"
+
 #: ../data/audio-profiles/wavpack.xml.in.h:4
-msgid "Default"
-msgstr "預設值"
+msgid "Fast Compression"
+msgstr "快速壓縮"
 
 #: ../data/audio-profiles/wavpack.xml.in.h:5
 msgid "Default Compression"
 msgstr "預設壓縮程度"
 
 #: ../data/audio-profiles/wavpack.xml.in.h:6
-msgid "Extra processing"
-msgstr "額外處理"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:7
-msgid "Fast Compression"
-msgstr "快速壓縮"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:8
 msgid "High Compression"
 msgstr "高壓縮"
 
-#: ../data/audio-profiles/wavpack.xml.in.h:9
-msgid "Highest"
-msgstr "最高"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:10
-msgid "Lossy mode"
-msgstr "破壞性模式"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:11
-msgid "Mode"
-msgstr "模式"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:12
-msgid "Store MD5 sum in the file"
-msgstr "在檔案中儲存 MD5 sum"
-
-#: ../data/audio-profiles/wavpack.xml.in.h:13
+#: ../data/audio-profiles/wavpack.xml.in.h:7
 msgid "Very High Compression"
 msgstr "非常高壓縮"
 
-#: ../data/audio-profiles/wavpack.xml.in.h:14
-msgid "Wavpack"
-msgstr "Wavpack"
+#: ../data/audio-profiles/wavpack.xml.in.h:8
+msgid "Lossy mode"
+msgstr "破壞性模式"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:9
+msgid "Store MD5 sum in the file"
+msgstr "在檔案中儲存 MD5 sum"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:10
+msgid "Extra processing"
+msgstr "額外處理"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:11
+msgid "Default"
+msgstr "預設值"
+
+#: ../data/audio-profiles/wavpack.xml.in.h:12
+msgid "Highest"
+msgstr "最高"
 
 #: ../data/audio-profiles/wav.xml.in.h:1
+msgid "Waveform PCM"
+msgstr "波形 PCM"
+
+#: ../data/audio-profiles/wav.xml.in.h:2
 msgid ""
 "WAV+PCM is a lossless format that holds uncompressed, raw pulse-code "
 "modulated (PCM) audio."
 msgstr "WAV+PCM 是一種無失真格式，保存了未壓縮、原始的脈衝編碼調變 (PCM) 音訊。"
 
-#: ../data/audio-profiles/wav.xml.in.h:2
-msgid "Waveform PCM"
-msgstr "波形 PCM"
-
 #: ../data/audio-profiles/wma.xml.in.h:1
+msgid "Windows Media Audio"
+msgstr "Windows Media Audio"
+
+#: ../data/audio-profiles/wma.xml.in.h:2
 msgid ""
 "A proprietary lossy audio format with high quality output at a lower file "
 "size than MP3. A 96 kbps WMA is equivalent to a 128 kbps MP3."
 msgstr "專有的破壞性壓縮音效格式，具有高品質的輸出並且檔案大小比 MP3 更小。96 kbps WMA 相當於 128 kbps MP3。"
 
-#: ../data/audio-profiles/wma.xml.in.h:2
-msgid "Audio Quality"
-msgstr "音訊品質"
-
-#: ../data/audio-profiles/wma.xml.in.h:5
+#: ../data/audio-profiles/wma.xml.in.h:3
 msgid "Use a variable bitrate"
 msgstr "使用變動位元率"
 
-#: ../data/audio-profiles/wma.xml.in.h:6
-msgid "Windows Media Audio"
-msgstr "Windows Media Audio"
+#: ../data/audio-profiles/wma.xml.in.h:5
+msgid "Audio Quality"
+msgstr "音訊品質"
 
 #: ../data/desktop-files/common.desktop.in.h:1
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:193
+msgid "Media Player"
+msgstr "媒體播放程式"
+
+#: ../data/desktop-files/common.desktop.in.h:2
 #: ../src/Clients/Muinshee/Muinshee/PlayerInterface.cs:76
 #: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:107
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/BaseClientWindow.cs:206
 #: ../src/Extensions/Banshee.MiniMode/Banshee.MiniMode/MiniModeWindow.cs:60
 msgid "Banshee Media Player"
 msgstr "Banshee 媒體播放程式"
-
-#: ../data/desktop-files/common.desktop.in.h:2
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:193
-msgid "Media Player"
-msgstr "媒體播放程式"
 
 #: ../data/desktop-files/common.desktop.in.h:3
 msgid "Play and organize your media collection"
@@ -1014,7 +1024,7 @@ msgid "Disc Number"
 msgstr "光碟編號"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:197
-#: ../src/Clients/Nereid/Nereid/ViewContainer.cs:142
+#: ../src/Clients/Nereid/Nereid/ViewContainer.cs:143
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:113
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:179
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:78
@@ -1186,6 +1196,12 @@ msgid "Album Artist"
 msgstr "專輯演出者"
 
 #: ../src/Clients/Nereid/Nereid/ViewContainer.cs:141
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:93
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:194
+msgid "Composer"
+msgstr "作曲者"
+
+#: ../src/Clients/Nereid/Nereid/ViewContainer.cs:142
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:98
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:187
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:366
@@ -1194,7 +1210,7 @@ msgid "Genre"
 msgstr "曲風"
 
 #. Translators: noun
-#: ../src/Clients/Nereid/Nereid/ViewContainer.cs:143
+#: ../src/Clients/Nereid/Nereid/ViewContainer.cs:144
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:216
 msgid "Comment"
 msgstr "備註"
@@ -1543,11 +1559,6 @@ msgstr "專輯演出者頭文字縮寫"
 msgid "Conductor"
 msgstr "指揮"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:93
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:194
-msgid "Composer"
-msgstr "作曲者"
-
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:103
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:94
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:362
@@ -1597,10 +1608,12 @@ msgstr "羣組"
 #. Catalog.GetString ("Music Library")
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:60
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/MusicGroupSource.cs:39
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:57
 msgid "Music"
 msgstr "音樂"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:66
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:60
 msgid "Search your music"
 msgstr "搜尋你的音樂"
 
@@ -1723,10 +1736,12 @@ msgid "Videos"
 msgstr "視像"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:48
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:60
 msgid "Search your videos"
 msgstr "搜尋你的視像"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:65
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:77
 msgid "Produced By"
 msgstr "製作："
 
@@ -1846,7 +1861,7 @@ msgid ""
 "cover art fetching"
 msgstr "某些功能需要互聯網連線，像是 Last.fm 或取回封套圖庫"
 
-#: ../src/Core/Banshee.Services/Banshee.Playlist/AbstractPlaylistSource.cs:159
+#: ../src/Core/Banshee.Services/Banshee.Playlist/AbstractPlaylistSource.cs:153
 msgid "Search this playlist"
 msgstr "搜尋此播放清單"
 
@@ -1864,8 +1879,8 @@ msgid "Delete Playlist"
 msgstr "刪除播放清單"
 
 #. TODO generate name based on the track selection, or begin editing it
-#: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:385
-#: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:391
+#: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:397
+#: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:403
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:176
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:135
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:462
@@ -1882,7 +1897,7 @@ msgstr "Windows Media ASX"
 msgid "Windows Media ASX (*.asx)"
 msgstr "Windows Media ASX (*.asx)"
 
-#: ../src/Core/Banshee.Services/Banshee.Playlists.Formats/M3uPlaylistFormat.cs:44
+#: ../src/Core/Banshee.Services/Banshee.Playlists.Formats/M3uPlaylistFormat.cs:45
 msgid "MPEG Version 3.0 Extended (*.m3u)"
 msgstr "MPEG 3.0 版擴充 (*.m3u)"
 
@@ -2561,37 +2576,37 @@ msgstr "錯誤"
 msgid "Details"
 msgstr "詳細資料"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:155
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:156
 msgid "Errors"
 msgstr "錯誤"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:208
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:213
 msgid "Sort Playlists By"
 msgstr "排序播放清單根據"
 
 #. Translators: this is a noun, referring to the harddisk
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:217
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:223
 msgid "Drive"
 msgstr "磁碟"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:241
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:247
 msgid "File Organization"
 msgstr "檔案組織"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:242
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:248
 msgid "Folder hie_rarchy"
 msgstr "資料夾結構(_R)"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:243
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:249
 msgid "File _name"
 msgstr "檔案名稱(_N)"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:673
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:701
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "加入 {1} 中的 {0} 到 {2}"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:692
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:720
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "從 {2} 刪除 {1} 中的 {0}"
@@ -2880,7 +2895,7 @@ msgid ""
 msgstr "目前有其他的程式設定為預設的媒體播放程式。你是否要將 Banshee 設為預設值？"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/DefaultApplicationHelperDialog.cs:72
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:435
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:443
 #, csharp-format
 msgid "Do not ask me this again"
 msgstr "不要再詢問我這個問題"
@@ -3258,12 +3273,12 @@ msgstr "重新整理亂數儲存的智慧型播放清單"
 msgid "Could not export playlist"
 msgstr "無法匯出播放清單"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:426
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:434
 #, csharp-format
 msgid "Are you sure you want to delete this {0}?"
 msgstr "你確定要刪除這個 {0}？"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:469
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:477
 msgid "Separate by Type"
 msgstr "根據類型分開"
 
@@ -4012,47 +4027,55 @@ msgstr "在編輯器中開啟"
 msgid "Create and save"
 msgstr "建立並儲存"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:94
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:96
 msgid "Browser Content"
 msgstr "瀏覽器內容"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:95
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:97
 msgid "Configure the filters available in the browser"
 msgstr "設定瀏覽器中可用的過濾器"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:100
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:102
+msgid "Show Artist Filter"
+msgstr "顯示演出者過濾器"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:103
+msgid "Show a list of artists to filter by"
+msgstr "顯示要過濾的演出者清單根據"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:107
 msgid "Show all Artists"
 msgstr "顯示所有演出者"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:101
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:108
 msgid "Show all artists in the artist filter"
 msgstr "在演出者過濾器中顯示所有演出者"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:104
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:111
 msgid "Show Album Artists"
 msgstr "顯示專輯演出者"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:105
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:112
 msgid "Show only album artists, not artists with only single tracks"
 msgstr "僅顯示專輯演出者，而不是僅有單一曲目的演出者"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:110
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:117
 msgid "Show Genre Filter"
 msgstr "顯示曲風過濾器"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:111
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:118
 msgid "Show a list of genres to filter by"
 msgstr "顯示要過濾的曲風清單根據"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:115
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:122
 msgid "Show Year Filter"
 msgstr "顯示年份過濾器"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:116
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:123
 msgid "Show a list of years to filter by"
 msgstr "顯示要過濾的年份清單根據"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:197
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:228
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/InternetRadioSourceContents.cs:62
 msgid "Not Set"
 msgstr "未設定"
@@ -4282,6 +4305,7 @@ msgid "Audio"
 msgstr "音訊"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapInfoBar.cs:69
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:57
 msgid "Video"
 msgstr "視像"
 
@@ -5504,29 +5528,29 @@ msgstr "描述："
 msgid "Rating:"
 msgstr "評等："
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:125
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:129
 msgid "_Last.fm"
 msgstr "_Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:126
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:130
 msgid "Configure the Audioscrobbler plugin"
 msgstr "配置 Audioscrobbler 插件"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:129
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:133
 msgid "Visit _User Profile Page"
 msgstr "拜訪使用者個人設定頁面(_U)"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:130
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:134
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:164
 msgid "Visit Your Last.fm Profile Page"
 msgstr "拜訪你的 Last.fm 個人設定頁面"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:135
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:139
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:91
 msgid "_Enable Song Reporting"
 msgstr "啟用歌曲報告(_E)"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:136
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:140
 msgid "Enable song reporting"
 msgstr "啟用曲目報告"
 
@@ -5926,11 +5950,11 @@ msgid "Now Playing"
 msgstr "現正播放"
 
 #: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MeeGoPanel.cs:60
-#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:2
+#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:1
 msgid "media"
 msgstr "媒體"
 
-#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:1
+#: ../src/Extensions/Banshee.MeeGo/meego-panel-banshee.desktop.in.in.h:2
 msgid "Quick access panel for your media"
 msgstr "快速存取你媒體的面板"
 
@@ -6642,6 +6666,14 @@ msgstr "停止監控 SQL"
 #: ../src/Extensions/Banshee.UbuntuOneMusicStore/Banshee.UbuntuOneMusicStore/UbuntuOneMusicStoreSource.cs:133
 msgid "Track Preview"
 msgstr "曲目預覽"
+
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPContainerSource.cs:42
+msgid "Shared Media"
+msgstr "分享的媒體"
+
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPServerSource.cs:55
+msgid "UPnP Share"
+msgstr "UPnP 分享"
 
 #: ../src/Extensions/Banshee.YouTube/Banshee.YouTube.Gui/VideoStreamTile.cs:136
 msgid "Uploaded by"
