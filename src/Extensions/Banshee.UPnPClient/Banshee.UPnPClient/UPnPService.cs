@@ -49,21 +49,39 @@ namespace Banshee.UPnPClient
         private Mono.Upnp.Client client;
         private UPnPContainerSource container;
 
+        private Dictionary<string, UPnPServerSource> source_map;
+
         void IExtensionService.Initialize ()
         {
+            source_map = new Dictionary<string, UPnPServerSource> ();
             container = new UPnPContainerSource ();
-            ServiceManager.SourceManager.AddSource (container);
 
             client = new Mono.Upnp.Client ();
             client.DeviceAdded += DeviceAdded;
+            client.DeviceRemoved += DeviceRemoved;
 
             client.BrowseAll ();
         }
     
         public void Dispose ()
         {
-            if (container != null)
-            {
+            if (client != null) {
+                client.DeviceAdded -= DeviceAdded;
+                client.DeviceRemoved -= DeviceRemoved;
+                client.Dispose ();
+            }
+
+            if (source_map != null) {
+                foreach (var kv in source_map) {
+                    if (kv.Value != null) {
+                        kv.Value.Disconnect ();
+                    }
+                }
+
+                source_map.Clear ();
+            }
+
+            if (container != null) {
                 foreach (UPnPServerSource source in container.Children) {
                     source.Disconnect ();
                 }
@@ -75,13 +93,50 @@ namespace Banshee.UPnPClient
 
         void DeviceAdded (object sender, DeviceEventArgs e)
         {
-            Log.DebugFormat ("UPnPService.DeviceFound {0} ({1})",e.Device.ToString (), e.Device.Type);
+            Log.DebugFormat ("UPnPService.DeviceAdded ({0}) {1}", e.Device.Type, e.Device.Udn);
             Device device = e.Device.GetDevice ();
 
             if (device.Type.Type == "MediaServer") {
                 Log.DebugFormat ("UPnPService MediaServer Found: {0} {1}", device.ModelName, device.ModelNumber);
                 UPnPServerSource source = new UPnPServerSource (device);
+
+                string key = device.Udn;
+                if (source_map.Count == 0) {
+                    ThreadAssist.ProxyToMain (delegate {
+                        ServiceManager.SourceManager.AddSource (container);
+                    });
+                }
+
+                if (source_map.ContainsKey (key)) {
+                    // Received new connection info for service
+                    container.RemoveChildSource (source_map [key]);
+                    source_map [key] = source;
+                } else {
+                    // New service information
+                    source_map.Add (key, source);
+                }
+
                 container.AddChildSource (source);
+            }
+        }
+
+        void DeviceRemoved (object sender, DeviceEventArgs e)
+        {
+            Log.DebugFormat ("UPnPService.DeviceRemoved ({0}) {1}", e.Device.Type, e.Device.Udn);
+
+            // We can't use e.Device.GetDevice () here, because the device might already be disposed
+            if (e.Device.Type.Type == "MediaServer") {
+                Log.DebugFormat ("UPnPService MediaServer Removed: {0} {1}", e.Device.Type, e.Device.Udn);
+                String key = e.Device.Udn;
+                UPnPServerSource source = source_map [key];
+
+                source.Disconnect ();
+                container.RemoveChildSource (source);
+                source_map.Remove (key);
+
+                if (source_map.Count == 0) {
+                    ServiceManager.SourceManager.RemoveSource (container);
+                }
             }
         }
 
