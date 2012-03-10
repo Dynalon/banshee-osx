@@ -44,7 +44,7 @@ using Banshee.PlaybackController;
 
 namespace Banshee.UPnPClient
 {
-    public class UPnPService : IExtensionService, IDisposable
+    public class UPnPService : IExtensionService, IDisposable, IDelayedInitializeService
     {
         private Mono.Upnp.Client client;
         private UPnPContainerSource container;
@@ -52,6 +52,10 @@ namespace Banshee.UPnPClient
         private Dictionary<string, UPnPServerSource> source_map;
 
         void IExtensionService.Initialize ()
+        {
+        }
+
+        public void DelayedInitialize ()
         {
             source_map = new Dictionary<string, UPnPServerSource> ();
             container = new UPnPContainerSource ();
