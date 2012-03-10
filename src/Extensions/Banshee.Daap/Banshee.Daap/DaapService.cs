@@ -157,8 +157,6 @@ namespace Banshee.Daap
 
         public void ThreadedInitialize ()
         {
-            // Add the source, even though its empty, so that the user sees the
-            // plugin is enabled, just no child sources yet.
             source_map = new Dictionary<string, DaapSource> ();
             container = new DaapContainerSource ();
 
