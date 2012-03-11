@@ -121,7 +121,7 @@ namespace Banshee.GnomeBackend
             var proxy_password = Get<string> (null, HTTP_PROXY);
             var proxy_bypass_list = Get<string[]> (HTTP_PROXY, PROXY_BYPASS_LIST);
 
-            if (!use_proxy || proxy_mode == "none") {
+            if (!use_proxy || proxy_mode == "none" || String.IsNullOrEmpty (proxy_host)) {
                 Log.Debug ("Direct connection, no proxy in use");
                 return null;
             }
