@@ -308,6 +308,13 @@ namespace Banshee.WebBrowser
             get { return ossifer_web_view_get_load_status (Handle); }
         }
 
+        [DllImport (LIBOSSIFER)]
+        private static extern OssiferSecurityLevel ossifer_web_view_get_security_level (IntPtr ossifer);
+
+        public virtual OssiferSecurityLevel SecurityLevel {
+            get { return ossifer_web_view_get_security_level (Handle); }
+        }
+
 #endregion
 
     }

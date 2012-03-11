@@ -15,6 +15,14 @@ typedef struct OssiferWebView OssiferWebView;
 typedef struct OssiferWebViewClass OssiferWebViewClass;
 typedef struct OssiferWebViewPrivate OssiferWebViewPrivate;
 
+typedef enum
+{
+    OSSIFER_SECURITY_IS_UNKNOWN,
+    OSSIFER_SECURITY_IS_INSECURE,
+    OSSIFER_SECURITY_IS_BROKEN,
+    OSSIFER_SECURITY_IS_SECURE
+} OssiferSecurityLevel;
+
 struct OssiferWebView {
     WebKitWebView parent;
     OssiferWebViewPrivate *priv;

@@ -380,3 +380,36 @@ ossifer_web_view_execute_script (OssiferWebView *ossifer, const gchar *script)
     g_return_if_fail (OSSIFER_WEB_VIEW (ossifer));
     return webkit_web_view_execute_script (WEBKIT_WEB_VIEW (ossifer), script);
 }
+
+OssiferSecurityLevel
+ossifer_web_view_get_security_level (OssiferWebView *ossifer)
+{
+    g_return_val_if_fail (OSSIFER_WEB_VIEW (ossifer), WEBKIT_LOAD_FAILED);
+
+    OssiferSecurityLevel security_level = OSSIFER_SECURITY_IS_UNKNOWN;
+    WebKitWebView *web_view = WEBKIT_WEB_VIEW (ossifer);
+      
+    const gchar* uri = webkit_web_view_get_uri (web_view);
+
+    if (uri && g_str_has_prefix (uri, "https")) {
+        WebKitWebFrame *frame;
+        WebKitWebDataSource *source;
+        WebKitNetworkRequest *request;
+        SoupMessage *message;
+
+        frame = webkit_web_view_get_main_frame (web_view);
+        source = webkit_web_frame_get_data_source (frame);
+        request = webkit_web_data_source_get_request (source);
+        message = webkit_network_request_get_message (request);
+
+        if (message && (soup_message_get_flags (message) & SOUP_MESSAGE_CERTIFICATE_TRUSTED)) {
+            security_level = OSSIFER_SECURITY_IS_SECURE;
+        } else {
+            security_level = OSSIFER_SECURITY_IS_BROKEN;
+        }
+    } else {
+        security_level = OSSIFER_SECURITY_IS_UNKNOWN;
+    }
+    
+    return security_level;
+}

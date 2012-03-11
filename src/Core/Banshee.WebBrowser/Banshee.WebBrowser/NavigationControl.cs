@@ -28,6 +28,7 @@
 using System;
 
 using Gtk;
+using Mono.Unix;
 using Hyena.Gui;
 using Hyena.Widgets;
 
@@ -146,6 +147,17 @@ namespace Banshee.WebBrowser
             if (web_view.LoadStatus == OssiferLoadStatus.Committed ||
                 web_view.LoadStatus == OssiferLoadStatus.Failed) {
                 UpdateNavigation ();
+            }
+
+            if (web_view.LoadStatus == OssiferLoadStatus.Committed &&
+                web_view.Uri.StartsWith ("https", StringComparison.InvariantCultureIgnoreCase) &&
+                web_view.SecurityLevel != OssiferSecurityLevel.Secure) {
+                string message = Catalog.GetString (
+                    "This page is blocked because it is probably not the one you are looking for!");
+                // Translators: {0} is the URL of the web page that was requested
+                string details = String.Format (Catalog.GetString ("The security certificate for {0} is invalid."),
+                                                web_view.Uri);
+                web_view.LoadString (String.Format ("{0}<br>{1}", message, details), "text/html", "UTF-8", null);
             }
         }
     }
