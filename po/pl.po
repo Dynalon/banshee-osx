@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-13 16:24+0100\n"
-"PO-Revision-Date: 2012-03-13 16:14+0100\n"
-"Last-Translator: Mateusz Kacprzak <mateusz.kacprzak@yandex.ru>\n"
+"POT-Creation-Date: 2012-03-15 22:24+0100\n"
+"PO-Revision-Date: 2012-03-15 22:25+0100\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -4230,6 +4230,18 @@ msgstr "Przeglądarka"
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:116
 msgid "Show or hide the artist/album browser"
 msgstr "Wyświetla lub ukrywa przeglądarkę wykonawców/albumów"
+
+#: ../src/Core/Banshee.WebBrowser/Banshee.WebBrowser/NavigationControl.cs:156
+msgid ""
+"This page is blocked because it is probably not the one you are looking for!"
+msgstr ""
+"Ta strona została zablokowana. Prawdopodobnie nie jest tą, której szukano."
+
+#. Translators: {0} is the URL of the web page that was requested
+#: ../src/Core/Banshee.WebBrowser/Banshee.WebBrowser/NavigationControl.cs:158
+#, csharp-format
+msgid "The security certificate for {0} is invalid."
+msgstr "Certyfikat bezpieczeństwa dla {0} jest nieprawidłowy."
 
 #: ../src/Core/Banshee.WebBrowser/Banshee.WebSource/WebBrowserShell.cs:121
 #, csharp-format
