@@ -324,8 +324,7 @@ namespace Banshee.Mpris
 
         public void OpenUri (string uri)
         {
-            engine_service.Open (new SafeUri (uri));
-            engine_service.Play ();
+            Banshee.Streaming.RadioTrackInfo.OpenPlay (uri);
         }
 
 #endregion
