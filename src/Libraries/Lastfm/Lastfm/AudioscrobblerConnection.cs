@@ -274,22 +274,23 @@ namespace Lastfm
         private void TransmitGetRequestStream (IAsyncResult ar)
         {
             Stream stream;
+            TransmitState ts;
 
             try {
                 stream = current_web_req.EndGetRequestStream (ar);
+
+                ts = (TransmitState) ar.AsyncState;
+                StringBuilder sb = ts.StringBuilder;
+
+                StreamWriter writer = new StreamWriter (stream);
+                writer.Write (sb.ToString ());
+                writer.Close ();
             } catch (Exception e) {
                 Log.Exception ("Failed to get the request stream", e);
                 state = State.Idle;
                 next_interval = DateTime.Now + new TimeSpan (0, 0, RETRY_SECONDS);
                 return;
             }
-
-            TransmitState ts = (TransmitState) ar.AsyncState;
-            StringBuilder sb = ts.StringBuilder;
-
-            StreamWriter writer = new StreamWriter (stream);
-            writer.Write (sb.ToString ());
-            writer.Close ();
 
             state = State.WaitingForResponse;
             current_async_result = current_web_req.BeginGetResponse (TransmitGetResponse, ts);
