@@ -120,8 +120,11 @@ namespace Banshee.Mpris
             get { return supported_mimetypes; }
         }
 
+        // We can't use the PlayerEngine.SourceCapabilities property here, because
+        // the OpenUri method only supports "file" and "http".
+        private static string [] supported_uri_schemes = { "file", "http" };
         public string [] SupportedUriSchemes {
-            get { return (string [])ServiceManager.PlayerEngine.ActiveEngine.SourceCapabilities; }
+            get { return supported_uri_schemes; }
         }
 
         public void Raise ()
