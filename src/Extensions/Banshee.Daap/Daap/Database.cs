@@ -390,7 +390,7 @@ namespace Daap {
 
             string revquery = null;
 
-            if (client.Revision != 0)
+            if (client.Revision != Client.InitialRevision)
                 revquery = String.Format ("revision-number={0}&delta={1}", newrev, newrev - client.Revision);
 
             RefreshTracks (revquery);

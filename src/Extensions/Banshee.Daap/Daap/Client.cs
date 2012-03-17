@@ -31,6 +31,7 @@ using System.Collections.ObjectModel;
 namespace Daap {
 
     public class Client : IDisposable {
+        public const int InitialRevision = 1;
         private const int UpdateSleepInterval = 2 * 60 * 1000; // 2 minutes
 
         private IPAddress address;
@@ -39,7 +40,7 @@ namespace Daap {
         private ServerInfo serverInfo;
         private List<Database> databases = new List<Database> ();
         private ContentFetcher fetcher;
-        private int revision;
+        private int revision = InitialRevision;
         private bool updateRunning;
 
         public event EventHandler Updated;
@@ -171,11 +172,6 @@ namespace Daap {
             }
         }
 
-        private int GetCurrentRevision () {
-            ContentNode revNode = ContentParser.Parse (bag, fetcher.Fetch ("/update"), "dmap.serverrevision");
-            return (int) revNode.Value;
-        }
-
         private int WaitForRevision (int currentRevision) {
             ContentNode revNode = ContentParser.Parse (bag, fetcher.Fetch ("/update",
                                                                            "revision-number=" + currentRevision));
@@ -187,10 +183,7 @@ namespace Daap {
             int newrev = revision;
 
             if (serverInfo.SupportsUpdate) {
-                if (revision == 0)
-                    newrev = GetCurrentRevision ();
-                else
-                    newrev = WaitForRevision (revision);
+                newrev = WaitForRevision (revision);
 
                 if (newrev == revision)
                     return;
