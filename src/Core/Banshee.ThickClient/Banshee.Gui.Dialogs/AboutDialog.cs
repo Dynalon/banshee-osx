@@ -96,9 +96,9 @@ namespace Banshee.Gui.Dialogs
             Comments = Catalog.GetString ("Extraordinary Multimedia Management and Playback");
             Copyright = String.Format (Catalog.GetString (
                 "Copyright \u00a9 2005\u2013{0} Novell, Inc.\n" +
-                "Copyright \u00a9 2005\u2013{0} Others\n" +
+                "Copyright \u00a9 2005\u2013{1} Others\n" +
                 "Copyright \u00a9 2005 Aaron Bockover"
-            ), "2011");
+            ), "2011", "2012");
 
             Website = "http://banshee.fm/";
             WebsiteLabel = Catalog.GetString ("Banshee Website");
