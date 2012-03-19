@@ -23,11 +23,11 @@ Banshee 2.4.0 - 2012-03-21
       * UPnP support
 
             Browse and play music or videos shared over your local network
-            by UPnP device.
+            by a UPnP device.
 
     Enhancements:
 
-      * Several improvements to Muinshee, our alternative UI:
+      * Several improvements to Muinshee, our alternative UI
       * Add separate options for writing ratings and play counts to files
       * Dap.MassStorage: Add support for the Archos Internet Tablet
       * Dap.MassStorage: Don't sync 'unknown album' metadata
@@ -57,7 +57,6 @@ Banshee 2.4.0 - 2012-03-21
       * Mpris: Fix OpenUri method to also support http URIs
       * Gio: Fix encoding of URIs in Directory class and fix values in database
       * LibraryWatcher: Catch and log exception when processing changes
-      * Prevent missing icons in the source tarball
       * bgo#548366: Allow primary sources to marked as temporary
       * bgo#628518: build: Add a --disable-webkit flag to configure
       * bgo#638130: Fix importing of rating and play count when updating track
