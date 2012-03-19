@@ -29,14 +29,12 @@
 using System;
 using System.Collections.Generic;
 
-using Mono.Unix;
 using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1;
 using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.AV;
 
 using Hyena;
 
 using Banshee.Sources;
-using Banshee.Collection;
 using Banshee.Collection.Database;
 
 namespace Banshee.UPnPClient

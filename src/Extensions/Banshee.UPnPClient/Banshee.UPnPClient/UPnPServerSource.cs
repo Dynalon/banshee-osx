@@ -35,11 +35,8 @@ using Mono.Upnp;
 using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1;
 using Mono.Upnp.Dcp.MediaServer1.ContentDirectory1.AV;
 
-using Banshee.Base;
-using Banshee.Collection;
 using Banshee.Configuration;
 using Banshee.Sources;
-using Banshee.ServiceStack;
 
 using Hyena;
 

@@ -29,18 +29,11 @@
 using System;
 using System.Collections.Generic;
 
-using Mono.Addins;
-
 using Mono.Upnp;
 
 using Hyena;
 
-using Banshee.Base;
-using Banshee.Sources.Gui;
 using Banshee.ServiceStack;
-using Banshee.Preferences;
-using Banshee.MediaEngine;
-using Banshee.PlaybackController;
 
 namespace Banshee.UPnPClient
 {

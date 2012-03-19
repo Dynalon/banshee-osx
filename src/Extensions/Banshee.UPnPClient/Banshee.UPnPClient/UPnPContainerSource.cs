@@ -29,11 +29,8 @@
 using System;
 using Mono.Unix;
 
-using Banshee.Base;
-using Banshee.Collection;
 using Banshee.Configuration;
 using Banshee.Sources;
-using Banshee.ServiceStack;
 
 namespace Banshee.UPnPClient
 {
