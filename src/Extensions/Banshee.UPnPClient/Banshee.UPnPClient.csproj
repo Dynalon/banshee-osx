@@ -16,6 +16,7 @@
     <RootNamespace>Banshee.UPnPClient</RootNamespace>
     <AssemblyOriginatorKeyFile>.</AssemblyOriginatorKeyFile>
     <ReleaseVersion>1.3</ReleaseVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,11 +45,15 @@
     <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <Package>gtk-sharp-2.0</Package>
     </Reference>
-    <Reference Include="Mono.Ssdp" />
+    <Reference Include="Mono.Ssdp">
+      <HintPath>..\..\..\bin\bin\Mono.Ssdp.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Upnp">
+      <HintPath>..\..\..\bin\bin\Mono.Upnp.dll</HintPath>
       <Package>mono.upnp</Package>
     </Reference>
     <Reference Include="Mono.Upnp.Dcp.MediaServer1">
+      <HintPath>..\..\..\bin\bin\Mono.Upnp.Dcp.MediaServer1.dll</HintPath>
       <Package>mono.upnp.dcp.mediaserver1</Package>
     </Reference>
     <Reference Include="System.Core" />
