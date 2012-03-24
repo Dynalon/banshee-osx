@@ -215,7 +215,7 @@ namespace Banshee.Dap.AppleDevice
             track.CDs = DiscCount;
             track.CDNumber = DiscNumber;
             track.TrackLength = (int) Duration.TotalMilliseconds;
-            track.Size = (int)FileSize;
+            track.Size = (uint)FileSize;
             track.Grouping = Grouping;
             try {
                 track.TimePlayed = LastPlayed;
