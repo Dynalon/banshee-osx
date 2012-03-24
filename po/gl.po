@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: banshee-master-po-gl-3484\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-13 20:43+0000\n"
-"PO-Revision-Date: 2012-03-04 22:27+0100\n"
+"POT-Creation-Date: 2012-03-18 19:17+0000\n"
+"PO-Revision-Date: 2012-03-24 14:41+0100\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -289,12 +289,10 @@ msgstr "Mostra unha icona na área de notificación para controlar Banshee."
 
 #. ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.addin.xml
 #: ../data/addin-xml-strings.cs:133
-#| msgid "Audio CD Support"
 msgid "DVD and Audio CD Support"
 msgstr "Compatibilidade para CD de son e DVD"
 
 #: ../data/addin-xml-strings.cs:134
-#| msgid "Listen to and rip Audio CDs."
 msgid "Watch DVDs, listen to and rip Audio CDs."
 msgstr "Ver DVD, escoitar e extraer CD de son."
 
@@ -373,7 +371,6 @@ msgid "UPnP Client"
 msgstr "Cliente UPnP"
 
 #: ../data/addin-xml-strings.cs:169
-#| msgid "Browse and listen to music shared over your local network."
 msgid ""
 "Browse and play music and videos shared over your local network using UPnP."
 msgstr ""
@@ -703,13 +700,11 @@ msgstr "Non foi posíbel crear o elemento sumideiro"
 
 #: ../libbanshee/banshee-transcoder.c:258
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:198
-#| msgid "Could not create 'sinkbin' plugin"
 msgid "Could not create sinkbin plugin"
 msgstr "Non foi posíbel crear o engadido «sinkbin»"
 
 #: ../libbanshee/banshee-transcoder.c:270
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:73
-#| msgid "Could not create 'audioresample' plugin"
 msgid "Could not create audioresample plugin"
 msgstr "Non foi posíbel crear o engadido «audioresample»"
 
@@ -790,9 +785,6 @@ msgid "Enable _gapless playback"
 msgstr "Activar a reprodución sen _saltos"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:886
-#| msgid ""
-#| "Eliminate the small playback gap on track change.  Useful for concept "
-#| "albums and classical music"
 msgid ""
 "Eliminate the small playback gap on track change. Useful for concept albums "
 "and classical music"
@@ -870,7 +862,6 @@ msgstr "Descargando {0}"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:144
 #, csharp-format
-#| msgid "{0} by {1} on {2}"
 msgid "{0} MB / {1} MB ({2} KB/s)"
 msgstr "{0} MB / {1} MB ({2} KB/s)"
 
@@ -947,9 +938,6 @@ msgstr ""
 "está estabelecido"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:165
-#| msgid ""
-#| "Play the previous track, optionally restarting if the 'restart value is "
-#| "set"
 msgid ""
 "Play the previous track, optionally restarting if the 'restart' value is set"
 msgstr ""
@@ -1083,7 +1071,7 @@ msgid "Disc Number"
 msgstr "Número de disco"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:197
-#: ../src/Clients/Nereid/Nereid/ViewContainer.cs:142
+#: ../src/Clients/Nereid/Nereid/ViewContainer.cs:143
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:113
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:179
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:78
@@ -1257,6 +1245,12 @@ msgid "Album Artist"
 msgstr "Artista do álbum"
 
 #: ../src/Clients/Nereid/Nereid/ViewContainer.cs:141
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:93
+#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:194
+msgid "Composer"
+msgstr "Compositor"
+
+#: ../src/Clients/Nereid/Nereid/ViewContainer.cs:142
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:98
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:187
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:366
@@ -1265,7 +1259,7 @@ msgid "Genre"
 msgstr "Xénero"
 
 #. Translators: noun
-#: ../src/Clients/Nereid/Nereid/ViewContainer.cs:143
+#: ../src/Clients/Nereid/Nereid/ViewContainer.cs:144
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:216
 msgid "Comment"
 msgstr "Comentario"
@@ -1359,7 +1353,6 @@ msgid "_Jump to Playing Item"
 msgstr "_Saltar ao elemento en reprodución"
 
 #: ../src/Core/Banshee.Core/Banshee.Collection/YearInfo.cs:38
-#| msgid "Unknown error"
 msgid "Unknown Year"
 msgstr "Ano descoñecido"
 
@@ -1372,7 +1365,6 @@ msgstr "{0} ({1}:{2:00})"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseAlbumArtistListModel.cs:76
 #, csharp-format
-#| msgid "All Artists ({0})"
 msgid "All Album Artists ({0})"
 msgstr "Todos os artistas do álbum ({0})"
 
@@ -1398,7 +1390,6 @@ msgstr "Valor"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseYearListModel.cs:66
 #, csharp-format
-#| msgid "All Genres ({0})"
 msgid "All Years ({0})"
 msgstr "Todo os anos ({0})"
 
@@ -1626,11 +1617,6 @@ msgstr "Artista inicial do álbum"
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:201
 msgid "Conductor"
 msgstr "Director"
-
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:93
-#: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:194
-msgid "Composer"
-msgstr "Compositor"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:103
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:94
@@ -1883,8 +1869,6 @@ msgid "Sync _metadata between library and files"
 msgstr "Sincronizar _metadatos entre a biblioteca e os ficheiros"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:50
-#| msgid ""
-#| "Enable this option to save rating metadata inside supported audio files"
 msgid ""
 "Enable this option to have metadata in sync between your library and "
 "supported media files"
@@ -1897,8 +1881,6 @@ msgid "Sync _ratings between library and files"
 msgstr "Sincronizar _valoracións entre a biblioteca e os ficheiros"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:56
-#| msgid ""
-#| "Enable this option to save rating metadata inside supported audio files"
 msgid ""
 "Enable this option to have rating metadata synced between your library and "
 "supported audio files"
@@ -1911,8 +1893,6 @@ msgid "Sync play counts between library and files"
 msgstr "Sincronizar o número de reproducións entre a biblioteca e os ficheiros"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:62
-#| msgid ""
-#| "Enable this option to save playcount metadata inside supported audio files"
 msgid ""
 "Enable this option to have playcount metadata synced between your library "
 "and supported audio files"
@@ -1952,7 +1932,7 @@ msgstr ""
 "Algunhas características requiren unha conexión a Internet, como Last.fm ou "
 "a descarga de portadas"
 
-#: ../src/Core/Banshee.Services/Banshee.Playlist/AbstractPlaylistSource.cs:159
+#: ../src/Core/Banshee.Services/Banshee.Playlist/AbstractPlaylistSource.cs:153
 msgid "Search this playlist"
 msgstr "Buscar na lista de reprodución"
 
@@ -1970,8 +1950,8 @@ msgid "Delete Playlist"
 msgstr "Eliminar a lista de reprodución"
 
 #. TODO generate name based on the track selection, or begin editing it
-#: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:385
-#: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:391
+#: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:397
+#: ../src/Core/Banshee.Services/Banshee.Playlist/PlaylistSource.cs:403
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:176
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:135
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:462
@@ -2667,37 +2647,37 @@ msgstr "Erro"
 msgid "Details"
 msgstr "Detalles"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:155
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:156
 msgid "Errors"
 msgstr "Erros"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:208
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:213
 msgid "Sort Playlists By"
 msgstr "Ordenar listas de reprodución por"
 
 #. Translators: this is a noun, referring to the harddisk
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:217
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:223
 msgid "Drive"
 msgstr "Unidade"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:241
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:247
 msgid "File Organization"
 msgstr "Organización dos ficheiros"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:242
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:248
 msgid "Folder hie_rarchy"
 msgstr "_Xerarquía do cartafol"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:243
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:249
 msgid "File _name"
 msgstr "_Nome de ficheiro"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:673
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:701
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "Engadindo {0} de{1} a {2}"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:692
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:720
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "Eliminando {0} de{1} desde {2}"
@@ -2948,13 +2928,17 @@ msgstr "Extraordinaria xestión e reprodución multimedia"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/AboutDialog.cs:98
 #, csharp-format
+#| msgid ""
+#| "Copyright © 2005–{0} Novell, Inc.\n"
+#| "Copyright © 2005–{0} Others\n"
+#| "Copyright © 2005 Aaron Bockover"
 msgid ""
 "Copyright © 2005–{0} Novell, Inc.\n"
-"Copyright © 2005–{0} Others\n"
+"Copyright © 2005–{1} Others\n"
 "Copyright © 2005 Aaron Bockover"
 msgstr ""
 "Copyright © 2005–{0} Novell, Inc.\n"
-"Copyright © 2005–{0} Others\n"
+"Copyright © 2005–{1} Outros\n"
 "Copyright © 2005 Aaron Bockover"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/AboutDialog.cs:104
@@ -4141,7 +4125,6 @@ msgid "Create and save"
 msgstr "Crear e gardar"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:96
-#| msgid "Browser on Left"
 msgid "Browser Content"
 msgstr "Contido do examinador"
 
@@ -4150,7 +4133,6 @@ msgid "Configure the filters available in the browser"
 msgstr "Configurar os filtros dispoñíbeis no examinador"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:102
-#| msgid "Show this help"
 msgid "Show Artist Filter"
 msgstr "Mostrar filtro de artistas"
 
@@ -4159,17 +4141,14 @@ msgid "Show a list of artists to filter by"
 msgstr "Mostrar unha lista de artistas polos que filtrar"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:107
-#| msgid "Sort Track Artist:"
 msgid "Show all Artists"
 msgstr "Mostrar todos os artistas"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:108
-#| msgid "Set all track artists to this value"
 msgid "Show all artists in the artist filter"
 msgstr "Mostrar todos os artistas no filtro de artistas"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:111
-#| msgid "Sort Album Artist:"
 msgid "Show Album Artists"
 msgstr "Mostrar artistas de álbum"
 
@@ -4178,7 +4157,6 @@ msgid "Show only album artists, not artists with only single tracks"
 msgstr "Mostrar só artistas de álbum, non artistas cunha sola pista"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:117
-#| msgid "Show the next track"
 msgid "Show Genre Filter"
 msgstr "Mostrar filtro de xéneros"
 
@@ -4222,6 +4200,19 @@ msgstr "Mostrar o examinador"
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:116
 msgid "Show or hide the artist/album browser"
 msgstr "Mostrar ou ocultar o examinador de artista/álbum"
+
+#: ../src/Core/Banshee.WebBrowser/Banshee.WebBrowser/NavigationControl.cs:156
+msgid ""
+"This page is blocked because it is probably not the one you are looking for!"
+msgstr ""
+"Esta páxina está bloqueada porque probabelmente non é a que está buscado!"
+
+#. Translators: {0} is the URL of the web page that was requested
+#: ../src/Core/Banshee.WebBrowser/Banshee.WebBrowser/NavigationControl.cs:158
+#, csharp-format
+#| msgid "The specified resource is invalid."
+msgid "The security certificate for {0} is invalid."
+msgstr "O certificado de seguranza para {0} non é válido."
 
 #: ../src/Core/Banshee.WebBrowser/Banshee.WebSource/WebBrowserShell.cs:121
 #, csharp-format
@@ -4549,7 +4540,6 @@ msgstr ""
 "Produciuse un erro ao inicializar a compatibilidade de dispositivos MTP"
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:83
-#| msgid "There was an error intializing MTP device support."
 msgid "There was an error initializing MTP device support."
 msgstr ""
 "Produciuse un erro ao inicializar a compatibilidade de dispositivos MTP."
@@ -4657,7 +4647,6 @@ msgid "Merge Discs..."
 msgstr "Unir discos..."
 
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:57
-#| msgid "Audiobooks"
 msgid "Go to Audiobooks"
 msgstr "Ir a Audiolibros"
 
@@ -4802,13 +4791,6 @@ msgid "Back"
 msgstr "Atrás"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:101
-#| msgid ""
-#| "iTunes® 7 introduced new compatibility issues and currently only works "
-#| "with other iTunes® 7 clients.\n"
-#| "\n"
-#| "No third-party clients can connect to iTunes® music shares anymore. This "
-#| "is an intentional limitation by Apple in iTunes® 7 and we apologize for "
-#| "the unfortunate inconvenience."
 msgid ""
 "iTunes® 7 introduced new compatibility issues and currently only works with "
 "other iTunes® 7 clients.\n"
@@ -4849,7 +4831,6 @@ msgid "Try connecting again"
 msgstr "Tente conectar de novo"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:139
-#| msgid "The music share is hosted by iTunes® 7"
 msgid "The music share is hosted by iTunes® 7 or newer"
 msgstr "A compartición de música está albergada en iTunes® 7 ou superior"
 
@@ -4881,11 +4862,11 @@ msgstr "Iniciar sesión"
 msgid "Connecting to {0}"
 msgstr "Conectado a {0}"
 
-#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:187
+#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:185
 msgid "Add Remote DAAP Server"
 msgstr "Engadir servidor remoto DAAP"
 
-#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:188
+#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:186
 msgid "Add a new remote DAAP server"
 msgstr "Engadir un novo servidor remoto DAAP"
 
@@ -5698,29 +5679,29 @@ msgstr "Descrición:"
 msgid "Rating:"
 msgstr "Puntuación:"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:125
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:129
 msgid "_Last.fm"
 msgstr "_Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:126
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:130
 msgid "Configure the Audioscrobbler plugin"
 msgstr "Configurar o engadido de Audioscrobbler"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:129
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:133
 msgid "Visit _User Profile Page"
 msgstr "Visitar a páxina do perfil de _usuario"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:130
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:134
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:164
 msgid "Visit Your Last.fm Profile Page"
 msgstr "Visitar a páxina do seu perfil de Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:135
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:139
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:91
 msgid "_Enable Song Reporting"
 msgstr "_Activar o informe de cancións"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:136
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:140
 msgid "Enable song reporting"
 msgstr "Activar o informe de cancións"
 
@@ -6350,7 +6331,6 @@ msgstr "Importar ‟{0}”"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc/DiscSource.cs:171
 #, csharp-format
-#| msgid "Could not disconnect {0}: {1}"
 msgid "Could not eject {0}: {1}"
 msgstr "Non foi posíbel expulsar {0}: {1}"
 
@@ -6367,7 +6347,6 @@ msgid "Dvd"
 msgstr "DVD"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:63
-#| msgid "Preferences"
 msgid "DVD Preferences"
 msgstr "Preferencias de DVD"
 
@@ -6863,7 +6842,6 @@ msgid "Track Preview"
 msgstr "Previsualización de pista"
 
 #: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPContainerSource.cs:42
-#| msgid "Shared Music"
 msgid "Shared Media"
 msgstr "Medios compartidos"
 
@@ -7084,7 +7062,7 @@ msgstr "Gardar e iniciar sesión"
 msgid "Authorize for Last.fm"
 msgstr "Autorizar para Last.fm"
 
-#: ../src/Libraries/Lastfm/Lastfm/AudioscrobblerConnection.cs:449
+#: ../src/Libraries/Lastfm/Lastfm/AudioscrobblerConnection.cs:450
 msgid ""
 "Last.fm username is invalid or Banshee is not authorized to access your "
 "account."
