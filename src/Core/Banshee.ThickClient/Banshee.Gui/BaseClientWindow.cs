@@ -196,14 +196,17 @@ namespace Banshee.Gui
 
         protected virtual void UpdateTitle ()
         {
+            string media_player = Catalog.GetString ("Banshee Media Player");
+
             TrackInfo track = ServiceManager.PlayerEngine.CurrentTrack;
             if (track != null) {
                 // Translators: this is the window title when a track is playing
                 //              {0} is the track title, {1} is the artist name
-                Title = String.Format (Catalog.GetString ("{0} by {1}"),
+                string track_artist = String.Format (Catalog.GetString ("{0} by {1}"),
                     track.DisplayTrackTitle, track.DisplayArtistName);
+                Title = String.Format ("{0} - {1}", track_artist, media_player);
             } else {
-                Title = Catalog.GetString ("Banshee Media Player");
+                Title = media_player;
             }
 
             OnTitleChanged ();
