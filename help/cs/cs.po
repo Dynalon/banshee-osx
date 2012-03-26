@@ -2,13 +2,13 @@
 # Copyright (C) 2011 banshee's COPYRIGHT HOLDER
 # This file is distributed under the same license as the banshee package.
 #
-# Marek Černocký <marek@manet.cz>, 2011.
+# Marek Černocký <marek@manet.cz>, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: banshee master\n"
-"POT-Creation-Date: 2011-05-17 11:46+0000\n"
-"PO-Revision-Date: 2011-05-15 19:29+0200\n"
+"POT-Creation-Date: 2012-02-09 05:55+0000\n"
+"PO-Revision-Date: 2012-03-26 09:54+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -1297,9 +1297,10 @@ msgid ""
 "To get the most out of Last.fm, you will want to create a Last.fm profile. "
 "Visit <link href=\"http://www.last.fm/join\">http://www.last.fm/join</link> "
 "to create an account or choose <guiseq><gui>Edit</gui><gui>Preferences</"
-"gui></guiseq> from the Banshee menu. Then press the <gui>Source Specific</"
-"gui> tab and press the <gui>Source</gui> drop down menu and choose <gui>Last."
-"fm</gui> and select the <em>Sign up for Last.fm</em> link."
+"gui></guiseq> from the Banshee menu. Once in the preferences select the "
+"<gui>Source Specific</gui> tab, press the <gui>Source</gui> drop down menu, "
+"choose <gui>Last.fm</gui> and finally select the <em>Sign up for Last.fm</"
+"em> link."
 msgstr ""
 "Chcete-li získat z Last.fm co nejvíce, měli byste si založit profil Last.fm. "
 "Pro vytvoření profilu navštivte <link href=\"http://www.last.fm/join"
@@ -1336,30 +1337,35 @@ msgstr "Povolení oznamování skladeb z Last.fm"
 
 #: C/lastfm.page:59(p)
 msgid ""
-"After you have successfully linked Banshee to your Last.fm profile, to "
-"enable Banshee to report the songs to your Last.fm profile, in the "
-"<gui>Source Specific</gui> tab in Banshee's preferences, press the "
-"<gui>Enable Song Reporting</gui> checkbox. If you have an active internet "
-"connection, Banshee will now send Last.fm information regarding the songs "
-"you play. To view your play history, visit your profile on the Last.fm "
-"website. Last.fm will automatically update your music metadata if any of "
-"your artist, song title or album information is incorrect."
+"After you have successfully linked Banshee to your Last.fm profile you must "
+"ensure that you have enabled Banshee to report your songs. To enable Banshee "
+"to report the songs to your Last.fm profile go to Banshee's preferences, "
+"select the <gui>Source Specific</gui> tab, select <gui>Last.fm</gui> from "
+"the dropdown, and press the <gui>Enable Song Reporting</gui> checkbox. If "
+"you have an active internet connection Banshee will now send Last.fm "
+"information regarding the songs you play. To view your play history visit "
+"your profile on the Last.fm website. Last.fm will automatically update your "
+"music metadata if any of your artist, song title, or album information is "
+"incorrect (although we recommend that you use the Metadata Fixer extension "
+"to correct your files instead)."
 msgstr ""
-"Když máte přehrávač Banshee úspěšně propojený s profilem Last.fm a chcete "
-"Banshee povolit oznamování skladeb do svého profilu Last.fm, zaškrtněte "
-"políčko <gui>Povolit oznamování skladeb</gui> na kartě <gui>Dané zdrojem</"
-"gui> v předvolbách. V případě, že máte aktivní internetové připojení, bude "
-"od teď přehrávač Banshee zasílat na Last.fm informace o skladbách, které "
-"přehráváte. Pokud si chcete historii přehrávání prohlédnout, navštivte svůj "
-"profil na webových stránkách Last.fm. Když bude některý umělec, název "
-"skladby nebo název alba nesprávný, Last.fm vaše hudební metadata automaticky "
-"aktualizuje."
+"Když máte přehrávač Banshee úspěšně propojený s profilem Last.fm, ujistěte "
+"se, že jste v Banshee povolili oznamování svých skladeb.\n"
+"Pro oznamování skladeb do svého profilu Last.fm přejděte v předvolbách na "
+"kartu <gui>Dané zdrojem</gui>, v rozbalovacím seznamu vyberte <gui>Last.fm</"
+"gui> a zaškrtněte políčko <gui>Povolit oznamování skladeb</gui>. V případě, "
+"že máte aktivní internetové připojení, bude od teď přehrávač Banshee zasílat "
+"na Last.fm informace o skladbách, které přehráváte. Pokud si chcete historii "
+"přehrávání prohlédnout, navštivte svůj profil na webových stránkách Last.fm. "
+"Když bude některý umělec, název skladby nebo název alba nesprávný, Last.fm "
+"vaše hudební metadata automaticky aktualizuje (místo toho ale pro opravy "
+"souborů spíše doporučujeme rozšíření Opravář metadat)."
 
-#: C/lastfm.page:72(title)
+#: C/lastfm.page:75(title)
 msgid "Listen to Last.fm Radio"
 msgstr "Poslech rádia Last.fm"
 
-#: C/lastfm.page:73(p)
+#: C/lastfm.page:76(p)
 msgid ""
 "Last.fm radio is free for residents of the United States, United Kingdom and "
 "Germany. Residents of other countries will have to pay for a premium account "
@@ -1373,7 +1379,7 @@ msgstr ""
 "prémiovým funkcím: poslech seznamů skladeb a stanic hudby, kterou mají rádi "
 "nebo si ji označili."
 
-#: C/lastfm.page:80(p)
+#: C/lastfm.page:83(p)
 msgid ""
 "In Banshee's sources pane on the left hand side, you will now have a Last.fm "
 "section, including your Last.fm radio stations. You will need an active "
@@ -2101,4 +2107,3 @@ msgstr "<gui>Zveřejněno</gui>: (datum, kdy byl díl zveřejněn nebo vydán)"
 #: C/index.page:0(None)
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>"
-
