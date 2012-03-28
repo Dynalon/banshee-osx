@@ -256,6 +256,17 @@ namespace Banshee.Gui.Widgets
                 cr.MoveTo (text_alloc.X, text_alloc.Y);
                 cr.Color = TextColor;
                 PangoCairoHelper.ShowLayout (cr, first_line_layout);
+
+                // Render track rating
+                RatingRenderer rating_renderer = new RatingRenderer();
+                rating_renderer.Value = track.Rating;
+
+                int x = text_alloc.X + text_alloc.Width + 4 * rating_renderer.Xpad - rating_renderer.Width;
+                int y = text_alloc.Y + text_alloc.Height;
+                text_alloc.Height += rating_renderer.Height;
+
+                Gdk.Rectangle area = new Gdk.Rectangle (x, y, rating_renderer.Width, rating_renderer.Height);
+                rating_renderer.Render (cr, area, TextColor, false, false, rating_renderer.Value, 0.8, 0.8, 0.35);
             }
 
             if (!renderArtistAlbum) {
