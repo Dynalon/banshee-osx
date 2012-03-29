@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: banshee.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-24 20:18+0000\n"
+"POT-Creation-Date: 2012-03-18 19:17+0000\n"
 "PO-Revision-Date: 2012-02-26 19:56+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
@@ -939,8 +939,8 @@ msgstr "Opciones de control de reproducción"
 msgid ""
 "Play the next track, optionally restarting if the 'restart' value is set"
 msgstr ""
-"Reproduce la pista siguiente, reiniciando opcionalmente si el valor "
-"«restart» está establecido"
+"Reproduce la pista siguiente, reiniciando opcionalmente si el valor «restart» "
+"está establecido"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:165
 msgid ""
@@ -2030,12 +2030,12 @@ msgstr "horas"
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:68
 #: ../src/Hyena/Hyena.Gui/Hyena.Query.Gui/FileSizeQueryValueEntry.cs:63
 msgid "MB"
-msgstr "MiB"
+msgstr "MB"
 
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:69
 #: ../src/Hyena/Hyena.Gui/Hyena.Query.Gui/FileSizeQueryValueEntry.cs:64
 msgid "GB"
-msgstr "GiB"
+msgstr "GB"
 
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:76
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:363
@@ -2935,10 +2935,14 @@ msgid "Extraordinary Multimedia Management and Playback"
 msgstr "Extraordinaria gestión y reproducción multimedia"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/AboutDialog.cs:98
-#, csharp-format
+#, fuzzy, csharp-format
+#| msgid ""
+#| "Copyright © 2005–{0} Novell, Inc.\n"
+#| "Copyright © 2005–{0} Others\n"
+#| "Copyright © 2005 Aaron Bockover"
 msgid ""
 "Copyright © 2005–{0} Novell, Inc.\n"
-"Copyright © 2005–{0} Others\n"
+"Copyright © 2005–{1} Others\n"
 "Copyright © 2005 Aaron Bockover"
 msgstr ""
 "Copyright © 2005–{0} Novell, Inc.\n"
@@ -4209,6 +4213,18 @@ msgstr "Mostrar el examinador"
 msgid "Show or hide the artist/album browser"
 msgstr "Mostrar u ocultar el examinador de artista/álbum"
 
+#: ../src/Core/Banshee.WebBrowser/Banshee.WebBrowser/NavigationControl.cs:156
+msgid ""
+"This page is blocked because it is probably not the one you are looking for!"
+msgstr ""
+
+#. Translators: {0} is the URL of the web page that was requested
+#: ../src/Core/Banshee.WebBrowser/Banshee.WebBrowser/NavigationControl.cs:158
+#, fuzzy, csharp-format
+#| msgid "The specified resource is invalid."
+msgid "The security certificate for {0} is invalid."
+msgstr "El recurso especificado no es válido."
+
 #: ../src/Core/Banshee.WebBrowser/Banshee.WebSource/WebBrowserShell.cs:121
 #, csharp-format
 msgid "Loading {0}..."
@@ -4852,11 +4868,11 @@ msgstr "Iniciar sesión"
 msgid "Connecting to {0}"
 msgstr "Conectando a {0}"
 
-#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:187
+#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:185
 msgid "Add Remote DAAP Server"
 msgstr "Añadir servidor DAAP remoto"
 
-#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:188
+#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:186
 msgid "Add a new remote DAAP server"
 msgstr "Añadir un nuevo servidor DAAP remoto"
 
@@ -6391,9 +6407,8 @@ msgid ""
 "The iTunes library refers to your music directory as \"{0}\" but Banshee was "
 "not able to infer the location of this directory. Please locate it."
 msgstr ""
-"La colección de iTunes indica que su carpeta de música es «{0}», pero "
-"Banshee no ha podido deducir la ubicación de esta carpeta. Por favor, "
-"localícela."
+"La colección de iTunes indica que su carpeta de música es «{0}», pero Banshee "
+"no ha podido deducir la ubicación de esta carpeta. Por favor, localícela."
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:74
 msgid "iTunes Media Player"
@@ -6836,7 +6851,6 @@ msgid "Track Preview"
 msgstr "Vista previa de la pista"
 
 #: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPContainerSource.cs:42
-#| msgid "Shared Music"
 msgid "Shared Media"
 msgstr "Medios compartidos"
 
@@ -6903,7 +6917,7 @@ msgstr "Nombre del ensamblaje"
 
 #: ../src/Hyena/Hyena.Gui/Hyena.Query.Gui/FileSizeQueryValueEntry.cs:62
 msgid "KB"
-msgstr "KiB"
+msgstr "KB"
 
 #: ../src/Hyena/Hyena.Gui/Hyena.Query.Gui/QueryBox.cs:86
 msgid "Condition:"
@@ -7057,7 +7071,7 @@ msgstr "Guardar e iniciar sesión"
 msgid "Authorize for Last.fm"
 msgstr "Autorizar para Last.fm"
 
-#: ../src/Libraries/Lastfm/Lastfm/AudioscrobblerConnection.cs:449
+#: ../src/Libraries/Lastfm/Lastfm/AudioscrobblerConnection.cs:450
 msgid ""
 "Last.fm username is invalid or Banshee is not authorized to access your "
 "account."
