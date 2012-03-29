@@ -51,7 +51,7 @@ namespace Banshee.Lastfm.Audioscrobbler
     {
         private readonly TimeSpan MAXIMUM_TRACK_STARTTIME_IN_FUTURE = TimeSpan.FromDays (180);
 
-        internal class QueuedTrack
+        internal class QueuedTrack : IQueuedTrack
         {
             private static DateTime epoch = DateTimeUtil.LocalUnixEpoch.ToUniversalTime ();
 
@@ -141,7 +141,7 @@ namespace Banshee.Lastfm.Audioscrobbler
             string track_auth = String.Empty;
         }
 
-        List<QueuedTrack> queue;
+        List<IQueuedTrack> queue;
         string xml_path;
         bool dirty;
 
@@ -151,7 +151,7 @@ namespace Banshee.Lastfm.Audioscrobbler
         {
             string xml_dir_path = Path.Combine (Hyena.Paths.ExtensionCacheRoot, "lastfm");
             xml_path = Path.Combine (xml_dir_path, "audioscrobbler-queue.xml");
-            queue = new List<QueuedTrack> ();
+            queue = new List<IQueuedTrack> ();
 
             if (!Directory.Exists(xml_dir_path)) {
                 Directory.CreateDirectory (xml_dir_path);
@@ -256,43 +256,10 @@ namespace Banshee.Lastfm.Audioscrobbler
             }
         }
 
-        public string GetTransmitInfo (out int numtracks)
+        public List<IQueuedTrack> GetTransmitInfo ()
         {
-            StringBuilder sb = new StringBuilder ();
-
-            int i;
-            for (i = 0; i < queue.Count; i ++) {
-                /* Last.fm 1.2 can handle up to 50 songs in one request */
-                if (i == 49) break;
-
-                QueuedTrack track = (QueuedTrack) queue[i];
-
-                string str_track_number = String.Empty;
-                if (track.TrackNumber != 0)
-                    str_track_number = track.TrackNumber.ToString();
-
-                string source = "P"; /* chosen by user */
-                if (track.TrackAuth.Length != 0) {
-                    // from last.fm
-                    source = "L" + track.TrackAuth;
-                }
-
-                sb.AppendFormat (
-                    "&a[{9}]={0}&t[{9}]={1}&i[{9}]={2}&o[{9}]={3}&r[{9}]={4}&l[{9}]={5}&b[{9}]={6}&n[{9}]={7}&m[{9}]={8}",
-                    HttpUtility.UrlEncode (track.Artist),
-                    HttpUtility.UrlEncode (track.Title),
-                    track.StartTime.ToString (),
-                    source,
-                    ""  /* rating: L/B/S */,
-                    track.Duration.ToString (),
-                    HttpUtility.UrlEncode (track.Album),
-                    str_track_number,
-                    track.MusicBrainzId,
-                    i);
-            }
-
-            numtracks = i;
-            return sb.ToString ();
+            /* Last.fm can handle up to 50 songs in one request */
+            return queue.GetRange (0, Math.Min (queue.Count, 50));
         }
 
         public void Add (object track, DateTime started_at)
@@ -346,7 +313,7 @@ namespace Banshee.Lastfm.Audioscrobbler
             }
         }
 
-        private bool IsInvalidQueuedTrack (QueuedTrack track)
+        private bool IsInvalidQueuedTrack (IQueuedTrack track)
         {
             DateTime trackStartTime = DateTimeUtil.FromTimeT (track.StartTime);
 
