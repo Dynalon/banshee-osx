@@ -41,7 +41,7 @@ namespace Banshee.Gui.Widgets
 {
     public class LargeTrackInfoDisplay : TrackInfoDisplay
     {
-        private Gdk.Rectangle text_alloc;
+        private Gdk.Rectangle track_info_alloc;
         private Dictionary<ImageSurface, Surface> surfaces = new Dictionary<ImageSurface, Surface> ();
         private Pango.Layout first_line_layout;
         private Pango.Layout second_line_layout;
@@ -178,7 +178,7 @@ namespace Banshee.Gui.Widgets
             return surface;
         }
 
-        protected override void RenderTrackInfo (Context cr, TrackInfo track, bool renderTrack, bool renderArtistAlbum)
+        protected override void RenderTrackInfo (Context cr, TrackInfo track, bool render_track, bool render_artist_album)
         {
             if (track == null) {
                 return;
@@ -244,40 +244,42 @@ namespace Banshee.Gui.Widgets
             third_line_layout.SetMarkup (third_line);
             third_line_layout.GetPixelSize (out tl_width, out tl_height);
 
-            text_alloc.X = alloc.X;
-            text_alloc.Width = width;
-            text_alloc.Height = fl_height + sl_height + tl_height;
-            text_alloc.Y = alloc.Y + (ArtworkSizeRequest - text_alloc.Height) / 2;
+            track_info_alloc.X = alloc.X;
+            track_info_alloc.Width = width;
+            track_info_alloc.Height = fl_height + sl_height + tl_height;
+            track_info_alloc.Y = alloc.Y + (ArtworkSizeRequest - track_info_alloc.Height) / 2;
 
             // Render the layouts
             cr.Antialias = Cairo.Antialias.Default;
 
-            if (renderTrack) {
-                cr.MoveTo (text_alloc.X, text_alloc.Y);
+            if (render_track) {
+                cr.MoveTo (track_info_alloc.X, track_info_alloc.Y);
                 cr.Color = TextColor;
                 PangoCairoHelper.ShowLayout (cr, first_line_layout);
 
-                // Render track rating
-                RatingRenderer rating_renderer = new RatingRenderer();
-                rating_renderer.Value = track.Rating;
-
-                int x = text_alloc.X + text_alloc.Width + 4 * rating_renderer.Xpad - rating_renderer.Width;
-                int y = text_alloc.Y + text_alloc.Height;
-                text_alloc.Height += rating_renderer.Height;
-
-                Gdk.Rectangle area = new Gdk.Rectangle (x, y, rating_renderer.Width, rating_renderer.Height);
-                rating_renderer.Render (cr, area, TextColor, false, false, rating_renderer.Value, 0.8, 0.8, 0.35);
+                RenderTrackRating (cr, track);
             }
 
-            if (!renderArtistAlbum) {
-                return;
+            if (render_artist_album) {
+                cr.MoveTo (track_info_alloc.X, track_info_alloc.Y + fl_height);
+                PangoCairoHelper.ShowLayout (cr, second_line_layout);
+
+                cr.MoveTo (track_info_alloc.X, track_info_alloc.Y + fl_height + sl_height);
+                PangoCairoHelper.ShowLayout (cr, third_line_layout);
             }
+        }
 
-            cr.MoveTo (text_alloc.X, text_alloc.Y + fl_height);
-            PangoCairoHelper.ShowLayout (cr, second_line_layout);
+        private void RenderTrackRating (Cairo.Context cr, TrackInfo track)
+        {
+            RatingRenderer rating_renderer = new RatingRenderer ();
+            rating_renderer.Value = track.Rating;
 
-            cr.MoveTo (text_alloc.X, text_alloc.Y + fl_height + sl_height);
-            PangoCairoHelper.ShowLayout (cr, third_line_layout);
+            int x = track_info_alloc.X + track_info_alloc.Width + 4 * rating_renderer.Xpad - rating_renderer.Width;
+            int y = track_info_alloc.Y + track_info_alloc.Height;
+            track_info_alloc.Height += rating_renderer.Height;
+
+            Gdk.Rectangle area = new Gdk.Rectangle (x, y, rating_renderer.Width, rating_renderer.Height);
+            rating_renderer.Render (cr, area, TextColor, false, false, rating_renderer.Value, 0.8, 0.8, 0.35);
         }
 
         protected override void Invalidate ()
@@ -286,9 +288,9 @@ namespace Banshee.Gui.Widgets
                 QueueDraw ();
             } else {
                 Gdk.Rectangle alloc = RenderAllocation;
-                QueueDrawArea (text_alloc.X, text_alloc.Y, text_alloc.Width, text_alloc.Height);
-                QueueDrawArea (alloc.X + text_alloc.Width + Spacing, alloc.Y,
-                    alloc.Width - text_alloc.Width - Spacing, alloc.Height);
+                QueueDrawArea (track_info_alloc.X, track_info_alloc.Y, track_info_alloc.Width, track_info_alloc.Height);
+                QueueDrawArea (alloc.X + track_info_alloc.Width + Spacing, alloc.Y,
+                    alloc.Width - track_info_alloc.Width - Spacing, alloc.Height);
             }
         }
 
