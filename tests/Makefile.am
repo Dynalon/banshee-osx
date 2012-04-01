@@ -15,6 +15,7 @@ TEST_ASSEMBLIES = \
 	Banshee.Core.dll \
 	Banshee.Gnome.dll \
 	Banshee.Services.dll \
+	Banshee.ThickClient.dll \
 	Banshee.Fixup.dll \
 	Banshee.AmazonMp3.exe \
 	Banshee.Dap.Mtp.dll

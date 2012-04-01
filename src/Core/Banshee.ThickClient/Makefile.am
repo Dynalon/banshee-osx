@@ -95,6 +95,7 @@ SOURCES =  \
 	Banshee.Gui.Widgets/PlaylistMenuItem.cs \
 	Banshee.Gui.Widgets/RepeatActionButton.cs \
 	Banshee.Gui.Widgets/TaskStatusIcon.cs \
+	Banshee.Gui.Widgets/Tests/TrackInfoDisplayTests.cs \
 	Banshee.Gui.Widgets/TitledList.cs \
 	Banshee.Gui.Widgets/TrackInfoDisplay.cs \
 	Banshee.Gui.Widgets/UserJobTile.cs \

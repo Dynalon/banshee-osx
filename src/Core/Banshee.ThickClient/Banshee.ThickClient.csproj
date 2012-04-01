@@ -307,6 +307,7 @@
     <Compile Include="Banshee.Gui\IGlobalUIActions.cs" />
     <Compile Include="Banshee.Gui\PlaybackSubtitleActions.cs" />
     <Compile Include="Banshee.Collection.Gui\YearListView.cs" />
+    <Compile Include="Banshee.Gui.Widgets\Tests\TrackInfoDisplayTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -325,4 +326,7 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="Banshee.Gui.Widgets\Tests\" />
+  </ItemGroup>
 </Project>
