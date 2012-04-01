@@ -540,7 +540,7 @@ namespace Banshee.Gui.Widgets
 
                 if (String.IsNullOrEmpty (by_from)) {
                     // simply: "Chicago Public Radio" or whatever the artist name is
-                    markup = GLib.Markup.EscapeText (radio_track.ParentTrack.ArtistName ?? Catalog.GetString ("Unknown Stream"));
+                    markup = GLib.Markup.EscapeText (radio_track.ParentTrack.ArtistName ?? Banshee.Streaming.RadioTrackInfo.UnknownStream);
                 } else {
                     // Translators: {0} and {1} are markup so ignore them, {2} is the name of the radio station
                     string on = MarkupFormat (Catalog.GetString ("{0}on{1} {2}"), radio_track.ParentTrack.TrackTitle);

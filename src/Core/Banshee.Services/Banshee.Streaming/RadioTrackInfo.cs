@@ -45,6 +45,7 @@ namespace Banshee.Streaming
 {
     public class RadioTrackInfo : TrackInfo
     {
+        public static readonly string UnknownStream = Catalog.GetString ("Unknown Stream");
 
 #region Static Helper Methods
 
