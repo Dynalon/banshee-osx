@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: banshee.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-03-18 19:17+0000\n"
-"PO-Revision-Date: 2012-02-26 19:56+0100\n"
+"POT-Creation-Date: 2012-03-29 16:15+0000\n"
+"PO-Revision-Date: 2012-04-01 18:36+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -630,7 +630,7 @@ msgstr "Reproductor multimedia"
 #: ../data/desktop-files/common.desktop.in.h:2
 #: ../src/Clients/Muinshee/Muinshee/PlayerInterface.cs:76
 #: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:107
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/BaseClientWindow.cs:206
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/BaseClientWindow.cs:199
 #: ../src/Extensions/Banshee.MiniMode/Banshee.MiniMode/MiniModeWindow.cs:60
 msgid "Banshee Media Player"
 msgstr "Reproductor multimedia Banshee"
@@ -939,8 +939,8 @@ msgstr "Opciones de control de reproducción"
 msgid ""
 "Play the next track, optionally restarting if the 'restart' value is set"
 msgstr ""
-"Reproduce la pista siguiente, reiniciando opcionalmente si el valor «restart» "
-"está establecido"
+"Reproduce la pista siguiente, reiniciando opcionalmente si el valor "
+"«restart» está establecido"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:165
 msgid ""
@@ -1675,12 +1675,12 @@ msgstr "Agrupación"
 #. Catalog.GetString ("Music Library")
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:60
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/MusicGroupSource.cs:39
-#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:57
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:49
 msgid "Music"
 msgstr "Música"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:66
-#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:60
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:52
 msgid "Search your music"
 msgstr "Buscar en su música"
 
@@ -1803,12 +1803,12 @@ msgid "Videos"
 msgstr "Vídeos"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:48
-#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:60
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:52
 msgid "Search your videos"
 msgstr "Buscar en sus vídeos"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:65
-#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:77
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:69
 msgid "Produced By"
 msgstr "Producido por"
 
@@ -2901,7 +2901,7 @@ msgstr "Lista de reproducción nueva"
 
 #. Translators: this is the window title when a track is playing
 #. {0} is the track title, {1} is the artist name
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/BaseClientWindow.cs:203
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/BaseClientWindow.cs:205
 #, csharp-format
 msgid "{0} by {1}"
 msgstr "{0} por {1}"
@@ -2935,7 +2935,7 @@ msgid "Extraordinary Multimedia Management and Playback"
 msgstr "Extraordinaria gestión y reproducción multimedia"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/AboutDialog.cs:98
-#, fuzzy, csharp-format
+#, csharp-format
 #| msgid ""
 #| "Copyright © 2005–{0} Novell, Inc.\n"
 #| "Copyright © 2005–{0} Others\n"
@@ -2946,7 +2946,7 @@ msgid ""
 "Copyright © 2005 Aaron Bockover"
 msgstr ""
 "Copyright © 2005–{0} Novell, Inc.\n"
-"Copyright © 2005–{0} Otros\n"
+"Copyright © 2005–{1} Otros\n"
 "Copyright © 2005 Aaron Bockover"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/AboutDialog.cs:104
@@ -4217,13 +4217,14 @@ msgstr "Mostrar u ocultar el examinador de artista/álbum"
 msgid ""
 "This page is blocked because it is probably not the one you are looking for!"
 msgstr ""
+"Esta página está bloqueada porque probablemente no es la que está buscando."
 
 #. Translators: {0} is the URL of the web page that was requested
 #: ../src/Core/Banshee.WebBrowser/Banshee.WebBrowser/NavigationControl.cs:158
-#, fuzzy, csharp-format
+#, csharp-format
 #| msgid "The specified resource is invalid."
 msgid "The security certificate for {0} is invalid."
-msgstr "El recurso especificado no es válido."
+msgstr "El certificado de seguridad para {0} no es válido."
 
 #: ../src/Core/Banshee.WebBrowser/Banshee.WebSource/WebBrowserShell.cs:121
 #, csharp-format
@@ -4433,7 +4434,7 @@ msgid "Audio"
 msgstr "Sonido"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapInfoBar.cs:69
-#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:57
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:49
 msgid "Video"
 msgstr "Vídeo"
 
@@ -6407,8 +6408,9 @@ msgid ""
 "The iTunes library refers to your music directory as \"{0}\" but Banshee was "
 "not able to infer the location of this directory. Please locate it."
 msgstr ""
-"La colección de iTunes indica que su carpeta de música es «{0}», pero Banshee "
-"no ha podido deducir la ubicación de esta carpeta. Por favor, localícela."
+"La colección de iTunes indica que su carpeta de música es «{0}», pero "
+"Banshee no ha podido deducir la ubicación de esta carpeta. Por favor, "
+"localícela."
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:74
 msgid "iTunes Media Player"
@@ -6850,11 +6852,11 @@ msgstr "Parar la monitorización SQL"
 msgid "Track Preview"
 msgstr "Vista previa de la pista"
 
-#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPContainerSource.cs:42
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPContainerSource.cs:39
 msgid "Shared Media"
 msgstr "Medios compartidos"
 
-#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPServerSource.cs:55
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPServerSource.cs:52
 msgid "UPnP Share"
 msgstr "Compartición UPnP"
 
