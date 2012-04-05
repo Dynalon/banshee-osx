@@ -1,11 +1,13 @@
 <Type Name="FunctionFunctionSet" FullName="Hyena.SExpEngine.FunctionFunctionSet">
   <TypeSignature Language="C#" Value="public class FunctionFunctionSet : Hyena.SExpEngine.FunctionSet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FunctionFunctionSet extends Hyena.SExpEngine.FunctionSet" />
   <AssemblyInfo>
     <AssemblyName>Hyena</AssemblyName>
     <AssemblyVersion>0.90.1.25402</AssemblyVersion>
     <AssemblyVersion>1.3.1.0</AssemblyVersion>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Hyena.SExpEngine.FunctionSet</BaseTypeName>
@@ -18,21 +20,35 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public FunctionFunctionSet ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="OnDefine">
       <MemberSignature Language="C#" Value="public virtual Hyena.SExpEngine.TreeNode OnDefine (Hyena.SExpEngine.TreeNode[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Hyena.SExpEngine.TreeNode OnDefine(class Hyena.SExpEngine.TreeNode[] args) cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Hyena.SExpEngine.Function(false, Mono.Cecil.CustomAttributeArgument[])</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Hyena.SExpEngine.TreeNode</ReturnType>
       </ReturnValue>
@@ -45,20 +61,22 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Attributes>
-        <Attribute>
-          <AttributeName>Hyena.SExpEngine.Function(false, System.Object[])</AttributeName>
-        </Attribute>
-      </Attributes>
     </Member>
     <Member MemberName="OnSet">
       <MemberSignature Language="C#" Value="public virtual Hyena.SExpEngine.TreeNode OnSet (Hyena.SExpEngine.TreeNode[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Hyena.SExpEngine.TreeNode OnSet(class Hyena.SExpEngine.TreeNode[] args) cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Hyena.SExpEngine.Function(false, Mono.Cecil.CustomAttributeArgument[])</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>Hyena.SExpEngine.TreeNode</ReturnType>
       </ReturnValue>
@@ -71,20 +89,17 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="VariableSet">
+      <MemberSignature Language="C#" Value="public static Hyena.SExpEngine.TreeNode VariableSet (Hyena.SExpEngine.EvaluatorBase evaluator, Hyena.SExpEngine.TreeNode var, Hyena.SExpEngine.TreeNode value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Hyena.SExpEngine.TreeNode VariableSet(class Hyena.SExpEngine.EvaluatorBase evaluator, class Hyena.SExpEngine.TreeNode var, class Hyena.SExpEngine.TreeNode value) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <Attributes>
-        <Attribute>
-          <AttributeName>Hyena.SExpEngine.Function(false, System.Object[])</AttributeName>
-        </Attribute>
-      </Attributes>
-    </Member>
-    <Member MemberName="VariableSet">
-      <MemberSignature Language="C#" Value="public static Hyena.SExpEngine.TreeNode VariableSet (Hyena.SExpEngine.EvaluatorBase evaluator, Hyena.SExpEngine.TreeNode var, Hyena.SExpEngine.TreeNode value);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>Hyena.SExpEngine.TreeNode</ReturnType>
       </ReturnValue>
@@ -101,15 +116,17 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="VariableSet">
+      <MemberSignature Language="C#" Value="public static Hyena.SExpEngine.TreeNode VariableSet (Hyena.SExpEngine.EvaluatorBase evaluator, Hyena.SExpEngine.TreeNode[] args, bool update);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Hyena.SExpEngine.TreeNode VariableSet(class Hyena.SExpEngine.EvaluatorBase evaluator, class Hyena.SExpEngine.TreeNode[] args, bool update) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="VariableSet">
-      <MemberSignature Language="C#" Value="public static Hyena.SExpEngine.TreeNode VariableSet (Hyena.SExpEngine.EvaluatorBase evaluator, Hyena.SExpEngine.TreeNode[] args, bool update);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>Hyena.SExpEngine.TreeNode</ReturnType>
       </ReturnValue>
@@ -126,11 +143,6 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
   </Members>
 </Type>

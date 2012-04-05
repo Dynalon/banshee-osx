@@ -1,8 +1,10 @@
 <Type Name="GenericToolItem&lt;T&gt;" FullName="Hyena.Widgets.GenericToolItem&lt;T&gt;">
   <TypeSignature Language="C#" Value="public class GenericToolItem&lt;T&gt; : Gtk.ToolItem where T : Widget" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GenericToolItem`1&lt;(class Gtk.Widget) T&gt; extends Gtk.ToolItem" />
   <AssemblyInfo>
     <AssemblyName>Hyena.Gui</AssemblyName>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="T">
@@ -23,9 +25,11 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public GenericToolItem (T widget);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(!T widget) cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="widget" Type="T" />
@@ -38,9 +42,11 @@
     </Member>
     <Member MemberName="Widget">
       <MemberSignature Language="C#" Value="public T Widget { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !T Widget" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>T</ReturnType>

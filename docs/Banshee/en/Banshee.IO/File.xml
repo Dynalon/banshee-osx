@@ -1,11 +1,13 @@
 <Type Name="File" FullName="Banshee.IO.File">
   <TypeSignature Language="C#" Value="public static class File" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit File extends System.Object" />
   <AssemblyInfo>
     <AssemblyName>Banshee.Core</AssemblyName>
     <AssemblyVersion>0.90.1.25775</AssemblyVersion>
     <AssemblyVersion>1.3.1.0</AssemblyVersion>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -40,6 +42,29 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public static void Copy (Hyena.SafeUri from, Hyena.SafeUri to, bool overwrite);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Copy(class Hyena.SafeUri from, class Hyena.SafeUri to, bool overwrite) cil managed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="from" Type="Hyena.SafeUri" />
+        <Parameter Name="to" Type="Hyena.SafeUri" />
+        <Parameter Name="overwrite" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="from">To be added.</param>
+        <param name="to">To be added.</param>
+        <param name="overwrite">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="Delete">
       <MemberSignature Language="C#" Value="public static void Delete (Banshee.Base.SafeUri uri);" />
       <MemberType>Method</MemberType>
@@ -59,6 +84,25 @@
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
       </AssemblyInfo>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public static void Delete (Hyena.SafeUri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Delete(class Hyena.SafeUri uri) cil managed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="Hyena.SafeUri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
     </Member>
     <Member MemberName="Exists">
       <MemberSignature Language="C#" Value="public static bool Exists (Banshee.Base.SafeUri uri);" />
@@ -81,6 +125,26 @@
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
       </AssemblyInfo>
     </Member>
+    <Member MemberName="Exists">
+      <MemberSignature Language="C#" Value="public static bool Exists (Hyena.SafeUri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Exists(class Hyena.SafeUri uri) cil managed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="Hyena.SafeUri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="GetModifiedTime">
       <MemberSignature Language="C#" Value="public static long GetModifiedTime (Banshee.Base.SafeUri uri);" />
       <MemberType>Method</MemberType>
@@ -94,6 +158,26 @@
       </ReturnValue>
       <Parameters>
         <Parameter Name="uri" Type="Banshee.Base.SafeUri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetModifiedTime">
+      <MemberSignature Language="C#" Value="public static long GetModifiedTime (Hyena.SafeUri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 GetModifiedTime(class Hyena.SafeUri uri) cil managed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="Hyena.SafeUri" />
       </Parameters>
       <Docs>
         <param name="uri">To be added.</param>
@@ -123,6 +207,26 @@
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
       </AssemblyInfo>
     </Member>
+    <Member MemberName="GetSize">
+      <MemberSignature Language="C#" Value="public static long GetSize (Hyena.SafeUri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 GetSize(class Hyena.SafeUri uri) cil managed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="Hyena.SafeUri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="Move">
       <MemberSignature Language="C#" Value="public static void Move (Banshee.Base.SafeUri from, Banshee.Base.SafeUri to);" />
       <MemberType>Method</MemberType>
@@ -145,6 +249,27 @@
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
       </AssemblyInfo>
     </Member>
+    <Member MemberName="Move">
+      <MemberSignature Language="C#" Value="public static void Move (Hyena.SafeUri from, Hyena.SafeUri to);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Move(class Hyena.SafeUri from, class Hyena.SafeUri to) cil managed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="from" Type="Hyena.SafeUri" />
+        <Parameter Name="to" Type="Hyena.SafeUri" />
+      </Parameters>
+      <Docs>
+        <param name="from">To be added.</param>
+        <param name="to">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="OpenRead">
       <MemberSignature Language="C#" Value="public static System.IO.Stream OpenRead (Banshee.Base.SafeUri uri);" />
       <MemberType>Method</MemberType>
@@ -165,6 +290,26 @@
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
       </AssemblyInfo>
+    </Member>
+    <Member MemberName="OpenRead">
+      <MemberSignature Language="C#" Value="public static System.IO.Stream OpenRead (Hyena.SafeUri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Stream OpenRead(class Hyena.SafeUri uri) cil managed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="Hyena.SafeUri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
     </Member>
     <Member MemberName="OpenWrite">
       <MemberSignature Language="C#" Value="public static System.IO.Stream OpenWrite (Banshee.Base.SafeUri uri, bool overwrite);" />
@@ -188,6 +333,28 @@
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
       </AssemblyInfo>
+    </Member>
+    <Member MemberName="OpenWrite">
+      <MemberSignature Language="C#" Value="public static System.IO.Stream OpenWrite (Hyena.SafeUri uri, bool overwrite);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Stream OpenWrite(class Hyena.SafeUri uri, bool overwrite) cil managed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="Hyena.SafeUri" />
+        <Parameter Name="overwrite" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="uri">To be added.</param>
+        <param name="overwrite">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
     </Member>
   </Members>
 </Type>

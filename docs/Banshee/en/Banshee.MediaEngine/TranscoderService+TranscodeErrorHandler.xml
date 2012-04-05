@@ -1,8 +1,10 @@
 <Type Name="TranscoderService+TranscodeErrorHandler" FullName="Banshee.MediaEngine.TranscoderService+TranscodeErrorHandler">
   <TypeSignature Language="C#" Value="public delegate void TranscoderService.TranscodeErrorHandler(TrackInfo track);" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed TranscoderService/TranscodeErrorHandler extends System.MulticastDelegate" />
   <AssemblyInfo>
     <AssemblyName>Banshee.Services</AssemblyName>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Delegate</BaseTypeName>

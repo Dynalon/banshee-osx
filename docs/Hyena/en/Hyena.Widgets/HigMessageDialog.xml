@@ -1,8 +1,10 @@
 <Type Name="HigMessageDialog" FullName="Hyena.Widgets.HigMessageDialog">
   <TypeSignature Language="C#" Value="public class HigMessageDialog : Gtk.Dialog" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HigMessageDialog extends Gtk.Dialog" />
   <AssemblyInfo>
     <AssemblyName>Hyena.Gui</AssemblyName>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Gtk.Dialog</BaseTypeName>
@@ -15,9 +17,11 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public HigMessageDialog (Gtk.Window parent, Gtk.DialogFlags flags, Gtk.MessageType type, Gtk.ButtonsType buttons, string header, string msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Gtk.Window parent, valuetype Gtk.DialogFlags flags, valuetype Gtk.MessageType type, valuetype Gtk.ButtonsType buttons, string header, string msg) cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="parent" Type="Gtk.Window" />
@@ -40,9 +44,11 @@
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public HigMessageDialog (Gtk.Window parent, Gtk.DialogFlags flags, Gtk.MessageType type, string header, string msg, string ok_caption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Gtk.Window parent, valuetype Gtk.DialogFlags flags, valuetype Gtk.MessageType type, string header, string msg, string ok_caption) cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="parent" Type="Gtk.Window" />
@@ -65,9 +71,11 @@
     </Member>
     <Member MemberName="AddButton">
       <MemberSignature Language="C#" Value="public void AddButton (string stock_id, Gtk.ResponseType response, bool isDefault);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddButton(string stock_id, valuetype Gtk.ResponseType response, bool isDefault) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -87,9 +95,11 @@
     </Member>
     <Member MemberName="AddCustomButton">
       <MemberSignature Language="C#" Value="public Gtk.Button AddCustomButton (string message, Gtk.ResponseType response, bool isDefault);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Gtk.Button AddCustomButton(string message, valuetype Gtk.ResponseType response, bool isDefault) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Gtk.Button</ReturnType>
@@ -109,10 +119,12 @@
       </Docs>
     </Member>
     <Member MemberName="Image">
-      <MemberSignature Language="C#" Value="public Gdk.Pixbuf Image { set; get; }" />
+      <MemberSignature Language="C#" Value="public Gdk.Pixbuf Image { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Gdk.Pixbuf Image" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Gdk.Pixbuf</ReturnType>
@@ -125,9 +137,11 @@
     </Member>
     <Member MemberName="LabelVBox">
       <MemberSignature Language="C#" Value="public Gtk.VBox LabelVBox { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Gtk.VBox LabelVBox" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Gtk.VBox</ReturnType>
@@ -140,9 +154,11 @@
     </Member>
     <Member MemberName="MessageLabel">
       <MemberSignature Language="C#" Value="public Gtk.Label MessageLabel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Gtk.Label MessageLabel" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Gtk.Label</ReturnType>
@@ -155,9 +171,11 @@
     </Member>
     <Member MemberName="RunHigConfirmation">
       <MemberSignature Language="C#" Value="public static Gtk.ResponseType RunHigConfirmation (Gtk.Window parent, Gtk.DialogFlags flags, Gtk.MessageType type, string header, string msg, string ok_caption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype Gtk.ResponseType RunHigConfirmation(class Gtk.Window parent, valuetype Gtk.DialogFlags flags, valuetype Gtk.MessageType type, string header, string msg, string ok_caption) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Gtk.ResponseType</ReturnType>
@@ -184,9 +202,11 @@
     </Member>
     <Member MemberName="RunHigMessageDialog">
       <MemberSignature Language="C#" Value="public static Gtk.ResponseType RunHigMessageDialog (Gtk.Window parent, Gtk.DialogFlags flags, Gtk.MessageType type, Gtk.ButtonsType buttons, string header, string msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype Gtk.ResponseType RunHigMessageDialog(class Gtk.Window parent, valuetype Gtk.DialogFlags flags, valuetype Gtk.MessageType type, valuetype Gtk.ButtonsType buttons, string header, string msg) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Gtk.ResponseType</ReturnType>

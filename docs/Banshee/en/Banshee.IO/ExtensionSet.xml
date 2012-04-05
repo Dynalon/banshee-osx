@@ -1,9 +1,11 @@
 <Type Name="ExtensionSet" FullName="Banshee.IO.ExtensionSet">
   <TypeSignature Language="C#" Value="public class ExtensionSet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExtensionSet extends System.Object" />
   <AssemblyInfo>
     <AssemblyName>Banshee.Core</AssemblyName>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -16,10 +18,12 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ExtensionSet (string[] extensions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] extensions) cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="extensions" Type="System.String[]">
@@ -38,10 +42,12 @@
     </Member>
     <Member MemberName="IsMatchingFile">
       <MemberSignature Language="C#" Value="public bool IsMatchingFile (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsMatchingFile(string path) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -58,10 +64,12 @@
     </Member>
     <Member MemberName="List">
       <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;string&gt; List { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;string&gt; List" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>

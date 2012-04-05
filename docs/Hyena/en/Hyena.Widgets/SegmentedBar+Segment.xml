@@ -1,10 +1,12 @@
 <Type Name="SegmentedBar+Segment" FullName="Hyena.Widgets.SegmentedBar+Segment">
   <TypeSignature Language="C#" Value="public class SegmentedBar.Segment" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit SegmentedBar/Segment extends System.Object" />
   <AssemblyInfo>
     <AssemblyName>Hyena.Gui</AssemblyName>
     <AssemblyVersion>1.3.1.0</AssemblyVersion>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -17,11 +19,13 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Segment (string title, double percent, Cairo.Color color);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string title, float64 percent, valuetype Cairo.Color color) cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="title" Type="System.String" />
@@ -38,11 +42,13 @@
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Segment (string title, double percent, Cairo.Color color, bool showInBar);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string title, float64 percent, valuetype Cairo.Color color, bool showInBar) cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="title" Type="System.String" />
@@ -60,12 +66,14 @@
       </Docs>
     </Member>
     <Member MemberName="Color">
-      <MemberSignature Language="C#" Value="public Cairo.Color Color { set; get; }" />
+      <MemberSignature Language="C#" Value="public Cairo.Color Color { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Cairo.Color Color" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Cairo.Color</ReturnType>
@@ -77,12 +85,14 @@
       </Docs>
     </Member>
     <Member MemberName="Percent">
-      <MemberSignature Language="C#" Value="public double Percent { set; get; }" />
+      <MemberSignature Language="C#" Value="public double Percent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Percent" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Double</ReturnType>
@@ -94,12 +104,14 @@
       </Docs>
     </Member>
     <Member MemberName="ShowInBar">
-      <MemberSignature Language="C#" Value="public bool ShowInBar { set; get; }" />
+      <MemberSignature Language="C#" Value="public bool ShowInBar { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowInBar" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -111,12 +123,14 @@
       </Docs>
     </Member>
     <Member MemberName="Title">
-      <MemberSignature Language="C#" Value="public string Title { set; get; }" />
+      <MemberSignature Language="C#" Value="public string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

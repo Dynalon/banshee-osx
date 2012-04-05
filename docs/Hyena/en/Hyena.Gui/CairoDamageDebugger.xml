@@ -1,8 +1,10 @@
 <Type Name="CairoDamageDebugger" FullName="Hyena.Gui.CairoDamageDebugger">
   <TypeSignature Language="C#" Value="public static class CairoDamageDebugger" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit CairoDamageDebugger extends System.Object" />
   <AssemblyInfo>
     <AssemblyName>Hyena.Gui</AssemblyName>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -15,9 +17,11 @@
   <Members>
     <Member MemberName="RenderDamage">
       <MemberSignature Language="C#" Value="public static void RenderDamage (this Cairo.Context cr, Cairo.Rectangle damage);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RenderDamage(class Cairo.Context cr, valuetype Cairo.Rectangle damage) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -35,9 +39,11 @@
     </Member>
     <Member MemberName="RenderDamage">
       <MemberSignature Language="C#" Value="public static void RenderDamage (this Cairo.Context cr, Gdk.Rectangle damage);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RenderDamage(class Cairo.Context cr, valuetype Gdk.Rectangle damage) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -55,9 +61,11 @@
     </Member>
     <Member MemberName="RenderDamage">
       <MemberSignature Language="C#" Value="public static void RenderDamage (this Cairo.Context cr, double x, double y, double w, double h);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RenderDamage(class Cairo.Context cr, float64 x, float64 y, float64 w, float64 h) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

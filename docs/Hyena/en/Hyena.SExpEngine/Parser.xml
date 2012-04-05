@@ -1,11 +1,13 @@
 <Type Name="Parser" FullName="Hyena.SExpEngine.Parser">
   <TypeSignature Language="C#" Value="public class Parser" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Parser extends System.Object" />
   <AssemblyInfo>
     <AssemblyName>Hyena</AssemblyName>
     <AssemblyVersion>0.90.1.25402</AssemblyVersion>
     <AssemblyVersion>1.3.1.0</AssemblyVersion>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -18,21 +20,30 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Parser ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Debug">
+      <MemberSignature Language="C#" Value="public bool Debug { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Debug" />
+      <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Debug">
-      <MemberSignature Language="C#" Value="public bool Debug { set; get; }" />
-      <MemberType>Property</MemberType>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
@@ -41,15 +52,17 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public Hyena.SExpEngine.TreeNode Parse (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Hyena.SExpEngine.TreeNode Parse(class System.IO.Stream stream) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Parse">
-      <MemberSignature Language="C#" Value="public Hyena.SExpEngine.TreeNode Parse (System.IO.Stream stream);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>Hyena.SExpEngine.TreeNode</ReturnType>
       </ReturnValue>
@@ -62,15 +75,17 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public Hyena.SExpEngine.TreeNode Parse (System.IO.StreamReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Hyena.SExpEngine.TreeNode Parse(class System.IO.StreamReader reader) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Parse">
-      <MemberSignature Language="C#" Value="public Hyena.SExpEngine.TreeNode Parse (System.IO.StreamReader reader);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>Hyena.SExpEngine.TreeNode</ReturnType>
       </ReturnValue>
@@ -83,15 +98,17 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public Hyena.SExpEngine.TreeNode Parse (string input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Hyena.SExpEngine.TreeNode Parse(string input) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Parse">
-      <MemberSignature Language="C#" Value="public Hyena.SExpEngine.TreeNode Parse (string input);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>Hyena.SExpEngine.TreeNode</ReturnType>
       </ReturnValue>
@@ -104,11 +121,6 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
   </Members>
 </Type>

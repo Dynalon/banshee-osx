@@ -1,11 +1,13 @@
 <Type Name="QueryListNode" FullName="Hyena.Query.QueryListNode">
   <TypeSignature Language="C#" Value="public class QueryListNode : Hyena.Query.QueryNode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QueryListNode extends Hyena.Query.QueryNode" />
   <AssemblyInfo>
     <AssemblyName>Hyena</AssemblyName>
     <AssemblyVersion>0.90.1.25402</AssemblyVersion>
     <AssemblyVersion>1.3.1.0</AssemblyVersion>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Hyena.Query.QueryNode</BaseTypeName>
@@ -18,7 +20,14 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public QueryListNode (Hyena.Query.Keyword keyword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Hyena.Query.Keyword keyword) cil managed" />
       <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters>
         <Parameter Name="keyword" Type="Hyena.Query.Keyword" />
       </Parameters>
@@ -27,15 +36,17 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryListNode (Hyena.Query.Keyword keyword, Hyena.Query.QueryListNode parent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Hyena.Query.Keyword keyword, class Hyena.Query.QueryListNode parent) cil managed" />
+      <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public QueryListNode (Hyena.Query.Keyword keyword, Hyena.Query.QueryListNode parent);" />
-      <MemberType>Constructor</MemberType>
       <Parameters>
         <Parameter Name="keyword" Type="Hyena.Query.Keyword" />
         <Parameter Name="parent" Type="Hyena.Query.QueryListNode" />
@@ -46,15 +57,17 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="AddChild">
+      <MemberSignature Language="C#" Value="public void AddChild (Hyena.Query.QueryNode child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddChild(class Hyena.Query.QueryNode child) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="AddChild">
-      <MemberSignature Language="C#" Value="public void AddChild (Hyena.Query.QueryNode child);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -66,17 +79,14 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="AppendSql">
       <MemberSignature Language="C#" Value="public override void AppendSql (System.Text.StringBuilder sb, Hyena.Query.QueryFieldSet fieldSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AppendSql(class System.Text.StringBuilder sb, class Hyena.Query.QueryFieldSet fieldSet) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -94,9 +104,11 @@
     </Member>
     <Member MemberName="AppendUserQuery">
       <MemberSignature Language="C#" Value="public override void AppendUserQuery (System.Text.StringBuilder sb);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AppendUserQuery(class System.Text.StringBuilder sb) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -112,9 +124,11 @@
     </Member>
     <Member MemberName="AppendXml">
       <MemberSignature Language="C#" Value="public override void AppendXml (System.Xml.XmlDocument doc, System.Xml.XmlNode parent, Hyena.Query.QueryFieldSet fieldSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AppendXml(class System.Xml.XmlDocument doc, class System.Xml.XmlNode parent, class Hyena.Query.QueryFieldSet fieldSet) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -134,7 +148,14 @@
     </Member>
     <Member MemberName="ChildCount">
       <MemberSignature Language="C#" Value="public int ChildCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ChildCount" />
       <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -143,15 +164,17 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Children">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;Hyena.Query.QueryNode&gt; Children { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;class Hyena.Query.QueryNode&gt; Children" />
+      <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Children">
-      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;Hyena.Query.QueryNode&gt; Children { get; }" />
-      <MemberType>Property</MemberType>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.List&lt;Hyena.Query.QueryNode&gt;</ReturnType>
       </ReturnValue>
@@ -160,15 +183,17 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="GetLeftSibling">
       <MemberSignature Language="C#" Value="public Hyena.Query.QueryNode GetLeftSibling (Hyena.Query.QueryNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Hyena.Query.QueryNode GetLeftSibling(class Hyena.Query.QueryNode node) cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Hyena.Query.QueryNode</ReturnType>
       </ReturnValue>
@@ -181,15 +206,17 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="GetRightSibling">
       <MemberSignature Language="C#" Value="public Hyena.Query.QueryNode GetRightSibling (Hyena.Query.QueryNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Hyena.Query.QueryNode GetRightSibling(class Hyena.Query.QueryNode node) cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Hyena.Query.QueryNode</ReturnType>
       </ReturnValue>
@@ -202,15 +229,17 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="IndexOfChild">
+      <MemberSignature Language="C#" Value="public int IndexOfChild (Hyena.Query.QueryNode child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOfChild(class Hyena.Query.QueryNode child) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="IndexOfChild">
-      <MemberSignature Language="C#" Value="public int IndexOfChild (Hyena.Query.QueryNode child);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -223,15 +252,17 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="InsertChild">
+      <MemberSignature Language="C#" Value="public void InsertChild (int index, Hyena.Query.QueryNode child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertChild(int32 index, class Hyena.Query.QueryNode child) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="InsertChild">
-      <MemberSignature Language="C#" Value="public void InsertChild (int index, Hyena.Query.QueryNode child);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -245,15 +276,17 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public bool IsEmpty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEmpty" />
+      <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="IsEmpty">
-      <MemberSignature Language="C#" Value="public bool IsEmpty { get; }" />
-      <MemberType>Property</MemberType>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
@@ -262,15 +295,17 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Keyword">
+      <MemberSignature Language="C#" Value="public Hyena.Query.Keyword Keyword { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Hyena.Query.Keyword Keyword" />
+      <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Keyword">
-      <MemberSignature Language="C#" Value="public Hyena.Query.Keyword Keyword { set; get; }" />
-      <MemberType>Property</MemberType>
       <ReturnValue>
         <ReturnType>Hyena.Query.Keyword</ReturnType>
       </ReturnValue>
@@ -279,15 +314,17 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="LastChild">
+      <MemberSignature Language="C#" Value="public Hyena.Query.QueryNode LastChild { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Hyena.Query.QueryNode LastChild" />
+      <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="LastChild">
-      <MemberSignature Language="C#" Value="public Hyena.Query.QueryNode LastChild { get; }" />
-      <MemberType>Property</MemberType>
       <ReturnValue>
         <ReturnType>Hyena.Query.QueryNode</ReturnType>
       </ReturnValue>
@@ -296,15 +333,17 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="RemoveChild">
+      <MemberSignature Language="C#" Value="public void RemoveChild (Hyena.Query.QueryNode child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveChild(class Hyena.Query.QueryNode child) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="RemoveChild">
-      <MemberSignature Language="C#" Value="public void RemoveChild (Hyena.Query.QueryNode child);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -316,15 +355,17 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ReplaceChild">
+      <MemberSignature Language="C#" Value="public void ReplaceChild (Hyena.Query.QueryNode old_child, Hyena.Query.QueryNode new_child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReplaceChild(class Hyena.Query.QueryNode old_child, class Hyena.Query.QueryNode new_child) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ReplaceChild">
-      <MemberSignature Language="C#" Value="public void ReplaceChild (Hyena.Query.QueryNode old_child, Hyena.Query.QueryNode new_child);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -338,15 +379,17 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="TakeChildren">
+      <MemberSignature Language="C#" Value="public void TakeChildren (Hyena.Query.QueryListNode from);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TakeChildren(class Hyena.Query.QueryListNode from) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="TakeChildren">
-      <MemberSignature Language="C#" Value="public void TakeChildren (Hyena.Query.QueryListNode from);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -358,17 +401,14 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="Trim">
       <MemberSignature Language="C#" Value="public override Hyena.Query.QueryNode Trim ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class Hyena.Query.QueryNode Trim() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Hyena.Query.QueryNode</ReturnType>

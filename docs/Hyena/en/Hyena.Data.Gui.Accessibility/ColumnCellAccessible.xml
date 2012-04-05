@@ -1,8 +1,10 @@
 <Type Name="ColumnCellAccessible" FullName="Hyena.Data.Gui.Accessibility.ColumnCellAccessible">
   <TypeSignature Language="C#" Value="public class ColumnCellAccessible : Atk.Object, Atk.ComponentImplementor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ColumnCellAccessible extends Atk.Object implements class Atk.ComponentImplementor, class GLib.IWrapper" />
   <AssemblyInfo>
     <AssemblyName>Hyena.Gui</AssemblyName>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Atk.Object</BaseTypeName>
@@ -19,9 +21,11 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ColumnCellAccessible (object bound_object, Hyena.Data.Gui.ColumnCell cell, Hyena.Data.Gui.Accessibility.ICellAccessibleParent parent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object bound_object, class Hyena.Data.Gui.ColumnCell cell, class Hyena.Data.Gui.Accessibility.ICellAccessibleParent parent) cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="bound_object" Type="System.Object" />
@@ -38,9 +42,11 @@
     </Member>
     <Member MemberName="AddFocusHandler">
       <MemberSignature Language="C#" Value="public uint AddFocusHandler (Atk.FocusHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int32 AddFocusHandler(class Atk.FocusHandler handler) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.UInt32</ReturnType>
@@ -57,9 +63,11 @@
     </Member>
     <Member MemberName="Alpha">
       <MemberSignature Language="C#" Value="public double Alpha { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Alpha" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Double</ReturnType>
@@ -72,9 +80,11 @@
     </Member>
     <Member MemberName="bound_object">
       <MemberSignature Language="C#" Value="protected object bound_object;" />
+      <MemberSignature Language="ILAsm" Value=".field family object bound_object" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -86,9 +96,11 @@
     </Member>
     <Member MemberName="cell">
       <MemberSignature Language="C#" Value="protected Hyena.Data.Gui.ColumnCell cell;" />
+      <MemberSignature Language="ILAsm" Value=".field family class Hyena.Data.Gui.ColumnCell cell" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Hyena.Data.Gui.ColumnCell</ReturnType>
@@ -100,9 +112,11 @@
     </Member>
     <Member MemberName="Contains">
       <MemberSignature Language="C#" Value="public bool Contains (int x, int y, Atk.CoordType coordType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(int32 x, int32 y, valuetype Atk.CoordType coordType) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -123,9 +137,11 @@
     </Member>
     <Member MemberName="GetExtents">
       <MemberSignature Language="C#" Value="public void GetExtents (out int x, out int y, out int w, out int h, Atk.CoordType coordType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetExtents(int32 x, int32 y, int32 w, int32 h, valuetype Atk.CoordType coordType) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -149,9 +165,11 @@
     </Member>
     <Member MemberName="GetPosition">
       <MemberSignature Language="C#" Value="public void GetPosition (out int x, out int y, Atk.CoordType coordType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetPosition(int32 x, int32 y, valuetype Atk.CoordType coordType) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -171,9 +189,11 @@
     </Member>
     <Member MemberName="GetSize">
       <MemberSignature Language="C#" Value="public void GetSize (out int w, out int h);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetSize(int32 w, int32 h) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -191,9 +211,11 @@
     </Member>
     <Member MemberName="GrabFocus">
       <MemberSignature Language="C#" Value="public bool GrabFocus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GrabFocus() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -207,9 +229,11 @@
     </Member>
     <Member MemberName="OnGetIndexInParent">
       <MemberSignature Language="C#" Value="protected override int OnGetIndexInParent ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance int32 OnGetIndexInParent() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -223,9 +247,11 @@
     </Member>
     <Member MemberName="OnRefStateSet">
       <MemberSignature Language="C#" Value="protected override Atk.StateSet OnRefStateSet ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class Atk.StateSet OnRefStateSet() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Atk.StateSet</ReturnType>
@@ -239,9 +265,11 @@
     </Member>
     <Member MemberName="Redrawn">
       <MemberSignature Language="C#" Value="public virtual void Redrawn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Redrawn() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -254,9 +282,11 @@
     </Member>
     <Member MemberName="RefAccessibleAtPoint">
       <MemberSignature Language="C#" Value="public virtual Atk.Object RefAccessibleAtPoint (int x, int y, Atk.CoordType coordType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Atk.Object RefAccessibleAtPoint(int32 x, int32 y, valuetype Atk.CoordType coordType) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Atk.Object</ReturnType>
@@ -277,9 +307,11 @@
     </Member>
     <Member MemberName="RemoveFocusHandler">
       <MemberSignature Language="C#" Value="public void RemoveFocusHandler (uint handlerId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveFocusHandler(unsigned int32 handlerId) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -295,9 +327,11 @@
     </Member>
     <Member MemberName="SetExtents">
       <MemberSignature Language="C#" Value="public bool SetExtents (int x, int y, int w, int h, Atk.CoordType coordType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetExtents(int32 x, int32 y, int32 w, int32 h, valuetype Atk.CoordType coordType) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -322,9 +356,11 @@
     </Member>
     <Member MemberName="SetPosition">
       <MemberSignature Language="C#" Value="public bool SetPosition (int x, int y, Atk.CoordType coordType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetPosition(int32 x, int32 y, valuetype Atk.CoordType coordType) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -345,9 +381,11 @@
     </Member>
     <Member MemberName="SetSize">
       <MemberSignature Language="C#" Value="public bool SetSize (int w, int h);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetSize(int32 w, int32 h) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>

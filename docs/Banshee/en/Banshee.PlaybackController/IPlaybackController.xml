@@ -1,10 +1,12 @@
 <Type Name="IPlaybackController" FullName="Banshee.PlaybackController.IPlaybackController">
   <TypeSignature Language="C#" Value="public interface IPlaybackController : Banshee.PlaybackController.IBasicPlaybackController" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPlaybackController implements class Banshee.PlaybackController.IBasicPlaybackController" />
   <AssemblyInfo>
     <AssemblyName>Banshee.Services</AssemblyName>
     <AssemblyVersion>0.90.1.25404</AssemblyVersion>
     <AssemblyVersion>1.3.1.0</AssemblyVersion>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces>
     <Interface>
@@ -16,24 +18,59 @@
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
-    
-    
-    
     <Member MemberName="RepeatMode">
-      <MemberSignature Language="C#" Value="public Banshee.PlaybackController.PlaybackRepeatMode RepeatMode { set; get; }" />
+      <MemberSignature Language="C#" Value="public Banshee.PlaybackController.PlaybackRepeatMode RepeatMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Banshee.PlaybackController.PlaybackRepeatMode RepeatMode" />
       <MemberType>Property</MemberType>
-      <ReturnValue><ReturnType>Banshee.PlaybackController.PlaybackRepeatMode</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>1.3.1.0</AssemblyVersion><AssemblyVersion>1.4.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ShuffleMode">
-      <MemberSignature Language="C#" Value="public Banshee.PlaybackController.PlaybackShuffleMode ShuffleMode { set; get; }" />
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Banshee.PlaybackController.PlaybackRepeatMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShuffleMode">
+      <MemberSignature Language="C#" Value="public string ShuffleMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ShuffleMode" />
       <MemberType>Property</MemberType>
-      <ReturnValue><ReturnType>Banshee.PlaybackController.PlaybackShuffleMode</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>1.3.1.0</AssemblyVersion><AssemblyVersion>1.4.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="StopWhenFinished">
-      <MemberSignature Language="C#" Value="public bool StopWhenFinished { set; get; }" />
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StopWhenFinished">
+      <MemberSignature Language="C#" Value="public bool StopWhenFinished { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StopWhenFinished" />
       <MemberType>Property</MemberType>
-      <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>1.3.1.0</AssemblyVersion><AssemblyVersion>1.4.0.0</AssemblyVersion></AssemblyInfo></Member>
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
   </Members>
 </Type>

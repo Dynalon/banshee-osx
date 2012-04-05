@@ -1,11 +1,13 @@
 <Type Name="QueryValueEntry" FullName="Hyena.Query.Gui.QueryValueEntry">
   <TypeSignature Language="C#" Value="public abstract class QueryValueEntry : Gtk.HBox" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract QueryValueEntry extends Gtk.HBox" />
   <AssemblyInfo>
     <AssemblyName>Hyena.Gui</AssemblyName>
     <AssemblyVersion>0.90.1.25402</AssemblyVersion>
     <AssemblyVersion>1.3.1.0</AssemblyVersion>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Gtk.HBox</BaseTypeName>
@@ -18,21 +20,30 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public QueryValueEntry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="AddSubType">
+      <MemberSignature Language="C#" Value="public static void AddSubType (Type entry_type, Type query_value_type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddSubType(class System.Type entry_type, class System.Type query_value_type) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="AddSubType">
-      <MemberSignature Language="C#" Value="public static void AddSubType (Type entry_type, Type query_value_type);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -46,15 +57,17 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static Hyena.Query.Gui.QueryValueEntry Create (Hyena.Query.QueryValue qv);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Hyena.Query.Gui.QueryValueEntry Create(class Hyena.Query.QueryValue qv) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Create">
-      <MemberSignature Language="C#" Value="public static Hyena.Query.Gui.QueryValueEntry Create (Hyena.Query.QueryValue qv);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>Hyena.Query.Gui.QueryValueEntry</ReturnType>
       </ReturnValue>
@@ -67,15 +80,17 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="DefaultWidth">
+      <MemberSignature Language="C#" Value="protected int DefaultWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DefaultWidth" />
+      <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="DefaultWidth">
-      <MemberSignature Language="C#" Value="protected int DefaultWidth { get; }" />
-      <MemberType>Property</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -84,19 +99,16 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="GetValueType">
       <MemberSignature Language="C#" Value="public static Type GetValueType (Hyena.Query.Gui.QueryValueEntry entry);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetValueType(class Hyena.Query.Gui.QueryValueEntry entry) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Type</ReturnType>
@@ -112,8 +124,15 @@
       </Docs>
     </Member>
     <Member MemberName="QueryValue">
-      <MemberSignature Language="C#" Value="public abstract Hyena.Query.QueryValue QueryValue { set; get; }" />
+      <MemberSignature Language="C#" Value="public abstract Hyena.Query.QueryValue QueryValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Hyena.Query.QueryValue QueryValue" />
       <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Hyena.Query.QueryValue</ReturnType>
       </ReturnValue>
@@ -122,11 +141,6 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
   </Members>
 </Type>

@@ -1,10 +1,12 @@
 <Type Name="TimeSpanQueryValue" FullName="Hyena.Query.TimeSpanQueryValue">
   <TypeSignature Language="C#" Value="public class TimeSpanQueryValue : Hyena.Query.IntegerQueryValue" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TimeSpanQueryValue extends Hyena.Query.IntegerQueryValue" />
   <AssemblyInfo>
     <AssemblyName>Hyena</AssemblyName>
     <AssemblyVersion>1.3.1.0</AssemblyVersion>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Hyena.Query.IntegerQueryValue</BaseTypeName>
@@ -17,11 +19,13 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public TimeSpanQueryValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -31,9 +35,11 @@
     </Member>
     <Member MemberName="AppendXml">
       <MemberSignature Language="C#" Value="public override void AppendXml (System.Xml.XmlElement node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AppendXml(class System.Xml.XmlElement node) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -49,11 +55,13 @@
     </Member>
     <Member MemberName="DetermineFactor">
       <MemberSignature Language="C#" Value="protected void DetermineFactor ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void DetermineFactor() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -66,11 +74,13 @@
     </Member>
     <Member MemberName="factor">
       <MemberSignature Language="C#" Value="protected Hyena.Query.TimeFactor factor;" />
+      <MemberSignature Language="ILAsm" Value=".field family valuetype Hyena.Query.TimeFactor factor" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Hyena.Query.TimeFactor</ReturnType>
@@ -82,11 +92,13 @@
     </Member>
     <Member MemberName="Factor">
       <MemberSignature Language="C#" Value="public Hyena.Query.TimeFactor Factor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Hyena.Query.TimeFactor Factor" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Hyena.Query.TimeFactor</ReturnType>
@@ -99,11 +111,13 @@
     </Member>
     <Member MemberName="FactoredValue">
       <MemberSignature Language="C#" Value="public double FactoredValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 FactoredValue" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Double</ReturnType>
@@ -138,9 +152,11 @@
     </Member>
     <Member MemberName="FactorString">
       <MemberSignature Language="C#" Value="protected virtual string FactorString (Hyena.Query.TimeFactor factor, double count, bool translate);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string FactorString(valuetype Hyena.Query.TimeFactor factor, float64 count, bool translate) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -161,9 +177,11 @@
     </Member>
     <Member MemberName="LoadString">
       <MemberSignature Language="C#" Value="public override void LoadString (string val);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void LoadString(string val) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -179,11 +197,13 @@
     </Member>
     <Member MemberName="offset">
       <MemberSignature Language="C#" Value="protected double offset;" />
+      <MemberSignature Language="ILAsm" Value=".field family float64 offset" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Double</ReturnType>
@@ -195,11 +215,13 @@
     </Member>
     <Member MemberName="Offset">
       <MemberSignature Language="C#" Value="public virtual double Offset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Offset" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Double</ReturnType>
@@ -212,9 +234,11 @@
     </Member>
     <Member MemberName="OperatorSet">
       <MemberSignature Language="C#" Value="public override Hyena.Query.AliasedObjectSet&lt;Hyena.Query.Operator&gt; OperatorSet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Hyena.Query.AliasedObjectSet`1&lt;class Hyena.Query.Operator&gt; OperatorSet" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Hyena.Query.AliasedObjectSet&lt;Hyena.Query.Operator&gt;</ReturnType>
@@ -227,11 +251,13 @@
     </Member>
     <Member MemberName="ops">
       <MemberSignature Language="C#" Value="protected static Hyena.Query.AliasedObjectSet&lt;Hyena.Query.Operator&gt; ops;" />
+      <MemberSignature Language="ILAsm" Value=".field family static class Hyena.Query.AliasedObjectSet`1&lt;class Hyena.Query.Operator&gt; ops" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Hyena.Query.AliasedObjectSet&lt;Hyena.Query.Operator&gt;</ReturnType>
@@ -243,9 +269,11 @@
     </Member>
     <Member MemberName="ParseUserQuery">
       <MemberSignature Language="C#" Value="public override void ParseUserQuery (string input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ParseUserQuery(string input) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -261,9 +289,11 @@
     </Member>
     <Member MemberName="ParseXml">
       <MemberSignature Language="C#" Value="public override void ParseXml (System.Xml.XmlElement node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ParseXml(class System.Xml.XmlElement node) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -279,11 +309,13 @@
     </Member>
     <Member MemberName="SetRelativeValue">
       <MemberSignature Language="C#" Value="public void SetRelativeValue (double offset, Hyena.Query.TimeFactor factor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetRelativeValue(float64 offset, valuetype Hyena.Query.TimeFactor factor) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -301,11 +333,13 @@
     </Member>
     <Member MemberName="SetUserRelativeValue">
       <MemberSignature Language="C#" Value="public virtual void SetUserRelativeValue (double offset, Hyena.Query.TimeFactor factor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetUserRelativeValue(float64 offset, valuetype Hyena.Query.TimeFactor factor) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -323,9 +357,11 @@
     </Member>
     <Member MemberName="ToSql">
       <MemberSignature Language="C#" Value="public override string ToSql (Hyena.Query.Operator op);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToSql(class Hyena.Query.Operator op) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -342,9 +378,11 @@
     </Member>
     <Member MemberName="ToUserQuery">
       <MemberSignature Language="C#" Value="public override string ToUserQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToUserQuery() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -358,9 +396,11 @@
     </Member>
     <Member MemberName="Value">
       <MemberSignature Language="C#" Value="public override object Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -373,9 +413,11 @@
     </Member>
     <Member MemberName="XmlElementName">
       <MemberSignature Language="C#" Value="public override string XmlElementName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XmlElementName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

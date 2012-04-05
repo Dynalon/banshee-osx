@@ -1,6 +1,6 @@
 <Overview>
   <Assemblies>
-    <Assembly Name="Hyena" Version="1.5.0.0">
+    <Assembly Name="Hyena" Version="2.4.0.0">
       <Attributes>
         <Attribute>
           <AttributeName>System.Reflection.AssemblyCompany("Novell, Inc.")</AttributeName>
@@ -19,7 +19,7 @@
         </Attribute>
       </Attributes>
     </Assembly>
-    <Assembly Name="Hyena.Gui" Version="1.5.0.0">
+    <Assembly Name="Hyena.Gui" Version="2.4.0.0">
       <Attributes>
         <Attribute>
           <AttributeName>System.Reflection.AssemblyCompany("Novell, Inc.")</AttributeName>
@@ -49,6 +49,7 @@
       <Type Name="CryptoUtil" Kind="Class" />
       <Type Name="DateTimeUtil" Kind="Class" />
       <Type Name="EventArgs`1" DisplayName="EventArgs&lt;T&gt;" Kind="Class" />
+      <Type Name="EventExtensions" Kind="Class" />
       <Type Name="InvokeHandler" Kind="Delegate" />
       <Type Name="IUndoAction" Kind="Interface" />
       <Type Name="Log" Kind="Class" />
@@ -56,7 +57,9 @@
       <Type Name="LogEntryType" Kind="Enumeration" />
       <Type Name="LogNotifyArgs" Kind="Class" />
       <Type Name="LogNotifyHandler" Kind="Delegate" />
+      <Type Name="Paths" Kind="Class" />
       <Type Name="PlatformDetection" Kind="Class" />
+      <Type Name="SafeUri" Kind="Class" />
       <Type Name="StringUtil" Kind="Class" />
       <Type Name="ThreadAssist" Kind="Class" />
       <Type Name="Timer" Kind="Class" />
@@ -91,6 +94,7 @@
       <Type Name="ICacheableItem" Kind="Interface" />
       <Type Name="ICacheableModel" Kind="Interface" />
       <Type Name="ICareAboutView" Kind="Interface" />
+      <Type Name="IDataBinder" Kind="Interface" />
       <Type Name="IFilterable" Kind="Interface" />
       <Type Name="IListModel" Kind="Interface" />
       <Type Name="IListModel`1" DisplayName="IListModel&lt;T&gt;" Kind="Interface" />
@@ -102,6 +106,7 @@
       <Type Name="MemoryListModel`1" DisplayName="MemoryListModel&lt;T&gt;" Kind="Class" />
       <Type Name="ModelCache`1" DisplayName="ModelCache&lt;T&gt;" Kind="Class" />
       <Type Name="ModelSelection`1" DisplayName="ModelSelection&lt;T&gt;" Kind="Class" />
+      <Type Name="ObjectBinder" Kind="Class" />
       <Type Name="PropertyChangeEventArgs" Kind="Class" />
       <Type Name="PropertyChangeEventHandler" Kind="Delegate" />
       <Type Name="PropertyStore" Kind="Class" />
@@ -146,6 +151,10 @@
       <Type Name="ICellAccessibleParent" Kind="Interface" />
       <Type Name="ListViewAccessible`1" DisplayName="ListViewAccessible&lt;T&gt;" Kind="Class" />
     </Namespace>
+    <Namespace Name="Hyena.Data.Gui.Tests">
+      <Type Name="GridViewTestModule" Kind="Class" />
+      <Type Name="ListViewTestModule" Kind="Class" />
+    </Namespace>
     <Namespace Name="Hyena.Data.Query">
     </Namespace>
     <Namespace Name="Hyena.Data.Sqlite">
@@ -169,6 +178,15 @@
       <Type Name="SqliteModelProvider`1" DisplayName="SqliteModelProvider&lt;T&gt;" Kind="Class" />
       <Type Name="SqliteUtils" Kind="Class" />
       <Type Name="VirtualDatabaseColumnAttribute" Kind="Class" />
+    </Namespace>
+    <Namespace Name="Hyena.Downloader">
+      <Type Name="Buffer" Kind="Class" />
+      <Type Name="DownloadManager" Kind="Class" />
+      <Type Name="DownloadManagerJob" Kind="Class" />
+      <Type Name="HttpDownloader" Kind="Class" />
+      <Type Name="HttpDownloaderState" Kind="Class" />
+      <Type Name="HttpFileDownloader" Kind="Class" />
+      <Type Name="HttpStringDownloader" Kind="Class" />
     </Namespace>
     <Namespace Name="Hyena.Gui">
       <Type Name="ActionManager" Kind="Class" />
@@ -197,9 +215,32 @@
       <Type Name="WidgetAction`1" DisplayName="WidgetAction&lt;T&gt;" Kind="Delegate" />
     </Namespace>
     <Namespace Name="Hyena.Gui.Canvas">
+      <Type Name="Animation" Kind="Class" />
+      <Type Name="AnimationManager" Kind="Class" />
+      <Type Name="Brush" Kind="Class" />
+      <Type Name="CanvasHost" Kind="Class" />
+      <Type Name="CanvasItem" Kind="Class" />
+      <Type Name="CanvasItemCollection" Kind="Class" />
+      <Type Name="CanvasManager" Kind="Class" />
+      <Type Name="FixedPanel" Kind="Class" />
+      <Type Name="FontWeight" Kind="Enumeration" />
+      <Type Name="FpsCalculator" Kind="Class" />
+      <Type Name="ICanvasHost" Kind="Interface" />
+      <Type Name="Image" Kind="Class" />
+      <Type Name="ImageBrush" Kind="Class" />
+      <Type Name="MarginStyle" Kind="Class" />
+      <Type Name="Orientation" Kind="Enumeration" />
+      <Type Name="Panel" Kind="Class" />
       <Type Name="Point" Kind="Structure" />
+      <Type Name="Prelight" Kind="Class" />
       <Type Name="Rect" Kind="Structure" />
+      <Type Name="ShadowMarginStyle" Kind="Class" />
       <Type Name="Size" Kind="Structure" />
+      <Type Name="Slider" Kind="Class" />
+      <Type Name="StackPanel" Kind="Class" />
+      <Type Name="TestTile" Kind="Class" />
+      <Type Name="TextBlock" Kind="Class" />
+      <Type Name="TextWrap" Kind="Enumeration" />
       <Type Name="Thickness" Kind="Structure" />
     </Namespace>
     <Namespace Name="Hyena.Gui.Dialogs">
@@ -222,6 +263,7 @@
       <Type Name="Theme" Kind="Class" />
       <Type Name="ThemeContext" Kind="Class" />
       <Type Name="ThemeEngine" Kind="Class" />
+      <Type Name="ThemeTestModule" Kind="Class" />
     </Namespace>
     <Namespace Name="Hyena.Jobs">
       <Type Name="Job" Kind="Class" />
@@ -339,6 +381,7 @@
       <Type Name="ComplexMenuItem" Kind="Class" />
       <Type Name="EntryPopup" Kind="Class" />
       <Type Name="GenericToolItem`1" DisplayName="GenericToolItem&lt;T&gt;" Kind="Class" />
+      <Type Name="GrabHandle" Kind="Class" />
       <Type Name="HigMessageDialog" Kind="Class" />
       <Type Name="ImageButton" Kind="Class" />
       <Type Name="MenuButton" Kind="Class" />
@@ -365,10 +408,48 @@
   <ExtensionMethods>
     <ExtensionMethod>
       <Targets>
+        <Target Type="System.Object" />
+      </Targets>
+      <Member MemberName="SafeInvoke&lt;T&gt;">
+        <MemberSignature Language="C#" Value="public static void SafeInvoke&lt;T&gt; (this T event, object[] args) where T : class;" />
+        <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SafeInvoke&lt;class T&gt;(!!T event, object[] args) cil managed" />
+        <MemberType>ExtensionMethod</MemberType>
+        <ReturnValue>
+          <ReturnType>System.Void</ReturnType>
+        </ReturnValue>
+        <TypeParameters>
+          <TypeParameter Name="T">
+            <Constraints>
+              <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            </Constraints>
+          </TypeParameter>
+        </TypeParameters>
+        <Parameters>
+          <Parameter Name="event" Type="T" RefType="this" />
+          <Parameter Name="args" Type="System.Object[]">
+            <Attributes>
+              <Attribute>
+                <AttributeName>System.ParamArray</AttributeName>
+              </Attribute>
+            </Attributes>
+          </Parameter>
+        </Parameters>
+        <Docs>
+          <typeparam name="T">To be added.</typeparam>
+          <param name="event">To be added.</param>
+          <param name="args">To be added.</param>
+          <summary>To be added.</summary>
+        </Docs>
+        <Link Type="Hyena.EventExtensions" Member="M:Hyena.EventExtensions.SafeInvoke``1(``0,System.Object[])" />
+      </Member>
+    </ExtensionMethod>
+    <ExtensionMethod>
+      <Targets>
         <Target Type="T:Cairo.Context" />
       </Targets>
       <Member MemberName="RenderDamage">
         <MemberSignature Language="C#" Value="public static void RenderDamage (this Cairo.Context cr, Cairo.Rectangle damage);" />
+        <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RenderDamage(class Cairo.Context cr, valuetype Cairo.Rectangle damage) cil managed" />
         <MemberType>ExtensionMethod</MemberType>
         <ReturnValue>
           <ReturnType>System.Void</ReturnType>
@@ -391,6 +472,7 @@
       </Targets>
       <Member MemberName="RenderDamage">
         <MemberSignature Language="C#" Value="public static void RenderDamage (this Cairo.Context cr, Gdk.Rectangle damage);" />
+        <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RenderDamage(class Cairo.Context cr, valuetype Gdk.Rectangle damage) cil managed" />
         <MemberType>ExtensionMethod</MemberType>
         <ReturnValue>
           <ReturnType>System.Void</ReturnType>
@@ -413,6 +495,7 @@
       </Targets>
       <Member MemberName="RenderDamage">
         <MemberSignature Language="C#" Value="public static void RenderDamage (this Cairo.Context cr, double x, double y, double w, double h);" />
+        <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RenderDamage(class Cairo.Context cr, float64 x, float64 y, float64 w, float64 h) cil managed" />
         <MemberType>ExtensionMethod</MemberType>
         <ReturnValue>
           <ReturnType>System.Void</ReturnType>
@@ -437,10 +520,61 @@
     </ExtensionMethod>
     <ExtensionMethod>
       <Targets>
+        <Target Type="T:System.String" />
+      </Targets>
+      <Member MemberName="FormatEscaped">
+        <MemberSignature Language="C#" Value="public static string FormatEscaped (this string format, object[] args);" />
+        <MemberSignature Language="ILAsm" Value=".method public static hidebysig string FormatEscaped(string format, object[] args) cil managed" />
+        <MemberType>ExtensionMethod</MemberType>
+        <ReturnValue>
+          <ReturnType>System.String</ReturnType>
+        </ReturnValue>
+        <Parameters>
+          <Parameter Name="format" Type="System.String" RefType="this" />
+          <Parameter Name="args" Type="System.Object[]">
+            <Attributes>
+              <Attribute>
+                <AttributeName>System.ParamArray</AttributeName>
+              </Attribute>
+            </Attributes>
+          </Parameter>
+        </Parameters>
+        <Docs>
+          <param name="format">To be added.</param>
+          <param name="args">To be added.</param>
+          <summary>To be added.</summary>
+        </Docs>
+        <Link Type="Hyena.Gui.PangoExtensions" Member="M:Hyena.Gui.PangoExtensions.FormatEscaped(System.String,System.Object[])" />
+      </Member>
+    </ExtensionMethod>
+    <ExtensionMethod>
+      <Targets>
+        <Target Type="T:Pango.Layout" />
+      </Targets>
+      <Member MemberName="GetHeight">
+        <MemberSignature Language="C#" Value="public static int GetHeight (this Pango.Layout layout);" />
+        <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetHeight(class Pango.Layout layout) cil managed" />
+        <MemberType>ExtensionMethod</MemberType>
+        <ReturnValue>
+          <ReturnType>System.Int32</ReturnType>
+        </ReturnValue>
+        <Parameters>
+          <Parameter Name="layout" Type="Pango.Layout" RefType="this" />
+        </Parameters>
+        <Docs>
+          <param name="layout">To be added.</param>
+          <summary>To be added.</summary>
+        </Docs>
+        <Link Type="Hyena.Gui.PangoExtensions" Member="M:Hyena.Gui.PangoExtensions.GetHeight(Pango.Layout)" />
+      </Member>
+    </ExtensionMethod>
+    <ExtensionMethod>
+      <Targets>
         <Target Type="T:Pango.FontDescription" />
       </Targets>
       <Member MemberName="MeasureTextHeight">
         <MemberSignature Language="C#" Value="public static int MeasureTextHeight (this Pango.FontDescription description, Pango.Context context);" />
+        <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 MeasureTextHeight(class Pango.FontDescription description, class Pango.Context context) cil managed" />
         <MemberType>ExtensionMethod</MemberType>
         <ReturnValue>
           <ReturnType>System.Int32</ReturnType>
@@ -463,6 +597,7 @@
       </Targets>
       <Member MemberName="MeasureTextHeight">
         <MemberSignature Language="C#" Value="public static int MeasureTextHeight (this Pango.FontDescription description, Pango.Context context, Pango.Language language);" />
+        <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 MeasureTextHeight(class Pango.FontDescription description, class Pango.Context context, class Pango.Language language) cil managed" />
         <MemberType>ExtensionMethod</MemberType>
         <ReturnValue>
           <ReturnType>System.Int32</ReturnType>
@@ -483,10 +618,34 @@
     </ExtensionMethod>
     <ExtensionMethod>
       <Targets>
+        <Target Type="T:Pango.Layout" />
+      </Targets>
+      <Member MemberName="SetHeight">
+        <MemberSignature Language="C#" Value="public static void SetHeight (this Pango.Layout layout, int height);" />
+        <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetHeight(class Pango.Layout layout, int32 height) cil managed" />
+        <MemberType>ExtensionMethod</MemberType>
+        <ReturnValue>
+          <ReturnType>System.Void</ReturnType>
+        </ReturnValue>
+        <Parameters>
+          <Parameter Name="layout" Type="Pango.Layout" RefType="this" />
+          <Parameter Name="height" Type="System.Int32" />
+        </Parameters>
+        <Docs>
+          <param name="layout">To be added.</param>
+          <param name="height">To be added.</param>
+          <summary>To be added.</summary>
+        </Docs>
+        <Link Type="Hyena.Gui.PangoExtensions" Member="M:Hyena.Gui.PangoExtensions.SetHeight(Pango.Layout,System.Int32)" />
+      </Member>
+    </ExtensionMethod>
+    <ExtensionMethod>
+      <Targets>
         <Target Type="T:System.Collections.Generic.IEnumerable`1" />
       </Targets>
       <Member MemberName="ForEach&lt;T&gt;">
         <MemberSignature Language="C#" Value="public static void ForEach&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; source, Action&lt;T&gt; func);" />
+        <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ForEach&lt;T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; source, class System.Action`1&lt;!!T&gt; func) cil managed" />
         <MemberType>ExtensionMethod</MemberType>
         <ReturnValue>
           <ReturnType>System.Void</ReturnType>
@@ -513,6 +672,7 @@
       </Targets>
       <Member MemberName="Has&lt;T&gt;">
         <MemberSignature Language="C#" Value="public static bool Has&lt;T&gt; (this T job, Hyena.Jobs.PriorityHints hints) where T : Hyena.Jobs.Job;" />
+        <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Has&lt;(class Hyena.Jobs.Job) T&gt;(!!T job, valuetype Hyena.Jobs.PriorityHints hints) cil managed" />
         <MemberType>ExtensionMethod</MemberType>
         <ReturnValue>
           <ReturnType>System.Boolean</ReturnType>
@@ -535,6 +695,54 @@
           <summary>To be added.</summary>
         </Docs>
         <Link Type="Hyena.Jobs.JobExtensions" Member="M:Hyena.Jobs.JobExtensions.Has``1(``0,Hyena.Jobs.PriorityHints)" />
+      </Member>
+    </ExtensionMethod>
+    <ExtensionMethod>
+      <Targets>
+        <Target Type="T:System.Collections.Generic.IEnumerable`1" />
+      </Targets>
+      <Member MemberName="Join">
+        <MemberSignature Language="C#" Value="public static string Join (this System.Collections.Generic.IEnumerable&lt;string&gt; strings, string sep);" />
+        <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Join(class System.Collections.Generic.IEnumerable`1&lt;string&gt; strings, string sep) cil managed" />
+        <MemberType>ExtensionMethod</MemberType>
+        <ReturnValue>
+          <ReturnType>System.String</ReturnType>
+        </ReturnValue>
+        <Parameters>
+          <Parameter Name="strings" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" RefType="this" />
+          <Parameter Name="sep" Type="System.String" />
+        </Parameters>
+        <Docs>
+          <param name="strings">To be added.</param>
+          <param name="sep">To be added.</param>
+          <summary>To be added.</summary>
+        </Docs>
+        <Link Type="Hyena.StringUtil" Member="M:Hyena.StringUtil.Join(System.Collections.Generic.IEnumerable{System.String},System.String)" />
+      </Member>
+    </ExtensionMethod>
+    <ExtensionMethod>
+      <Targets>
+        <Target Type="T:System.String" />
+      </Targets>
+      <Member MemberName="SubstringBetween">
+        <MemberSignature Language="C#" Value="public static string SubstringBetween (this string input, string start, string end);" />
+        <MemberSignature Language="ILAsm" Value=".method public static hidebysig string SubstringBetween(string input, string start, string end) cil managed" />
+        <MemberType>ExtensionMethod</MemberType>
+        <ReturnValue>
+          <ReturnType>System.String</ReturnType>
+        </ReturnValue>
+        <Parameters>
+          <Parameter Name="input" Type="System.String" RefType="this" />
+          <Parameter Name="start" Type="System.String" />
+          <Parameter Name="end" Type="System.String" />
+        </Parameters>
+        <Docs>
+          <param name="input">To be added.</param>
+          <param name="start">To be added.</param>
+          <param name="end">To be added.</param>
+          <summary>To be added.</summary>
+        </Docs>
+        <Link Type="Hyena.StringUtil" Member="M:Hyena.StringUtil.SubstringBetween(System.String,System.String,System.String)" />
       </Member>
     </ExtensionMethod>
   </ExtensionMethods>

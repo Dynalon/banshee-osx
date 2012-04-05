@@ -1,11 +1,13 @@
 <Type Name="QueryTermNode" FullName="Hyena.Query.QueryTermNode">
   <TypeSignature Language="C#" Value="public class QueryTermNode : Hyena.Query.QueryNode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QueryTermNode extends Hyena.Query.QueryNode" />
   <AssemblyInfo>
     <AssemblyName>Hyena</AssemblyName>
     <AssemblyVersion>0.90.1.25402</AssemblyVersion>
     <AssemblyVersion>1.3.1.0</AssemblyVersion>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Hyena.Query.QueryNode</BaseTypeName>
@@ -18,23 +20,27 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public QueryTermNode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="AppendSql">
       <MemberSignature Language="C#" Value="public override void AppendSql (System.Text.StringBuilder sb, Hyena.Query.QueryFieldSet fieldSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AppendSql(class System.Text.StringBuilder sb, class Hyena.Query.QueryFieldSet fieldSet) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -52,9 +58,11 @@
     </Member>
     <Member MemberName="AppendUserQuery">
       <MemberSignature Language="C#" Value="public override void AppendUserQuery (System.Text.StringBuilder sb);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AppendUserQuery(class System.Text.StringBuilder sb) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -70,9 +78,11 @@
     </Member>
     <Member MemberName="AppendXml">
       <MemberSignature Language="C#" Value="public override void AppendXml (System.Xml.XmlDocument doc, System.Xml.XmlNode parent, Hyena.Query.QueryFieldSet fieldSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AppendXml(class System.Xml.XmlDocument doc, class System.Xml.XmlNode parent, class Hyena.Query.QueryFieldSet fieldSet) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -91,8 +101,15 @@
       </Docs>
     </Member>
     <Member MemberName="Field">
-      <MemberSignature Language="C#" Value="public Hyena.Query.QueryField Field { set; get; }" />
+      <MemberSignature Language="C#" Value="public Hyena.Query.QueryField Field { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Hyena.Query.QueryField Field" />
       <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Hyena.Query.QueryField</ReturnType>
       </ReturnValue>
@@ -101,15 +118,17 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Operator">
+      <MemberSignature Language="C#" Value="public Hyena.Query.Operator Operator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Hyena.Query.Operator Operator" />
+      <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Operator">
-      <MemberSignature Language="C#" Value="public Hyena.Query.Operator Operator { set; get; }" />
-      <MemberType>Property</MemberType>
       <ReturnValue>
         <ReturnType>Hyena.Query.Operator</ReturnType>
       </ReturnValue>
@@ -118,15 +137,17 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ParseUserQuery">
+      <MemberSignature Language="C#" Value="public static Hyena.Query.QueryTermNode ParseUserQuery (Hyena.Query.QueryFieldSet field_set, string token);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Hyena.Query.QueryTermNode ParseUserQuery(class Hyena.Query.QueryFieldSet field_set, string token) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ParseUserQuery">
-      <MemberSignature Language="C#" Value="public static Hyena.Query.QueryTermNode ParseUserQuery (Hyena.Query.QueryFieldSet field_set, string token);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>Hyena.Query.QueryTermNode</ReturnType>
       </ReturnValue>
@@ -141,17 +162,14 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="Trim">
       <MemberSignature Language="C#" Value="public override Hyena.Query.QueryNode Trim ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class Hyena.Query.QueryNode Trim() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Hyena.Query.QueryNode</ReturnType>
@@ -164,8 +182,15 @@
       </Docs>
     </Member>
     <Member MemberName="Value">
-      <MemberSignature Language="C#" Value="public Hyena.Query.QueryValue Value { set; get; }" />
+      <MemberSignature Language="C#" Value="public Hyena.Query.QueryValue Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Hyena.Query.QueryValue Value" />
       <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.3.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.0.0</AssemblyVersion>
+        <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Hyena.Query.QueryValue</ReturnType>
       </ReturnValue>
@@ -174,11 +199,6 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>1.3.1.0</AssemblyVersion>
-        <AssemblyVersion>1.4.0.0</AssemblyVersion>
-        <AssemblyVersion>1.5.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
   </Members>
 </Type>

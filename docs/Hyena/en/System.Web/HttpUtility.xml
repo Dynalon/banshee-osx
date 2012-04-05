@@ -1,8 +1,10 @@
 <Type Name="HttpUtility" FullName="System.Web.HttpUtility">
   <TypeSignature Language="C#" Value="public sealed class HttpUtility" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpUtility extends System.Object" />
   <AssemblyInfo>
     <AssemblyName>Hyena</AssemblyName>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -15,9 +17,11 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public HttpUtility ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -27,9 +31,11 @@
     </Member>
     <Member MemberName="HtmlAttributeEncode">
       <MemberSignature Language="C#" Value="public static string HtmlAttributeEncode (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string HtmlAttributeEncode(string s) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -46,9 +52,11 @@
     </Member>
     <Member MemberName="HtmlAttributeEncode">
       <MemberSignature Language="C#" Value="public static void HtmlAttributeEncode (string s, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void HtmlAttributeEncode(string s, class System.IO.TextWriter output) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -66,9 +74,11 @@
     </Member>
     <Member MemberName="HtmlDecode">
       <MemberSignature Language="C#" Value="public static string HtmlDecode (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string HtmlDecode(string s) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -85,9 +95,11 @@
     </Member>
     <Member MemberName="HtmlDecode">
       <MemberSignature Language="C#" Value="public static void HtmlDecode (string s, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void HtmlDecode(string s, class System.IO.TextWriter output) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -105,9 +117,11 @@
     </Member>
     <Member MemberName="HtmlEncode">
       <MemberSignature Language="C#" Value="public static string HtmlEncode (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string HtmlEncode(string s) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -124,9 +138,11 @@
     </Member>
     <Member MemberName="HtmlEncode">
       <MemberSignature Language="C#" Value="public static void HtmlEncode (string s, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void HtmlEncode(string s, class System.IO.TextWriter output) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -144,9 +160,11 @@
     </Member>
     <Member MemberName="ParseQueryString">
       <MemberSignature Language="C#" Value="public static System.Collections.Specialized.NameValueCollection ParseQueryString (string query);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Specialized.NameValueCollection ParseQueryString(string query) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
@@ -163,9 +181,11 @@
     </Member>
     <Member MemberName="ParseQueryString">
       <MemberSignature Language="C#" Value="public static System.Collections.Specialized.NameValueCollection ParseQueryString (string query, System.Text.Encoding encoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Specialized.NameValueCollection ParseQueryString(string query, class System.Text.Encoding encoding) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
@@ -184,9 +204,11 @@
     </Member>
     <Member MemberName="UrlDecode">
       <MemberSignature Language="C#" Value="public static string UrlDecode (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string UrlDecode(string str) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -203,9 +225,11 @@
     </Member>
     <Member MemberName="UrlDecode">
       <MemberSignature Language="C#" Value="public static string UrlDecode (byte[] bytes, System.Text.Encoding e);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string UrlDecode(unsigned int8[] bytes, class System.Text.Encoding e) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -224,9 +248,11 @@
     </Member>
     <Member MemberName="UrlDecode">
       <MemberSignature Language="C#" Value="public static string UrlDecode (string s, System.Text.Encoding e);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string UrlDecode(string s, class System.Text.Encoding e) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -245,9 +271,11 @@
     </Member>
     <Member MemberName="UrlDecode">
       <MemberSignature Language="C#" Value="public static string UrlDecode (byte[] bytes, int offset, int count, System.Text.Encoding e);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string UrlDecode(unsigned int8[] bytes, int32 offset, int32 count, class System.Text.Encoding e) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -270,9 +298,11 @@
     </Member>
     <Member MemberName="UrlDecodeToBytes">
       <MemberSignature Language="C#" Value="public static byte[] UrlDecodeToBytes (byte[] bytes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] UrlDecodeToBytes(unsigned int8[] bytes) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
@@ -289,9 +319,11 @@
     </Member>
     <Member MemberName="UrlDecodeToBytes">
       <MemberSignature Language="C#" Value="public static byte[] UrlDecodeToBytes (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] UrlDecodeToBytes(string str) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
@@ -308,9 +340,11 @@
     </Member>
     <Member MemberName="UrlDecodeToBytes">
       <MemberSignature Language="C#" Value="public static byte[] UrlDecodeToBytes (string str, System.Text.Encoding e);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] UrlDecodeToBytes(string str, class System.Text.Encoding e) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
@@ -329,9 +363,11 @@
     </Member>
     <Member MemberName="UrlDecodeToBytes">
       <MemberSignature Language="C#" Value="public static byte[] UrlDecodeToBytes (byte[] bytes, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] UrlDecodeToBytes(unsigned int8[] bytes, int32 offset, int32 count) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
@@ -352,9 +388,11 @@
     </Member>
     <Member MemberName="UrlEncode">
       <MemberSignature Language="C#" Value="public static string UrlEncode (byte[] bytes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string UrlEncode(unsigned int8[] bytes) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -371,9 +409,11 @@
     </Member>
     <Member MemberName="UrlEncode">
       <MemberSignature Language="C#" Value="public static string UrlEncode (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string UrlEncode(string str) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -390,9 +430,11 @@
     </Member>
     <Member MemberName="UrlEncode">
       <MemberSignature Language="C#" Value="public static string UrlEncode (string s, System.Text.Encoding Enc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string UrlEncode(string s, class System.Text.Encoding Enc) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -411,9 +453,11 @@
     </Member>
     <Member MemberName="UrlEncode">
       <MemberSignature Language="C#" Value="public static string UrlEncode (byte[] bytes, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string UrlEncode(unsigned int8[] bytes, int32 offset, int32 count) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -434,9 +478,11 @@
     </Member>
     <Member MemberName="UrlEncodeToBytes">
       <MemberSignature Language="C#" Value="public static byte[] UrlEncodeToBytes (byte[] bytes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] UrlEncodeToBytes(unsigned int8[] bytes) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
@@ -453,9 +499,11 @@
     </Member>
     <Member MemberName="UrlEncodeToBytes">
       <MemberSignature Language="C#" Value="public static byte[] UrlEncodeToBytes (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] UrlEncodeToBytes(string str) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
@@ -472,9 +520,11 @@
     </Member>
     <Member MemberName="UrlEncodeToBytes">
       <MemberSignature Language="C#" Value="public static byte[] UrlEncodeToBytes (string str, System.Text.Encoding e);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] UrlEncodeToBytes(string str, class System.Text.Encoding e) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
@@ -493,9 +543,11 @@
     </Member>
     <Member MemberName="UrlEncodeToBytes">
       <MemberSignature Language="C#" Value="public static byte[] UrlEncodeToBytes (byte[] bytes, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] UrlEncodeToBytes(unsigned int8[] bytes, int32 offset, int32 count) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
@@ -516,9 +568,11 @@
     </Member>
     <Member MemberName="UrlEncodeUnicode">
       <MemberSignature Language="C#" Value="public static string UrlEncodeUnicode (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string UrlEncodeUnicode(string str) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -535,9 +589,11 @@
     </Member>
     <Member MemberName="UrlEncodeUnicodeToBytes">
       <MemberSignature Language="C#" Value="public static byte[] UrlEncodeUnicodeToBytes (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] UrlEncodeUnicodeToBytes(string str) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>

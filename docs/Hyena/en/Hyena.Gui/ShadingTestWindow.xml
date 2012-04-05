@@ -1,10 +1,12 @@
 <Type Name="ShadingTestWindow" FullName="Hyena.Gui.ShadingTestWindow">
   <TypeSignature Language="C#" Value="public class ShadingTestWindow : Gtk.Window" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ShadingTestWindow extends Gtk.Window" />
   <AssemblyInfo>
     <AssemblyName>Hyena.Gui</AssemblyName>
     <AssemblyVersion>1.3.1.0</AssemblyVersion>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Gtk.Window</BaseTypeName>
@@ -17,11 +19,13 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ShadingTestWindow ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -31,9 +35,11 @@
     </Member>
     <Member MemberName="OnExposeEvent">
       <MemberSignature Language="C#" Value="protected override bool OnExposeEvent (Gdk.EventExpose evnt);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnExposeEvent(class Gdk.EventExpose evnt) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>

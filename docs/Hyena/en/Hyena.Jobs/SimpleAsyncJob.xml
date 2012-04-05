@@ -1,8 +1,10 @@
 <Type Name="SimpleAsyncJob" FullName="Hyena.Jobs.SimpleAsyncJob">
   <TypeSignature Language="C#" Value="public abstract class SimpleAsyncJob : Hyena.Jobs.Job" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SimpleAsyncJob extends Hyena.Jobs.Job" />
   <AssemblyInfo>
     <AssemblyName>Hyena</AssemblyName>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Hyena.Jobs.Job</BaseTypeName>
@@ -15,9 +17,11 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public SimpleAsyncJob ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -27,9 +31,11 @@
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public SimpleAsyncJob (string name, Hyena.Jobs.PriorityHints hints, Hyena.Jobs.Resource[] resources);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype Hyena.Jobs.PriorityHints hints, class Hyena.Jobs.Resource[] resources) cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
@@ -52,9 +58,11 @@
     </Member>
     <Member MemberName="AbortThread">
       <MemberSignature Language="C#" Value="protected void AbortThread ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AbortThread() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -67,9 +75,11 @@
     </Member>
     <Member MemberName="Run">
       <MemberSignature Language="C#" Value="protected abstract void Run ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Run() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -82,9 +92,11 @@
     </Member>
     <Member MemberName="RunJob">
       <MemberSignature Language="C#" Value="protected override void RunJob ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RunJob() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

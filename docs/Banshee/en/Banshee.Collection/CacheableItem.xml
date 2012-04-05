@@ -1,10 +1,12 @@
 <Type Name="CacheableItem" FullName="Banshee.Collection.CacheableItem">
   <TypeSignature Language="C#" Value="public class CacheableItem : Hyena.Data.ICacheableItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CacheableItem extends System.Object implements class Hyena.Data.ICacheableItem" />
   <AssemblyInfo>
     <AssemblyName>Banshee.Core</AssemblyName>
     <AssemblyVersion>1.3.1.0</AssemblyVersion>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -21,11 +23,13 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public CacheableItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -34,12 +38,14 @@
       </Docs>
     </Member>
     <Member MemberName="CacheEntryId">
-      <MemberSignature Language="C#" Value="public object CacheEntryId { set; get; }" />
+      <MemberSignature Language="C#" Value="public object CacheEntryId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CacheEntryId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -51,12 +57,14 @@
       </Docs>
     </Member>
     <Member MemberName="CacheModelId">
-      <MemberSignature Language="C#" Value="public long CacheModelId { set; get; }" />
+      <MemberSignature Language="C#" Value="public long CacheModelId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 CacheModelId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.3.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>

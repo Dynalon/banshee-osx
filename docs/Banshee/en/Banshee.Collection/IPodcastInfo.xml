@@ -1,8 +1,10 @@
 <Type Name="IPodcastInfo" FullName="Banshee.Collection.IPodcastInfo">
   <TypeSignature Language="C#" Value="public interface IPodcastInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPodcastInfo" />
   <AssemblyInfo>
     <AssemblyName>Banshee.Core</AssemblyName>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -12,9 +14,11 @@
   <Members>
     <Member MemberName="Description">
       <MemberSignature Language="C#" Value="public string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -27,9 +31,11 @@
     </Member>
     <Member MemberName="ReleaseDate">
       <MemberSignature Language="C#" Value="public DateTime ReleaseDate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ReleaseDate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>

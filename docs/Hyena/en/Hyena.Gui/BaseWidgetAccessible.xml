@@ -1,8 +1,10 @@
 <Type Name="BaseWidgetAccessible" FullName="Hyena.Gui.BaseWidgetAccessible">
   <TypeSignature Language="C#" Value="public class BaseWidgetAccessible : Gtk.Accessible, Atk.ComponentImplementor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BaseWidgetAccessible extends Gtk.Accessible implements class Atk.ComponentImplementor, class GLib.IWrapper" />
   <AssemblyInfo>
     <AssemblyName>Hyena.Gui</AssemblyName>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Gtk.Accessible</BaseTypeName>
@@ -19,9 +21,11 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public BaseWidgetAccessible (Gtk.Widget widget);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Gtk.Widget widget) cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="widget" Type="Gtk.Widget" />
@@ -32,11 +36,29 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BaseWidgetAccessible (IntPtr raw);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(native int raw) cil managed" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="raw" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="raw">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="AddFocusHandler">
       <MemberSignature Language="C#" Value="public uint AddFocusHandler (Atk.FocusHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int32 AddFocusHandler(class Atk.FocusHandler handler) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.UInt32</ReturnType>
@@ -53,9 +75,11 @@
     </Member>
     <Member MemberName="Alpha">
       <MemberSignature Language="C#" Value="public double Alpha { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Alpha" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Double</ReturnType>
@@ -68,9 +92,11 @@
     </Member>
     <Member MemberName="Contains">
       <MemberSignature Language="C#" Value="public bool Contains (int x, int y, Atk.CoordType coordType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(int32 x, int32 y, valuetype Atk.CoordType coordType) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -91,9 +117,11 @@
     </Member>
     <Member MemberName="GetExtents">
       <MemberSignature Language="C#" Value="public void GetExtents (out int x, out int y, out int w, out int h, Atk.CoordType coordType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetExtents(int32 x, int32 y, int32 w, int32 h, valuetype Atk.CoordType coordType) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -117,9 +145,11 @@
     </Member>
     <Member MemberName="GetPosition">
       <MemberSignature Language="C#" Value="public void GetPosition (out int x, out int y, Atk.CoordType coordType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetPosition(int32 x, int32 y, valuetype Atk.CoordType coordType) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -139,9 +169,11 @@
     </Member>
     <Member MemberName="GetSize">
       <MemberSignature Language="C#" Value="public void GetSize (out int w, out int h);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetSize(int32 w, int32 h) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -159,9 +191,11 @@
     </Member>
     <Member MemberName="GrabFocus">
       <MemberSignature Language="C#" Value="public bool GrabFocus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GrabFocus() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -175,9 +209,11 @@
     </Member>
     <Member MemberName="Layer">
       <MemberSignature Language="C#" Value="public virtual Atk.Layer Layer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Atk.Layer Layer" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Atk.Layer</ReturnType>
@@ -190,9 +226,11 @@
     </Member>
     <Member MemberName="OnRefStateSet">
       <MemberSignature Language="C#" Value="protected override Atk.StateSet OnRefStateSet ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class Atk.StateSet OnRefStateSet() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Atk.StateSet</ReturnType>
@@ -206,9 +244,11 @@
     </Member>
     <Member MemberName="RefAccessibleAtPoint">
       <MemberSignature Language="C#" Value="public virtual Atk.Object RefAccessibleAtPoint (int x, int y, Atk.CoordType coordType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Atk.Object RefAccessibleAtPoint(int32 x, int32 y, valuetype Atk.CoordType coordType) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Atk.Object</ReturnType>
@@ -229,9 +269,11 @@
     </Member>
     <Member MemberName="RemoveFocusHandler">
       <MemberSignature Language="C#" Value="public void RemoveFocusHandler (uint handlerId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveFocusHandler(unsigned int32 handlerId) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -247,9 +289,11 @@
     </Member>
     <Member MemberName="SetExtents">
       <MemberSignature Language="C#" Value="public bool SetExtents (int x, int y, int w, int h, Atk.CoordType coordType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetExtents(int32 x, int32 y, int32 w, int32 h, valuetype Atk.CoordType coordType) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -274,9 +318,11 @@
     </Member>
     <Member MemberName="SetPosition">
       <MemberSignature Language="C#" Value="public bool SetPosition (int x, int y, Atk.CoordType coordType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetPosition(int32 x, int32 y, valuetype Atk.CoordType coordType) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -297,9 +343,11 @@
     </Member>
     <Member MemberName="SetSize">
       <MemberSignature Language="C#" Value="public bool SetSize (int w, int h);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetSize(int32 w, int32 h) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>

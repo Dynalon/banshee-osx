@@ -1,8 +1,10 @@
 <Type Name="ThreadAssist" FullName="Hyena.ThreadAssist">
   <TypeSignature Language="C#" Value="public static class ThreadAssist" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ThreadAssist extends System.Object" />
   <AssemblyInfo>
     <AssemblyName>Hyena</AssemblyName>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -15,9 +17,11 @@
   <Members>
     <Member MemberName="AssertInMainThread">
       <MemberSignature Language="C#" Value="public static void AssertInMainThread ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AssertInMainThread() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -30,9 +34,11 @@
     </Member>
     <Member MemberName="AssertNotInMainThread">
       <MemberSignature Language="C#" Value="public static void AssertNotInMainThread ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AssertNotInMainThread() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -45,9 +51,11 @@
     </Member>
     <Member MemberName="BlockingProxyToMain">
       <MemberSignature Language="C#" Value="public static void BlockingProxyToMain (Hyena.InvokeHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void BlockingProxyToMain(class Hyena.InvokeHandler handler) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -63,9 +71,11 @@
     </Member>
     <Member MemberName="InitializeMainThread">
       <MemberSignature Language="C#" Value="public static void InitializeMainThread ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InitializeMainThread() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -78,9 +88,11 @@
     </Member>
     <Member MemberName="InMainThread">
       <MemberSignature Language="C#" Value="public static bool InMainThread { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool InMainThread" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -93,9 +105,11 @@
     </Member>
     <Member MemberName="MainThread">
       <MemberSignature Language="C#" Value="public static System.Threading.Thread MainThread { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Threading.Thread MainThread" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Thread</ReturnType>
@@ -108,9 +122,11 @@
     </Member>
     <Member MemberName="ProxyToMain">
       <MemberSignature Language="C#" Value="public static void ProxyToMain (Hyena.InvokeHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ProxyToMain(class Hyena.InvokeHandler handler) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -125,10 +141,12 @@
       </Docs>
     </Member>
     <Member MemberName="ProxyToMainHandler">
-      <MemberSignature Language="C#" Value="public static Action&lt;Hyena.InvokeHandler&gt; ProxyToMainHandler { set; get; }" />
+      <MemberSignature Language="C#" Value="public static Action&lt;Hyena.InvokeHandler&gt; ProxyToMainHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Action`1&lt;class Hyena.InvokeHandler&gt; ProxyToMainHandler" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Action&lt;Hyena.InvokeHandler&gt;</ReturnType>
@@ -141,9 +159,11 @@
     </Member>
     <Member MemberName="Spawn">
       <MemberSignature Language="C#" Value="public static System.Threading.Thread Spawn (System.Threading.ThreadStart threadedMethod);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Thread Spawn(class System.Threading.ThreadStart threadedMethod) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Thread</ReturnType>
@@ -160,9 +180,11 @@
     </Member>
     <Member MemberName="Spawn">
       <MemberSignature Language="C#" Value="public static System.Threading.Thread Spawn (System.Threading.ThreadStart threadedMethod, bool autoStart);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Thread Spawn(class System.Threading.ThreadStart threadedMethod, bool autoStart) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Thread</ReturnType>
@@ -181,9 +203,11 @@
     </Member>
     <Member MemberName="SpawnFromMain">
       <MemberSignature Language="C#" Value="public static void SpawnFromMain (System.Threading.ThreadStart threadedMethod);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SpawnFromMain(class System.Threading.ThreadStart threadedMethod) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

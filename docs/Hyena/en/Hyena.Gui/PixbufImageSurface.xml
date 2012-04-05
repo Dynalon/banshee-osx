@@ -1,9 +1,11 @@
 <Type Name="PixbufImageSurface" FullName="Hyena.Gui.PixbufImageSurface">
   <TypeSignature Language="C#" Value="public class PixbufImageSurface : Cairo.ImageSurface, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi PixbufImageSurface extends Cairo.ImageSurface implements class System.IDisposable" />
   <AssemblyInfo>
     <AssemblyName>Hyena.Gui</AssemblyName>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
     <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Cairo.ImageSurface</BaseTypeName>
@@ -20,10 +22,12 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public PixbufImageSurface (Gdk.Pixbuf pixbuf);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Gdk.Pixbuf pixbuf) cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="pixbuf" Type="Gdk.Pixbuf" />
@@ -36,10 +40,12 @@
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public PixbufImageSurface (Gdk.Pixbuf pixbuf, bool disposePixbuf);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Gdk.Pixbuf pixbuf, bool disposePixbuf) cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.4.0.0</AssemblyVersion>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="pixbuf" Type="Gdk.Pixbuf" />
@@ -54,9 +60,11 @@
     </Member>
     <Member MemberName="Create">
       <MemberSignature Language="C#" Value="public static Cairo.ImageSurface Create (Gdk.Pixbuf pixbuf);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Cairo.ImageSurface Create(class Gdk.Pixbuf pixbuf) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Cairo.ImageSurface</ReturnType>
@@ -73,9 +81,11 @@
     </Member>
     <Member MemberName="Create">
       <MemberSignature Language="C#" Value="public static Cairo.ImageSurface Create (Gdk.Pixbuf pixbuf, bool disposePixbuf);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Cairo.ImageSurface Create(class Gdk.Pixbuf pixbuf, bool disposePixbuf) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.5.0.0</AssemblyVersion>
+        <AssemblyVersion>2.4.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Cairo.ImageSurface</ReturnType>
