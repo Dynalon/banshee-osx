@@ -242,7 +242,7 @@ namespace Banshee.Dap.MassStorage
                     if (MediaCapabilities == null || MediaCapabilities.PlaylistPath == null) {
                         playlists_path = WritePath;
                     } else {
-                        playlists_path = System.IO.Path.Combine (WritePath, MediaCapabilities.PlaylistPath);
+                        playlists_path = System.IO.Path.Combine (BaseDirectory, MediaCapabilities.PlaylistPath);
                         playlists_path = playlists_path.Replace ("%File", String.Empty);
                     }
 
