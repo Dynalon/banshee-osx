@@ -286,12 +286,13 @@ namespace Banshee.PlaybackController
             if (player_engine.Position < delay) {
                 Previous ();
             } else {
-                var track = player_engine.CurrentTrack;
-                if (track != null) {
-                    player_engine.Close ();
-                    player_engine.OpenPlay (track);
-                }
+                Restart ();
             }
+        }
+
+        public void Restart ()
+        {
+            player_engine.RestartCurrentTrack ();
         }
 
         bool IBasicPlaybackController.First ()

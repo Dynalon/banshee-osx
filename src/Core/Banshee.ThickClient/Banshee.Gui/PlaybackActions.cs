@@ -242,11 +242,7 @@ namespace Banshee.Gui
 
         private void OnRestartSongAction (object o, EventArgs args)
         {
-            TrackInfo track = ServiceManager.PlayerEngine.CurrentTrack;
-            if (track != null) {
-                ServiceManager.PlayerEngine.Close ();
-                ServiceManager.PlayerEngine.OpenPlay (track);
-            }
+            ServiceManager.PlaybackController.Restart ();
         }
 
         private void OnStopWhenFinishedAction (object o, EventArgs args)
