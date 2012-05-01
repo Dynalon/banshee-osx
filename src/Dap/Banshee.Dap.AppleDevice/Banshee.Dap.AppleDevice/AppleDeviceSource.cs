@@ -3,8 +3,12 @@
 //
 // Author:
 //   Alan McGovern <amcgovern@novell.com>
+//   Phil Trimble <philtrimble@gmail.com>
+//   Andres G. Aragoneses <knocte@gmail.com>
 //
 // Copyright (C) 2010 Novell, Inc.
+// Copyright (C) 2012 Phil Trimble
+// Copyright (C) 2012 Andres G. Aragoneses
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the
@@ -42,10 +46,11 @@ using Banshee.Hardware;
 using Banshee.Sources;
 using Banshee.I18n;
 using Banshee.Playlist;
+using Banshee.Collection;
 
 namespace Banshee.Dap.AppleDevice
 {
-    public class AppleDeviceSource : DapSource
+    public class AppleDeviceSource : DapSource, IBatchScrobblerSource
     {
         GPod.Device Device {
             get; set;
@@ -60,6 +65,8 @@ namespace Banshee.Dap.AppleDevice
         }
 
         private Dictionary<int, AppleDeviceTrackInfo> tracks_map = new Dictionary<int, AppleDeviceTrackInfo> (); // FIXME: EPIC FAIL
+
+        public event EventHandler<ScrobblingBatchEventArgs> ReadyToScrobble;
 
 #region Device Setup/Dispose
 
@@ -247,6 +254,8 @@ namespace Banshee.Dap.AppleDevice
                 pl_src.UpdateCounts ();
                 AddChildSource (pl_src);
             }
+
+            RaiseReadyToScrobble ();
         }
 
 #endregion
@@ -380,6 +389,7 @@ namespace Banshee.Dap.AppleDevice
         private uint sync_timeout_id = 0;
         private object sync_timeout_mutex = new object ();
         private object sync_mutex = new object ();
+        private object write_mutex = new object ();
         private Thread sync_thread;
         private AutoResetEvent sync_thread_wait;
         private bool sync_thread_dispose = false;
@@ -648,7 +658,11 @@ namespace Banshee.Dap.AppleDevice
             try {
                 message = Catalog.GetString ("Writing media database");
                 UpdateProgress (progressUpdater, message, 1, 1);
-                MediaDatabase.Write ();
+
+                lock (write_mutex) {
+                    MediaDatabase.Write ();
+                }
+
                 Log.Information ("Wrote iPod database");
             } catch (Exception e) {
                 Log.Exception ("Failed to save iPod database", e);
@@ -675,6 +689,63 @@ namespace Banshee.Dap.AppleDevice
                 // savetrackmetadataservice to take in account this source
                 return true;
             }
+        }
+
+#endregion
+
+#region Scrobbling
+
+        private void RaiseReadyToScrobble ()
+        {
+            var handler = ReadyToScrobble;
+            if (handler != null) {
+                var recent_plays = new ScrobblingBatchEventArgs {
+                    ScrobblingBatch = GatherRecentPlayInfo ()
+                };
+                if (recent_plays.ScrobblingBatch.Count != 0) {
+                    handler (this, recent_plays);
+
+                    // We must perform a write to clear out the recent playcount information so we do not
+                    // submit duplicate plays on subsequent invocations.
+                    lock (write_mutex) {
+                        MediaDatabase.Write ();
+                    }
+                }
+            }
+        }
+
+        private IDictionary<TrackInfo, IList<DateTime>> GatherRecentPlayInfo ()
+        {
+            var recent_plays = new Dictionary <TrackInfo, IList<DateTime>> ();
+
+            foreach (var ipod_track in MediaDatabase.Tracks) {
+
+                if (String.IsNullOrEmpty (ipod_track.IpodPath) || ipod_track.RecentPlayCount == 0) {
+                    continue;
+                }
+
+                IList<DateTime> playtimes = GenerateFakePlaytimes (ipod_track);
+
+                recent_plays [new AppleDeviceTrackInfo (ipod_track)] = playtimes;
+            }
+
+            return recent_plays;
+        }
+
+        // Apple products do not save DateTime info for each track play, only a total
+        // sum of number of plays (playcount) of each track.
+        private IList<DateTime> GenerateFakePlaytimes (GPod.Track track)
+        {
+            IList<DateTime> playtimes = new List<DateTime> ();
+
+            //FIXME: avoid sequences of overlapping playtimes?
+            DateTime current_playtime = track.TimePlayed;
+            for (int i = 0; i < track.RecentPlayCount; i++) {
+                playtimes.Add (current_playtime);
+                current_playtime -= TimeSpan.FromMilliseconds (track.TrackLength);
+            }
+
+            return playtimes;
         }
 
 #endregion

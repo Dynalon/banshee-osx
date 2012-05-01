@@ -35,10 +35,12 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Security.Cryptography;
+using System.Collections.Generic;
 using Gtk;
 using Mono.Unix;
 
 using Hyena;
+using Hyena.Jobs;
 
 using Lastfm;
 
@@ -48,6 +50,7 @@ using Banshee.Configuration;
 using Banshee.ServiceStack;
 using Banshee.Gui;
 using Banshee.Networking;
+using Banshee.Sources;
 
 using Banshee.Collection;
 
@@ -116,6 +119,10 @@ namespace Banshee.Lastfm.Audioscrobbler
                 PlayerEvent.Seek |
                 PlayerEvent.Iterate);
 
+            if (DeviceEnabled) {
+                SubscribeForDeviceEvents ();
+            }
+
             action_service = ServiceManager.Get<InterfaceActionService> ();
             InterfaceInitialize ();
         }
@@ -136,8 +143,14 @@ namespace Banshee.Lastfm.Audioscrobbler
 
             actions.Add (new ToggleActionEntry [] {
                 new ToggleActionEntry ("AudioscrobblerEnableAction", null,
-                    Catalog.GetString ("_Enable Song Reporting"), null,
-                    Catalog.GetString ("Enable song reporting"), OnToggleEnabled, Enabled)
+                    Catalog.GetString ("_Enable Song Reporting From Banshee"), null,
+                    Catalog.GetString ("Enable song reporting From Banshee"), OnToggleEnabled, Enabled)
+            });
+
+            actions.Add (new ToggleActionEntry [] {
+                new ToggleActionEntry ("AudioscrobblerDeviceEnableAction", null,
+                    Catalog.GetString ("_Enable Song Reporting From Device"), null,
+                    Catalog.GetString ("Enable song reporting From Device"), OnToggleDeviceEnabled, DeviceEnabled)
             });
 
             action_service.UIManager.InsertActionGroup (actions, 0);
@@ -159,6 +172,10 @@ namespace Banshee.Lastfm.Audioscrobbler
 
             ServiceManager.Get<Network> ().StateChanged -= HandleNetworkStateChanged;
 
+            if (DeviceEnabled) {
+                UnsubscribeForDeviceEvents ();
+            }
+
             // When we stop the connection, queue ends up getting saved too, so the
             // track we queued earlier should stay until next session.
             connection.Stop ();
@@ -166,6 +183,26 @@ namespace Banshee.Lastfm.Audioscrobbler
             action_service.UIManager.RemoveUi (ui_manager_id);
             action_service.UIManager.RemoveActionGroup (actions);
             actions = null;
+        }
+
+        List<IBatchScrobblerSource> sources_watched;
+
+        private void SubscribeForDeviceEvents ()
+        {
+            sources_watched = new List<IBatchScrobblerSource> ();
+            ServiceManager.SourceManager.SourceAdded += OnSourceAdded;
+            ServiceManager.SourceManager.SourceRemoved += OnSourceRemoved;
+        }
+
+        private void UnsubscribeForDeviceEvents ()
+        {
+            ServiceManager.SourceManager.SourceAdded -= OnSourceAdded;
+            ServiceManager.SourceManager.SourceRemoved -= OnSourceRemoved;
+            foreach (var source in sources_watched) {
+                source.ReadyToScrobble -= OnReadyToScrobble;
+            }
+            sources_watched.Clear ();
+            sources_watched = null;
         }
 
         private void HandleNetworkStateChanged (object o, NetworkStateChangedArgs args)
@@ -306,6 +343,11 @@ namespace Banshee.Lastfm.Audioscrobbler
             Enabled = ((ToggleAction) o).Active;
         }
 
+        private void OnToggleDeviceEnabled (object o, EventArgs args)
+        {
+            DeviceEnabled = ((ToggleAction) o).Active;
+        }
+
         internal bool Enabled {
             get { return EngineEnabledSchema.Get (); }
             set {
@@ -313,6 +355,93 @@ namespace Banshee.Lastfm.Audioscrobbler
                 ((ToggleAction) actions["AudioscrobblerEnableAction"]).Active = value;
             }
         }
+
+        internal bool DeviceEnabled {
+            get { return DeviceEngineEnabledSchema.Get (); }
+            set {
+                if (DeviceEnabled == value)
+                    return;
+
+                DeviceEngineEnabledSchema.Set (value);
+                ((ToggleAction) actions["AudioscrobblerDeviceEnableAction"]).Active = value;
+
+                if (value) {
+                    SubscribeForDeviceEvents ();
+                } else {
+                    UnsubscribeForDeviceEvents ();
+                }
+            }
+        }
+
+#region scrobbling
+
+        private void OnSourceAdded (SourceEventArgs args)
+        {
+            var scrobbler_source = args.Source as IBatchScrobblerSource;
+            if (scrobbler_source == null) {
+                return;
+            }
+
+            scrobbler_source.ReadyToScrobble += OnReadyToScrobble;
+            sources_watched.Add (scrobbler_source);
+        }
+
+        private void OnSourceRemoved (SourceEventArgs args)
+        {
+            var scrobbler_source = args.Source as IBatchScrobblerSource;
+            if (scrobbler_source == null) {
+                return;
+            }
+
+            sources_watched.Remove (scrobbler_source);
+            scrobbler_source.ReadyToScrobble -= OnReadyToScrobble;
+        }
+
+        private void OnReadyToScrobble (object source, ScrobblingBatchEventArgs args)
+        {
+            var scrobble_job = new UserJob (Catalog.GetString ("Scrobbling from device"),
+                                            Catalog.GetString ("Scrobbling from device..."));
+
+            scrobble_job.PriorityHints = PriorityHints.DataLossIfStopped;
+            scrobble_job.Register ();
+
+            try {
+                if (!connection.Started) {
+                    connection.Start ();
+                }
+    
+                int added_track_count = 0, processed_track_count = 0;
+                string message = Catalog.GetString ("Processing track {0} of {1} ...");
+                var batchCount = args.ScrobblingBatch.Count;
+    
+                foreach (var track_entry in args.ScrobblingBatch) {
+                    TrackInfo track = track_entry.Key;
+    
+                    if (IsValidForSubmission (track)) {
+                        IList<DateTime> playtimes = track_entry.Value;
+    
+                        foreach (DateTime playtime in playtimes) {
+                            queue.Add (track, playtime);
+                            added_track_count++;
+                        }
+                        Log.DebugFormat ("Added to Last.fm queue: {0} - Number of plays: {1}", track, playtimes.Count);
+                    } else {
+                        Log.DebugFormat ("Track {0} failed validation check for Last.fm submission, skipping...",
+                                         track);
+                    }
+    
+                    scrobble_job.Status = String.Format (message, ++processed_track_count, batchCount);
+                    scrobble_job.Progress = processed_track_count / (double) batchCount;
+                }
+    
+                Log.InformationFormat ("Number of played tracks from device added to Last.fm queue: {0}", added_track_count);
+
+            } finally {
+                scrobble_job.Finish ();
+            }
+        }
+
+#endregion
 
         public static readonly SchemaEntry<string> LastUserSchema = new SchemaEntry<string> (
             "plugins.lastfm", "username", "", "Last.fm user", "Last.fm username"
@@ -334,6 +463,13 @@ namespace Banshee.Lastfm.Audioscrobbler
             false,
             "Engine enabled",
             "Audioscrobbler reporting engine enabled"
+        );
+
+        public static readonly SchemaEntry<bool> DeviceEngineEnabledSchema = new SchemaEntry<bool> (
+            "plugins.audioscrobbler", "device_engine_enabled",
+            false,
+            "Device engine enabled",
+            "Audioscrobbler device reporting engine enabled"
         );
 
         string IService.ServiceName {
