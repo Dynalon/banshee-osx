@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: banshee.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-04-21 16:08+0000\n"
-"PO-Revision-Date: 2012-04-22 11:05+0200\n"
+"POT-Creation-Date: 2012-05-01 12:53+0000\n"
+"PO-Revision-Date: 2012-05-02 13:06+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -324,7 +324,7 @@ msgstr ""
 
 #. ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.addin.xml
 #: ../data/addin-xml-strings.cs:148
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:200
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:207
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/PodcastGroupSource.cs:38
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:107
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:211
@@ -3338,7 +3338,7 @@ msgstr "Cambiar a una fuente al teclear su nombre"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:115
 #: ../src/Core/Banshee.ThickClient/Banshee.Preferences.Gui/PreferenceDialog.cs:50
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:85
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:87
 msgid "Preferences"
 msgstr "Preferencias"
 
@@ -4266,25 +4266,25 @@ msgstr "Silencio"
 msgid "Full Volume"
 msgstr "A todo volumen"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:108
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:115
 msgid "Device"
 msgstr "Dispositivo"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:109
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:116
 msgid "Generation"
 msgstr "Generación"
 
 #. FIXME
 #. AddDapProperty (Catalog.GetString ("Color"), "black");
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:114
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:121
 msgid "Capacity"
 msgstr "Capacidad"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:115
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:122
 msgid "Available"
 msgstr "Disponible"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:116
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:123
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:141
 msgid "Serial number"
 msgstr "Número de serie"
@@ -4294,37 +4294,37 @@ msgstr "Número de serie"
 #. string [] capabilities = new string [ipod_device.ModelInfo.Capabilities.Count];
 #. ipod_device.ModelInfo.Capabilities.CopyTo (capabilities, 0);
 #. AddDapProperty (Catalog.GetString ("Capabilities"), String.Join (", ", capabilities));
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:123
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:130
 msgid "Supports cover art"
 msgstr "Soporta portadas"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:124
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:131
 msgid "Supports photos"
 msgstr "Soporta imágenes"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:453
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:463
 msgid "Track duration is zero"
 msgstr "La duración de la pista es cero"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:556
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:566
 msgid "Syncing iPod"
 msgstr "Sincronizando iPod"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:557
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:567
 msgid "Preparing to synchronize..."
 msgstr "Preparándose para sincronizar…"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:560
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:570
 #, csharp-format
 msgid "Adding track {0} of {1}"
 msgstr "Añadiendo pista {0} de {1}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:596
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:606
 #, csharp-format
 msgid "Removing track {0} of {1}"
 msgstr "Quitando pista {0} de {1}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:649
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:659
 msgid "Writing media database"
 msgstr "Escribiendo la base de datos multimedia"
 
@@ -5107,7 +5107,7 @@ msgstr ""
 
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/DetailsSource.cs:149
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/SearchSource.cs:190
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:301
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:309
 msgid "Try Again"
 msgstr "Intentar de nuevo"
 
@@ -5320,7 +5320,6 @@ msgid "Library of Congress"
 msgstr "Biblioteca del congreso"
 
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HomeView.cs:136
-#| msgid "Sample"
 msgid "Examples:"
 msgstr "Ejemplos:"
 
@@ -5684,31 +5683,63 @@ msgstr "Descripción:"
 msgid "Rating:"
 msgstr "Valoración:"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:129
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:136
 msgid "_Last.fm"
 msgstr "_Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:130
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:137
 msgid "Configure the Audioscrobbler plugin"
 msgstr "Configurar el complemento de Audioscrobbler"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:133
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:140
 msgid "Visit _User Profile Page"
 msgstr "Visitar la página del perfil de _usuario"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:134
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:164
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:141
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:172
 msgid "Visit Your Last.fm Profile Page"
 msgstr "Visitar la página de su perfil de Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:139
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:91
-msgid "_Enable Song Reporting"
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:146
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:93
+#, fuzzy
+#| msgid "_Enable Song Reporting"
+msgid "_Enable Song Reporting From Banshee"
 msgstr "Activar _informe de canciones"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:140
-msgid "Enable song reporting"
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:147
+#, fuzzy
+#| msgid "Enable song reporting"
+msgid "Enable song reporting From Banshee"
 msgstr "Activar informe de canciones"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:152
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:98
+#, fuzzy
+#| msgid "_Enable Song Reporting"
+msgid "_Enable Song Reporting From Device"
+msgstr "Activar _informe de canciones"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:153
+#, fuzzy
+#| msgid "Enable song reporting"
+msgid "Enable song reporting From Device"
+msgstr "Activar informe de canciones"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:402
+msgid "Scrobbling from device"
+msgstr ""
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:403
+#, fuzzy
+msgid "Scrobbling from device..."
+msgstr "Scrobbling from device…"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:414
+#, csharp-format
+#| msgid "Removing track {0} of {1}"
+msgid "Processing track {0} of {1} ..."
+msgstr "Procesando pista pista {0} de {1}…"
 
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmActions.cs:66
 msgid "Connect"
@@ -5793,21 +5824,21 @@ msgstr "http://www.last.fm/music/{0}/+videos"
 msgid "http://en.wikipedia.org/wiki/{0}"
 msgstr "http://es.wikipedia.org/wiki/{0}"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:78
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:80
 msgid "Account"
 msgstr "Cuenta"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:80
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:270
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:82
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:278
 msgid "_Username"
 msgstr "Nombre de _usuario"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:160
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:168
 #: ../src/Libraries/Lastfm.Gui/Lastfm.Gui/AccountLoginForm.cs:86
 msgid "Sign up for Last.fm"
 msgstr "Registrarse en Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:254
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:262
 msgid ""
 "Open Last.fm in a browser, giving you the option to authorize Banshee to "
 "work with your account"
@@ -5815,27 +5846,27 @@ msgstr ""
 "Abrir Last.fm en un navegador, dándole la opción de autorizar a Banshee para "
 "trabajar con su cuenta"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:265
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:273
 #: ../src/Libraries/Lastfm.Gui/Lastfm.Gui/AccountLoginDialog.cs:49
 msgid "Log in to Last.fm"
 msgstr "Iniciar sesión en Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:286
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:294
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:294
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:321
 msgid "You need to allow Banshee to access your Last.fm account."
 msgstr "Necesita permitir a Banshee acceder a su cuenta Last.fm."
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:296
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:304
 msgid "Finish Logging In"
 msgstr "Finalizar el inicio de sesión"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:310
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:318
 #, csharp-format
 msgid "You are logged in to Last.fm as the user <i>{0}</i>."
 msgstr "Ha iniciado sesión en Last.fm como el usuario <i>{0}</i>."
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:313
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:321
 msgid "Log out of Last.fm"
 msgstr "Cerrar sesión en Last.fm"
 
