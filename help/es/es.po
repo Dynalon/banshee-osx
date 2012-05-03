@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: banshee-help.master\n"
-"POT-Creation-Date: 2012-02-09 21:02+0000\n"
-"PO-Revision-Date: 2012-02-12 18:08+0100\n"
+"POT-Creation-Date: 2012-05-01 12:56+0000\n"
+"PO-Revision-Date: 2012-05-03 16:39+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/ui.page:29(None) C/introduction.page:45(None)
+#: C/ui.page:29(None)
 msgid "@@image: 'figures/banshee.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr "@@image: 'figures/banshee.png'; md5=THIS FILE DOESN'T EXIST"
 
@@ -55,15 +55,15 @@ msgstr "pcutler@gnome.org"
 msgid "Introduction to the Banshee User Interface"
 msgstr "Introducción a la interfaz de usuario de Banshee"
 
-#: C/ui.page:27(title) C/introduction.page:43(title)
+#: C/ui.page:27(title)
 msgid "<gui>Banshee Media Player</gui> window"
 msgstr "Ventana del <gui>Reproductor multimedia Banshee</gui>"
 
-#: C/ui.page:28(app) C/introduction.page:44(app) C/index.page:21(title)
+#: C/ui.page:28(app) C/index.page:21(title)
 msgid "Banshee Media Player"
 msgstr "Reproductor multimedia Banshee"
 
-#: C/ui.page:30(p) C/introduction.page:46(p)
+#: C/ui.page:30(p)
 msgid "<app>Banshee</app> library interface"
 msgstr "Interfaz de la colección de <app>Banshee</app>"
 
@@ -104,8 +104,8 @@ msgid ""
 "Banshee can display your music or video library, Podcast subscriptions or "
 "even the Amazon Music Store to allow you to buy music."
 msgstr ""
-"Cuando selecciona una canción o un vídeo desde «Fuentes», Banshee mostrará "
-"su contenido en el «Examinador de colecciones». Dependiendo de la fuente que "
+"Cuando selecciona una canción o un vídeo desde «Fuentes», Banshee mostrará su "
+"contenido en el «Examinador de colecciones». Dependiendo de la fuente que "
 "elija, Banshee podrá mostrar su colección de música o de vídeo, "
 "subscripciones a Podcasts o incluso la tienda de música de Amazon para "
 "permitirle comprar música."
@@ -501,12 +501,11 @@ msgstr ""
 "Una consulta de búsqueda consiste en algunos términos básicos, por ejemplo, "
 "<em>dave matthews</em>. Al introducir <em>dave matthews</em> en la caja de "
 "búsqueda, Banshee buscará todos los campos de metadatos, incluyendo «Pista», "
-"«Título de la pista», «Título del álbum», «Artista», «Año», etc. Se "
-"devolverá cualquier pista cuyos metadatos incluyan <em>dave</em> y "
-"<em>matthews</em>. Los términos de búsqueda no son sensibles a las "
-"mayúsculas, lo que significa que no tiene que preocuparse de usarlas. "
-"<em>dave</em>, <em>Dave</em> y <em>DAVE</em> tienen todos el mismo "
-"significado a la hora de buscar."
+"«Título de la pista», «Título del álbum», «Artista», «Año», etc. Se devolverá "
+"cualquier pista cuyos metadatos incluyan <em>dave</em> y <em>matthews</em>. "
+"Los términos de búsqueda no son sensibles a las mayúsculas, lo que significa "
+"que no tiene que preocuparse de usarlas. <em>dave</em>, <em>Dave</em> y "
+"<em>DAVE</em> tienen todos el mismo significado a la hora de buscar."
 
 #: C/search.page:43(title)
 msgid "Basic Operators"
@@ -786,8 +785,8 @@ msgid ""
 "The Radio source shows you all internet radio stations you have added to "
 "Banshee alphabetically."
 msgstr ""
-"La fuente «Radio» le muestra, alfabéticamente, todas las emisoras de radio "
-"de Internet que ha añadido a Banshee."
+"La fuente «Radio» le muestra, alfabéticamente, todas las emisoras de radio de "
+"Internet que ha añadido a Banshee."
 
 #: C/play.page:94(p)
 msgid ""
@@ -1367,41 +1366,111 @@ msgstr ""
 "inicio de sesión</gui> para completar el proceso."
 
 #: C/lastfm.page:58(title)
-msgid "Enable Last.fm Song Reporting"
-msgstr "Activar el informe de canciones en Last.fm"
+#| msgid "Enable Last.fm Song Reporting"
+msgid "Enable Last.fm Song Reporting From Banshee"
+msgstr "Activar el informe de canciones en Last.fm desde Banshee"
 
 #: C/lastfm.page:59(p)
+#| msgid ""
+#| "After you have successfully linked Banshee to your Last.fm profile you "
+#| "must ensure that you have enabled Banshee to report your songs. To enable "
+#| "Banshee to report the songs to your Last.fm profile go to Banshee's "
+#| "preferences, select the <gui>Source Specific</gui> tab, select <gui>Last."
+#| "fm</gui> from the dropdown, and press the <gui>Enable Song Reporting</"
+#| "gui> checkbox. If you have an active internet connection Banshee will now "
+#| "send Last.fm information regarding the songs you play. To view your play "
+#| "history visit your profile on the Last.fm website. Last.fm will "
+#| "automatically update your music metadata if any of your artist, song "
+#| "title, or album information is incorrect (although we recommend that you "
+#| "use the Metadata Fixer extension to correct your files instead)."
 msgid ""
 "After you have successfully linked Banshee to your Last.fm profile you must "
 "ensure that you have enabled Banshee to report your songs. To enable Banshee "
 "to report the songs to your Last.fm profile go to Banshee's preferences, "
 "select the <gui>Source Specific</gui> tab, select <gui>Last.fm</gui> from "
-"the dropdown, and press the <gui>Enable Song Reporting</gui> checkbox. If "
-"you have an active internet connection Banshee will now send Last.fm "
-"information regarding the songs you play. To view your play history visit "
-"your profile on the Last.fm website. Last.fm will automatically update your "
-"music metadata if any of your artist, song title, or album information is "
-"incorrect (although we recommend that you use the Metadata Fixer extension "
-"to correct your files instead)."
+"the dropdown, and press the <gui>Enable Song Reporting From Banshee</gui> "
+"checkbox. If you have an active internet connection Banshee will now send "
+"Last.fm information regarding the songs you play. To view your play history "
+"visit your profile on the Last.fm website. Last.fm will automatically update "
+"your music metadata if any of your artist, song title, or album information "
+"is incorrect (although we recommend that you use the Metadata Fixer "
+"extension to correct your files instead)."
 msgstr ""
 "Tras enlazar Banshee con éxito a su perfil de Last.fm, debe asegurarse de "
 "que ha permitido que Banshee informe sobre sus canciones. Para permitir que "
 "Banshee informe las canciones a su perfil de Last.fm, vaya a las "
 "preferencias de Banshee, seleccione la pestaña <gui>Específicas de las "
 "fuentes</gui>, seleccione <gui>Last.fm</gui> en la lista desplegable y pulse "
-"la casilla <gui>Activar informe de canciones</gui>. Si tiene una conexión "
-"activa a Internet, Banhee enviará a Last.fm información relacionada con las "
-"canciones que reproduce. Para ver su histórico de reproducción, visite su "
-"perfil en la página web de Last.fm. Last.fm actualizará automáticamente los "
-"metadatos de su música si la información del artista, canción o álbum no es "
-"correcta (aunque le recomendamos que en lugar de eso use la extensión "
-"«Reparar metadatos» para corregir sus archivos)."
+"la casilla <gui>Activar informe de canciones desde Banshee</gui>. Si tiene "
+"una conexión activa a Internet, Banhee enviará a Last.fm información "
+"relacionada con las canciones que reproduce. Last.fm actualizará "
+"automáticamente los metadatos de su música si la información del artista, "
+"canción o álbum no es correcta (aunque le recomendamos que, en lugar de eso, "
+"use la extensión «Reparar metadatos» para corregir sus archivos)."
 
 #: C/lastfm.page:75(title)
+#| msgid "Enable Last.fm Song Reporting"
+msgid "Enable Last.fm Song Reporting From Your Device"
+msgstr "Activar el informe de canciones en Last.fm desde su dispositivo"
+
+#: C/lastfm.page:76(p)
+msgid ""
+"After successfully linking Banshee to your Last.fm profile and enabling "
+"Banshee to report songs to Last.fm you can also enable scrobbling from a "
+"connected device. Banshee will, upon connection of your device, attempt to "
+"scrobble the songs you have played since the device was last connected and "
+"submit them to Last.fm."
+msgstr ""
+"Una vez que haya enlazado Banshee con su perfil de Last.fm y haya activado "
+"el informe de canciones a Last.fm desde Banshee, también podrá activar el "
+"«scrobbling» desde su dispositivo conectado. Al establecer la conexión de su "
+"dispositivo, Banshee intentará hacer el «scrobble» de las canciones que se "
+"han reproducido desde que el dispositivo se conectó por última vez, y "
+"enviarlos a Last.fm."
+
+#: C/lastfm.page:82(p)
+msgid ""
+"To enable scrobbling of a connected device go to Banshee's preferences, "
+"select the <gui>Source Specific</gui> tab, select <gui>Last.fm</gui> from "
+"the dropdown, and press the <gui>Enable Song Reporting From Device</gui> "
+"checkbox. If you have an active internet connection Banshee will, upon "
+"connection of your device, now attempt to gather information regarding the "
+"songs that you have played since it was last connected."
+msgstr ""
+"Para activar el «scrobbling» de un dispositivo conectado, vaya a las "
+"preferencias de Banshee, seleccione la pestaña <gui>Específicas de las "
+"fuentes</gui>, seleccione <gui>Last.fm</gui> de la lista desplegable y "
+"marque la casilla <gui>Activar informe de canciones desde Banshee</gui>.Si "
+"tiene una conexión a Internet activa, Banshee, Banshee tratará de obtener "
+"información acerca de las canciones que ha reproducido desde la última vez "
+"que conectó el dispositivo."
+
+#: C/lastfm.page:89(p)
+msgid ""
+"As with regular Banshee scrobbling submissions Last.fm will automatically "
+"update your music metadata if any of your artist, title, or album "
+"information is incorrect (although we again recommend that you use the "
+"Metadata Fixer extension to correct your files instead)."
+msgstr ""
+"Al igual que con los informes regulares de Banshee a Last.fm,  los metadatos "
+"de música se actualizarán automáticamente si el artista, título o la "
+"información del álbum no es correcta (aunque, de nuevo, recomendamos que use "
+"la extensión «Reparador de metadatos» para corregir sus archivos en su lugar)."
+
+#: C/lastfm.page:94(p)
+msgid ""
+"Please note that currently Banshee only supports this feature with Apple "
+"products that are supported by the AppleDevice extension."
+msgstr ""
+"Tenga en cuenta que la versión actual de Banshee sólo soporta esta "
+"característica con productos de Apple soportados por la extensión "
+"AppleDevice."
+
+#: C/lastfm.page:101(title)
 msgid "Listen to Last.fm Radio"
 msgstr "Escuchar la radio de Last.fm"
 
-#: C/lastfm.page:76(p)
+#: C/lastfm.page:102(p)
 msgid ""
 "Last.fm radio is free for residents of the United States, United Kingdom and "
 "Germany. Residents of other countries will have to pay for a premium account "
@@ -1416,7 +1485,7 @@ msgstr ""
 "escuchar las listas de reproducción y las emisoras de música que ha "
 "etiquetado o marcado como favoritas."
 
-#: C/lastfm.page:83(p)
+#: C/lastfm.page:109(p)
 msgid ""
 "In Banshee's sources pane on the left hand side, you will now have a Last.fm "
 "section, including your Last.fm radio stations. You will need an active "
@@ -1566,8 +1635,8 @@ msgstr "W"
 #: C/keyboardshortcuts.page:123(p)
 msgid "Hide Banshee Window (Requires Notification Area Plug-in Enabled"
 msgstr ""
-"Ocultar la ventana de Banshee (requiere tener activada la extensión «Icono "
-"en el área de notificación»)"
+"Ocultar la ventana de Banshee (requiere tener activada la extensión «Icono en "
+"el área de notificación»)"
 
 #: C/keyboardshortcuts.page:127(key)
 msgid "Left Mouse Button"
