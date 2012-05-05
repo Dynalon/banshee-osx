@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-04-21 16:08+0000\n"
-"PO-Revision-Date: 2012-04-24 19:55+0200\n"
+"POT-Creation-Date: 2012-05-01 12:53+0000\n"
+"PO-Revision-Date: 2012-05-06 01:55+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -325,7 +325,7 @@ msgstr ""
 
 #. ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.addin.xml
 #: ../data/addin-xml-strings.cs:148
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:200
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:207
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/PodcastGroupSource.cs:38
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:107
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:211
@@ -3333,7 +3333,7 @@ msgstr "Přepnout na zdroj psaním jeho názvu"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:115
 #: ../src/Core/Banshee.ThickClient/Banshee.Preferences.Gui/PreferenceDialog.cs:50
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:85
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:87
 msgid "Preferences"
 msgstr "Předvolby"
 
@@ -4259,25 +4259,25 @@ msgstr "Ztišeno"
 msgid "Full Volume"
 msgstr "Nejvyšší hlasitost"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:108
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:115
 msgid "Device"
 msgstr "Zařízení"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:109
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:116
 msgid "Generation"
 msgstr "Generace"
 
 #. FIXME
 #. AddDapProperty (Catalog.GetString ("Color"), "black");
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:114
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:121
 msgid "Capacity"
 msgstr "Kapacita"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:115
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:122
 msgid "Available"
 msgstr "Dostupných"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:116
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:123
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:141
 msgid "Serial number"
 msgstr "Sériové číslo"
@@ -4287,37 +4287,37 @@ msgstr "Sériové číslo"
 #. string [] capabilities = new string [ipod_device.ModelInfo.Capabilities.Count];
 #. ipod_device.ModelInfo.Capabilities.CopyTo (capabilities, 0);
 #. AddDapProperty (Catalog.GetString ("Capabilities"), String.Join (", ", capabilities));
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:123
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:130
 msgid "Supports cover art"
 msgstr "Podporuje přebaly alb"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:124
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:131
 msgid "Supports photos"
 msgstr "Podporuje fotografie"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:453
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:463
 msgid "Track duration is zero"
 msgstr "Délka stopy je nulová"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:556
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:566
 msgid "Syncing iPod"
 msgstr "Synchronizace s iPodem"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:557
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:567
 msgid "Preparing to synchronize..."
 msgstr "Připravuje se synchronizace…"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:560
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:570
 #, csharp-format
 msgid "Adding track {0} of {1}"
 msgstr "Přidává se stopa {0} z {1}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:596
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:606
 #, csharp-format
 msgid "Removing track {0} of {1}"
 msgstr "Odstraňuje se stopa {0} z {1}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:649
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:659
 msgid "Writing media database"
 msgstr "Zapisuje se databáze médií"
 
@@ -5104,7 +5104,7 @@ msgstr ""
 
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/DetailsSource.cs:149
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/SearchSource.cs:190
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:301
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:309
 msgid "Try Again"
 msgstr "Zkusit znovu"
 
@@ -5682,31 +5682,53 @@ msgstr "Popis:"
 msgid "Rating:"
 msgstr "Hodnocení:"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:129
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:136
 msgid "_Last.fm"
 msgstr "_Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:130
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:137
 msgid "Configure the Audioscrobbler plugin"
 msgstr "Nastavit zásuvný modul Audioscrobbler"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:133
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:140
 msgid "Visit _User Profile Page"
 msgstr "Navštívit stránku s profilem _uživatele"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:134
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:164
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:141
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:172
 msgid "Visit Your Last.fm Profile Page"
 msgstr "Navštívit stránku se svým profilem na Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:139
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:91
-msgid "_Enable Song Reporting"
-msgstr "_Povolit oznamování skladeb"
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:146
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:93
+msgid "_Enable Song Reporting From Banshee"
+msgstr "Povolit oznamování skladeb z Bansh_ee"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:140
-msgid "Enable song reporting"
-msgstr "Povolit oznámení skladby"
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:147
+msgid "Enable song reporting From Banshee"
+msgstr "Povolit oznamování skladeb z Banshee"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:152
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:98
+msgid "_Enable Song Reporting From Device"
+msgstr "Povolit oznamování skladeb ze zaříz_ení"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:153
+msgid "Enable song reporting From Device"
+msgstr "Povolit oznamování skladeb ze zařízení"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:402
+msgid "Scrobbling from device"
+msgstr "Scrobbling ze zařízení"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:403
+msgid "Scrobbling from device..."
+msgstr "Provádí se scrobbling ze zařízení…"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:414
+#, csharp-format
+msgid "Processing track {0} of {1} ..."
+msgstr "Zpracovává se stopa {0} z {1}…"
 
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmActions.cs:66
 msgid "Connect"
@@ -5791,21 +5813,21 @@ msgstr "http://www.last.fm/music/{0}/+videos"
 msgid "http://en.wikipedia.org/wiki/{0}"
 msgstr "http://cs.wikipedia.org/wiki/{0}"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:78
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:80
 msgid "Account"
 msgstr "Účet"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:80
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:270
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:82
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:278
 msgid "_Username"
 msgstr "_Uživatelské jméno"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:160
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:168
 #: ../src/Libraries/Lastfm.Gui/Lastfm.Gui/AccountLoginForm.cs:86
 msgid "Sign up for Last.fm"
 msgstr "Zaregistrovat se na Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:254
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:262
 msgid ""
 "Open Last.fm in a browser, giving you the option to authorize Banshee to "
 "work with your account"
@@ -5813,27 +5835,27 @@ msgstr ""
 "Otevřít Last.fm v prohlížeči, což vám dá možnost pověřit Banshee k práci s "
 "vaším účtem"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:265
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:273
 #: ../src/Libraries/Lastfm.Gui/Lastfm.Gui/AccountLoginDialog.cs:49
 msgid "Log in to Last.fm"
 msgstr "Přihlásit k Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:286
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:294
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:294
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:321
 msgid "You need to allow Banshee to access your Last.fm account."
 msgstr "Musíte Banshee povolit přístup ke svému učtu na Last.fm."
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:296
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:304
 msgid "Finish Logging In"
 msgstr "Dokončit přihlášení"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:310
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:318
 #, csharp-format
 msgid "You are logged in to Last.fm as the user <i>{0}</i>."
 msgstr "Jste přihlášeni k Last.fm jako uživatel <i>{0}</i>."
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:313
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:321
 msgid "Log out of Last.fm"
 msgstr "Odhlášení z Last.fm"
 
