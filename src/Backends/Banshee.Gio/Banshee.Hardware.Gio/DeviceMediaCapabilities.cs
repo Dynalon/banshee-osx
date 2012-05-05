@@ -120,9 +120,9 @@ namespace Banshee.Hardware.Gio
         }
 
 
-        public string PlaylistPath {
+        public string[] PlaylistPaths {
             get {
-                return mpi.PlaylistPath;
+                return mpi.PlaylistPaths;
             }
         }
 
@@ -162,7 +162,7 @@ namespace Banshee.Hardware.Gio
                 LoadProperties ();
             }
 
-            public string PlaylistPath {
+            public string[] PlaylistPaths {
                 get; private set;
             }
 
@@ -206,7 +206,7 @@ namespace Banshee.Hardware.Gio
                     }
 
                     if (mpi_file.HasKey (StorageGroup, "PlaylistPath")) {
-                        PlaylistPath = mpi_file.GetString (StorageGroup, "PlaylistPath");
+                        PlaylistPaths = mpi_file.GetStringList (StorageGroup, "PlaylistPath");
                     }
 
                     if (mpi_file.HasKey (StorageGroup, "AudioFolders")) {
@@ -245,7 +245,7 @@ namespace Banshee.Hardware.Gio
             private void InitDefaults ()
             {
                 FolderDepth = 0;
-                PlaylistPath = "";
+                PlaylistPaths = new string[] {};
                 AudioFolders = new string[] {};
                 InputFormats = new string[] {};
                 OutputFormats = new string[] {};

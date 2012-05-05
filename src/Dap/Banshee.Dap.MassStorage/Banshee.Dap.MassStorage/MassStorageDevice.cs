@@ -121,7 +121,7 @@ namespace Banshee.Dap.MassStorage
             video_folders = MergeValues ("video_folders", config, DefaultVideoFolders);
             playback_mime_types = MergeValues ("output_formats", config, DefaultPlaybackMimeTypes);
             playlist_formats = MergeValues ("playlist_formats", config, DefaultPlaylistFormats);
-            playlist_path = GetPreferredValue ("playlist_path", config, DefaultPlaylistPath);
+            playlist_paths = new string [] { GetPreferredValue ("playlist_path", config, DefaultPlaylistPath) };
             folder_depth = GetPreferredValue ("folder_depth", config, DefaultFolderDepth);
 
             string preferred_folder_separator = GetPreferredValue ("folder_separator", config, DefaultFolderSeparator);
@@ -266,9 +266,9 @@ namespace Banshee.Dap.MassStorage
             get { return null; }
         }
 
-        private string playlist_path;
-        public virtual string PlaylistPath {
-            get { return playlist_path; }
+        private string [] playlist_paths;
+        public virtual string [] PlaylistPaths {
+            get { return playlist_paths; }
         }
 
         protected virtual string[] DefaultPlaybackMimeTypes {

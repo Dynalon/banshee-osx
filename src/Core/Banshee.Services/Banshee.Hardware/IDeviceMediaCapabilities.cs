@@ -40,7 +40,7 @@ namespace Banshee.Hardware
         string CoverArtFileType { get; }
         string CoverArtFileName { get; }
         string [] PlaylistFormats { get; }
-        string PlaylistPath { get; }
+        string [] PlaylistPaths { get; }
         string [] PlaybackMimeTypes { get; }
         char FolderSeparator { get; }
         bool IsType (string type);
