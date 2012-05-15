@@ -35,15 +35,15 @@ namespace OsxIntegration.Ige
         {
         }
 
-        [DllImport ("libigemacintegration.dylib")]
-        private static extern void ige_mac_menu_add_app_menu_item (IntPtr raw,
+        [DllImport ("libgtkmacintegration.dylib")]
+        private static extern void gtk_mac_menu_add_app_menu_item (IntPtr raw,
             IntPtr menu_item, IntPtr label);
 
         public void AddMenuItem (Gtk.MenuItem menu_item, string label)
         {
             var native_label = GLib.Marshaller.StringToPtrGStrdup (label);
             try {
-                ige_mac_menu_add_app_menu_item (Handle,
+                gtk_mac_menu_add_app_menu_item (Handle,
                     menu_item == null ? IntPtr.Zero : menu_item.Handle,
                     native_label);
             } finally {
