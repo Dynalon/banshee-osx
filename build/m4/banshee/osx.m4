@@ -3,7 +3,7 @@ AC_DEFUN([BANSHEE_CHECK_OSX],
 	enable_osx="no"
 	if test "x${host_os%${host_os#??????}}" = "xdarwin"; then
 		enable_osx="yes"
-		PKG_CHECK_MODULES(IGEMACINTEGRATION, ige-mac-integration >= 0.8.6)
+		PKG_CHECK_MODULES(GTKMACINTEGRATION, gtk-mac-integration >= 1.0.1)
 		PKG_CHECK_MODULES(MONOMAC, monomac >= 0.7)
 		MONOMAC_ASSEMBLIES=`$PKG_CONFIG --variable=Libraries monomac`
 		AC_SUBST(MONOMAC_LIBS)
