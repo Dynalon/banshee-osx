@@ -499,6 +499,16 @@ namespace Banshee.MediaEngine
             }
         }
 
+        public void RestartCurrentTrack ()
+        {
+            var track = CurrentTrack;
+            if (track != null) {
+                // Don't process the track as played through IncrementLastPlayed, just play it again
+                active_engine.Close (false);
+                OpenPlay (track);
+            }
+        }
+
         // For use by RadioTrackInfo
         // TODO remove this method once RadioTrackInfo playlist downloading/parsing logic moved here?
         internal void StartSynthesizeContacting (TrackInfo track)

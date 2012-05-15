@@ -3,6 +3,7 @@
 // 
 // Author:
 //   Aaron Bockover <abockover@novell.com>
+//   Phil Trimble <philtrimble@gmail.com>
 // 
 // Copyright (c) 2010 Novell, Inc.
 // 
@@ -49,6 +50,7 @@ namespace Banshee.Lastfm
         private Section prefs_section;
         private SchemaPreference<string> username_preference;
         private Preference<bool> reporting_preference;
+        private Preference<bool> reporting_device_preference;
         private LastfmSource source;
         private AudioscrobblerService scrobbler;
 
@@ -88,9 +90,14 @@ namespace Banshee.Lastfm
             scrobbler = ServiceManager.Get<Banshee.Lastfm.Audioscrobbler.AudioscrobblerService> ();
             if (scrobbler != null) {
                 reporting_preference = new Preference<bool> ("enable-song-reporting",
-                    Catalog.GetString ("_Enable Song Reporting"), null, scrobbler.Enabled);
+                    Catalog.GetString ("_Enable Song Reporting From Banshee"), null, scrobbler.Enabled);
                 reporting_preference.ValueChanged += root => scrobbler.Enabled = reporting_preference.Value;
                 prefs_section.Add (reporting_preference);
+
+                reporting_device_preference = new Preference<bool> ("enable-device-song-reporting",
+                    Catalog.GetString ("_Enable Song Reporting From Device"), null, scrobbler.DeviceEnabled);
+                reporting_device_preference.ValueChanged += root => scrobbler.DeviceEnabled = reporting_device_preference.Value;
+                prefs_section.Add (reporting_device_preference);
             }
         }
 
@@ -122,8 +129,9 @@ namespace Banshee.Lastfm
 
         private void OnPreferencesServiceInstallWidgetAdapters (object sender, EventArgs args)
         {
-            if (reporting_preference != null && scrobbler != null) {
+            if (reporting_preference != null && reporting_device_preference != null && scrobbler != null) {
                 reporting_preference.Value = scrobbler.Enabled;
+                reporting_device_preference.Value = scrobbler.DeviceEnabled;
             }
 
             if (account_section == null) {

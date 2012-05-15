@@ -64,7 +64,7 @@ namespace Banshee.Dap.MassStorage
             "audio/x-mpegurl"
         };
 
-        private static string playlists_path = "Playlists/";
+        private static string playlists_path = "Music/Playlists/";
 
         private static int folder_depth = 2;
 

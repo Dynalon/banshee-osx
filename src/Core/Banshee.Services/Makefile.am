@@ -210,6 +210,7 @@ SOURCES =  \
 	Banshee.Sources/DatabaseSource.cs \
 	Banshee.Sources/DurationStatusFormatters.cs \
 	Banshee.Sources/ErrorSource.cs \
+	Banshee.Sources/IBatchScrobblerSource.cs \
 	Banshee.Sources/IDiskUsageReporter.cs \
 	Banshee.Sources/IDurationAggregator.cs \
 	Banshee.Sources/IFileSizeAggregator.cs \

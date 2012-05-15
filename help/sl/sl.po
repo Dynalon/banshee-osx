@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: banshee help master\n"
-"POT-Creation-Date: 2011-04-16 14:15+0000\n"
-"PO-Revision-Date: 2011-12-15 22:02+0100\n"
-"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
+"POT-Creation-Date: 2012-04-08 11:22+0000\n"
+"PO-Revision-Date: 2012-04-08 22:27+0200\n"
+"Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,6 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/ui.page:29(None)
-#: C/introduction.page:45(None)
 msgid "@@image: 'figures/banshee.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr "@@image: 'figures/banshee.png'; md5=THIS FILE DOESN'T EXIST"
 
@@ -80,18 +79,15 @@ msgid "Introduction to the Banshee User Interface"
 msgstr "Uvod v uporabniški vmesnik Banshee"
 
 #: C/ui.page:27(title)
-#: C/introduction.page:43(title)
 msgid "<gui>Banshee Media Player</gui> window"
 msgstr "Okno <gui>Banshee predvajalnik večpredstavnostnih datotek</gui>"
 
 #: C/ui.page:28(app)
-#: C/introduction.page:44(app)
 #: C/index.page:21(title)
 msgid "Banshee Media Player"
 msgstr "Banshee predvajalnik večpredstavnostnih datotek"
 
 #: C/ui.page:30(p)
-#: C/introduction.page:46(p)
 msgid "<app>Banshee</app> library interface"
 msgstr "Vmesnik knjižnice <app>Banshee</app>"
 
@@ -120,7 +116,6 @@ msgid "Now Playing View"
 msgstr "Pogled sedaj se predvaja"
 
 #: C/ui.page:59(p)
-#, fuzzy
 msgid "Helpful when using Banshee in full screen mode, the Now Playing mode hides the library to give you a larger view of the music or video you're watching. When listening to music, the Now Playing view will show you the artist name, album and cover art if available. If you are watching a video, Banshee will display the video."
 msgstr "V načinu predvajanja se knjižnica skrije in je zato več prostora za prikaz videa. Zato je uporaben v celozaslonskem načinu. Med poslušanjem glasbe bo prikazano ime izvajalca, album in ovitek, če je na voljo. Če gledate video, bo Banshee prikazal video."
 
@@ -764,7 +759,7 @@ msgid "Enable Last.fm"
 msgstr "Omogoči Last.fm"
 
 #: C/lastfm.page:36(p)
-msgid "To get the most out of Last.fm, you will want to create a Last.fm profile. Visit <link href=\"http://www.last.fm/join\">http://www.last.fm/join</link> to create an account or choose <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> from the Banshee menu. Then press the <gui>Source Specific</gui> tab and press the <gui>Source</gui> drop down menu and choose <gui>Last.fm</gui> and select the <em>Sign up for Last.fm</em> link."
+msgid "To get the most out of Last.fm, you will want to create a Last.fm profile. Visit <link href=\"http://www.last.fm/join\">http://www.last.fm/join</link> to create an account or choose <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> from the Banshee menu. Once in the preferences select the <gui>Source Specific</gui> tab, press the <gui>Source</gui> drop down menu, choose <gui>Last.fm</gui> and finally select the <em>Sign up for Last.fm</em> link."
 msgstr "Da bi dobili največ iz Last.fm, boste morali ustvariti profil Last.fm. Za ustvarjanje računa obiščite <link href=\"http://www.last.fm/join\">http://www.last.fm/join</link> ali v meniju Banshee izberite <guiseq><gui>Uredi</gui><gui>Možnosti</gui></guiseq>. Nato pritisnite zavihek <gui>Lastno viru</gui> in pritisnite spustni meni <gui>Vir</gui> in izberite <gui>Last.fm</gui> in izberite povezavo <em>Vpis v Last.fm</em>"
 
 #: C/lastfm.page:45(p)
@@ -776,18 +771,18 @@ msgid "Enable Last.fm Song Reporting"
 msgstr "Omogoči poročanje skladb Last.fm"
 
 #: C/lastfm.page:59(p)
-msgid "After you have successfully linked Banshee to your Last.fm profile, to enable Banshee to report the songs to your Last.fm profile, in the <gui>Source Specific</gui> tab in Banshee's preferences, press the <gui>Enable Song Reporting</gui> checkbox. If you have an active internet connection, Banshee will now send Last.fm information regarding the songs you play. To view your play history, visit your profile on the Last.fm website. Last.fm will automatically update your music metadata if any of your artist, song title or album information is incorrect."
-msgstr "Po tem, ko ste Banshee uspešno povezali s svojim profilom Last.fm za omogočitev poročanja skladb na svoj profil Last.fm v zavihku <gui>Lastno viru</gui> v možnostih Banshee pritisnite izbirno polje <gui>Omogoči poročanje skladb</gui>. V primeru, da imate dejavno internetno povezavo, bo Banshee sedaj poslal podatke Last. fm o skladbah, ki jih prevajate. Za ogled svoje zgodovine predvajanja obiščite svoj profil na spletišču Last.fm. Last.fm bo samodejno posodobil metapodatke vaše glasbe, če so podatki o izvajalcu, naslovu skladbe ali albumu nepravilni."
+msgid "After you have successfully linked Banshee to your Last.fm profile you must ensure that you have enabled Banshee to report your songs. To enable Banshee to report the songs to your Last.fm profile go to Banshee's preferences, select the <gui>Source Specific</gui> tab, select <gui>Last.fm</gui> from the dropdown, and press the <gui>Enable Song Reporting</gui> checkbox. If you have an active internet connection Banshee will now send Last.fm information regarding the songs you play. To view your play history visit your profile on the Last.fm website. Last.fm will automatically update your music metadata if any of your artist, song title, or album information is incorrect (although we recommend that you use the Metadata Fixer extension to correct your files instead)."
+msgstr "Po tem, ko ste Banshee uspešno povezali s svojim profilom Last.fm za omogočitev poročanja skladb na svoj profil Last.fm v zavihku <gui>Lastno viru</gui> v možnostih Banshee izberite <gui>Last.fm</gui> izberite izbirno polje <gui>Omogoči poročanje skladb</gui>. V primeru, da imate dejavno internetno povezavo, bo Banshee sedaj poslal podatke Last. fm o skladbah, ki jih prevajate. Za ogled svoje zgodovine predvajanja obiščite svoj profil na spletišču Last.fm. Last.fm bo samodejno posodobil metapodatke vaše glasbe, če so podatki o izvajalcu, naslovu skladbe ali albumu nepravilni."
 
-#: C/lastfm.page:72(title)
+#: C/lastfm.page:75(title)
 msgid "Listen to Last.fm Radio"
 msgstr "Poslušanje radia Last.fm"
 
-#: C/lastfm.page:73(p)
+#: C/lastfm.page:76(p)
 msgid "Last.fm radio is free for residents of the United States, United Kingdom and Germany. Residents of other countries will have to pay for a premium account with Last.fm to listen to radio. Premium members, in all countries, also receive premium radio features: listening to playlists and stations of music you've loved or tagged."
 msgstr "Radio Last.fm je brezplačen za prebivalce Združenih držav Amerike, Združenega Kraljestva in Nemčije. Prebivalci drugih držav morajo plačati za premijski račun z Last.fm za poslušanje radia. Premijski člani v vseh državah prejmejo tudi zmožnosti premijskega radia: poslušanje seznamov predvajanja in postaj glasbe, ki vam je všeč ali ste jo označili."
 
-#: C/lastfm.page:80(p)
+#: C/lastfm.page:83(p)
 msgid "In Banshee's sources pane on the left hand side, you will now have a Last.fm section, including your Last.fm radio stations. You will need an active internet connection to listen to Last.fm radio. Choose the radio station you wish to listen to and Banshee will communicate with Last.fm to populate songs for that radio station. Press the <gui>Play</gui> button in Banshee or <key>Spacebar</key> to start streaming a Last.fm radio station. You can also press the <gui>Next</gui> button in Banshee, <key>N</key> or choose <guiseq><gui>Playback</gui><gui>Next</gui></guiseq> to play the next song in your radio station queue."
 msgstr "V vsebinskem meniju  na levi strani Banshee boste imeli sedaj odsek Last.fm, vključno s svojimi radijskimi postajami Last.fm. Za poslušanje radia Last.fm boste potrebovali dejavno internetno povezavo.  Izberite radijsko postajo, ki jo želite poslušati. Banshee bo komuniciral z Last.fm za dodajanje skladb za to radijsko postajo. V Banshee pritisnite gumb <gui>Predvajaj</gui> ali <key>Preslednico</key> za začetek pretakanja radijske postaje Last.fm. Za predvajanje naslednje skladbe v čakalni vrsti svoje radijske postaje lahko pritisnete gumb <gui>Naslednja</gui>, tipko <key>N</key> ali izberite  <guiseq><gui>Predvajanje</gui><gui>Naslednja</gui></guiseq>."
 

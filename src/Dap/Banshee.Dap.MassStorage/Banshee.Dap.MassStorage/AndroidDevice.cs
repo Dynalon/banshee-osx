@@ -67,7 +67,7 @@ namespace Banshee.Dap.MassStorage
             "audio/x-mpegurl"
         };
 
-        private static string playlists_path = "Playlists/";
+        private static string playlists_path = "Music/Playlists/";
 
         private AmazonMp3GroupSource amazon_source;
         private string amazon_base_dir;

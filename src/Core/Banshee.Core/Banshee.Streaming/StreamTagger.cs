@@ -196,7 +196,6 @@ namespace Banshee.Streaming
                     int file_rating = 0, file_playcount = 0;
                     StreamRatingTagger.GetRatingAndPlayCount (file, ref file_rating, ref file_playcount);
                     if (import_rating) {
-                        Log.DebugFormat ("### Importing rating for {0}", track.TrackTitle);
                         track.Rating = Choose (file_rating, track.Rating, preferTrackInfo);
                     }
                     if (import_play_count) {

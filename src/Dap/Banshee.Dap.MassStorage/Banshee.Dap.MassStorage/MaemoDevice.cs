@@ -89,7 +89,7 @@ namespace Banshee.Dap.MassStorage
             "phone-nokia-n900", DapSource.FallbackIcon
         };
 
-        private static string playlists_path = "Playlists/";
+        private static string playlists_path = "Music/Playlists/";
 
 
         public override void SourceInitialize ()
