@@ -99,7 +99,7 @@ namespace Banshee.NowPlaying
         {
             if (Contents.Parent != frame) {
                 Contents.Reparent (frame);
-                Contents.Show ();
+				// Contents.Show ();
             }
         }
 
