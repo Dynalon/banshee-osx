@@ -89,7 +89,11 @@ namespace Banshee.FileSystemQueue
             actions_loaded = true;
 
             UpdateActions ();
-            ServiceManager.SourceManager.ActiveSourceChanged += delegate { ThreadAssist.ProxyToMain (UpdateActions); };
+            ServiceManager.SourceManager.ActiveSourceChanged += delegate {
+                if (ServiceManager.SourceManager.ActiveSource is FileSystemQueueSource) {
+                    ThreadAssist.ProxyToMain (UpdateActions);
+                }
+            };
             TrackModel.Reloaded += OnTrackModelReloaded;
 
             Reload ();
