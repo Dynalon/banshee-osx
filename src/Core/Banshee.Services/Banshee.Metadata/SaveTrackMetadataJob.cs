@@ -75,7 +75,6 @@ namespace Banshee.Metadata
         public bool WriteMetadataEnabled { get; set; }
         public bool WriteRatingsEnabled { get; set; }
         public bool WritePlayCountsEnabled { get; set; }
-        public bool RenameEnabled { get; set; }
 
         private HyenaSqliteCommand update_synced_at;
 
@@ -97,9 +96,10 @@ namespace Banshee.Metadata
                     wrote = StreamTagger.SaveToFile (track, WriteMetadataEnabled, WriteRatingsEnabled, WritePlayCountsEnabled);
                 }
 
-                // Rename tracks only from the Music Library
-                if (RenameEnabled &&
-                    track.PrimarySource.Equals (musicLibrarySource)) {
+                // Rename tracks only from Libraries that support it.
+                var track_source = track.PrimarySource as LibrarySource;
+                if (null != track_source && track_source.HasMoveFiles &&
+                    track_source.MoveFiles) {
                     Hyena.Log.DebugFormat ("Updating file name for {0}", track);
                     renamed = RenameFile (track);
                     if (renamed && !wrote) {

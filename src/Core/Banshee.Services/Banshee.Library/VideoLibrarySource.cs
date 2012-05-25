@@ -34,6 +34,7 @@ using Mono.Unix;
 
 using Banshee.SmartPlaylist;
 using Banshee.Collection;
+using Banshee.Configuration;
 
 namespace Banshee.Library
 {
@@ -63,6 +64,13 @@ namespace Banshee.Library
                   </column>
                 </column-controller>
             ", Catalog.GetString ("Produced By")));
+
+            // Migrate the old import settings, if necessary
+            if (DatabaseConfigurationClient.Client.Get<int> ("VideoImportSettingsMigrated", 0) != 1) {
+                bool oldImportSettings = OldImportSetting.Get ();
+                CopyOnImport = oldImportSettings;
+                DatabaseConfigurationClient.Client.Set<int> ("VideoImportSettingsMigrated", 1);
+            }
         }
 
         public override string GetPluralItemCountString (int count)
@@ -84,6 +92,10 @@ namespace Banshee.Library
 
         public override IEnumerable<SmartPlaylistDefinition> DefaultSmartPlaylists {
             get { return default_smart_playlists; }
+        }
+
+        public override bool HasCopyOnImport {
+            get { return true; }
         }
 
         protected override string SectionName {

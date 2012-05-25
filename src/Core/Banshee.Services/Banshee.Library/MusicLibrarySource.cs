@@ -74,6 +74,15 @@ namespace Banshee.Library
                 DatabaseConfigurationClient.Client.Set<int> ("MusicLibraryLocationMigrated", 1);
             }
 
+            // Migrate the old import and rename settings, if necessary
+            if (DatabaseConfigurationClient.Client.Get<int> ("MusicImportSettingsMigrated", 0) != 1) {
+                bool oldImportSettings = OldImportSetting.Get ();
+                bool oldRenameSettings = OldRenameSetting.Get ();
+                CopyOnImport = oldImportSettings;
+                MoveFiles = oldRenameSettings;
+                DatabaseConfigurationClient.Client.Set<int> ("MusicImportSettingsMigrated", 1);
+            }
+
             SetFileNamePattern (MusicFileNamePattern);
 
             Section misc = PreferencesPage.Add (new Section ("misc",
@@ -108,6 +117,14 @@ namespace Banshee.Library
 
         public override IEnumerable<SmartPlaylistDefinition> NonDefaultSmartPlaylists {
             get { return non_default_smart_playlists; }
+        }
+
+        public override bool HasCopyOnImport {
+            get { return true; }
+        }
+
+        public override bool HasMoveFiles {
+            get { return true; }
         }
 
         protected override string SectionName {

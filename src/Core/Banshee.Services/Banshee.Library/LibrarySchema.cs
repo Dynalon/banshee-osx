@@ -55,13 +55,6 @@ namespace Banshee.Configuration.Schema
                 "%album_artist_initial%, %artist% (deprecated, use %album_artist%)."
         );
 
-        public static readonly SchemaEntry<bool> CopyOnImport = new SchemaEntry<bool>(
-            "library", "copy_on_import",
-            false,
-            "Copy music on import",
-            "Copy and rename music to banshee music library directory when importing"
-        );
-
         public static readonly SchemaEntry<bool> MoveOnInfoSave = new SchemaEntry<bool>(
             "library", "move_on_info_save",
             false,
