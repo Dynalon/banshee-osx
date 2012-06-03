@@ -104,8 +104,10 @@ namespace Banshee.Sources
         ", BansheeQuery.UriField.Column));
 
         protected HyenaSqliteCommand prune_artists_albums_command = new HyenaSqliteCommand (@"
-            DELETE FROM CoreArtists WHERE ArtistID NOT IN (SELECT ArtistID FROM CoreTracks);
-            DELETE FROM CoreAlbums WHERE AlbumID NOT IN (SELECT AlbumID FROM CoreTracks)
+            DELETE FROM CoreAlbums WHERE AlbumID NOT IN (SELECT AlbumID FROM CoreTracks);
+            DELETE FROM CoreArtists WHERE
+                    NOT EXISTS (SELECT 1 FROM CoreTracks WHERE CoreTracks.ArtistID = CoreArtists.ArtistID)
+                AND NOT EXISTS (SELECT 1 FROM CoreAlbums WHERE CoreAlbums.ArtistID = CoreArtists.ArtistID)
         ");
 
         protected HyenaSqliteCommand purge_tracks_command = new HyenaSqliteCommand (@"
