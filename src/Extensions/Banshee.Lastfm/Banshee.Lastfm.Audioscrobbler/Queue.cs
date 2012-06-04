@@ -49,6 +49,8 @@ namespace Banshee.Lastfm.Audioscrobbler
 {
     class Queue : IQueue
     {
+        private readonly TimeSpan MAXIMUM_TRACK_STARTTIME_IN_FUTURE = TimeSpan.FromDays (180);
+
         internal class QueuedTrack
         {
             private static DateTime epoch = DateTimeUtil.LocalUnixEpoch.ToUniversalTime ();
@@ -119,6 +121,12 @@ namespace Banshee.Lastfm.Audioscrobbler
 
             public string TrackAuth {
                 get { return track_auth; }
+            }
+
+            public override string ToString ()
+            {
+                return String.Format ("{0} - {1} (on {2} - track {3}) <duration: {4}sec, start time: {5}sec>",
+                                      Artist, Title, Album, TrackNumber, Duration, StartTime);
             }
 
             string artist;
@@ -290,7 +298,16 @@ namespace Banshee.Lastfm.Audioscrobbler
         {
             TrackInfo t = (track as TrackInfo);
             if (t != null) {
-                queue.Add (new QueuedTrack (t, started_at));
+                QueuedTrack new_queued_track = new QueuedTrack (t, started_at);
+
+                //FIXME Just log invalid tracks until we determine the root cause
+                if (IsInvalidQueuedTrack (new_queued_track)) {
+                    Log.WarningFormat ("Invalid data detected while adding to audioscrobbler queue for " +
+                                       "track '{0}', original start time: '{1}'", new_queued_track, started_at);
+                }
+
+                queue.Add (new_queued_track);
+
                 dirty = true;
                 RaiseTrackAdded (this, new EventArgs ());
             }
@@ -311,6 +328,27 @@ namespace Banshee.Lastfm.Audioscrobbler
             EventHandler handler = TrackAdded;
             if (handler != null)
                 handler (o, args);
+        }
+
+        public void RemoveInvalidTracks ()
+        {
+            int removed_track_count = queue.RemoveAll (IsInvalidQueuedTrack);
+            if (removed_track_count > 0) {
+                Log.WarningFormat ("{0} invalid track(s) removed from audioscrobbler queue",
+                                   removed_track_count);
+                dirty = true;
+                Save ();
+            }
+        }
+
+        private bool IsInvalidQueuedTrack (QueuedTrack track)
+        {
+            DateTime trackStartTime = DateTimeUtil.FromTimeT (track.StartTime);
+
+            return (String.IsNullOrEmpty (track.Artist) ||
+                    String.IsNullOrEmpty (track.Title) ||
+                    trackStartTime < DateTimeUtil.LocalUnixEpoch ||
+                    trackStartTime > DateTime.Now.Add (MAXIMUM_TRACK_STARTTIME_IN_FUTURE));
         }
     }
 }

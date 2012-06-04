@@ -45,5 +45,6 @@ namespace Lastfm
 
         void Add (object track, DateTime started);
         void RemoveRange (int first, int count);
+        void RemoveInvalidTracks ();
     }
 }

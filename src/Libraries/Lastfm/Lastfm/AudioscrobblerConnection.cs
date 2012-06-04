@@ -332,9 +332,16 @@ namespace Lastfm
                     last_upload_failed_logged = now;
                 }
 
-                // retransmit the queue on the next interval
                 hard_failures++;
-                state = State.NeedTransmit;
+
+                queue.RemoveInvalidTracks ();
+
+                // if there are still valid tracks in the queue then retransmit on the next interval
+                if (queue.Count > 0) {
+                    state = State.NeedTransmit;
+                } else {
+                    state = State.Idle;
+                }
             }
             else if (line.StartsWith ("BADSESSION")) {
                 if (now - last_upload_failed_logged > TimeSpan.FromMinutes(FAILURE_LOG_MINUTES)) {
