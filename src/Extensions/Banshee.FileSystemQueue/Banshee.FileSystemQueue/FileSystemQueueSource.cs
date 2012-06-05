@@ -89,7 +89,11 @@ namespace Banshee.FileSystemQueue
             actions_loaded = true;
 
             UpdateActions ();
-            ServiceManager.SourceManager.ActiveSourceChanged += delegate { ThreadAssist.ProxyToMain (UpdateActions); };
+            ServiceManager.SourceManager.ActiveSourceChanged += delegate {
+                if (ServiceManager.SourceManager.ActiveSource is FileSystemQueueSource) {
+                    ThreadAssist.ProxyToMain (UpdateActions);
+                }
+            };
             TrackModel.Reloaded += OnTrackModelReloaded;
 
             Reload ();
@@ -108,6 +112,9 @@ namespace Banshee.FileSystemQueue
             }
 
             StorageName = null;
+
+            // MusicLibrary source is initialized before extension sources
+            ServiceManager.SourceManager.MusicLibrary.TracksAdded += OnTracksImported;
         }
 
         public void Enqueue (string path)
@@ -203,6 +210,7 @@ namespace Banshee.FileSystemQueue
         public override void Dispose ()
         {
             ServiceManager.Get<DBusCommandService> ().ArgumentPushed -= OnCommandLineArgument;
+            ServiceManager.SourceManager.MusicLibrary.TracksAdded -= OnTracksImported;
             if (ClearOnQuitSchema.Get ()) {
                 OnClearFileSystemQueue (this, EventArgs.Empty);
             }
@@ -254,6 +262,14 @@ namespace Banshee.FileSystemQueue
 
             if (Count > 0) {
                 PlayEnqueued ();
+            }
+        }
+
+        private void OnTracksImported (Source sender, TrackEventArgs args)
+        {
+            if (Count > 0) {
+                // Imported tracks might have come from the FSQ, so refresh it
+                Reload ();
             }
         }
 

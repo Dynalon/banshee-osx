@@ -41,6 +41,9 @@ namespace Banshee.Dap.AppleDevice
             get; set;
         }
 
+        // libgpod stores rating as stars*ITDB_RATING_STEP which is 20.
+        private const int ITDB_RATING_STEP = 20;
+
         private string mimetype;
         private string description; // Only used for podcasts.
 
@@ -153,8 +156,7 @@ namespace Banshee.Dap.AppleDevice
             AlbumTitleSort = track.SortAlbum;
             AlbumArtistSort = track.SortAlbumArtist;
             TrackTitleSort = track.SortTitle;
-
-            rating = track.Rating > 5 ? 0 : (int) track.Rating;
+            rating = track.Rating > 100 ? 0 : (int) track.Rating / ITDB_RATING_STEP;
 
             if (track.DRMUserID > 0) {
                 PlaybackError = StreamPlaybackError.Drm;
@@ -240,8 +242,7 @@ namespace Banshee.Dap.AppleDevice
             track.SortAlbum = AlbumTitleSort;
             track.SortAlbumArtist = AlbumArtistSort;
             track.SortTitle = TrackTitleSort;
-
-            track.Rating = ((Rating >= 1) && (Rating <= 5)) ? (uint)Rating : 0;
+            track.Rating = ((Rating >= 1) && (Rating <= 5)) ? (uint)Rating * ITDB_RATING_STEP : 0;
 
             if (HasAttribute (TrackMediaAttributes.Podcast)) {
                 track.Description = description;

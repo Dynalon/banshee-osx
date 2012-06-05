@@ -757,7 +757,7 @@ namespace Banshee.Collection.Database
                                 new_filename = String.Format ("{0} ({1}){2}", filename_no_ext, duplicate_index, extension);
                                 new_uri = new SafeUri (new_filename);
                                 duplicate_index++;
-                          }
+                            }
                         }
                     }
 
