@@ -76,7 +76,7 @@ namespace Banshee.Gui
                     Catalog.GetString ("Create a new empty playlist"), OnNewPlaylist),
 
                 new ActionEntry ("NewSmartPlaylistAction", null,
-                    Catalog.GetString ("New _Smart Playlist..."), null,
+                    Catalog.GetString ("New _Smart Playlist..."), "",
                     Catalog.GetString ("Create a new smart playlist"), OnNewSmartPlaylist),
 
                 /*new ActionEntry ("NewSmartPlaylistFromSearchAction", null,
