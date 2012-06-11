@@ -76,7 +76,7 @@ namespace Banshee.Gui
                     Catalog.GetString("_Edit"), null, null, null),
 
                 new ActionEntry ("PreferencesAction", Stock.Preferences,
-                    Catalog.GetString ("_Preferences"), null,
+                    Catalog.GetString ("_Preferences"), "",
                     Catalog.GetString ("Modify your personal preferences"), OnPreferences),
 
                 // Tools menu

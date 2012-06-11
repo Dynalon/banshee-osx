@@ -20,7 +20,6 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <WarningLevel>4</WarningLevel>
     <Optimize>false</Optimize>
     <OutputPath>..\..\..\bin</OutputPath>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -29,7 +28,6 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
-    <WarningLevel>4</WarningLevel>
     <Optimize>false</Optimize>
     <OutputPath>..\..\..\bin</OutputPath>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -63,30 +61,26 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="gtk-sharp">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
+    <Reference Include="gtk-sharp" />
     <Reference Include="Mono.Posix">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..bin\Mono.Posix.dll</HintPath>
     </Reference>
     <Reference Include="MonoMac, Version=0.0.0.0, Culture=neutral" />
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banshee.OsxBackend\HardwareManager.cs" />
     <Compile Include="Banshee.OsxBackend\OsxService.cs" />
-    <Compile Include="OsxIntegration.Ige\IgeMacMenu.cs" />
-    <Compile Include="OsxIntegration.Ige\IgeMacMenuGroup.cs" />
-    <Compile Include="OsxIntegration.Framework\AppleEvent.cs" />
-    <Compile Include="OsxIntegration.Framework\ApplicationEvents.cs" />
-    <Compile Include="OsxIntegration.Framework\Carbon.cs" />
-    <Compile Include="OsxIntegration.Framework\CoreFoundation.cs" />
-    <Compile Include="OsxIntegration.Framework\HIToolbox.cs" />
-    <Compile Include="OsxIntegration.Framework\NavDialog.cs" />
+    <Compile Include="OsxIntegration.GtkOsxApplication\GtkOSxApplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Banshee.Osx.addin.xml">
       <LogicalName>Banshee.Osx.addin.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\osx_accel_map">
+      <LogicalName>osx_accel_map</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -106,6 +100,7 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <Folder Include="OsxIntegration.Ige\" />
+    <Folder Include="OsxIntegration.GtkOsxApplication\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
 </Project>

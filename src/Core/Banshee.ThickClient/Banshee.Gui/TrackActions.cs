@@ -119,7 +119,7 @@ namespace Banshee.Gui
                     Catalog.GetString ("Edit information on selected tracks"), OnTrackEditor),
 
                 new ActionEntry ("TrackPropertiesAction", Stock.Properties,
-                    Catalog.GetString ("Properties"), null,
+                    Catalog.GetString ("Properties"), "",
                     Catalog.GetString ("View information on selected tracks"), OnTrackProperties),
 
                 new ActionEntry ("PlayTrack", null,
