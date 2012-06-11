@@ -30,14 +30,16 @@
 
 using System;
 using System.Collections;
+using System.IO;
+using System.Reflection;
 using Gtk;
 using Mono.Unix;
 
 using Banshee.ServiceStack;
 using Banshee.Gui;
 
-using OsxIntegration.Ige;
-using OsxIntegration.Framework;
+using OsxIntegration.GtkOsxApplication;
+using Hyena;
 
 namespace Banshee.OsxBackend
 {
@@ -45,8 +47,7 @@ namespace Banshee.OsxBackend
     {
         private GtkElementsService elements_service;
         private InterfaceActionService interface_action_service;
-        private uint ui_manager_id;
-        private bool disposed;
+        private string accel_map_filename = "osx_accel_map";
 
         void IExtensionService.Initialize ()
         {
@@ -83,110 +84,82 @@ namespace Banshee.OsxBackend
 
         private void Initialize ()
         {
-            elements_service.PrimaryWindow.WindowStateEvent += OnWindowStateEvent;
+            // load OS X specific key mappings, possibly overriding default mappings
+            // set in GlobalActions or $HOME/.config/banshee-1/gtk_accel_map
+            string accel_map = Paths.Combine (Paths.ApplicationData, accel_map_filename);
+            if (!File.Exists (accel_map)) {
+                // copy our template
+                CopyAccelMapToDataDir ();
+            }
+            Gtk.AccelMap.Load (accel_map);
 
-            // add close action
-            interface_action_service.GlobalActions.Add (new ActionEntry [] {
-                new ActionEntry ("CloseAction", Stock.Close,
-                    Catalog.GetString ("_Close"), "<Control>W",
-                    Catalog.GetString ("Close"), CloseWindow)
-            });
-
-            // merge close menu item
-            ui_manager_id = interface_action_service.UIManager.AddUiFromString (@"
-              <ui>
-                <menubar name=""MainMenu"">
-                  <menu name=""MediaMenu"" action=""MediaMenuAction"">
-                    <placeholder name=""ClosePlaceholder"">
-                    <menuitem name=""Close"" action=""CloseAction""/>
-                    </placeholder>
-                  </menu>
-                </menubar>
-              </ui>
-            ");
-
-            RegisterCloseHandler ();
             ConfigureOsxMainMenu ();
-
-            IgeMacMenu.GlobalKeyHandlerEnabled = false;
-
-            ApplicationEvents.Quit += (o, e) => {
-                Banshee.ServiceStack.Application.Shutdown ();
-                e.Handled = true;
-            };
-
-            ApplicationEvents.Reopen += (o, e) => {
-                SetWindowVisibility (true);
-                e.Handled = true;
-            };
         }
 
         public void Dispose ()
         {
-            if (disposed) {
-                return;
-            }
-
-            elements_service.PrimaryWindowClose = null;
-
-            interface_action_service.GlobalActions.Remove ("CloseAction");
-            interface_action_service.UIManager.RemoveUi (ui_manager_id);
-
-            disposed = true;
         }
 
         private void ConfigureOsxMainMenu ()
         {
-            IgeMacMenu.MenuBar = (MenuShell)interface_action_service.UIManager.GetWidget ("/MainMenu");
+            var osx_app = new GtkOsxApplication ();
 
-            var ui = interface_action_service.UIManager;
-
-            IgeMacMenu.QuitMenuItem = ui.GetWidget ("/MainMenu/MediaMenu/Quit") as MenuItem;
-
-            var group = IgeMacMenu.AddAppMenuGroup ();
-            group.AddMenuItem (ui.GetWidget ("/MainMenu/HelpMenu/About") as MenuItem, null);
-            group.AddMenuItem (ui.GetWidget ("/MainMenu/EditMenu/Preferences") as MenuItem, null);
-        }
-
-        private void RegisterCloseHandler ()
-        {
-            if (elements_service.PrimaryWindowClose == null) {
-                elements_service.PrimaryWindowClose = () => {
-                    CloseWindow (null, null);
-                    return true;
-                };
+            // remove the "Quit" item as this is auto-added by gtk-mac-integration to the AppMenu
+            var quit_item = ((MenuItem)interface_action_service.UIManager.GetWidget ( "/MainMenu/MediaMenu/Quit"));
+            if(quit_item != null) {
+                quit_item.Hide ();
             }
-        }
 
-        private void CloseWindow (object o, EventArgs args)
-        {
-            SetWindowVisibility (false);
-        }
-
-        private void SetCloseMenuItemSensitivity (bool sensitivity)
-        {
-            ((MenuItem)interface_action_service.UIManager.GetWidget (
-                "/MainMenu/MediaMenu/ClosePlaceholder/Close")).Sensitive = sensitivity;
-        }
-
-        private void SetWindowVisibility (bool visible)
-        {
-            SetCloseMenuItemSensitivity (visible);
-            if (elements_service.PrimaryWindow.Visible != visible) {
-                elements_service.PrimaryWindow.ToggleVisibility ();
+            MenuShell shell = (MenuShell) interface_action_service.UIManager.GetWidget ("/MainMenu");
+            if (shell != null) {
+                osx_app.SetMenu (shell);
             }
+
+            // place the "about" and "preferences" menu items into the OS X application menu
+            // as every OS X app uses this convention
+            var about_item = interface_action_service.UIManager.GetWidget ("/MainMenu/HelpMenu/About") as MenuItem;
+            if (about_item != null) {
+                osx_app.InsertIntoAppMenu (about_item, 0);
+            }
+
+            // place a separator between the About and the Preferences dialog
+            var separator = new SeparatorMenuItem ();
+            osx_app.InsertIntoAppMenu (separator, 1);
+
+            var preferences_item = interface_action_service.UIManager.GetWidget ("/MainMenu/EditMenu/Preferences") as MenuItem;
+            if (preferences_item != null) {
+                osx_app.InsertIntoAppMenu (preferences_item, 2);
+            }
+
+            // remove unnecessary separator as we have moved the preferences item
+            var preferences_seperator = interface_action_service.UIManager.GetWidget ("/MainMenu/EditMenu/PreferencesSeparator") as SeparatorMenuItem;
+            if (preferences_seperator != null) {
+                preferences_seperator.Destroy ();
+            }
+
+            // actually performs the menu binding
+            osx_app.Ready ();
         }
 
-        private void OnWindowStateEvent (object obj, WindowStateEventArgs args)
+        /// <summary>
+        /// Copies the OSX specific accel map from embedded resource
+        /// to the user's data dir for future loading
+        /// </summary>
+        public void CopyAccelMapToDataDir ()
         {
-            switch (args.Event.NewWindowState) {
-                case Gdk.WindowState.Iconified:
-                    SetCloseMenuItemSensitivity (false);
-                    break;
-                case (Gdk.WindowState)0:
-                    SetCloseMenuItemSensitivity (true);
-                    break;
-            }
+            byte[] buffer = new byte[1024];
+            var assembly = Assembly.GetExecutingAssembly ();
+            var accel_map = Paths.Combine (Paths.ApplicationData, accel_map_filename);
+
+            // perform the copy
+            using (Stream output = File.OpenWrite(accel_map)) {
+                using (Stream resource_stream = assembly.GetManifestResourceStream (accel_map_filename)) {
+                    int bytes = -1;
+                    while ((bytes = resource_stream.Read(buffer, 0, buffer.Length)) > 0) {
+                        output.Write(buffer, 0, bytes);
+                    }
+                }
+             }
         }
 
         string IService.ServiceName {
