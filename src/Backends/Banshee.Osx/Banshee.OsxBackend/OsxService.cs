@@ -4,7 +4,9 @@
 // Authors:
 //   Aaron Bockover <abockover@novell.com>
 //   Eoin Hennessy <eoin@randomrules.org>
+//   Timo Dörr <timo@latecrew.de>
 //
+// Copyright 2012 Timo Dörr
 // Copyright 2009-2010 Novell, Inc.
 // Copyright 2008 Eoin Hennessy
 //
@@ -41,6 +43,12 @@ using Banshee.Gui;
 using OsxIntegration.GtkOsxApplication;
 using Hyena;
 
+using MonoMac.CoreFoundation;
+using MonoMac.Foundation;
+using MonoMac.AppKit;
+using MonoMac.CoreWlan;
+using System.Threading;
+
 namespace Banshee.OsxBackend
 {
     public class OsxService : IExtensionService, IDisposable
@@ -48,6 +56,20 @@ namespace Banshee.OsxBackend
         private GtkElementsService elements_service;
         private InterfaceActionService interface_action_service;
         private string accel_map_filename = "osx_accel_map";
+
+        private static bool isGlobalInited = false;
+        public static void GlobalInit ()
+        {
+            // nearly all MonoMac related functions require that NSApplication.Init () is called
+            // before usage, however other Addins (like HardwareManager) might launch before 
+            // OsxService got started
+            lock (typeof (OsxService)) {
+                if (!isGlobalInited) {
+                    NSApplication.Init ();
+                    isGlobalInited = true;
+                }
+            }
+        }
 
         void IExtensionService.Initialize ()
         {
@@ -81,9 +103,9 @@ namespace Banshee.OsxBackend
 
             return true;
         }
-
         private void Initialize ()
         {
+            GlobalInit ();
             // load OS X specific key mappings, possibly overriding default mappings
             // set in GlobalActions or $HOME/.config/banshee-1/gtk_accel_map
             string accel_map = Paths.Combine (Paths.ApplicationData, accel_map_filename);
@@ -94,6 +116,7 @@ namespace Banshee.OsxBackend
             Gtk.AccelMap.Load (accel_map);
 
             ConfigureOsxMainMenu ();
+
         }
 
         public void Dispose ()
