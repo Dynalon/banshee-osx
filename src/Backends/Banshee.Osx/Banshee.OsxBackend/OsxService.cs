@@ -41,6 +41,11 @@ using Banshee.Gui;
 using OsxIntegration.GtkOsxApplication;
 using Hyena;
 
+using MonoMac.CoreFoundation;
+using MonoMac.Foundation;
+using MonoMac.AppKit;
+using MonoMac.CoreWlan;
+
 namespace Banshee.OsxBackend
 {
     public class OsxService : IExtensionService, IDisposable
@@ -81,7 +86,6 @@ namespace Banshee.OsxBackend
 
             return true;
         }
-
         private void Initialize ()
         {
             // load OS X specific key mappings, possibly overriding default mappings
@@ -94,6 +98,7 @@ namespace Banshee.OsxBackend
             Gtk.AccelMap.Load (accel_map);
 
             ConfigureOsxMainMenu ();
+
         }
 
         public void Dispose ()

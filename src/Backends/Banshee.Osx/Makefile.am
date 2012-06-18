@@ -1,10 +1,20 @@
 ASSEMBLY = Banshee.Osx
 ASSEMBLY_BUILD_FLAGS = -unsafe
 TARGET = library
-LINK = $(REF_BACKEND_OSX)
+LINK = $(REF_BACKEND_OSX) -r:$(top_srcdir)/bin/Banshee.Dap.MassStorage.dll
 INSTALL_DIR = $(BACKENDS_INSTALL_DIR)
 
 SOURCES =  \
+	Banshee.Hardware.Osx/CdromDevice.cs \
+	Banshee.Hardware.Osx/Device.cs \
+	Banshee.Hardware.Osx/DiscVolume.cs \
+	Banshee.Hardware.Osx/LowLevel/CoreFoundationWrapper.cs \
+	Banshee.Hardware.Osx/LowLevel/IOKit.cs \
+	Banshee.Hardware.Osx/LowLevel/OsxDiskArbiter.cs \
+	Banshee.Hardware.Osx/LowLevel/OsxUsbData.cs \
+	Banshee.Hardware.Osx/UsbDevice.cs \
+	Banshee.Hardware.Osx/UsbVolume.cs \
+	Banshee.Hardware.Osx/Volume.cs \
 	Banshee.OsxBackend/HardwareManager.cs \
 	Banshee.OsxBackend/OsxService.cs \
 	OsxIntegration.GtkOsxApplication/GtkOSxApplication.cs
