@@ -35,10 +35,10 @@ using Hyena;
 
 namespace Banshee.Gui.Dialogs
 {
-    public class FileChooserDialog : Gtk.FileChooserDialog
-    {
+    public class FileChooserDialog {
         public static FileChooserDialog CreateForImport (string title, bool files)
         {
+            /*
             var chooser = new Banshee.Gui.Dialogs.FileChooserDialog (
                 title,
                 ServiceManager.Get<Banshee.Gui.GtkElementsService> ().PrimaryWindow,
@@ -59,6 +59,15 @@ namespace Banshee.Gui.Dialogs
                 ServiceManager.SourceManager.VideoLibrary.BaseDirectory,
                 GetPhotosFolder ()
             );
+            */
+            var chooser = new NSOpenPanel () {
+                Title = title,
+                CanChooseDirectories = !files,
+                CanChooseFiles = files,
+                AllowsMultipleSelection = true,
+                // Translators: verb 
+                Prompt = Mono.Unix.Catalog.GetString("Import")
+            };
 
             return chooser;
         }
@@ -103,14 +112,14 @@ namespace Banshee.Gui.Dialogs
             return null;
         }
 
-        protected override void OnResponse (ResponseType response)
+        /*protected override void OnResponse (ResponseType response)
         {
             base.OnResponse (response);
 
             if (CurrentFolderUri != null) {
                 LastFileChooserUri.Set (CurrentFolderUri);
             }
-        }
+        } */
 
         public static readonly SchemaEntry<string> LastFileChooserUri = new SchemaEntry<string> (
             "player_window", "last_file_chooser_uri",

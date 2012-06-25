@@ -29,8 +29,11 @@
 using System;
 using Mono.Unix;
 using Gtk;
+using System.Linq;
 
 using Banshee.ServiceStack;
+using Banshee.Gui.Dialogs;
+using MonoMac.AppKit;
 
 namespace Banshee.Library.Gui
 {
@@ -42,7 +45,7 @@ namespace Banshee.Library.Gui
 
         public void Import()
         {
-            var chooser = Banshee.Gui.Dialogs.FileChooserDialog.CreateForImport (Catalog.GetString ("Import Files to Library"), true);
+            /*var chooser = Banshee.Gui.Dialogs.FileChooserDialog.CreateForImport (Catalog.GetString ("Import Files to Library"), true);
 
             chooser.AddFilter (Hyena.Gui.GtkUtilities.GetFileFilter (
                 Catalog.GetString ("Media Files"),
@@ -52,7 +55,20 @@ namespace Banshee.Library.Gui
                 Banshee.ServiceStack.ServiceManager.Get<LibraryImportManager> ().Enqueue (chooser.Uris);
             }
 
-            chooser.Destroy ();
+            chooser.Destroy (); */
+            NSApplication.Init ();
+            var chooser = OsxFileChooserDialog.CreateForImport (Catalog.GetString ("Media Files"), true);
+            //openPanel.AllowedFileTypes = new string [] { "mp3" };                                                                         
+            var result = chooser.RunModal();                                                                                             
+                                                                                                                                            
+            if (result == 1)                                                                                                                
+            {                                                                                                                               
+                string[] urls = chooser.Urls.Select (x => x.ToString ()).ToArray<string>();               
+
+                Banshee.ServiceStack.ServiceManager.Get<LibraryImportManager> ().Enqueue (urls);                                            
+
+            }                                                                                                                               
+            chooser.Close ();                                                                                                           
         }
 
         public string Name {

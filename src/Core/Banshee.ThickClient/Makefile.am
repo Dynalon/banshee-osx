@@ -1,7 +1,7 @@
 ASSEMBLY = Banshee.ThickClient
 TARGET = library
 ASSEMBLY_BUILD_FLAGS = -unsafe
-LINK = $(REF_BANSHEE_THICKCLIENT)
+LINK = $(REF_BANSHEE_THICKCLIENT) $(MONOMAC_LIBS)
 
 SOURCES =  \
 	Banshee.Addins.Gui/AddinView.cs \
@@ -52,6 +52,7 @@ SOURCES =  \
 	Banshee.Gui.Dialogs/FileChooserDialog.cs \
 	Banshee.Gui.Dialogs/ImageFileChooserDialog.cs \
 	Banshee.Gui.Dialogs/OpenLocationDialog.cs \
+	Banshee.Gui.Dialogs/OsxFileChooserDialog.cs \
 	Banshee.Gui.Dialogs/SeekDialog.cs \
 	Banshee.Gui.DragDrop/DragDropTarget.cs \
 	Banshee.Gui.DragDrop/DragDropUtilities.cs \

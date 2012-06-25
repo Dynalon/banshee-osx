@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -27,7 +26,27 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <EnvironmentVariables><EnvironmentVariables><Variable name="C_INCLUDE_PATH" value="/Users/td/banshee-dev/bockbuild-dynalon/profiles/banshee/build-root/_install/include" />
+<Variable name="LD_LIBRARY_PATH" value="/Users/td/banshee-dev/bockbuild-dynalon/profiles/banshee/build-root/_install/lib" />
+<Variable name="MONO_GAC_PREFIX" value="/Users/td/banshee-dev/bockbuild-dynalon/profiles/banshee/build-root/_install" />
+<Variable name="PATH" value="/Users/td/banshee-dev/bockbuild-dynalon/profiles/banshee/build-root/_install/bin:/usr/bin:/bin:/usr/local/git/bin" />
+<Variable name="PKG_CONFIG_PATH" value="/Users/td/banshee-dev/bockbuild-dynalon/profiles/banshee/build-root/_install/lib/pkgconfig:/Users/td/banshee-dev/bockbuild-dynalon/profiles/banshee/build-root/_install/share/pkgconfig" />
+<Variable name="BUILD_PREFIX" value="/Users/td/banshee-dev/bockbuild-dynalon/profiles/banshee/build-root/_install" />
+<Variable name="CFLAGS" value="-I/Users/td/banshee-dev/bockbuild-dynalon/profiles/banshee/build-root/_install/include -D_XOPEN_SOURCE -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -m32 -arch i386" />
+<Variable name="GTK2_RC_FILES" value="/Users/td/banshee-dev/bockbuild-dynalon/profiles/banshee/skeleton.darwin/Contents/Resources/etc/gtk-2.0/gtkrc" />
+<Variable name="CC" value="gcc" />
+<Variable name="XDG_DATA_DIRS" value="/Users/td/banshee-dev/bockbuild-dynalon/profiles/banshee/build-root/_install/share" />
+<Variable name="BOCKBUILD_ENV" value="1" />
+<Variable name="CXX" value="g++" />
+<Variable name="ACLOCAL_FLAGS" value="-I/Users/td/banshee-dev/bockbuild-dynalon/profiles/banshee/build-root/_install/share/aclocal" />
+<Variable name="XDG_CONFIG_HOME" value="$HOME/.config" />
+<Variable name="LDFLAGS" value="-L/Users/td/banshee-dev/bockbuild-dynalon/profiles/banshee/build-root/_install/lib -m32 -arch i386" />
+<Variable name="XDG_CONFIG_DIRS" value="/Users/td/banshee-dev/bockbuild-dynalon/profiles/banshee/build-root/_install/etc/xdg" />
+<Variable name="CXXFLAGS" value="-I/Users/td/banshee-dev/bockbuild-dynalon/profiles/banshee/build-root/_install/include -D_XOPEN_SOURCE -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -m32 -arch i386" />
+<Variable name="CPPFLAGS" value="-I/Users/td/banshee-dev/bockbuild-dynalon/profiles/banshee/build-root/_install/include -D_XOPEN_SOURCE -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -m32 -arch i386" />
+</EnvironmentVariables>
+</EnvironmentVariables>
+<DebugType>full</DebugType>
     <OutputPath>..\..\..\bin</OutputPath>
     <WarningLevel>4</WarningLevel>
     <Optimize>false</Optimize>
@@ -124,7 +143,7 @@
     <MonoDevelop>
       <Properties>
         <MonoDevelop.Autotools.MakefileInfo IntegrationEnabled="true" RelativeMakefileName="Makefile.am">
-          <BuildFilesVar Sync="true" Name="SOURCES" />
+          <BuildFilesVar Name="SOURCES" Sync="true" />
           <DeployFilesVar />
           <ResourcesVar />
           <OthersVar />
