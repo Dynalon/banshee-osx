@@ -125,8 +125,10 @@ namespace Banshee.Lastfm.Audioscrobbler
 
             public override string ToString ()
             {
-                return String.Format ("{0} - {1} (on {2} - track {3}) <duration: {4}sec, start time: {5}sec>",
-                                      Artist, Title, Album, TrackNumber, Duration, StartTime);
+                return String.Format (
+                    "{0} - {1} (on {2} - track {3}) <duration: {4}sec, start time: {5}sec>",
+                    Artist, Title, Album, TrackNumber, Duration, StartTime
+                );
             }
 
             string artist;
@@ -286,7 +288,6 @@ namespace Banshee.Lastfm.Audioscrobbler
                     HttpUtility.UrlEncode (track.Album),
                     str_track_number,
                     track.MusicBrainzId,
-
                     i);
             }
 
@@ -302,8 +303,10 @@ namespace Banshee.Lastfm.Audioscrobbler
 
                 //FIXME Just log invalid tracks until we determine the root cause
                 if (IsInvalidQueuedTrack (new_queued_track)) {
-                    Log.WarningFormat ("Invalid data detected while adding to audioscrobbler queue for " +
-                                       "track '{0}', original start time: '{1}'", new_queued_track, started_at);
+                    Log.WarningFormat (
+                        "Invalid data detected while adding to audioscrobbler queue for " +
+                        "track '{0}', original start time: '{1}'", new_queued_track, started_at
+                    );
                 }
 
                 queue.Add (new_queued_track);
@@ -334,8 +337,10 @@ namespace Banshee.Lastfm.Audioscrobbler
         {
             int removed_track_count = queue.RemoveAll (IsInvalidQueuedTrack);
             if (removed_track_count > 0) {
-                Log.WarningFormat ("{0} invalid track(s) removed from audioscrobbler queue",
-                                   removed_track_count);
+                Log.WarningFormat (
+                    "{0} invalid track(s) removed from audioscrobbler queue",
+                    removed_track_count
+                );
                 dirty = true;
                 Save ();
             }
@@ -345,10 +350,12 @@ namespace Banshee.Lastfm.Audioscrobbler
         {
             DateTime trackStartTime = DateTimeUtil.FromTimeT (track.StartTime);
 
-            return (String.IsNullOrEmpty (track.Artist) ||
-                    String.IsNullOrEmpty (track.Title) ||
-                    trackStartTime < DateTimeUtil.LocalUnixEpoch ||
-                    trackStartTime > DateTime.Now.Add (MAXIMUM_TRACK_STARTTIME_IN_FUTURE));
+            return (
+                String.IsNullOrEmpty (track.Artist) ||
+                String.IsNullOrEmpty (track.Title) ||
+                trackStartTime < DateTimeUtil.LocalUnixEpoch ||
+                trackStartTime > DateTime.Now.Add (MAXIMUM_TRACK_STARTTIME_IN_FUTURE)
+            );
         }
     }
 }
