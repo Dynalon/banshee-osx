@@ -220,7 +220,6 @@ namespace Lastfm
                 current_scrobble_request.AddParameter (String.Format ("mbid[{0}]", i), track.MusicBrainzId);
                 current_scrobble_request.AddParameter (String.Format ("chosenByUser[{0}]", i), chosen_by_user ? "1" : "0");
             }
-            Log.DebugFormat ("### Last.fm scrobbler sending '{0}'", current_scrobble_request.ToString ());
 
             state = State.Transmitting;
             current_async_result = current_scrobble_request.BeginSend (OnScrobbleResponse, tracks.Count);
@@ -313,8 +312,6 @@ namespace Lastfm
 
         private void NowPlaying (LastfmRequest request)
         {
-            Log.DebugFormat ("### Last.fm NowPlaying sending '{0}'", current_now_playing_request.ToString ());
-
             try {
                 request.BeginSend (OnNowPlayingResponse);
             }
