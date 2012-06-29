@@ -201,7 +201,7 @@ namespace Lastfm
             current_scrobble_request = new LastfmRequest ("track.scrobble", RequestType.Write, ResponseFormat.Json);
             IList<IQueuedTrack> tracks = queue.GetTracks ();
 
-             for (int i = 0; i < tracks.Count; i ++) {
+             for (int i = 0; i < tracks.Count; i++) {
                 IQueuedTrack track = tracks[i];
 
                 string str_track_number = String.Empty;
@@ -283,13 +283,16 @@ namespace Lastfm
         public void NowPlaying (string artist, string title, string album, double duration,
                                 int tracknum, string mbrainzid)
         {
+            if (String.IsNullOrEmpty (artist) || String.IsNullOrEmpty (title) || !connected) {
+                return;
+            }
+
+            // FIXME: need a lock for this flag
             if (now_playing_started) {
                 return;
             }
 
-            if (String.IsNullOrEmpty(artist) || String.IsNullOrEmpty(title) || !connected) {
-                return;
-            }
+            now_playing_started = true;
 
             string str_track_number = String.Empty;
             if (tracknum != 0) {
