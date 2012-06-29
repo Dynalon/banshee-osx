@@ -217,8 +217,7 @@ namespace Lastfm
         private string GetSignature ()
         {
             // We need to have trackNumber[0] before track[0], so we use StringComparer.Ordinal
-            SortedDictionary<string, string> sorted_params =
-                new SortedDictionary<string, string> (parameters, StringComparer.Ordinal);
+            var sorted_params = new SortedDictionary<string, string> (parameters, StringComparer.Ordinal);
 
             if (!sorted_params.ContainsKey ("api_key")) {
                 sorted_params.Add ("api_key", LastfmCore.ApiKey);
@@ -227,7 +226,7 @@ namespace Lastfm
                 sorted_params.Add ("method", method);
             }
             StringBuilder signature = new StringBuilder ();
-            foreach (KeyValuePair<string, string> parm in sorted_params) {
+            foreach (var parm in sorted_params) {
                 if (parm.Key.Equals ("format")) {
                     continue;
                 }

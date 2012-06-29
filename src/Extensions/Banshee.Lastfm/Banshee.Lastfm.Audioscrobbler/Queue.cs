@@ -256,7 +256,7 @@ namespace Banshee.Lastfm.Audioscrobbler
             }
         }
 
-        public List<IQueuedTrack> GetTransmitInfo ()
+        public List<IQueuedTrack> GetTracks ()
         {
             /* Last.fm can handle up to 50 songs in one request */
             return queue.GetRange (0, Math.Min (queue.Count, 50));

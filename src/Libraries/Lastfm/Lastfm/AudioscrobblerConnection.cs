@@ -137,10 +137,6 @@ namespace Lastfm
         {
             StopTransitionHandler ();
 
-            /*if (current_web_req != null) {
-                current_web_req.Abort ();
-            }*/
-
             queue.Save ();
 
             started = false;
@@ -203,7 +199,7 @@ namespace Lastfm
             }
 
             current_scrobble_request = new LastfmRequest ("track.scrobble", RequestType.Write, ResponseFormat.Json);
-            IList<IQueuedTrack> tracks = queue.GetTransmitInfo  ();
+            IList<IQueuedTrack> tracks = queue.GetTracks ();
 
              for (int i = 0; i < tracks.Count; i ++) {
                 IQueuedTrack track = tracks[i];
@@ -234,8 +230,6 @@ namespace Lastfm
                 next_interval = DateTime.Now + new TimeSpan (0, 0, RETRY_SECONDS);
                 hard_failures++;
                 state = State.Idle;
-
-                //current_web_req.Abort();
             }
         }
 

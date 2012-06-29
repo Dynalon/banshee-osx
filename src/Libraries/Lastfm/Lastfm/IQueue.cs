@@ -56,7 +56,7 @@ namespace Lastfm
         void Save ();
         void Load ();
 
-        List<IQueuedTrack> GetTransmitInfo ();
+        List<IQueuedTrack> GetTracks ();
 
         void Add (object track, DateTime started);
         void RemoveRange (int first, int count);
