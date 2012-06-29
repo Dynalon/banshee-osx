@@ -98,8 +98,7 @@ namespace Banshee.Metadata
 
                 // Rename tracks only from Libraries that support it.
                 var track_source = track.PrimarySource as LibrarySource;
-                if (null != track_source && track_source.HasMoveFiles &&
-                    track_source.MoveFiles) {
+                if (null != track_source && track_source.HasMoveFiles && track_source.MoveFiles) {
                     Hyena.Log.DebugFormat ("Updating file name for {0}", track);
                     renamed = RenameFile (track);
                     if (renamed && !wrote) {

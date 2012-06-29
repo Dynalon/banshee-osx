@@ -64,7 +64,7 @@ namespace Banshee.Library
             IsLocal = true;
             base_dir_schema = CreateSchema<string> ("library-location", null, "The base directory under which files for this library are stored", null);
             copy_on_import = CreateSchema<bool> ("copy-on-import", false, "Copy files on import", "Copy and rename files to library directory when importing");
-            move_files = CreateSchema<bool>("move-on-info-save", false, "Move music on info save", "Move music within banshee music library directory when saving track info");
+            move_files = CreateSchema<bool>("move-on-info-save", false, "Move files on info save", "Move files within the library directory when saving track info");
 
             AfterInitialized ();
 
@@ -73,18 +73,20 @@ namespace Banshee.Library
             library_section.Add (base_dir_schema);
 
             if (this.HasCopyOnImport || this.HasMoveFiles) {
-                var file_system = PreferencesPage.FindOrAdd (new Section ("file-system", Catalog.GetString ("File Organization"), 5));
+                var file_system = PreferencesPage.FindOrAdd (
+                    new Section ("file-system", Catalog.GetString ("File Organization"), 5));
 
                 if (this.HasCopyOnImport) {
-                    file_system.Add ( new SchemaPreference<bool> (copy_on_import, Catalog.GetString ("Co_py files to media folder when importing")));
+                    file_system.Add (new SchemaPreference<bool> (
+                        copy_on_import, Catalog.GetString ("Co_py files to media folder when importing")));
                 }
 
                 if (this.HasMoveFiles) {
-                    file_system.Add ( new SchemaPreference<bool> (
-                                        move_files,
-                                        Catalog.GetString ("_Update file and folder names"),
-                                        Catalog.GetString ("Rename files and folders according to media metadata")
-                                ));
+                    file_system.Add (new SchemaPreference<bool> (
+                        move_files,
+                        Catalog.GetString ("_Update file and folder names"),
+                        Catalog.GetString ("Rename files and folders according to media metadata")
+                    ));
                 }
             }
         }
