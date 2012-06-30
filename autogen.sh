@@ -58,7 +58,7 @@ fi
 LIBTOOLIZE=$(basename $WHICHLIBTOOLIZE)
 
 check_autotool_version aclocal 1.9
-check_autotool_version automake 1.9
+check_autotool_version automake 1.10
 check_autotool_version autoconf 2.53
 check_autotool_version $LIBTOOLIZE 1.4.3
 check_autotool_version intltoolize 0.35.0
