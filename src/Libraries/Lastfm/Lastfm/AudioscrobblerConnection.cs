@@ -246,11 +246,19 @@ namespace Lastfm
             }
 
             var response = current_scrobble_request.GetResponseObject ();
-            object error_code;
-            if (response.TryGetValue ("error", out error_code)) {
-                Log.WarningFormat ("Lastfm scrobbling error {0} : {1}", (int)error_code, (string)response["message"]);
+            var error = current_scrobble_request.GetError ();
+            if (error == StationError.ServiceOffline || error == StationError.TemporarilyUnavailable) {
+                Log.WarningFormat ("Lastfm is temporarily unavailable: {0}", (string)response ["message"]);
                 next_interval = DateTime.Now + new TimeSpan (0, 0, RETRY_SECONDS);
                 hard_failures++;
+                state = State.Idle;
+            } else if (error != StationError.None) {
+                // TODO: If error == StationError.InvalidSessionKey,
+                // suggest to the user to (re)do the Last.fm authentication.
+                Log.WarningFormat ("Lastfm scrobbling error {0} : {1}", (int)error, (string)response ["message"]);
+                hard_failures = 0;
+                queue.RemoveRange (0, nb_tracks_scrobbled);
+                queue.Save ();
                 state = State.Idle;
             } else {
                 try {

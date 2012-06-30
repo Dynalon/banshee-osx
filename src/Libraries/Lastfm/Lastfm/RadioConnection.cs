@@ -84,9 +84,9 @@ namespace Lastfm
         InvalidSignature,
         TokenNotAuthorized,
         ExpiredToken,
-
-        SubscriptionRequired = 18,
-
+        TemporarilyUnavailable,
+        Login,
+        SubscriptionRequired,
         NotEnoughContent = 20,
         NotEnoughMembers,
         NotEnoughFans,
