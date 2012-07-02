@@ -94,7 +94,7 @@ namespace Banshee.IO.Unix
             }
             foreach (var entry in unix_dir.GetFileSystemEntries ()) {
                 if (entry != null && !entry.IsDirectory && entry.IsRegularFile && !entry.IsSocket && entry.Exists) {
-                    yield return entry.FullName;
+                    yield return SafeUri.FilenameToUri (entry.FullName);
                 }
             }
         }
