@@ -84,15 +84,19 @@ namespace Lastfm
         InvalidSignature,
         TokenNotAuthorized,
         ExpiredToken,
-
-        SubscriptionRequired = 18,
-
+        TemporarilyUnavailable,
+        Login,
+        SubscriptionRequired,
         NotEnoughContent = 20,
         NotEnoughMembers,
         NotEnoughFans,
         NotEnoughNeighbours,
-
-        Unknown // not an official code, just the fall back
+        NoPeakRadio,
+        RadioNotFound,
+        ApiKeySuspended,
+        Deprecated,
+        RateLimitExceded = 29,
+        Unknown = -1 // not an official code, just the fall back
     }
 
     public class RadioConnection
@@ -300,6 +304,16 @@ namespace Lastfm
                     return Catalog.GetString ("This artist does not have enough fans for radio.");
                 case StationError.NotEnoughNeighbours:
                     return Catalog.GetString ("There are not enough neighbours for this station.");
+                case StationError.NoPeakRadio:
+                    return Catalog.GetString ("This user is not allowed to listen to radio during peak usage");
+                case StationError.RadioNotFound:
+                    return Catalog.GetString ("Radio station not found");
+                case StationError.ApiKeySuspended:
+                    return Catalog.GetString ("This application is not allowed to make requests to the web services");
+                case StationError.Deprecated:
+                    return Catalog.GetString ("This type of request is no longer supported");
+                case StationError.RateLimitExceded:
+                    return Catalog.GetString ("Your IP has made too many requests in a short period, exceeding our API guidelines");
                 case StationError.Unknown:
                     return Catalog.GetString ("There was an unknown error.");
             }

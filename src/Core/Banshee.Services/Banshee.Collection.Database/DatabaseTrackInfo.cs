@@ -731,6 +731,12 @@ namespace Banshee.Collection.Database
         {
             bool copy_success = true;
 
+            LibrarySource library_source = PrimarySource as LibrarySource;
+            if (library_source == null) {
+                // Get out, not a local Library
+                return false;
+            }
+
             SafeUri old_uri = this.Uri;
             if (old_uri == null) {
                 // Get out quick, no URI set yet.
@@ -739,7 +745,7 @@ namespace Banshee.Collection.Database
 
             bool in_library = old_uri.IsLocalPath ? old_uri.AbsolutePath.StartsWith (PrimarySource.BaseDirectoryWithSeparator) : false;
 
-            if (!in_library && (LibrarySchema.CopyOnImport.Get () || force_copy)) {
+            if (!in_library && ((library_source.HasCopyOnImport && library_source.CopyOnImport) || force_copy)) {
                 string new_filename = PathPattern.BuildFull (PrimarySource.BaseDirectory, this, Path.GetExtension (old_uri.ToString ()));
                 SafeUri new_uri = new SafeUri (new_filename);
 

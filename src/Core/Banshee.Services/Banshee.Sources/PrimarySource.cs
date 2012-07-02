@@ -246,7 +246,7 @@ namespace Banshee.Sources
         {
             PathPattern = pattern;
 
-            var file_system = PreferencesPage.Add (new Section ("file-system", Catalog.GetString ("File Organization"), 5));
+            var file_system = PreferencesPage.FindOrAdd (new Section ("file-system", Catalog.GetString ("File Organization"), 5));
             file_system.Add (new SchemaPreference<string> (pattern.FolderSchema, Catalog.GetString ("Folder hie_rarchy")));
             file_system.Add (new SchemaPreference<string> (pattern.FileSchema, Catalog.GetString ("File _name")));
         }

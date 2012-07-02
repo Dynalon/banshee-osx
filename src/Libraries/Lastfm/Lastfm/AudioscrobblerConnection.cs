@@ -28,6 +28,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -36,6 +37,7 @@ using System.Security.Cryptography;
 using System.Web;
 
 using Hyena;
+using Hyena.Json;
 using Mono.Unix;
 
 namespace Lastfm
@@ -44,26 +46,14 @@ namespace Lastfm
     {
         private enum State {
             Idle,
-            NeedHandshake,
             NeedTransmit,
-            WaitingForRequestStream,
-            WaitingForHandshakeResp,
+            Transmitting,
             WaitingForResponse
         };
 
         private const int TICK_INTERVAL = 2000; /* 2 seconds */
-        private const int FAILURE_LOG_MINUTES = 5; /* 5 minute delay on logging failure to upload information */
         private const int RETRY_SECONDS = 60; /* 60 second delay for transmission retries */
-        private const int MAX_RETRY_SECONDS = 7200; /* 2 hours, as defined in the last.fm protocol */
         private const int TIME_OUT = 10000; /* 10 seconds timeout for webrequests */
-        private const string CLIENT_ID = "bsh";
-        private const string CLIENT_VERSION = "0.1";
-        private const string SCROBBLER_URL = "http://post.audioscrobbler.com/";
-        private const string SCROBBLER_VERSION = "1.2.1";
-
-        private string post_url;
-        private string session_id = null;
-        private string now_playing_url;
 
         private bool connected = false; /* if we're connected to network or not */
         public bool Connected {
@@ -77,17 +67,14 @@ namespace Lastfm
 
         private System.Timers.Timer timer;
         private DateTime next_interval;
-        private DateTime last_upload_failed_logged;
 
         private IQueue queue;
 
         private int hard_failures = 0;
-        private int hard_failure_retry_sec = 60;
 
-        private HttpWebRequest now_playing_post;
         private bool now_playing_started;
-        private string current_now_playing_data;
-        private HttpWebRequest current_web_req;
+        private LastfmRequest current_now_playing_request;
+        private LastfmRequest current_scrobble_request;
         private IAsyncResult current_async_result;
         private State state;
 
@@ -102,7 +89,6 @@ namespace Lastfm
         private void AccountUpdated (object o, EventArgs args)
         {
             Stop ();
-            session_id = null;
             Start ();
         }
 
@@ -151,10 +137,6 @@ namespace Lastfm
         {
             StopTransitionHandler ();
 
-            if (current_web_req != null) {
-                current_web_req.Abort ();
-            }
-
             queue.Save ();
 
             started = false;
@@ -175,32 +157,19 @@ namespace Lastfm
             }
 
             if ((state == State.Idle || state == State.NeedTransmit) && hard_failures > 2) {
-                state = State.NeedHandshake;
                 hard_failures = 0;
             }
 
             // and address changes in our engine state
             switch (state) {
             case State.Idle:
-                if (LastfmCore.Account.UserName != null &&
-                    LastfmCore.Account.SessionKey != null && session_id == null) {
-
-                    state = State.NeedHandshake;
+                if (queue.Count > 0) {
+                    state = State.NeedTransmit;
+                } else if (current_now_playing_request != null) {
+                    // Now playing info needs to be sent
+                    NowPlaying (current_now_playing_request);
                 } else {
-                    if (queue.Count > 0 && session_id != null) {
-                        state = State.NeedTransmit;
-                    } else if (current_now_playing_data != null && session_id != null) {
-                        // Now playing info needs to be sent
-                        NowPlaying (current_now_playing_data);
-                    } else {
-                        StopTransitionHandler ();
-                    }
-                }
-
-                break;
-            case State.NeedHandshake:
-                if (DateTime.Now > next_interval) {
-                    Handshake ();
+                    StopTransitionHandler ();
                 }
 
                 break;
@@ -209,27 +178,15 @@ namespace Lastfm
                     TransmitQueue ();
                 }
                 break;
+            case State.Transmitting:
             case State.WaitingForResponse:
-            case State.WaitingForRequestStream:
-            case State.WaitingForHandshakeResp:
                 // nothing here
                 break;
             }
         }
 
-        //
-        // Async code for transmitting the current queue of tracks
-        //
-        internal class TransmitState
-        {
-            public StringBuilder StringBuilder;
-            public int Count;
-        }
-
         private void TransmitQueue ()
         {
-            int num_tracks_transmitted;
-
             // save here in case we're interrupted before we complete
             // the request.  we save it again when we get an OK back
             // from the server
@@ -237,255 +194,92 @@ namespace Lastfm
 
             next_interval = DateTime.MinValue;
 
-            if (post_url == null || !connected) {
+            if (!connected) {
                 return;
             }
 
-            string song_transmit_info = queue.GetTransmitInfo  (out num_tracks_transmitted);
-            Log.DebugFormat ("Last.fm scrobbler sending '{0}' to {1}", song_transmit_info, post_url);
+            current_scrobble_request = new LastfmRequest ("track.scrobble", RequestType.Write, ResponseFormat.Json);
+            IList<IQueuedTrack> tracks = queue.GetTracks ();
 
-            StringBuilder sb = new StringBuilder ();
+             for (int i = 0; i < tracks.Count; i++) {
+                IQueuedTrack track = tracks[i];
 
-            sb.AppendFormat ("s={0}", session_id);
-            sb.Append (song_transmit_info);
+                string str_track_number = String.Empty;
+                if (track.TrackNumber != 0) {
+                    str_track_number = track.TrackNumber.ToString();
+                }
 
-            current_web_req = (HttpWebRequest) WebRequest.Create (post_url);
-            current_web_req.UserAgent = LastfmCore.UserAgent;
-            current_web_req.Method = "POST";
-            current_web_req.ContentType = "application/x-www-form-urlencoded";
-            current_web_req.ContentLength = sb.Length;
+                bool chosen_by_user = (track.TrackAuth.Length == 0);
 
-            TransmitState ts = new TransmitState ();
-            ts.Count = num_tracks_transmitted;
-            ts.StringBuilder = sb;
+                current_scrobble_request.AddParameter (String.Format ("timestamp[{0}]", i), track.StartTime.ToString ());
+                current_scrobble_request.AddParameter (String.Format ("track[{0}]", i), track.Title);
+                current_scrobble_request.AddParameter (String.Format ("artist[{0}]", i), track.Artist);
+                current_scrobble_request.AddParameter (String.Format ("album[{0}]", i), track.Album);
+                current_scrobble_request.AddParameter (String.Format ("trackNumber[{0}]", i), str_track_number);
+                current_scrobble_request.AddParameter (String.Format ("duration[{0}]", i), track.Duration.ToString ());
+                current_scrobble_request.AddParameter (String.Format ("mbid[{0}]", i), track.MusicBrainzId);
+                current_scrobble_request.AddParameter (String.Format ("chosenByUser[{0}]", i), chosen_by_user ? "1" : "0");
+            }
 
-            state = State.WaitingForRequestStream;
-            current_async_result = current_web_req.BeginGetRequestStream (TransmitGetRequestStream, ts);
+            state = State.Transmitting;
+            current_async_result = current_scrobble_request.BeginSend (OnScrobbleResponse, tracks.Count);
+            state = State.WaitingForResponse;
             if (!(current_async_result.AsyncWaitHandle.WaitOne (TIME_OUT, false))) {
                 Log.Warning ("Audioscrobbler upload failed", "The request timed out and was aborted", false);
                 next_interval = DateTime.Now + new TimeSpan (0, 0, RETRY_SECONDS);
                 hard_failures++;
                 state = State.Idle;
-
-                current_web_req.Abort();
             }
         }
 
-        private void TransmitGetRequestStream (IAsyncResult ar)
+        private void OnScrobbleResponse (IAsyncResult ar)
         {
-            Stream stream;
-            TransmitState ts;
-
+            int nb_tracks_scrobbled = 0;
             try {
-                stream = current_web_req.EndGetRequestStream (ar);
+                current_scrobble_request.EndSend (ar);
+                nb_tracks_scrobbled = (int)ar.AsyncState;
 
-                ts = (TransmitState) ar.AsyncState;
-                StringBuilder sb = ts.StringBuilder;
-
-                StreamWriter writer = new StreamWriter (stream);
-                writer.Write (sb.ToString ());
-                writer.Close ();
             } catch (Exception e) {
-                Log.Exception ("Failed to get the request stream", e);
+                Log.Exception ("Failed to complete the scrobble request", e);
                 state = State.Idle;
-                next_interval = DateTime.Now + new TimeSpan (0, 0, RETRY_SECONDS);
                 return;
             }
 
-            state = State.WaitingForResponse;
-            current_async_result = current_web_req.BeginGetResponse (TransmitGetResponse, ts);
-            if (current_async_result == null) {
+            var response = current_scrobble_request.GetResponseObject ();
+            var error = current_scrobble_request.GetError ();
+            if (error == StationError.ServiceOffline || error == StationError.TemporarilyUnavailable) {
+                Log.WarningFormat ("Lastfm is temporarily unavailable: {0}", (string)response ["message"]);
                 next_interval = DateTime.Now + new TimeSpan (0, 0, RETRY_SECONDS);
                 hard_failures++;
                 state = State.Idle;
-            }
-        }
-
-        private void TransmitGetResponse (IAsyncResult ar)
-        {
-            WebResponse resp;
-
-            try {
-                resp = current_web_req.EndGetResponse (ar);
-            }
-            catch (Exception e) {
-                Log.Warning (String.Format("Failed to get the response: {0}", e), false);
-
+            } else if (error != StationError.None) {
+                // TODO: If error == StationError.InvalidSessionKey,
+                // suggest to the user to (re)do the Last.fm authentication.
+                Log.WarningFormat ("Lastfm scrobbling error {0} : {1}", (int)error, (string)response ["message"]);
+                hard_failures = 0;
+                queue.RemoveRange (0, nb_tracks_scrobbled);
+                queue.Save ();
                 state = State.Idle;
-                next_interval = DateTime.Now + new TimeSpan (0, 0, RETRY_SECONDS);
-                return;
-            }
-
-            TransmitState ts = (TransmitState) ar.AsyncState;
-
-            Stream s = resp.GetResponseStream ();
-
-            StreamReader sr = new StreamReader (s, Encoding.UTF8);
-
-            string line;
-            line = sr.ReadLine ();
-
-            DateTime now = DateTime.Now;
-            if (line.StartsWith ("FAILED")) {
-                if (now - last_upload_failed_logged > TimeSpan.FromMinutes(FAILURE_LOG_MINUTES)) {
-                    Log.Warning ("Audioscrobbler upload failed", line.Substring ("FAILED".Length).Trim(), false);
-                    last_upload_failed_logged = now;
-                }
-
-                // retransmit the queue on the next interval
-                hard_failures++;
-                state = State.NeedTransmit;
-            }
-            else if (line.StartsWith ("BADSESSION")) {
-                if (now - last_upload_failed_logged > TimeSpan.FromMinutes(FAILURE_LOG_MINUTES)) {
-                    Log.Warning ("Audioscrobbler upload failed", "session ID sent was invalid", false);
-                    last_upload_failed_logged = now;
-                }
-
-                // attempt to re-handshake (and retransmit) on the next interval
-                session_id = null;
-                next_interval = DateTime.Now + new TimeSpan (0, 0, RETRY_SECONDS);
-                state = State.NeedHandshake;
-                return;
-            } else if (line.StartsWith ("OK")) {
-                /* if we've previously logged failures, be nice and log the successful upload. */
-                if (last_upload_failed_logged != DateTime.MinValue) {
-                    Log.Debug ("Audioscrobbler upload succeeded");
-                    last_upload_failed_logged = DateTime.MinValue;
+            } else {
+                try {
+                    var scrobbles = (JsonObject)response["scrobbles"];
+                    var scrobbles_attr = (JsonObject)scrobbles["@attr"];
+                    Log.InformationFormat ("Audioscrobbler upload succeeded: {0} accepted, {1} ignored",
+                                           scrobbles_attr["accepted"], scrobbles_attr["ignored"]);
+                } catch (Exception) {
+                    Log.Information ("Audioscrobbler upload succeeded but unknown response received");
+                    Log.Debug ("Response received", response.ToString ());
                 }
 
                 hard_failures = 0;
 
                 // we succeeded, pop the elements off our queue
-                queue.RemoveRange (0, ts.Count);
+                queue.RemoveRange (0, nb_tracks_scrobbled);
                 queue.Save ();
 
                 state = State.Idle;
-            } else {
-                if (now - last_upload_failed_logged > TimeSpan.FromMinutes(FAILURE_LOG_MINUTES)) {
-                    Log.Warning ("Audioscrobbler upload failed", String.Format ("Unrecognized response: {0}", line), false);
-                    last_upload_failed_logged = now;
-                }
-
-                state = State.Idle;
-            }
-
-            sr.Close ();
-        }
-
-        //
-        // Async code for handshaking
-        //
-
-        private string UnixTime ()
-        {
-            return ((int) (DateTime.UtcNow - new DateTime (1970, 1, 1)).TotalSeconds).ToString ();
-        }
-
-        private void Handshake ()
-        {
-            string timestamp = UnixTime();
-            string authentication_token = Hyena.CryptoUtil.Md5Encode
-                (LastfmCore.ApiSecret + timestamp);
-
-            string api_url = LastfmCore.Account.ScrobbleUrl;
-            if (String.IsNullOrEmpty (api_url)) {
-                api_url = SCROBBLER_URL;
-            } else {
-                Log.DebugFormat ("Scrobbling to non-standard API URL: {0}", api_url);
-            }
-
-            string uri = String.Format ("{0}?hs=true&p={1}&c={2}&v={3}&u={4}&t={5}&a={6}&api_key={7}&sk={8}",
-                                        api_url,
-                                        SCROBBLER_VERSION,
-                                        CLIENT_ID, CLIENT_VERSION,
-                                        HttpUtility.UrlEncode (LastfmCore.Account.UserName),
-                                        timestamp,
-                                        authentication_token,
-                                        LastfmCore.ApiKey,
-                                        LastfmCore.Account.SessionKey);
-
-            current_web_req = (HttpWebRequest) WebRequest.Create (uri);
-
-            state = State.WaitingForHandshakeResp;
-            current_async_result = current_web_req.BeginGetResponse (HandshakeGetResponse, null);
-            if (current_async_result == null) {
-                next_interval = DateTime.Now + new TimeSpan (0, 0, hard_failure_retry_sec);
-                hard_failures++;
-                if (hard_failure_retry_sec < MAX_RETRY_SECONDS)
-                    hard_failure_retry_sec *= 2;
-                state = State.NeedHandshake;
             }
         }
-
-        private void HandshakeGetResponse (IAsyncResult ar)
-        {
-            bool success = false;
-            bool hard_failure = false;
-            WebResponse resp;
-
-            try {
-                resp = current_web_req.EndGetResponse (ar);
-            }
-            catch (Exception e) {
-                Log.Warning ("Failed to handshake", e.ToString (), false);
-
-                // back off for a time before trying again
-                state = State.Idle;
-                next_interval = DateTime.Now + new TimeSpan (0, 0, RETRY_SECONDS);
-                return;
-            }
-
-            Stream s = resp.GetResponseStream ();
-
-            StreamReader sr = new StreamReader (s, Encoding.UTF8);
-
-            string line;
-
-            line = sr.ReadLine ();
-            if (line.StartsWith ("BANNED")) {
-                Log.Warning ("Audioscrobbler sign-on failed", "Player is banned", false);
-
-            } else if (line.StartsWith ("BADAUTH")) {
-                Log.Warning ("Audioscrobbler sign-on failed", Catalog.GetString ("Last.fm username is invalid or Banshee is not authorized to access your account."));
-                LastfmCore.Account.SessionKey = null;
-            } else if (line.StartsWith ("BADTIME")) {
-                Log.Warning ("Audioscrobbler sign-on failed",
-                                                  "timestamp provided was not close enough to the current time", false);
-            } else if (line.StartsWith ("FAILED")) {
-                Log.Warning ("Audioscrobbler sign-on failed",
-                    String.Format ("Temporary server failure: {0}", line.Substring ("FAILED".Length).Trim ()), false);
-                hard_failure = true;
-            } else if (line.StartsWith ("OK")) {
-                success = true;
-            } else {
-                Log.Error ("Audioscrobbler sign-on failed", String.Format ("Unknown error: {0}", line.Trim()));
-                hard_failure = true;
-            }
-
-            if (success == true) {
-                Log.Debug ("Audioscrobbler sign-on succeeded", "Session ID received");
-                session_id = sr.ReadLine ().Trim ();
-                now_playing_url = sr.ReadLine ().Trim ();
-                post_url = sr.ReadLine ().Trim ();
-
-                hard_failures = 0;
-                hard_failure_retry_sec = 60;
-            } else {
-                if (hard_failure == true) {
-                    next_interval = DateTime.Now + new TimeSpan (0, 0, hard_failure_retry_sec);
-                    hard_failures++;
-                    if (hard_failure_retry_sec < MAX_RETRY_SECONDS)
-                        hard_failure_retry_sec *= 2;
-                }
-            }
-
-            state = State.Idle;
-            sr.Close ();
-        }
-
-        //
-        // Async code for now playing
 
         public void NowPlaying (string artist, string title, string album, double duration,
                                 int tracknum)
@@ -496,145 +290,70 @@ namespace Lastfm
         public void NowPlaying (string artist, string title, string album, double duration,
                                 int tracknum, string mbrainzid)
         {
-            if (String.IsNullOrEmpty(artist) || String.IsNullOrEmpty(title) || !connected) {
+            if (String.IsNullOrEmpty (artist) || String.IsNullOrEmpty (title) || !connected) {
                 return;
             }
+
+            // FIXME: need a lock for this flag
+            if (now_playing_started) {
+                return;
+            }
+
+            now_playing_started = true;
 
             string str_track_number = String.Empty;
             if (tracknum != 0) {
                 str_track_number = tracknum.ToString();
             }
 
-            // Fall back to prefixing the URL with a # in case we haven't actually
-            // authenticated yet. We replace it with the now_playing_url and session_id
-            // later on in NowPlaying(uri).
-            string dataprefix = "#";
+            LastfmRequest request = new LastfmRequest ("track.updateNowPlaying", RequestType.Write, ResponseFormat.Json);
+            request.AddParameter ("track", title);
+            request.AddParameter ("artist", artist);
+            request.AddParameter ("album", album);
+            request.AddParameter ("trackNumber", str_track_number);
+            request.AddParameter ("duration", Math.Floor (duration).ToString ());
+            request.AddParameter ("mbid", mbrainzid);
+            current_now_playing_request = request;
 
-            if (session_id != null) {
-                dataprefix = String.Format ("s={0}", session_id);
-            }
-
-            string data = String.Format ("{0}&a={1}&t={2}&b={3}&l={4}&n={5}&m={6}",
-                                        dataprefix,
-                                        HttpUtility.UrlEncode(artist),
-                                        HttpUtility.UrlEncode(title),
-                                        HttpUtility.UrlEncode(album),
-                                        duration.ToString("F0"),
-                                        str_track_number,
-                                        mbrainzid);
-
-            NowPlaying (data);
+            NowPlaying (current_now_playing_request);
         }
 
-        private void NowPlaying (string data)
-        {
-            if (now_playing_started) {
-                return;
-            }
-
-            // If the URI begins with #, then we know the URI was created before we
-            // had actually authenticated. So, because we didn't know the session_id and
-            // now_playing_url previously, we should now, so we put that in and create our
-            // new URI.
-            if (data.StartsWith ("#") && session_id != null) {
-                data = String.Format ("s={0}{1}",
-                                      session_id,
-                                      data.Substring (1));
-            }
-
-            current_now_playing_data = data;
-
-            if (session_id == null) {
-                // Go connect - we'll come back later in main timer loop.
-                Start ();
-                return;
-            }
-
-            try {
-                now_playing_post = (HttpWebRequest) WebRequest.Create (now_playing_url);
-                now_playing_post.UserAgent = LastfmCore.UserAgent;
-                now_playing_post.Method = "POST";
-                now_playing_post.ContentType = "application/x-www-form-urlencoded";
-
-                if (state == State.Idle) {
-                    // Don't actually POST it until we're idle (that is, we
-                    // probably have stuff queued which will reset the Now
-                    // Playing if we send them first).
-                    now_playing_started = true;
-                    now_playing_post.BeginGetRequestStream (NowPlayingGetRequestStream, data);
-                }
-            } catch (Exception ex) {
-                Log.Warning ("Audioscrobbler NowPlaying failed",
-                                  String.Format ("Exception while creating request: {0}", ex), false);
-
-                // Reset current_now_playing_data if it was the problem.
-                current_now_playing_data = null;
-            }
-        }
-
-        private void NowPlayingGetRequestStream (IAsyncResult ar)
+        private void NowPlaying (LastfmRequest request)
         {
             try {
-                string data = ar.AsyncState as string;
-                ASCIIEncoding encoding = new ASCIIEncoding ();
-                byte[] data_bytes = encoding.GetBytes (data);
-                Stream request_stream = now_playing_post.EndGetRequestStream (ar);
-                request_stream.Write (data_bytes, 0, data_bytes.Length);
-                request_stream.Close ();
-
-                now_playing_post.BeginGetResponse (NowPlayingGetResponse, null);
-            } catch (Exception e) {
-                Log.Exception (e);
-            }
-        }
-
-        private void NowPlayingGetResponse (IAsyncResult ar)
-        {
-            try {
-                WebResponse my_resp = now_playing_post.EndGetResponse (ar);
-
-                Stream s = my_resp.GetResponseStream ();
-                using (StreamReader sr = new StreamReader (s, Encoding.UTF8)) {
-                    string line = sr.ReadLine ();
-                    if (line == null) {
-                        Log.Warning ("Audioscrobbler NowPlaying failed", "No response", false);
-                    }
-
-                    if (line.StartsWith ("BADSESSION")) {
-                        Log.Warning ("Audioscrobbler NowPlaying failed", "Session ID sent was invalid", false);
-                        // attempt to re-handshake on the next interval
-                        session_id = null;
-                        next_interval = DateTime.Now + new TimeSpan (0, 0, RETRY_SECONDS);
-                        state = State.NeedHandshake;
-                        StartTransitionHandler ();
-                        return;
-                    } else if (line.StartsWith ("OK")) {
-                        // NowPlaying submitted
-                        Log.DebugFormat ("Submitted NowPlaying track to Audioscrobbler");
-                        now_playing_started = false;
-                        now_playing_post = null;
-                        current_now_playing_data = null;
-                        return;
-                    } else {
-                        Log.Warning ("Audioscrobbler NowPlaying failed", "Unexpected or no response", false);
-                    }
-                }
+                request.BeginSend (OnNowPlayingResponse);
             }
             catch (Exception e) {
                 Log.Warning ("Audioscrobbler NowPlaying failed",
                     String.Format("Failed to post NowPlaying: {0}", e), false);
             }
 
-            // NowPlaying error/success is non-crucial.
-            hard_failures++;
-            if (hard_failures < 3) {
-                NowPlaying (current_now_playing_data);
-            } else {
-                // Give up - NowPlaying status information is non-critical.
-                current_now_playing_data = null;
-                now_playing_started = false;
-                now_playing_post = null;
+        }
+
+        private void OnNowPlayingResponse (IAsyncResult ar)
+        {
+            try {
+                current_now_playing_request.EndSend (ar);
+            } catch (Exception e) {
+                Log.Exception ("Failed to complete the NowPlaying request", e);
+                state = State.Idle;
+                current_now_playing_request = null;
+                return;
             }
+
+            StationError error = current_now_playing_request.GetError ();
+
+            // API docs say "Now Playing requests that fail should not be retried".
+            if (error == StationError.InvalidSessionKey) {
+                Log.Warning ("Audioscrobbler NowPlaying failed", "Session ID sent was invalid", false);
+                // TODO: Suggest to the user to (re)do the Last.fm authentication ?
+            } else if (error != StationError.None) {
+                Log.WarningFormat ("Audioscrobbler NowPlaying failed: {0}", error.ToString ());
+            } else {
+                Log.Debug ("Submitted NowPlaying track to Audioscrobbler");
+                now_playing_started = false;
+            }
+            current_now_playing_request = null;
         }
     }
 }

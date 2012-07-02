@@ -54,13 +54,9 @@ namespace Banshee.Preferences
             // General policies
             Section policies = general.Add (new Section ("policies", Catalog.GetString ("File Policies"), 0));
 
-            policies.Add (new SchemaPreference<bool> (LibrarySchema.CopyOnImport,
-                Catalog.GetString ("Co_py files to media folders when importing")));
-
             policies.Add (Banshee.Metadata.SaveTrackMetadataService.WriteMetadataEnabled);
             policies.Add (Banshee.Metadata.SaveTrackMetadataService.WriteRatingsEnabled);
             policies.Add (Banshee.Metadata.SaveTrackMetadataService.WritePlayCountsEnabled);
-            policies.Add (Banshee.Metadata.SaveTrackMetadataService.RenameEnabled);
 
             // Misc section
             var misc = new Section ("misc", Catalog.GetString ("Miscellaneous"), 20);

@@ -27,9 +27,24 @@
 //
 
 using System;
+using System.Collections.Generic;
 
 namespace Lastfm
 {
+    public interface IQueuedTrack
+    {
+        long StartTime { get; }
+
+        string Artist { get; }
+
+        string Album { get; }
+        string Title { get; }
+        int TrackNumber { get; }
+        int Duration { get; }
+        string MusicBrainzId { get; }
+        string TrackAuth { get; }
+    }
+
     public interface IQueue
     {
         event EventHandler TrackAdded;
@@ -41,9 +56,10 @@ namespace Lastfm
         void Save ();
         void Load ();
 
-        string GetTransmitInfo (out int numtracks);
+        List<IQueuedTrack> GetTracks ();
 
         void Add (object track, DateTime started);
         void RemoveRange (int first, int count);
+        void RemoveInvalidTracks ();
     }
 }
