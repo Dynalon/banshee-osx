@@ -36,9 +36,10 @@ using Gtk;
 
 namespace Banshee.Gui.Dialogs
 {
-    public class OsxFileChooserDialog 
+    public partial class FileChooserDialog : Gtk.FileChooser
     {
-        public static NSOpenPanel CreateForImport (string title, bool files)
+        public NSOpenPanel openPanel;
+        public static FileChooserDialog CreateForImport (string title, bool files)
         {
             var chooser = new NSOpenPanel () {
                 Title = title,
@@ -48,8 +49,340 @@ namespace Banshee.Gui.Dialogs
                 // Translators: verb 
                 Prompt = Mono.Unix.Catalog.GetString("Import")
             };
-
-            return chooser;
+            var fcd = new FileChooserDialog (title, chooser);
+            fcd.openPanel = chooser;
+            return fcd;
         }
+        public FileChooserDialog (string title, NSOpenPanel panel)
+        {
+            this.openPanel = panel;
+        }
+        public FileChooserDialog (string title, Window parent, FileChooserAction action)
+        {
+            //LocalOnly = Banshee.IO.Provider.LocalOnly;
+            //string fallback = SafeUri.FilenameToUri (Environment.GetFolderPath (Environment.SpecialFolder.Personal));
+            //SetCurrentFolderUri (LastFileChooserUri.Get (fallback));
+            //WindowPosition = WindowPosition.Center;
+        }
+
+        public static string GetPhotosFolder ()
+        {
+            string personal = Environment.GetFolderPath (Environment.SpecialFolder.Personal);
+            string desktop = Environment.GetFolderPath (Environment.SpecialFolder.Desktop);
+
+            var photo_folders = new string [] {
+                Environment.GetFolderPath (Environment.SpecialFolder.MyPictures),
+                Paths.Combine (desktop, "Photos"), Paths.Combine (desktop, "photos"),
+                Paths.Combine (personal, "Photos"), Paths.Combine (personal, "photos")
+            };
+
+            // Make sure we don't accidentally scan the entire home or desktop directory
+            for (int i = 0; i < photo_folders.Length; i++) {
+                if (photo_folders[i] == personal || photo_folders[i] == desktop) {
+                    photo_folders[i] = null;
+                }
+            }
+
+            foreach (string folder in photo_folders) {
+                if (folder != null && folder != personal && folder != desktop && Banshee.IO.Directory.Exists (folder)) {
+                    return folder;
+                }
+            }
+
+            return null;
+        }
+
+        protected void OnResponse (ResponseType response)
+        {
+            //base.OnResponse (response);
+
+            //if (CurrentFolderUri != null) {
+             //   LastFileChooserUri.Set (CurrentFolderUri);
+            //}
+        }
+
+        public static readonly SchemaEntry<string> LastFileChooserUri = new SchemaEntry<string> (
+            "player_window", "last_file_chooser_uri",
+            String.Empty,
+            "URI",
+            "URI of last file folder"
+        );
+        #region Gtk.FileChooserDialog implementation
+        public void Destroy ()
+        {
+        }
+        public int Run ()
+        {
+            int ret = openPanel.RunModal ();
+            if (ret != 1) ret =1;
+            return ret;
+        }
+        #endregion
+        #region IWrapper implementation
+        public IntPtr Handle {
+            get {
+                throw new System.NotImplementedException ();
+            }
+        }
+        public void Close ()
+        {
+
+        }
+        #endregion
+
+        #region FileChooser implementation
+        public event EventHandler SelectionChanged;
+
+        public event ConfirmOverwriteHandler ConfirmOverwrite;
+
+        public event EventHandler FileActivated;
+
+        public event EventHandler UpdatePreview;
+
+        public event EventHandler CurrentFolderChanged;
+
+        public bool SetCurrentFolderUri (string uri)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public void UnselectAll ()
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public bool SetFilename (string filename)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public bool AddShortcutFolderUri (string uri)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public void SelectAll ()
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public bool RemoveShortcutFolderUri (string uri)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public void RemoveFilter (FileFilter filter)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public bool AddShortcutFolder (string folder)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public bool SelectFilename (string filename)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public void UnselectFilename (string filename)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public void AddFilter (FileFilter filter)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public bool RemoveShortcutFolder (string folder)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public void UnselectUri (string uri)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public bool SetCurrentFolder (string filename)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public bool SelectUri (string uri)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public bool SetUri (string uri)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        public string[] ShortcutFolderUris {
+            get {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public FileFilter[] Filters {
+            get {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public string CurrentFolderUri {
+            get {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public string CurrentName {
+            set {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public string PreviewFilename {
+            get {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public string Uri {
+            get {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public string CurrentFolder {
+            get {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public string[] Uris {
+            get {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public string Filename {
+            get {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public string PreviewUri {
+            get {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public bool UsePreviewLabel {
+            get {
+                throw new System.NotImplementedException ();
+            }
+            set {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public bool PreviewWidgetActive {
+            get {
+                throw new System.NotImplementedException ();
+            }
+            set {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public FileChooserAction Action {
+            get {
+                throw new System.NotImplementedException ();
+            }
+            set {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public bool DoOverwriteConfirmation {
+            get {
+                throw new System.NotImplementedException ();
+            }
+            set {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public Widget ExtraWidget {
+            get {
+                throw new System.NotImplementedException ();
+            }
+            set {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public bool ShowHidden {
+            get {
+                throw new System.NotImplementedException ();
+            }
+            set {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public bool LocalOnly {
+            get {
+                throw new System.NotImplementedException ();
+            }
+            set {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public FileFilter Filter {
+            get {
+                throw new System.NotImplementedException ();
+            }
+            set {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public Widget PreviewWidget {
+            get {
+                throw new System.NotImplementedException ();
+            }
+            set {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public bool SelectMultiple {
+            get {
+                throw new System.NotImplementedException ();
+            }
+            set {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public string[] Filenames {
+            get {
+                throw new System.NotImplementedException ();
+            }
+        }
+
+        public string[] ShortcutFolders {
+            get {
+                throw new System.NotImplementedException ();
+            }
+        }
+        #endregion
+
     }
 }

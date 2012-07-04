@@ -40,6 +40,7 @@ using Banshee.Gui;
 
 using OsxIntegration.GtkOsxApplication;
 using Hyena;
+using MonoMac.AppKit;
 
 namespace Banshee.OsxBackend
 {

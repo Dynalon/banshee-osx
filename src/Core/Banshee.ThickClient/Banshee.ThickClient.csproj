@@ -166,7 +166,6 @@
     <Compile Include="Banshee.Gui.Dialogs\SeekDialog.cs" />
     <Compile Include="Banshee.Library.Gui\FileImportSource.cs" />
     <Compile Include="Banshee.Library.Gui\FolderImportSource.cs" />
-    <Compile Include="Banshee.Gui.Dialogs\FileChooserDialog.cs" />
     <Compile Include="Banshee.Gui.Dialogs\ImageFileChooserDialog.cs" />
     <Compile Include="Banshee.Library.Gui\ImportDialog.cs" />
     <Compile Include="Banshee.Gui.Dialogs\AboutDialog.cs" />
@@ -290,6 +289,8 @@
     <Compile Include="Banshee.Collection.Gui\YearListView.cs" />
     <Compile Include="Banshee.Gui.Widgets\Tests\TrackInfoDisplayTests.cs" />
     <Compile Include="Banshee.Gui.Dialogs\OsxFileChooserDialog.cs" />
+    <Compile Include="Banshee.Gui.Dialogs\GtkFileChooserDialog.cs" />
+    <Compile Include="Banshee.Gui.Dialogs\FileChooserDialog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

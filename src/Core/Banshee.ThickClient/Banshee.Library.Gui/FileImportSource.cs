@@ -57,13 +57,13 @@ namespace Banshee.Library.Gui
 
             chooser.Destroy (); */
             NSApplication.Init ();
-            var chooser = OsxFileChooserDialog.CreateForImport (Catalog.GetString ("Media Files"), true);
+            var chooser = Banshee.Gui.Dialogs.FileChooserDialog.CreateForImport (Catalog.GetString ("Media Files"), true);
             //openPanel.AllowedFileTypes = new string [] { "mp3" };                                                                         
-            var result = chooser.RunModal();                                                                                             
-                                                                                                                                            
+            var result = chooser.Run ();
+
             if (result == 1)                                                                                                                
             {                                                                                                                               
-                string[] urls = chooser.Urls.Select (x => x.ToString ()).ToArray<string>();               
+                string[] urls = chooser.Filenames.Select (x => x.ToString ()).ToArray<string>();               
 
                 Banshee.ServiceStack.ServiceManager.Get<LibraryImportManager> ().Enqueue (urls);                                            
 
