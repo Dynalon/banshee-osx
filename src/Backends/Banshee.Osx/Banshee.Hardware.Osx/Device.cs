@@ -31,7 +31,7 @@ using Banshee.Hardware.Osx.LowLevel;
 
 namespace Banshee.Hardware.Osx
 {
-    public class Device : IDevice, IDisposable
+    public class Device : IDevice, IComparable, IDisposable
     {
         // this is a low-level NSDictionary the OS X DiskArbitration framework
         // gives us back for any disk devices or volumes and holds ALL information
@@ -41,6 +41,17 @@ namespace Banshee.Hardware.Osx
         public Device (DeviceArguments arguments)
         {
             this.deviceArguments = arguments;
+
+            // copy values from the NSDictionary so we don't rely on it later
+            this.vendor = deviceArguments.DeviceProperties.GetStringValue("DADeviceVendor");
+            this.uuid = GetUUIDFromProperties (deviceArguments.DeviceProperties);
+
+            this.name = deviceArguments.DeviceProperties.GetStringValue ("DAVolumeName");
+            if (string.IsNullOrEmpty (this.name))
+                this.name = deviceArguments.DeviceProperties.GetStringValue ("DAMediaName");
+   
+            this.product = deviceArguments.DeviceProperties.GetStringValue("DADeviceModel");
+
         }
         #region IDevice implementation
         public IUsbDevice ResolveRootUsbDevice ()
@@ -49,19 +60,32 @@ namespace Banshee.Hardware.Osx
             // if one thin of firewire, thunderbolt, etc.
             if ((this as IUsbDevice) != null)
                 return (IUsbDevice) this;
-            else
-                return null;
+            else {
+                // return a fake usb device
+                return new UsbDevice (deviceArguments) as IUsbDevice;
+            }
         }
 
         public IUsbPortInfo ResolveUsbPortInfo ()
         {
             return null;
         }
+        /// <summary>
+        /// Dumps the device details. Mainly usefull for debugging.
+        /// </summary>
+        public void DumpDeviceDetails ()
+        {
+            foreach (var key in deviceArguments.DeviceProperties.Keys)
+                Console.WriteLine ("{0} => {1}",
+                    key.ToString (),
+                    deviceArguments.DeviceProperties.GetStringValue (key.ToString ())
+                );
+        }
         public void Dispose ()
         {
 
         }
-        public static string GetUUIDFromProperties (NSDictionary properties)
+        protected static string GetUUIDFromProperties (NSDictionary properties)
         {
              // this is somewhat troublesome
              // some devices have a filesystem UUID (i.e. HFS+ formated ones), but most other devices don't.
@@ -73,45 +97,57 @@ namespace Banshee.Hardware.Osx
                 properties.GetStringValue ("DADevicePath")  ??
                 properties.GetStringValue ("DAVolumePath");
 
+            if (string.IsNullOrEmpty (uuid_src)) {
+                Hyena.Log.ErrorFormat ("Tryed to create a device for which we can't determine a Uuid");
+                throw new ApplicationException ("Tryed to create a device appeared for which we can't determine a Uuid");
+            }
+
             // TODO actually transform into a real UUID 
             return uuid_src;
         }
+        protected string uuid;
         public string Uuid {
             get {
-                return GetUUIDFromProperties (deviceArguments.DeviceProperties);
+                return uuid;
             }
         }
+        protected string serial;
         public string Serial {
             get {
                 return "123456789";
             }
         }
-
+        protected string name;
         public string Name {
             get {
-                return deviceArguments.DeviceProperties.GetStringValue ("DAMediaName");
+                return name;
             }
         }
-
+        protected string product;
         public string Product {
             get {
-                return deviceArguments.DeviceProperties.GetStringValue("DADeviceModel");
+                return product;
             }
         }
-
+        protected string vendor;
         public string Vendor {
             get {
-                return deviceArguments.DeviceProperties.GetStringValue("DADeviceVendor");
+                return vendor;
             }
         }
-
         public IDeviceMediaCapabilities MediaCapabilities {
             get {
                 return null;
             }
         }
         #endregion
-
+        #region IComparable implementation
+        public int CompareTo (object device)
+        {
+            if (device is IDevice)
+                return this.Uuid.CompareTo (((IDevice) device).Uuid);
+            else throw new ArgumentException ("object is not an IDevice");
         }
+        #endregion
+    }
 }
-

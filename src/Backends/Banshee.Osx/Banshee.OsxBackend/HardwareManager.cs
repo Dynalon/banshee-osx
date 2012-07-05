@@ -68,20 +68,24 @@ namespace Banshee.OsxBackend
         }
         private void deviceAppeared (object o, DeviceArguments args)
         {
-            Hyena.Log.DebugFormat ("device appeared: {0}", args.DeviceProperties.GetStringValue ("DAVolumePath"));
+            Device device = new Device (args);
+
+            Hyena.Log.DebugFormat ("device appeared: {0}, path: {1}", device.Uuid,
+                args.DeviceProperties.GetStringValue ("DAVolumePath"));
+
             lock (this) {
 
                 // only handle devices  which have a VolumePath (=MountPoint)
                 if (!args.DeviceProperties.HasKey ("DAVolumePath")) return;
 
-                Device new_device = null;
-
                 var protocol = args.DeviceProperties.GetStringValue ("DADeviceProtocol");
+
+                IDevice new_device = null;
                 if (!string.IsNullOrEmpty (protocol) && protocol == "USB") {
                     new_device = new UsbVolume (args);
                 }
                 else {
-                    new_device = new DiscVolume (args, null);
+                   new_device = new Volume (args, null);
                 }
 
                 // avoid adding a device twice - might happen since deviceAppeared and deviceChanged both fire
@@ -94,29 +98,32 @@ namespace Banshee.OsxBackend
 
                     // tell banshee core that a device was added 
                     // (i.e. to refresh device list)
-                    DeviceAdded (this, new DeviceAddedArgs ((IDevice) new_device)); 
+                    DeviceAdded (this, new DeviceAddedArgs ((IDevice) new_device));
                 }
             }
         }
         // TODO check if this can be merged with deviceAdded
         private void deviceChanged (object o, DeviceArguments args)
         {
-            Hyena.Log.DebugFormat ("device changed: {0}", args.DeviceProperties.GetStringValue ("DAVolumePath"));
-            lock (this) {
-                // we are only interested in volumes that are mounted
-                if (!args.DeviceProperties.HasKey ("DAVolumePath")) {
-                    // this could be an unmount event - check if the disk is in our devices listand remove
-                    // if necessary
-                    var tmp_device = new Volume (args);
+            Device device = new Device (args);
 
-                    var check = devices.Where (v => v.Uuid == tmp_device.Uuid).FirstOrDefault ();
-                    if (check != null) {
-                        devices.Remove (check);
-                        DeviceRemoved (null, new DeviceRemovedArgs (tmp_device.Uuid));
-                    }
+            Hyena.Log.DebugFormat ("device changed: {0}, path: {1}", device.Uuid,
+                args.DeviceProperties.GetStringValue ("DAVolumePath"));
+
+            lock (this) {
+
+                var old_device = devices.Where (d => d.Uuid == device.Uuid).FirstOrDefault ();
+                if (old_device != null) {
+                    // a device has changed that was currently attached in banshee
+                    // remove the device and immediately re-add it
+                    devices.Remove (old_device);
+                    DeviceRemoved (old_device, new DeviceRemovedArgs (old_device.Uuid));
                 }
 
-                Device new_device;
+                // do not add device without a VolumePath (=MountPoint)
+                if (!args.DeviceProperties.HasKey ("DAVolumePath")) return;
+
+                IDevice new_device = null;
                 var protocol = args.DeviceProperties.GetStringValue ("DADeviceProtocol");
                 if (!string.IsNullOrEmpty (protocol) && protocol == "USB") {
                     new_device = new UsbVolume (args);
@@ -124,24 +131,20 @@ namespace Banshee.OsxBackend
                 else {
                     new_device = new Volume (args);
                 }
-
-                // a device has changed, which may already be mounted, so check first if
-                // we have that device in our list
-                var old_device = devices.Where (v => v.Uuid == new_device.Uuid).FirstOrDefault ();
-                if (old_device != null) {
-                    devices.Remove (old_device);
-                }
                 devices.Add (new_device);
                 DeviceAdded (this, new DeviceAddedArgs ((IDevice) new_device));
             }
         }
         private void deviceDisappeared (object o, DeviceArguments args)
         {
-            Hyena.Log.InformationFormat ("device disappeared: {0}", args.DeviceProperties.GetStringValue ("DAVolumePath"));
-            lock (this) {
+            Device device = new Device (args);
 
-                string old_uuid = Device.GetUUIDFromProperties (args.DeviceProperties);
-                var old_device = devices.Where (v => v.Uuid == old_uuid).FirstOrDefault ();
+            Hyena.Log.InformationFormat ("device disappeared: {0}, path: {1}", device.Uuid,
+                args.DeviceProperties.GetStringValue ("DAVolumePath"));
+
+            lock (this) {
+               
+                var old_device = devices.Where (d => d.Uuid == device.Uuid).FirstOrDefault ();
                 if (old_device != null) {
                     devices.Remove (old_device);
                     DeviceRemoved (this, new DeviceRemovedArgs (old_device.Uuid));
