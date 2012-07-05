@@ -2,9 +2,9 @@
 // Volume.cs
 // 
 // Author:
-//   td <${AuthorEmail}>
+//   Timo Dörr <timo@latecrew.de>
 // 
-// Copyright 2012 td
+// Copyright 2012 Timo Dörr 
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -45,7 +45,7 @@ namespace Banshee.Hardware.Osx
         #region IVolume implementation
         public void Eject ()
         {
-            return;
+            Unmount ();
         }
 
         public void Mount ()
@@ -55,7 +55,13 @@ namespace Banshee.Hardware.Osx
 
         public void Unmount ()
         {
-            return;
+            string volume_url = deviceArguments.DeviceProperties.GetStringValue ("DAVolumePath");
+            if (string.IsNullOrEmpty (volume_url))
+                return;
+            deviceArguments.DiskArbiter.UnmountDisk (volume_url);
+
+            // remove this from the devices list
+
         }
 
         public string DeviceNode {
@@ -68,9 +74,7 @@ namespace Banshee.Hardware.Osx
 
         public string MountPoint {
             get {
-                NSDictionary prop = deviceArguments.DeviceProperties;
-                prop.GetStringValue ("DAVolumePath");
-                var volume_url = prop.GetStringValue ("DAVolumePath");
+                var volume_url = deviceArguments.DeviceProperties.GetStringValue ("DAVolumePath");
                 if (volume_url == null) {
                     Hyena.Log.Error ("Trying to access device without valid DAVolumePath, aborting!");
                     throw new Exception ();
@@ -149,7 +153,7 @@ namespace Banshee.Hardware.Osx
             get {
                 // for now, we can determinte IF its ejectable, but no code to actually eject it
                 // so return false because pressing the eject button wont work
-                return false;
+                return true;
                 /*
                 bool isEjectable;
                 if (deviceProperties.HasKey ("DAMediaEjectable"))
@@ -169,17 +173,7 @@ namespace Banshee.Hardware.Osx
 
         public bool CanUnmount {
             get {
-                // we have no code to perform the unmont, so return false
-                return false;
-                /*
-                bool isEjectable;
-                if (deviceProperties.HasKey ("DAMediaRemovable"))
-                    if (bool.TryParse (deviceProperties.GetStringValue("DAMediaRemoveable"), out isEjectable))
-                        return isEjectable;
-
-                // default - not ejectable
-                return false;
-                */
+                return true;
             }
         }
         #endregion

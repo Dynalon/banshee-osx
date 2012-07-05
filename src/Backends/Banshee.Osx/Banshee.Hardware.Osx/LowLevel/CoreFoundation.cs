@@ -40,7 +40,7 @@ using MonoMac.ObjCRuntime;
 namespace Banshee.Hardware.Osx.LowLevel
 {
 	// missing pieces that are not present in MonoMac.CoreFoundation
-	internal class CoreFoundationWrapper
+	internal class CoreFoundation
 	{
 		[DllImport (MonoMac.Constants.CoreFoundationLibrary)]
 		public static extern IntPtr CFAllocatorGetDefault ();

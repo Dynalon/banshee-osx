@@ -49,12 +49,17 @@ namespace Banshee.Hardware.Osx.LowLevel
 		{
 			DeviceProperties = properties;
 		}
+        public DeviceArguments (NSDictionary properties, OsxDiskArbiter arbiter) : this (properties)
+        {
+            DiskArbiter = arbiter;
+        }
 		public DeviceArguments (NSDictionary properties, OsxUsbData usbdata) : this (properties)
 		{
 			UsbInfo = usbdata;
 		}
 		public NSDictionary DeviceProperties;
 		public OsxUsbData UsbInfo;
+        public OsxDiskArbiter DiskArbiter;
 	}
 
 	/// <summary>
@@ -144,12 +149,12 @@ namespace Banshee.Hardware.Osx.LowLevel
                 // if no-one subscribed to this event, do nothing
                 return;
 
-			IntPtr device = DADiskCopyIOMedia (disk);
-			IntPtr propertiesRef = DADiskCopyDescription (disk);
+			IntPtr device = DiskArbitration.DADiskCopyIOMedia (disk);
+			IntPtr propertiesRef = DiskArbitration.DADiskCopyDescription (disk);
 		
 			// using MonoMac we can get a managed NSDictionary from the pointer
 			NSDictionary properties = new NSDictionary (propertiesRef);
-			DeviceArguments deviceArguments = new DeviceArguments (properties);
+			DeviceArguments deviceArguments = new DeviceArguments (properties, this);
 
 			// get usb data
 			if (properties.HasKey ("DADeviceProtocol") && properties.GetStringValue ("DADeviceProtocol") == "USB") {
@@ -160,6 +165,7 @@ namespace Banshee.Hardware.Osx.LowLevel
 
 			// trigger the public event for any subscribers
 			this.DeviceAppeared (this, deviceArguments);
+
             GC.KeepAlive (this);
 		}
 		private void NativeDiskChanged (IntPtr disk, IntPtr keys, IntPtr context)
@@ -168,13 +174,13 @@ namespace Banshee.Hardware.Osx.LowLevel
                 // if no-one subscribed to this event, do nothing
                 return;
 
-			IntPtr device = DADiskCopyIOMedia (disk);
-			IntPtr propertiesRef = DADiskCopyDescription (disk);
+			IntPtr device = DiskArbitration.DADiskCopyIOMedia (disk);
+			IntPtr propertiesRef = DiskArbitration.DADiskCopyDescription (disk);
 
 
 			// using MonoMac we can get a managed NSDictionary from the pointer
 			NSDictionary properties = new NSDictionary (propertiesRef);
-			DeviceArguments deviceArguments = new DeviceArguments (properties);
+			DeviceArguments deviceArguments = new DeviceArguments (properties, this);
 
 			if (properties.HasKey ("DADeviceProtocol") && properties.GetStringValue ("DADeviceProtocol") == "USB") {
 				OsxUsbData usb = new OsxUsbData (device);
@@ -193,13 +199,13 @@ namespace Banshee.Hardware.Osx.LowLevel
                 // if no-one subscribed to this event, do nothing
                 return;
 
-			IntPtr device = DADiskCopyIOMedia (disk);
-			IntPtr propertiesRef = DADiskCopyDescription (disk);
+			IntPtr device = DiskArbitration.DADiskCopyIOMedia (disk);
+			IntPtr propertiesRef = DiskArbitration.DADiskCopyDescription (disk);
 
 			NSDictionary properties = new NSDictionary (propertiesRef);
 
 				
-			DeviceArguments deviceArguments = new DeviceArguments (properties);
+			DeviceArguments deviceArguments = new DeviceArguments (properties, this);
 
 			if (properties.HasKey ("DADeviceProtocol") && properties.GetStringValue ("DADeviceProtocol") == "USB") {
 				OsxUsbData usb = new OsxUsbData (device);
@@ -218,25 +224,25 @@ namespace Banshee.Hardware.Osx.LowLevel
             DiskDisappearedCallback disk_disappeared_callback = new DiskDisappearedCallback (NativeDiskDisappeared);
 
 			// create a DiskArbitration session
-			IntPtr allocator = CoreFoundationWrapper.CFAllocatorGetDefault ();
-            da_session = DASessionCreate (allocator);
+			IntPtr allocator = CoreFoundation.CFAllocatorGetDefault ();
+            da_session = DiskArbitration.DASessionCreate (allocator);
 
             this.callback_appeared = Marshal.GetFunctionPointerForDelegate (disk_appeared_callback);
             this.callback_changed = Marshal.GetFunctionPointerForDelegate (disk_changed_callback);
             this.callback_disappeared = Marshal.GetFunctionPointerForDelegate (disk_disappeared_callback);
 
-            DARegisterDiskAppearedCallback (da_session, IntPtr.Zero, callback_appeared, IntPtr.Zero);
-            DARegisterDiskDescriptionChangedCallback (da_session, IntPtr.Zero, IntPtr.Zero, callback_changed, IntPtr.Zero);
-			DARegisterDiskDisappearedCallback (da_session, IntPtr.Zero, callback_disappeared, IntPtr.Zero);
+            DiskArbitration.DARegisterDiskAppearedCallback (da_session, IntPtr.Zero, callback_appeared, IntPtr.Zero);
+            DiskArbitration.DARegisterDiskDescriptionChangedCallback (da_session, IntPtr.Zero, IntPtr.Zero, callback_changed, IntPtr.Zero);
+			DiskArbitration.DARegisterDiskDisappearedCallback (da_session, IntPtr.Zero, callback_disappeared, IntPtr.Zero);
 
 			//IntPtr runloop = CFRunLoopGetCurrent ();
 			runloop = MonoMac.CoreFoundation.CFRunLoop.Current.Handle;
 
 			var mode = MonoMac.CoreFoundation.CFRunLoop.CFDefaultRunLoopMode.Handle;
-			DASessionScheduleWithRunLoop (da_session, runloop, mode);
+			DiskArbitration.DASessionScheduleWithRunLoop (da_session, runloop, mode);
 
 			// this blocks the thread
-			CoreFoundationWrapper.CFRunLoopRun ();
+			CoreFoundation.CFRunLoopRun ();
 
             // this code is actually never run, but keeps our native references
             // and callbacks alive to prevent the GC from removing it
@@ -252,16 +258,16 @@ namespace Banshee.Hardware.Osx.LowLevel
 		public void Dispose ()
 		{
 			// unregister our callbacks
-			DAUnregisterCallback (da_session, callback_appeared, IntPtr.Zero);
-			DAUnregisterCallback (da_session, callback_changed, IntPtr.Zero);
-			DAUnregisterCallback (da_session, callback_disappeared, IntPtr.Zero);
+			DiskArbitration.DAUnregisterCallback (da_session, callback_appeared, IntPtr.Zero);
+			DiskArbitration.DAUnregisterCallback (da_session, callback_changed, IntPtr.Zero);
+			DiskArbitration.DAUnregisterCallback (da_session, callback_disappeared, IntPtr.Zero);
 
 			var mode = MonoMac.CoreFoundation.CFRunLoop.CFDefaultRunLoopMode.Handle;
-			DASessionUnscheduleFromRunLoop (da_session, runloop, mode);
-			CoreFoundationWrapper.CFRelease (da_session);
+			DiskArbitration.DASessionUnscheduleFromRunLoop (da_session, runloop, mode);
+			CoreFoundation.CFRelease (da_session);
 
 			// stop the main run loop which blocks the thread
-			CoreFoundationWrapper.CFRunLoopStop (runloop);
+			CoreFoundation.CFRunLoopStop (runloop);
 			listenThread.Join ();
             GC.SuppressFinalize (this);
 		}
@@ -272,42 +278,39 @@ namespace Banshee.Hardware.Osx.LowLevel
             using (var arp = new NSAutoreleasePool ()){
                 NSUrl nsurl =  new NSUrl (url);
                 NSString path = new NSString (
-					CoreFoundationWrapper.CFURLCopyFileSystemPath (nsurl.Handle, mode)
+					CoreFoundation.CFURLCopyFileSystemPath (nsurl.Handle, mode)
 				);
                 return path.ToString ();
             }
-        }  
+        }
+        /// <summary>
+        /// Gets the name of the disk by its BSD Name.
+        /// </summary>
+        /// <returns>
+        /// The native IntPtr (corresponds to native DADiskRef) to the disk.
+        /// </returns>
+        /// <param name='bsdName'>
+        /// BSDName. A BSDName is the name of the device in the /dev device tree. Example of a valid BSDName is 'disk5s1'
+        /// </param>
+        public static IntPtr GetDiskByBSDName (string bsdName)
+        {
+            // TODO
+            return IntPtr.Zero;
+        }
 
-        private const string DiskArbitrationLibrary = "/SystemS/Library/Frameworks/DiskArbitration.framework/DiskArbitration";
-		// BEGIN native functions
+        public void UnmountDisk (string volumePath)
+        {
+            CFUrl url = MonoMac.CoreFoundation.CFUrl.FromUrlString (volumePath, null);
+            IntPtr disk = DiskArbitration.DADiskCreateFromVolumePath (IntPtr.Zero, da_session, url.Handle);
 
+            if (disk == IntPtr.Zero)
+                return;
 
-		[DllImport (DiskArbitrationLibrary)]
-		public static extern IntPtr DASessionCreate (IntPtr allocator);
-	
-		[DllImport (DiskArbitrationLibrary)]
-		public static extern IntPtr DARegisterDiskAppearedCallback (IntPtr session, IntPtr match, IntPtr callback, IntPtr context);
-	
-		[DllImport (DiskArbitrationLibrary)]
-        private static extern IntPtr DARegisterDiskDescriptionChangedCallback (IntPtr session, IntPtr match, IntPtr watch, IntPtr callback, IntPtr context);
-	
-		[DllImport (DiskArbitrationLibrary)]
-        private static extern IntPtr DARegisterDiskDisappearedCallback (IntPtr session, IntPtr match, IntPtr callback, IntPtr context);
- 		
-		[DllImport (DiskArbitrationLibrary)]
-		public static extern IntPtr DAUnregisterCallback (IntPtr session, IntPtr callback, IntPtr context);
-
-		[DllImport (DiskArbitrationLibrary)]
-		public static extern IntPtr DASessionScheduleWithRunLoop (IntPtr session , IntPtr runLoop , IntPtr runloopMode);
-	
-		[DllImport (DiskArbitrationLibrary)]
-		public static extern IntPtr DASessionUnscheduleFromRunLoop (IntPtr session , IntPtr runLoop , IntPtr runloopMode);
-
-		[DllImport (DiskArbitrationLibrary)]
-		public static extern IntPtr DADiskCopyDescription (IntPtr disk);
-
-		[DllImport (DiskArbitrationLibrary)]
-		public static extern IntPtr DADiskCopyIOMedia (IntPtr disk);
+            DiskArbitration.UnmountCallback cb = (IntPtr unmounted_disk, IntPtr dissenter, IntPtr context) => {
+                Hyena.Log.DebugFormat ("successfully unmounted {0}", volumePath);
+            };
+            DiskArbitration.DADiskUnmount (disk, 0, cb, IntPtr.Zero);
+        }
 	}
 
 	/// <summary>

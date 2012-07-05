@@ -4,7 +4,9 @@
 // Authors:
 //   Aaron Bockover <abockover@novell.com>
 //   Eoin Hennessy <eoin@randomrules.org>
+//   Timo Dörr <timo@latecrew.de>
 //
+// Copyright 2012 Timo Dörr
 // Copyright 2009-2010 Novell, Inc.
 // Copyright 2008 Eoin Hennessy
 //

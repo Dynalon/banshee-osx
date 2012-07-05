@@ -78,14 +78,14 @@ namespace Banshee.Hardware.Osx.LowLevel
 			cf_ref = IOKit.GetUsbProperty (registry_entry, "idVendor");
 			if (cf_ref != IntPtr.Zero) {
 				Int32 num;
-				CoreFoundationWrapper.CFNumberGetValue (cf_ref, 3, out num);
+				CoreFoundation.CFNumberGetValue (cf_ref, 3, out num);
 				VendorId = (uint) num;
 			}
 
 			cf_ref = IOKit.GetUsbProperty (registry_entry, "idProduct");
 			if (cf_ref != IntPtr.Zero) {
 				Int32 num;
-				CoreFoundationWrapper.CFNumberGetValue (cf_ref, 3, out num);
+				CoreFoundation.CFNumberGetValue (cf_ref, 3, out num);
 				ProductId = (uint) num;
 			}
 					

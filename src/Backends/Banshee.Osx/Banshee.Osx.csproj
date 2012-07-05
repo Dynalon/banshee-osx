@@ -89,10 +89,11 @@
     <Compile Include="Banshee.Hardware.Osx\Volume.cs" />
     <Compile Include="Banshee.Hardware.Osx\DiscVolume.cs" />
     <Compile Include="Banshee.Hardware.Osx\UsbVolume.cs" />
-    <Compile Include="Banshee.Hardware.Osx\LowLevel\CoreFoundationWrapper.cs" />
     <Compile Include="Banshee.Hardware.Osx\LowLevel\IOKit.cs" />
     <Compile Include="Banshee.Hardware.Osx\LowLevel\OsxDiskArbiter.cs" />
     <Compile Include="Banshee.Hardware.Osx\LowLevel\OsxUsbData.cs" />
+    <Compile Include="Banshee.Hardware.Osx\LowLevel\DiskArbitration.cs" />
+    <Compile Include="Banshee.Hardware.Osx\LowLevel\CoreFoundation.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Banshee.Osx.addin.xml">

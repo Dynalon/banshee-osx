@@ -8,7 +8,8 @@ SOURCES =  \
 	Banshee.Hardware.Osx/CdromDevice.cs \
 	Banshee.Hardware.Osx/Device.cs \
 	Banshee.Hardware.Osx/DiscVolume.cs \
-	Banshee.Hardware.Osx/LowLevel/CoreFoundationWrapper.cs \
+	Banshee.Hardware.Osx/LowLevel/CoreFoundation.cs \
+	Banshee.Hardware.Osx/LowLevel/DiskArbitration.cs \
 	Banshee.Hardware.Osx/LowLevel/IOKit.cs \
 	Banshee.Hardware.Osx/LowLevel/OsxDiskArbiter.cs \
 	Banshee.Hardware.Osx/LowLevel/OsxUsbData.cs \

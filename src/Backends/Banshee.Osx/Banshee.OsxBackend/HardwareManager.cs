@@ -104,7 +104,17 @@ namespace Banshee.OsxBackend
             Hyena.Log.DebugFormat ("device changed: {0}", args.DeviceProperties.GetStringValue ("DAVolumePath"));
             lock (this) {
                 // we are only interested in volumes that are mounted
-                if (!args.DeviceProperties.HasKey ("DAVolumePath")) return;
+                if (!args.DeviceProperties.HasKey ("DAVolumePath")) {
+                    // this could be an unmount event - check if the disk is in our devices listand remove
+                    // if necessary
+                    var tmp_device = new Volume (args);
+
+                    var check = devices.Where (v => v.Uuid == tmp_device.Uuid).FirstOrDefault ();
+                    if (check != null) {
+                        devices.Remove (check);
+                        DeviceRemoved (null, new DeviceRemovedArgs (tmp_device.Uuid));
+                    }
+                }
 
                 Device new_device;
                 var protocol = args.DeviceProperties.GetStringValue ("DADeviceProtocol");

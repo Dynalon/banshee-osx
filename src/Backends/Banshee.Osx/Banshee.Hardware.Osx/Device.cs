@@ -2,9 +2,9 @@
 // Device.cs
 // 
 // Author:
-//   td <${AuthorEmail}>
+//   Timo Dörr <timo@latecrew.de>
 // 
-// Copyright 2012 td
+// Copyright 2012 Timo Dörr 
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -45,6 +45,8 @@ namespace Banshee.Hardware.Osx
         #region IDevice implementation
         public IUsbDevice ResolveRootUsbDevice ()
         {
+            // TODO this should be refactored - devices don't need to be usb devices 
+            // if one thin of firewire, thunderbolt, etc.
             if ((this as IUsbDevice) != null)
                 return (IUsbDevice) this;
             else
