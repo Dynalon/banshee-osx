@@ -46,7 +46,6 @@ using MonoMac.AppKit;
 
 using MonoMac.CoreFoundation;
 using MonoMac.Foundation;
-using MonoMac.AppKit;
 using MonoMac.CoreWlan;
 
 namespace Banshee.OsxBackend

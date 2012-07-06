@@ -63,7 +63,7 @@ namespace Banshee.Library.Gui
 
             if (result == 1)                                                                                                                
             {                                                                                                                               
-                string[] urls = chooser.Filenames.Select (x => x.ToString ()).ToArray<string>();               
+                string[] urls = chooser.Filenames;
 
                 Banshee.ServiceStack.ServiceManager.Get<LibraryImportManager> ().Enqueue (urls);                                            
 

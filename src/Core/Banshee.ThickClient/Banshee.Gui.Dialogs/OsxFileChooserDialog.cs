@@ -34,6 +34,9 @@ using Hyena;
 using MonoMac.AppKit;
 using Gtk;
 
+using System.Linq;
+using System.Collections.Generic;
+
 namespace Banshee.Gui.Dialogs
 {
     public partial class FileChooserDialog : Gtk.FileChooser
@@ -373,7 +376,12 @@ namespace Banshee.Gui.Dialogs
 
         public string[] Filenames {
             get {
-                throw new System.NotImplementedException ();
+
+                List<string> filenames = new List<string> ();
+                foreach (var url in openPanel.Urls) {
+                    filenames.Add (url.ToString ());
+                }
+                return filenames.ToArray ();
             }
         }
 
