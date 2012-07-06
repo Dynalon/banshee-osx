@@ -48,7 +48,8 @@ namespace Banshee.Hardware
         {
             var extensions = Banshee.IO.Provider.GetOrderedExtensions (
                 "/Banshee/Platform/HardwareManager",
-                "Banshee.Hardware.Gio", "Banshee.HalBackend.HardwareManager"
+                "Banshee.Hardware.Gio", "Banshee.HalBackend.HardwareManager",
+                "Banshee.Hardware.Osx", "Banshee.OsxBackend.HardwareManager"
             );
 
             foreach (var node in extensions) {

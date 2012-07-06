@@ -651,6 +651,7 @@ namespace Banshee.Sources
                     ErrorSource.AddMessage (e.Message, track.Uri.ToString ());
                 }
             }
+            AddTrackJob.Finish ();
             is_adding = false;
         }
 

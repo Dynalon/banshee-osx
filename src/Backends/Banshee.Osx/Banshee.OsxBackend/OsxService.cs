@@ -4,7 +4,9 @@
 // Authors:
 //   Aaron Bockover <abockover@novell.com>
 //   Eoin Hennessy <eoin@randomrules.org>
+//   Timo Dörr <timo@latecrew.de>
 //
+// Copyright 2012 Timo Dörr
 // Copyright 2009-2010 Novell, Inc.
 // Copyright 2008 Eoin Hennessy
 //
@@ -41,6 +43,11 @@ using Banshee.Gui;
 using OsxIntegration.GtkOsxApplication;
 using Hyena;
 using MonoMac.AppKit;
+
+using MonoMac.CoreFoundation;
+using MonoMac.Foundation;
+using MonoMac.AppKit;
+using MonoMac.CoreWlan;
 
 namespace Banshee.OsxBackend
 {
@@ -82,7 +89,6 @@ namespace Banshee.OsxBackend
 
             return true;
         }
-
         private void Initialize ()
         {
             // load OS X specific key mappings, possibly overriding default mappings
@@ -95,6 +101,7 @@ namespace Banshee.OsxBackend
             Gtk.AccelMap.Load (accel_map);
 
             ConfigureOsxMainMenu ();
+
         }
 
         public void Dispose ()
