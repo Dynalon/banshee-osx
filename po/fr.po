@@ -19,9 +19,9 @@ msgstr ""
 "Project-Id-Version: banshee 0.11\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-05-19 18:44+0000\n"
-"PO-Revision-Date: 2012-05-01 18:23+0200\n"
-"Last-Translator: Alain Lojewski <allomervan@gmail.com>\n"
+"POT-Creation-Date: 2012-07-02 15:29+0000\n"
+"PO-Revision-Date: 2012-06-30 22:55+0100\n"
+"Last-Translator: Pierre Henry <pierrehenry73@yahoo.fr>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -829,20 +829,6 @@ msgstr "GStreamer# 0.10"
 msgid "Could not create encoding pipeline : {0}"
 msgstr "Impossible de créer le pipeline de codage : {0}"
 
-#: ../src/Backends/Banshee.Osx/Banshee.OsxBackend/OsxService.cs:91
-#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:132
-#: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:110
-msgid "_Close"
-msgstr "_Fermer"
-
-#: ../src/Backends/Banshee.Osx/Banshee.OsxBackend/OsxService.cs:92
-#: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:251
-#: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/FixSource.cs:79
-#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:133
-#: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:111
-msgid "Close"
-msgstr "Fermer"
-
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:72
 msgid "Can't check for updates"
 msgstr "Impossible de vérifier les mises à jour"
@@ -1250,6 +1236,13 @@ msgstr "{0} restant"
 msgid "Play Song"
 msgstr "Lire le morceau"
 
+#: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:251
+#: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/FixSource.cs:79
+#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:133
+#: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:111
+msgid "Close"
+msgstr "Fermer"
+
 #. Translators: this is a verb (command), not a noun (things)
 #: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:472
 msgid "Search"
@@ -1614,12 +1607,29 @@ msgstr "Soft Rock"
 msgid "Techno"
 msgstr "Techno"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:58
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:63
 msgid "Remove From Library"
 msgstr "Enlever de la bibliothèque"
 
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:77
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:249
+msgid "File Organization"
+msgstr "Organisation des fichiers"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:81
+msgid "Co_py files to media folder when importing"
+msgstr "Co_pier les fichiers dans le dossier multimédia à l'importation"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:87
+msgid "_Update file and folder names"
+msgstr "_Mettre à jour les noms de fichiers et de dossiers"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:88
+msgid "Rename files and folders according to media metadata"
+msgstr "Renommer les fichiers et les dossiers en fonction des métadonnées"
+
 #. Translators: {0} is the library name, eg 'Music Library' or 'Podcasts'
-#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:121
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:167
 #, csharp-format
 msgid "{0} Folder"
 msgstr "Dossier {0}"
@@ -1696,105 +1706,105 @@ msgid "Search your music"
 msgstr "Rechercher votre musique"
 
 #. Misc section
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:80
-#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:66
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:89
+#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:62
 msgid "Miscellaneous"
 msgstr "Divers"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:83
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:92
 msgid "_Sort an artist's albums by year, not title"
 msgstr "Trier les album_s d'un artiste par année, pas par titre"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:93
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:102
 #, csharp-format
 msgid "{0} song"
 msgid_plural "{0} songs"
 msgstr[0] "{0} morceau"
 msgstr[1] "{0} morceaux"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:114
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:131
 msgid "Music Folder"
 msgstr "Dossier Musique"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:119
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:95
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:136
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:107
 msgid "Favorites"
 msgstr "Favoris"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:120
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:137
 msgid "Songs rated four and five stars"
 msgstr "Morceaux notés quatre et cinq étoiles"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:124
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:141
 msgid "Recent Favorites"
 msgstr "Favoris récents"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:125
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:142
 msgid "Songs listened to often in the past week"
 msgstr "Morceaux fréquemment écoutés cette semaine"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:129
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:146
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Sort.cs:95
 msgid "Recently Added"
 msgstr "Récemment ajoutés"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:130
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:147
 msgid "Songs imported within the last week"
 msgstr "Morceaux importés cette semaine"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:134
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:151
 msgid "Recently Played"
 msgstr "Récemment lus"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:135
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:152
 msgid "Recently played songs"
 msgstr "Chansons récemment lues"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:139
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:156
 msgid "Unheard"
 msgstr "Non écoutés"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:140
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:157
 msgid "Songs that have not been played or skipped"
 msgstr "Morceaux non écoutés ou ignorés"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:147
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:164
 msgid "Neglected Favorites"
 msgstr "Favoris négligés"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:148
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:165
 msgid "Favorites not played in over two months"
 msgstr "Favoris non joués durant les deux derniers mois"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:152
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:169
 msgid "Least Favorite"
 msgstr "Les moins favoris"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:153
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:170
 msgid "Songs rated one or two stars or that you have frequently skipped"
 msgstr "Morceaux notés une ou deux étoiles ou fréquemment sautés"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:157
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:174
 msgid "700 MB of Favorites"
 msgstr "700 Mio de favoris"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:158
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:175
 msgid "A data CD worth of favorite songs"
 msgstr "Un CD de données rempli de vos morceaux préférés"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:163
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:180
 msgid "80 Minutes of Favorites"
 msgstr "80 minutes de favoris"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:164
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:181
 msgid "An audio CD worth of favorite songs"
 msgstr "Un CD audio rempli de vos morceaux préférés"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:169
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:186
 msgid "Unrated"
 msgstr "Non noté"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:170
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:187
 msgid "Songs that haven't been rated"
 msgstr "Morceaux qui n'ont pas été notés"
 
@@ -1808,41 +1818,41 @@ msgid "Importing From {0}"
 msgstr "Import depuis {0}"
 
 #. Catalog.GetString ("Video Library")
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:43
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:44
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/VideoGroupSource.cs:38
 msgid "Videos"
 msgstr "Vidéos"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:48
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:49
 #: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:52
 msgid "Search your videos"
 msgstr "Rechercher vos vidéos"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:65
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:66
 #: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:69
 msgid "Produced By"
 msgstr "Produite par"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:70
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:78
 #, csharp-format
 msgid "{0} video"
 msgid_plural "{0} videos"
 msgstr[0] "{0} vidéo"
 msgstr[1] "{0} vidéos"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:90
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:102
 msgid "Videos Folder"
 msgstr "Dossier Vidéos"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:96
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:108
 msgid "Videos rated four and five stars"
 msgstr "Vidéos notées quatre et cinq étoiles"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:100
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:112
 msgid "Unwatched"
 msgstr "Non regardée"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:101
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:113
 msgid "Videos that haven't been played yet"
 msgstr "Vidéos qui n'ont pas encore été lues"
 
@@ -1918,14 +1928,6 @@ msgid ""
 msgstr ""
 "Activez cette option pour synchroniser les métadonnées du nombre d'écoutes "
 "entre votre bibliothèque et les fichiers audio pris en charge"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:67
-msgid "_Update file and folder names"
-msgstr "_Mettre à jour les noms de fichiers et de dossiers"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:68
-msgid "Rename files and folders according to media metadata"
-msgstr "Renommer les fichiers et les dossiers en fonction des métadonnées"
 
 #: ../src/Core/Banshee.Services/Banshee.Networking/Network.cs:52
 msgid "There is no available network connection"
@@ -2017,11 +2019,7 @@ msgstr "Extensions"
 msgid "File Policies"
 msgstr "Règles concernant les fichiers"
 
-#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:58
-msgid "Co_py files to media folders when importing"
-msgstr "Co_pier les fichiers dans les dossiers multimédias à l'importation"
-
-#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:70
+#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:66
 msgid "Improve Banshee by sending anonymous usage data"
 msgstr "Améliorer Banshee en envoyant les données d'utilisation anonymes"
 
@@ -2670,37 +2668,33 @@ msgstr "Erreur"
 msgid "Details"
 msgstr "Détails"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:156
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:158
 msgid "Errors"
 msgstr "Erreurs"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:213
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:215
 msgid "Sort Playlists By"
 msgstr "Trier les listes de lecture par"
 
 #. Translators: this is a noun, referring to the harddisk
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:223
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:225
 msgid "Drive"
 msgstr "Lecteur"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:247
-msgid "File Organization"
-msgstr "Organisation des fichiers"
-
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:248
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:250
 msgid "Folder hie_rarchy"
 msgstr "Hié_rarchie des dossiers"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:249
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:251
 msgid "File _name"
 msgstr "_Nom du fichier"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:701
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:703
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "Ajout {0} sur {1} vers {2}"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:720
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:722
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "Suppression {0} sur {1} de {2}"
@@ -5877,8 +5871,8 @@ msgid "Log in to Last.fm"
 msgstr "Se connecter à Last.fm"
 
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:294
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:294
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:321
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:298
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:335
 msgid "You need to allow Banshee to access your Last.fm account."
 msgstr "Vous devez permettre à Banshee d'accéder à votre compte Last.fm."
 
@@ -6209,6 +6203,11 @@ msgstr "Rechercher des podcasts"
 #: ../src/Extensions/Banshee.MiroGuide/Banshee.MiroGuide/View.cs:58
 msgid "Search for video podcasts"
 msgstr "Rechercher des podcasts vidéo"
+
+#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:132
+#: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:110
+msgid "_Close"
+msgstr "_Fermer"
 
 #: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:139
 msgid "_Show Notifications"
@@ -7146,101 +7145,121 @@ msgstr "Enregistrer et se connecter"
 msgid "Authorize for Last.fm"
 msgstr "Autoriser pour Last.fm"
 
-#: ../src/Libraries/Lastfm/Lastfm/AudioscrobblerConnection.cs:450
-msgid ""
-"Last.fm username is invalid or Banshee is not authorized to access your "
-"account."
-msgstr ""
-"Le nom d'utilisateur Last.fm n'est pas valide ou Banshee n'est pas autorisé "
-"à accéder à votre compte."
-
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:271
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:275
 msgid "This service does not exist."
 msgstr "Ce service n'existe pas."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:275
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:279
 msgid "Stations are only available to paying Last.fm subscribers."
 msgstr ""
 "Les stations ne sont accessibles qu'aux abonnés de Last.fm qui ont payé."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:277
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:281
 msgid "This station is not available."
 msgstr "Cette station n'est pas disponible."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:279
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:283
 msgid "The request is missing a required parameter."
 msgstr "La requête est incomplète, un paramètre nécessaire est manquant."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:281
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:285
 msgid "The specified resource is invalid."
 msgstr "La ressource spécifiée n'est pas valide."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:283
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:287
 msgid "Server error, please try again later."
 msgstr "Erreur du serveur, essayez plus tard."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:285
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:289
 msgid "Invalid authentication information, please re-authenticate."
 msgstr "Information d'authentification incorrecte, réauthentifiez-vous."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:287
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:291
 msgid "The API key used by this application is invalid."
 msgstr "La clé d'API utilisée par cette application n'est pas valide."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:289
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:293
 msgid ""
 "The streaming system is offline for maintenance, please try again later."
 msgstr ""
 "Le système de diffusion est désactivé pour entretien, veuillez essayer à "
 "nouveau plus tard."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:291
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:295
 msgid "The method signature is invalid."
 msgstr "La méthode de signature n'est pas valide."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:296
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:300
 msgid "There is not enough content to play this station."
 msgstr "Il n'y a pas assez de contenu à jouer pour lire cette station."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:298
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:302
 msgid "This group does not have enough members for radio."
 msgstr "Ce groupe ne possède pas assez de membres pour diffuser une radio."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:300
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:304
 msgid "This artist does not have enough fans for radio."
 msgstr "Cet artiste n'a pas assez de fans pour diffuser une radio."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:302
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:306
 msgid "There are not enough neighbours for this station."
 msgstr "Il n'y a pas assez de voisins pour cette station."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:304
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:308
+msgid "This user is not allowed to listen to radio during peak usage"
+msgstr ""
+"Cet utilisateur n'est pas autorisé à écouter la radio durant les pics "
+"d'utilisation"
+
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:310
+msgid "Radio station not found"
+msgstr "La station de radio n'a pas été trouvée"
+
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:312
+msgid "This application is not allowed to make requests to the web services"
+msgstr ""
+"Cette application n'est pas autorisée à faire des requêtes aux services "
+"Web"
+
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:314
+msgid "This type of request is no longer supported"
+msgstr "Ce type de requête n'est plus pris en charge"
+
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:316
+msgid ""
+"Your IP has made too many requests in a short period, exceeding our API "
+"guidelines"
+msgstr ""
+"Votre adresse IP a effectué trop de requêtes sur une courte période, "
+"dépassant nos directives API"
+
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:318
 msgid "There was an unknown error."
 msgstr "Une erreur inconnue est survenue."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:313
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:327
 msgid "Not connected to Last.fm."
 msgstr "Non connecté à Last.fm."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:315
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:329
 msgid "Account details are needed before you can connect to Last.fm"
 msgstr ""
 "Les détails du compte sont nécessaires avant que vous puissiez vous "
 "connecter à Last.fm"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:317
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:331
 msgid "No network connection detected."
 msgstr "Aucune connexion réseau détectée."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:319
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:333
 msgid "Last.fm username is invalid."
 msgstr "Le nom d'utilisateur de Last.fm n'est pas valide."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:323
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:337
 msgid "Connecting to Last.fm."
 msgstr "Connexion à Last.fm."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:325
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:339
 msgid "Connected to Last.fm."
 msgstr "Connecté à Last.fm."
 
