@@ -108,17 +108,17 @@ namespace Banshee.IO.Gio
             return (type & FileType.Directory) != 0;
         }
 
-        public IEnumerable<string> GetFiles (string directory)
+        public IEnumerable<SafeUri> GetFiles (string directory)
         {
             return GetFiles (GetDir (directory), true);
         }
 
-        private IEnumerable<string> GetFiles (GLib.File dir, bool followSymlinks)
+        private IEnumerable<SafeUri> GetFiles (GLib.File dir, bool followSymlinks)
         {
             var enumerator = dir.EnumerateChildren ("standard::type,standard::name", followSymlinks ? FileQueryInfoFlags.None : FileQueryInfoFlags.NofollowSymlinks, null);
             foreach (FileInfo file in enumerator) {
                 if ((file.FileType & FileType.Regular) != 0) {
-                    var ret = SafeUri.FilenameToUri (System.IO.Path.Combine (dir.Path, file.Name));
+                    var ret = new SafeUri (System.IO.Path.Combine (dir.Path, file.Name), false);
                     file.Dispose ();
                     yield return ret;
                 } else {
@@ -131,17 +131,17 @@ namespace Banshee.IO.Gio
             }
         }
 
-        public IEnumerable<string> GetDirectories (string directory)
+        public IEnumerable<SafeUri> GetDirectories (string directory)
         {
             return GetDirectories (GetDir (directory), true);
         }
 
-        private IEnumerable<string> GetDirectories (GLib.File dir, bool followSymlinks)
+        private IEnumerable<SafeUri> GetDirectories (GLib.File dir, bool followSymlinks)
         {
             var enumerator = dir.EnumerateChildren ("standard::type,standard::name", followSymlinks ? FileQueryInfoFlags.None : FileQueryInfoFlags.NofollowSymlinks, null);
             foreach (FileInfo file in enumerator) {
                 if ((file.FileType & FileType.Directory) != 0) {
-                    var ret = SafeUri.FilenameToUri (System.IO.Path.Combine (dir.Path, file.Name));
+                    var ret = new SafeUri (System.IO.Path.Combine (dir.Path, file.Name), false);
                     file.Dispose ();
                     yield return ret;
                 } else {

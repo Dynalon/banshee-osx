@@ -334,12 +334,8 @@ namespace Banshee.IO
         public void GetChildFiles ()
         {
             ForEachProvider (() => {
-                var files = Directory.GetFiles (tmp_dir).ToArray ();
-                if (Provider.LocalOnly) {
-                    AssertContainsSameElements (new string [] { baz.LocalPath, foo.LocalPath }, files);
-                } else {
-                    AssertContainsSameElements (new string [] { foo.AbsoluteUri, baz.AbsoluteUri }, files);
-                }
+                var files = Directory.GetFiles (tmp_dir).Select (f => f.AbsoluteUri).ToArray ();
+                AssertContainsSameElements (new string [] { foo.AbsoluteUri, baz.AbsoluteUri }, files);
             });
         }
 
@@ -362,12 +358,8 @@ namespace Banshee.IO
         public void GetChildDirs ()
         {
             ForEachProvider (() => {
-                var dirs = Directory.GetDirectories (tmp_dir).ToArray ();
-                if (Provider.LocalOnly) {
-                    Assert.AreEqual (new string [] { new SafeUri (woo).LocalPath }, dirs);
-                } else {
-                    Assert.AreEqual (new string [] { new SafeUri (woo).AbsoluteUri }, dirs);
-                }
+                var dirs = Directory.GetDirectories (tmp_dir).Select (d => d.AbsoluteUri).ToArray ();
+                Assert.AreEqual (new string [] { new SafeUri (woo).AbsoluteUri }, dirs);
             });
         }
 

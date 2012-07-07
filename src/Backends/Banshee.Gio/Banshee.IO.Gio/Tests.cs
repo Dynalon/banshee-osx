@@ -241,14 +241,14 @@ namespace Banshee.IO.Gio
         [Test]
         public void GetChildFiles ()
         {
-            var files = dir.GetFiles (tmp_dir).ToArray ();
+            var files = dir.GetFiles (tmp_dir).Select (f => f.AbsoluteUri).ToArray ();
             Assert.AreEqual (files, new string [] { foo.AbsoluteUri, baz.AbsoluteUri });
         }
 
         [Test]
         public void GetChildDirs ()
         {
-            var dirs = dir.GetDirectories (tmp_dir).ToArray ();
+            var dirs = dir.GetDirectories (tmp_dir).Select (d => d.AbsoluteUri).ToArray ();
             Assert.AreEqual (dirs, new string [] { new SafeUri (woo).AbsoluteUri });
         }
 

@@ -27,6 +27,7 @@
 //
 
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 using Hyena;
@@ -55,14 +56,16 @@ namespace Banshee.IO.SystemIO
             return System.IO.Directory.Exists (directory);
         }
 
-        public IEnumerable<string> GetFiles (string directory)
+        public IEnumerable<SafeUri> GetFiles (string directory)
         {
-            return System.IO.Directory.GetFiles (directory);
+            return System.IO.Directory.GetFiles (directory)
+                .Select (filePath => new SafeUri (filePath, false));
         }
 
-        public IEnumerable<string> GetDirectories (string directory)
+        public IEnumerable<SafeUri> GetDirectories (string directory)
         {
-            return System.IO.Directory.GetDirectories (directory);
+            return System.IO.Directory.GetDirectories (directory)
+                .Select (filePath => new SafeUri (filePath, false));
         }
 
         public void Move (SafeUri from, SafeUri to)

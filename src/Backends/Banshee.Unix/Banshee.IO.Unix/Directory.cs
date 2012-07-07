@@ -86,7 +86,7 @@ namespace Banshee.IO.Unix
             }
         }
 
-        public IEnumerable<string> GetFiles (string directory)
+        public IEnumerable<SafeUri> GetFiles (string directory)
         {
             var unix_dir = TraverseSymlink(new UnixDirectoryInfo (directory)) as UnixDirectoryInfo;
             if (unix_dir == null) {
@@ -94,18 +94,18 @@ namespace Banshee.IO.Unix
             }
             foreach (var entry in unix_dir.GetFileSystemEntries ()) {
                 if (entry != null && !entry.IsDirectory && entry.IsRegularFile && !entry.IsSocket && entry.Exists) {
-                    yield return entry.FullName;
+                    yield return new SafeUri (entry.FullName, false);
                 }
             }
         }
 
-        public IEnumerable<string> GetDirectories (string directory)
+        public IEnumerable<SafeUri> GetDirectories (string directory)
         {
             var unix_dir = new UnixDirectoryInfo (directory);
             foreach (var entry in unix_dir.GetFileSystemEntries ()) {
                 var info = TraverseSymlink (entry);
                 if (info != null && info.IsDirectory && info.Exists && !info.IsSocket) {
-                    yield return info.FullName;
+                    yield return new SafeUri (info.FullName, false);
                 }
             }
         }

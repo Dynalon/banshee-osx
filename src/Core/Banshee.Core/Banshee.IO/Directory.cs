@@ -63,12 +63,12 @@ namespace Banshee.IO
             Provider.Directory.Delete (Provider.GetPath (directory), recursive);
         }
 
-        public static IEnumerable<string> GetFiles (string directory)
+        public static IEnumerable<SafeUri> GetFiles (string directory)
         {
             return Provider.Directory.GetFiles (Provider.GetPath (directory));
         }
 
-        public static IEnumerable<string> GetDirectories (string directory)
+        public static IEnumerable<SafeUri> GetDirectories (string directory)
         {
             return Provider.Directory.GetDirectories (Provider.GetPath (directory));
         }
