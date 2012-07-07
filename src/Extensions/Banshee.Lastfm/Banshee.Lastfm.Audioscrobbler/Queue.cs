@@ -4,6 +4,7 @@
 // Author:
 //   Chris Toshok <toshok@ximian.com>
 //   Alexander Hixon <hixon.alexander@mediati.org>
+//   Phil Trimble <philtrimble@gmail.com>
 //
 // Copyright (C) 2005-2008 Novell, Inc.
 //
@@ -258,8 +259,9 @@ namespace Banshee.Lastfm.Audioscrobbler
 
         public List<IQueuedTrack> GetTracks ()
         {
-            /* Last.fm can handle up to 50 songs in one request */
-            return queue.GetRange (0, Math.Min (queue.Count, 50));
+            // Last.fm can technically handle up to 50 songs in one request
+            // but seems to throw errors if our submission is too long.
+            return queue.GetRange (0, Math.Min (queue.Count, 30));
         }
 
         public void Add (object track, DateTime started_at)

@@ -3,6 +3,7 @@
 //
 // Authors:
 //   Bertrand Lorentz <bertrand.lorentz@gmail.com>
+//   Phil Trimble <philtrimble@gmail.com>
 //
 // Copyright (C) 2009 Bertrand Lorentz
 //
@@ -59,6 +60,7 @@ namespace Lastfm
 
         private Dictionary<string, string> parameters = new Dictionary<string, string> ();
         private Stream response_stream;
+        private string response_string;
 
         public LastfmRequest ()
         {}
@@ -119,7 +121,10 @@ namespace Lastfm
             if (response_stream == null) {
                 return null;
             }
-            Deserializer deserializer = new Deserializer (response_stream);
+
+            SetResponseString ();
+
+            Deserializer deserializer = new Deserializer (response_string);
             object obj = deserializer.Deserialize ();
             JsonObject json_obj = obj as Hyena.Json.JsonObject;
 
@@ -152,14 +157,11 @@ namespace Lastfm
         {
             StationError error = StationError.None;
 
-            string response;
-            using (StreamReader sr = new StreamReader (response_stream)) {
-                response = sr.ReadToEnd ();
-            }
+            SetResponseString ();
 
-            if (response.Contains ("<lfm status=\"failed\">")) {
+            if (response_string.Contains ("<lfm status=\"failed\">")) {
                 // XML reply indicates an error
-                Match match = Regex.Match (response, "<error code=\"(\\d+)\">");
+                Match match = Regex.Match (response_string, "<error code=\"(\\d+)\">");
                 if (match.Success) {
                     error = (StationError) Int32.Parse (match.Value);
                     Log.WarningFormat ("Lastfm error {0}", error);
@@ -167,9 +169,9 @@ namespace Lastfm
                     error = StationError.Unknown;
                 }
             }
-            if (response_format == ResponseFormat.Json && response.Contains ("\"error\":")) {
+            if (response_format == ResponseFormat.Json && response_string.Contains ("\"error\":")) {
                 // JSON reply indicates an error
-                Deserializer deserializer = new Deserializer (response);
+                Deserializer deserializer = new Deserializer (response_string);
                 JsonObject json = deserializer.Deserialize () as JsonObject;
                 if (json != null && json.ContainsKey ("error")) {
                     error = (StationError) json["error"];
@@ -247,6 +249,14 @@ namespace Lastfm
                 sb.AppendFormat ("\n\t{0}={1}", param.Key, param.Value);
             }
             return sb.ToString ();
+        }
+
+        private void SetResponseString () {
+            if (response_string == null) {
+                using (StreamReader sr = new StreamReader (response_stream)) {
+                    response_string = sr.ReadToEnd ();
+                }
+            }
         }
 
 #region HTTP helpers
