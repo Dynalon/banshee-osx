@@ -4,6 +4,7 @@
 // Author:
 //   Chris Toshok <toshok@ximian.com>
 //   Alexander Hixon <hixon.alexander@mediati.org>
+//   Phil Trimble <philtrimble@gmail.com>
 //
 // Copyright (C) 2005-2008 Novell, Inc.
 //
@@ -221,6 +222,8 @@ namespace Lastfm
                 current_scrobble_request.AddParameter (String.Format ("chosenByUser[{0}]", i), chosen_by_user ? "1" : "0");
             }
 
+            Log.DebugFormat ("### Last.fm scrobbler sending '{0}'", current_scrobble_request.ToString ());
+
             state = State.Transmitting;
             current_async_result = current_scrobble_request.BeginSend (OnScrobbleResponse, tracks.Count);
             state = State.WaitingForResponse;
@@ -255,11 +258,16 @@ namespace Lastfm
             } else if (error != StationError.None) {
                 // TODO: If error == StationError.InvalidSessionKey,
                 // suggest to the user to (re)do the Last.fm authentication.
-                Log.WarningFormat ("Lastfm scrobbling error {0} : {1}", (int)error, (string)response ["message"]);
-                hard_failures = 0;
-                queue.RemoveRange (0, nb_tracks_scrobbled);
-                queue.Save ();
-                state = State.Idle;
+                hard_failures++;
+
+                queue.RemoveInvalidTracks ();
+
+                // if there are still valid tracks in the queue then retransmit on the next interval
+                if (queue.Count > 0) {
+                    state = State.NeedTransmit;
+                } else {
+                    state = State.Idle;
+                }
             } else {
                 try {
                     var scrobbles = (JsonObject)response["scrobbles"];
