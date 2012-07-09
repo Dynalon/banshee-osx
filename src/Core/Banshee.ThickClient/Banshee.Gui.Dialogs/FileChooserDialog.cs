@@ -24,10 +24,77 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Linq;
+using System;
+
 namespace Banshee.Gui.Dialogs
 {
-    public partial class FileChooserDialog 
+    public class FileChooserDialog : IBansheeFileChooser
     {
-        
+        protected IBansheeFileChooser nativeChooser;
+
+        static FileChooserDialog ()
+        {
+            // initialization within static constructor
+            // get available backend dialogs
+            // if non available, use GtkFileChooser
+            //var s = new GtkFileChooserDialog ();
+        }
+        #region IBansheeFileChooser implementation
+        public int Run ()
+        {
+            return nativeChooser.Run ();
+        }
+
+        public void Destroy ()
+        {
+            nativeChooser.Destroy ();
+        }
+
+        public string[] Filenames {
+            get {
+                return nativeChooser.Filenames;
+            }
+        }
+        public static IBansheeFileChooser CreateForImport (string title, bool files)
+        {
+            // fallback to GtkFileChoooser
+            if (Hyena.PlatformDetection.IsMac)
+                return OsxFileChooserDialog.CreateForImport (title, files);
+            else
+                return GtkFileChooserDialog.CreateForImport (title, files);
+
+        }
+        public void AddFilter (Gtk.FileFilter filter)
+        {
+            nativeChooser.AddFilter (filter);
+        }
+        public string[] Uris 
+        {
+            get {
+                return nativeChooser.Uris;
+            }
+        }
+        /*public event EventHandler Close {
+            add {
+                nativeChooser.Close += value;
+            }
+            remove {
+                nativeChooser.Close -= value;
+            }
+        } */
+        #endregion
+  
+
+
+    }
+    public interface IBansheeFileChooser
+    {
+        int Run ();
+        void Destroy ();
+        //event EventHandler Close;
+        string[] Filenames { get; }
+        string[] Uris { get; }
+        void AddFilter (Gtk.FileFilter filter);
     }
 }

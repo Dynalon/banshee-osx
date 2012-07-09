@@ -35,9 +35,9 @@ using Hyena;
 
 namespace Banshee.Gui.Dialogs
 {
-    public class GtkFileChooserDialog : Gtk.FileChooserDialog
+    public class GtkFileChooserDialog : Gtk.FileChooserDialog, IBansheeFileChooser
     {
-        public static GtkFileChooserDialog CreateForImport (string title, bool files)
+        public static IBansheeFileChooser CreateForImport (string title, bool files)
         {
             var chooser = new Banshee.Gui.Dialogs.GtkFileChooserDialog (
                 title,
