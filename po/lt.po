@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=banshe"
 "e&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-04-03 19:00+0000\n"
-"PO-Revision-Date: 2012-04-05 18:42+0300\n"
+"POT-Creation-Date: 2012-07-10 07:14+0000\n"
+"PO-Revision-Date: 2012-07-10 17:40+0300\n"
 "Last-Translator: Žygimantas Beručka <zygis@gnome.org>\n"
 "Language-Team: Lithuanian\n"
 "Language: lt\n"
@@ -114,7 +114,7 @@ msgstr "Boo scenarijai"
 
 #: ../data/addin-xml-strings.cs:44
 msgid "Customize and extend Banshee with Boo-language scripts."
-msgstr "Adaptuokite ir papildykite Banshee Boo kalbos scenarijais."
+msgstr "Adaptuokite ir išplėskite „Banshee“ programą Boo kalbos scenarijais."
 
 #: ../data/addin-xml-strings.cs:45 ../data/addin-xml-strings.cs:50
 #: ../data/addin-xml-strings.cs:55 ../data/addin-xml-strings.cs:60
@@ -155,12 +155,10 @@ msgstr "Naršykite ir klausykitės muzikos, viešinamos jūsų vietiniame tinkle
 
 #. ../src/Extensions/Banshee.Emusic.Store/Banshee.Emusic.Store.addin.xml
 #: ../data/addin-xml-strings.cs:63
-#| msgid "Music Share"
 msgid "eMusic Store"
 msgstr "„eMusic“ parduotuvė"
 
 #: ../data/addin-xml-strings.cs:64
-#| msgid "Browse, search, and purchase music from the Amazon MP3 store."
 msgid "Browse, search, and purchase music and audiobooks from eMusic"
 msgstr ""
 "Naršykite, ieškokite ir įsigykite muzikos bei garso knygų iš „eMusic“ "
@@ -253,8 +251,8 @@ msgid ""
 "Control Banshee through a small window with only playback controls and track "
 "information."
 msgstr ""
-"Valdykite Banshee mažame lange, kuriame rodoma tik perklausos valdikliai ir "
-"takelio informacija."
+"Valdykite „Banshee“ mažame lange, kuriame rodoma tik perklausos valdikliai "
+"ir takelio informacija."
 
 #. ../src/Extensions/Banshee.MiroGuide/Banshee.MiroGuide.addin.xml
 #: ../data/addin-xml-strings.cs:113
@@ -272,7 +270,7 @@ msgstr "MPRIS D-Bus sąsaja"
 
 #: ../data/addin-xml-strings.cs:119
 msgid "Control Banshee using the MPRIS D-Bus interface."
-msgstr "Valdykite Banshee naudodami MPRIS D-Bus sąsają."
+msgstr "Valdykite „Banshee“ naudodami MPRIS D-Bus sąsają."
 
 #. ../src/Extensions/Banshee.MultimediaKeys/Banshee.MultimediaKeys.addin.xml
 #: ../data/addin-xml-strings.cs:123
@@ -290,16 +288,14 @@ msgstr "Pranešimų srities piktograma"
 
 #: ../data/addin-xml-strings.cs:129
 msgid "Display an icon in the notification area for controlling Banshee."
-msgstr "Pranešimų srityje rodyti piktogramą Banshee valdymui."
+msgstr "Pranešimų srityje rodyti piktogramą „Banshee“ programai valdyti."
 
 #. ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.addin.xml
 #: ../data/addin-xml-strings.cs:133
-#| msgid "Audio CD Support"
 msgid "DVD and Audio CD Support"
 msgstr "DVD ir garso CD palaikymas"
 
 #: ../data/addin-xml-strings.cs:134
-#| msgid "Listen to and rip Audio CDs."
 msgid "Watch DVDs, listen to and rip Audio CDs."
 msgstr "Žiūrėkite DVD diskus, klausykitės ir rašykite iš garso CD."
 
@@ -327,7 +323,7 @@ msgstr ""
 
 #. ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.addin.xml
 #: ../data/addin-xml-strings.cs:148
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:200
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:207
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/PodcastGroupSource.cs:38
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:107
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:211
@@ -345,7 +341,7 @@ msgstr "Garso meniu integravimas"
 
 #: ../data/addin-xml-strings.cs:154
 msgid "Control Banshee from the Sound Menu."
-msgstr "Valdykite Banshee naudodamiesi garso meniu."
+msgstr "Valdykite „Banshee“ naudodamiesi garso meniu."
 
 #. ../src/Extensions/Banshee.Torrent/Banshee.Torrent.addin.xml
 #: ../data/addin-xml-strings.cs:158
@@ -378,7 +374,6 @@ msgid "UPnP Client"
 msgstr "UPnP klientas"
 
 #: ../data/addin-xml-strings.cs:169
-#| msgid "Browse and listen to music shared over your local network."
 msgid ""
 "Browse and play music and videos shared over your local network using UPnP."
 msgstr ""
@@ -625,7 +620,7 @@ msgid "Audio Quality"
 msgstr "Garso kokybė"
 
 #: ../data/desktop-files/common.desktop.in.h:1
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:193
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:196
 msgid "Media Player"
 msgstr "Medijos leistuvas"
 
@@ -707,13 +702,11 @@ msgstr "Nepavyko sukurti sink elemento"
 
 #: ../libbanshee/banshee-transcoder.c:258
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:198
-#| msgid "Could not create 'sinkben' plugin"
 msgid "Could not create sinkbin plugin"
 msgstr "Nepavyko sukurti „sinkbin“ įskiepio"
 
 #: ../libbanshee/banshee-transcoder.c:270
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:73
-#| msgid "Could not create 'audioresample' plugin"
 msgid "Could not create audioresample plugin"
 msgstr "Nepavyko sukurti „audioresample“ įskiepio"
 
@@ -794,9 +787,6 @@ msgid "Enable _gapless playback"
 msgstr "Įjungti _betarpę perklausą"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:886
-#| msgid ""
-#| "Eliminate the small playback gap on track change.  Useful for concept "
-#| "albums and classical music"
 msgid ""
 "Eliminate the small playback gap on track change. Useful for concept albums "
 "and classical music"
@@ -810,7 +800,6 @@ msgstr "Nepavyko sukurti transkoderio"
 
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/AudioCdRipper.cs:259
 #, csharp-format
-#| msgid "Could not create encoder pipeline"
 msgid "Could not create encoder pipeline : {0}"
 msgstr "Nepavyko sukurti koderio konvejerio: {0}"
 
@@ -820,26 +809,10 @@ msgstr "GStreamer# 0.10"
 
 #: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/Transcoder.cs:79
 #, csharp-format
-#| msgid "Could not create encoding pipeline"
 msgid "Could not create encoding pipeline : {0}"
 msgstr "Nepavyko sukurti kodavimo konvejerio: {0}"
 
-#: ../src/Backends/Banshee.Osx/Banshee.OsxBackend/OsxService.cs:91
-#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:132
-#: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:110
-msgid "_Close"
-msgstr "_Užverti"
-
-#: ../src/Backends/Banshee.Osx/Banshee.OsxBackend/OsxService.cs:92
-#: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:251
-#: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/FixSource.cs:79
-#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:133
-#: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:111
-msgid "Close"
-msgstr "Užverti"
-
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:72
-#| msgid "Check for New Episodes"
 msgid "Can't check for updates"
 msgstr "Nepavyko patikrinti, ar yra atnaujinimų"
 
@@ -852,7 +825,6 @@ msgstr ""
 "vėliau."
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:95
-#| msgid "No description available"
 msgid "No update available"
 msgstr "Nėra atnaujinimų"
 
@@ -866,20 +838,17 @@ msgid "A new version of Banshee ({0}) is available.{1}Do you want to update?"
 msgstr "Prieinama nauja „Banshee“ ({0}) versija.{1}Ar pageidaujate atnaujinti?"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:108
-#| msgid "Banshee Media Player"
 msgid "Banshee update available"
 msgstr "Prieinamas „Banshee“ atnaujinimas"
 
 #. Translators: {0} is the filename, eg Banshee-1.9.5.msi
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:129
 #, csharp-format
-#| msgid "Downloading"
 msgid "Downloading {0}"
 msgstr "Atsiunčiama {0}"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:144
 #, csharp-format
-#| msgid "{0} by {1} on {2}"
 msgid "{0} MB / {1} MB ({2} KB/s)"
 msgstr "{0} MB / {1} MB ({2} KB/s)"
 
@@ -888,7 +857,6 @@ msgid "Update download failed"
 msgstr "Nepavyko atsiųsti atnaujinimo"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:152
-#| msgid "Server error, please try again later."
 msgid "The download failed. Please try again later."
 msgstr "Atsiųsti nepavyko, bandykite vėliau dar kartą."
 
@@ -906,7 +874,6 @@ msgid "Update finished downloading"
 msgstr "Atnaujinimas atsiųstas"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/WindowsService.cs:109
-#| msgid "Check for New Episodes"
 msgid "Check for Updates"
 msgstr "Ieškoti atnaujinimų"
 
@@ -956,9 +923,6 @@ msgid ""
 msgstr "Groti kitą takelį ir kartoti, jei nurodyta reikšmė „restart“"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:165
-#| msgid ""
-#| "Play the previous track, optionally restarting if the 'restart value is "
-#| "set"
 msgid ""
 "Play the previous track, optionally restarting if the 'restart' value is set"
 msgstr ""
@@ -1183,7 +1147,7 @@ msgstr "Priverstinai atsiųsti trūkstamus albumų viršelius"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:220
 msgid "Specify an alternate key, default is /apps/banshee-1/"
-msgstr "Nurodytkite alternatyvų raktą, numatytasis – /apps/banshee-1/"
+msgstr "Nurodykite alternatyvų raktą, numatytasis – /apps/banshee-1/"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:221
 msgid ""
@@ -1246,6 +1210,13 @@ msgstr "liko {0}"
 #: ../src/Clients/Muinshee/Muinshee/SongDialog.cs:53
 msgid "Play Song"
 msgstr "Leisti dainą"
+
+#: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:251
+#: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/FixSource.cs:79
+#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:133
+#: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:111
+msgid "Close"
+msgstr "Užverti"
 
 #. Translators: this is a verb (command), not a noun (things)
 #: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:472
@@ -1314,7 +1285,7 @@ msgid "Stream location not found"
 msgstr "Srauto vieta nerasta"
 
 #: ../src/Core/Banshee.Core/Banshee.Collection/TrackInfo.cs:347
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:328
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:339
 msgid "File not found"
 msgstr "Failas nerastas"
 
@@ -1374,7 +1345,6 @@ msgid "_Jump to Playing Item"
 msgstr "_Peršokti prie leidžiamo elemento"
 
 #: ../src/Core/Banshee.Core/Banshee.Collection/YearInfo.cs:38
-#| msgid "Unknown error"
 msgid "Unknown Year"
 msgstr "Nežinomi metai"
 
@@ -1387,7 +1357,6 @@ msgstr "{0} ({1}:{2:00})"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseAlbumArtistListModel.cs:76
 #, csharp-format
-#| msgid "All Artists ({0})"
 msgid "All Album Artists ({0})"
 msgstr "Visi albumo atlikėjai ({0})"
 
@@ -1413,7 +1382,6 @@ msgstr "Reikšmė"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection.Database/DatabaseYearListModel.cs:66
 #, csharp-format
-#| msgid "All Genres ({0})"
 msgid "All Years ({0})"
 msgstr "Visi metai ({0})"
 
@@ -1526,13 +1494,13 @@ msgstr "Perskenuojama {0} iš {1}"
 
 #: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:232
 msgid "Upgrading your Banshee Database"
-msgstr "Atnaujinama jūsų Banshee duomenų bazė"
+msgstr "Atnaujinama jūsų „Banshee“ programos duomenų bazė"
 
 #: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:233
 msgid ""
 "Please wait while your old Banshee database is migrated to the new format."
 msgstr ""
-"Luktelėkite, kol bus atnaujintas jūsų senosios Banshee duomenų bazės "
+"Luktelėkite, kol bus atnaujintas jūsų senosios „Banshee“ duomenų bazės "
 "formatas."
 
 #: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1416
@@ -1611,12 +1579,30 @@ msgstr "Ramus rokas"
 msgid "Techno"
 msgstr "Techno"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:58
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:63
 msgid "Remove From Library"
 msgstr "Pašalinti iš fonotekos"
 
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:77
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:249
+msgid "File Organization"
+msgstr "Failų tvarkymas"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:81
+#| msgid "Co_py files to media folders when importing"
+msgid "Co_py files to media folder when importing"
+msgstr "Im_portuojant kopijuoti failus į medijos aplanką"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:87
+msgid "_Update file and folder names"
+msgstr "_Atnaujinti failų ir aplankų vardus"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:88
+msgid "Rename files and folders according to media metadata"
+msgstr "Pervadinti failus ir aplankus pagal medijos metaduomenis"
+
 #. Translators: {0} is the library name, eg 'Music Library' or 'Podcasts'
-#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:121
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:167
 #, csharp-format
 msgid "{0} Folder"
 msgstr "{0} aplankas"
@@ -1651,7 +1637,7 @@ msgstr "Pavadinimas"
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:119
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:84
 msgid "Count"
-msgstr "Skaičiavimas"
+msgstr "Skaičius"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicFileNamePattern.cs:125
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/AudiobookFileNamePattern.cs:90
@@ -1693,16 +1679,16 @@ msgid "Search your music"
 msgstr "Ieškokite savo muzikos"
 
 #. Misc section
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:80
-#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:66
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:89
+#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:62
 msgid "Miscellaneous"
 msgstr "Įvairūs"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:83
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:92
 msgid "_Sort an artist's albums by year, not title"
 msgstr "_Rikiuoti atlikėjo albumus pagal metus, ne pavadinimą"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:93
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:102
 #, csharp-format
 msgid "{0} song"
 msgid_plural "{0} songs"
@@ -1710,96 +1696,96 @@ msgstr[0] "{0} daina"
 msgstr[1] "{0} dainos"
 msgstr[2] "{0} dainų"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:114
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:131
 msgid "Music Folder"
 msgstr "Muzikos aplankas"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:119
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:95
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:136
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:107
 msgid "Favorites"
 msgstr "Mėgiama"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:120
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:137
 msgid "Songs rated four and five stars"
-msgstr "Keturiomis ir penkiomis žvaigždutėmis įvertintos dainos"
+msgstr "Keturiomis ir penkiomis žvaigždutėmis įvertinti kūriniai"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:124
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:141
 msgid "Recent Favorites"
 msgstr "Neseniai pamėgta"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:125
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:142
 msgid "Songs listened to often in the past week"
-msgstr "Paskutinę savaitę dažnai klausytos dainos"
+msgstr "Pastarąją savaitę dažnai klausyti kūriniai"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:129
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:146
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Sort.cs:95
 msgid "Recently Added"
 msgstr "Neseniai pridėta"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:130
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:147
 msgid "Songs imported within the last week"
-msgstr "Paskutinę savaitę importuotos dainos"
+msgstr "Pastarąją savaitę importuoti kūriniai"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:134
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:151
 msgid "Recently Played"
 msgstr "Neseniai klausyta"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:135
-msgid "Recently played songs"
-msgstr "Neseniai klausytos dainos"
-
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:139
-msgid "Unheard"
-msgstr "Negirdėtos"
-
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:140
-msgid "Songs that have not been played or skipped"
-msgstr "Neklausytos arba praleistos dainos"
-
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:147
-msgid "Neglected Favorites"
-msgstr "Pamirštos mėgiamos"
-
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:148
-msgid "Favorites not played in over two months"
-msgstr "Mėgiamos, negrotos per paskutinius du mėnesius"
-
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:152
-msgid "Least Favorite"
-msgstr "Mažiausiai mėgiamos"
+msgid "Recently played songs"
+msgstr "Neseniai klausyti kūriniai"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:153
-msgid "Songs rated one or two stars or that you have frequently skipped"
-msgstr ""
-"Viena ir dviem žvaigždutėmis įvertintos arba dažnai jūsų praleistos dainos"
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:156
+msgid "Unheard"
+msgstr "Negirdėta"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:157
-msgid "700 MB of Favorites"
-msgstr "700 MB mėgiamų"
-
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:158
-msgid "A data CD worth of favorite songs"
-msgstr "Duomenų CD, pilnas mėgiamų dainų"
-
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:163
-msgid "80 Minutes of Favorites"
-msgstr "80 minučių mėgiamų"
+msgid "Songs that have not been played or skipped"
+msgstr "Neklausyti arba praleisti kūriniai"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:164
-msgid "An audio CD worth of favorite songs"
-msgstr "Garso CD, pilnas mėgiamų dainų"
+msgid "Neglected Favorites"
+msgstr "Pamiršta mėgiama"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:165
+msgid "Favorites not played in over two months"
+msgstr "Mėgiama, tačiau neklausyta pastaruosius du mėnesius"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:169
+msgid "Least Favorite"
+msgstr "Mažiausiai mėgiama"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:170
+msgid "Songs rated one or two stars or that you have frequently skipped"
+msgstr ""
+"Viena ir dviem žvaigždutėmis įvertinti arba dažnai praleidžiami kūriniai"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:174
+msgid "700 MB of Favorites"
+msgstr "700 MB mėgiamų kūrinių"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:175
+msgid "A data CD worth of favorite songs"
+msgstr "Duomenų CD, pilnas mėgiamų kūrinių"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:180
+msgid "80 Minutes of Favorites"
+msgstr "80 minučių mėgiamų kūrinių"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:181
+msgid "An audio CD worth of favorite songs"
+msgstr "Garso CD, pilnas mėgiamų kūrinių"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:186
 msgid "Unrated"
 msgstr "Neįvertinta"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:170
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:187
 msgid "Songs that haven't been rated"
-msgstr "Neįvertintos dainos"
+msgstr "Kūriniai be įvertinimo"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/ThreadPoolImportSource.cs:56
 msgid "Importing Songs"
-msgstr "Importuojamos dainos"
+msgstr "Importuojami kūriniai"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/ThreadPoolImportSource.cs:113
 #, csharp-format
@@ -1807,22 +1793,22 @@ msgid "Importing From {0}"
 msgstr "Importuojama iš {0}"
 
 #. Catalog.GetString ("Video Library")
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:43
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:44
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/VideoGroupSource.cs:38
 msgid "Videos"
 msgstr "Vaizdo įrašai"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:48
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:49
 #: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:52
 msgid "Search your videos"
 msgstr "Ieškokite savo vaizdo įrašų"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:65
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:66
 #: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:69
 msgid "Produced By"
-msgstr "Sukurė"
+msgstr "Sukūrė"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:70
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:78
 #, csharp-format
 msgid "{0} video"
 msgid_plural "{0} videos"
@@ -1830,19 +1816,19 @@ msgstr[0] "{0} vaizdo įrašas"
 msgstr[1] "{0} vaizdo įrašai"
 msgstr[2] "{0} vaizdo įrašų"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:90
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:102
 msgid "Videos Folder"
 msgstr "Vaizdo įrašų aplankas"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:96
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:108
 msgid "Videos rated four and five stars"
 msgstr "Keturiomis ir penkiomis žvaigždutėmis įvertinti vaizdo įrašai"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:100
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:112
 msgid "Unwatched"
 msgstr "Nežiūrėta"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:101
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:113
 msgid "Videos that haven't been played yet"
 msgstr "Jūsų dar nežiūrėti vaizdo įrašai"
 
@@ -1855,7 +1841,8 @@ msgid ""
 "No player engines were found. Please ensure Banshee has been cleanly "
 "installed."
 msgstr ""
-"Nerasta grojimo posistemių. Įsitikinkite, kad Banshee įdiegta korektiškai."
+"Nerasta grojimo posistemių. Įsitikinkite, kad „Banshee“ programa įdiegta "
+"tinkamai."
 
 #: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:375
 msgid "Problem with Player Engine"
@@ -1886,9 +1873,6 @@ msgid "Sync _metadata between library and files"
 msgstr "Sinchronizuoti _metaduomenis tarp bibliotekos ir failų"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:50
-#| msgid ""
-#| "Enable this option to save rating and playcount metadata inside supported "
-#| "audio files"
 msgid ""
 "Enable this option to have metadata in sync between your library and "
 "supported media files"
@@ -1901,9 +1885,6 @@ msgid "Sync _ratings between library and files"
 msgstr "Sinchronizuoti į_vertinimus tarp fonotekos ir failų"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:56
-#| msgid ""
-#| "Enable this option to save rating and playcount metadata inside supported "
-#| "audio files"
 msgid ""
 "Enable this option to have rating metadata synced between your library and "
 "supported audio files"
@@ -1916,23 +1897,12 @@ msgid "Sync play counts between library and files"
 msgstr "Sinchronizuoti perklausų skaičių tarp fonotekos ir failų"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:62
-#| msgid ""
-#| "Enable this option to save rating and playcount metadata inside supported "
-#| "audio files"
 msgid ""
 "Enable this option to have playcount metadata synced between your library "
 "and supported audio files"
 msgstr ""
 "Įjunkite šią parinktį, jei norite, kad būtų sinchronizuojami perklausų "
 "metaduomenys tarp jūsų fonotekos ir palaikomų garso įrašų failų"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:67
-msgid "_Update file and folder names"
-msgstr "_Atnaujinti failų ir aplankų vardus"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:68
-msgid "Rename files and folders according to media metadata"
-msgstr "Pervadinti failus ir aplankus pagal medijos metaduomenis"
 
 #: ../src/Core/Banshee.Services/Banshee.Networking/Network.cs:52
 msgid "There is no available network connection"
@@ -2024,13 +1994,9 @@ msgstr "Plėtiniai"
 msgid "File Policies"
 msgstr "Failų politika"
 
-#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:58
-msgid "Co_py files to media folders when importing"
-msgstr "Im_portuojant kopijuoti failus į medijos aplankus"
-
-#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:70
+#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:66
 msgid "Improve Banshee by sending anonymous usage data"
-msgstr "Padėti tobulinti Banshee siunčiant anoniminę naudojimo informaciją"
+msgstr "Padėti tobulinti „Banshee“ siunčiant anoniminę naudojimo informaciją"
 
 #: ../src/Core/Banshee.Services/Banshee.Query/BansheeQuery.cs:65
 msgid "items"
@@ -2589,7 +2555,7 @@ msgstr "drm"
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:234
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:236
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:238
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:389
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:400
 msgid "Unknown"
 msgstr "Nežinoma"
 
@@ -2677,37 +2643,33 @@ msgstr "Klaida"
 msgid "Details"
 msgstr "Informacija"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:156
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:158
 msgid "Errors"
 msgstr "Klaidos"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:213
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:215
 msgid "Sort Playlists By"
 msgstr "Rikiuoti grojaraščius pagal"
 
 #. Translators: this is a noun, referring to the harddisk
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:223
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:225
 msgid "Drive"
 msgstr "Diskas"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:247
-msgid "File Organization"
-msgstr "Failų tvarkymas"
-
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:248
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:250
 msgid "Folder hie_rarchy"
 msgstr "Aplankų hie_rarchija"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:249
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:251
 msgid "File _name"
 msgstr "Failo _vardas"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:701
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:703
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "Įtraukiama {0} iš {1} į {2}"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:720
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:722
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "Ištrinama {0} iš {1} iš {2}"
@@ -2961,10 +2923,6 @@ msgstr "Multimedijos tvarkymo ir perklausos programa"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/AboutDialog.cs:98
 #, csharp-format
-#| msgid ""
-#| "Copyright © 2005–{0} Novell, Inc.\n"
-#| "Copyright © 2005–{0} Others\n"
-#| "Copyright © 2005 Aaron Bockover"
 msgid ""
 "Copyright © 2005–{0} Novell, Inc.\n"
 "Copyright © 2005–{1} Others\n"
@@ -2976,7 +2934,7 @@ msgstr ""
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/AboutDialog.cs:104
 msgid "Banshee Website"
-msgstr "Banshee tinklalapis"
+msgstr "„Banshee“ programos tinklalapis"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/ConfirmShutdownDialog.cs:50
 msgid "Important tasks are running"
@@ -2987,8 +2945,9 @@ msgid ""
 "Closing Banshee now will cancel any currently running tasks. They cannot be "
 "resumed automatically the next time Banshee is run."
 msgstr ""
-"Jeigu dabar užversite Banshee, bus nutrauktos visos šiuo metu vykdomos "
-"užduotys. Jų negalima automatiškai pratęsti kitą kartą paleidus Banshee."
+"Jeigu dabar užversite „Banshee“ programą, bus nutrauktos visos šiuo metu "
+"vykdomos užduotys. Jų negalima automatiškai pratęsti kitą kartą paleidus "
+"„Banshee“."
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/ConfirmShutdownDialog.cs:60
 msgid "Quit Anyway"
@@ -3000,7 +2959,7 @@ msgstr "Naudotis toliau"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/DefaultApplicationHelperDialog.cs:69
 msgid "Make Banshee the default media player?"
-msgstr "Nustatyti Banshee numatytuoju medijos leistuvu?"
+msgstr "Padaryti „Banshee“ programą numatytuoju medijos leistuvu?"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/DefaultApplicationHelperDialog.cs:70
 msgid ""
@@ -3008,7 +2967,7 @@ msgid ""
 "you prefer Banshee to be the default?"
 msgstr ""
 "Šiuo metu numatytuoju medijos leistuvu nustatyta kita programa. Ar "
-"norėtumėte, kad numatytoji būtų Banshee?"
+"norėtumėte, kad numatytoji būtų „Banshee“?"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/DefaultApplicationHelperDialog.cs:72
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:443
@@ -3018,7 +2977,7 @@ msgstr "Daugiau manęs šito neklausti"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/DefaultApplicationHelperDialog.cs:86
 msgid "Make Banshee the Default"
-msgstr "Nustatyti Banshee numatytaja"
+msgstr "Padaryti „Banshee“ numatytąja programa"
 
 #. Translators: verb
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/FileChooserDialog.cs:53
@@ -3100,7 +3059,7 @@ msgstr "Iš_eiti"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:72
 msgid "Quit Banshee"
-msgstr "Palikti Banshee"
+msgstr "Baigti „Banshee“ programos darbą"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:76
 msgid "_Edit"
@@ -3137,11 +3096,11 @@ msgstr "Išmokite sudėtingesnių ieškojimo savo medijos kolekcijoje būdų"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:101
 msgid "Banshee _Home Page"
-msgstr "Banshee _tinklalapis"
+msgstr "„Banshee“ programos _tinklalapis"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:102
 msgid "Visit the Banshee Home Page"
-msgstr "Aplankyti Banshee tinklalapį"
+msgstr "Aplankyti „Banshee“ programos tinklalapį"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:107
 msgid "_Get Involved"
@@ -3149,7 +3108,7 @@ msgstr "_Prisidėkite"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:108
 msgid "Become a contributor to Banshee"
-msgstr "Tapkite vienu iš Banshee tobulintojų"
+msgstr "Tapkite vienu iš „Banshee“ programos tobulintojų"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:113
 msgid "_Version Information"
@@ -3361,7 +3320,7 @@ msgstr "Pakeisti šaltinį įvedant jo pavadinimą"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:115
 #: ../src/Core/Banshee.ThickClient/Banshee.Preferences.Gui/PreferenceDialog.cs:50
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:85
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:87
 msgid "Preferences"
 msgstr "Nustatymai"
 
@@ -4155,7 +4114,6 @@ msgid "Create and save"
 msgstr "Sukurti ir įrašyti"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:96
-#| msgid "Browser on Left"
 msgid "Browser Content"
 msgstr "Naršyklės turinys"
 
@@ -4164,7 +4122,6 @@ msgid "Configure the filters available in the browser"
 msgstr "Konfigūruoti naršyklėje prieinamus filtrus"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:102
-#| msgid "Show this help"
 msgid "Show Artist Filter"
 msgstr "Rodyti atlikėjų filtrą"
 
@@ -4173,17 +4130,14 @@ msgid "Show a list of artists to filter by"
 msgstr "Rodyti atlikėjų, pagal kuriuos filtruoti, sąrašą"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:107
-#| msgid "Sort Track Artist:"
 msgid "Show all Artists"
 msgstr "Rodyti visus atlikėjus"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:108
-#| msgid "Set all track artists to this value"
 msgid "Show all artists in the artist filter"
 msgstr "Rodyti visus atlikėjus atlikėjų filtre"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:111
-#| msgid "Sort Album Artist:"
 msgid "Show Album Artists"
 msgstr "Rodyti albumų atlikėjus"
 
@@ -4192,7 +4146,6 @@ msgid "Show only album artists, not artists with only single tracks"
 msgstr "Rodyti tik albumų atlikėjus, ne pavienių takelių atlikėjus"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:117
-#| msgid "Show the next track"
 msgid "Show Genre Filter"
 msgstr "Rodyti žanrų filtrą"
 
@@ -4247,7 +4200,6 @@ msgstr ""
 #. Translators: {0} is the URL of the web page that was requested
 #: ../src/Core/Banshee.WebBrowser/Banshee.WebBrowser/NavigationControl.cs:158
 #, csharp-format
-#| msgid "The specified resource is invalid."
 msgid "The security certificate for {0} is invalid."
 msgstr "{0} saugos liudijimas yra netinkamas."
 
@@ -4297,25 +4249,25 @@ msgstr "Nutildyta"
 msgid "Full Volume"
 msgstr "Visas garsumas"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:108
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:115
 msgid "Device"
 msgstr "Įrenginys"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:109
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:116
 msgid "Generation"
 msgstr "Karta"
 
 #. FIXME
 #. AddDapProperty (Catalog.GetString ("Color"), "black");
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:114
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:121
 msgid "Capacity"
 msgstr "Talpa"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:115
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:122
 msgid "Available"
 msgstr "Prieinama"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:116
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:123
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:141
 msgid "Serial number"
 msgstr "Serijos numeris"
@@ -4325,37 +4277,37 @@ msgstr "Serijos numeris"
 #. string [] capabilities = new string [ipod_device.ModelInfo.Capabilities.Count];
 #. ipod_device.ModelInfo.Capabilities.CopyTo (capabilities, 0);
 #. AddDapProperty (Catalog.GetString ("Capabilities"), String.Join (", ", capabilities));
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:123
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:130
 msgid "Supports cover art"
 msgstr "Palaiko albumų viršelius"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:124
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:131
 msgid "Supports photos"
 msgstr "Palaiko nuotraukas"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:453
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:465
 msgid "Track duration is zero"
 msgstr "Takelio trukmė lygi nuliui"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:556
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:571
 msgid "Syncing iPod"
 msgstr "Sinchronizuojamas iPod"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:557
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:572
 msgid "Preparing to synchronize..."
 msgstr "Ruošiamasi sinchronizuoti..."
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:560
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:575
 #, csharp-format
 msgid "Adding track {0} of {1}"
 msgstr "Pridedamas {0} takelis iš {1}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:596
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:611
 #, csharp-format
 msgid "Removing track {0} of {1}"
 msgstr "Šalinamas {0} takelis iš {1}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:649
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:664
 msgid "Writing media database"
 msgstr "Įrašoma medijos duomenų bazė"
 
@@ -4369,35 +4321,35 @@ msgstr "Sinchronizuoti {0}"
 msgid "Devices"
 msgstr "Įrenginiai"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:176
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:179
 msgid "Device Properties"
 msgstr "Įrenginio savybės"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:200
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:203
 msgid "Product"
 msgstr "Produktas"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:201
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:204
 msgid "Vendor"
 msgstr "Pardavėjas"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:284
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:287
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:141
 #, csharp-format
 msgid "Loading {0}"
 msgstr "Įkeliama {0}"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:370
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:381
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/ColumnCellYesNo.cs:37
 msgid "Yes"
 msgstr "Taip"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:370
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:381
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/ColumnCellYesNo.cs:38
 msgid "No"
 msgstr "Ne"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:391
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:402
 #, csharp-format
 msgid ""
 "The {0} format is not supported by the device, and no converter was found to "
@@ -4406,11 +4358,11 @@ msgstr ""
 "Įrenginys nepalaiko formato {0}, taip pat nerasta jį konvertuoti galinti "
 "programa."
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:397
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:408
 msgid "File format conversion support is not available"
 msgstr "Šio formato konvertavimas nepalaikomas"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:423
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:434
 msgid "Error converting file"
 msgstr "Klaida konvertuojant failą"
 
@@ -4573,7 +4525,6 @@ msgid "Error Initializing MTP Device Support"
 msgstr "Klaida inicijuojant MTP įrenginių palaikymą"
 
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:83
-#| msgid "Error Initializing MTP Device Support"
 msgid "There was an error initializing MTP device support."
 msgstr "Klaida inicijuojant MTP įrenginių palaikymą."
 
@@ -4680,7 +4631,6 @@ msgid "Merge Discs..."
 msgstr "Sujungti diskus..."
 
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:57
-#| msgid "Audiobooks"
 msgid "Go to Audiobooks"
 msgstr "Rodyti garso knygas"
 
@@ -4777,7 +4727,7 @@ msgstr "_Stuksenti"
 
 #: ../src/Extensions/Banshee.Bpm/Banshee.Bpm/BpmEntry.cs:112
 msgid "Have Banshee attempt to auto-detect the BPM of this song"
-msgstr "Leisti Banshee bandyti automatiškai aptikti šios dainos BPM"
+msgstr "Leisti „Banshee“ bandyti automatiškai aptikti šios dainos BPM"
 
 #: ../src/Extensions/Banshee.Bpm/Banshee.Bpm/BpmEntry.cs:114
 msgid "Play this song"
@@ -4827,13 +4777,6 @@ msgid "Back"
 msgstr "Atgal"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:101
-#| msgid ""
-#| "iTunes® 7 introduced new compatibility issues and currently only works "
-#| "with other iTunes® 7 clients.\n"
-#| "\n"
-#| "No third-party clients can connect to iTunes® music shares anymore. This "
-#| "is an intentional limitation by Apple in iTunes® 7 and we apologize for "
-#| "the unfortunate inconvenience."
 msgid ""
 "iTunes® 7 introduced new compatibility issues and currently only works with "
 "other iTunes® 7 clients.\n"
@@ -4874,7 +4817,6 @@ msgid "Try connecting again"
 msgstr "Bandykite prisijungti iš naujo"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:139
-#| msgid "The music share is hosted by iTunes® 7"
 msgid "The music share is hosted by iTunes® 7 or newer"
 msgstr "Ši muzika viešinama naudojant „iTunes® 7“ arba naujesnę"
 
@@ -4997,13 +4939,11 @@ msgstr "„eMusic“ takeliai"
 
 #: ../src/Extensions/Banshee.Emusic.Store/Banshee.Emusic.Store/StoreSource.cs:42
 #: ../src/Extensions/Banshee.Emusic.Store/Banshee.Emusic.Store/StoreWebBrowserShell.cs:41
-#| msgid "Music"
 msgid "eMusic"
 msgstr "„eMusic“"
 
 #: ../src/Extensions/Banshee.Emusic.Store/Banshee.Emusic.Store/StoreWebBrowserShell.cs:45
 #, csharp-format
-#| msgid "Search Results"
 msgid "Search eMusic"
 msgstr "Ieškoti „eMusic“ parduotuvėje"
 
@@ -5152,7 +5092,7 @@ msgstr "Baigėsi skirtasis laikas gaunant informaciją iš interneto archyvo"
 
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/DetailsSource.cs:149
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/SearchSource.cs:190
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:301
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:309
 msgid "Try Again"
 msgstr "Bandyti dar kartą"
 
@@ -5364,6 +5304,11 @@ msgstr "NASA"
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HomeView.cs:132
 msgid "Library of Congress"
 msgstr "Kongreso biblioteka"
+
+#: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HomeView.cs:136
+#| msgid "Sample"
+msgid "Examples:"
+msgstr "Pavyzdžiai:"
 
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HomeView.cs:148
 msgid ""
@@ -5726,31 +5671,58 @@ msgstr "Aprašymas:"
 msgid "Rating:"
 msgstr "Įvertinimas:"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:129
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:136
 msgid "_Last.fm"
 msgstr "_Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:130
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:137
 msgid "Configure the Audioscrobbler plugin"
 msgstr "Konfigūruoti Audioscrobbler įskiepį"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:133
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:140
 msgid "Visit _User Profile Page"
 msgstr "Aplankyti _naudotojo profilio puslapį"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:134
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:164
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:141
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:172
 msgid "Visit Your Last.fm Profile Page"
 msgstr "Aplankyti savo Last.fm profilio puslapį"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:139
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:91
-msgid "_Enable Song Reporting"
-msgstr "Įj_ungti pranešimą apie dainas"
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:146
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:93
+#| msgid "_Enable Song Reporting"
+msgid "_Enable Song Reporting From Banshee"
+msgstr "_Pranešti apie kūrinius, perklausytus naudojant „Banshee“ programą"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:140
-msgid "Enable song reporting"
-msgstr "Įjungti pranešimą apie dainas"
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:147
+#| msgid "Enable song reporting"
+msgid "Enable song reporting From Banshee"
+msgstr "Pranešti apie kūrinius, perklausytus naudojant „Banshee“ programą"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:152
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:98
+#| msgid "_Enable Song Reporting"
+msgid "_Enable Song Reporting From Device"
+msgstr "_Pranešti apie kūrinius, perklausytus naudojant grotuvą"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:153
+#| msgid "Enable song reporting"
+msgid "Enable song reporting From Device"
+msgstr "Pranešti apie kūrinius, perklausytus naudojant grotuvą"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:402
+msgid "Scrobbling from device"
+msgstr "Pranešimas apie kūrinius, perklausytus naudojant grotuvą"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:403
+msgid "Scrobbling from device..."
+msgstr "Pranešama apie kūrinius, perklausytus naudojant grotuvą..."
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:414
+#, csharp-format
+#| msgid "Removing track {0} of {1}"
+msgid "Processing track {0} of {1} ..."
+msgstr "Apdorojamas {0} takelis iš {1}..."
 
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmActions.cs:66
 msgid "Connect"
@@ -5835,49 +5807,49 @@ msgstr "http://www.last.fm/music/{0}/+videos"
 msgid "http://en.wikipedia.org/wiki/{0}"
 msgstr "http://en.wikipedia.org/wiki/{0}"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:78
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:80
 msgid "Account"
 msgstr "Paskyra"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:80
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:270
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:82
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:278
 msgid "_Username"
 msgstr "_Naudotojo vardas"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:160
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:168
 #: ../src/Libraries/Lastfm.Gui/Lastfm.Gui/AccountLoginForm.cs:86
 msgid "Sign up for Last.fm"
 msgstr "Registruotis Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:254
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:262
 msgid ""
 "Open Last.fm in a browser, giving you the option to authorize Banshee to "
 "work with your account"
 msgstr ""
-"Atverti Last.fm naršyklėje, tokiu būdu suteikiant galimybę leisti Banshee "
-"dirbti su jūsų paskyra"
+"Atverti Last.fm naršyklėje, tokiu būdu suteikiant galimybę „Banshee“ dirbti "
+"su jūsų paskyra"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:265
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:273
 #: ../src/Libraries/Lastfm.Gui/Lastfm.Gui/AccountLoginDialog.cs:49
 msgid "Log in to Last.fm"
 msgstr "Prisijungti prie Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:286
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:294
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:321
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:294
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:298
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:335
 msgid "You need to allow Banshee to access your Last.fm account."
-msgstr "Turite leisti Banshee gauti prieigą prie jūsų Last.fm paskyros."
+msgstr "Turite leisti „Banshee“ gauti prieigą prie jūsų Last.fm paskyros."
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:296
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:304
 msgid "Finish Logging In"
 msgstr "Baigti prisijungimą"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:310
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:318
 #, csharp-format
 msgid "You are logged in to Last.fm as the user <i>{0}</i>."
 msgstr "Esate prisijungę prie Last.fm kaip naudojas <i>{0}</i>."
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:313
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:321
 msgid "Log out of Last.fm"
 msgstr "Atsijungti nuo Last.fm"
 
@@ -6143,7 +6115,7 @@ msgstr "Fonoteka"
 
 #: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MediaPanelContents.cs:132
 msgid "Launch the Banshee Media Player"
-msgstr "Paleisti medijos leistuvą Banshee"
+msgstr "Paleisti medijos leistuvą „Banshee“"
 
 #: ../src/Extensions/Banshee.MeeGo/Banshee.MeeGo/MediaPanelContents.cs:165
 #: ../src/Extensions/Banshee.NowPlaying/Banshee.NowPlaying/NowPlayingSource.cs:50
@@ -6195,6 +6167,11 @@ msgstr "Ieškoti tinklalaidžių"
 msgid "Search for video podcasts"
 msgstr "Ieškoti vaizdo tinklalaidžių"
 
+#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:132
+#: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:110
+msgid "_Close"
+msgstr "_Užverti"
+
 #: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:139
 msgid "_Show Notifications"
 msgstr "_Rodyti pranešimus"
@@ -6212,8 +6189,8 @@ msgid ""
 "Banshee was closed to the notification area. Use the <i>Quit</i> option to "
 "end your session."
 msgstr ""
-"Banshee buvo paslėptas pranešimų srityje. Norėdami užbaigti seansą, "
-"naudokite parinktį <i>Išeiti</i>."
+"„Banshee“ programa buvo paslėpta pranešimų srityje. Norėdami užbaigti "
+"seansą, pasirinkite parinktį <i>Išeiti</i>."
 
 #: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:483
 #: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:326
@@ -6376,14 +6353,12 @@ msgstr "Importuoti „{0}“"
 #. Translators: {0} is the type of disc, "Audio CD" or "DVD"
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc/DiscSource.cs:154
 #, csharp-format
-#| msgid "Disconnecting {0}..."
 msgid "Ejecting {0}..."
 msgstr "Išstumiamas {0}..."
 
 #. Translators: {0} is the type of disc, "Audio CD" or "DVD". {1} is the error message.
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc/DiscSource.cs:173
 #, csharp-format
-#| msgid "Could not disconnect {0}: {1}"
 msgid "Could not eject {0}: {1}"
 msgstr "Nepavyko išstumti {0}: {1}"
 
@@ -6400,7 +6375,6 @@ msgid "DVD"
 msgstr "DVD"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:63
-#| msgid "Preferences"
 msgid "DVD Preferences"
 msgstr "DVD nustatymai"
 
@@ -6559,11 +6533,11 @@ msgstr "Išeinant išvalyti paleidimo eilę"
 msgid "Remove From Play Queue"
 msgstr "Pašalinti iš paleidimo eilės"
 
-#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:965
+#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:967
 msgid "Number of _played songs to show"
 msgstr "Rodytinų _grotų dainų skaičius"
 
-#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:971
+#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:973
 msgid "Number of _upcoming songs to show"
 msgstr "Rodytinų _būsimų dainų skaičius"
 
@@ -6761,7 +6735,7 @@ msgstr "Periodiškai ieškoti naujų epizodų"
 msgid ""
 "If checked, Banshee will check every hour to see if this podcast has new "
 "episodes"
-msgstr "Jei pažymėta, Banshee kas valandą ieškos naujų epizodų"
+msgstr "Jei pažymėta, „Banshee“ kas valandą ieškos naujų epizodų"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastFeedPropertiesDialog.cs:109
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastSubscribeDialog.cs:136
@@ -6873,11 +6847,11 @@ msgstr "groja „{0}“"
 
 #: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:362
 msgid "_Show Banshee in the sound menu"
-msgstr "_Rodyti Banshee garso meniu"
+msgstr "_Rodyti „Banshee“ garso meniu"
 
 #: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:363
 msgid "Control Banshee through the sound menu"
-msgstr "Valdykite Banshee naudodamiesi garso meniu"
+msgstr "Valdykite „Banshee“ naudodamiesi garso meniu"
 
 #: ../src/Extensions/Banshee.SqlDebugConsole/Banshee.SqlDebugConsole/SqlActions.cs:59
 msgid "Show SQL Console"
@@ -6896,7 +6870,6 @@ msgid "Track Preview"
 msgstr "Takelio peržiūra"
 
 #: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPContainerSource.cs:39
-#| msgid "Shared Music"
 msgid "Shared Media"
 msgstr "Viešinami daugialypės terpės failai"
 
@@ -6911,7 +6884,7 @@ msgstr "Įkėlė"
 #: ../src/Extensions/Banshee.YouTube/Banshee.YouTube.Gui/VideoStreamTile.cs:233
 #: ../src/Extensions/Banshee.YouTube/Banshee.YouTube.Gui/VideoStreamTile.cs:234
 msgid "Play in Banshee..."
-msgstr "Leisti programoje Banshee.."
+msgstr "Leisti „Banshee“ programoje..."
 
 #: ../src/Extensions/Banshee.YouTube/Banshee.YouTube.Gui/VideoStreamTile.cs:237
 #: ../src/Extensions/Banshee.YouTube/Banshee.YouTube.Gui/VideoStreamTile.cs:238
@@ -7119,96 +7092,113 @@ msgstr "Įrašyti ir prisijungti"
 msgid "Authorize for Last.fm"
 msgstr "Suteikti prieigą prie Last.fm"
 
-#: ../src/Libraries/Lastfm/Lastfm/AudioscrobblerConnection.cs:450
-msgid ""
-"Last.fm username is invalid or Banshee is not authorized to access your "
-"account."
-msgstr ""
-"Last.fm naudotojo vardas netinkamas arba Banshee nesuteikta prieiga prie "
-"jūsų paskyros."
-
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:271
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:275
 msgid "This service does not exist."
 msgstr "Ši paslauga neegzistuoja."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:275
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:279
 msgid "Stations are only available to paying Last.fm subscribers."
 msgstr "Stotys prieinamos tik paslaugą įsigijusiems Last.fm abonentams."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:277
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:281
 msgid "This station is not available."
 msgstr "Ši stotis neprieinama."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:279
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:283
 msgid "The request is missing a required parameter."
 msgstr "Užklausoje trūksta reikalingo parametro."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:281
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:285
 msgid "The specified resource is invalid."
 msgstr "Nurodytasis išteklius yra netinkamas."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:283
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:287
 msgid "Server error, please try again later."
 msgstr "Serverio klaida, bandykite vėliau dar kartą."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:285
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:289
 msgid "Invalid authentication information, please re-authenticate."
 msgstr "netinkama tapatybės nustatymo informacija, įveskite iš naujo."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:287
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:291
 msgid "The API key used by this application is invalid."
 msgstr "Šios programos naudojamas API raktas yra netinkamas."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:289
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:293
 msgid ""
 "The streaming system is offline for maintenance, please try again later."
 msgstr "Transliavimo sistema dėl profilaktikos išjungta, bandykite vėliau."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:291
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:295
 msgid "The method signature is invalid."
 msgstr "Metodo parašas netinkamas."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:296
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:300
 msgid "There is not enough content to play this station."
 msgstr "Šioje stotyje per mažai grotinų dainų."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:298
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:302
 msgid "This group does not have enough members for radio."
 msgstr "Šios grupės radijas negalimas, nes joje nepakanka narių."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:300
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:304
 msgid "This artist does not have enough fans for radio."
 msgstr "Šio atlikėjo radijas negalimas, nes nepakanka jo gerbėjų."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:302
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:306
 msgid "There are not enough neighbours for this station."
 msgstr "Ši stotis negalima, kadangi nepakanka kaimynų."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:304
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:308
+msgid "This user is not allowed to listen to radio during peak usage"
+msgstr "Šiam naudotojui neleidžiama klausytis radijo piko metu"
+
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:310
+#| msgid "Stream location not found"
+msgid "Radio station not found"
+msgstr "Radijo stoties nerasta"
+
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:312
+msgid "This application is not allowed to make requests to the web services"
+msgstr "Šiai programai neleidžiama vykdyti užklausų žiniatinklio tarnyboms"
+
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:314
+msgid "This type of request is no longer supported"
+msgstr "Šio tipo užklausa nebepalaikoma"
+
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:316
+msgid ""
+"Your IP has made too many requests in a short period, exceeding our API "
+"guidelines"
+msgstr ""
+"Iš jūsų IP adreso per trumpą laiko tarpą įvykdyta per daug užklausų; "
+"daugiau, nei numato mūsų API rekomendacijos"
+
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:318
 msgid "There was an unknown error."
 msgstr "Nežinoma klaida."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:313
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:327
 msgid "Not connected to Last.fm."
 msgstr "Neprisijungta prie Last.fm"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:315
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:329
 msgid "Account details are needed before you can connect to Last.fm"
 msgstr "Norint prisijungti prie Last.fm reikia nurodyti paskyros informaciją."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:317
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:331
 msgid "No network connection detected."
 msgstr "Neaptiktas tinklo ryšis."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:319
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:333
 msgid "Last.fm username is invalid."
 msgstr "Last.fm naudotojo vardas neteisingas."
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:323
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:337
 msgid "Connecting to Last.fm."
 msgstr "Jungiamasi prie Last.fm"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:325
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:339
 msgid "Connected to Last.fm."
 msgstr "Prisijungta prie Last.fm"
 
@@ -7217,6 +7207,13 @@ msgstr "Prisijungta prie Last.fm"
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:103
 msgid "Unknown Podcast"
 msgstr "Nežinoma tinklalaidė"
+
+#~ msgid ""
+#~ "Last.fm username is invalid or Banshee is not authorized to access your "
+#~ "account."
+#~ msgstr ""
+#~ "Last.fm naudotojo vardas netinkamas arba Banshee nesuteikta prieiga prie "
+#~ "jūsų paskyros."
 
 #~ msgid "iPod Support"
 #~ msgstr "iPod palaikymas"
