@@ -99,7 +99,7 @@ namespace Banshee.Gui.Dialogs
 
         private void OnBrowseClicked(object o, EventArgs args)
         {
-            FileChooserDialog chooser = new FileChooserDialog(
+            var chooser = new GtkFileChooserDialog(
                 Catalog.GetString("Open Location"),
                 null,
                 FileChooserAction.Open
