@@ -6,6 +6,7 @@ INSTALL_DIR = $(BACKENDS_INSTALL_DIR)
 
 SOURCES =  \
 	Banshee.OsxBackend/HardwareManager.cs \
+	Banshee.OsxBackend/OsxFileChooserDialog.cs \
 	Banshee.OsxBackend/OsxService.cs \
 	OsxIntegration.GtkOsxApplication/GtkOsxApplication.cs
 
