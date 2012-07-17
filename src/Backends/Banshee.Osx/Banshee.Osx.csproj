@@ -70,6 +70,9 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="Mono.Addins, Version=0.6.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banshee.OsxBackend\HardwareManager.cs" />
@@ -86,6 +89,7 @@
     <Compile Include="Banshee.Hardware.Osx\LowLevel\OsxUsbData.cs" />
     <Compile Include="Banshee.Hardware.Osx\LowLevel\DiskArbitration.cs" />
     <Compile Include="Banshee.Hardware.Osx\LowLevel\CoreFoundation.cs" />
+    <Compile Include="Banshee.OsxBackend\OsxFileChooserDialog.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Banshee.Osx.addin.xml">

@@ -32,7 +32,7 @@ using Gtk;
 
 namespace Banshee.Gui.Dialogs
 {
-    public class ImageFileChooserDialog : Banshee.Gui.Dialogs.FileChooserDialog
+    public class ImageFileChooserDialog : Banshee.Gui.Dialogs.GtkFileChooserDialog
     {
         private Image preview = new Image ();
 

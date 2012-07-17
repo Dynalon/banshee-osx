@@ -60,5 +60,9 @@
     <Description>Defines an extension for the track editor that can modify it in some way.</Description>
     <ExtensionNode name="Modifier"/>
   </ExtensionPoint>
-  
+
+  <ExtensionPoint path="/Banshee/Gui/NativeFileChooserDialog">
+    <Description>Defines an extension that provides a custom (possibly native) file chooser dialog.</Description>
+    <ExtensionNode name="NativeFileChooserDialog"/>
+  </ExtensionPoint>
 </Addin>
