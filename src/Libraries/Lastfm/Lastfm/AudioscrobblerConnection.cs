@@ -274,6 +274,16 @@ namespace Lastfm
                     var scrobbles_attr = (JsonObject)scrobbles["@attr"];
                     Log.InformationFormat ("Audioscrobbler upload succeeded: {0} accepted, {1} ignored",
                                            scrobbles_attr["accepted"], scrobbles_attr["ignored"]);
+
+                    if (nb_tracks_scrobbled > 1) {
+                        var scrobble_array = (JsonArray)scrobbles["scrobble"];
+                        foreach (JsonObject scrobbled_track in scrobble_array) {
+                            LogIfIgnored (scrobbled_track);
+                        }
+                    } else {
+                        var scrobbled_track = (JsonObject)scrobbles["scrobble"];
+                        LogIfIgnored (scrobbled_track);
+                    }
                 } catch (Exception) {
                     Log.Information ("Audioscrobbler upload succeeded but unknown response received");
                     Log.Debug ("Response received", response.ToString ());
@@ -287,6 +297,23 @@ namespace Lastfm
 
                 state = State.Idle;
             }
+        }
+
+        private void LogIfIgnored (JsonObject scrobbled_track)
+        {
+            var ignoredMessage = (JsonObject)scrobbled_track["ignoredMessage"];
+
+            if (Convert.ToInt32 (ignoredMessage["code"]) == 0) {
+                return;
+            }
+
+            var track = (JsonObject)scrobbled_track["track"];
+            var artist = (JsonObject)scrobbled_track["artist"];
+            var album = (JsonObject)scrobbled_track["album"];
+
+            Log.InformationFormat ("Track {0} - {1} (on {2}) ignored by Last.fm, reason: {3}",
+                                   artist["#text"], track["#text"], album["#text"],
+                                   ignoredMessage["#text"]);
         }
 
         public void NowPlaying (string artist, string title, string album, double duration,

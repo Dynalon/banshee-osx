@@ -251,7 +251,8 @@ namespace Lastfm
             return sb.ToString ();
         }
 
-        private void SetResponseString () {
+        private void SetResponseString ()
+        {
             if (response_string == null) {
                 using (StreamReader sr = new StreamReader (response_stream)) {
                     response_string = sr.ReadToEnd ();
