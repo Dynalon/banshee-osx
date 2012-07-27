@@ -45,6 +45,7 @@ using Hyena;
 using Hyena.Data;
 
 using Banshee.Base;
+using Banshee.Collection;
 using Banshee.Streaming;
 using Banshee.MediaEngine;
 using Banshee.ServiceStack;
@@ -548,16 +549,17 @@ namespace Banshee.GStreamerSharp
 
         private void HandleError (Enum domain, string error_message, string debug)
         {
+            TrackInfo failed_track = CurrentTrack;
             Close (true);
 
             error_message = error_message ?? Catalog.GetString ("Unknown Error");
 
             if (domain is ResourceError) {
                 ResourceError domain_code = (ResourceError)domain;
-                if (CurrentTrack != null) {
+                if (failed_track != null) {
                     switch (domain_code) {
                     case ResourceError.NotFound:
-                        CurrentTrack.SavePlaybackError (StreamPlaybackError.ResourceNotFound);
+                        failed_track.SavePlaybackError (StreamPlaybackError.ResourceNotFound);
                         break;
                     default:
                         break;
@@ -566,10 +568,10 @@ namespace Banshee.GStreamerSharp
                 Log.Error (String.Format ("GStreamer resource error: {0}", domain_code), false);
             } else if (domain is StreamError) {
                 StreamError domain_code = (StreamError)domain;
-                if (CurrentTrack != null) {
+                if (failed_track != null) {
                     switch (domain_code) {
                     case StreamError.CodecNotFound:
-                        CurrentTrack.SavePlaybackError (StreamPlaybackError.CodecNotFound);
+                        failed_track.SavePlaybackError (StreamPlaybackError.CodecNotFound);
                         break;
                     default:
                         break;
@@ -579,10 +581,10 @@ namespace Banshee.GStreamerSharp
                 Log.Error (String.Format ("GStreamer stream error: {0}", domain_code), false);
             } else if (domain is CoreError) {
                 CoreError domain_code = (CoreError)domain;
-                if (CurrentTrack != null) {
+                if (failed_track != null) {
                     switch (domain_code) {
                     case CoreError.MissingPlugin:
-                        CurrentTrack.SavePlaybackError (StreamPlaybackError.CodecNotFound);
+                        failed_track.SavePlaybackError (StreamPlaybackError.CodecNotFound);
                         break;
                     default:
                         break;
