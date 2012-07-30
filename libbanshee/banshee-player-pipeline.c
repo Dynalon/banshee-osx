@@ -360,6 +360,10 @@ _bp_pipeline_construct (BansheePlayer *player)
     player->volume = gst_element_factory_make ("volume", NULL);
     g_return_val_if_fail (player->volume != NULL, FALSE);
 
+    // call the volume changed callback once so the volume from the pipeline is
+    // set in the player object
+    bp_volume_changed_callback (player->playbin, NULL, player);
+
     audiosinkqueue = gst_element_factory_make ("queue", "audiosinkqueue");
     g_return_val_if_fail (audiosinkqueue != NULL, FALSE);
 
