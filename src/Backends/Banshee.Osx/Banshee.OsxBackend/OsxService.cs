@@ -69,6 +69,22 @@ namespace Banshee.OsxBackend
                     isGlobalInited = true;
                 }
             }
+
+            // register event that handles openFile AppleEvent, i.e. when
+            // opening a .mp3 file through Finder
+            NSApplication.SharedApplication.OpenFiles += (sender, e) => {
+                foreach (string file in e.Filenames) {
+                    // upon successfull start, we receive a openFile event with the Nereid.exe
+                    // since mono passes that event - we ignore it here
+                    if (file.ToLower ().EndsWith (".exe")) continue;
+
+                    // put the file on the bus - usually FileSystemQueueSource will
+                    // pick this event and put it into a queue
+                    ServiceManager.Get<DBusCommandService> ().PushFile (file);
+                }
+                // immediately start playback of the enqueued files
+                ServiceManager.Get<DBusCommandService> ().PushArgument ("play-enqueued", "");
+            };
         }
 
         void IExtensionService.Initialize ()
