@@ -33,12 +33,13 @@ using Banshee.ServiceStack;
 
 namespace Banshee.Gui.Widgets
 {
-    public class ConnectedVolumeButton : Bacon.VolumeButton
+    public class ConnectedVolumeButton : Gtk.VolumeButton
     {
-        private bool emit_lock = false;
-
         public ConnectedVolumeButton () : base()
         {
+            // PlayerEngine uses a volume range of 0 to 100
+            Adjustment.SetBounds (0.0, 100.0, 5.0, 20.0, 0.0);
+
             var player = ServiceManager.PlayerEngine;
 
             if (player.ActiveEngine != null && player.ActiveEngine.IsInitialized) {
@@ -54,12 +55,23 @@ namespace Banshee.Gui.Widgets
             }
 
             player.ConnectEvent (OnPlayerEvent, PlayerEvent.Volume);
+
+            this.ValueChanged += (o, args) => {
+                ServiceManager.PlayerEngine.Volume = (ushort)Value;
+            };
+
+            // We need to know whether the volume scale is being used
+            this.Pressed += (o, args) => { active = true; };
+            this.Released += (o, args) => { active = false; };
         }
 
-        public ConnectedVolumeButton (bool classic) : this ()
+        public void Disconnect ()
         {
-            Classic = classic;
+            ServiceManager.PlayerEngine.DisconnectEvent (OnPlayerEvent);
         }
+
+        private bool active = false;
+        public bool Active { get { return active; } }
 
         private void OnPlayerEvent (PlayerEventArgs args)
         {
@@ -68,20 +80,7 @@ namespace Banshee.Gui.Widgets
 
         private void SetVolume ()
         {
-            emit_lock = true;
-            Volume = ServiceManager.PlayerEngine.Volume;
-            emit_lock = false;
-        }
-
-        protected override void OnVolumeChanged ()
-        {
-            if (emit_lock) {
-                return;
-            }
-
-            ServiceManager.PlayerEngine.Volume = (ushort)Volume;
-
-            base.OnVolumeChanged ();
+            Value = ServiceManager.PlayerEngine.Volume;
         }
     }
 }

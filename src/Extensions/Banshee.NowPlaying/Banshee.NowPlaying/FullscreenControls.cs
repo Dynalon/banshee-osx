@@ -52,7 +52,7 @@ namespace Banshee.NowPlaying
         {
             HBox box = new HBox ();
 
-            volume_button = new ConnectedVolumeButton (true);
+            volume_button = new ConnectedVolumeButton ();
 
             box.PackStart (action_service.PlaybackActions["PreviousAction"].CreateToolItem (), false, false, 0);
             box.PackStart (action_service.PlaybackActions["PlayPauseAction"].CreateToolItem (), false, false, 0);
@@ -73,6 +73,7 @@ namespace Banshee.NowPlaying
         public override void Destroy ()
         {
             slider.Disconnect ();
+            volume_button.Disconnect ();
             base.Destroy ();
         }
 

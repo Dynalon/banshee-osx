@@ -18,8 +18,7 @@ SOURCES =  \
 	Banshee.Widgets/SeekSlider.cs \
 	Banshee.Widgets/StreamPositionLabel.cs \
 	Banshee.Widgets/Tile.cs \
-	Banshee.Widgets/TileView.cs \
-	Banshee.Widgets/VolumeButton.cs  
+	Banshee.Widgets/TileView.cs
 
 RESOURCES =
 
