@@ -497,6 +497,7 @@ namespace Banshee.GStreamer
 
         private void OnError (IntPtr player, uint domain, int code, IntPtr error, IntPtr debug)
         {
+            TrackInfo failed_track = CurrentTrack;
             Close (true);
 
             string error_message = error == IntPtr.Zero
@@ -505,10 +506,10 @@ namespace Banshee.GStreamer
 
             if (domain == GST_RESOURCE_ERROR) {
                 GstResourceError domain_code = (GstResourceError) code;
-                if (CurrentTrack != null) {
+                if (failed_track != null) {
                     switch (domain_code) {
                         case GstResourceError.NotFound:
-                            CurrentTrack.SavePlaybackError (StreamPlaybackError.ResourceNotFound);
+                            failed_track.SavePlaybackError (StreamPlaybackError.ResourceNotFound);
                             break;
                         default:
                             break;
@@ -518,10 +519,10 @@ namespace Banshee.GStreamer
                 Log.Error (String.Format ("GStreamer resource error: {0}", domain_code), false);
             } else if (domain == GST_STREAM_ERROR) {
                 GstStreamError domain_code = (GstStreamError) code;
-                if (CurrentTrack != null) {
+                if (failed_track != null) {
                     switch (domain_code) {
                         case GstStreamError.CodecNotFound:
-                            CurrentTrack.SavePlaybackError (StreamPlaybackError.CodecNotFound);
+                            failed_track.SavePlaybackError (StreamPlaybackError.CodecNotFound);
                             break;
                         default:
                             break;
@@ -531,10 +532,10 @@ namespace Banshee.GStreamer
                 Log.Error (String.Format("GStreamer stream error: {0}", domain_code), false);
             } else if (domain == GST_CORE_ERROR) {
                 GstCoreError domain_code = (GstCoreError) code;
-                if (CurrentTrack != null) {
+                if (failed_track != null) {
                     switch (domain_code) {
                         case GstCoreError.MissingPlugin:
-                            CurrentTrack.SavePlaybackError (StreamPlaybackError.CodecNotFound);
+                            failed_track.SavePlaybackError (StreamPlaybackError.CodecNotFound);
                             break;
                         default:
                             break;
