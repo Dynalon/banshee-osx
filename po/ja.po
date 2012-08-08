@@ -1,9 +1,9 @@
 # banshee ja.po.
-# Copyright (C) 2005-2012 Free Software Foundation, Inc.
+# Copyright (C) 2005-2011 Free Software Foundation, Inc.
 # This file is distributed under the same license as the 'banshee' package.
 # Takeshi AIHANA <aihana@gnome.gr.jp>, 2005.
 # Koike Kazuhiko <kazhik@mozilla.gr.jp>, 2005-2007.
-# Kentaro KAZUHAMA <kazken3@gmail.com>, 2010-2012.
+# Kentaro KAZUHAMA <kazken3@gmail.com>, 2010-2011.
 # Kiyotaka NISHIBORI <ml.nishibori.kiyotaka@gmail.com>, 2011.
 # Jiro Matsuzawa <jmatsuzawa@src.gnome.org>, 2011.
 # OKANO Takayoshi <kano@na.rim.or.jp>, 2010.
@@ -13,16 +13,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: banshee master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-03-11 12:53+0000\n"
-"PO-Revision-Date: 2012-03-11 22:09+0900\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-08-07 19:49+0000\n"
+"PO-Revision-Date: 2012-08-08 21:01+0900\n"
 "Last-Translator: Kentaro KAZUHAMA <kazken3@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice.addin.xml
@@ -54,12 +53,8 @@ msgid "Mass Storage Media Player Support"
 msgstr "マスストレージメディアプレイヤーのサポート"
 
 #: ../data/addin-xml-strings.cs:19
-msgid ""
-"Support for USB-drive based devices, including many iAudio devices and "
-"Android, Pre, and Galaxy phones."
-msgstr ""
-"多くのiAudioデバイスやAndroid、Pre、Galaxy phoneを含む、USBドライブをベースと"
-"したデバイスをサポートします。"
+msgid "Support for USB-drive based devices, including many iAudio devices and Android, Pre, and Galaxy phones."
+msgstr "多くのiAudioデバイスやAndroid、Pre、Galaxy phoneを含む、USBドライブをベースとしたデバイスをサポートします。"
 
 #. ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp.addin.xml
 #: ../data/addin-xml-strings.cs:23
@@ -201,8 +196,7 @@ msgstr "インターネットアーカイブ"
 
 #: ../data/addin-xml-strings.cs:84
 msgid "Browse and search the Internet Archive's vast media collection."
-msgstr ""
-"インターネットアーカイブの膨大なメディアコレクションを閲覧、検索します。"
+msgstr "インターネットアーカイブの膨大なメディアコレクションを閲覧、検索します。"
 
 #. ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio.addin.xml
 #: ../data/addin-xml-strings.cs:88
@@ -246,9 +240,7 @@ msgid "Mini Mode"
 msgstr "ミニモード"
 
 #: ../data/addin-xml-strings.cs:109
-msgid ""
-"Control Banshee through a small window with only playback controls and track "
-"information."
+msgid "Control Banshee through a small window with only playback controls and track information."
 msgstr "再生操作とトラック情報だけの小さなウィンドウで表示します。"
 
 #. ../src/Extensions/Banshee.MiroGuide/Banshee.MiroGuide.addin.xml
@@ -314,13 +306,11 @@ msgstr "再生キュー"
 
 #: ../data/addin-xml-strings.cs:144
 msgid "Queue tracks in an ad-hoc playlist, or let the Auto DJ take over."
-msgstr ""
-"トラックをその場のプレイリストにキューイングしたり、Auto DJの代わりをさせたり"
-"します。"
+msgstr "トラックをその場のプレイリストにキューイングしたり、Auto DJの代わりをさせたりします。"
 
 #. ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.addin.xml
 #: ../data/addin-xml-strings.cs:148
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:200
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:207
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/PodcastGroupSource.cs:38
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:107
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:211
@@ -329,9 +319,7 @@ msgstr "ポッドキャスト"
 
 #: ../data/addin-xml-strings.cs:149
 msgid "Subscribe to podcasts and stream or download episodes."
-msgstr ""
-"ポッドキャストを購読し、エピソードのストリーミングまたはダウンロードを行いま"
-"す。"
+msgstr "ポッドキャストを購読し、エピソードのストリーミングまたはダウンロードを行います。"
 
 #. ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu.addin.xml
 #: ../data/addin-xml-strings.cs:153
@@ -360,9 +348,7 @@ msgid "Ubuntu One Music Store"
 msgstr "Ubuntu One Music Store"
 
 #: ../data/addin-xml-strings.cs:164
-msgid ""
-"This extension grants access to the Ubuntu One Music Store, powered by "
-"7digital."
+msgid "This extension grants access to the Ubuntu One Music Store, powered by 7digital."
 msgstr "この拡張機能はUbuntu One Music Storeへのアクセスを可能にします。"
 
 #. ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient.addin.xml
@@ -371,11 +357,8 @@ msgid "UPnP Client"
 msgstr "UPnPクライアント"
 
 #: ../data/addin-xml-strings.cs:169
-msgid ""
-"Browse and play music and videos shared over your local network using UPnP."
-msgstr ""
-"UPnPを使ってローカルネットワークを越えて共有された音楽やビデオを観たり聴いた"
-"りします。"
+msgid "Browse and play music and videos shared over your local network using UPnP."
+msgstr "UPnPを使ってローカルネットワークを越えて共有された音楽やビデオを観たり聴いたりします。"
 
 #. ../src/Extensions/Banshee.Wikipedia/Banshee.Wikipedia.addin.xml
 #: ../data/addin-xml-strings.cs:173
@@ -406,12 +389,8 @@ msgid "AAC (Novell Encoder)"
 msgstr "AAC(Novellエンコーダー)"
 
 #: ../data/audio-profiles/aac-novell.xml.in.h:2
-msgid ""
-"Designed to be the successor of the MP3 format, AAC generally achieves "
-"better sound quality than MP3 at many bit rates."
-msgstr ""
-"MP3形式の後継となるよう設計されたAACは、通常、多くのビットレートでMP3より良い"
-"音質を実現しています。"
+msgid "Designed to be the successor of the MP3 format, AAC generally achieves better sound quality than MP3 at many bit rates."
+msgstr "MP3形式の後継となるよう設計されたAACは、通常、多くのビットレートでMP3より良い音質を実現しています。"
 
 #: ../data/audio-profiles/aac-novell.xml.in.h:3
 #: ../data/audio-profiles/mp3-lame.xml.in.h:9
@@ -462,11 +441,8 @@ msgid "Free Lossless Audio Codec"
 msgstr "FLAC(Free Lossless Audio Codec)"
 
 #: ../data/audio-profiles/flac.xml.in.h:2
-msgid ""
-"Free Lossless Audio Codec (FLAC) is an open source codec that compresses but "
-"does not degrade audio quality."
-msgstr ""
-"FLACはオープンソースのコーデックです。可逆圧縮ですので音質を劣化させません。"
+msgid "Free Lossless Audio Codec (FLAC) is an open source codec that compresses but does not degrade audio quality."
+msgstr "FLACはオープンソースのコーデックです。可逆圧縮ですので音質を劣化させません。"
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:1
 msgid "MP3 (LAME Encoder)"
@@ -474,12 +450,8 @@ msgstr "MP3(LAMEエンコーダー)"
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:2
 #: ../data/audio-profiles/mp3-xing.xml.in.h:2
-msgid ""
-"A proprietary and older, but also popular, lossy audio format that produces "
-"larger files at lower bitrates."
-msgstr ""
-"低ビットレートでもファイルサイズが大きくなる非可逆圧縮フォーマットです。旧式"
-"でプロプライエタリですが、普及しています。"
+msgid "A proprietary and older, but also popular, lossy audio format that produces larger files at lower bitrates."
+msgstr "低ビットレートでもファイルサイズが大きくなる非可逆圧縮フォーマットです。旧式でプロプライエタリですが、普及しています。"
 
 #: ../data/audio-profiles/mp3-lame.xml.in.h:3
 msgid "Encoding Mode"
@@ -520,12 +492,8 @@ msgid "Ogg Vorbis"
 msgstr "Ogg Vorbis"
 
 #: ../data/audio-profiles/vorbis.xml.in.h:2
-msgid ""
-"Vorbis is an open source, lossy audio codec with high quality output at a "
-"lower file size than MP3."
-msgstr ""
-"Vorbisはオープンソースの非可逆圧縮コーデックで、MP3より小さいサイズで高品質の"
-"出力を実現しています。"
+msgid "Vorbis is an open source, lossy audio codec with high quality output at a lower file size than MP3."
+msgstr "Vorbisはオープンソースの非可逆圧縮コーデックで、MP3より小さいサイズで高品質の出力を実現しています。"
 
 #: ../data/audio-profiles/vorbis.xml.in.h:3
 msgid "Audio quality"
@@ -536,12 +504,8 @@ msgid "Wavpack"
 msgstr "Wavpack"
 
 #: ../data/audio-profiles/wavpack.xml.in.h:2
-msgid ""
-"A fast and efficient open source audio format offering lossless and high-"
-"quality lossy encoding with great dynamic range."
-msgstr ""
-"非可逆エンコーディングにもかかわらず、ワイドダイナミックレンジでロスのない音"
-"質を実現する高速かつ効率的なオープンソースのオーディオフォーマットです。"
+msgid "A fast and efficient open source audio format offering lossless and high-quality lossy encoding with great dynamic range."
+msgstr "非可逆エンコーディングにもかかわらず、ワイドダイナミックレンジでロスのない音質を実現する高速かつ効率的なオープンソースのオーディオフォーマットです。"
 
 #: ../data/audio-profiles/wavpack.xml.in.h:3
 msgid "Mode"
@@ -588,9 +552,7 @@ msgid "Waveform PCM"
 msgstr "Waveform PCM"
 
 #: ../data/audio-profiles/wav.xml.in.h:2
-msgid ""
-"WAV+PCM is a lossless format that holds uncompressed, raw pulse-code "
-"modulated (PCM) audio."
+msgid "WAV+PCM is a lossless format that holds uncompressed, raw pulse-code modulated (PCM) audio."
 msgstr "WAV+PCMは圧縮されていないPCMデータを保持するフォーマットです。"
 
 #: ../data/audio-profiles/wma.xml.in.h:1
@@ -598,12 +560,8 @@ msgid "Windows Media Audio"
 msgstr "Windows Media Audio"
 
 #: ../data/audio-profiles/wma.xml.in.h:2
-msgid ""
-"A proprietary lossy audio format with high quality output at a lower file "
-"size than MP3. A 96 kbps WMA is equivalent to a 128 kbps MP3."
-msgstr ""
-"プロプライエタリで非可逆のフォーマットで、MP3より小さいサイズで高品質の出力を"
-"実現しています。96kbpsのWMAは128kbpsのMP3と同等です。"
+msgid "A proprietary lossy audio format with high quality output at a lower file size than MP3. A 96 kbps WMA is equivalent to a 128 kbps MP3."
+msgstr "プロプライエタリで非可逆のフォーマットで、MP3より小さいサイズで高品質の出力を実現しています。96kbpsのWMAは128kbpsのMP3と同等です。"
 
 #: ../data/audio-profiles/wma.xml.in.h:3
 msgid "Use a variable bitrate"
@@ -614,14 +572,14 @@ msgid "Audio Quality"
 msgstr "音質"
 
 #: ../data/desktop-files/common.desktop.in.h:1
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:193
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:196
 msgid "Media Player"
 msgstr "メディアプレイヤー"
 
 #: ../data/desktop-files/common.desktop.in.h:2
 #: ../src/Clients/Muinshee/Muinshee/PlayerInterface.cs:76
 #: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:107
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/BaseClientWindow.cs:206
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/BaseClientWindow.cs:199
 #: ../src/Extensions/Banshee.MiniMode/Banshee.MiniMode/MiniModeWindow.cs:60
 msgid "Banshee Media Player"
 msgstr "Bansheeメディアプレイヤー"
@@ -757,35 +715,28 @@ msgstr "BPM検出ドライバーを生成できませんでした。"
 msgid "Could not initialize GStreamer library"
 msgstr "GStreamerライブラリを初期化できませんでした"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:503
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:553
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:504
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:555
 msgid "Unknown Error"
 msgstr "未知のエラー"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:879
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:978
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:880
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:980
 msgid "_Enable ReplayGain correction"
 msgstr "ReplayGain補正を有効にする(_E)"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:880
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:979
-msgid ""
-"For tracks that have ReplayGain data, automatically scale (normalize) "
-"playback volume"
-msgstr ""
-"ReplayGainデータを持つトラック向けに、自動的に再生音量を(標準に)調整します"
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:881
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:981
+msgid "For tracks that have ReplayGain data, automatically scale (normalize) playback volume"
+msgstr "ReplayGainデータを持つトラック向けに、自動的に再生音量を(標準に)調整します"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:885
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:886
 msgid "Enable _gapless playback"
 msgstr "ギャップレス再生を有効にする(_G)"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:886
-msgid ""
-"Eliminate the small playback gap on track change. Useful for concept albums "
-"and classical music"
-msgstr ""
-"トラック変更時の無音部分を取り除きます。コンセプトアルバムやクラシック音楽な"
-"どに役に立ちます"
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:887
+msgid "Eliminate the small playback gap on track change. Useful for concept albums and classical music"
+msgstr "トラック変更時の無音部分を取り除きます。コンセプトアルバムやクラシック音楽などに役に立ちます"
 
 #: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/Transcoder.cs:63
 msgid "Could not create transcoder"
@@ -796,7 +747,7 @@ msgstr "エンコーダーを生成できませんでした"
 msgid "Could not create encoder pipeline : {0}"
 msgstr "エンコーダー用のパイプラインを生成できませんでした : {0}"
 
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:800
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:802
 msgid "GStreamer# 0.10"
 msgstr "GStreamer# 0.10"
 
@@ -805,31 +756,13 @@ msgstr "GStreamer# 0.10"
 msgid "Could not create encoding pipeline : {0}"
 msgstr "エンコード用のパイプラインを生成できませんでしたi : {0}"
 
-#: ../src/Backends/Banshee.Osx/Banshee.OsxBackend/OsxService.cs:91
-#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:132
-#: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:110
-msgid "_Close"
-msgstr "閉じる(_C)"
-
-#: ../src/Backends/Banshee.Osx/Banshee.OsxBackend/OsxService.cs:92
-#: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:251
-#: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/FixSource.cs:79
-#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:133
-#: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:111
-msgid "Close"
-msgstr "閉じる"
-
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:72
 msgid "Can't check for updates"
 msgstr "アップデートを確認できません"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:73
-msgid ""
-"We're currently not able to check if there's a new version available. Please "
-"try again later."
-msgstr ""
-"新しいバージョンが提供されているか確認することができません。しばらくしてから"
-"もう一度お試しください。"
+msgid "We're currently not able to check if there's a new version available. Please try again later."
+msgstr "新しいバージョンが提供されているか確認することができません。しばらくしてからもう一度お試しください。"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:95
 msgid "No update available"
@@ -837,15 +770,12 @@ msgstr "アップデートはありません"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:95
 msgid "You already have the latest version of Banshee installed."
-msgstr ""
-"お使いの環境にはBansheeの最新バージョンがすでにインストールされています。"
+msgstr "お使いの環境にはBansheeの最新バージョンがすでにインストールされています。"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:106
 #, csharp-format
 msgid "A new version of Banshee ({0}) is available.{1}Do you want to update?"
-msgstr ""
-"Bansheeの新しいバージョン ({0}) が提供されています。{1}アップデートを行います"
-"か?"
+msgstr "Bansheeの新しいバージョン ({0}) が提供されています。{1}アップデートを行いますか?"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:108
 msgid "Banshee update available"
@@ -872,12 +802,8 @@ msgstr "ダウンロードに失敗しました。しばらくしてからもう
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:165
 #, csharp-format
-msgid ""
-"The update finished downloading.{0}Do you want to shutdown Banshee and run "
-"the installer?"
-msgstr ""
-"{0} のアップデートのダウンロードを完了しました。Bansheeを終了してインストー"
-"ラーを起動しますか?"
+msgid "The update finished downloading.{0}Do you want to shutdown Banshee and run the installer?"
+msgstr "{0} のアップデートのダウンロードを完了しました。Bansheeを終了してインストーラーを起動しますか?"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:167
 msgid "Update finished downloading"
@@ -928,26 +854,16 @@ msgid "Playback Control Options"
 msgstr "再生コントロールオプション"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:164
-msgid ""
-"Play the next track, optionally restarting if the 'restart' value is set"
-msgstr ""
-"次のトラックを再生する。オプションとして'restart'の値が設定されている場合は再"
-"開する"
+msgid "Play the next track, optionally restarting if the 'restart' value is set"
+msgstr "次のトラックを再生する。オプションとして'restart'の値が設定されている場合は再開する"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:165
-msgid ""
-"Play the previous track, optionally restarting if the 'restart' value is set"
-msgstr ""
-"前のトラックを再生し、オプションとして'restart'の値が設定されている場合はリス"
-"タートする"
+msgid "Play the previous track, optionally restarting if the 'restart' value is set"
+msgstr "前のトラックを再生し、オプションとして'restart'の値が設定されている場合はリスタートする"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:166
-msgid ""
-"If the current song has been played longer than 4 seconds then restart it, "
-"otherwise the same as --previous"
-msgstr ""
-"現在の曲が4秒以上再生されているなら現在の曲最初から再生します。その他は--"
-"previousと同じです。"
+msgid "If the current song has been played longer than 4 seconds then restart it, otherwise the same as --previous"
+msgstr "現在の曲が4秒以上再生されているなら現在の曲最初から再生します。その他は--previousと同じです。"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:167
 msgid "Automatically start playing any tracks enqueued on the command line"
@@ -970,12 +886,8 @@ msgid "Completely stop playback"
 msgstr "再生を完全に停止する"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:173
-msgid ""
-"Enable or disable playback stopping after the currently playing track (value "
-"should be either 'true' or 'false')"
-msgstr ""
-"現在再生しているトラックの後に再生の停止を有効または無効にする(値"
-"は'true'か'false'のどちらか)"
+msgid "Enable or disable playback stopping after the currently playing track (value should be either 'true' or 'false')"
+msgstr "現在再生しているトラックの後に再生の停止を有効または無効にする(値は'true'か'false'のどちらか)"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:174
 msgid "Set the playback volume (0-100), prefix with +/- for relative values"
@@ -1160,12 +1072,8 @@ msgid "Specify an alternate key, default is /apps/banshee-1/"
 msgstr "代替キーを指定します。デフォルトは /apps/banshee-1/ です"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:221
-msgid ""
-"Optimize instance for running uninstalled; most notably, this will create an "
-"alternate Mono.Addins database in the working directory"
-msgstr ""
-"アンインストール実行時のインスタンス最適化をおこないます。とりわけ作業ディレ"
-"クトリでMono.Addinsデータベースの代わりを作成します"
+msgid "Optimize instance for running uninstalled; most notably, this will create an alternate Mono.Addins database in the working directory"
+msgstr "アンインストール実行時のインスタンス最適化をおこないます。とりわけ作業ディレクトリでMono.Addinsデータベースの代わりを作成します"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:223
 msgid "Disable DBus support completely"
@@ -1174,9 +1082,7 @@ msgstr "DBusサポートを完全に無効にする"
 #: ../src/Clients/Booter/Booter/Entry.cs:225
 #, csharp-format
 msgid "Skip loading a custom gtkrc file ({0}) if it exists"
-msgstr ""
-"gtkrcファイルが存在する場合、カスタムのgtkrcファイル({0})のロードをスキップす"
-"る"
+msgstr "gtkrcファイルが存在する場合、カスタムのgtkrcファイル({0})のロードをスキップする"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:256
 #, csharp-format
@@ -1222,6 +1128,13 @@ msgstr "残り {0}"
 #: ../src/Clients/Muinshee/Muinshee/SongDialog.cs:53
 msgid "Play Song"
 msgstr "曲を再生"
+
+#: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:251
+#: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/FixSource.cs:79
+#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:133
+#: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:111
+msgid "Close"
+msgstr "閉じる"
 
 #. Translators: this is a verb (command), not a noun (things)
 #: ../src/Clients/Nereid/Nereid/PlayerInterface.cs:472
@@ -1290,7 +1203,7 @@ msgid "Stream location not found"
 msgstr "ストリームの場所が見つかりませんでした"
 
 #: ../src/Core/Banshee.Core/Banshee.Collection/TrackInfo.cs:347
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:328
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:339
 msgid "File not found"
 msgstr "ファイルが見つかりません"
 
@@ -1412,8 +1325,7 @@ msgstr "アーティストで"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByArtist.cs:52
 msgid "Play all songs by an artist, then randomly choose another artist"
-msgstr ""
-"アーティストごとにすべての曲を再生し、他のアーティストをランダムで選択する"
+msgstr "アーティストごとにすべての曲を再生し、他のアーティストをランダムで選択する"
 
 #: ../src/Core/Banshee.Services/Banshee.Collection.Database/RandomByOff.cs:38
 msgid "Shuffle _Off"
@@ -1503,10 +1415,8 @@ msgid "Upgrading your Banshee Database"
 msgstr "Bansheeデータベースをアップグレードしています"
 
 #: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:233
-msgid ""
-"Please wait while your old Banshee database is migrated to the new format."
-msgstr ""
-"古いBansheeデータベースが新しいフォーマットに移るまでの間お待ちください。"
+msgid "Please wait while your old Banshee database is migrated to the new format."
+msgstr "古いBansheeデータベースが新しいフォーマットに移るまでの間お待ちください。"
 
 #: ../src/Core/Banshee.Services/Banshee.Database/BansheeDbFormatMigrator.cs:1416
 msgid "Refreshing Metadata"
@@ -1584,12 +1494,29 @@ msgstr "ソフトロック"
 msgid "Techno"
 msgstr "テクノ"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:58
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:63
 msgid "Remove From Library"
 msgstr "ライブラリから削除"
 
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:77
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:249
+msgid "File Organization"
+msgstr "ファイル構成"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:81
+msgid "Co_py files to media folder when importing"
+msgstr "インポートする時にメディアフォルダーへファイルをコピーする(_P)"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:87
+msgid "_Update file and folder names"
+msgstr "ファイルとフォルダー名をアップデートする(_U)"
+
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:88
+msgid "Rename files and folders according to media metadata"
+msgstr "メディアのメタデータに従いファイルとフォルダー名を変更します"
+
 #. Translators: {0} is the library name, eg 'Music Library' or 'Podcasts'
-#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:121
+#: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:167
 #, csharp-format
 msgid "{0} Folder"
 msgstr "{0} フォルダー"
@@ -1656,114 +1583,114 @@ msgstr "グループ"
 #. Catalog.GetString ("Music Library")
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:60
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/MusicGroupSource.cs:39
-#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:57
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:49
 msgid "Music"
 msgstr "音楽"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:66
-#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:60
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPMusicSource.cs:52
 msgid "Search your music"
 msgstr "音楽を検索"
 
 #. Misc section
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:80
-#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:66
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:89
+#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:62
 msgid "Miscellaneous"
 msgstr "その他のセクション"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:83
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:92
 msgid "_Sort an artist's albums by year, not title"
 msgstr "タイトルでなく年でアーティストのアルバムをソートする(_S)"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:93
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:102
 #, csharp-format
 msgid "{0} song"
 msgid_plural "{0} songs"
 msgstr[0] "{0} 曲"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:114
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:131
 msgid "Music Folder"
 msgstr "音楽フォルダー"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:119
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:95
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:136
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:107
 msgid "Favorites"
 msgstr "お気に入り"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:120
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:137
 msgid "Songs rated four and five stars"
 msgstr "4または5のスターで評価された曲"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:124
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:141
 msgid "Recent Favorites"
 msgstr "最近のお気に入り"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:125
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:142
 msgid "Songs listened to often in the past week"
 msgstr "この1週間で頻繁に聴いた曲"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:129
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:146
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/Sort.cs:95
 msgid "Recently Added"
 msgstr "最近追加した項目"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:130
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:147
 msgid "Songs imported within the last week"
 msgstr "1週間以内にインポートした曲"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:134
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:151
 msgid "Recently Played"
 msgstr "最近再生した"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:135
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:152
 msgid "Recently played songs"
 msgstr "最近再生した曲"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:139
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:156
 msgid "Unheard"
 msgstr "再生されていない曲"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:140
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:157
 msgid "Songs that have not been played or skipped"
 msgstr "再生していないかスキップした曲"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:147
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:164
 msgid "Neglected Favorites"
 msgstr "長く再生されていないお気に入り"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:148
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:165
 msgid "Favorites not played in over two months"
 msgstr "2ヶ月の間再生されていないお気に入り"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:152
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:169
 msgid "Least Favorite"
 msgstr "好きではない曲"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:153
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:170
 msgid "Songs rated one or two stars or that you have frequently skipped"
 msgstr "1つまたは2つのスターで評価されるか頻繁にスキップされる曲"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:157
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:174
 msgid "700 MB of Favorites"
 msgstr "お気に入りの曲700MB"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:158
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:175
 msgid "A data CD worth of favorite songs"
 msgstr "お気に入りの曲にする価値があるデータCD"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:163
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:180
 msgid "80 Minutes of Favorites"
 msgstr "お気に入りの曲80分"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:164
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:181
 msgid "An audio CD worth of favorite songs"
 msgstr "お気に入りの曲にする価値があるオーディオCD"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:169
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:186
 msgid "Unrated"
 msgstr "未評価"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:170
+#: ../src/Core/Banshee.Services/Banshee.Library/MusicLibrarySource.cs:187
 msgid "Songs that haven't been rated"
 msgstr "評価されていない曲"
 
@@ -1777,40 +1704,40 @@ msgid "Importing From {0}"
 msgstr "{0} からインポートしています"
 
 #. Catalog.GetString ("Video Library")
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:43
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:44
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/VideoGroupSource.cs:38
 msgid "Videos"
 msgstr "ビデオ"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:48
-#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:60
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:49
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:52
 msgid "Search your videos"
 msgstr "あなたのビデオを検索"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:65
-#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:77
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:66
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:69
 msgid "Produced By"
 msgstr "製作者"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:70
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:78
 #, csharp-format
 msgid "{0} video"
 msgid_plural "{0} videos"
 msgstr[0] "{0} ビデオ"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:90
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:102
 msgid "Videos Folder"
 msgstr "ビデオフォルダー"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:96
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:108
 msgid "Videos rated four and five stars"
 msgstr "4または5のスターで評価されたビデオ"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:100
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:112
 msgid "Unwatched"
 msgstr "注目されていない"
 
-#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:101
+#: ../src/Core/Banshee.Services/Banshee.Library/VideoLibrarySource.cs:113
 msgid "Videos that haven't been played yet"
 msgstr "まだ再生されていないビデオ"
 
@@ -1819,12 +1746,8 @@ msgid "Default player engine"
 msgstr "デフォルト再生エンジン"
 
 #: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:108
-msgid ""
-"No player engines were found. Please ensure Banshee has been cleanly "
-"installed."
-msgstr ""
-"再生エンジンが見つかりませんでした。Bansheeが正しくインストールされているかど"
-"うか確認してください。"
+msgid "No player engines were found. Please ensure Banshee has been cleanly installed."
+msgstr "再生エンジンが見つかりませんでした。Bansheeが正しくインストールされているかどうか確認してください。"
 
 #: ../src/Core/Banshee.Services/Banshee.MediaEngine/PlayerEngineService.cs:375
 msgid "Problem with Player Engine"
@@ -1840,9 +1763,7 @@ msgid "Initializing"
 msgstr "初期化中"
 
 #: ../src/Core/Banshee.Services/Banshee.MediaEngine/TranscoderService.cs:138
-msgid ""
-"Files are currently being converted to another format. Would you like to "
-"stop this?"
+msgid "Files are currently being converted to another format. Would you like to stop this?"
 msgstr "ファイルは現在他のフォーマットへ変換中です。これを停止しますか?"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataJob.cs:52
@@ -1854,44 +1775,24 @@ msgid "Sync _metadata between library and files"
 msgstr "ライブラリとファイル間でメタデータを同期(_M)"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:50
-msgid ""
-"Enable this option to have metadata in sync between your library and "
-"supported media files"
-msgstr ""
-"メタデータをサポートしているメディアファイルとライブラリ間で同期するにはこの"
-"オプションを有効にします"
+msgid "Enable this option to have metadata in sync between your library and supported media files"
+msgstr "メタデータをサポートしているメディアファイルとライブラリ間で同期するにはこのオプションを有効にします"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:55
 msgid "Sync _ratings between library and files"
 msgstr "ライブラリとファイル間で評価を同期(_R)"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:56
-msgid ""
-"Enable this option to have rating metadata synced between your library and "
-"supported audio files"
-msgstr ""
-"評価のメタデータをサポートしているオーディオファイルとライブラリ間で同期する"
-"にはこのオプションを有効にします"
+msgid "Enable this option to have rating metadata synced between your library and supported audio files"
+msgstr "評価のメタデータをサポートしているオーディオファイルとライブラリ間で同期するにはこのオプションを有効にします"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:61
 msgid "Sync play counts between library and files"
 msgstr "ライブラリとファイル間で再生回数を同期"
 
 #: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:62
-msgid ""
-"Enable this option to have playcount metadata synced between your library "
-"and supported audio files"
-msgstr ""
-"再生数のメタデータをサポートしているオーディオファイルとライブラリ間で同期す"
-"るにはこのオプションを有効にします"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:67
-msgid "_Update file and folder names"
-msgstr "ファイルとフォルダー名をアップデートする(_U)"
-
-#: ../src/Core/Banshee.Services/Banshee.Metadata/SaveTrackMetadataService.cs:68
-msgid "Rename files and folders according to media metadata"
-msgstr "メディアのメタデータに従いファイルとフォルダー名を変更します"
+msgid "Enable this option to have playcount metadata synced between your library and supported audio files"
+msgstr "再生数のメタデータをサポートしているオーディオファイルとライブラリ間で同期するにはこのオプションを有効にします"
 
 #: ../src/Core/Banshee.Services/Banshee.Networking/Network.cs:52
 msgid "There is no available network connection"
@@ -1910,12 +1811,8 @@ msgid "_Disable features requiring Internet access"
 msgstr "インターネットアクセスが必要な機能を無効にする(_D)"
 
 #: ../src/Core/Banshee.Services/Banshee.Networking/Network.cs:160
-msgid ""
-"Some features require a broadband Internet connection such as Last.fm or "
-"cover art fetching"
-msgstr ""
-"Last.fmやカバーアートの取得のようなブロードバンドインターネット接続が必要な機"
-"能があります"
+msgid "Some features require a broadband Internet connection such as Last.fm or cover art fetching"
+msgstr "Last.fmやカバーアートの取得のようなブロードバンドインターネット接続が必要な機能があります"
 
 #: ../src/Core/Banshee.Services/Banshee.Playlist/AbstractPlaylistSource.cs:153
 msgid "Search this playlist"
@@ -1983,11 +1880,7 @@ msgstr "拡張機能"
 msgid "File Policies"
 msgstr "ファイルポリシー"
 
-#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:58
-msgid "Co_py files to media folders when importing"
-msgstr "インポートしたファイルをメディアフォルダーへコピーする(_P)"
-
-#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:70
+#: ../src/Core/Banshee.Services/Banshee.Preferences/PreferenceService.cs:66
 msgid "Improve Banshee by sending anonymous usage data"
 msgstr "匿名の利用データを送信してBansheeの改良に役立てる"
 
@@ -2548,7 +2441,7 @@ msgstr "drm"
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:234
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:236
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:238
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:389
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:400
 msgid "Unknown"
 msgstr "Unknown"
 
@@ -2628,37 +2521,33 @@ msgstr "エラー"
 msgid "Details"
 msgstr "詳細情報"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:156
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:158
 msgid "Errors"
 msgstr "エラー"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:213
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:215
 msgid "Sort Playlists By"
 msgstr "プレイリストをソート"
 
 #. Translators: this is a noun, referring to the harddisk
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:223
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:225
 msgid "Drive"
 msgstr "ドライブ"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:247
-msgid "File Organization"
-msgstr "ファイル構成"
-
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:248
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:250
 msgid "Folder hie_rarchy"
 msgstr "フォルダー階層(_R)"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:249
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:251
 msgid "File _name"
 msgstr "ファイル名(_N)"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:701
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:703
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "{2}に{1}の{0}を追加しています"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:720
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:722
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "{2}から{1}の{0}を削除しています"
@@ -2689,16 +2578,20 @@ msgstr "オンラインメディア"
 msgid "Libraries"
 msgstr "ライブラリ"
 
-#: ../src/Core/Banshee.Services/Banshee.Streaming/RadioTrackInfo.cs:82
-#: ../src/Core/Banshee.Services/Banshee.Streaming/RadioTrackInfo.cs:91
+#: ../src/Core/Banshee.Services/Banshee.Streaming/RadioTrackInfo.cs:48
+msgid "Unknown Stream"
+msgstr "不明なストリーム"
+
+#: ../src/Core/Banshee.Services/Banshee.Streaming/RadioTrackInfo.cs:83
+#: ../src/Core/Banshee.Services/Banshee.Streaming/RadioTrackInfo.cs:92
 msgid "Error opening stream"
 msgstr "ストリームのオープンエラー"
 
-#: ../src/Core/Banshee.Services/Banshee.Streaming/RadioTrackInfo.cs:83
+#: ../src/Core/Banshee.Services/Banshee.Streaming/RadioTrackInfo.cs:84
 msgid "Could not open stream or playlist"
 msgstr "ストリームかプレイリストを開くことができません"
 
-#: ../src/Core/Banshee.Services/Banshee.Streaming/RadioTrackInfo.cs:92
+#: ../src/Core/Banshee.Services/Banshee.Streaming/RadioTrackInfo.cs:93
 msgid "Problem parsing playlist"
 msgstr "プレイリストの解析上の問題"
 
@@ -2752,12 +2645,8 @@ msgid "Cannot Reorder While Sorted"
 msgstr "ソート中の再整理はできません"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Collection.Gui/BaseTrackListView.cs:77
-msgid ""
-"To put the playlist in manual sort mode, click the currently sorted column "
-"header until the sort arrow goes away."
-msgstr ""
-"プレイリストを手動のソートモードにするには、ソートの矢印が消えるまで現在の"
-"ソート済み列のヘッダーをクリックします。"
+msgid "To put the playlist in manual sort mode, click the currently sorted column header until the sort arrow goes away."
+msgstr "プレイリストを手動のソートモードにするには、ソートの矢印が消えるまで現在のソート済み列のヘッダーをクリックします。"
 
 #. Translators: this is {disc number} of {disc count}
 #. Translators: this is {track number} of {track count}
@@ -2871,7 +2760,7 @@ msgstr "新しいプリセット"
 
 #. Translators: this is the window title when a track is playing
 #. {0} is the track title, {1} is the artist name
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/BaseClientWindow.cs:203
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/BaseClientWindow.cs:205
 #, csharp-format
 msgid "{0} by {1}"
 msgstr "{0} by {1}"
@@ -2908,11 +2797,11 @@ msgstr "並外れたマルチメディア管理、再生ソフト"
 #, csharp-format
 msgid ""
 "Copyright © 2005–{0} Novell, Inc.\n"
-"Copyright © 2005–{0} Others\n"
+"Copyright © 2005–{1} Others\n"
 "Copyright © 2005 Aaron Bockover"
 msgstr ""
 "Copyright © 2005–{0} Novell, Inc.\n"
-"Copyright © 2005–{0} Others\n"
+"Copyright © 2005–{1} Others\n"
 "Copyright © 2005 Aaron Bockover"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/AboutDialog.cs:104
@@ -2924,12 +2813,8 @@ msgid "Important tasks are running"
 msgstr "重要なタスクが実行中"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/ConfirmShutdownDialog.cs:53
-msgid ""
-"Closing Banshee now will cancel any currently running tasks. They cannot be "
-"resumed automatically the next time Banshee is run."
-msgstr ""
-"Bansheeを終了すると現在実行中のタスクが中止されます。それらは再起動時に再開さ"
-"れません。"
+msgid "Closing Banshee now will cancel any currently running tasks. They cannot be resumed automatically the next time Banshee is run."
+msgstr "Bansheeを終了すると現在実行中のタスクが中止されます。それらは再起動時に再開されません。"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/ConfirmShutdownDialog.cs:60
 msgid "Quit Anyway"
@@ -2944,12 +2829,8 @@ msgid "Make Banshee the default media player?"
 msgstr "Bansheeをデフォルトのメディアプレイヤーとしますか?"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/DefaultApplicationHelperDialog.cs:70
-msgid ""
-"Currently another program is configured as the default media player.  Would "
-"you prefer Banshee to be the default?"
-msgstr ""
-"現在他のプログラムがデフォルトのメディアプレイヤーです。Bansheeをデフォルトの"
-"メディアプレイヤーとして選択しますか?"
+msgid "Currently another program is configured as the default media player.  Would you prefer Banshee to be the default?"
+msgstr "現在他のプログラムがデフォルトのメディアプレイヤーです。Bansheeをデフォルトのメディアプレイヤーとして選択しますか?"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/DefaultApplicationHelperDialog.cs:72
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:443
@@ -3302,7 +3183,7 @@ msgstr "名前を入力してソースを切り替える"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:115
 #: ../src/Core/Banshee.ThickClient/Banshee.Preferences.Gui/PreferenceDialog.cs:50
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:85
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:87
 msgid "Preferences"
 msgstr "設定"
 
@@ -3385,9 +3266,7 @@ msgstr "プレイリストへ追加(_T)"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:131
 msgid "Append selected items to playlist or create new playlist from selection"
-msgstr ""
-"プレイリストへ選択したアイテムを追加するか、選択したアイテムから新しいプレイ"
-"リストを生成します"
+msgstr "プレイリストへ選択したアイテムを追加するか、選択したアイテムから新しいプレイリストを生成します"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:136
 msgid "Create new playlist from selected tracks"
@@ -3464,14 +3343,12 @@ msgstr "フォルダーが見つかりませんでした。"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:536
 msgid "Please check that the track's location is accessible by the system."
-msgstr ""
-"トラックの場所がシステムによってアクセス可能な場所であるか確認してください。"
+msgstr "トラックの場所がシステムによってアクセス可能な場所であるか確認してください。"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:607
 #, csharp-format
 msgid "Are you sure you want to permanently delete this item?"
-msgid_plural ""
-"Are you sure you want to permanently delete the selected {0} items?"
+msgid_plural "Are you sure you want to permanently delete the selected {0} items?"
 msgstr[0] "本当に選択した{0}アイテムを永久に削除しますか?"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:611
@@ -3486,8 +3363,7 @@ msgstr "{0} から選択を削除しますか?"
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:617
 #, csharp-format
 msgid "Are you sure you want to remove the selected item from your {1}?"
-msgid_plural ""
-"Are you sure you want to remove the selected {0} items from your {1}?"
+msgid_plural "Are you sure you want to remove the selected {0} items from your {1}?"
 msgstr[0] "本当に {1} から選択した {0} アイテムを削除しますか?"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/AlbumArtistEntry.cs:53
@@ -3495,19 +3371,12 @@ msgid "Com_pilation Album Artist:"
 msgstr "コンピレーションアルバムのアーティスト(_P):"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/AlbumArtistEntry.cs:57
-msgid ""
-"Check this if this track is part of an album with tracks by various artists"
-msgstr ""
-"このトラックがさまざまなアーティストによるトラックで構成されるアルバムの一部"
-"である場合、これをチェックします"
+msgid "Check this if this track is part of an album with tracks by various artists"
+msgstr "このトラックがさまざまなアーティストによるトラックで構成されるアルバムの一部である場合、これをチェックします"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/AlbumArtistEntry.cs:59
-msgid ""
-"This value will affect how this album is sorted; if you enter 'Various "
-"Artists' then the album will located with other albums that start with 'V'."
-msgstr ""
-"この値はアルバムをどのようにソートするかに影響します。あなたが'Various "
-"Artists'と入力したなら、アルバムは'V'で始まる他のアルバムと一緒に置かれます。"
+msgid "This value will affect how this album is sorted; if you enter 'Various Artists' then the album will located with other albums that start with 'V'."
+msgstr "この値はアルバムをどのようにソートするかに影響します。あなたが'Various Artists'と入力したなら、アルバムは'V'で始まる他のアルバムと一緒に置かれます。"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:44
 msgid "Basic Details"
@@ -3808,12 +3677,8 @@ msgid "Sync all field _values"
 msgstr "すべてのフィールドの値を同期する(_V)"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:319
-msgid ""
-"Apply the values of all common fields set for this track to all of the "
-"tracks selected in this editor"
-msgstr ""
-"このエディターで選択したすべてのトラックに、このトラックに設定した値を適用し"
-"ます"
+msgid "Apply the values of all common fields set for this track to all of the tracks selected in this editor"
+msgstr "このエディターで選択したすべてのトラックに、このトラックに設定した値を適用します"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/TrackEditorDialog.cs:419
 #, csharp-format
@@ -3884,11 +3749,6 @@ msgstr[0] "アクティブなタスクが実行中"
 msgid "{0}from{1} {2} {0}published{1} {3}"
 msgstr "{0}from{1} {2} {0}公開日{1} {3}"
 
-#. simply: "Chicago Public Radio" or whatever the artist name is
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.Widgets/TrackInfoDisplay.cs:543
-msgid "Unknown Stream"
-msgstr "不明なストリーム"
-
 #. Translators: {0} and {1} are markup so ignore them, {2} is the name of the radio station
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Widgets/TrackInfoDisplay.cs:546
 #, csharp-format
@@ -3940,8 +3800,7 @@ msgstr "この操作はまだ実行中です。停止しますか?"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Widgets/UserJobTile.cs:144
 #, csharp-format
-msgid ""
-"The '{0}' operation is still performing work. Would you like to stop it?"
+msgid "The '{0}' operation is still performing work. Would you like to stop it?"
 msgstr "'{0}'の処理がまだ実行中です。停止しますか?"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.Widgets/UserJobTile.cs:148
@@ -3998,12 +3857,8 @@ msgid "<big><b>Import Media to Library</b></big>"
 msgstr "<big><b>メディアをライブラリへインポート</b></big>"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/ImportDialog.cs:79
-msgid ""
-"Your media library is empty. You may import new music and videos into your "
-"library now, or choose to do so later."
-msgstr ""
-"あなたのメディアライブラリは空です。新しい音楽やビデオを今または後で選択して"
-"追加できます。"
+msgid "Your media library is empty. You may import new music and videos into your library now, or choose to do so later."
+msgstr "あなたのメディアライブラリは空です。新しい音楽やビデオを今または後で選択して追加できます。"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Library.Gui/ImportDialog.cs:89
 msgid "Import _from:"
@@ -4121,8 +3976,7 @@ msgstr "アルバムアーティストを表示"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:112
 msgid "Show only album artists, not artists with only single tracks"
-msgstr ""
-"アルバムアーティストのみを表示し、シングルトラックのアーティストは表示しない"
+msgstr "アルバムアーティストのみを表示し、シングルトラックのアーティストは表示しない"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/CompositeTrackSourceContents.cs:117
 msgid "Show Genre Filter"
@@ -4168,6 +4022,16 @@ msgstr "ブラウザーを表示"
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/FilteredListSourceContents.cs:116
 msgid "Show or hide the artist/album browser"
 msgstr "アーティスト/アルバムブラウザーを表示/隠す"
+
+#: ../src/Core/Banshee.WebBrowser/Banshee.WebBrowser/NavigationControl.cs:156
+msgid "This page is blocked because it is probably not the one you are looking for!"
+msgstr "おそらくあなたが捜しているものではないので、このページはブロックされました!"
+
+#. Translators: {0} is the URL of the web page that was requested
+#: ../src/Core/Banshee.WebBrowser/Banshee.WebBrowser/NavigationControl.cs:158
+#, csharp-format
+msgid "The security certificate for {0} is invalid."
+msgstr "{0}のセキュリティ証明書が無効です。"
 
 #: ../src/Core/Banshee.WebBrowser/Banshee.WebSource/WebBrowserShell.cs:121
 #, csharp-format
@@ -4215,25 +4079,25 @@ msgstr "ミュート"
 msgid "Full Volume"
 msgstr "最大"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:108
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:115
 msgid "Device"
 msgstr "デバイス"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:109
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:116
 msgid "Generation"
 msgstr "世代"
 
 #. FIXME
 #. AddDapProperty (Catalog.GetString ("Color"), "black");
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:114
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:121
 msgid "Capacity"
 msgstr "容量"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:115
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:122
 msgid "Available"
 msgstr "使用できます"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:116
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:123
 #: ../src/Dap/Banshee.Dap.Mtp/Banshee.Dap.Mtp/MtpSource.cs:141
 msgid "Serial number"
 msgstr "シリアル番号"
@@ -4243,37 +4107,37 @@ msgstr "シリアル番号"
 #. string [] capabilities = new string [ipod_device.ModelInfo.Capabilities.Count];
 #. ipod_device.ModelInfo.Capabilities.CopyTo (capabilities, 0);
 #. AddDapProperty (Catalog.GetString ("Capabilities"), String.Join (", ", capabilities));
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:123
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:130
 msgid "Supports cover art"
 msgstr "カバーアートをサポート"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:124
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:131
 msgid "Supports photos"
 msgstr "写真のサポート"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:453
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:465
 msgid "Track duration is zero"
 msgstr "トラックの時間が0です"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:556
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:571
 msgid "Syncing iPod"
 msgstr "iPodとの同期"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:557
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:572
 msgid "Preparing to synchronize..."
 msgstr "同期の準備中..."
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:560
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:575
 #, csharp-format
 msgid "Adding track {0} of {1}"
 msgstr "追加中 {1} 曲中 {0} 曲目"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:596
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:611
 #, csharp-format
 msgid "Removing track {0} of {1}"
 msgstr "{1}曲中{0}曲目を削除しています"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:649
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:664
 msgid "Writing media database"
 msgstr "メディアデータベースを書き込み中"
 
@@ -4287,48 +4151,44 @@ msgstr "{0} と同期"
 msgid "Devices"
 msgstr "デバイス"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:176
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:179
 msgid "Device Properties"
 msgstr "デバイスのプロパティ"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:200
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:203
 msgid "Product"
 msgstr "Product"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:201
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:204
 msgid "Vendor"
 msgstr "ベンダー"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:284
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:287
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:141
 #, csharp-format
 msgid "Loading {0}"
 msgstr "ロード中 {0}"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:370
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:381
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/ColumnCellYesNo.cs:37
 msgid "Yes"
 msgstr "はい"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:370
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:381
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/ColumnCellYesNo.cs:38
 msgid "No"
 msgstr "いいえ"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:391
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:402
 #, csharp-format
-msgid ""
-"The {0} format is not supported by the device, and no converter was found to "
-"convert it"
-msgstr ""
-"{0} フォーマットはそのデバイスではサポートしていません。またこのフォーマット"
-"を変換するコンバーターも見つかりません。"
+msgid "The {0} format is not supported by the device, and no converter was found to convert it"
+msgstr "{0} フォーマットはそのデバイスではサポートしていません。またこのフォーマットを変換するコンバーターも見つかりません。"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:397
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:408
 msgid "File format conversion support is not available"
 msgstr "ファイルフォーマット変換サポートは利用できません"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:423
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:434
 msgid "Error converting file"
 msgstr "ファイルの変換エラー"
 
@@ -4337,12 +4197,8 @@ msgid "Sync when first plugged in and when the libraries change"
 msgstr "初めて差し込んだときとライブラリが変更されたときに同期する"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:136
-msgid ""
-"Begin synchronizing the device as soon as the device is plugged in or the "
-"libraries change."
-msgstr ""
-"デバイスが差し込まれるかライブラリが変更されたらすぐにデバイスの同期を開始す"
-"る。"
+msgid "Begin synchronizing the device as soon as the device is plugged in or the libraries change."
+msgstr "デバイスが差し込まれるかライブラリが変更されたらすぐにデバイスの同期を開始する。"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:139
 msgid "Sync Preferences"
@@ -4373,7 +4229,7 @@ msgid "Audio"
 msgstr "オーディオ"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapInfoBar.cs:69
-#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:57
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPVideoSource.cs:49
 msgid "Video"
 msgstr "ビデオ"
 
@@ -4611,13 +4467,8 @@ msgid_plural "Merge the {0} selected discs into one book?"
 msgstr[0] "選択した {0} のディスクを1つのブックにまとめますか?"
 
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:144
-msgid ""
-"This will ensure the disc numbers are all set properly, and then set the "
-"author and book title for all tracks on all these discs to the values below"
-msgstr ""
-"これは、ディスク番号がすべて適切に設定されるのを確かにし、次に以下の値でこれ"
-"らすべてのディスク上にある、すべてのトラックの作者とブックタイトルを設定しま"
-"す"
+msgid "This will ensure the disc numbers are all set properly, and then set the author and book title for all tracks on all these discs to the values below"
+msgstr "これは、ディスク番号がすべて適切に設定されるのを確かにし、次に以下の値でこれらすべてのディスク上にある、すべてのトラックの作者とブックタイトルを設定します"
 
 #: ../src/Extensions/Banshee.Audiobook/Banshee.Audiobook/Actions.cs:153
 msgid "Author:"
@@ -4698,9 +4549,7 @@ msgid "_Automatically detect BPM for all songs"
 msgstr "すべての曲のBPMを自動的に検出する(_A)"
 
 #: ../src/Extensions/Banshee.Bpm/Banshee.Bpm/BpmService.cs:148
-msgid ""
-"Detect beats per minute (BPM) for all songs that don't already have a value "
-"set"
+msgid "Detect beats per minute (BPM) for all songs that don't already have a value set"
 msgstr "まだ値が設定されていないすべての曲のBPMを検出する"
 
 #: ../src/Extensions/Banshee.CoverArt/Banshee.CoverArt/CoverArtJob.cs:58
@@ -4730,19 +4579,13 @@ msgstr "戻る"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:101
 msgid ""
-"iTunes® 7 introduced new compatibility issues and currently only works with "
-"other iTunes® 7 clients.\n"
+"iTunes® 7 introduced new compatibility issues and currently only works with other iTunes® 7 clients.\n"
 "\n"
-"No third-party clients can connect to iTunes® music shares anymore. This is "
-"an intentional limitation by Apple in iTunes® 7 and newer, we apologize for "
-"the unfortunate inconvenience."
+"No third-party clients can connect to iTunes® music shares anymore. This is an intentional limitation by Apple in iTunes® 7 and newer, we apologize for the unfortunate inconvenience."
 msgstr ""
-"iTunes® 7は新しい互換性の問題を導入したため、他のiTunes® 7のクライアントとし"
-"か通信できません。\n"
+"iTunes® 7は新しい互換性の問題を導入したため、他のiTunes® 7のクライアントとしか通信できません。\n"
 "\n"
-"サードパーティーのクライアントはiTunes®音楽共有に接続できません。これはアップ"
-"ルがiTunes® 7以降に加えた意図的な制限です。ご不便をおかけして申し訳ありませ"
-"ん。"
+"サードパーティーのクライアントはiTunes®音楽共有に接続できません。これはアップルがiTunes® 7以降に加えた意図的な制限です。ご不便をおかけして申し訳ありません。"
 
 #: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapErrorView.cs:111
 msgid "Common reasons for connection failures:"
@@ -4927,24 +4770,16 @@ msgid "Duplicate Albums"
 msgstr "アルバムの重複"
 
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/AlbumDuplicateSolver.cs:47
-msgid ""
-"Displayed are albums that should likely be merged.  For each row, click the "
-"desired title to make it bold, or uncheck it to take no action."
-msgstr ""
-"おそらくマージすべきであろうアルバムが表示されています。 列ごとに、希望するタ"
-"イトルをクリックして太字にするか、何も実施しないようにチェックを外します。"
+msgid "Displayed are albums that should likely be merged.  For each row, click the desired title to make it bold, or uncheck it to take no action."
+msgstr "おそらくマージすべきであろうアルバムが表示されています。 列ごとに、希望するタイトルをクリックして太字にするか、何も実施しないようにチェックを外します。"
 
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/ArtistDuplicateSolver.cs:46
 msgid "Duplicate Artists"
 msgstr "アーティストの重複"
 
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/ArtistDuplicateSolver.cs:47
-msgid ""
-"Displayed are artists that should likely be merged.  For each row, click the "
-"desired name to make it bold, or uncheck it to take no action."
-msgstr ""
-"おそらくマージすべきであろうアーティストが表示されています。 列ごとに、希望す"
-"る名前をクリックして太字にするか、何も実施しないようにチェックを外します。"
+msgid "Displayed are artists that should likely be merged.  For each row, click the desired name to make it bold, or uncheck it to take no action."
+msgstr "おそらくマージすべきであろうアーティストが表示されています。 列ごとに、希望する名前をクリックして太字にするか、何も実施しないようにチェックを外します。"
 
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/FixActions.cs:50
 msgid "Fix Music Metadata..."
@@ -4967,12 +4802,8 @@ msgid "Duplicate Genres"
 msgstr "ジャンルの重複"
 
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/GenreDuplicateSolver.cs:47
-msgid ""
-"Displayed are genres that should likely be merged.  For each row, click the "
-"desired genre to make it bold, or uncheck it to take no action."
-msgstr ""
-"おそらくマージすべきであろうジャンルが表示されています。 列ごとに、希望する"
-"ジャンルをクリックして太字にするか、何も実施しないようにチェックを外します。"
+msgid "Displayed are genres that should likely be merged.  For each row, click the desired genre to make it bold, or uncheck it to take no action."
+msgstr "おそらくマージすべきであろうジャンルが表示されています。 列ごとに、希望するジャンルをクリックして太字にするか、何も実施しないようにチェックを外します。"
 
 #: ../src/Extensions/Banshee.Fixup/Banshee.Fixup/GenreDuplicateSolver.cs:77
 msgid " and "
@@ -5037,7 +4868,7 @@ msgstr "インターネットアーカイブからアイテムの詳細を取得
 
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/DetailsSource.cs:149
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/SearchSource.cs:190
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:301
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:309
 msgid "Try Again"
 msgstr "再実行"
 
@@ -5248,17 +5079,13 @@ msgstr "NASA"
 msgid "Library of Congress"
 msgstr "米国議会図書館"
 
+#: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HomeView.cs:136
+msgid "Examples:"
+msgstr "例:"
+
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HomeView.cs:148
-msgid ""
-"The Internet Archive, a 501(c)(3) non-profit, is building a digital library "
-"of Internet sites and other cultural artifacts in digital form. Like a paper "
-"library, we provide free access to researchers, historians, scholars, and "
-"the general public."
-msgstr ""
-"501(c)(3)の非営利組織であるインターネットアーカイブは、デジタルでインターネッ"
-"ト上のサイトと他の文化的遺産に関するデジタル図書館を構築しています。紙の図書"
-"館のように、私たちは研究者、歴史家、学者、および大衆へのフリーなアクセスを提"
-"供します。"
+msgid "The Internet Archive, a 501(c)(3) non-profit, is building a digital library of Internet sites and other cultural artifacts in digital form. Like a paper library, we provide free access to researchers, historians, scholars, and the general public."
+msgstr "501(c)(3)の非営利組織であるインターネットアーカイブは、デジタルでインターネット上のサイトと他の文化的遺産に関するデジタル図書館を構築しています。紙の図書館のように、私たちは研究者、歴史家、学者、および大衆へのフリーなアクセスを提供します。"
 
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HomeView.cs:151
 msgid "Visit the Internet Archive online at archive.org"
@@ -5571,12 +5398,8 @@ msgid "Edit radio station"
 msgstr "ラジオステーションを編集"
 
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/StationEditor.cs:97
-msgid ""
-"Enter the Genre, Title and URL of the radio station you wish to add. A "
-"description is optional."
-msgstr ""
-"追加したいラジオステーションのジャンルやタイトル、URLを入力します。説明はオプ"
-"ションです。"
+msgid "Enter the Genre, Title and URL of the radio station you wish to add. A description is optional."
+msgstr "追加したいラジオステーションのジャンルやタイトル、URLを入力します。説明はオプションです。"
 
 #: ../src/Extensions/Banshee.InternetRadio/Banshee.InternetRadio/StationEditor.cs:118
 msgid "Station Genre:"
@@ -5605,31 +5428,53 @@ msgstr "説明:"
 msgid "Rating:"
 msgstr "評価:"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:129
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:136
 msgid "_Last.fm"
 msgstr "_Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:130
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:137
 msgid "Configure the Audioscrobbler plugin"
 msgstr "Audioscrobblerプラグインの設定"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:133
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:140
 msgid "Visit _User Profile Page"
 msgstr "ユーザーのプロフィールページにアクセス(_U)"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:134
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:164
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:141
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:172
 msgid "Visit Your Last.fm Profile Page"
 msgstr "Last.fmのプロフィールページにアクセス"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:139
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:91
-msgid "_Enable Song Reporting"
-msgstr "曲の情報送信を有効にする(_E)"
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:146
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:93
+msgid "_Enable Song Reporting From Banshee"
+msgstr "Bansheeで再生した曲の情報送信を有効にする(_E)"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:140
-msgid "Enable song reporting"
-msgstr "曲の情報送信を有効にする"
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:147
+msgid "Enable song reporting From Banshee"
+msgstr "Bansheeで再生した曲の情報送信を有効にする"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:152
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:98
+msgid "_Enable Song Reporting From Device"
+msgstr "デバイスで再生した曲の情報送信を有効にする(_E)"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:153
+msgid "Enable song reporting From Device"
+msgstr "デバイスで再生した曲の情報送信を有効にする"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:402
+msgid "Scrobbling from device"
+msgstr "デバイスからScrobblingしています"
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:403
+msgid "Scrobbling from device..."
+msgstr "デバイスからScrobblingしています..."
+
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Audioscrobbler/AudioscrobblerService.cs:414
+#, csharp-format
+msgid "Processing track {0} of {1} ..."
+msgstr "{1}曲中{0}曲目を処理しています..."
 
 #: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmActions.cs:66
 msgid "Connect"
@@ -5714,50 +5559,45 @@ msgstr "http://www.last.fm/music/{0}/+videos"
 msgid "http://en.wikipedia.org/wiki/{0}"
 msgstr "http://ja.wikipedia.org/wiki/{0}"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:78
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:80
 msgid "Account"
 msgstr "アカウント"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:80
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:270
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:82
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:278
 msgid "_Username"
 msgstr "ユーザー名(_U)"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:160
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:168
 #: ../src/Libraries/Lastfm.Gui/Lastfm.Gui/AccountLoginForm.cs:86
 msgid "Sign up for Last.fm"
 msgstr "Last.fmにサインアップする"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:254
-msgid ""
-"Open Last.fm in a browser, giving you the option to authorize Banshee to "
-"work with your account"
-msgstr ""
-"Last.fmをブラウザーで開き、あなたのアカウントでBansheeが動作をおこなうことを"
-"許可するオプションを与えてください"
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:262
+msgid "Open Last.fm in a browser, giving you the option to authorize Banshee to work with your account"
+msgstr "Last.fmをブラウザーで開き、あなたのアカウントでBansheeが動作をおこなうことを許可するオプションを与えてください"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:265
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:273
 #: ../src/Libraries/Lastfm.Gui/Lastfm.Gui/AccountLoginDialog.cs:49
 msgid "Log in to Last.fm"
 msgstr "Last.fmへログイン"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:286
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:294
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:321
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:294
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:298
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:335
 msgid "You need to allow Banshee to access your Last.fm account."
-msgstr ""
-"BansheeがあなたのLast.fmアカウントにアクセスするのを許可する必要があります。"
+msgstr "BansheeがあなたのLast.fmアカウントにアクセスするのを許可する必要があります。"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:296
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:304
 msgid "Finish Logging In"
 msgstr "ログインを完了"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:310
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:318
 #, csharp-format
 msgid "You are logged in to Last.fm as the user <i>{0}</i>."
 msgstr "ユーザー<i>{0}</i>でLast.fmにログインしました。"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:313
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmPreferences.cs:321
 msgid "Log out of Last.fm"
 msgstr "Last.fmのログアウト"
 
@@ -6059,8 +5899,7 @@ msgstr "Miro Guide"
 
 #: ../src/Extensions/Banshee.MiroGuide/Banshee.MiroGuide/MiroGuideSource.cs:97
 msgid "Discover interesting podcasts in the Miro Guide podcast directory!"
-msgstr ""
-"興味があるポッドキャストをMiro Guideポッドキャストディレクトリから発見します!"
+msgstr "興味があるポッドキャストをMiro Guideポッドキャストディレクトリから発見します!"
 
 #: ../src/Extensions/Banshee.MiroGuide/Banshee.MiroGuide/MiroGuideSource.cs:100
 msgid "Open Miro Guide"
@@ -6073,6 +5912,11 @@ msgstr "ポッドキャストの検索"
 #: ../src/Extensions/Banshee.MiroGuide/Banshee.MiroGuide/View.cs:58
 msgid "Search for video podcasts"
 msgstr "ビデオポッドキャストの検索"
+
+#: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:132
+#: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:110
+msgid "_Close"
+msgstr "閉じる(_C)"
 
 #: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:139
 msgid "_Show Notifications"
@@ -6087,12 +5931,8 @@ msgid "Still Running"
 msgstr "実行中"
 
 #: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:348
-msgid ""
-"Banshee was closed to the notification area. Use the <i>Quit</i> option to "
-"end your session."
-msgstr ""
-"Bansheeのウィンドウが閉じられました。アプリケーションを終了するには<i>終了</"
-"i>オプションを使ってください。"
+msgid "Banshee was closed to the notification area. Use the <i>Quit</i> option to end your session."
+msgstr "Bansheeのウィンドウが閉じられました。アプリケーションを終了するには<i>終了</i>オプションを使ってください。"
 
 #: ../src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea/NotificationAreaService.cs:483
 #: ../src/Extensions/Banshee.SoundMenu/Banshee.SoundMenu/SoundMenuService.cs:326
@@ -6147,9 +5987,7 @@ msgstr "ドライブを初期化中"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdRipper.cs:124
 #, csharp-format
-msgid ""
-"<i>{0}</i> is still being imported into the music library. Would you like to "
-"stop it?"
+msgid "<i>{0}</i> is still being imported into the music library. Would you like to stop it?"
 msgstr "<i>{0}</i>は音楽ライブラリにインポート中です。停止しますか?"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdRipper.cs:254
@@ -6173,12 +6011,8 @@ msgid "_Automatically import audio CDs when inserted"
 msgstr "CDを挿入したら自動的にインポートする(_A)"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:115
-msgid ""
-"When an audio CD is inserted, automatically begin importing it if metadata "
-"can be found and it is not already in the library."
-msgstr ""
-"CDを挿入したら、メタデータが存在しメタデータがライブラリに無い場合は自動的に"
-"インポートします。"
+msgid "When an audio CD is inserted, automatically begin importing it if metadata can be found and it is not already in the library."
+msgstr "CDを挿入したら、メタデータが存在しメタデータがライブラリに無い場合は自動的にインポートします。"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:119
 msgid "_Eject when done importing"
@@ -6193,12 +6027,8 @@ msgid "Use error correction when importing"
 msgstr "インポート時に誤り補正を使う"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:124
-msgid ""
-"Error correction tries to work around problem areas on a disc, such as "
-"surface scratches, but will slow down importing substantially."
-msgstr ""
-"エラー訂正は、表面上の傷の様なディスク上の問題があるエリアへの回避策を試しま"
-"すが、インポートは大幅に遅くなります。"
+msgid "Error correction tries to work around problem areas on a disc, such as surface scratches, but will slow down importing substantially."
+msgstr "エラー訂正は、表面上の傷の様なディスク上の問題があるエリアへの回避策を試しますが、インポートは大幅に遅くなります。"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdService.cs:192
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:311
@@ -6227,9 +6057,7 @@ msgstr "トラック情報を取得できませんでした"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:175
 msgid "Automatic import off since this album is already in the Music Library."
-msgstr ""
-"このアルバムはすでに音楽ライブラリにあるため、自動インポートをオフにしまし"
-"た。"
+msgstr "このアルバムはすでに音楽ライブラリにあるため、自動インポートをオフにしました。"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.AudioCd/AudioCdSource.cs:198
 msgid "Could not import CD"
@@ -6253,7 +6081,14 @@ msgstr "ディスクの取り出し"
 msgid "Import ‟{0}”"
 msgstr "‟{0}” のインポート"
 
-#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc/DiscSource.cs:171
+#. Translators: {0} is the type of disc, "Audio CD" or "DVD"
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc/DiscSource.cs:154
+#, csharp-format
+msgid "Ejecting {0}..."
+msgstr "{0} を取り出しています..."
+
+#. Translators: {0} is the type of disc, "Audio CD" or "DVD". {1} is the error message.
+#: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc/DiscSource.cs:173
 #, csharp-format
 msgid "Could not eject {0}: {1}"
 msgstr "取り出しできません {0}: {1}"
@@ -6267,8 +6102,8 @@ msgid "Navigate to menu"
 msgstr "メニューの操作"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:38
-msgid "Dvd"
-msgstr "Dvd"
+msgid "DVD"
+msgstr "DVD"
 
 #: ../src/Extensions/Banshee.OpticalDisc/Banshee.OpticalDisc.Dvd/DvdSource.cs:63
 msgid "DVD Preferences"
@@ -6320,26 +6155,16 @@ msgstr "iTunesミュージックディレクトリを指定"
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportDialogs.cs:196
 #, csharp-format
-msgid ""
-"The iTunes library refers to your music directory as \"{0}\" but Banshee was "
-"not able to infer the location of this directory. Please locate it."
-msgstr ""
-"iTunesライブラリはあなたの音楽ディレクトリを \"{0}\" として参照しますが、"
-"Bansheeはこのディレクトリの場所を類推することができませんでした。場所を指定し"
-"てください。"
+msgid "The iTunes library refers to your music directory as \"{0}\" but Banshee was not able to infer the location of this directory. Please locate it."
+msgstr "iTunesライブラリはあなたの音楽ディレクトリを \"{0}\" として参照しますが、Bansheeはこのディレクトリの場所を類推することができませんでした。場所を指定してください。"
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:74
 msgid "iTunes Media Player"
 msgstr "iTunes"
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:134
-msgid ""
-"Banshee is not familiar with this version of the iTunes library format. "
-"Importing may or may not work as expected, or at all. Would you like to "
-"attempt to import anyway?"
-msgstr ""
-"BansheeはこのバージョンのiTunesライブラリフォーマットは理解していません。イン"
-"ポートの動作はまったく予期できません。それでもインポートしてみますか?"
+msgid "Banshee is not familiar with this version of the iTunes library format. Importing may or may not work as expected, or at all. Would you like to attempt to import anyway?"
+msgstr "BansheeはこのバージョンのiTunesライブラリフォーマットは理解していません。インポートの動作はまったく予期できません。それでもインポートしてみますか?"
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:439
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/RhythmboxPlayerImportSource.cs:235
@@ -6426,11 +6251,11 @@ msgstr "終了時に再生キューをクリアする"
 msgid "Remove From Play Queue"
 msgstr "再生キューから削除"
 
-#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:965
+#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:967
 msgid "Number of _played songs to show"
 msgstr "再生した曲の表示数(_P)"
 
-#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:971
+#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:973
 msgid "Number of _upcoming songs to show"
 msgstr "これから再生する曲の表示数(_U)"
 
@@ -6621,12 +6446,8 @@ msgid "Check periodically for new episodes"
 msgstr "新しいエピソードを定期的に確認"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastFeedPropertiesDialog.cs:106
-msgid ""
-"If checked, Banshee will check every hour to see if this podcast has new "
-"episodes"
-msgstr ""
-"チェックした場合、Bansheeはポッドキャストに新しいエピソードがないか1時間毎に"
-"確認します"
+msgid "If checked, Banshee will check every hour to see if this podcast has new episodes"
+msgstr "チェックした場合、Bansheeはポッドキャストに新しいエピソードがないか1時間毎に確認します"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastFeedPropertiesDialog.cs:109
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastSubscribeDialog.cs:136
@@ -6690,8 +6511,7 @@ msgid "Subscribe to New Podcast"
 msgstr "新しいポッドキャストを購読"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/PodcastSubscribeDialog.cs:103
-msgid ""
-"Please enter the URL of the podcast to which you would like to subscribe."
+msgid "Please enter the URL of the podcast to which you would like to subscribe."
 msgstr "購読したいポッドキャストのURLを入力してください。"
 
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/PodcastManager/Dialog/SyncPreferenceComboBox.cs:41
@@ -6760,11 +6580,11 @@ msgstr "SQLモニターを終了"
 msgid "Track Preview"
 msgstr "Track Preview"
 
-#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPContainerSource.cs:42
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPContainerSource.cs:39
 msgid "Shared Media"
 msgstr "共有済みメディア"
 
-#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPServerSource.cs:55
+#: ../src/Extensions/Banshee.UPnPClient/Banshee.UPnPClient/UPnPServerSource.cs:52
 msgid "UPnP Share"
 msgstr "UPnP共有"
 
@@ -6979,98 +6799,107 @@ msgstr "保存してログイン"
 msgid "Authorize for Last.fm"
 msgstr "Last.fmの許可"
 
-#: ../src/Libraries/Lastfm/Lastfm/AudioscrobblerConnection.cs:449
-msgid ""
-"Last.fm username is invalid or Banshee is not authorized to access your "
-"account."
-msgstr ""
-"Last.fmのユーザー名が無効か、Bansheeがあなたのアカウントでのアクセスを許可さ"
-"れていません"
-
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:271
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:275
 msgid "This service does not exist."
 msgstr "このサービスは存在しません。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:275
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:279
 msgid "Stations are only available to paying Last.fm subscribers."
 msgstr "ステーションはLast.fmの有料加入者のみ利用できます。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:277
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:281
 msgid "This station is not available."
 msgstr "このステーションは利用できません。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:279
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:283
 msgid "The request is missing a required parameter."
 msgstr "このリクエストは必要なパラメーターが足りません。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:281
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:285
 msgid "The specified resource is invalid."
 msgstr "指定したリソースが無効です。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:283
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:287
 msgid "Server error, please try again later."
 msgstr "サーバーエラーです。しばらくしてから再実行してください。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:285
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:289
 msgid "Invalid authentication information, please re-authenticate."
 msgstr "認証情報が無効です、再認証を行ってください。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:287
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:291
 msgid "The API key used by this application is invalid."
 msgstr "このアプリケーションで使われているAPIキーは無効です。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:289
-msgid ""
-"The streaming system is offline for maintenance, please try again later."
-msgstr ""
-"ストリーミングシステムはメンテナンス中のためオフラインです。あとで試してみて"
-"ください。"
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:293
+msgid "The streaming system is offline for maintenance, please try again later."
+msgstr "ストリーミングシステムはメンテナンス中のためオフラインです。あとで試してみてください。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:291
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:295
 msgid "The method signature is invalid."
 msgstr "署名方式が無効です。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:296
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:300
 msgid "There is not enough content to play this station."
 msgstr "このステーションを再生する十分なコンテンツはありません。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:298
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:302
 msgid "This group does not have enough members for radio."
 msgstr "このグループはラジオに十分なメンバーがいません。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:300
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:304
 msgid "This artist does not have enough fans for radio."
 msgstr "このアーティストはラジオでは十分にfanがいません。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:302
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:306
 msgid "There are not enough neighbours for this station."
 msgstr "このステーションには十分なご近所さんがいません。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:304
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:308
+msgid "This user is not allowed to listen to radio during peak usage"
+msgstr "このユーザーは、利用時のピークにラジオを聞くことが許可されていません"
+
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:310
+msgid "Radio station not found"
+msgstr "ラジオステーションが見つかりませんでした"
+
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:312
+msgid "This application is not allowed to make requests to the web services"
+msgstr "このアプリケーションはこのウェブサービスへのリクエストを許可されていません"
+
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:314
+msgid "This type of request is no longer supported"
+msgstr "このタイプのリクエストはすでにサポートしていません"
+
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:316
+msgid "Your IP has made too many requests in a short period, exceeding our API guidelines"
+msgstr "このIPアドレスは短期間で多くのリクエストを送信したので、APIガイドラインを超過しています"
+
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:318
 msgid "There was an unknown error."
 msgstr "不明なエラーが発生しました。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:313
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:327
 msgid "Not connected to Last.fm."
 msgstr "Last.fmへ接続できません。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:315
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:329
 msgid "Account details are needed before you can connect to Last.fm"
 msgstr "Last.fmへ接続する前にアカウントの設定が必要です"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:317
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:331
 msgid "No network connection detected."
 msgstr "ネットワーク接続が検出されませんでした。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:319
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:333
 msgid "Last.fm username is invalid."
 msgstr "Last.fmのユーザー名が無効です。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:323
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:337
 msgid "Connecting to Last.fm."
 msgstr "Last.fmへ接続しています。"
 
-#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:325
+#: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:339
 msgid "Connected to Last.fm."
 msgstr "Last.fmへ接続しました。"
 
@@ -7079,6 +6908,12 @@ msgstr "Last.fmへ接続しました。"
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:103
 msgid "Unknown Podcast"
 msgstr "不明なポッドキャスト"
+
+#~ msgid "Dvd"
+#~ msgstr "Dvd"
+
+#~ msgid "Last.fm username is invalid or Banshee is not authorized to access your account."
+#~ msgstr "Last.fmのユーザー名が無効か、Bansheeがあなたのアカウントでのアクセスを許可されていません"
 
 #~ msgid "The track's rating was set differently on the device and in Banshee"
 #~ msgstr "このトラックの評価はデバイスとBansheeで異なっています"
@@ -7108,8 +6943,7 @@ msgstr "不明なポッドキャスト"
 #~ msgstr "メタデータをファイルに書き込む(_M)"
 
 #~ msgid "Save tags and other metadata inside supported media files"
-#~ msgstr ""
-#~ "タグや他のメタデータをサポートしているメディアファイル内に保存します"
+#~ msgstr "タグや他のメタデータをサポートしているメディアファイル内に保存します"
 
 #~ msgid "Write _ratings to files"
 #~ msgstr "ファイルに評価を書き込む(_R)"
@@ -7120,12 +6954,8 @@ msgstr "不明なポッドキャスト"
 #~ msgid "Write _ratings and play counts to files"
 #~ msgstr "評価と再生数をファイルに書き込む(_R)"
 
-#~ msgid ""
-#~ "Enable this option to save rating and play count metadata inside "
-#~ "supported audio files whenever the rating is changed."
-#~ msgstr ""
-#~ "評価が変更されたらいつでも、サポートされた音楽ファイルの内部にあるメタデー"
-#~ "タに評価と再生数を保存するにはこのオプションを有効にします。"
+#~ msgid "Enable this option to save rating and play count metadata inside supported audio files whenever the rating is changed."
+#~ msgstr "評価が変更されたらいつでも、サポートされた音楽ファイルの内部にあるメタデータに評価と再生数を保存するにはこのオプションを有効にします。"
 
 #~ msgid "Import _ratings"
 #~ msgstr "評価のインポート(_R)"
@@ -7142,12 +6972,8 @@ msgstr "不明なポッドキャスト"
 #~ msgid "Could not create 'audioconvert' plugin"
 #~ msgstr " 'audioconvert'プラグインを生成できませんでした"
 
-#~ msgid ""
-#~ "Eliminate the small playback gap on track change.  Useful for concept "
-#~ "albums and classical music."
-#~ msgstr ""
-#~ "トラック変更時の無音部分を取り除きます。コンセプトアルバムやクラシック音楽"
-#~ "などに役に立ちます"
+#~ msgid "Eliminate the small playback gap on track change.  Useful for concept albums and classical music."
+#~ msgstr "トラック変更時の無音部分を取り除きます。コンセプトアルバムやクラシック音楽などに役に立ちます"
 
 #~ msgid "Ejecting audio CD..."
 #~ msgstr "オーディオCDを取り出しています..."
@@ -7155,16 +6981,11 @@ msgstr "不明なポッドキャスト"
 #~ msgid "Could not eject audio CD: {0}"
 #~ msgstr "オーディオCDを取り出せません: {0}"
 
-#~ msgid ""
-#~ "Simplify the Now Playing interface by hiding the source list and more"
+#~ msgid "Simplify the Now Playing interface by hiding the source list and more"
 #~ msgstr "Simplifyはソースリストなどを隠したNow Playingインターフェースです"
 
-#~ msgid ""
-#~ "There was an error intializing MTP device support.  See http://www."
-#~ "banshee-project.org/Guide/DAPs/MTP for more information."
-#~ msgstr ""
-#~ "MTPデバイスサポートの初期化でエラーがあります。更なる情報は http://www."
-#~ "banshee-project.org/Guide/DAPs/MTP を見てください。"
+#~ msgid "There was an error intializing MTP device support.  See http://www.banshee-project.org/Guide/DAPs/MTP for more information."
+#~ msgstr "MTPデバイスサポートの初期化でエラーがあります。更なる情報は http://www.banshee-project.org/Guide/DAPs/MTP を見てください。"
 
 #~ msgid "iPod Support"
 #~ msgstr "iPodサポート"
@@ -7218,19 +7039,13 @@ msgstr "不明なポッドキャスト"
 #~ msgstr "iPodを読み込めません"
 
 #~ msgid ""
-#~ "You have used this iPod with a version of iTunes that saves a version of "
-#~ "the song database for your iPod that is too new for Banshee to "
-#~ "recognize.\n"
+#~ "You have used this iPod with a version of iTunes that saves a version of the song database for your iPod that is too new for Banshee to recognize.\n"
 #~ "\n"
-#~ "Banshee can rebuild your database, but you might lose your settings and "
-#~ "all the content in the device (be sure to backup your data first). Using "
-#~ "Banshee and iTunes with the same iPod is not recommended."
+#~ "Banshee can rebuild your database, but you might lose your settings and all the content in the device (be sure to backup your data first). Using Banshee and iTunes with the same iPod is not recommended."
 #~ msgstr ""
-#~ "あなたが利用している、iPodに付属する曲データベースのバージョンを保存してい"
-#~ "るiTunesのバージョンは、Bansheeが認識するには新しすぎます。\n"
+#~ "あなたが利用している、iPodに付属する曲データベースのバージョンを保存しているiTunesのバージョンは、Bansheeが認識するには新しすぎます。\n"
 #~ "\n"
-#~ "Bansheeはデータベースを再構築することができますが、いくつかの設定が失われ"
-#~ "ます。BansheeとiTunesを同じiPodで利用することは推奨されません。"
+#~ "Bansheeはデータベースを再構築することができますが、いくつかの設定が失われます。BansheeとiTunesを同じiPodで利用することは推奨されません。"
 
 #~ msgid "Learn more about Banshee's iPod support"
 #~ msgstr "BansheeのiPodサポートについて知る"
@@ -7248,9 +7063,7 @@ msgstr "不明なポッドキャスト"
 #~ msgstr "この理由は何ですか?"
 
 #~ msgid "Your iPod is mounted read only. Banshee can not restore your iPod."
-#~ msgstr ""
-#~ "あなたのiPodは読み込み専用でマウントされました。BansheeはあなたのiPodをリ"
-#~ "ストアできません。"
+#~ msgstr "あなたのiPodは読み込み専用でマウントされました。BansheeはあなたのiPodをリストアできません。"
 
 #~ msgid "Rebuild iPod Database..."
 #~ msgstr "iPodのデータベースを再構築する..."
@@ -7259,13 +7072,11 @@ msgstr "不明なポッドキャスト"
 #~ msgstr "iPodのデータベースの再構築を確認"
 
 #~ msgid ""
-#~ "Rebuilding your iPod database may take some time. Also note that any "
-#~ "playlists you have on your iPod will be lost.\n"
+#~ "Rebuilding your iPod database may take some time. Also note that any playlists you have on your iPod will be lost.\n"
 #~ "\n"
 #~ "Are you sure you want to rebuild your iPod database?"
 #~ msgstr ""
-#~ "iPodのデータベースの再構築には時間がかかるかもしれません。また、iPod上にあ"
-#~ "るあなたのプレイリストは失われます。\n"
+#~ "iPodのデータベースの再構築には時間がかかるかもしれません。また、iPod上にあるあなたのプレイリストは失われます。\n"
 #~ "本当にiPodのデータベースを再構築してもよろしいですか?"
 
 #~ msgid "Rebuild Database"
@@ -7277,34 +7088,20 @@ msgstr "不明なポッドキャスト"
 #~ msgid "GIO IO and Hardware backends"
 #~ msgstr "GIO IOとハードウェアバックエンド"
 
-#~ msgid ""
-#~ "Backend providers for the GNOME platform. Includes GConf support and "
-#~ "general GNOME integration."
-#~ msgstr ""
-#~ "GNOMEプラットフォーム向けのバックエンドを提供します。これにはGConfサポート"
-#~ "や一般的なGNOME統合が含まれます。"
+#~ msgid "Backend providers for the GNOME platform. Includes GConf support and general GNOME integration."
+#~ msgstr "GNOMEプラットフォーム向けのバックエンドを提供します。これにはGConfサポートや一般的なGNOME統合が含まれます。"
 
-#~ msgid ""
-#~ "GStreamer multimedia services including playback, CD ripping, and "
-#~ "transcoding."
-#~ msgstr ""
-#~ "再生・CDリッピング・トランスコーディングを含むGStreamerマルチメディアサー"
-#~ "ビス"
+#~ msgid "GStreamer multimedia services including playback, CD ripping, and transcoding."
+#~ msgstr "再生・CDリッピング・トランスコーディングを含むGStreamerマルチメディアサービス"
 
 #~ msgid "Provides hardware support through HAL."
 #~ msgstr "HALを通してハードウェアサポートを提供します。"
 
-#~ msgid ""
-#~ "Provides an X11 backend for video support, which enables proper "
-#~ "fullscreen support."
-#~ msgstr ""
-#~ "適切なフルスクリーンサポートを有効にするビデオサポート向けのX11バックエン"
-#~ "ドを提供します。"
+#~ msgid "Provides an X11 backend for video support, which enables proper fullscreen support."
+#~ msgstr "適切なフルスクリーンサポートを有効にするビデオサポート向けのX11バックエンドを提供します。"
 
-#~ msgid ""
-#~ "Backend providers for the OSX platform. Includes general OSX integration."
-#~ msgstr ""
-#~ "一般的なOSX統合を含むOSXプラットフォーム向けのバックエンドプロバイダ"
+#~ msgid "Backend providers for the OSX platform. Includes general OSX integration."
+#~ msgstr "一般的なOSX統合を含むOSXプラットフォーム向けのバックエンドプロバイダ"
 
 #~ msgid "Provides POSIX/UNIX support, including IO."
 #~ msgstr "IOを含むPOSIX/UNIXサポートを提供します。"
@@ -7322,8 +7119,7 @@ msgstr "不明なポッドキャスト"
 #~ msgstr "デジタルメディアプレイヤーのサポート"
 
 #~ msgid "Provides general support for many kinds of media player devices."
-#~ msgstr ""
-#~ "様々な種類のメディアプレイヤーデバイス向けの一般的なサポートを提供します。"
+#~ msgstr "様々な種類のメディアプレイヤーデバイス向けの一般的なサポートを提供します。"
 
 #~ msgid "MeeGo Support"
 #~ msgstr "MeeGoサポート"
@@ -7331,12 +7127,8 @@ msgstr "不明なポッドキャスト"
 #~ msgid "Provides MeeGo integration, including a custom media panel."
 #~ msgstr "カスタムメディアパネルを含むMeeGo統合を提供します。"
 
-#~ msgid ""
-#~ "Provides a source that displays embedded video and provides fullscreen "
-#~ "video playback and controls."
-#~ msgstr ""
-#~ "埋め込まれたビデオの表示を行うソースやフルスクリーンビデオの再生やコント"
-#~ "ロールを提供します。"
+#~ msgid "Provides a source that displays embedded video and provides fullscreen video playback and controls."
+#~ msgstr "埋め込まれたビデオの表示を行うソースやフルスクリーンビデオの再生やコントロールを提供します。"
 
 #~ msgid "Remote Audio"
 #~ msgstr "リモート・オーディオ"
@@ -7353,8 +7145,7 @@ msgstr "不明なポッドキャスト"
 #~ msgid "SQL Debug Console"
 #~ msgstr "SQLデバッグコンソール"
 
-#~ msgid ""
-#~ "Provides a UI for monitoring Banshee's SQL usage, and running queries."
+#~ msgid "Provides a UI for monitoring Banshee's SQL usage, and running queries."
 #~ msgstr "BansheeのSQL利用状況や、実行中のクエリのモニタ用UIを提供します。"
 
 #~ msgid "Debug"
