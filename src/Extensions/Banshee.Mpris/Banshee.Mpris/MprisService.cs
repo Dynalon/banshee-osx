@@ -32,6 +32,8 @@ using System;
 using org.freedesktop.DBus;
 using DBus;
 using Hyena;
+
+using Banshee.Gui;
 using Banshee.MediaEngine;
 using Banshee.PlaybackController;
 using Banshee.Playlist;
@@ -70,6 +72,12 @@ namespace Banshee.Mpris
             ServiceManager.SourceManager.SourceUpdated += OnSourceUpdated;
             ServiceManager.PlaybackController.SourceChanged += OnPlayingSourceChanged;
 
+            var interface_service = ServiceManager.Get<InterfaceActionService> ();
+            var fullscreen_action = interface_service.ViewActions["FullScreenAction"];
+            if (fullscreen_action != null) {
+                fullscreen_action.Activated += OnFullScreenToggled;
+            }
+
             player = new MediaPlayer();
             Bus.Session.Register (MediaPlayer.Path, player);
 
@@ -91,6 +99,12 @@ namespace Banshee.Mpris
             ServiceManager.SourceManager.SourceRemoved -= OnSourceCountChanged;
             ServiceManager.SourceManager.SourceUpdated -= OnSourceUpdated;
             ServiceManager.PlaybackController.SourceChanged -= OnPlayingSourceChanged;
+
+            var interface_service = ServiceManager.Get<InterfaceActionService> ();
+            var fullscreen_action = interface_service.ViewActions["FullScreenAction"];
+            if (fullscreen_action != null) {
+                fullscreen_action.Activated -= OnFullScreenToggled;
+            }
 
             Bus.Session.ReleaseName (bus_name);
         }
@@ -142,6 +156,11 @@ namespace Banshee.Mpris
         private void OnPlayingSourceChanged (object o, EventArgs args)
         {
             player.AddPropertyChange (PlaylistProperties.ActivePlaylist);
+        }
+
+        private void OnFullScreenToggled (object o, EventArgs args)
+        {
+            player.AddPropertyChange (MediaPlayerProperties.Fullscreen);
         }
 
         string IService.ServiceName {

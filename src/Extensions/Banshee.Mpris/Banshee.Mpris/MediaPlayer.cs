@@ -52,6 +52,7 @@ namespace Banshee.Mpris
         private static string playlists_interface_name = "org.mpris.MediaPlayer2.Playlists";
         private PlaybackControllerService playback_service;
         private PlayerEngineService engine_service;
+        private Gtk.ToggleAction fullscreen_action;
         private Dictionary<string, AbstractPlaylistSource> playlist_sources;
         private Dictionary<string, object> changed_properties;
         private List<string> invalidated_properties;
@@ -86,6 +87,9 @@ namespace Banshee.Mpris
             playlist_sources = new Dictionary<string, AbstractPlaylistSource> ();
             changed_properties = new Dictionary<string, object> ();
             invalidated_properties = new List<string> ();
+
+            var interface_service = ServiceManager.Get<InterfaceActionService> ();
+            fullscreen_action = interface_service.ViewActions["FullScreenAction"] as Gtk.ToggleAction;
         }
 
 #region IMediaPlayer
@@ -95,6 +99,24 @@ namespace Banshee.Mpris
         }
 
         public bool CanRaise {
+            get { return true; }
+        }
+
+        public bool Fullscreen {
+            get {
+                if (fullscreen_action != null) {
+                    return fullscreen_action.Active;
+                }
+                return false;
+            }
+            set {
+                if (fullscreen_action != null) {
+                    fullscreen_action.Active = value;
+                }
+            }
+        }
+
+        public bool CanSetFullscreen {
             get { return true; }
         }
 
@@ -494,6 +516,17 @@ namespace Banshee.Mpris
             }
         }
 
+        public void AddPropertyChange (params MediaPlayerProperties [] properties)
+        {
+            lock (changed_properties) {
+                foreach (MediaPlayerProperties prop in properties) {
+                    string prop_name = prop.ToString ();
+                    changed_properties[prop_name] = Get (mediaplayer_interface_name, prop_name);
+                }
+                HandlePropertiesChange (mediaplayer_interface_name);
+            }
+        }
+
         public void AddPropertyChange (params PlaylistProperties [] properties)
         {
             lock (changed_properties) {
@@ -509,8 +542,8 @@ namespace Banshee.Mpris
 
 #region Dbus.Properties
 
-        private static string [] mediaplayer_properties = { "CanQuit", "CanRaise", "HasTrackList", "Identity",
-            "DesktopEntry", "SupportedMimeTypes", "SupportedUriSchemes" };
+        private static string [] mediaplayer_properties = { "CanQuit", "CanRaise", "CanSetFullscreen", "Fullscreen",
+            "HasTrackList", "Identity", "DesktopEntry", "SupportedMimeTypes", "SupportedUriSchemes" };
 
         private static string [] player_properties = { "CanControl", "CanGoNext", "CanGoPrevious", "CanPause",
             "CanPlay", "CanSeek", "LoopStatus", "MaximumRate", "Metadata", "MinimumRate", "PlaybackStatus",
@@ -526,6 +559,10 @@ namespace Banshee.Mpris
                         return CanQuit;
                     case "CanRaise":
                         return CanRaise;
+                    case "Fullscreen":
+                        return Fullscreen;
+                    case "CanSetFullscreen":
+                        return CanSetFullscreen;
                     case "HasTrackList":
                         return HasTrackList;
                     case "Identity":
@@ -592,28 +629,33 @@ namespace Banshee.Mpris
 
         public void Set (string interface_name, string propname, object value)
         {
-            // All writable properties are on the Player interface
-            if (interface_name != player_interface_name) {
-                return;
-            }
-
-            switch (propname) {
-            case "LoopStatus":
-                string s = value as string;
-                if (!String.IsNullOrEmpty (s)) {
-                    LoopStatus = s;
+            if (interface_name == player_interface_name) {
+                switch (propname) {
+                case "LoopStatus":
+                    string s = value as string;
+                    if (!String.IsNullOrEmpty (s)) {
+                        LoopStatus = s;
+                    }
+                    break;
+                case "Shuffle":
+                    if (value is bool) {
+                        Shuffle = (bool)value;
+                    }
+                    break;
+                case "Volume":
+                    if (value is double) {
+                        Volume = (double)value;
+                    }
+                    break;
                 }
-                break;
-            case "Shuffle":
-                if (value is bool) {
-                    Shuffle = (bool)value;
+            }  else if (interface_name == mediaplayer_interface_name) {
+                switch (propname) {
+                case "Fullscreen":
+                    if (value is bool) {
+                        Fullscreen = (bool)value;
+                    }
+                    break;
                 }
-                break;
-            case "Volume":
-                if (value is double) {
-                    Volume = (double)value;
-                }
-                break;
             }
         }
 
@@ -659,6 +701,13 @@ namespace Banshee.Mpris
         PlaybackStatus,
         Metadata,
         Volume
+    }
+
+    // Those are all the properties from the MediaPlayer interface that can trigger the PropertiesChanged signal
+    // The names must match exactly the names of the properties
+    public enum MediaPlayerProperties
+    {
+        Fullscreen
     }
 
     // Those are all the properties from the Playlist interface that can trigger the PropertiesChanged signal

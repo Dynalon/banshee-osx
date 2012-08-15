@@ -49,6 +49,8 @@ namespace Banshee.Mpris
     public interface IMediaPlayer
     {
         bool CanQuit { get; }
+        bool Fullscreen { get;set; }
+        bool CanSetFullscreen { get; }
         bool CanRaise { get; }
         bool HasTrackList { get; }
         string Identity { get; }
