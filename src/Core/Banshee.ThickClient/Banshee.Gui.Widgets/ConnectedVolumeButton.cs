@@ -56,6 +56,15 @@ namespace Banshee.Gui.Widgets
 
             player.ConnectEvent (OnPlayerEvent, PlayerEvent.Volume);
 
+            // On OS X we have no hardware mixer but use a software volume mixer in
+            // the gstreamer pipeline which resets the volume to 1.0 (max) upon each
+            // uri/track change, so we have to set the volume from the widget
+            if (Hyena.PlatformDetection.IsMac) {
+                player.ConnectEvent ((args) => {
+                    ServiceManager.PlayerEngine.Volume = (ushort)Value;
+                }, PlayerEvent.StartOfStream);
+            }
+
             this.ValueChanged += (o, args) => {
                 ServiceManager.PlayerEngine.Volume = (ushort)Value;
             };
