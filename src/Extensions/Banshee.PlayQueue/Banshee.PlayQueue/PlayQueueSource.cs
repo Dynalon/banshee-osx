@@ -93,8 +93,6 @@ namespace Banshee.PlayQueue
             ServiceManager.PlayerEngine.ConnectEvent (OnPlayerEvent);
             ServiceManager.PlaybackController.TrackStarted += OnTrackStarted;
 
-            // TODO change this Gtk.Action code so that the actions can be removed.  And so this
-            // class doesn't depend on Gtk/ThickClient.
             actions = new PlayQueueActions (this);
 
             Properties.SetString ("ActiveSourceUIResource", "ActiveSourceUI.xml");
