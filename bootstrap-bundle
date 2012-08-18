@@ -31,7 +31,7 @@ pushd ../bockbuild/profiles/banshee &>/dev/null
 popd &>/dev/null
 
 [ $profile_name = darwin ] && \
-	echo "export GTK2_RC_FILES=\"$selfdir/../../bockbuild/profiles/banshee/skeleton.darwin/Contents/Resources/etc/gtk-2.0/gtkrc\"" >> "$envfile"
+	echo "export GTK2_RC_FILES=\"$selfdir/../bockbuild/profiles/banshee/skeleton.darwin/Contents/Resources/etc/gtk-2.0/gtkrc\"" >> "$envfile"
 
 source "$envfile"
 
