@@ -50,6 +50,7 @@ SOURCES =  \
 	Banshee.Gui.Dialogs/ErrorListDialog.cs \
 	Banshee.Gui.Dialogs/ExtensionManagerDialog.cs \
 	Banshee.Gui.Dialogs/FileChooserDialog.cs \
+	Banshee.Gui.Dialogs/GtkFileChooserDialog.cs \
 	Banshee.Gui.Dialogs/ImageFileChooserDialog.cs \
 	Banshee.Gui.Dialogs/OpenLocationDialog.cs \
 	Banshee.Gui.Dialogs/SeekDialog.cs \

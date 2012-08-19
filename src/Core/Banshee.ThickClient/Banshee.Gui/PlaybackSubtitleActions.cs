@@ -75,7 +75,7 @@ namespace Banshee.Gui
 
         private void OnLoadSubtitleAction (object o, EventArgs args)
         {
-            var chooser = new Banshee.Gui.Dialogs.FileChooserDialog (
+            var chooser = new Banshee.Gui.Dialogs.GtkFileChooserDialog (
                 Catalog.GetString ("Load Subtitle File"),
                 ServiceManager.Get<Banshee.Gui.GtkElementsService> ().PrimaryWindow,
                 FileChooserAction.Open

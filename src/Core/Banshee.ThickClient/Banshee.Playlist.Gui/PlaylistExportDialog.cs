@@ -9,7 +9,7 @@ using Banshee.Playlists.Formats;
 
 namespace Banshee.Playlist.Gui
 {
-    public class PlaylistExportDialog : Banshee.Gui.Dialogs.FileChooserDialog
+    public class PlaylistExportDialog : Banshee.Gui.Dialogs.GtkFileChooserDialog
     {
         protected ComboBox combobox;
         protected ListStore store;

@@ -19,7 +19,6 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <WarningLevel>4</WarningLevel>
     <Optimize>false</Optimize>
     <OutputPath>..\..\..\bin</OutputPath>
   </PropertyGroup>
@@ -27,7 +26,6 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
-    <WarningLevel>4</WarningLevel>
     <Optimize>false</Optimize>
     <OutputPath>..\..\..\bin\bin</OutputPath>
   </PropertyGroup>
@@ -64,64 +62,44 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="atk-sharp">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="gdk-sharp">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="glib-sharp">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="gtk-sharp">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="pango-sharp">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
+    <Reference Include="atk-sharp" />
+    <Reference Include="gdk-sharp" />
+    <Reference Include="glib-sharp" />
+    <Reference Include="gtk-sharp" />
+    <Reference Include="pango-sharp" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Mono.Cairo">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..bin\Mono.Cairo.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Mono.Addins">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\bin\bin\Mono.Addins.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Addins.Gui">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\bin\bin\Mono.Addins.Gui.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Addins.Setup">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\bin\bin\Mono.Addins.Setup.dll</HintPath>
     </Reference>
     <Reference Include="dbus-sharp">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\bin\bin\dbus-sharp.dll</HintPath>
     </Reference>
     <Reference Include="dbus-sharp-glib">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\bin\bin\dbus-sharp-glib.dll</HintPath>
     </Reference>
     <Reference Include="taglib-sharp">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\bin\bin\taglib-sharp.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\bin\bin\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Posix">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\bin\bin\Mono.Posix.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Security">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\bin\bin\Mono.Security.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -308,6 +286,7 @@
     <Compile Include="Banshee.Gui\PlaybackSubtitleActions.cs" />
     <Compile Include="Banshee.Collection.Gui\YearListView.cs" />
     <Compile Include="Banshee.Gui.Widgets\Tests\TrackInfoDisplayTests.cs" />
+    <Compile Include="Banshee.Gui.Dialogs\GtkFileChooserDialog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

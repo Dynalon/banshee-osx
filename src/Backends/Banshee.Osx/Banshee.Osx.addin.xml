@@ -3,7 +3,7 @@
     id="Banshee.Osx"
     version="1.0"
     compatVersion="1.0"
-    copyright="© 2009-2010 Novell Inc, © 2008 Eoin Hennessy. Licensed under the MIT X11 license."
+    copyright="© 2012 Timo Dörr, © 2009-2010 Novell Inc, © 2008 Eoin Hennessy. Licensed under the MIT X11 license."
     category="required:Backends"
     description="Backend providers for the OSX platform. Includes general OSX integration."
     defaultEnabled="true">
@@ -11,6 +11,7 @@
   <Dependencies>
     <Addin id="Banshee.Core" version="1.0"/>
     <Addin id="Banshee.Services" version="1.0"/>
+    <Addin id="Banshee.ThickClient" version="1.0"/>
   </Dependencies>
 
   <Extension path="/Banshee/ServiceManager/Service">
@@ -18,6 +19,10 @@
   </Extension>
 
   <Extension path="/Banshee/Platform/HardwareManager">
-    <HardwareManager class="Banshee.OsxBackend.HardwareManager"/>
+    <HardwareManager class="Banshee.OsxBackend.HardwareManager" id="Banshee.OsxBackend.HardwareManager" />
+  </Extension>
+
+  <Extension path="/Banshee/Gui/NativeFileChooserDialog">
+    <NativeFileChooserDialog class="Banshee.OsxBackend.OsxFileChooserDialog" />
   </Extension>
 </Addin>
