@@ -57,13 +57,13 @@ namespace Banshee.OsxBackend
         {
             OsxService.GlobalInit ();
             this.diskArbiter = new OsxDiskArbiter ();
-            diskArbiter.DeviceAppeared += deviceAppeared;
-            diskArbiter.DeviceChanged += deviceChanged;
-            diskArbiter.DeviceDisappeared += deviceDisappeared;
+            diskArbiter.DeviceAppeared += DeviceAppeared;
+            diskArbiter.DeviceChanged += DeviceChanged;
+            diskArbiter.DeviceDisappeared += DeviceDisappeared;
             diskArbiter.StartListening ();
 
         }
-        private void deviceAppeared (object o, DeviceArguments args)
+        private void DeviceAppeared (object o, DeviceArguments args)
         {
             Device device = new Device (args);
 
@@ -99,7 +99,7 @@ namespace Banshee.OsxBackend
                 }
             }
         }
-        private void deviceChanged (object o, DeviceArguments args)
+        private void DeviceChanged (object o, DeviceArguments args)
         {
             Device device = new Device (args);
 
@@ -131,7 +131,7 @@ namespace Banshee.OsxBackend
                 DeviceAdded (this, new DeviceAddedArgs ((IDevice) new_device));
             }
         }
-        private void deviceDisappeared (object o, DeviceArguments args)
+        private void DeviceDisappeared (object o, DeviceArguments args)
         {
             Device device = new Device (args);
 
