@@ -1,7 +1,7 @@
 ASSEMBLY = Banshee.Osx
 ASSEMBLY_BUILD_FLAGS = -unsafe
 TARGET = library
-LINK = $(REF_BACKEND_OSX) -r:$(top_srcdir)/bin/Banshee.Dap.MassStorage.dll
+LINK = $(REF_BACKEND_OSX)
 INSTALL_DIR = $(BACKENDS_INSTALL_DIR)
 
 SOURCES =  \

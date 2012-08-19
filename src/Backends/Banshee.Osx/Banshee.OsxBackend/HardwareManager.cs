@@ -35,7 +35,6 @@ using Banshee.ServiceStack;
 
 using System.Linq;
 
-using Banshee.Dap.MassStorage;
 using Banshee.Hardware.Osx;
 using MonoMac.AppKit;
 using MonoMac.Foundation;
