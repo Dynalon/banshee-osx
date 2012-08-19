@@ -58,6 +58,14 @@
       <Project>{C856EFD8-E812-4E61-8B76-E3583D94C233}</Project>
       <Name>Hyena.Gui</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Dap\Banshee.Dap.MassStorage\Banshee.Dap.MassStorage.csproj">
+      <Project>{6B73E278-23FB-4A59-9B44-AB7F0212B936}</Project>
+      <Name>Banshee.Dap.MassStorage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Dap\Banshee.Dap\Banshee.Dap.csproj">
+      <Project>{BC2E94DF-7A82-461E-BE7C-60E41ADC3562}</Project>
+      <Name>Banshee.Dap</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -69,11 +77,23 @@
     <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banshee.OsxBackend\HardwareManager.cs" />
     <Compile Include="Banshee.OsxBackend\OsxService.cs" />
-    <Compile Include="OsxIntegration.GtkOsxApplication\GtkOsxApplication.cs" />
+    <Compile Include="OsxIntegration.GtkOsxApplication\GtkOSxApplication.cs" />
+    <Compile Include="Banshee.Hardware.Osx\UsbDevice.cs" />
+    <Compile Include="Banshee.Hardware.Osx\CdromDevice.cs" />
+    <Compile Include="Banshee.Hardware.Osx\Device.cs" />
+    <Compile Include="Banshee.Hardware.Osx\Volume.cs" />
+    <Compile Include="Banshee.Hardware.Osx\DiscVolume.cs" />
+    <Compile Include="Banshee.Hardware.Osx\UsbVolume.cs" />
+    <Compile Include="Banshee.Hardware.Osx\LowLevel\IOKit.cs" />
+    <Compile Include="Banshee.Hardware.Osx\LowLevel\OsxDiskArbiter.cs" />
+    <Compile Include="Banshee.Hardware.Osx\LowLevel\OsxUsbData.cs" />
+    <Compile Include="Banshee.Hardware.Osx\LowLevel\DiskArbitration.cs" />
+    <Compile Include="Banshee.Hardware.Osx\LowLevel\CoreFoundation.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Banshee.Osx.addin.xml">
@@ -102,5 +122,7 @@
   <ItemGroup>
     <Folder Include="OsxIntegration.GtkOsxApplication\" />
     <Folder Include="Resources\" />
+    <Folder Include="Banshee.Hardware.Osx\" />
+    <Folder Include="Banshee.Hardware.Osx\LowLevel\" />
   </ItemGroup>
 </Project>
