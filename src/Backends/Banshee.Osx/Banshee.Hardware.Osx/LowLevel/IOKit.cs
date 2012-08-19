@@ -1,5 +1,5 @@
 //
-// OsxDiskArbiter.cs
+// IOKit.cs
 //
 // Author:
 //   Timo Dörr <timo@latecrew.de>

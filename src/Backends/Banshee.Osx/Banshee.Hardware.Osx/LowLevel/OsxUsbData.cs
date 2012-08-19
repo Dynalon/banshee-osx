@@ -1,5 +1,5 @@
 //
-// OsxDiskArbiter.cs
+// OsxUsbData.cs
 //
 // Author:
 //   Timo Dörr <timo@latecrew.de>

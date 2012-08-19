@@ -1,5 +1,5 @@
 //
-// OsxDiskArbiter.cs
+// CoreFoundation.cs
 //
 // Author:
 //   Timo Dörr <timo@latecrew.de>
