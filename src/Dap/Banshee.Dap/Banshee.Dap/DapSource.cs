@@ -211,13 +211,17 @@ namespace Banshee.Dap
             }
 
             AddChildSource (music_group_source = new MusicGroupSource (this));
+            // We want the group sources to be on top of the list, with Music first
+            music_group_source.Order = -30;
 
             if (SupportsVideo) {
                 video_group_source = new VideoGroupSource (this);
+                video_group_source.Order = -20;
             }
 
             if (SupportsPodcasts) {
                 podcast_group_source = new PodcastGroupSource (this);
+                podcast_group_source.Order = -10;
             }
 
             BuildPreferences ();
