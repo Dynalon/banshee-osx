@@ -106,20 +106,21 @@ public class TranslatorExtractor
 
         // override language names from extracted
         switch(language_code) {
+            case "ast": language_name = "Asturian"; break;
             case "ca": language_name = "Catalan"; break;
             case "ca@valencia": language_name = "Catalan (Valencian)"; break;
             case "de": language_name = "German"; break;
+            case "fr": language_name = "French"; break;
+            case "el": language_name = "Greek"; break;
+            case "gu": language_name = "Gujarati"; break;
+            case "he": language_name = "Hebrew"; break;
+            case "id": language_name = "Indonesian"; break;
+            case "ko": language_name = "Korean"; break;
+            case "lt": language_name = "Lithuanian"; break;
+            case "pt": language_name = "Portuguese"; break;
             case "zh_CN": language_name = "Simplified Chinese"; break;
             case "zh_HK": language_name = "Chinese (Hong Kong)"; break;
             case "zh_TW": language_name = "Chinese (Taiwan)"; break;
-            case "fr": language_name = "French"; break;
-            case "ko": language_name = "Korean"; break;
-            case "ast": language_name = "Asturian"; break;
-            case "el": language_name = "Greek"; break;
-            case "gu": language_name = "Gujarati"; break;
-            case "pt": language_name = "Portuguese"; break;
-            case "he": language_name = "Hebrew"; break;
-            case "id": language_name = "Indonesian"; break;
             default: break;
         }
         
