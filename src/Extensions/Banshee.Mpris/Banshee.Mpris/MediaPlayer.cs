@@ -54,6 +54,7 @@ namespace Banshee.Mpris
         private PlayerEngineService engine_service;
         private Gtk.ToggleAction fullscreen_action;
         private Dictionary<string, AbstractPlaylistSource> playlist_sources;
+        private Dictionary<string, object> current_properties;
         private Dictionary<string, object> changed_properties;
         private List<string> invalidated_properties;
 
@@ -86,6 +87,7 @@ namespace Banshee.Mpris
             engine_service = ServiceManager.PlayerEngine;
             playlist_sources = new Dictionary<string, AbstractPlaylistSource> ();
             changed_properties = new Dictionary<string, object> ();
+            current_properties = new Dictionary<string, object> ();
             invalidated_properties = new List<string> ();
 
             var interface_service = ServiceManager.Get<InterfaceActionService> ();
@@ -506,35 +508,34 @@ namespace Banshee.Mpris
 
         public void AddPropertyChange (params PlayerProperties [] properties)
         {
-            lock (changed_properties) {
-                foreach (PlayerProperties prop in properties) {
-                    string prop_name = prop.ToString ();
-                    changed_properties[prop_name] = Get (player_interface_name, prop_name);
-                }
-                // TODO We could check if a property really has changed and only fire the event in that case
-                HandlePropertiesChange (player_interface_name);
-            }
+            AddPropertyChange (player_interface_name, properties.Select (p => p.ToString()));
         }
 
         public void AddPropertyChange (params MediaPlayerProperties [] properties)
         {
-            lock (changed_properties) {
-                foreach (MediaPlayerProperties prop in properties) {
-                    string prop_name = prop.ToString ();
-                    changed_properties[prop_name] = Get (mediaplayer_interface_name, prop_name);
-                }
-                HandlePropertiesChange (mediaplayer_interface_name);
-            }
+            AddPropertyChange (mediaplayer_interface_name, properties.Select (p => p.ToString()));
         }
 
         public void AddPropertyChange (params PlaylistProperties [] properties)
         {
+            AddPropertyChange (playlists_interface_name, properties.Select (p => p.ToString()));
+        }
+
+        private void AddPropertyChange (string interface_name, IEnumerable<string> property_names)
+        {
             lock (changed_properties) {
-                foreach (PlaylistProperties prop in properties) {
-                    string prop_name = prop.ToString ();
-                    changed_properties[prop_name] = Get (playlists_interface_name, prop_name);
+                foreach (string prop_name in property_names) {
+                    object current_value = null;
+                    current_properties.TryGetValue (prop_name, out current_value);
+                    var new_value = Get (interface_name, prop_name);
+                    if ((current_value == null) || !(current_value.Equals (new_value))) {
+                        changed_properties [prop_name] = new_value;
+                        current_properties [prop_name] = new_value;
+                    }
                 }
-                HandlePropertiesChange (playlists_interface_name);
+                if (changed_properties.Count > 0) {
+                    HandlePropertiesChange (interface_name);
+                }
             }
         }
 
