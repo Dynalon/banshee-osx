@@ -16,14 +16,15 @@ msgstr ""
 "Project-Id-Version: banshee.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-06-30 00:15+0000\n"
-"PO-Revision-Date: 2012-07-02 16:55+0200\n"
+"POT-Creation-Date: 2012-08-21 19:53+0000\n"
+"PO-Revision-Date: 2012-08-25 12:06+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Gtranslator 2.91.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice.addin.xml
@@ -766,18 +767,18 @@ msgstr "No se pudo crear el controlador de detección de PPM."
 msgid "Could not initialize GStreamer library"
 msgstr "No se pudo inicializar la biblioteca de GStreamer"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:503
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:553
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:504
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:555
 msgid "Unknown Error"
 msgstr "Error desconocido"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:879
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:978
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:880
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:980
 msgid "_Enable ReplayGain correction"
 msgstr "Activar corrección _ReplayGain"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:880
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:979
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:881
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:981
 msgid ""
 "For tracks that have ReplayGain data, automatically scale (normalize) "
 "playback volume"
@@ -785,11 +786,11 @@ msgstr ""
 "Para las pistas que tienen datos ReplayGain, escalar (normalizar) "
 "automáticamente el volumen de reproducción"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:885
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:886
 msgid "Enable _gapless playback"
 msgstr "Activar reproducción sin _huecos"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:886
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:887
 msgid ""
 "Eliminate the small playback gap on track change. Useful for concept albums "
 "and classical music"
@@ -806,7 +807,7 @@ msgstr "No se pudo crear el transcodificador"
 msgid "Could not create encoder pipeline : {0}"
 msgstr "No se pudo crear la tubería del codificador: {0}"
 
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:800
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:802
 msgid "GStreamer# 0.10"
 msgstr "GStreamer# 0.10"
 
@@ -814,6 +815,12 @@ msgstr "GStreamer# 0.10"
 #, csharp-format
 msgid "Could not create encoding pipeline : {0}"
 msgstr "No se pudo crear la tubería de codificación: {0}"
+
+#. Translators: verb
+#: ../src/Backends/Banshee.Osx/Banshee.OsxBackend/OsxFileChooserDialog.cs:66
+#| msgid "_Import"
+msgid "Import"
+msgstr "Importar"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:72
 msgid "Can't check for updates"
@@ -925,8 +932,8 @@ msgstr "Opciones de control de reproducción"
 msgid ""
 "Play the next track, optionally restarting if the 'restart' value is set"
 msgstr ""
-"Reproduce la pista siguiente, reiniciando opcionalmente si el valor «restart» "
-"está establecido"
+"Reproduce la pista siguiente, reiniciando opcionalmente si el valor "
+"«restart» está establecido"
 
 #: ../src/Clients/Booter/Booter/Entry.cs:165
 msgid ""
@@ -1606,7 +1613,6 @@ msgid "File Organization"
 msgstr "Organización de los archivos"
 
 #: ../src/Core/Banshee.Services/Banshee.Library/LibrarySource.cs:81
-#| msgid "Co_py files to media folders when importing"
 msgid "Co_py files to media folder when importing"
 msgstr "C_opiar archivos a las carpetas de contenido multimedia al importar"
 
@@ -2674,12 +2680,12 @@ msgstr "Je_rarquía de carpetas"
 msgid "File _name"
 msgstr "_Nombre del archivo"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:703
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:706
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "Añadiendo {0} de {1} a {2}"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:722
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:725
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "Eliminando {0} de {1} desde {2}"
@@ -2991,7 +2997,7 @@ msgid "Make Banshee the Default"
 msgstr "Hacer Banshee el predeterminado"
 
 #. Translators: verb
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/FileChooserDialog.cs:53
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/GtkFileChooserDialog.cs:53
 msgid "I_mport"
 msgstr "I_mportar"
 
@@ -4249,18 +4255,6 @@ msgstr "Contactando…"
 msgid "Buffering"
 msgstr "Buffering"
 
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/VolumeButton.cs:96
-msgid "Volume"
-msgstr "Volumen"
-
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/VolumeButton.cs:548
-msgid "Muted"
-msgstr "Silencio"
-
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/VolumeButton.cs:550
-msgid "Full Volume"
-msgstr "A todo volumen"
-
 #: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:115
 msgid "Device"
 msgstr "Dispositivo"
@@ -4297,29 +4291,29 @@ msgstr "Soporta portadas"
 msgid "Supports photos"
 msgstr "Soporta imágenes"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:463
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:465
 msgid "Track duration is zero"
 msgstr "La duración de la pista es cero"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:569
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:571
 msgid "Syncing iPod"
 msgstr "Sincronizando iPod"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:570
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:572
 msgid "Preparing to synchronize..."
 msgstr "Preparándose para sincronizar…"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:573
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:575
 #, csharp-format
 msgid "Adding track {0} of {1}"
 msgstr "Añadiendo pista {0} de {1}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:609
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:611
 #, csharp-format
 msgid "Removing track {0} of {1}"
 msgstr "Quitando pista {0} de {1}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:662
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:664
 msgid "Writing media database"
 msgstr "Escribiendo la base de datos multimedia"
 
@@ -6435,8 +6429,9 @@ msgid ""
 "The iTunes library refers to your music directory as \"{0}\" but Banshee was "
 "not able to infer the location of this directory. Please locate it."
 msgstr ""
-"La colección de iTunes indica que su carpeta de música es «{0}», pero Banshee "
-"no ha podido deducir la ubicación de esta carpeta. Por favor, localícela."
+"La colección de iTunes indica que su carpeta de música es «{0}», pero "
+"Banshee no ha podido deducir la ubicación de esta carpeta. Por favor, "
+"localícela."
 
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:74
 msgid "iTunes Media Player"
@@ -6542,11 +6537,11 @@ msgstr "Limpiar la cola de reproducción al salir"
 msgid "Remove From Play Queue"
 msgstr "Quitar de la cola de reproducción"
 
-#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:967
+#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:965
 msgid "Number of _played songs to show"
 msgstr "Número de canciones _reproducidas que mostrar"
 
-#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:973
+#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:971
 msgid "Number of _upcoming songs to show"
 msgstr "Número de canciones pró_ximas que mostrar"
 
@@ -7165,7 +7160,6 @@ msgstr ""
 "No está permitido que este usuario escuche la radio durante el uso máximo"
 
 #: ../src/Libraries/Lastfm/Lastfm/RadioConnection.cs:310
-#| msgid "Stream location not found"
 msgid "Radio station not found"
 msgstr "Emisora de radio no encontrada"
 
@@ -7219,6 +7213,15 @@ msgstr "Conectado a Last.fm"
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:103
 msgid "Unknown Podcast"
 msgstr "Podcast desconocido"
+
+#~ msgid "Volume"
+#~ msgstr "Volumen"
+
+#~ msgid "Muted"
+#~ msgstr "Silencio"
+
+#~ msgid "Full Volume"
+#~ msgstr "A todo volumen"
 
 #~ msgid ""
 #~ "Last.fm username is invalid or Banshee is not authorized to access your "
