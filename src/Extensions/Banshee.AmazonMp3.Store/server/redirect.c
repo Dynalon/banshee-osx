@@ -116,7 +116,7 @@ main (gint argc, gchar **argv)
         );
     } else if (strcmp (action, "sign_out") == 0) {
         dest_url = g_strdup_printf (
-            "http://www.amazon.%s/gp/help/customer/sign-out.html/ref=ya__lo?ie=UTF8&returnPath=%%2F%s",
+            "http://www.amazon.%s/gp/flex/sign-out.html/ref=gno_signout?ie=UTF8&path=%%2F%s&signIn=1&useRedirectOnSuccess=1&action=sign-out",
             domain, home_path
         );
     } else if (strcmp (action, "about") == 0) {
