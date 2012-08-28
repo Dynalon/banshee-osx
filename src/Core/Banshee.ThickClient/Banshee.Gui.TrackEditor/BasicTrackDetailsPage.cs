@@ -184,6 +184,14 @@ namespace Banshee.Gui.TrackEditor
             };
             SpinButtonEntry year_entry = new SpinButtonEntry (0, 3000, 1);
             year_entry.Numeric = true;
+            year_entry.Output += delegate (object o, OutputArgs args) {
+                if (0 == year_entry.ValueAsInt) {
+                    year_entry.Text = "";
+                } else {
+                    year_entry.Text = year_entry.Value.ToString ();
+                }
+                args.RetVal = 1;
+            };
             AddField (right, year_label, year_entry,
                 Catalog.GetString ("Set all years to this value"),
                 delegate { return Catalog.GetString ("_Year:"); },
