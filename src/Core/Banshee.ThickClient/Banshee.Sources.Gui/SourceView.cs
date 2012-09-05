@@ -138,7 +138,7 @@ namespace Banshee.Sources.Gui
                 header_renderer.Visible = type == SourceModel.EntryType.Group;
                 source_renderer.Visible = type == SourceModel.EntryType.Source;
                 if (type == SourceModel.EntryType.Group) {
-                    var source = model.GetValue (iter, (int)SourceModel.Columns.Source) as Source;
+                    var source = (Source) model.GetValue (iter, (int)SourceModel.Columns.Source);
                     header_renderer.Visible = true;
                     header_renderer.Text = source.Name;
                 } else {
