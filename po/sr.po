@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=banshe"
 "e&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-10 07:14+0000\n"
-"PO-Revision-Date: 2012-08-07 21:40+0200\n"
+"POT-Creation-Date: 2012-09-04 17:57+0000\n"
+"PO-Revision-Date: 2012-09-07 10:04+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -114,7 +114,8 @@ msgstr "Боо скрипте"
 
 #: ../data/addin-xml-strings.cs:44
 msgid "Customize and extend Banshee with Boo-language scripts."
-msgstr "Прилагодите и проширите Злослутницу скриптама у Боо програмском језику."
+msgstr ""
+"Прилагодите и проширите Злослутницу скриптама у Боо програмском језику."
 
 #: ../data/addin-xml-strings.cs:45 ../data/addin-xml-strings.cs:50
 #: ../data/addin-xml-strings.cs:55 ../data/addin-xml-strings.cs:60
@@ -759,18 +760,18 @@ msgstr "Нема управљачког програма за откривање
 msgid "Could not initialize GStreamer library"
 msgstr "Не могу да покренем библиотеку Гстримера"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:503
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:553
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:504
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:555
 msgid "Unknown Error"
 msgstr "Непозната грешка"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:879
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:978
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:880
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:980
 msgid "_Enable ReplayGain correction"
 msgstr "_Омогући исправљање појачања поновног пуштања"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:880
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:979
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:881
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:981
 msgid ""
 "For tracks that have ReplayGain data, automatically scale (normalize) "
 "playback volume"
@@ -778,11 +779,11 @@ msgstr ""
 "Аутоматски подешава јачину звука за песме које садрже податке појачања "
 "поновног пуштања"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:885
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:886
 msgid "Enable _gapless playback"
 msgstr "Без паузе из_међу песмама"
 
-#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:886
+#: ../src/Backends/Banshee.GStreamer/Banshee.GStreamer/PlayerEngine.cs:887
 msgid ""
 "Eliminate the small playback gap on track change. Useful for concept albums "
 "and classical music"
@@ -799,7 +800,7 @@ msgstr "Не могу да створим преводиоца формата"
 msgid "Could not create encoder pipeline : {0}"
 msgstr "Не могу да направим спојку шифрера : {0}"
 
-#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:800
+#: ../src/Backends/Banshee.GStreamerSharp/Banshee.GStreamerSharp/PlayerEngine.cs:802
 msgid "GStreamer# 0.10"
 msgstr "Гстример# 0.10"
 
@@ -807,6 +808,12 @@ msgstr "Гстример# 0.10"
 #, csharp-format
 msgid "Could not create encoding pipeline : {0}"
 msgstr "Не могу да направим спојку шифрера : {0}"
+
+#. Translators: verb
+#: ../src/Backends/Banshee.Osx/Banshee.OsxBackend/OsxFileChooserDialog.cs:66
+#| msgid "_Import"
+msgid "Import"
+msgstr "Увези"
 
 #: ../src/Backends/Banshee.Windows/Banshee.Windows/VersionUpdater.cs:72
 msgid "Can't check for updates"
@@ -1280,7 +1287,7 @@ msgid "Stream location not found"
 msgstr "Није пронађена путања до тока"
 
 #: ../src/Core/Banshee.Core/Banshee.Collection/TrackInfo.cs:347
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:339
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:343
 msgid "File not found"
 msgstr "Датотека није нађена"
 
@@ -2554,7 +2561,7 @@ msgstr "дрм"
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:234
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:236
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:238
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:400
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:404
 msgid "Unknown"
 msgstr "Непознато"
 
@@ -2667,12 +2674,12 @@ msgstr "Хије_рархија фасцикли"
 msgid "File _name"
 msgstr "Име _датотеке"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:703
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:706
 #, csharp-format
 msgid "Adding {0} of {1} to {2}"
 msgstr "Додајем {0} од {1} у {2}"
 
-#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:722
+#: ../src/Core/Banshee.Services/Banshee.Sources/PrimarySource.cs:725
 #, csharp-format
 msgid "Deleting {0} of {1} From {2}"
 msgstr "Бришем {0} од {1} из {2}"
@@ -2991,7 +2998,7 @@ msgid "Make Banshee the Default"
 msgstr "Постави као подразумевани"
 
 #. Translators: verb
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/FileChooserDialog.cs:53
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.Dialogs/GtkFileChooserDialog.cs:53
 msgid "I_mport"
 msgstr "У_вези"
 
@@ -4253,19 +4260,6 @@ msgstr "Ступам у везу..."
 msgid "Buffering"
 msgstr "Смештам у спремиште"
 
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/VolumeButton.cs:96
-msgid "Volume"
-msgstr "Јачина звука"
-
-# bug(goran) plural
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/VolumeButton.cs:548
-msgid "Muted"
-msgstr "Утишано"
-
-#: ../src/Core/Banshee.Widgets/Banshee.Widgets/VolumeButton.cs:550
-msgid "Full Volume"
-msgstr "Најгласније"
-
 #: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:115
 msgid "Device"
 msgstr "Уређај"
@@ -4350,23 +4344,23 @@ msgstr "Производ"
 msgid "Vendor"
 msgstr "Продавац"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:287
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:291
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:141
 #, csharp-format
 msgid "Loading {0}"
 msgstr "Учитавам {0}"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:381
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:385
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/ColumnCellYesNo.cs:37
 msgid "Yes"
 msgstr "Да"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:381
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:385
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/ColumnCellYesNo.cs:38
 msgid "No"
 msgstr "Не"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:402
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:406
 #, csharp-format
 msgid ""
 "The {0} format is not supported by the device, and no converter was found to "
@@ -4375,11 +4369,11 @@ msgstr ""
 "Формат „{0}“ није подржан на овом уређају, а није пронађен претварач који би "
 "га превео у други формат"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:408
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:412
 msgid "File format conversion support is not available"
 msgstr "Превођење овог формата датотеке још увек није подржано"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:434
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:438
 msgid "Error converting file"
 msgstr "Грешка прилико превођења датотеке"
 
@@ -6557,11 +6551,11 @@ msgstr "Очистите списак заказаних песама при и�
 msgid "Remove From Play Queue"
 msgstr "Уклони из заказаних"
 
-#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:967
+#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:965
 msgid "Number of _played songs to show"
 msgstr "_Број пуштаних песама за приказ"
 
-#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:973
+#: ../src/Extensions/Banshee.PlayQueue/Banshee.PlayQueue/PlayQueueSource.cs:971
 msgid "Number of _upcoming songs to show"
 msgstr "Број _новопристиглих песама за приказ"
 
@@ -7245,3 +7239,13 @@ msgstr "Повезани сте на Ласт.фм."
 #: ../src/Libraries/Migo/Migo.Syndication/RssParser.cs:103
 msgid "Unknown Podcast"
 msgstr "Непозната подемисија"
+
+#~ msgid "Volume"
+#~ msgstr "Јачина звука"
+
+# bug(goran) plural
+#~ msgid "Muted"
+#~ msgstr "Утишано"
+
+#~ msgid "Full Volume"
+#~ msgstr "Најгласније"
