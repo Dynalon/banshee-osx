@@ -134,7 +134,24 @@ namespace Banshee.Sources.Gui
                     throw new ArgumentNullException ("model");
                 }
 
-                var type = (SourceModel.EntryType) model.GetValue (iter, (int)SourceModel.Columns.Type);
+                // be paranoid about the values returned from model.GetValue(), they may be null or have unexpected types, see bgo#683359
+                var obj_type = model.GetValue (iter, (int)SourceModel.Columns.Type);
+                if (obj_type == null || !(obj_type is SourceModel.EntryType)) {
+
+                    var source = model.GetValue (iter, (int)SourceModel.Columns.Source) as Source;
+                    var source_name = source == null ? "some source" : String.Format ("source {0}", source.Name);
+
+                    Log.ErrorFormat (
+                        "SourceView of {0} could not render its source column because its type value returned {1} from the iter",
+                        source_name, obj_type == null ? "null" : String.Format ("an instance of {0}", obj_type.GetType ().FullName));
+
+                    header_renderer.Visible = false;
+                    source_renderer.Visible = false;
+
+                    return;
+                }
+
+                var type = (SourceModel.EntryType) obj_type;
                 header_renderer.Visible = type == SourceModel.EntryType.Group;
                 source_renderer.Visible = type == SourceModel.EntryType.Source;
                 if (type == SourceModel.EntryType.Group) {
