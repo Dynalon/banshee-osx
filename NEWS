@@ -1,65 +1,18 @@
 ===============================================================================
-Banshee 2.5.0 - 2012-08-22
+Banshee 2.5.1 - 2012-09-13
 ===============================================================================
 
-    Banshee 2.5.0 is the first release in the 2.5 development series leading up
-    to 2.6, scheduled for October 2012.
+    Banshee 2.5.1 is part of the 2.5 development series leading up to 2.6,
+    scheduled for October 2012.
 
-    New Features:
+    Notable Bugs Fixed:
 
-      * Lots of improvement on OS X:
-
-            * Hardware support for USB mass storage devices.
-            * Handle opening files directly in Finder.
-            * Use native file chooser dialogs for importing files.
-            * Improve keyboard shortcuts.
-            * Fix various volume issues and inconsistencies.
-            * Switch to gtk-mac-integration and move to cocoa API.
-            * Add debug and logging facility to OS X launcher.
-
-      * LastFM: Add device scrobbling support
-
-            Enable Last.fm scrobbling of recent plays from a connected device.
-            Currently only available on devices supported by the AppleDevice
-            extension.
-
-      * File management options are now specific to each source
-
-            The "Copy files when importing" and "Update file and folder names"
-            can now be set independently for Music and Videos.
-
-    Enhancements:
-
-      * LargeTrackInfoDisplay: Display track rating in "Now Playing" view
-      * MassStorage: Support the Samsung Galaxy Nexus Android phone
-      * Re-enable the AAC audio profile
-      * ThickClient: Append 'Banshee' to window title
-      * MassStorage: Support reading playlists from multiple folders
-      * Last.fm: Switch to 2.0 API for scrobbling and improve error handling
-      * LastFM: Remove invalid tracks from the queue after a scrobbling error
-      * Mpris: Add CanSetFullscreen and Fullscreen properties
-      * Replace custom volume widget with gtk's VolumeButton
-
-    Notable Bugs Fixed (59 fixed since 2.4.0):
-
-      * Migo.Syndication: Handle feeds with malformed enclosure URLs
-      * bgo#577396: AppleDeviceTrackInfo: Fix reading and writing rating values
-      * bgo#587756: MassStorage: Save playlists relative to BaseDirectory
-      * bgo#615219: Don't increment skip counter when restarting current track
-      * bgo#626659: ServiceManager: check properly if a service is required
-      * bgo#634063: FileSystemQueueSource: Reload when tracks are imported
-      * bgo#634758: PlaylistSource: Make sure the right tracks are removed
-      * bgo#657769: PrimarySource: Make sure AddTrackJob is marked as finished
-      * bgo#662909: PlaylistParser: Retry HTTP request after timeout
-      * bgo#666696: DapSource: Flush pending changes when quitting
-      * bgo#671948: DapSource: Put the playlists below the default sources
-      * bgo#672744: UPnPServerSource: Fix crash when getting the root object
-      * bgo#673037: libossifer: Fix certificate validation with libsoup 2.38
-      * bgo#673416: DbIteratorJob: Abort job after several consecutive failures
-      * bgo#676144: PlayQueueSource: Fix high memory usage when shuffling
-      * bgo#677288: PrimarySource: Fix pruning of artists from the database
-      * bgo#679260: AppleDevice: Fix a crash when deleting invalid tracks
-      * bgo#680679: PlayerEngine: Fix reporting of playback errors
+      * AmazonMp3.Store: Fix URL redirection for sign out action
+      * bgo#623974: BasicTrackDetailsPage: Blank year spin button when 0
+      * bgo#624976: Gui.Canvas.Rect: log invalid values for Width/Height
+      * bgo#636450: PathPattern: Limit filename length to 200 characters
+      * bgo#682510: Mpris: Only raise PropertiesChanged signal if value changed
+      * bgo#683359: SourceView: log errors in SetCellDataFunc to avoid crashing
 
 ===============================================================================
 SOURCES / PACKAGES
@@ -68,9 +21,9 @@ SOURCES / PACKAGES
 Sources
 -------
 
-    * Banshee 2.5.0 Tarballs:
-      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.5/banshee-2.5.0.tar.xz
-      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.5/banshee-2.5.0.sha256sum
+    * Banshee 2.5.1 Tarballs:
+      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.5/banshee-2.5.1.tar.xz
+      http://ftp.gnome.org/pub/GNOME/sources/banshee/2.5/banshee-2.5.1.sha256sum
 
 Packages
 --------
@@ -93,7 +46,7 @@ REPORT BUGS - HELP THE PROJECT - GROW THE COMMUNITY
     hesitate to file bugs!
 
     * http://banshee.fm/contribute/file-bugs
-    * http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&version=2.5.0
+    * http://bugzilla.gnome.org/enter_bug.cgi?product=banshee&version=2.5.1
 
 
 ===============================================================================
@@ -106,17 +59,12 @@ Contributors For This Release
     The following people directly contributed to the release of this version
     of Banshee. Without their help, there would be no release!
 
-     Alexander Kojevnikov, Andres G. Aragoneses, Bertrand Lorentz,
-     David Nielsen, Diego Fernandez, Fabrice Bellet, Javon Harper,
-     Jensen Somers, Kevin Anthony, Olivier Dufour, Pavol Babincak,
-     Phil Trimble, Samuel Gyger, Timo Dörr
+     Andres G. Aragoneses, Bertrand Lorentz, Kevin Anthony, Roderich Schupp,
+     Samuel Gyger
 
     The following people contributed updated translations to this release.
     Without them, our project's reach would be much more limited.
 
-     Andika Triwidada, Andreas Nesdal, Andrej Žnidaršič, Bruno Brouard,
-     Cheng-Chia Tseng, Daniel Mustieles, Daniel Nylander, Daniel Winzen,
-     Fran Diéguez, Gianvito Cavasoli, Ioannis Zampoukas, Joe Hansen,
-     Kentaro KAZUHAMA, Lucas Mezencio, Marek Černocký, Martin Srebotnjak,
-     Matej Urbančič, Muhammet Kara, Piotr Drąg, Praveen Illa, Rūdolfs Mazurs,
-     Techlive Zheng, Žygimantas Beručka, Мирослав Николић
+     Alexandre Franke, Cheng-Chia Tseng, Daniel Mustieles, Daniel Winzen,
+     Filipe Gomes, Fran Diéguez, Marek Černocký, Matej Urbančič, Piotr Drąg,
+     Praveen Illa, Мирослав Николић
