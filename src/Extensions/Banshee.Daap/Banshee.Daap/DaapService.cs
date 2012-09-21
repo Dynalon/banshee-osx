@@ -180,11 +180,13 @@ namespace Banshee.Daap
 
             var uia_service = ServiceManager.Get<InterfaceActionService> ();
             if (uia_service != null) {
-                uia_service.GlobalActions.Add (
-                    new ActionEntry ("AddRemoteDaapServerAction", Stock.Add,
-                        Catalog.GetString ("Add Remote DAAP Server"), null,
-                        Catalog.GetString ("Add a new remote DAAP server"),
-                        OnAddRemoteServer)
+                ThreadAssist.ProxyToMain ( () =>
+                    uia_service.GlobalActions.Add (
+                        new ActionEntry ("AddRemoteDaapServerAction", Stock.Add,
+                            Catalog.GetString ("Add Remote DAAP Server"), null,
+                            Catalog.GetString ("Add a new remote DAAP server"),
+                            OnAddRemoteServer)
+                    )
                 );
                 actions_id = uia_service.UIManager.AddUiFromResource ("GlobalUI.xml");
             }
