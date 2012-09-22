@@ -109,16 +109,17 @@ namespace Banshee.Dap.Gui
                 tracks_to_remove);
             string message = Catalog.GetString ("Are you sure you want to continue?");
 
-            var md = new HigMessageDialog (
-                ServiceManager.Get<GtkElementsService> ().PrimaryWindow,
-                DialogFlags.DestroyWithParent, MessageType.Warning,
-                ButtonsType.None, header, message
-            );
-            md.AddButton ("gtk-cancel", ResponseType.No, true);
-            md.AddButton (Catalog.GetString ("Remove tracks"), ResponseType.Yes, false);
-
             bool remove_tracks = false;
             ThreadAssist.BlockingProxyToMain (() => {
+
+                var md = new HigMessageDialog (
+                    ServiceManager.Get<GtkElementsService> ().PrimaryWindow,
+                    DialogFlags.DestroyWithParent, MessageType.Warning,
+                    ButtonsType.None, header, message
+                );
+                md.AddButton ("gtk-cancel", ResponseType.No, true);
+                md.AddButton (Catalog.GetString ("Remove tracks"), ResponseType.Yes, false);
+
                 try {
                     if (md.Run () == (int) ResponseType.Yes) {
                         remove_tracks = true;
