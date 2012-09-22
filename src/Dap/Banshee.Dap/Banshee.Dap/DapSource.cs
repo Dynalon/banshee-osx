@@ -186,8 +186,6 @@ namespace Banshee.Dap
             Properties.SetString ("ActiveSourceUIResource", "ActiveSourceUI.xml");
 
             sync = new DapSync (this);
-            dap_info_bar = new DapInfoBar (this);
-            Properties.Set<Gtk.Widget> ("Nereid.SourceContents.FooterWidget", dap_info_bar);
 
             /*dap_properties_display = new DapPropertiesDisplay (this);
             Properties.Set<Banshee.Sources.Gui.ISourceContents> ("Nereid.SourceContents", dap_properties_display);*/
@@ -227,6 +225,9 @@ namespace Banshee.Dap
             BuildPreferences ();
 
             ThreadAssist.ProxyToMain (delegate {
+                dap_info_bar = new DapInfoBar (this);
+                Properties.Set<Gtk.Widget> ("Nereid.SourceContents.FooterWidget", dap_info_bar);
+
                 Properties.Set<Banshee.Sources.Gui.ISourceContents> ("Nereid.SourceContents", new DapContent (this));
             });
         }
