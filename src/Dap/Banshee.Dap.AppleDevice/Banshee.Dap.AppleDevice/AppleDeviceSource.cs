@@ -209,11 +209,10 @@ namespace Banshee.Dap.AppleDevice
                 });
             }
 
-            var invalid_tracks = new List<GPod.Track> ();
             foreach (var ipod_track in MediaDatabase.Tracks) {
 
                 if (String.IsNullOrEmpty (ipod_track.IpodPath)) {
-                    invalid_tracks.Add (ipod_track);
+                    invalid_tracks_in_device.Enqueue (ipod_track);
                     continue;
                 }
 
@@ -228,13 +227,10 @@ namespace Banshee.Dap.AppleDevice
                     Log.Exception (e);
                 }
             }
-            if (invalid_tracks.Count > 0) {
-                Log.Warning (String.Format ("Found {0} invalid tracks on the device", invalid_tracks.Count));
-                foreach (var track in invalid_tracks) {
-                    DeleteTrack (track, false);
-                }
-            }
 
+            if (invalid_tracks_in_device.Count > 0) {
+                Log.Warning (String.Format ("Found {0} invalid tracks on the device", invalid_tracks_in_device.Count));
+            }
 
             Hyena.Data.Sqlite.HyenaSqliteCommand insert_cmd = new Hyena.Data.Sqlite.HyenaSqliteCommand (
                 @"INSERT INTO CorePlaylistEntries (PlaylistID, TrackID)
@@ -385,6 +381,7 @@ namespace Banshee.Dap.AppleDevice
         private Queue<AppleDeviceTrackInfo> tracks_to_add = new Queue<AppleDeviceTrackInfo> ();
         private Queue<AppleDeviceTrackInfo> tracks_to_update = new Queue<AppleDeviceTrackInfo> ();
         private Queue<AppleDeviceTrackInfo> tracks_to_remove = new Queue<AppleDeviceTrackInfo> ();
+        private Queue<GPod.Track> invalid_tracks_in_device = new Queue<GPod.Track> ();
 
         private uint sync_timeout_id = 0;
         private object sync_timeout_mutex = new object ();
@@ -654,6 +651,21 @@ namespace Banshee.Dap.AppleDevice
                     }
                 } catch (Exception e) {
                     Log.Exception ("Cannot remove track from iPod", e);
+                }
+            }
+
+            SyncRemovalOfInvalidTracks ();
+        }
+
+        void SyncRemovalOfInvalidTracks ()
+        {
+            if (invalid_tracks_in_device.Count > 0) {
+                foreach (var track in invalid_tracks_in_device) {
+                    try {
+                        DeleteTrack (track, false);
+                    } catch (Exception e) {
+                        Log.Exception ("Cannot remove invalid track from iPod", e);
+                    }
                 }
             }
         }
