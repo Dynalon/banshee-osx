@@ -660,28 +660,30 @@ namespace Banshee.Dap.AppleDevice
 
         void SyncTracksToPlaylists ()
         {
-            if (SupportsPlaylists) {
-                // Remove playlists on the device
-                var device_playlists = new List<GPod.Playlist> (MediaDatabase.Playlists);
-                foreach (var playlist in device_playlists) {
-                    if (!playlist.IsMaster && !playlist.IsPodcast) {
-                        MediaDatabase.Playlists.Remove (playlist);
-                    }
-                }
+            if (!SupportsPlaylists) {
+                return;
+            }
 
-                // Add playlists from Banshee to the device
-                foreach (Source child in Children) {
-                    PlaylistSource from = child as PlaylistSource;
-                    if (from != null && from.Count > 0) {
-                        var playlist = new GPod.Playlist (from.Name);
-                        MediaDatabase.Playlists.Add (playlist);
-                        foreach (int track_id in ServiceManager.DbConnection.QueryEnumerable<int> (String.Format (
-                            "SELECT CoreTracks.TrackID FROM {0} WHERE {1}",
-                            from.DatabaseTrackModel.ConditionFromFragment, from.DatabaseTrackModel.Condition)))
-                        {
-                            if (tracks_map.ContainsKey (track_id)) {
-                                playlist.Tracks.Add (tracks_map[track_id].IpodTrack);
-                            }
+            // Remove playlists on the device
+            var device_playlists = new List<GPod.Playlist> (MediaDatabase.Playlists);
+            foreach (var playlist in device_playlists) {
+                if (!playlist.IsMaster && !playlist.IsPodcast) {
+                    MediaDatabase.Playlists.Remove (playlist);
+                }
+            }
+
+            // Add playlists from Banshee to the device
+            foreach (Source child in Children) {
+                PlaylistSource from = child as PlaylistSource;
+                if (from != null && from.Count > 0) {
+                    var playlist = new GPod.Playlist (from.Name);
+                    MediaDatabase.Playlists.Add (playlist);
+                    foreach (int track_id in ServiceManager.DbConnection.QueryEnumerable<int> (String.Format (
+                        "SELECT CoreTracks.TrackID FROM {0} WHERE {1}",
+                        from.DatabaseTrackModel.ConditionFromFragment, from.DatabaseTrackModel.Condition)))
+                    {
+                        if (tracks_map.ContainsKey (track_id)) {
+                            playlist.Tracks.Add (tracks_map[track_id].IpodTrack);
                         }
                     }
                 }
