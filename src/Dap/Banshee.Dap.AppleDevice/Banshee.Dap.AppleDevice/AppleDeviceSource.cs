@@ -566,14 +566,32 @@ namespace Banshee.Dap.AppleDevice
         {
             Hyena.Log.Debug ("Starting AppleDevice sync thread cycle");
 
-            string message;
-            int total, i = 0;
             var progressUpdater = new UserJob (Catalog.GetString ("Syncing iPod"),
                                                Catalog.GetString ("Preparing to synchronize..."), GetIconNames ());
             progressUpdater.Register ();
             MediaDatabase.StartSync ();
-            message = Catalog.GetString ("Adding track {0} of {1}");
-            total = tracks_to_add.Count;
+
+            SyncTracksToAdd (progressUpdater);
+
+            SyncTracksToUpdate ();
+
+            SyncTracksToRemove (progressUpdater);
+
+            SyncTracksToPlaylists ();
+
+            SyncDatabase (progressUpdater);
+
+            MediaDatabase.StopSync ();
+            progressUpdater.Finish ();
+
+            Hyena.Log.Debug ("Ending AppleDevice sync thread cycle");
+        }
+
+        void SyncTracksToAdd (UserJob progressUpdater)
+        {
+            string message = Catalog.GetString ("Adding track {0} of {1}");
+            int total = tracks_to_add.Count;
+            int i = 0;
             while (tracks_to_add.Count > 0) {
                 AppleDeviceTrackInfo track = null;
                 lock (sync_mutex) {
@@ -594,7 +612,10 @@ namespace Banshee.Dap.AppleDevice
                 OnTracksAdded ();
                 OnUserNotifyUpdated ();
             }
+        }
 
+        void SyncTracksToUpdate ()
+        {
             while (tracks_to_update.Count > 0) {
                 AppleDeviceTrackInfo track = null;
                 lock (sync_mutex) {
@@ -607,9 +628,12 @@ namespace Banshee.Dap.AppleDevice
                     Log.Exception ("Cannot save track to iPod", e);
                 }
             }
+        }
 
-            message = Catalog.GetString ("Removing track {0} of {1}");
-            total = tracks_to_remove.Count;
+        void SyncTracksToRemove (UserJob progressUpdater)
+        {
+            string message = Catalog.GetString ("Removing track {0} of {1}");
+            int total = tracks_to_remove.Count;
             while (tracks_to_remove.Count > 0) {
                 AppleDeviceTrackInfo track = null;
                 lock (sync_mutex) {
@@ -632,7 +656,10 @@ namespace Banshee.Dap.AppleDevice
                     Log.Exception ("Cannot remove track from iPod", e);
                 }
             }
+        }
 
+        void SyncTracksToPlaylists ()
+        {
             if (SupportsPlaylists) {
                 // Remove playlists on the device
                 var device_playlists = new List<GPod.Playlist> (MediaDatabase.Playlists);
@@ -659,9 +686,12 @@ namespace Banshee.Dap.AppleDevice
                     }
                 }
             }
+        }
 
+        void SyncDatabase (UserJob progressUpdater)
+        {
             try {
-                message = Catalog.GetString ("Writing media database");
+                string message = Catalog.GetString ("Writing media database");
                 UpdateProgress (progressUpdater, message, 1, 1);
 
                 lock (write_mutex) {
@@ -672,10 +702,6 @@ namespace Banshee.Dap.AppleDevice
             } catch (Exception e) {
                 Log.Exception ("Failed to save iPod database", e);
             }
-            MediaDatabase.StopSync ();
-            progressUpdater.Finish ();
-
-            Hyena.Log.Debug ("Ending AppleDevice sync thread cycle");
         }
 
         public bool SyncNeeded {
