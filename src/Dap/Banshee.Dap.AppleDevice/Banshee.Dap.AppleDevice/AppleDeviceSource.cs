@@ -659,13 +659,11 @@ namespace Banshee.Dap.AppleDevice
 
         void SyncRemovalOfInvalidTracks ()
         {
-            if (invalid_tracks_in_device.Count > 0) {
-                foreach (var track in invalid_tracks_in_device) {
-                    try {
-                        DeleteTrack (track, false);
-                    } catch (Exception e) {
-                        Log.Exception ("Cannot remove invalid track from iPod", e);
-                    }
+            while (invalid_tracks_in_device.Count > 0) {
+                try {
+                    DeleteTrack (invalid_tracks_in_device.Dequeue (), false);
+                } catch (Exception e) {
+                    Log.Exception ("Cannot remove invalid track from iPod", e);
                 }
             }
         }
