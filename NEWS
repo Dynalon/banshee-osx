@@ -6,8 +6,64 @@ Banshee 2.6.0 - 2012-09-27
     translators and dozens of bug reporters and testers. It is a stable release,
     the successor to Banshee 2.4.
 
-    Notable Bugs Fixed (ZZZ fixed since 2.4.0):
+    New Features:
 
+      * Lots of improvement on OS X:
+
+            * Hardware support for USB mass storage devices.
+            * Handle opening files directly in Finder.
+            * Use native file chooser dialogs for importing files.
+            * Improve keyboard shortcuts.
+            * Fix various volume issues and inconsistencies.
+            * Switch to gtk-mac-integration and move to cocoa API.
+            * Add debug and logging facility to OS X launcher.
+
+      * LastFM: Add device scrobbling support
+
+            Enable Last.fm scrobbling of recent plays from a connected device.
+            Currently only available on devices supported by the AppleDevice
+            extension.
+
+      * File management options are now specific to each source
+
+            The "Copy files when importing" and "Update file and folder names"
+            settings can now be set independently for Music and Videos.
+
+
+    Enhancements:
+
+      * LargeTrackInfoDisplay: Display track rating in "Now Playing" view
+      * MassStorage: Support the Samsung Galaxy Nexus Android phone
+      * Re-enable the AAC audio profile
+      * ThickClient: Append 'Banshee' to window title
+      * MassStorage: Support reading playlists from multiple folders
+      * Last.fm: Switch to 2.0 API for scrobbling and improve error handling
+      * LastFM: Remove invalid tracks from the queue after a scrobbling error
+      * Mpris: Add CanSetFullscreen and Fullscreen properties
+      * Replace custom volume widget with gtk's VolumeButton
+      * Improved threading in some areas around GUI manipulation
+
+
+    Notable Bugs Fixed (69 fixed since 2.4.0):
+
+      * Migo.Syndication: Handle feeds with malformed enclosure URLs
+      * bgo#577396: AppleDeviceTrackInfo: Fix reading and writing rating values
+      * bgo#587756: MassStorage: Save playlists relative to BaseDirectory
+      * bgo#615219: Don't increment skip counter when restarting current track
+      * bgo#626659: ServiceManager: check properly if a service is required
+      * bgo#634063: FileSystemQueueSource: Reload when tracks are imported
+      * bgo#634758: PlaylistSource: Make sure the right tracks are removed
+      * bgo#657769: PrimarySource: Make sure AddTrackJob is marked as finished
+      * bgo#662909: PlaylistParser: Retry HTTP request after timeout
+      * bgo#666696: DapSource: Flush pending changes when quitting
+      * bgo#671948: DapSource: Put the playlists below the default sources
+      * bgo#672744: UPnPServerSource: Fix crash when getting the root object
+      * bgo#673037: libossifer: Fix certificate validation with libsoup 2.38
+      * bgo#673416: DbIteratorJob: Abort job after several consecutive failures
+      * bgo#676144: PlayQueueSource: Fix high memory usage when shuffling
+      * bgo#677288: PrimarySource: Fix pruning of artists from the database
+      * bgo#642830: AppleDevice: Fix device loading if invalid tracks are present
+      * bgo#680679: PlayerEngine: Fix reporting of playback errors
       * AmazonMp3.Store: Fix URL redirection for sign out action
       * bgo#623974: BasicTrackDetailsPage: Blank year spin button when 0
       * bgo#624976: Gui.Canvas.Rect: log invalid values for Width/Height
@@ -15,6 +71,10 @@ Banshee 2.6.0 - 2012-09-27
       * bgo#682510: Mpris: Only raise PropertiesChanged signal if value changed
       * bgo#683359: SourceView: log errors in SetCellDataFunc to avoid crashing
       * bgo#661112: Gui.Canvas.Size: log invalid values for Width/Height
+      * bgo#682996: Dap.MassStorage: PlaylistPaths to return empty array
+      * bgo#683498: a11y: Fix a NullReferenceException in ListViewAccessible
+      * bgo#679260: AppleDevice: Postpone invalid tracks drop to the sync cycle
+
 
 ===============================================================================
 SOURCES / PACKAGES
