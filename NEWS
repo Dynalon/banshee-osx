@@ -1,5 +1,5 @@
 ===============================================================================
-Banshee 2.6.0 - 2012-09-27
+Banshee 2.6.0 - 2012-09-29
 ===============================================================================
 
     Banshee 2.6 is the culmination of six months' work by 15 developers, 30
@@ -47,13 +47,19 @@ Banshee 2.6.0 - 2012-09-27
     Notable Bugs Fixed (69 fixed since 2.4.0):
 
       * Migo.Syndication: Handle feeds with malformed enclosure URLs
+      * AmazonMp3.Store: Fix URL redirection for sign out action
       * bgo#577396: AppleDeviceTrackInfo: Fix reading and writing rating values
       * bgo#587756: MassStorage: Save playlists relative to BaseDirectory
       * bgo#615219: Don't increment skip counter when restarting current track
+      * bgo#623974: BasicTrackDetailsPage: Blank year spin button when 0
+      * bgo#624976: Gui.Canvas.Rect: log invalid values for Width/Height
       * bgo#626659: ServiceManager: check properly if a service is required
       * bgo#634063: FileSystemQueueSource: Reload when tracks are imported
       * bgo#634758: PlaylistSource: Make sure the right tracks are removed
+      * bgo#636450: PathPattern: Limit filename length to 200 characters
+      * bgo#642830: AppleDevice: Fix device loading if invalid tracks are present
       * bgo#657769: PrimarySource: Make sure AddTrackJob is marked as finished
+      * bgo#661112: Gui.Canvas.Size: log invalid values for Width/Height
       * bgo#662909: PlaylistParser: Retry HTTP request after timeout
       * bgo#666696: DapSource: Flush pending changes when quitting
       * bgo#671948: DapSource: Put the playlists below the default sources
@@ -62,18 +68,12 @@ Banshee 2.6.0 - 2012-09-27
       * bgo#673416: DbIteratorJob: Abort job after several consecutive failures
       * bgo#676144: PlayQueueSource: Fix high memory usage when shuffling
       * bgo#677288: PrimarySource: Fix pruning of artists from the database
-      * bgo#642830: AppleDevice: Fix device loading if invalid tracks are present
-      * bgo#680679: PlayerEngine: Fix reporting of playback errors
-      * AmazonMp3.Store: Fix URL redirection for sign out action
-      * bgo#623974: BasicTrackDetailsPage: Blank year spin button when 0
-      * bgo#624976: Gui.Canvas.Rect: log invalid values for Width/Height
-      * bgo#636450: PathPattern: Limit filename length to 200 characters
-      * bgo#682510: Mpris: Only raise PropertiesChanged signal if value changed
-      * bgo#683359: SourceView: log errors in SetCellDataFunc to avoid crashing
-      * bgo#661112: Gui.Canvas.Size: log invalid values for Width/Height
-      * bgo#682996: Dap.MassStorage: PlaylistPaths to return empty array
-      * bgo#683498: a11y: Fix a NullReferenceException in ListViewAccessible
       * bgo#679260: AppleDevice: Postpone invalid tracks drop to the sync cycle
+      * bgo#680679: PlayerEngine: Fix reporting of playback errors
+      * bgo#682510: Mpris: Only raise PropertiesChanged signal if value changed
+      * bgo#682996: Dap.MassStorage: PlaylistPaths to return empty array
+      * bgo#683359: SourceView: log errors in SetCellDataFunc to avoid crashing
+      * bgo#683498: a11y: Fix a NullReferenceException in ListViewAccessible
 
 
 ===============================================================================
@@ -137,5 +137,3 @@ Contributors For This Release
      Martin Srebotnjak, Matej Urbančič, Muhammet Kara, Мирослав Николић,
      Piotr Drąg, Praveen Illa, Rūdolfs Mazurs, Techlive Zheng,
      Žygimantas Beručka
-
-
