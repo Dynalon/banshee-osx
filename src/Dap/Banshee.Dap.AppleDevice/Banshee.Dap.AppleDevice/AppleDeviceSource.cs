@@ -570,7 +570,7 @@ namespace Banshee.Dap.AppleDevice
 
             SyncTracksToAdd (progressUpdater);
 
-            SyncTracksToUpdate ();
+            SyncTracksToUpdate (progressUpdater);
 
             SyncTracksToRemove (progressUpdater);
 
@@ -611,8 +611,10 @@ namespace Banshee.Dap.AppleDevice
             }
         }
 
-        void SyncTracksToUpdate ()
+        void SyncTracksToUpdate (UserJob progressUpdater)
         {
+            string message = Catalog.GetString ("Updating metadata in track {0} of {1}");
+            int total = tracks_to_update.Count;
             while (tracks_to_update.Count > 0) {
                 AppleDeviceTrackInfo track = null;
                 lock (sync_mutex) {
@@ -620,6 +622,8 @@ namespace Banshee.Dap.AppleDevice
                 }
 
                 try {
+                    UpdateProgress (progressUpdater, message, total - tracks_to_update.Count, total);
+
                     track.CommitToIpod (MediaDatabase);
                 } catch (Exception e) {
                     Log.Exception ("Cannot save track to iPod", e);
@@ -654,13 +658,16 @@ namespace Banshee.Dap.AppleDevice
                 }
             }
 
-            SyncRemovalOfInvalidTracks ();
+            SyncRemovalOfInvalidTracks (progressUpdater);
         }
 
-        void SyncRemovalOfInvalidTracks ()
+        void SyncRemovalOfInvalidTracks (UserJob progressUpdater)
         {
+            string message = Catalog.GetString ("Cleaning up, removing invalid track {0} of {1}");
+            int total = invalid_tracks_in_device.Count;
             while (invalid_tracks_in_device.Count > 0) {
                 try {
+                    UpdateProgress (progressUpdater, message, total - invalid_tracks_in_device.Count, total);
                     DeleteTrack (invalid_tracks_in_device.Dequeue (), false);
                 } catch (Exception e) {
                     Log.Exception ("Cannot remove invalid track from iPod", e);
