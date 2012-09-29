@@ -222,7 +222,7 @@ namespace Lastfm
                 current_scrobble_request.AddParameter (String.Format ("chosenByUser[{0}]", i), chosen_by_user ? "1" : "0");
             }
 
-            Log.DebugFormat ("### Last.fm scrobbler sending '{0}'", current_scrobble_request.ToString ());
+            Log.DebugFormat ("Last.fm scrobbler sending '{0}'", current_scrobble_request.ToString ());
 
             state = State.Transmitting;
             current_async_result = current_scrobble_request.BeginSend (OnScrobbleResponse, tracks.Count);
