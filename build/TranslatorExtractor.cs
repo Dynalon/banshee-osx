@@ -112,6 +112,7 @@ public class TranslatorExtractor
             case "de": language_name = "German"; break;
             case "fr": language_name = "French"; break;
             case "el": language_name = "Greek"; break;
+            case "en_GB": language_name = "British English"; break;
             case "gu": language_name = "Gujarati"; break;
             case "he": language_name = "Hebrew"; break;
             case "id": language_name = "Indonesian"; break;
