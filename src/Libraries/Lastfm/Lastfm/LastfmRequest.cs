@@ -159,6 +159,10 @@ namespace Lastfm
 
             SetResponseString ();
 
+            if (response_string == null) {
+                return StationError.Unknown;
+            }
+
             if (response_string.Contains ("<lfm status=\"failed\">")) {
                 // XML reply indicates an error
                 Match match = Regex.Match (response_string, "<error code=\"(\\d+)\">");
@@ -253,7 +257,7 @@ namespace Lastfm
 
         private void SetResponseString ()
         {
-            if (response_string == null) {
+            if (response_string == null && response_stream != null) {
                 using (StreamReader sr = new StreamReader (response_stream)) {
                     response_string = sr.ReadToEnd ();
                 }
