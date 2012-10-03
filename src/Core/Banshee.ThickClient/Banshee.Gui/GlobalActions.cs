@@ -57,12 +57,6 @@ namespace Banshee.Gui
                     Catalog.GetString ("Import _Playlist..."), null,
                     Catalog.GetString ("Import a playlist"), OnImportPlaylist),
 
-                new ActionEntry ("RescanAction", null,
-                    Catalog.GetString ("Rescan Music Library"), null,
-                    Catalog.GetString ("Rescan the Music Library folder"), delegate {
-                        new Banshee.Collection.RescanPipeline (ServiceManager.SourceManager.MusicLibrary);
-                    }),
-
                 new ActionEntry ("OpenLocationAction", null,
                     Catalog.GetString ("Open _Location..."), "<control>L",
                     Catalog.GetString ("Open a remote location for playback"), OnOpenLocation),
@@ -82,6 +76,12 @@ namespace Banshee.Gui
                 // Tools menu
                 new ActionEntry ("ToolsMenuAction", null,
                     Catalog.GetString ("_Tools"), null, null, null),
+
+                new ActionEntry ("RescanAction", null,
+                                 Catalog.GetString ("Rescan Music Library"), null,
+                                 Catalog.GetString ("Rescan the Music Library folder"), delegate {
+                    new Banshee.Collection.RescanPipeline (ServiceManager.SourceManager.MusicLibrary);
+                }),
 
                 // Help Menu
                 new ActionEntry ("HelpMenuAction", null,
