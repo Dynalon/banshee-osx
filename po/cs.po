@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-21 19:53+0000\n"
-"PO-Revision-Date: 2012-09-03 00:09+0200\n"
+"POT-Creation-Date: 2012-09-29 20:20+0000\n"
+"PO-Revision-Date: 2012-10-08 07:02+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -623,7 +623,7 @@ msgid "Audio Quality"
 msgstr "Kvalita zvuku"
 
 #: ../data/desktop-files/common.desktop.in.h:1
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:196
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:194
 msgid "Media Player"
 msgstr "Multimediální přehrávač"
 
@@ -1297,7 +1297,7 @@ msgid "Stream location not found"
 msgstr "Umístění proudu nebylo nalezeno"
 
 #: ../src/Core/Banshee.Core/Banshee.Collection/TrackInfo.cs:347
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:339
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:344
 msgid "File not found"
 msgstr "Soubor nenalezen"
 
@@ -1964,7 +1964,7 @@ msgstr "Vymazat seznam skladeb"
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:176
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:135
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:462
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/SourceView.cs:595
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/SourceView.cs:612
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/SourceView_DragAndDrop.cs:214
 msgid "New Playlist"
 msgstr "Nový seznam skladeb"
@@ -2568,7 +2568,7 @@ msgstr "drm"
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:234
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:236
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:238
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:400
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:405
 msgid "Unknown"
 msgstr "Neznámý"
 
@@ -3600,19 +3600,19 @@ msgstr "Nastavit čísla a počítadla všech disků na tuto hodnotu"
 msgid "_Disc Number:"
 msgstr "Číslo _disku:"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:188
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:196
 msgid "Set all years to this value"
 msgstr "Nastavit všechny roky na tuto hodnotu"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:189
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:197
 msgid "_Year:"
 msgstr "_Rok:"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:196
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:204
 msgid "Set all ratings to this value"
 msgstr "Nastavit všechna hodnocení na tuto hodnotu"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:197
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:205
 msgid "_Rating:"
 msgstr "_Hodnocení:"
 
@@ -4282,29 +4282,39 @@ msgstr "Podporuje přebaly alb"
 msgid "Supports photos"
 msgstr "Podporuje fotografie"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:465
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:462
 msgid "Track duration is zero"
 msgstr "Délka stopy je nulová"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:571
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:566
 msgid "Syncing iPod"
 msgstr "Synchronizace s iPodem"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:572
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:567
 msgid "Preparing to synchronize..."
 msgstr "Připravuje se synchronizace…"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:575
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:589
 #, csharp-format
 msgid "Adding track {0} of {1}"
 msgstr "Přidává se stopa {0} z {1}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:611
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:616
+#, csharp-format
+msgid "Updating metadata in track {0} of {1}"
+msgstr "Aktualizují se metadata ve stopě {0} z {1}"
+
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:636
 #, csharp-format
 msgid "Removing track {0} of {1}"
 msgstr "Odstraňuje se stopa {0} z {1}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:664
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:666
+#, csharp-format
+msgid "Cleaning up, removing invalid track {0} of {1}"
+msgstr "Čistí se, odstraňuje se neplatná stopa {0} z {1}"
+
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:713
 msgid "Writing media database"
 msgstr "Zapisuje se databáze médií"
 
@@ -4322,31 +4332,31 @@ msgstr "Zařízení"
 msgid "Device Properties"
 msgstr "Vlastnosti zařízení"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:203
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:201
 msgid "Product"
 msgstr "Produkt"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:204
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:202
 msgid "Vendor"
 msgstr "Dodavatel"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:287
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:292
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:141
 #, csharp-format
 msgid "Loading {0}"
 msgstr "Probíhá načítání {0}"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:381
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:386
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/ColumnCellYesNo.cs:37
 msgid "Yes"
 msgstr "Ano"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:381
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:386
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/ColumnCellYesNo.cs:38
 msgid "No"
 msgstr "Žádný"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:402
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:407
 #, csharp-format
 msgid ""
 "The {0} format is not supported by the device, and no converter was found to "
@@ -4355,11 +4365,11 @@ msgstr ""
 "Formát {0} není zařízením podporován a nebyl nalezen žádný převodník, který "
 "by jej převedl"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:408
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:413
 msgid "File format conversion support is not available"
 msgstr "Podpora převodu formátu souboru není dostupná"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:434
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:439
 msgid "Error converting file"
 msgstr "Chyba při převádění souboru"
 
@@ -4396,7 +4406,7 @@ msgstr[2] "Synchronizací se z vašeho zařízení odstraní {0} stop."
 msgid "Are you sure you want to continue?"
 msgstr "Opravdu chcete pokračovat?"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:118
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:121
 msgid "Remove tracks"
 msgstr "Odstranit stopy"
 
@@ -4845,11 +4855,11 @@ msgstr "Přihlášení"
 msgid "Connecting to {0}"
 msgstr "Připojování k {0}"
 
-#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:185
+#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:186
 msgid "Add Remote DAAP Server"
 msgstr "Přidat vzdálený server DAAP"
 
-#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:186
+#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:187
 msgid "Add a new remote DAAP server"
 msgstr "Přidat nový vzdálený server DAAP"
 
