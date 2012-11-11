@@ -79,9 +79,8 @@ namespace Banshee.Playlists.Formats
 
         protected virtual Uri ResolveUri(string uri)
         {
-            if (!uri.Contains (Folder.UnixSeparator.ToString ()) && uri.Contains (Folder.DosSeparator.ToString ())) {
-                uri = uri.Replace (Folder.DosSeparator, Folder.UnixSeparator);
-            }
+            uri = Paths.NormalizeToUnix (uri);
+
             return BaseUri == null ? new Uri(uri) : new Uri(BaseUri, uri);
         }
 
