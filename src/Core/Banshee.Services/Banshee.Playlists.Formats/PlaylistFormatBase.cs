@@ -34,7 +34,6 @@ using Hyena;
 
 using Banshee.Base;
 using Banshee.Sources;
-using Folder = Banshee.IO.Directory;
 
 namespace Banshee.Playlists.Formats
 {
