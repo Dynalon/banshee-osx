@@ -33,7 +33,7 @@ using KeyFile;
 
 using Banshee.Base;
 using Banshee.Hardware;
-using Banshee.IO;
+using Hyena;
 
 namespace Banshee.Hardware.Gio
 {
@@ -232,7 +232,7 @@ namespace Banshee.Hardware.Gio
                     if (mpi_file.HasKey (PlaylistGroup, "FolderSeparator")) {
                         string folder_separator = mpi_file.GetString (PlaylistGroup, "FolderSeparator");
                         if (folder_separator == "DOS") {
-                            FolderSeparator = Directory.DosSeparator;
+                            FolderSeparator = Paths.Folder.DosSeparator;
                         }
                     }
                 }
@@ -251,7 +251,7 @@ namespace Banshee.Hardware.Gio
                 OutputFormats = new string[] {};
                 PlaylistFormats = new string[] {};
                 AccessProtocols = new string[] {};
-                FolderSeparator = Directory.UnixSeparator;
+                FolderSeparator = Paths.Folder.UnixSeparator;
             }
         }
     }

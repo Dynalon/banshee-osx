@@ -35,9 +35,6 @@ namespace Banshee.IO
 {
     public static class Directory
     {
-        public const char DosSeparator = '\\';
-        public const char UnixSeparator = '/';
-
         public static bool Exists (string directory)
         {
             return Provider.Directory.Exists (Provider.GetPath (directory));
