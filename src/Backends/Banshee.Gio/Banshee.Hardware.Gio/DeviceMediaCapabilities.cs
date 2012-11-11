@@ -136,7 +136,7 @@ namespace Banshee.Hardware.Gio
 #endregion
         private class GMpiFileInfo
         {
-            private const char Seperator = ';';
+            private const char Separator = ';';
             private const string MediaGroup = "Media";
             private const string DeviceGroup = "Device";
             private const string VendorGroup = "Vendor";
@@ -149,7 +149,7 @@ namespace Banshee.Hardware.Gio
             {
                 try {
                     mpi_file = new GKeyFile ();
-                    mpi_file.ListSeparator = Seperator;
+                    mpi_file.ListSeparator = Separator;
                     mpi_file.LoadFromDirs (String.Format ("{0}.mpi", mediaPlayerId),
                                            new string [] {"/usr/share/media-player-info",
                                                           "/usr/local/share/media-player-info"},

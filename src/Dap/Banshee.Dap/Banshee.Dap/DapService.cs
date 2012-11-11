@@ -60,7 +60,7 @@ namespace Banshee.Dap
 
         public void DelayedInitialize ()
         {
-            // This group source gives us a seperator for DAPs in the source view.
+            // This group source gives us a separator for DAPs in the source view.
             SourceManager.GroupSource dap_group = new SourceManager.GroupSource (Catalog.GetString ("Devices"), 400);
             ThreadAssist.ProxyToMain (delegate {
                 ServiceManager.SourceManager.AddSource (dap_group);

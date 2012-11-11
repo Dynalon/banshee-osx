@@ -171,9 +171,9 @@ namespace Banshee.OsxBackend
             }
 
             // remove unnecessary separator as we have moved the preferences item
-            var preferences_seperator = interface_action_service.UIManager.GetWidget ("/MainMenu/EditMenu/PreferencesSeparator") as SeparatorMenuItem;
-            if (preferences_seperator != null) {
-                preferences_seperator.Destroy ();
+            var preferences_separator = interface_action_service.UIManager.GetWidget ("/MainMenu/EditMenu/PreferencesSeparator") as SeparatorMenuItem;
+            if (preferences_separator != null) {
+                preferences_separator.Destroy ();
             }
 
             // actually performs the menu binding
