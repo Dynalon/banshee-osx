@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: Banshee 2.3.6\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-25 10:08+0000\n"
-"PO-Revision-Date: 2012-08-25 20:54+0800\n"
+"POT-Creation-Date: 2012-11-11 23:59+0000\n"
+"PO-Revision-Date: 2012-11-19 21:27+0800\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <chinese-l10n@googlegroups.com>\n"
 "Language: \n"
@@ -604,7 +604,7 @@ msgid "Audio Quality"
 msgstr "音訊品質"
 
 #: ../data/desktop-files/common.desktop.in.h:1
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:196
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:194
 msgid "Media Player"
 msgstr "媒體播放程式"
 
@@ -1259,7 +1259,7 @@ msgid "Stream location not found"
 msgstr "找不到串流位置"
 
 #: ../src/Core/Banshee.Core/Banshee.Collection/TrackInfo.cs:347
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:343
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:344
 msgid "File not found"
 msgstr "找不到檔案"
 
@@ -1908,7 +1908,7 @@ msgstr "刪除播放清單"
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:176
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:135
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:462
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/SourceView.cs:595
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/SourceView.cs:612
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/SourceView_DragAndDrop.cs:214
 msgid "New Playlist"
 msgstr "新的播放清單"
@@ -2512,7 +2512,7 @@ msgstr "drm"
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:234
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:236
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:238
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:404
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:405
 msgid "Unknown"
 msgstr "未知"
 
@@ -2988,44 +2988,44 @@ msgid "Import a playlist"
 msgstr "匯入播放清單"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:61
-msgid "Rescan Music Library"
-msgstr "重新掃描音樂庫"
-
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:62
-msgid "Rescan the Music Library folder"
-msgstr "重新掃描音樂庫資料夾"
-
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:67
 msgid "Open _Location..."
 msgstr "開啟位置(_L)…"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:68
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:62
 msgid "Open a remote location for playback"
 msgstr "播放開啟的遠端位置"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:71
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:65
 msgid "_Quit"
 msgstr "退出(_Q)"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:72
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:66
 msgid "Quit Banshee"
 msgstr "退出 Banshee"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:76
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:70
 msgid "_Edit"
 msgstr "編輯(_E)"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:79
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:73
 msgid "_Preferences"
 msgstr "偏好設定(_P)"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:80
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:74
 msgid "Modify your personal preferences"
 msgstr "修改您的個人偏好設定"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:84
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:78
 msgid "_Tools"
 msgstr "工具(_T)"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:81
+msgid "Rescan Music Library"
+msgstr "重新掃描音樂庫"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:82
+msgid "Rescan the Music Library folder"
+msgstr "重新掃描音樂庫資料夾"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:88
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HeaderFilters.cs:134
@@ -3533,19 +3533,19 @@ msgstr "以這些值設定所有磁碟編號與計數"
 msgid "_Disc Number:"
 msgstr "光碟編號(_D)："
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:188
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:196
 msgid "Set all years to this value"
 msgstr "以此值設定所有年份"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:189
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:197
 msgid "_Year:"
 msgstr "年份(_Y)："
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:196
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:204
 msgid "Set all ratings to this value"
 msgstr "以此值設定所有評等"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:197
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:205
 msgid "_Rating:"
 msgstr "評等(_R)："
 
@@ -4209,29 +4209,39 @@ msgstr "支援封面插圖"
 msgid "Supports photos"
 msgstr "支援的相片"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:465
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:462
 msgid "Track duration is zero"
 msgstr "曲目長度為零"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:571
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:566
 msgid "Syncing iPod"
 msgstr "正在同步 iPod"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:572
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:567
 msgid "Preparing to synchronize..."
 msgstr "正在準備同步化…"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:575
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:589
 #, csharp-format
 msgid "Adding track {0} of {1}"
 msgstr "正在加入 {1} 中的 {0}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:611
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:616
+#, csharp-format
+msgid "Updating metadata in track {0} of {1}"
+msgstr "正在更新曲目 {0} / {1} 的中介資料"
+
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:636
 #, csharp-format
 msgid "Removing track {0} of {1}"
 msgstr "正在匯入曲目 {0} / {1}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:664
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:666
+#, csharp-format
+msgid "Cleaning up, removing invalid track {0} of {1}"
+msgstr "正在清理、移除無效的曲目 {0} / {1}"
+
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:713
 msgid "Writing media database"
 msgstr "正在寫入媒體資料庫"
 
@@ -4240,7 +4250,7 @@ msgstr "正在寫入媒體資料庫"
 msgid "Sync {0}"
 msgstr "同步 {0}"
 
-#. This group source gives us a seperator for DAPs in the source view.
+#. This group source gives us a separator for DAPs in the source view.
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/DapService.cs:64
 msgid "Devices"
 msgstr "裝置"
@@ -4249,42 +4259,42 @@ msgstr "裝置"
 msgid "Device Properties"
 msgstr "裝置屬性"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:203
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:201
 msgid "Product"
 msgstr "產品"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:204
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:202
 msgid "Vendor"
 msgstr "廠商"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:291
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:292
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:141
 #, csharp-format
 msgid "Loading {0}"
 msgstr "正在載入 {0}"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:385
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:386
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/ColumnCellYesNo.cs:37
 msgid "Yes"
 msgstr "是"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:385
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:386
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/ColumnCellYesNo.cs:38
 msgid "No"
 msgstr "否"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:406
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:407
 #, csharp-format
 msgid ""
 "The {0} format is not supported by the device, and no converter was found to "
 "convert it"
 msgstr "此裝置不支援 {0} 格式，而且也找不到轉換器來轉換它"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:412
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:413
 msgid "File format conversion support is not available"
 msgstr "無法使用檔案格式轉換支援"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:438
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:439
 msgid "Error converting file"
 msgstr "轉換檔案時發生錯誤"
 
@@ -4318,7 +4328,7 @@ msgstr[1] "該同步操作將從您的裝置移除 {0} 首曲目。"
 msgid "Are you sure you want to continue?"
 msgstr "您確定要繼續嗎？"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:118
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:121
 msgid "Remove tracks"
 msgstr "移除曲目"
 
@@ -4756,11 +4766,11 @@ msgstr "登入"
 msgid "Connecting to {0}"
 msgstr "連線到 {0}"
 
-#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:185
+#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:186
 msgid "Add Remote DAAP Server"
 msgstr "加入遠端 DAAP 伺服器"
 
-#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:186
+#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:187
 msgid "Add a new remote DAAP server"
 msgstr "加入新的遠端 DAAP 伺服器"
 
