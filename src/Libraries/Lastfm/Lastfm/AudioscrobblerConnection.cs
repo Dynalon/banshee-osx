@@ -202,7 +202,7 @@ namespace Lastfm
             current_scrobble_request = new LastfmRequest ("track.scrobble", RequestType.Write, ResponseFormat.Json);
             IList<IQueuedTrack> tracks = queue.GetTracks ();
 
-             for (int i = 0; i < tracks.Count; i++) {
+            for (int i = 0; i < tracks.Count; i++) {
                 IQueuedTrack track = tracks[i];
 
                 string str_track_number = String.Empty;
