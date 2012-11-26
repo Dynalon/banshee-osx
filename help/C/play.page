@@ -8,10 +8,15 @@
     <link type="seealso" xref="queue"/>
     <desc>Play your videos and music files.</desc>
     <revision pkgversion="1.6" version="0.1" date="2009-01-22" status="draft"/>
+    <revision pkgversion="2.6.0" version="0.2" date="2012-11-26" status="draft"/>
     <credit type="author">
       <name>Paul Cutler</name>
       <email>pcutler@gnome.org</email>
-    </credit>    
+    </credit>
+    <credit type="editor">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+    </credit>
 <!--
     <copyright>
       <year>2010</year>
@@ -55,6 +60,37 @@
   you wish to listen to and you can play songs from each.
   </p>
   
+  <p>Banshee can be used to play music in a random order using the
+  <gui style="menuitem">Shuffle</gui> mode. Enable the mode in <guiseq>
+  <gui style="menu">Playback</gui><gui style="menuitem">Shuffle</gui></guiseq>,
+  followed by a shuffle type selection.</p>
+
+  <terms>
+    <item>
+      <title><gui style="radiobutton">By Song</gui></title>
+      <p>Play tracks in a random order.</p>
+    </item>
+    <item>
+      <title><gui style="radiobutton">By Artist</gui></title>
+      <p>Play tracks by different artists every time.</p>
+    </item>
+    <item>
+      <title><gui style="radiobutton">By Album</gui></title>
+      <p>Play tracks from different albums every time.</p>
+    </item>
+    <item>
+      <title><gui style="radiobutton">By Rating</gui></title>
+      <p>Play tracks with higher ratings more often than unrated ones.</p>
+      <note type="info"><p>If there are no rated tracks, the tracks are played
+      in a random order.</p></note>
+    </item>
+    <item>
+      <title><gui style="radiobutton">By Score</gui></title>
+      <p>Tracks that you play frequently are scored higher and played more
+      often.</p>
+    </item>
+  </terms>
+
   </section>
 
   <section id="playvideo">
