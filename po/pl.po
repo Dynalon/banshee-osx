@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-25 21:05+0200\n"
-"PO-Revision-Date: 2012-08-25 21:28+0200\n"
+"POT-Creation-Date: 2012-11-27 16:21+0100\n"
+"PO-Revision-Date: 2012-11-27 16:22+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -630,7 +630,7 @@ msgid "Audio Quality"
 msgstr "Jakość dźwięku"
 
 #: ../data/desktop-files/common.desktop.in.h:1
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:196
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:194
 msgid "Media Player"
 msgstr "Odtwarzacz multimediów"
 
@@ -1307,7 +1307,7 @@ msgid "Stream location not found"
 msgstr "Nie odnaleziono położenia strumienia"
 
 #: ../src/Core/Banshee.Core/Banshee.Collection/TrackInfo.cs:347
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:343
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:344
 msgid "File not found"
 msgstr "Nie odnaleziono pliku"
 
@@ -1977,7 +1977,7 @@ msgstr "Usuń listę odtwarzania"
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/SourceActions.cs:176
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:135
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:462
-#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/SourceView.cs:595
+#: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/SourceView.cs:612
 #: ../src/Core/Banshee.ThickClient/Banshee.Sources.Gui/SourceView_DragAndDrop.cs:214
 msgid "New Playlist"
 msgstr "Nowa lista odtwarzania"
@@ -2588,7 +2588,7 @@ msgstr "drm"
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:234
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:236
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/StatisticsPage.cs:238
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:404
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:405
 msgid "Unknown"
 msgstr "Nieznana"
 
@@ -2933,7 +2933,7 @@ msgstr "_Zakładki"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/BookmarkUI.cs:89
 msgid "_Add Bookmark"
-msgstr "Dod_aj zakładkę"
+msgstr "_Dodaj zakładkę"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/BookmarkUI.cs:90
 msgid "Bookmark the Position in the Current Track"
@@ -3073,44 +3073,44 @@ msgid "Import a playlist"
 msgstr "Importowanie listy odtwarzania"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:61
-msgid "Rescan Music Library"
-msgstr "Przeskanuj kolekcję muzyki ponownie"
-
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:62
-msgid "Rescan the Music Library folder"
-msgstr "Skanuje katalog kolekcji muzyki ponownie"
-
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:67
 msgid "Open _Location..."
 msgstr "_Otwórz położenie..."
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:68
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:62
 msgid "Open a remote location for playback"
 msgstr "Otwiera zdalne położenie do odtwarzania"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:71
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:65
 msgid "_Quit"
 msgstr "Za_kończ"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:72
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:66
 msgid "Quit Banshee"
 msgstr "Kończy działanie programu Banshee"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:76
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:70
 msgid "_Edit"
 msgstr "_Edycja"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:79
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:73
 msgid "_Preferences"
 msgstr "_Preferencje"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:80
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:74
 msgid "Modify your personal preferences"
 msgstr "Modyfikowanie ustawień osobistych"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:84
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:78
 msgid "_Tools"
 msgstr "_Narzędzia"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:81
+msgid "Rescan Music Library"
+msgstr "Przeskanuj kolekcję muzyki ponownie"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:82
+msgid "Rescan the Music Library folder"
+msgstr "Skanuje katalog kolekcji muzyki ponownie"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:88
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HeaderFilters.cs:134
@@ -3625,19 +3625,19 @@ msgstr "Ustawia wszystkie pola numeru płyty i numerów ścieżek na tę wartoś
 msgid "_Disc Number:"
 msgstr "_Numer płyty:"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:188
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:196
 msgid "Set all years to this value"
 msgstr "Ustawia wszystkie pola lat na tę wartość"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:189
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:197
 msgid "_Year:"
 msgstr "_Rok:"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:196
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:204
 msgid "Set all ratings to this value"
 msgstr "Ustawia wszystkie oceny na tę wartość"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:197
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/BasicTrackDetailsPage.cs:205
 msgid "_Rating:"
 msgstr "_Ocena:"
 
@@ -4316,29 +4316,39 @@ msgstr "Obsługuje okładki"
 msgid "Supports photos"
 msgstr "Obsługuje zdjęcia"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:465
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:462
 msgid "Track duration is zero"
 msgstr "Długość ścieżki wynosi zero"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:571
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:566
 msgid "Syncing iPod"
 msgstr "Synchronizowanie odtwarzacza iPod"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:572
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:567
 msgid "Preparing to synchronize..."
 msgstr "Przygotowywanie do synchronizacji..."
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:575
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:589
 #, csharp-format
 msgid "Adding track {0} of {1}"
 msgstr "Dodawanie ścieżki {0} z {1}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:611
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:616
+#, csharp-format
+msgid "Updating metadata in track {0} of {1}"
+msgstr "Aktualizowanie metadanych ścieżki {0} z {1}"
+
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:636
 #, csharp-format
 msgid "Removing track {0} of {1}"
 msgstr "Usuwanie ścieżki {0} z {1}"
 
-#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:664
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:666
+#, csharp-format
+msgid "Cleaning up, removing invalid track {0} of {1}"
+msgstr "Czyszczenie, usuwanie nieprawidłowej ścieżki {0} z {1}"
+
+#: ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice/AppleDeviceSource.cs:713
 msgid "Writing media database"
 msgstr "Zapisywanie bazy danych multimediów"
 
@@ -4347,7 +4357,7 @@ msgstr "Zapisywanie bazy danych multimediów"
 msgid "Sync {0}"
 msgstr "Zsynchronizuj {0}"
 
-#. This group source gives us a seperator for DAPs in the source view.
+#. This group source gives us a separator for DAPs in the source view.
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/DapService.cs:64
 msgid "Devices"
 msgstr "Urządzenia"
@@ -4356,31 +4366,31 @@ msgstr "Urządzenia"
 msgid "Device Properties"
 msgstr "Właściwości urządzenia"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:203
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:201
 msgid "Product"
 msgstr "Produkt"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:204
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:202
 msgid "Vendor"
 msgstr "Producent"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:291
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:292
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Data/PodcastSource.cs:141
 #, csharp-format
 msgid "Loading {0}"
 msgstr "Wczytywanie {0}"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:385
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:386
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/ColumnCellYesNo.cs:37
 msgid "Yes"
 msgstr "Tak"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:385
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:386
 #: ../src/Extensions/Banshee.Podcasting/Banshee.Podcasting.Gui/ColumnCellYesNo.cs:38
 msgid "No"
 msgstr "Nie"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:406
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:407
 #, csharp-format
 msgid ""
 "The {0} format is not supported by the device, and no converter was found to "
@@ -4389,11 +4399,11 @@ msgstr ""
 "Format {0} nie jest obsługiwany przez to urządzenie i nie odnaleziono "
 "konwertera do konwersji tego formatu"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:412
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:413
 msgid "File format conversion support is not available"
 msgstr "Konwersja formatu plików nie jest obsługiwana"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:438
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSource.cs:439
 msgid "Error converting file"
 msgstr "Błąd podczas konwertowania pliku"
 
@@ -4430,7 +4440,7 @@ msgstr[2] "Synchronizacja usunie {0} ścieżek z urządzenia."
 msgid "Are you sure you want to continue?"
 msgstr "Na pewno kontynuować?"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:118
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:121
 msgid "Remove tracks"
 msgstr "Usuń ścieżki"
 
@@ -4876,11 +4886,11 @@ msgstr "Login"
 msgid "Connecting to {0}"
 msgstr "Łączenie z {0}"
 
-#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:185
+#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:186
 msgid "Add Remote DAAP Server"
 msgstr "Dodaj zdalny serwer DAAP"
 
-#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:186
+#: ../src/Extensions/Banshee.Daap/Banshee.Daap/DaapService.cs:187
 msgid "Add a new remote DAAP server"
 msgstr "Dodaj nowy zdalny serwer DAAP"
 
