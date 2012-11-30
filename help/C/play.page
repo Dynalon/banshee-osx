@@ -8,7 +8,8 @@
     <link type="seealso" xref="queue"/>
     <desc>Play your videos and music files.</desc>
     <revision pkgversion="1.6" version="0.1" date="2009-01-22" status="draft"/>
-    <revision pkgversion="2.6.0" version="0.2" date="2012-11-26" status="draft"/>
+    <revision pkgversion="2.6.0" version="0.2" date="2012-11-26"
+    status="draft"/>
     <credit type="author">
       <name>Paul Cutler</name>
       <email>pcutler@gnome.org</email>
@@ -25,41 +26,38 @@
 -->
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
   </info>
-  
+
   <title>Play Your Media</title>
 
   <section id="playmusic">
-  <title>Play your music</title>    
-  
-  <p>To play music in Banshee, choose the Music source.  The music library
+    <title>Play your music</title>
+
+  <p>To play music in Banshee, choose the Music source. The music library
   will show you all artists in your music library, cover art for each album,
   and a list of all songs in your library.</p>
-  
+
   <p>Choose the album or song you wish to play from the list of artists, albums
-  or use the search bar in the upper right hand corner of Banshee.
-  </p>
-  
-  <p>To start playing a song, use your mouse to double click the song name, 
-  press the <key>Spacebar</key>, or choose <guiseq><gui>Playback</gui>
-  <gui>Play</gui></guiseq> from the Banshee menu.
-  </p>
-  
+  or use the search bar in the upper right hand corner of Banshee.</p>
+
+  <p>To start playing a song, use your mouse to double click the song name,
+  press the <key>Spacebar</key>, or choose
+  <guiseq><gui style="menu">Playback</gui>
+  <gui style="menuitem">Play</gui></guiseq> from the Banshee menu.</p>
+
   <p>You can also start playing an album by choosing the album in the album
-  browser and using your mouse to double click the song name, 
-  press the <key>Spacebar</key>, or choose <guiseq><gui>Playback</gui>
-  <gui>Play</gui></guiseq> from the Banshee menu.
-  </p>
-  
+  browser and using your mouse to double click the song name, press the
+  <key>Spacebar</key>, or choose <guiseq><gui style="menu">Playback</gui>
+  <gui style="menuitem">Play</gui></guiseq> from the Banshee menu.</p>
+
   <p>To play all songs by one artist, choose the artist in the artist browser
-  and press the <key>Spacebar</key>, or choose <guiseq><gui>Playback</gui>
-  <gui>Play</gui></guiseq> from the Banshee menu.
-  </p>
-  
+  and press the <key>Spacebar</key>, or choose
+  <guiseq><gui style="menu">Playback</gui>
+  <gui style="menuitem">Play</gui></guiseq> from the Banshee menu.</p>
+
   <p>Banshee also displays your Favorite albums (those you play the most),
-  Recent Favorites, Recently Added and Unheard music.  Choose the one
-  you wish to listen to and you can play songs from each.
-  </p>
-  
+  Recent Favorites, Recently Added and Unheard music. Choose the one
+  you wish to listen to and you can play songs from each.</p>
+
   <p>Banshee can be used to play music in a random order using the
   <gui style="menuitem">Shuffle</gui> mode. Enable the mode in <guiseq>
   <gui style="menu">Playback</gui><gui style="menuitem">Shuffle</gui></guiseq>,
@@ -81,8 +79,10 @@
     <item>
       <title><gui style="radiobutton">By Rating</gui></title>
       <p>Play tracks with higher ratings more often than unrated ones.</p>
-      <note type="info"><p>If there are no rated tracks, the tracks are played
-      in a random order.</p></note>
+      <note style="info">
+        <p>If there are no rated tracks, the tracks are played
+      in a random order.</p>
+      </note>
     </item>
     <item>
       <title><gui style="radiobutton">By Score</gui></title>
@@ -94,44 +94,44 @@
   </section>
 
   <section id="playvideo">
-  <title>Play a video</title>    
-  
-  <p>Your imported videos are listed alphabetically.  To play a video, 
-  choose the video you wish to play from the list and 
-  press the <key>Spacebar</key>, or choose <guiseq><gui>Playback</gui>
-  <gui>Play</gui></guiseq> from the Banshee menu.</p>
-  
+    <title>Play a video</title>
+
+  <p>Your imported videos are listed alphabetically. To play a video,
+  choose the video you wish to play from the list and press the
+  <key>Spacebar</key>, or choose <guiseq><gui style="menu">Playback</gui>
+  <gui style="menuitem">Play</gui></guiseq> from the Banshee menu.</p>
+
   <p>Banshee also shows your Favorite videos (those you watch the most)
-  and Unwatched videos.  Choose one and you can play a video from the list.</p>	
-  
+  and Unwatched videos. Choose one and you can play a video from the
+  list.</p>
+
   </section>
-  
+
   <section id="playpodcast">
-  <title>Play a Podcast</title>    
-  
+    <title>Play a Podcast</title>
+
   <p>Podcasts shows you all Podcasts you're subscribed to, all Podcast
-  shows available, and the Podcast browser lists all Podcasts in order of 
+  shows available, and the Podcast browser lists all Podcasts in order of
   newest first.</p>
-  
-  <p>To play a Podcast, 
-  choose the Podcast you wish to play from the list and 
-  press the <key>Spacebar</key>, or choose <guiseq><gui>Playback</gui>
-  <gui>Play</gui></guiseq> from the Banshee menu.</p>
-  
+
+  <p>To play a Podcast, choose the Podcast you wish to play from the list and
+  press the <key>Spacebar</key>, or choose
+  <guiseq><gui style="menu">Playback</gui>
+  <gui style="menuitem">Play</gui></guiseq> from the Banshee menu.</p>
+
   </section>
-  
+
   <section id="playradio">
-  <title>Play an internet radio station</title>    
-  
-  <p>The Radio source shows you all internet radio stations you have added 
-  to Banshee alphabetically.
-  </p>
-  
-  <p>To play an internet radio station, 
-  choose the radio station you wish to play from the list and 
-  press the <key>Spacebar</key>, or choose <guiseq><gui>Playback</gui>
-  <gui>Play</gui></guiseq> from the Banshee menu.</p>
-  
-  </section>    
-	
+    <title>Play an internet radio station</title>
+
+  <p>The Radio source shows you all internet radio stations you have added
+  to Banshee alphabetically.</p>
+
+  <p>To play an internet radio station, choose the radio station you wish to
+  play from the list and press the <key>Spacebar</key>, or choose
+  <guiseq><gui style="menu">Playback</gui>
+  <gui style="menuitem">Play</gui></guiseq> from the Banshee menu.</p>
+
+  </section>
+
 </page>
