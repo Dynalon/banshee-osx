@@ -177,7 +177,7 @@ namespace Banshee.Dap.MassStorage
                     PlaylistSource playlist = new PlaylistSource (name, this);
                     playlist.Save ();
                     //Hyena.Data.Sqlite.HyenaSqliteCommand.LogAll = true;
-                    foreach (Dictionary<string, object> element in loaded_playlist.Elements) {
+                    foreach (PlaylistElement element in loaded_playlist.Elements) {
                         string track_path = (element["uri"] as Uri).LocalPath;
                         int track_id = DatabaseTrackInfo.GetTrackIdForUri (new SafeUri (track_path), DbId);
                         if (track_id == 0) {

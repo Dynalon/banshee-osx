@@ -108,7 +108,7 @@ namespace Banshee.Playlists.Formats
                     int index = Int32.Parse(line.Substring(index_offset, eq_offset - index_offset),
                         ApplicationContext.InternalCultureInfo.NumberFormat) - 1;
                     string value_string = line.Substring(eq_offset + 1).Trim();
-                    Dictionary<string, object> element = index < Elements.Count
+                    PlaylistElement element = index < Elements.Count
                         ? Elements[index]
                         : AddElement();
 

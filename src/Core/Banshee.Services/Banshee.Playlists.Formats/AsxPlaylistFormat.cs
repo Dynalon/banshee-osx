@@ -109,7 +109,7 @@ namespace Banshee.Playlists.Formats
                             PlaylistParser secondary = new PlaylistParser ();
                             if (secondary.Parse (new SafeUri (ResolveUri (href)))) {
                                 // splice in Elements of secondary
-                                foreach (Dictionary<string, object> e in secondary.Elements) {
+                                foreach (PlaylistElement e in secondary.Elements) {
                                     Elements.Add (e);
                                 }
                             }
@@ -121,7 +121,7 @@ namespace Banshee.Playlists.Formats
 
         private void LoadEntry (XmlTextReader xml_reader)
         {
-            Dictionary<string, object> element = AddElement ();
+            PlaylistElement element = AddElement ();
 
             do {
                 try {

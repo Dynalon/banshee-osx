@@ -66,7 +66,7 @@ namespace Banshee.Playlists.Formats
             playlist.Load (stream);
             Title = playlist.Title;
             foreach (Xspf.Track track in playlist.Tracks) {
-                Dictionary<string, object> element = AddElement ();
+                PlaylistElement element = AddElement ();
                 element["uri"] = track.GetLocationAt (0);
             }
         }

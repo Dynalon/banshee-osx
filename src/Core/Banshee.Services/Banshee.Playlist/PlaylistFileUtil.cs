@@ -118,7 +118,7 @@ namespace Banshee.Playlist
             IPlaylistFormat playlist = Load (playlistUri, baseUri);
             List<string> uris = new List<string> ();
             if (playlist != null) {
-                foreach (Dictionary<string, object> element in playlist.Elements) {
+                foreach (PlaylistElement element in playlist.Elements) {
                     uris.Add (((Uri)element["uri"]).AbsoluteUri);
                 }
             }
@@ -195,7 +195,7 @@ namespace Banshee.Playlist
                 parser.BaseUri = new Uri (relative_dir);
                 if (parser.Parse (uri)) {
                     List<string> uris = new List<string> ();
-                    foreach (Dictionary<string, object> element in parser.Elements) {
+                    foreach (PlaylistElement element in parser.Elements) {
                         uris.Add (((Uri)element["uri"]).LocalPath);
                     }
 

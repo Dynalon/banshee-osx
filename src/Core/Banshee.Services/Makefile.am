@@ -157,6 +157,7 @@ SOURCES =  \
 	Banshee.Playlists.Formats/InvalidPlaylistException.cs \
 	Banshee.Playlists.Formats/IPlaylistFormat.cs \
 	Banshee.Playlists.Formats/M3uPlaylistFormat.cs \
+	Banshee.Playlists.Formats/PlaylistElement.cs \
 	Banshee.Playlists.Formats/PlaylistFormatBase.cs \
 	Banshee.Playlists.Formats/PlaylistFormatDescription.cs \
 	Banshee.Playlists.Formats/PlaylistParser.cs \

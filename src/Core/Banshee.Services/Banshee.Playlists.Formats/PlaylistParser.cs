@@ -49,7 +49,7 @@ namespace Banshee.Playlists.Formats
             XspfPlaylistFormat.FormatDescription
         };
 
-        private List<Dictionary<string, object>> elements;
+        private List<PlaylistElement> elements;
         private Uri base_uri = null;
         private string title = null;
         private readonly int HTTP_REQUEST_RETRIES = 3;
@@ -192,7 +192,7 @@ namespace Banshee.Playlists.Formats
             }
         }
 
-        public List<Dictionary<string, object>> Elements {
+        public List<PlaylistElement> Elements {
             get { return elements; }
         }
 

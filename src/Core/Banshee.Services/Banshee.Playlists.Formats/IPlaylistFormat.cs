@@ -42,7 +42,7 @@ namespace Banshee.Playlists.Formats
         void Save(Stream stream, ITrackModelSource source);
 
         Dictionary<string, object> Attributes { get; }
-        List<Dictionary<string, object>> Elements { get; }
+        List<PlaylistElement> Elements { get; }
 
         Uri BaseUri { get; set; }
         string Title { get; set; }

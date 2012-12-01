@@ -40,14 +40,14 @@ namespace Banshee.Playlists.Formats
     public abstract class PlaylistFormatBase : IPlaylistFormat
     {
         private Dictionary<string, object> attributes = new Dictionary<string, object>();
-        private List<Dictionary<string, object>> elements = new List<Dictionary<string, object>>();
+        private List<PlaylistElement> elements = new List<PlaylistElement> ();
         private Uri base_uri = null;
         private string title = null;
 
         public PlaylistFormatBase()
         {
             attributes = new Dictionary<string, object>();
-            elements = new List<Dictionary<string, object>>();
+            elements = new List<PlaylistElement> ();
 
             if (Environment.CurrentDirectory.Equals ("/")) {
                 // System.Uri doesn't like / as a value
@@ -69,9 +69,9 @@ namespace Banshee.Playlists.Formats
 
         public abstract void Save(Stream stream, ITrackModelSource source);
 
-        protected virtual Dictionary<string, object> AddElement()
+        protected virtual PlaylistElement AddElement ()
         {
-            Dictionary<string, object> element = new Dictionary<string, object>();
+            var element = new PlaylistElement ();
             Elements.Add(element);
             return element;
         }
@@ -112,7 +112,7 @@ namespace Banshee.Playlists.Formats
             get { return attributes; }
         }
 
-        public virtual List<Dictionary<string, object>> Elements {
+        public virtual List<PlaylistElement> Elements {
             get { return elements; }
         }
 

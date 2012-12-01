@@ -59,7 +59,7 @@ namespace Banshee.Playlists.Formats
         public override void Load (StreamReader reader, bool validateHeader)
         {
             string line;
-            Dictionary<string, object> element = AddElement ();
+            PlaylistElement element = AddElement ();
 
             while ((line = reader.ReadLine()) != null) {
                 if (line.StartsWith ("ref01", StringComparison.CurrentCultureIgnoreCase) ||

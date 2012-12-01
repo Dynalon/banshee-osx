@@ -292,7 +292,7 @@ namespace Banshee.Streaming
             try {
                 PlaylistParser parser = new PlaylistParser();
                 if (parser.Parse(new SafeUri(uri))) {
-                    foreach(Dictionary<string, object> element in parser.Elements) {
+                    foreach (PlaylistElement element in parser.Elements) {
                         if(element.ContainsKey("uri")) {
                             // mms can be a nested link
                             string element_uri = element["uri"].ToString();

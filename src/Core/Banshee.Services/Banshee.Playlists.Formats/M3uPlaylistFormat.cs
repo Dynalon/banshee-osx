@@ -63,7 +63,7 @@ namespace Banshee.Playlists.Formats
         public override void Load(StreamReader reader, bool validateHeader)
         {
             string line;
-            Dictionary<string, object> element = null;
+            PlaylistElement element = null;
 
             while((line = reader.ReadLine()) != null) {
                 line = line.Trim();
@@ -97,7 +97,7 @@ namespace Banshee.Playlists.Formats
             }
         }
 
-        private void ParseExtended(Dictionary<string, object> element, string line)
+        private void ParseExtended (PlaylistElement element, string line)
         {
             string split = line.Substring(8).TrimStart(',');
             string [] parts = split.Split(new char [] { ',' }, 2);
