@@ -48,7 +48,7 @@ namespace Banshee.Playlists.Formats.Tests
 #region Setup
 
         private static Uri BaseUri = new Uri ("/iamyourbase/");
-        private List<Dictionary<string, object>> elements = new List<Dictionary<string, object>> ();
+        private List<PlaylistElement> elements = new List<PlaylistElement> ();
         private string playlists_dir;
 
         [TestFixtureSetUp]
@@ -58,7 +58,7 @@ namespace Banshee.Playlists.Formats.Tests
 
             playlists_dir = Path.Combine (TestsDir, "data/playlist-data");
             IPlaylistFormat playlist = LoadPlaylist (new M3uPlaylistFormat (), "extended.m3u");
-            foreach (Dictionary<string, object> element in playlist.Elements) {
+            foreach (PlaylistElement element in playlist.Elements) {
                 elements.Add (element);
             }
         }
@@ -71,14 +71,14 @@ namespace Banshee.Playlists.Formats.Tests
         public void ReadAsfReferenceLocal ()
         {
             IPlaylistFormat pl = LoadPlaylist (new AsfReferencePlaylistFormat (), "reference_local.asx");
-            Assert.AreEqual (elements[2]["uri"], pl.Elements[0]["uri"]);
+            Assert.AreEqual (elements[2].Uri, pl.Elements[0].Uri);
         }
 
         [Test]
         public void ReadAsfReferenceRemote ()
         {
             IPlaylistFormat pl = LoadPlaylist (new AsfReferencePlaylistFormat (), "reference_remote.asx");
-            Assert.AreEqual ("mmsh://remote/remote.mp3", (pl.Elements[0]["uri"] as Uri).AbsoluteUri);
+            Assert.AreEqual ("mmsh://remote/remote.mp3", (pl.Elements[0].Uri).AbsoluteUri);
         }
 
         [Test]
@@ -101,7 +101,23 @@ namespace Banshee.Playlists.Formats.Tests
 
             parser.Parse (new SafeUri ("http://download.banshee.fm/test/remote.asx"));
             IPlaylistFormat plref = LoadPlaylist (new AsxPlaylistFormat (), "entryref.asx");
-            Assert.AreEqual (parser.Elements, plref.Elements);
+            Assert.AreEqual (2, plref.Elements.Count);
+            AssertEqual (parser.Elements, plref.Elements);
+        }
+
+        private void AssertEqual (List<PlaylistElement> l1, List<PlaylistElement> l2)
+        {
+            Assert.AreEqual (l1.Count, l2.Count);
+            for (int i = 0; i < l1.Count; i++) {
+                AssertEqual (l1[i], l2[i]);
+            }
+        }
+
+        private void AssertEqual (PlaylistElement e1, PlaylistElement e2)
+        {
+            Assert.AreEqual (e1.Title, e2.Title);
+            Assert.AreEqual (e1.Duration, e2.Duration);
+            Assert.AreEqual (e1.Uri.ToString (), e2.Uri.ToString ());
         }
 
         [Test]
@@ -159,22 +175,22 @@ namespace Banshee.Playlists.Formats.Tests
             AssertTest (playlist.Elements, mmsh);
         }
 
-        private void AssertTest (List<Dictionary<string, object>> plelements, bool mmsh)
+        private void AssertTest (List<PlaylistElement> plelements, bool mmsh)
         {
             int i = 0;
-            foreach (Dictionary<string, object> element in plelements) {
+            foreach (PlaylistElement element in plelements) {
                 if (mmsh) {
-                    Assert.AreEqual (((Uri)elements[i]["uri"]).AbsoluteUri.Replace ("http", "mmsh"), ((Uri)element["uri"]).AbsoluteUri);
+                    Assert.AreEqual (elements[i].Uri.AbsoluteUri.Replace ("http", "mmsh"), element.Uri.AbsoluteUri);
                 } else {
-                    Assert.AreEqual ((Uri)elements[i]["uri"], (Uri)element["uri"]);
+                    Assert.AreEqual (elements[i].Uri, element.Uri);
                 }
 
-                if (element.ContainsKey ("title")) {
-                    Assert.AreEqual ((string)elements[i]["title"], (string)element["title"]);
+                if (element.Title != null) {
+                    Assert.AreEqual (elements[i].Title, element.Title);
                 }
 
-                if (element.ContainsKey ("duration")) {
-                    Assert.AreEqual ((TimeSpan)elements[i]["duration"], (TimeSpan)element["duration"]);
+                if (element.Duration != default(TimeSpan)) {
+                    Assert.AreEqual (elements[i].Duration, element.Duration);
                 }
 
                 i++;
