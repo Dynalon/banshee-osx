@@ -69,7 +69,7 @@ namespace Banshee.Playlists.Formats
                     if (uri_aux.StartsWith ("http", StringComparison.CurrentCultureIgnoreCase))
                         uri_aux = "mmsh" + uri_aux.Substring (4);
 
-                    element["uri"] = ResolveUri (uri_aux);
+                    element.Uri = ResolveUri (uri_aux);
                     break;
                 }
             }

@@ -29,8 +29,11 @@ using System.Collections.Generic;
 
 namespace Banshee.Playlists.Formats
 {
-    public class PlaylistElement : Dictionary<string, object>
+    public class PlaylistElement
     {
+        public string Title { get; set; }
+        public Uri Uri { get; set; }
+        public TimeSpan Duration { get; set; }
     }
 }
 

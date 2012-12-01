@@ -293,13 +293,13 @@ namespace Banshee.Streaming
                 PlaylistParser parser = new PlaylistParser();
                 if (parser.Parse(new SafeUri(uri))) {
                     foreach (PlaylistElement element in parser.Elements) {
-                        if(element.ContainsKey("uri")) {
+                        if (element.Uri != null) {
                             // mms can be a nested link
-                            string element_uri = element["uri"].ToString();
+                            string element_uri = element.Uri.ToString ();
                             if(element_uri.StartsWith("mms:", StringComparison.CurrentCultureIgnoreCase)){
                                 LoadStreamUri("http" + element_uri.Substring(element_uri.IndexOf(":")));
                             }
-                            stream_uris.Add(new SafeUri(((Uri)element["uri"]).AbsoluteUri));
+                            stream_uris.Add (new SafeUri (element.Uri.AbsoluteUri));
                         }
                     }
                 } else {

@@ -137,7 +137,7 @@ namespace Banshee.Playlists.Formats
                 switch (xml_reader.LocalName.ToLower ()) {
                     case "title":
                         xml_reader.Read ();
-                        element["title"] = xml_reader.Value;
+                        element.Title = xml_reader.Value;
                         break;
 
                     case "ref":
@@ -147,13 +147,13 @@ namespace Banshee.Playlists.Formats
                             uri_aux = "mmsh" + uri_aux.Substring (4);
                     }
 
-                        element["uri"] = ResolveUri (uri_aux);
+                        element.Uri = ResolveUri (uri_aux);
                         break;
 
                     case "duration":
                         try {
                             xml_reader.Read ();
-                            element["duration"] = TimeSpan.Parse (xml_reader.Value);
+                            element.Duration = TimeSpan.Parse (xml_reader.Value);
                         } catch {
                         }
                         break;

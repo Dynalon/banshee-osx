@@ -114,13 +114,13 @@ namespace Banshee.Playlists.Formats
 
                     switch(element_type) {
                         case PlsType.File:
-                            element["uri"] = ResolveUri(value_string);
+                            element.Uri = ResolveUri (value_string);
                             break;
                         case PlsType.Title:
-                            element["title"] = value_string;
+                            element.Title = value_string;
                             break;
                         case PlsType.Length:
-                            element["duration"] = SecondsStringToTimeSpan(value_string);
+                            element.Duration = SecondsStringToTimeSpan (value_string);
                             break;
                     }
                 } catch {

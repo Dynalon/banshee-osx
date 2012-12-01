@@ -119,7 +119,7 @@ namespace Banshee.Playlist
             List<string> uris = new List<string> ();
             if (playlist != null) {
                 foreach (PlaylistElement element in playlist.Elements) {
-                    uris.Add (((Uri)element["uri"]).AbsoluteUri);
+                    uris.Add (element.Uri.AbsoluteUri);
                 }
             }
             return uris.ToArray ();
@@ -196,7 +196,7 @@ namespace Banshee.Playlist
                 if (parser.Parse (uri)) {
                     List<string> uris = new List<string> ();
                     foreach (PlaylistElement element in parser.Elements) {
-                        uris.Add (((Uri)element["uri"]).LocalPath);
+                        uris.Add (element.Uri.LocalPath);
                     }
 
                     if (source == null) {

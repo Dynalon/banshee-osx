@@ -88,7 +88,7 @@ namespace Banshee.Playlists.Formats
                 }
 
                 try {
-                    element["uri"] = ResolveUri(line);
+                    element.Uri = ResolveUri (line);
                 } catch {
                     Elements.Remove(element);
                 }
@@ -103,10 +103,10 @@ namespace Banshee.Playlists.Formats
             string [] parts = split.Split(new char [] { ',' }, 2);
 
             if(parts.Length == 2) {
-                element["duration"] = SecondsStringToTimeSpan(parts[0]);
-                element["title"] = parts[1].Trim();
+                element.Duration = SecondsStringToTimeSpan (parts[0]);
+                element.Title = parts[1].Trim ();
             } else {
-                element["title"] = split.Trim();
+                element.Title = split.Trim ();
             }
         }
 
