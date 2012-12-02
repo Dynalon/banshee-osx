@@ -1,0 +1,119 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      xmlns:e="http://projectmallard.org/experimental/"
+      type="topic" style="task"
+      id="podcast">
+
+  <info>
+    <link type="guide" xref="index#media"/>
+    <link type="seealso" xref="remove-media"/>
+    <link type="seealso" xref="add-radio"/>
+    <link type="seealso" xref="import"/>
+    <desc>Add, remove and play podcasts in <app>Banshee</app>.</desc>
+    <revision pkgversion="1.6" version="0.1" date="2009-01-22" status="draft"/>
+    <revision pkgversion="3.6" version="0.1" date="2012-12-02" status="draft"/>
+    <credit type="author">
+      <name>Paul Cutler</name>
+      <email>pcutler@gnome.org</email>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+<!--
+    <copyright>
+      <year>2010</year>
+      <name>GNOME Documentation Project</name>
+    </copyright>
+-->
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+  </info>
+
+  <title>Podcasts</title>
+
+  <section id="podcastdescription">
+  <title>What is a podcast?</title>
+
+  <p>Podcasts are recorded programs, similar to radio programs, that are
+  available on the internet and allow you to subscribe to them. When you
+  subscribe to a podcast in <app>Banshee</app>, each time a new program is
+  released, <app>Banshee</app> will automatically download the podcast to your
+  library.</p>
+
+  <p>Podcasts have been made on almost any subject, including music, movies,
+  Linux and more. Search the internet using your favorite search engine with a
+  search term such as "Linux podcast" and you will be presented with many
+  options to choose from.</p>
+
+  </section>
+
+  <section id="addpodcast">
+    <title>Add a podcast</title>
+
+  <p>To add a podcast to <app>Banshee</app>, you will first need to visit the
+  podcast home page. Most podcasts will have a button or link displayed to
+  subscribe to the podcast. Copy the link to the podcast subscription feed. In
+  most web browsers, you can right click on the link and choose
+  <gui style="menuitem">Copy link</gui>.</p>
+
+  <p>In <app>Banshee</app>, click <gui style="menuitem">Podcast</gui> in the
+  menu on the left side of the window. Then, click
+  <gui style="menuitem">Subscribe to Podcasts</gui> in the right half of the
+  toolbar, from the menu choose <guiseq><gui style="menu">Media</gui>
+  <gui style="menuitem">Subscribe to Podcast</gui></guiseq> or use the keyboard
+  shortcut <keyseq><key>Shift</key><key>Control</key><key>F</key></keyseq>.</p>
+
+  <p>By default, the podcasts will not be downloaded, so you will only be able
+  to listen to them while you are connected to the internet. When you subscribe
+  to a new podcast, you will be able to select the following options:</p>
+
+  <list>
+    <item>
+      <p>Select <gui style="checkbox">Download new episodes</gui> to
+      automatically download any new episodes to your computer so that you can
+      access them when you do not have an internet connection.</p>
+    </item>
+    <item>
+      <p>Select <gui style="menuitem">Archive all episodes except the newest
+      one</gui> to have only the newest episode displayed.</p>
+    </item>
+  </list>
+
+  <p>After you have added a podcast feed, <app>Banshee</app> will display the
+  name of the podcast, the title of each episode and the date that it was
+  published on.</p>
+
+  <p>Once a podcast has been archived, it will be removed from the <gui>New
+  Items</gui> list, but it will still appear in the <gui>All Items</gui>
+  list.</p>
+
+  <note style="tip">
+    <p>You can edit the subscription options the <gui style="menuitem">Podcast
+    Properties</gui>, which can be accessed by right clicking on the
+    corresponding podcast name in the podcast list or by right clicking on any
+    episode of that podcast.</p>
+  </note>
+
+  </section>
+
+  <section id="playpodcast">
+    <title>Play podcast</title>
+
+  <p>To <link xref="play">play</link> a podcast episode, double click on the
+  episode or select it, then select <guiseq><gui style="menu">Playback</gui>
+  <gui style="menuitem">Play</gui></guiseq>. You can also add the episode to
+  the <link xref="queue"><gui>Play Queue</gui></link> by right clicking on the
+  episode and selecting <gui style="menuitem">Add to Play Queue</gui>.</p>
+
+  </section>
+
+  <section id="removepodcast">
+    <title>Remove a podcast</title>
+
+  <p>To remove a podcast, right click on the podcast in the podcast list and
+  select <gui style="menuitem">Unsubscribe and Delete</gui>. This will
+  unsubscribe you from receiving podcast updates and will delete all the
+  episodes of the podcast from your library.</p>
+
+  </section>
+
+</page>
