@@ -108,23 +108,6 @@ namespace Banshee.Playlist
             return default_export_index;
         }
 
-        public static string [] ImportPlaylist (string playlistUri)
-        {
-            return ImportPlaylist (playlistUri, null);
-        }
-
-        public static string [] ImportPlaylist (string playlistUri, Uri baseUri)
-        {
-            IPlaylistFormat playlist = Load (playlistUri, baseUri);
-            List<string> uris = new List<string> ();
-            if (playlist != null) {
-                foreach (PlaylistElement element in playlist.Elements) {
-                    uris.Add (element.Uri.AbsoluteUri);
-                }
-            }
-            return uris.ToArray ();
-        }
-
         public static bool PathHasPlaylistExtension (string playlistUri)
         {
             if (System.IO.Path.HasExtension (playlistUri)) {
