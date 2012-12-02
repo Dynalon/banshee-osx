@@ -31,9 +31,9 @@ namespace Banshee.Playlists.Formats
 {
     public class PlaylistElement
     {
-        public string Title { get; set; }
-        public Uri Uri { get; set; }
-        public TimeSpan Duration { get; set; }
+        public string Title { get; internal set; }
+        public Uri Uri { get; internal set; }
+        public TimeSpan Duration { get; internal set; }
     }
 }
 
