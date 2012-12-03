@@ -1,0 +1,125 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      xmlns:e="http://projectmallard.org/experimental/"
+      type="topic" style="task"
+      id="radio">
+
+  <info>
+    <link type="guide" xref="index#media"/>
+    <link type="seealso" xref="podcast"/>
+    <link type="seealso" xref="import"/>
+    <desc>Add, remove and play internet radio stations in <app>Banshee</app>.</desc>
+    <revision pkgversion="2.0" version="0.1" date="2010-05-20" status="draft"/>
+    <revision pkgversion="2.6" version="0.1" date="2012-12-01" status="draft"/>
+    <credit type="author">
+      <name>Paul Cutler</name>
+      <email>pcutler@gnome.org</email>
+    </credit>
+    <credit type="editor">
+      <name>Aruna S</name>
+      <email>aruna.evam@gmail.com</email>
+    </credit>
+<!--
+    <copyright>
+      <year>2010</year>
+      <name>GNOME Documentation Project</name>
+    </copyright>
+-->
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+  </info>
+
+  <title>Internet radio</title>
+
+  <section id="radiodescription">
+    <title>What is internet radio?</title>
+
+  <p>Internet radio stations are similar to regular radio stations, allowing
+  an individual or an organization to stream music live over the internet.
+  Internet radio stations can be a simultaneous stream of a regular radio
+  station, amateurs broadcasting their own station, or commercial radio
+  stations that include live DJs and even commercials.</p>
+
+  </section>
+
+  <section id="addradio">
+    <title>Add radio station</title>
+
+  <p>Search for internet radio stations using your favourite search engine.
+  You can specify genres, channel frequencies, names of stations and other
+  details to narrow down your search. Many radio stations display either a
+  button or a link to listen to their stream. In most browsers, you can right
+  click on the link and choose <gui style="menuitem">Copy Link</gui>.</p>
+
+  <p>To add an internet radio station to <app>Banshee</app>, select
+  <gui>Radio</gui> in the menu on the left hand side of your window, then click
+  on <gui style="menuitem">Add Station</gui> on the upper right hand corner of
+  <app>Banshee</app>. Or, you can select <guiseq><gui style="menu">Media</gui>
+  <gui style="menuitem">Add Station</gui></guiseq> from
+  the menu.</p>
+
+  <p>You will need to enter some details about the radio station that you wish
+  to add. The first three fields are mandatory:</p>
+
+  <list>
+    <item>
+      <p>In the <gui style="menuitem">Station Genre</gui> field, describe the
+      type of music the internet radio station plays by creating an appropriate
+      label, or choose a label from the available drop down selections.</p>
+    </item>
+    <item>
+      <p>In the <gui style="input">Station Name</gui> field, enter a name for
+      the radio station.</p>
+    </item>
+    <item>
+      <p>In the <gui style="input">Stream URL</gui> field, enter or paste the
+      URL of the stream by right clicking and selecting
+      <gui style="menuitem">Paste</gui> or pressing
+      <keyseq><key>Control</key><key>V</key></keyseq>.</p>
+    </item>
+  </list>
+
+  <p>You can also fill out the fields for <gui style="input">Station
+  Creator</gui>, <gui style="input">Description</gui>, and <gui
+  style="input">Rating</gui>.</p>
+
+  <p>Finally, click <gui style="button">Save</gui> to save the internet radio
+  station in <app>Banshee</app>.</p>
+
+  </section>
+
+  <section id="play-radio">
+    <title>Play a radio station</title>
+
+  <p>To <link xref="play">play</link> a radio station, double click on the
+  radio station. Alternatively, right click on the station and select <gui
+  style="menuitem">Play</gui> or select the radio station and choose
+  <guiseq><gui style="menu">Playback</gui><gui
+  style="menuitem">Play</gui></guiseq>.</p>
+
+  <!--Not sure about play queue and play after current track-->
+
+  <p>To add a radio station to the <link xref="queue">
+  <gui style="menuitem">Play Queue</gui></link>, you can right click on the
+  station and select <gui style="menuitem">Add to Play Queue</gui>. This will
+  play the radio station when the queue has finished playing all media which is
+  ahead of the station in the <gui>Play Queue</gui>.</p>
+
+  <p>You can also right click the station and select <gui
+  style="menuitem">Play after Current Track</gui> to add the radio station to
+  the queue after the track that is currently playing.</p>
+
+  <note style="bug">
+    <p><gui style="menuitem">Play after Current Track</gui> may not work on
+    some <app>Banshee</app> installations.</p>
+  </note>
+
+  </section>
+
+  <section id="remove-radio">
+    <title>Remove radio station</title>
+
+  <p>To remove a radio station from <app>Banshee</app>, right click on the
+  radio station and select <gui style="menuitem">Remove</gui>.</p>
+
+  </section>
+
+</page>

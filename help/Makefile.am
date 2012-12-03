@@ -6,7 +6,6 @@ DOC_INCLUDES = legal.xml
 DOC_FIGURES = 
 
 DOC_PAGES = \
-	add-radio.page \
 	amazon.page \
 	extensions.page \
 	import.page \
@@ -19,6 +18,7 @@ DOC_PAGES = \
 	play-queue.page \
 	play.page \
 	podcast.page \
+	radio.page \
 	search.page \
 	sort.page \
 	sync.page \
