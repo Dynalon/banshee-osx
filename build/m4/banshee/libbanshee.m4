@@ -5,6 +5,8 @@ AC_DEFUN([BANSHEE_CHECK_LIBBANSHEE],
 
 	AC_HEADER_STDC
 
+	# needed so autoconf doesn't complain before checking the existence of glib-2.0 in configure.ac
+	m4_pattern_allow([AM_PATH_GLIB_2_0])
 	AM_PATH_GLIB_2_0
 
 	LIBBANSHEE_LIBS=""

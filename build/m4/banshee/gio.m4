@@ -26,10 +26,6 @@ AC_DEFUN([BANSHEE_CHECK_GIO_SHARP],
 		done
 		AC_SUBST(GIOSHARP_ASSEMBLIES)
 
-		PKG_CHECK_MODULES(GLIB_2_22,
-			glib-2.0 >= 2.22,
-			enable_gio="$enable_gio", enable_gio=no)
-
 		if test "x$enable_gio_hardware" = "xyes"; then
 			PKG_CHECK_MODULES(GUDEV_SHARP,
 				gudev-sharp-1.0 >= 0.1,
