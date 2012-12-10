@@ -13,7 +13,7 @@ SOURCES =  \
 
 RESOURCES = Banshee.YouTube.addin.xml
 
-if HAVE_GDATA
+if ENABLE_YOUTUBE
 include $(top_srcdir)/build/build.mk
 else
 include $(top_srcdir)/build/build.dist.mk
