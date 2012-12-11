@@ -391,7 +391,6 @@ ${PACKAGE}-${VERSION}
   Extra Features:
     Web Browser:           ${have_libwebkit} (webkit-1.0 >= $WEBKIT_MIN_VERSION, libsoup-2.4 >= $SOUP_MIN_VERSION)
       + GNOME Proxy        ${have_libsoup_gnome} (libsoup-gnome-2.4 >= $SOUP_GNOME_MIN_VERSION)
-    Boo Scripting:         ${enable_boo} (boo >= $BOO_REQUIRED)
     DAAP:                  ${enable_daap}
     GIO Backend:           ${enable_gio} (gio-sharp >= $GIOSHARP_REQUIRED, gtk-sharp-beans >= $GNOMESHARP_REQUIRED)
     GIO Hardware:          ${enable_gio_hardware} (gudev-sharp >= $GUDEVSHARP_REQUIRED, gkeyfile-sharp >= $GKEYFILESHARP_REQUIRED)
@@ -399,6 +398,7 @@ ${PACKAGE}-${VERSION}
     Sound Menu:            ${enable_soundmenu}
     Ubuntu One Store:      ${enable_ubuntuone} (ubuntuone-sharp >= $UBUNTUONESHARP_REQUIRED)
     UPnP:                  ${enable_upnp} (mono-upnp >= $MONOUPNP_REQUIRED)
+    Boo Scripting:         ${enable_boo} (boo >= $BOO_REQUIRED)
 
   Build/Development:
     Unit Tests:            ${do_tests} (nunit >= ${NUNIT_REQUIRED})
