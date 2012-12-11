@@ -1,5 +1,7 @@
 AC_DEFUN([BANSHEE_CHECK_BOO],
 [
+	BOO_REQUIRED=0.8.1
+
 	AC_ARG_ENABLE([boo], AC_HELP_STRING([--disable-boo], 
 		[Do not build with boo support]),
 		[
@@ -12,7 +14,7 @@ AC_DEFUN([BANSHEE_CHECK_BOO],
 	)
 
 	if test "x$enable_boo" = "xyes"; then
-		PKG_CHECK_MODULES(BOO, boo >= 0.8.1)
+		PKG_CHECK_MODULES(BOO, boo >= $BOO_REQUIRED)
 		AC_SUBST(BOO_LIBS)
 		AM_CONDITIONAL(HAVE_BOO, true)
 	else

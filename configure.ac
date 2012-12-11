@@ -391,7 +391,7 @@ ${PACKAGE}-${VERSION}
   Extra Features:
     Web Browser:           ${have_libwebkit} (webkit-1.0 >= $WEBKIT_MIN_VERSION, libsoup-2.4 >= $SOUP_MIN_VERSION)
       + GNOME Proxy        ${have_libsoup_gnome} (libsoup-gnome-2.4 >= $SOUP_GNOME_MIN_VERSION)
-    Boo Scripting:         ${enable_boo}
+    Boo Scripting:         ${enable_boo} (boo >= $BOO_REQUIRED)
     DAAP:                  ${enable_daap}
     GIO Backend:           ${enable_gio} (glib >= 2.22, gio-sharp >= 2.22.3, and gtk-sharp-beans)
     GIO Hardware:          ${enable_gio_hardware} (gudev-sharp, gkeyfile-sharp)
