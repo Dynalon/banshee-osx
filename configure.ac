@@ -393,9 +393,9 @@ ${PACKAGE}-${VERSION}
       + GNOME Proxy        ${have_libsoup_gnome} (libsoup-gnome-2.4 >= $SOUP_GNOME_MIN_VERSION)
     Boo Scripting:         ${enable_boo} (boo >= $BOO_REQUIRED)
     DAAP:                  ${enable_daap}
-    GIO Backend:           ${enable_gio} (glib >= 2.22, gio-sharp >= 2.22.3, and gtk-sharp-beans)
-    GIO Hardware:          ${enable_gio_hardware} (gudev-sharp, gkeyfile-sharp)
-    YouTube:               ${enable_youtube} (gdata-sharp >= 1.4)
+    GIO Backend:           ${enable_gio} (gio-sharp >= $GIOSHARP_REQUIRED, gtk-sharp-beans >= $GNOMESHARP_REQUIRED)
+    GIO Hardware:          ${enable_gio_hardware} (gudev-sharp >= $GUDEVSHARP_REQUIRED, gkeyfile-sharp >= $GKEYFILESHARP_REQUIRED)
+    YouTube:               ${enable_youtube} (gdata-sharp >= $GDATASHARP_REQUIRED_VERSION)
     Sound Menu:            ${enable_soundmenu}
     Ubuntu One Store:      ${enable_ubuntuone} (ubuntuone-sharp >= $UBUNTUONESHARP_REQUIRED)
     UPnP:                  ${enable_upnp} (mono-upnp >= $MONOUPNP_REQUIRED)
