@@ -93,7 +93,7 @@ namespace Banshee.Dap
         public virtual void DeviceInitialize (IDevice device)
         {
             this.device = device;
-            TypeUniqueId = device.Uuid;
+            TypeUniqueId = device.Serial;
         }
 
         public override void Dispose ()
