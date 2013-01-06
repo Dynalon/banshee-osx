@@ -33,9 +33,7 @@ namespace Mtp
 {
     public enum FileType
     {
-#if LIBMTP_FILETYPE_ENUM_HAS_FOLDER
         FOLDER,
-#endif
         WAV,
         MP3,
         WMA,
