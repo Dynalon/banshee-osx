@@ -232,12 +232,17 @@ bp_set_next_track (BansheePlayer *player, const gchar *uri, gboolean maybe_video
 }
 
 P_INVOKE gboolean
-bp_set_position (BansheePlayer *player, guint64 time_ms)
+bp_set_position (BansheePlayer *player, guint64 time_ms, gboolean accurate_seek)
 {
     g_return_val_if_fail (IS_BANSHEE_PLAYER (player), FALSE);
-    
+
+    GstSeekFlags seek_flag = GST_SEEK_FLAG_FLUSH;
+    if (accurate_seek) {
+        seek_flag |= GST_SEEK_FLAG_ACCURATE;
+    }
+
     if (player->playbin == NULL || !gst_element_seek (player->playbin, 1.0, 
-        GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH,
+        GST_FORMAT_TIME, seek_flag,
         GST_SEEK_TYPE_SET, time_ms * GST_MSECOND, 
         GST_SEEK_TYPE_NONE, GST_CLOCK_TIME_NONE)) {
         g_warning ("Could not seek in stream");

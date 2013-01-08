@@ -148,6 +148,9 @@ namespace Banshee.MediaEngine
 
         public abstract void Pause ();
 
+        public abstract void Seek (uint position, bool accurate_seek = false);
+
+
         public virtual void SetNextTrackUri (SafeUri uri, bool maybeVideo)
         {
             // Opening files on SetNextTrack is a sane default behaviour.

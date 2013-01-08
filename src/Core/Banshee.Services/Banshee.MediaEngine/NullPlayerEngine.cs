@@ -49,6 +49,10 @@ namespace Banshee.MediaEngine
             OnStateChanged (PlayerState.Paused);
         }
 
+        public override void Seek (uint position, bool accurate_seek = false)
+        {
+        }
+
         private ushort volume;
         public override ushort Volume {
             get { return volume; }

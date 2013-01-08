@@ -278,6 +278,12 @@ namespace Banshee.GStreamer
             }
         }
 
+        public override void Seek (uint position, bool accurate_seek = false)
+        {
+            bp_set_position (handle, (ulong)position, accurate_seek);
+            OnEventChanged (PlayerEvent.Seek);
+        }
+
         public override void VideoExpose (IntPtr window, bool direct)
         {
             bp_video_window_expose (handle, window, direct);
@@ -647,10 +653,7 @@ namespace Banshee.GStreamer
 
         public override uint Position {
             get { return (uint)bp_get_position(handle); }
-            set {
-                bp_set_position (handle, (ulong)value);
-                OnEventChanged (PlayerEvent.Seek);
-            }
+            set { Seek (value); }
         }
 
         public override bool CanSeek {
@@ -1003,7 +1006,7 @@ namespace Banshee.GStreamer
         private static extern bool bp_audiosink_has_volume (HandleRef player);
 
         [DllImport ("libbanshee.dll")]
-        private static extern bool bp_set_position (HandleRef player, ulong time_ms);
+        private static extern bool bp_set_position (HandleRef player, ulong time_ms, bool accurate_seek);
 
         [DllImport ("libbanshee.dll")]
         private static extern ulong bp_get_position (HandleRef player);

@@ -449,6 +449,17 @@ namespace Banshee.GStreamerSharp
             next_track_set.Set ();
         }
 
+        public override void Seek (uint position, bool accurate_seek = false)
+        {
+            SeekFlags seek_flags = SeekFlags.Flush;
+            if (accurate_seek) {
+                seek_flags |= SeekFlags.Accurate;
+            }
+               
+            playbin.Seek (Format.Time, seek_flags, (long)(position * Gst.Clock.MSecond));
+            OnEventChanged (PlayerEvent.Seek);
+        }
+
         private bool OnBusMessage (Bus bus, Message msg)
         {
             switch (msg.Type) {
@@ -771,9 +782,7 @@ namespace Banshee.GStreamerSharp
                 playbin.QueryPosition (ref query_format, out pos);
                 return (uint) ((ulong)pos / Gst.Clock.MSecond);
             }
-            set {
-                playbin.Seek (Format.Time, SeekFlags.Accurate, (long)(value * Gst.Clock.MSecond));
-            }
+            set { Seek (value); }
         }
 
         public override uint Length {
