@@ -36,6 +36,9 @@ using Banshee.Sources;
 using Banshee.ServiceStack;
 using Banshee.Library;
 
+using Banshee.Gui;
+using Banshee.I18n;
+
 namespace Banshee.LibraryWatcher
 {
     public class LibraryWatcherService : IExtensionService, IDisposable, IDelayedInitializeService
@@ -68,11 +71,33 @@ namespace Banshee.LibraryWatcher
             AddLibrary (ServiceManager.SourceManager.VideoLibrary);
 
             if (ServiceManager.SourceManager.MusicLibrary.Count == 0) {
-                new Banshee.Collection.RescanPipeline (ServiceManager.SourceManager.MusicLibrary);
+                new Banshee.Collection.RescanPipeline (ServiceManager.SourceManager.MusicLibrary, tracks => {
+
+                    string msg = String.Format (
+                        Catalog.GetPluralString (
+                        // singular form unused b/c we know it's > 1, but we still need GetPlural
+                        "Library Watcher extension just detected an action that would trigger the removal of one track from your music library.",
+                        "Library Watcher extension just detected an action that would trigger the removal of {0} tracks from your music library.",
+                        tracks),
+                        tracks);
+
+                    return TrackActions.ConfirmRemove (msg);
+                });
             }
 
             if (ServiceManager.SourceManager.VideoLibrary.Count == 0) {
-                new Banshee.Collection.RescanPipeline (ServiceManager.SourceManager.VideoLibrary);
+                new Banshee.Collection.RescanPipeline (ServiceManager.SourceManager.VideoLibrary, tracks => {
+
+                    string msg = String.Format (
+                        Catalog.GetPluralString (
+                        // singular form unused b/c we know it's > 1, but we still need GetPlural
+                        "Library Watcher extension just detected an action that would trigger the removal of one track from your video library.",
+                        "Library Watcher extension just detected an action that would trigger the removal of {0} tracks from your video library.",
+                        tracks),
+                        tracks);
+
+                    return TrackActions.ConfirmRemove (msg);
+                });
             }
         }
 

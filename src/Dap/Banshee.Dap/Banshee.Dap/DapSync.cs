@@ -45,7 +45,7 @@ using Banshee.SmartPlaylist;
 using Banshee.Query;
 using Banshee.Preferences;
 
-using Banshee.Dap.Gui;
+using Banshee.Gui;
 
 namespace Banshee.Dap
 {
@@ -357,7 +357,16 @@ namespace Banshee.Dap
                     library_sync.Sync ();
                 } catch (DapLibrarySync.PossibleUserErrorException e) {
 
-                    if (DapActions.ConfirmUserAction (e.TracksToRemove)) {
+                    var tracks_to_remove = e.TracksToRemove;
+                    string msg = String.Format (
+                        Catalog.GetPluralString (
+                        // singular form unused b/c we know it's > 1, but we still need GetPlural
+                        "The sync operation will remove one track from your device.",
+                        "The sync operation will remove {0} tracks from your device.",
+                        tracks_to_remove),
+                        tracks_to_remove);
+
+                    if (TrackActions.ConfirmRemove (msg)) {
                         library_sync.Sync (true);
                     }
 

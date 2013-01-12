@@ -80,7 +80,18 @@ namespace Banshee.Gui
                 new ActionEntry ("RescanAction", null,
                                  Catalog.GetString ("Rescan Music Library"), null,
                                  Catalog.GetString ("Rescan the Music Library folder"), delegate {
-                    new Banshee.Collection.RescanPipeline (ServiceManager.SourceManager.MusicLibrary);
+                    new Banshee.Collection.RescanPipeline (ServiceManager.SourceManager.MusicLibrary, tracks => {
+
+                        string msg = String.Format (
+                            Catalog.GetPluralString (
+                            // singular form unused b/c we know it's > 1, but we still need GetPlural
+                            "The rescan operation will remove one track from your music library.",
+                            "The rescan operation will remove {0} tracks from your music library.",
+                            tracks),
+                            tracks);
+
+                        return TrackActions.ConfirmRemove (msg);
+                    });
                 }),
 
                 // Help Menu

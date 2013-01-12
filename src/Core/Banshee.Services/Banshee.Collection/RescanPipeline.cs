@@ -60,11 +60,14 @@ namespace Banshee.Collection
         private PrimarySource psource;
         private BatchUserJob job;
         private TrackSyncPipelineElement track_sync;
+        private Func<int, bool> remove_confirmation;
+        private readonly int MAX_NOWARN_TRACKS_REMOVAL = 50;
 
-        public RescanPipeline (LibrarySource psource) : base ()
+        public RescanPipeline (LibrarySource psource, Func<int, bool> removeConfirmation) : base ()
         {
             this.psource = psource;
             scan_started = DateTime.Now;
+            remove_confirmation = removeConfirmation;
 
             AddElement (new Banshee.IO.DirectoryScannerPipelineElement ());
             AddElement (track_sync = new TrackSyncPipelineElement (psource, scan_started));
@@ -94,7 +97,7 @@ namespace Banshee.Collection
         {
             job.Finish ();
 
-            if (cancelled) {
+            if (cancelled || remove_confirmation == null) {
                 return;
             }
 
@@ -107,20 +110,40 @@ namespace Banshee.Collection
             );
             string uri = Hyena.StringUtil.EscapeLike (new SafeUri (psource.BaseDirectoryWithSeparator).AbsoluteUri) + "%";
 
-            ServiceManager.DbConnection.Execute (String.Format (@"BEGIN;
-                    DELETE FROM CorePlaylistEntries WHERE TrackID IN (SELECT TrackID FROM CoreTracks {0});
-                    DELETE FROM CoreSmartPlaylistEntries WHERE TrackID IN (SELECT TrackID FROM CoreTracks {0});
-                    DELETE FROM CoreTracks {0}; COMMIT",
-                condition),
-                psource.DbId, uri, scan_started,
-                psource.DbId, uri, scan_started,
-                psource.DbId, uri, scan_started
-            );
+            int remove_count = ServiceManager.DbConnection.Query<int> (
+                String.Format (@"SELECT COUNT('x') FROM CoreTracks {0}", condition),
+                psource.DbId, uri, scan_started);
+
+            if (remove_count > MAX_NOWARN_TRACKS_REMOVAL) {
+
+                if (!remove_confirmation (remove_count)) {
+                    Refresh ();
+                    return;
+                }
+            }
+
+            if (remove_count > 0) {
+
+                ServiceManager.DbConnection.Execute (String.Format (@"BEGIN;
+                        DELETE FROM CorePlaylistEntries WHERE TrackID IN (SELECT TrackID FROM CoreTracks {0});
+                        DELETE FROM CoreSmartPlaylistEntries WHERE TrackID IN (SELECT TrackID FROM CoreTracks {0});
+                        DELETE FROM CoreTracks {0}; COMMIT",
+                    condition),
+                    psource.DbId, uri, scan_started,
+                    psource.DbId, uri, scan_started,
+                    psource.DbId, uri, scan_started
+                );
+            }
 
             // TODO prune artists/albums
+            Refresh ();
+            //Hyena.Log.DebugFormat ("Have {0} items after delete", ServiceManager.DbConnection.Query<int>("select count(*) from coretracks where primarysourceid=?", psource.DbId));
+        }
+
+        private void Refresh ()
+        {
             psource.Reload ();
             psource.NotifyTracksChanged ();
-            //Hyena.Log.DebugFormat ("Have {0} items after delete", ServiceManager.DbConnection.Query<int>("select count(*) from coretracks where primarysourceid=?", psource.DbId));
         }
     }
 
