@@ -10,11 +10,11 @@ AC_DEFUN([SHAMROCK_FIND_MONO_2_0_COMPILER],
 
 AC_DEFUN([SHAMROCK_FIND_MONO_2_0_COMPILER_OR_HIGHER],
 [
-	SHAMROCK_FIND_PROGRAM(MCS, gmcs)
+	if pkg-config --atleast-version=2.8 mono; then
+		SHAMROCK_FIND_PROGRAM(MCS, dmcs)
+	fi
 	if test "x$MCS" = "x" ; then
-		if pkg-config --atleast-version=2.8 mono; then
-			SHAMROCK_FIND_PROGRAM(MCS, dmcs)
-		fi
+		SHAMROCK_FIND_PROGRAM(MCS, gmcs)
 	fi
 
 	if test "x$MCS" = "x" ; then
