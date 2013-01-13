@@ -168,8 +168,12 @@ namespace Banshee.Dap.MassStorage
                 foreach (string playlist_path in PlaylistFiles) {
                     // playlist_path has a file:// prefix, and GetDirectoryName messes it up,
                     // so we need to convert it to a regular path
-                    string base_folder = System.IO.Path.GetDirectoryName (SafeUri.UriToFilename (playlist_path));
-                    IPlaylistFormat loaded_playlist = PlaylistFileUtil.Load (playlist_path, new Uri (base_folder));
+                    string base_folder = ms_device.RootPath != null ? BaseDirectory :
+                        System.IO.Path.GetDirectoryName (SafeUri.UriToFilename (playlist_path));
+
+                    IPlaylistFormat loaded_playlist = PlaylistFileUtil.Load (playlist_path,
+                                                                             new Uri (base_folder),
+                                                                             ms_device.RootPath);
                     if (loaded_playlist == null)
                         continue;
 
@@ -366,7 +370,13 @@ namespace Banshee.Dap.MassStorage
                     System.IO.Stream stream = null;
                     try {
                         stream = Banshee.IO.File.OpenWrite (playlist_path, true);
-                        playlist_format.BaseUri = new Uri (PlaylistsWritePath);
+
+                        if (ms_device.RootPath == null) {
+                            playlist_format.BaseUri = new Uri (PlaylistsWritePath);
+                        } else {
+                            playlist_format.RootPath = ms_device.RootPath;
+                            playlist_format.BaseUri = new Uri (BaseDirectory);
+                        }
 
                         playlist_format.Save (stream, from);
                     } catch (Exception e) {

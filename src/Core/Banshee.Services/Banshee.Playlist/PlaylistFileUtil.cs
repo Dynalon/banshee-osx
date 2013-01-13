@@ -122,7 +122,7 @@ namespace Banshee.Playlist
             return false;
         }
 
-        public static IPlaylistFormat Load (string playlistUri, Uri baseUri)
+        public static IPlaylistFormat Load (string playlistUri, Uri baseUri, Uri rootPath)
         {
             PlaylistFormatDescription [] formats = PlaylistFileUtil.ExportFormats;
 
@@ -152,6 +152,7 @@ namespace Banshee.Playlist
                 try {
                     IPlaylistFormat playlist = (IPlaylistFormat)Activator.CreateInstance (format.Type);
                     playlist.BaseUri = baseUri;
+                    playlist.RootPath = rootPath;
                     playlist.Load (Banshee.IO.File.OpenRead (new SafeUri (playlistUri)), true);
                     return playlist;
                 } catch (InvalidPlaylistException) {

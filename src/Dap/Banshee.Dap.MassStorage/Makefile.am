@@ -14,6 +14,7 @@ SOURCES =  \
 	Banshee.Dap.MassStorage/MassStorageSource.cs \
 	Banshee.Dap.MassStorage/NookDevice.cs \
 	Banshee.Dap.MassStorage/RockBoxDevice.cs \
+	Banshee.Dap.MassStorage/SymbianDevice.cs \
 	Banshee.Dap.MassStorage/WebOSDevice.cs
 
 RESOURCES = Banshee.Dap.MassStorage.addin.xml

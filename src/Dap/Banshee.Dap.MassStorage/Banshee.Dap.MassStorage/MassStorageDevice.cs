@@ -209,6 +209,10 @@ namespace Banshee.Dap.MassStorage
             get { return FolderDepth; }
         }
 
+        internal virtual Uri RootPath {
+            get { return null; }
+        }
+
         protected virtual string DefaultFolderSeparator {
             get { return null; }
         }

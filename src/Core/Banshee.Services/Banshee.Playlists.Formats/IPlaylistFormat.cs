@@ -47,5 +47,6 @@ namespace Banshee.Playlists.Formats
         Uri BaseUri { get; set; }
         string Title { get; set; }
         char FolderSeparator { get; set; }
+        Uri RootPath { get; set; }
     }
 }

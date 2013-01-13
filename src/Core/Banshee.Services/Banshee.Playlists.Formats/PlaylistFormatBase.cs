@@ -80,7 +80,15 @@ namespace Banshee.Playlists.Formats
         {
             uri = Paths.NormalizeToUnix (uri);
 
-            return BaseUri == null ? new Uri(uri) : new Uri(BaseUri, uri);
+            if (BaseUri == null) {
+                return new Uri (uri);
+            }
+
+            if (RootPath != null) {
+                uri = Paths.SwitchRoot (uri, RootPath.LocalPath, BaseUri.LocalPath);
+            }
+
+            return new Uri (BaseUri, uri);
         }
 
         protected virtual string ExportUri(SafeUri uri)
@@ -91,6 +99,10 @@ namespace Banshee.Playlists.Formats
 
             if (!uri.IsLocalPath) {
                 return uri.AbsoluteUri;
+            }
+
+            if (RootPath != null) {
+                return Paths.SwitchRoot (uri.LocalPath, BaseUri.LocalPath, RootPath.LocalPath);
             }
 
             var result = Paths.MakePathRelative (uri.LocalPath, new DirectoryInfo (BaseUri.LocalPath).FullName);
@@ -133,5 +145,7 @@ namespace Banshee.Playlists.Formats
         }
 
         public virtual char FolderSeparator { get; set; }
+
+        public Uri RootPath { get; set; } //if not null, elements should have Absolute Uris
     }
 }

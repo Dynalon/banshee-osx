@@ -132,6 +132,19 @@ namespace Banshee.Playlists.Formats.Tests
             LoadTest (new M3uPlaylistFormat (), "extended.m3u", false);
         }
 
+        [Test] // https://bugzilla.gnome.org/show_bug.cgi?id=661507
+        public void ReadM3uWithDosPathAsRootPath ()
+        {
+            playlists_dir = Path.Combine (TestsDir, "data/playlist-data");
+            IPlaylistFormat playlist = LoadPlaylist (new M3uPlaylistFormat (),
+                                                     "dos_path_nokia.m3u",
+                                                     new Uri ("E:\\"));
+            Assert.AreEqual (playlist.Elements [0].Uri.AbsoluteUri.ToString (),
+                             "file:///iamyourbase/Music/Atari%20Doll/Atari%20Doll/01.%20Queen%20for%20a%20Day.mp3");
+            Assert.AreEqual (playlist.Elements [1].Uri.AbsoluteUri.ToString (),
+                             "file:///iamyourbase/Music/Barenaked%20Ladies/All%20Their%20Greatest%20Hits%201991/04.%20One%20Week.mp3");
+        }
+
         [Test]
         public void ReadPlsSimple ()
         {
@@ -162,11 +175,19 @@ namespace Banshee.Playlists.Formats.Tests
 
 #region Utilities
 
-        private IPlaylistFormat LoadPlaylist (IPlaylistFormat playlist, string filename)
+        private IPlaylistFormat LoadPlaylist (IPlaylistFormat playlist, string filename, Uri rootPath)
         {
             playlist.BaseUri = BaseUri;
+            if (rootPath != null) {
+                playlist.RootPath = rootPath;
+            }
             playlist.Load (File.OpenRead (Path.Combine (playlists_dir, filename)), true);
             return playlist;
+        }
+
+        private IPlaylistFormat LoadPlaylist (IPlaylistFormat playlist, string filename)
+        {
+            return LoadPlaylist (playlist, filename, null);
         }
 
         private void LoadTest (IPlaylistFormat playlist, string filename, bool mmsh)
