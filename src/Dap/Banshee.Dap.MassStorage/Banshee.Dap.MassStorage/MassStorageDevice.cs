@@ -116,8 +116,16 @@ namespace Banshee.Dap.MassStorage
             cover_art_file_type = GetPreferredValue ("cover_art_file_type", config, DefaultCoverArtFileType);
             cover_art_file_name = GetPreferredValue ("cover_art_file_name", config, DefaultCoverArtFileName);
             cover_art_size = GetPreferredValue ("cover_art_size", config, DefaultCoverArtSize);
-            audio_folders = MergeValues ("audio_folders", config, DefaultAudioFolders);
-            video_folders = MergeValues ("video_folders", config, DefaultVideoFolders);
+
+            var all_audio_folders = MergeValues ("audio_folders", config, DefaultAudioFolders);
+            var all_video_folders = MergeValues ("video_folders", config, DefaultVideoFolders);
+            if (!FileSystem.IsCaseSensitive (source.Volume)) {
+                all_audio_folders = all_audio_folders.Distinct (StringComparer.CurrentCultureIgnoreCase).ToArray ();
+                all_video_folders = all_video_folders.Distinct (StringComparer.CurrentCultureIgnoreCase).ToArray ();
+            }
+            audio_folders = all_audio_folders;
+            video_folders = all_audio_folders;
+
             playback_mime_types = MergeValues ("output_formats", config, DefaultPlaybackMimeTypes);
             playlist_formats = MergeValues ("playlist_formats", config, DefaultPlaylistFormats);
             var playlist_path = GetPreferredValue ("playlist_path", config, DefaultPlaylistPath);
