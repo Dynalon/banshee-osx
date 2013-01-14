@@ -124,7 +124,7 @@ namespace Banshee.Dap.MassStorage
                 all_video_folders = all_video_folders.Distinct (StringComparer.CurrentCultureIgnoreCase).ToArray ();
             }
             audio_folders = all_audio_folders;
-            video_folders = all_audio_folders;
+            video_folders = all_video_folders;
 
             playback_mime_types = MergeValues ("output_formats", config, DefaultPlaybackMimeTypes);
             playlist_formats = MergeValues ("playlist_formats", config, DefaultPlaylistFormats);
