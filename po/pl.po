@@ -7,14 +7,14 @@
 # Artur Flinta <aflinta@gmail.com>, 2007, 2008.
 # Wadim Dziedzic <wdziedzic@aviary.pl>, 2008, 2009.
 # Tomasz Dominikowski <tdominikowski@aviary.pl>, 2007, 2008, 2009.
-# Piotr Drąg <piotrdrag@gmail.com>, 2009, 2010, 2012.
+# Piotr Drąg <piotrdrag@gmail.com>, 2009, 2010, 2012, 2013.
 # Mateusz Kacprzak <mateusz.kacprzak@yandex.ru>, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-27 16:21+0100\n"
-"PO-Revision-Date: 2012-11-27 16:22+0100\n"
+"POT-Creation-Date: 2013-01-16 20:16+0100\n"
+"PO-Revision-Date: 2013-01-16 20:17+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -1513,7 +1513,7 @@ msgstr "Trwa proces importowania. Zatrzymać go?"
 msgid "Importing {0} of {1}"
 msgstr "Importowanie {0} z {1}"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection/RescanPipeline.cs:79
+#: ../src/Core/Banshee.Services/Banshee.Collection/RescanPipeline.cs:82
 #, csharp-format
 msgid "Rescanning {0} of {1}"
 msgstr "Ponowne skanowanie {0} z {1}"
@@ -3112,53 +3112,63 @@ msgstr "Przeskanuj kolekcję muzyki ponownie"
 msgid "Rescan the Music Library folder"
 msgstr "Skanuje katalog kolekcji muzyki ponownie"
 
+#. singular form unused b/c we know it's > 1, but we still need GetPlural
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:88
+#, csharp-format
+msgid "The rescan operation will remove one track from your music library."
+msgid_plural ""
+"The rescan operation will remove {0} tracks from your music library."
+msgstr[0] "Ponowne skanowanie usunie jedną ścieżkę z kolekcji muzyki."
+msgstr[1] "Ponowne skanowanie usunie {0} ścieżki z kolekcji muzyki."
+msgstr[2] "Ponowne skanowanie usunie {0} ścieżek z kolekcji muzyki."
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:99
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HeaderFilters.cs:134
 msgid "_Help"
 msgstr "Pomo_c"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:91
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:102
 msgid "_Contents"
 msgstr "_Zawartość"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:95
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:106
 msgid "Advanced Collection Searching"
 msgstr "Zaawansowane przeszukiwanie kolekcji"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:96
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:107
 msgid "Learn advanced ways to search your media collection"
 msgstr "Zaawansowane metody przeszukiwanie kolekcji mediów"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:101
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:112
 msgid "Banshee _Home Page"
 msgstr "_Witryna programu Banshee"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:102
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:113
 msgid "Visit the Banshee Home Page"
 msgstr "Otwiera witrynę programu Banshee"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:107
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:118
 msgid "_Get Involved"
 msgstr "W_eź udział w projekcie Banshee"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:108
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:119
 msgid "Become a contributor to Banshee"
 msgstr "Jak zostać współtwórcą programu Banshee"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:113
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:124
 msgid "_Version Information"
 msgstr "I_nformacje o wersji"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:114
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:125
 msgid "View detailed version and configuration information"
 msgstr "Wyświetla szczegółowe informacje o wersji i konfiguracji"
 
 #. Prompt user for location of the playlist.
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:171
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:182
 msgid "Import Playlist"
 msgstr "Importowanie listy odtwarzania"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:172
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:183
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:558
 msgid "Playlists"
 msgstr "Listy odtwarzania"
@@ -3545,6 +3555,14 @@ msgid_plural ""
 msgstr[0] "Na pewno usunąć zaznaczony element z {1}?"
 msgstr[1] "Na pewno usunąć {0} zaznaczone elementy z {1}?"
 msgstr[2] "Na pewno usunąć {0} zaznaczonych elementów z {1}?"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:645
+msgid "Are you sure you want to continue?"
+msgstr "Na pewno kontynuować?"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:656
+msgid "Remove tracks"
+msgstr "Usuń ścieżki"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/AlbumArtistEntry.cs:53
 msgid "Com_pilation Album Artist:"
@@ -4423,12 +4441,8 @@ msgstr ""
 msgid "Sync Preferences"
 msgstr "Preferencje synchronizacji"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:53
-msgid "Sync"
-msgstr "Zsynchronizuj"
-
 #. singular form unused b/c we know it's > 1, but we still need GetPlural
-#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:106
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:364
 #, csharp-format
 msgid "The sync operation will remove one track from your device."
 msgid_plural "The sync operation will remove {0} tracks from your device."
@@ -4436,13 +4450,9 @@ msgstr[0] "Synchronizacja usunie jedną ścieżkę z urządzenia."
 msgstr[1] "Synchronizacja usunie {0} ścieżki z urządzenia."
 msgstr[2] "Synchronizacja usunie {0} ścieżek z urządzenia."
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:110
-msgid "Are you sure you want to continue?"
-msgstr "Na pewno kontynuować?"
-
-#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:121
-msgid "Remove tracks"
-msgstr "Usuń ścieżki"
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:53
+msgid "Sync"
+msgstr "Zsynchronizuj"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapInfoBar.cs:68
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:97
@@ -5890,19 +5900,19 @@ msgstr "Zalogowano w serwisie Last.fm jako <i>{0}</i>."
 msgid "Log out of Last.fm"
 msgstr "Wyloguj z Last.fm"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmSourceContents.cs:123
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmSourceContents.cs:150
 msgid "Recently Loved Tracks"
 msgstr "Ostatnie ulubione ścieżki"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmSourceContents.cs:124
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmSourceContents.cs:151
 msgid "Recently Played Tracks"
 msgstr "Ostatnio odtwarzane ścieżki"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmSourceContents.cs:125
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmSourceContents.cs:152
 msgid "My Top Artists"
 msgstr "Moi ulubieni wykonawcy"
 
-#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmSourceContents.cs:211
+#: ../src/Extensions/Banshee.Lastfm/Banshee.Lastfm/LastfmSourceContents.cs:238
 #, csharp-format
 msgid "{0} plays"
 msgstr "{0} odtworzeń"
