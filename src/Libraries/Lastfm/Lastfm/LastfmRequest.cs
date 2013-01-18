@@ -76,15 +76,10 @@ namespace Lastfm
         }
 
         private string method;
-        public string Method { get; set; }
-
 
         private RequestType request_type;
-        public RequestType RequestType { get; set; }
-
 
         private ResponseFormat response_format;
-        public ResponseFormat ResponseFormat { get; set; }
 
 
         public void AddParameter (string param_name, string param_value)
