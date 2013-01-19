@@ -47,6 +47,7 @@ namespace Banshee.Collection
         public static readonly double PlaybackSkippedThreshold = 0.5;
 
         public static readonly string UnknownTitle = Catalog.GetString ("Unknown Title");
+        public static readonly string UnknownTitleUntranslated = "Unknown Title";
 
         public class ExportableAttribute : Attribute
         {

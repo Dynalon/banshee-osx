@@ -35,16 +35,12 @@ using System.Text;
 using System.Text.RegularExpressions;
 
 using Mono.Unix;
+using Banshee.Collection;
 
 namespace Banshee.Base
 {
     public static class CoverArtSpec
     {
-        private static string unknown_artist_tr = Catalog.GetString ("Unknown Artist");
-        private static string unknown_artist = "Unknown Artist";
-        private static string unknown_album_tr = Catalog.GetString ("Unknown Album");
-        private static string unknown_album = "Unknown Album";
-
         public static bool CoverExists (string artist, string album)
         {
             return CoverExists (CreateArtistAlbumId (artist, album));
@@ -87,12 +83,12 @@ namespace Banshee.Base
 
         public static string CreateArtistAlbumId (string artist, string album)
         {
-            if (album == null || album == unknown_album || album == unknown_album_tr) {
+            if (IsAlbumUnknown (album)) {
                 // do not attempt to group unknown album tracks together
                 return null;
             }
 
-            if (artist == null || artist == unknown_artist || artist == unknown_artist_tr) {
+            if (IsArtistUnknown (artist)) {
                 return null;
             }
 
@@ -114,6 +110,16 @@ namespace Banshee.Base
             Hyena.Log.DebugFormat ("Album artwork path set to {0}", root_path);
         }
 
+        static bool IsAlbumUnknown (string album)
+        {
+            return album == null || album == AlbumInfo.UnknownAlbumTitleUntranslated || album == AlbumInfo.UnknownAlbumTitle;
+        }
+
+        static bool IsArtistUnknown (string artist)
+        {
+            return artist == null || artist == ArtistInfo.UnknownArtistNameUntranslated || artist == ArtistInfo.UnknownArtistName;
+        }
+
         private static string root_path = Path.Combine (XdgBaseDirectorySpec.GetUserDirectory (
             "XDG_CACHE_HOME", ".cache"),  "media-art");
 
@@ -132,7 +138,7 @@ namespace Banshee.Base
 
         public static string CreateLegacyArtistAlbumId (string artist, string album)
         {
-            if (artist == unknown_artist || artist == unknown_artist_tr || album == unknown_album || album == unknown_album_tr) {
+            if (IsArtistUnknown (artist) || IsAlbumUnknown (album)) {
                 return null;
             }
 

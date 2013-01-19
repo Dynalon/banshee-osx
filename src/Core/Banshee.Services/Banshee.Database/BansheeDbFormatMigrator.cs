@@ -603,25 +603,29 @@ namespace Banshee.Database
         [DatabaseVersion (26)]
         private bool Migrate_26 ()
         {
-            string unknown_artist = "Unknown Artist";
-            string unknown_album = "Unknown Album";
-            string unknown_title = "Unknown Title";
-
             connection.Execute ("UPDATE CoreArtists SET Name = NULL, NameLowered = HYENA_SEARCH_KEY(?)" +
                                 " WHERE Name  IN ('', ?, ?) OR Name IS NULL",
-                                ArtistInfo.UnknownArtistName, unknown_artist, ArtistInfo.UnknownArtistName);
+                                ArtistInfo.UnknownArtistName,
+                                ArtistInfo.UnknownArtistNameUntranslated,
+                                ArtistInfo.UnknownArtistName);
 
             connection.Execute ("UPDATE CoreAlbums SET ArtistName = NULL, ArtistNameLowered = HYENA_SEARCH_KEY(?)" +
                                 " WHERE ArtistName IN ('', ?, ?) OR ArtistName IS NULL",
-                                ArtistInfo.UnknownArtistName, unknown_artist, ArtistInfo.UnknownArtistName);
+                                ArtistInfo.UnknownArtistName,
+                                ArtistInfo.UnknownArtistNameUntranslated,
+                                ArtistInfo.UnknownArtistName);
 
             connection.Execute ("UPDATE CoreAlbums SET Title = NULL, TitleLowered = HYENA_SEARCH_KEY(?)" +
                                 " WHERE Title IN ('', ?, ?) OR Title IS NULL",
-                                AlbumInfo.UnknownAlbumTitle, unknown_album, AlbumInfo.UnknownAlbumTitle);
+                                AlbumInfo.UnknownAlbumTitle,
+                                AlbumInfo.UnknownAlbumTitleUntranslated,
+                                AlbumInfo.UnknownAlbumTitle);
 
             connection.Execute ("UPDATE CoreTracks SET Title = NULL, TitleLowered = HYENA_SEARCH_KEY(?)" +
                                 " WHERE Title IN ('', ?, ?) OR Title IS NULL",
-                                TrackInfo.UnknownTitle, unknown_title, TrackInfo.UnknownTitle);
+                                TrackInfo.UnknownTitle,
+                                TrackInfo.UnknownTitleUntranslated,
+                                TrackInfo.UnknownTitle);
 
             return true;
         }

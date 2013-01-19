@@ -98,8 +98,8 @@ namespace Banshee.OpticalDisc.AudioCd
                 track.TrackCount = n;
                 track.DiscNumber = 1;
                 track.Duration = durations[i];
-                track.ArtistName = Catalog.GetString ("Unknown Artist");
-                track.AlbumTitle = Catalog.GetString ("Unknown Album");
+                track.ArtistName = ArtistInfo.UnknownArtistName;
+                track.AlbumTitle = AlbumInfo.UnknownAlbumTitle;
                 track.TrackTitle = String.Format (Catalog.GetString ("Track {0}"), track.TrackNumber);
                 track.FileSize = PCM_FACTOR * (uint)track.Duration.TotalSeconds;
                 Add (track);
