@@ -4,7 +4,7 @@ Pre-release:
 * Update src/Core/Banshee.Core/Resources/contributors.xml
 * Update AUTHORS (cd extras/ && ./create-authors > ../AUTHORS)
 * Update NEWS
-* Bump version in configure.ac (don't forget the display version)
+* Check version in configure.ac (don't forget the display version)
 * Update banshee.doap, build/windows/Installer*
 * Run `make distcheck`
 * Commit everything
@@ -27,3 +27,4 @@ Post-release:
   + This is used by the website to know what the latest release is
 * Send announce e-mail
   + To: banshee-list@gnome.org, gnome-announce-list@gnome.org, mono-announce-list@lists.ximian.com
+* Bump version in configure.ac (don't forget the display version) and commit.
