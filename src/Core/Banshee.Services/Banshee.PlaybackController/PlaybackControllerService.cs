@@ -283,10 +283,10 @@ namespace Banshee.PlaybackController
         public void RestartOrPrevious (bool restart)
         {
             const int delay = 4000; // ms
-            if (player_engine.Position < delay) {
-                Previous ();
-            } else {
+            if (player_engine.CanSeek && player_engine.Position > delay) {
                 Restart ();
+            } else {
+                Previous ();
             }
         }
 
