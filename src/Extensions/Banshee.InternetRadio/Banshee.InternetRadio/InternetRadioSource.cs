@@ -41,6 +41,7 @@ using Banshee.Collection;
 using Banshee.Collection.Database;
 using Banshee.Configuration;
 using Banshee.PlaybackController;
+using Banshee.MediaEngine;
 
 using Banshee.Gui;
 using Banshee.Sources.Gui;
@@ -143,6 +144,8 @@ namespace Banshee.InternetRadio
                 return radio_track != null && DatabaseTrackInfo.TrackEqual (
                     radio_track.ParentTrack as DatabaseTrackInfo, a);
             };
+
+            TrackIsPlayingHandler = ServiceManager.PlayerEngine.IsPlaying;
 
             var migrator = new XspfMigrator (this);
             if (migrator.Migrate () | migrator.LoadDefaults ()) {
