@@ -41,7 +41,6 @@ using Banshee.Collection;
 using Banshee.Collection.Database;
 using Banshee.Configuration;
 using Banshee.PlaybackController;
-using Banshee.MediaEngine;
 
 using Banshee.Gui;
 using Banshee.Sources.Gui;
