@@ -96,7 +96,11 @@ namespace Banshee.Collection.Gui
                 return;
             }
 
-            DisabledAlbumGrid = DisableAlbumGrid.Get ();
+            if (DisableAlbumGrid.Get ()) {
+                SwitchToAlbumList ();
+            } else {
+                SwitchToAlbumGrid ();
+            }
         }
 
         private PreferenceBase disable_album_grid;
@@ -114,7 +118,7 @@ namespace Banshee.Collection.Gui
         private void InstallPreferences ()
         {
             music_lib = ServiceManager.SourceManager.MusicLibrary;
-            disable_album_grid = music_lib.PreferencesPage["misc"].Add (DisableAlbumGridPref);
+            disable_album_grid = music_lib.PreferencesPage["misc"].FindOrAdd (DisableAlbumGridPref);
 
             ServiceManager.SourceManager.SourceAdded -= InstallPreferences;
         }
@@ -131,24 +135,25 @@ namespace Banshee.Collection.Gui
             ServiceManager.SourceManager.SourceRemoved -= UninstallPreferences;
         }
 
-        private bool DisabledAlbumGrid {
-            get { return DisableAlbumGrid.Get (); }
-            set {
-                DisableAlbumGrid.Set (value);
-                if (value) {
-                    ViewLayout = null;
-                    if (classic_layout_column == null)
-                        classic_layout_column = new Column ("Album", renderer, 1.0);
-                    column_controller.Add (classic_layout_column);
-                    ColumnController = column_controller;
-                } else {
-                    if (classic_layout_column != null)
-                        column_controller.Remove (classic_layout_column);
-                    ColumnController = null;
-                    ViewLayout = grid_layout;
-                }
-                album_grid_rendered = !value;
+        protected void SwitchToAlbumList ()
+        {
+            ViewLayout = null;
+            if (classic_layout_column == null) {
+                classic_layout_column = new Column ("Album", renderer, 1.0);
             }
+            column_controller.Add (classic_layout_column);
+            ColumnController = column_controller;
+            album_grid_rendered = false;
+        }
+
+        protected void SwitchToAlbumGrid ()
+        {
+            if (classic_layout_column != null) {
+                column_controller.Remove (classic_layout_column);
+            }
+            ColumnController = null;
+            ViewLayout = grid_layout;
+            album_grid_rendered = true;
         }
 
         private static SchemaPreference<bool> DisableAlbumGridPref = null;
