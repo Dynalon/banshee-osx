@@ -8,8 +8,8 @@ INSTALL_ICONS = $(top_srcdir)/build/private-icon-theme-installer "$(mkinstalldir
 INSTALL_DIR_RESOLVED = $(firstword $(subst , $(DEFAULT_INSTALL_DIR), $(INSTALL_DIR)))
 
 if ENABLE_TESTS
-	LINK += " $(NUNIT_LIBS)"
-	ENABLE_TESTS_FLAG = "-define:ENABLE_TESTS"
+    LINK += " $(NUNIT_LIBS)"
+    ENABLE_TESTS_FLAG = "-define:ENABLE_TESTS"
 endif
 
 FILTERED_LINK = $(shell echo "$(LINK)" | $(UNIQUE_FILTER_PIPE))
