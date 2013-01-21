@@ -5,22 +5,23 @@
 # Lukáš Novotný <lukasnov@cvs.gnome.org>, 2005, 2006.
 # Jakub Friedl <jfriedl@suse.cz>, 2006, 2007.
 # Jiří Eischmann <jiri@eischmann.cz>, 2009.
-# Marek Černocký <marek@manet.cz>, 2010, 2011, 2012.
+# Marek Černocký <marek@manet.cz>, 2010, 2011, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: banshee\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=banshee&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-09-29 20:20+0000\n"
-"PO-Revision-Date: 2012-10-08 07:02+0200\n"
+"POT-Creation-Date: 2013-01-12 19:01+0000\n"
+"PO-Revision-Date: 2013-01-21 22:57+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
-"Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #. ../src/Dap/Banshee.Dap.AppleDevice/Banshee.Dap.AppleDevice.addin.xml
 #: ../data/addin-xml-strings.cs:8
@@ -1503,7 +1504,7 @@ msgstr "Právě probíhá import. Chcete jej zastavit?"
 msgid "Importing {0} of {1}"
 msgstr "Importuje se {0} z {1}"
 
-#: ../src/Core/Banshee.Services/Banshee.Collection/RescanPipeline.cs:79
+#: ../src/Core/Banshee.Services/Banshee.Collection/RescanPipeline.cs:82
 #, csharp-format
 msgid "Rescanning {0} of {1}"
 msgstr "Opětovné prohledávání {0} z {1}"
@@ -3050,92 +3051,105 @@ msgid "Import a playlist"
 msgstr "Importovat seznam skladeb"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:61
-msgid "Rescan Music Library"
-msgstr "Znovu prohledat hudební kolekci"
-
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:62
-msgid "Rescan the Music Library folder"
-msgstr "Znovu prohledat složku Hudební kolekce"
-
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:67
 msgid "Open _Location..."
 msgstr "Otevřít _umístění…"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:68
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:62
 msgid "Open a remote location for playback"
 msgstr "Otevřít k přehrávání vzdálené umístění"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:71
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:65
 msgid "_Quit"
 msgstr "_Ukončit"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:72
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:66
 msgid "Quit Banshee"
 msgstr "Ukončit Banshee"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:76
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:70
 msgid "_Edit"
 msgstr "_Upravit"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:79
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:73
 msgid "_Preferences"
 msgstr "_Předvolby"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:80
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:74
 msgid "Modify your personal preferences"
 msgstr "Změnit své osobní předvolby"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:84
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:78
 msgid "_Tools"
 msgstr "_Nástroje"
 
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:81
+msgid "Rescan Music Library"
+msgstr "Znovu prohledat hudební kolekci"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:82
+msgid "Rescan the Music Library folder"
+msgstr "Znovu prohledat složku Hudební kolekce"
+
+#. singular form unused b/c we know it's > 1, but we still need GetPlural
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:88
+#, csharp-format
+msgid "The rescan operation will remove one track from your music library."
+msgid_plural ""
+"The rescan operation will remove {0} tracks from your music library."
+msgstr[0] ""
+"Po opětovném prohledání bude z vaší hudební kolekce odebrána jedna stopa."
+msgstr[1] ""
+"Po opětovném prohledání budou z vaší hudební kolekce odebrány {0} stopy."
+msgstr[2] ""
+"Po opětovném prohledání bude z vaší hudební kolekce odebráno {0} stop."
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:99
 #: ../src/Extensions/Banshee.InternetArchive/Banshee.InternetArchive/HeaderFilters.cs:134
 msgid "_Help"
 msgstr "_Nápověda"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:91
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:102
 msgid "_Contents"
 msgstr "_Obsah"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:95
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:106
 msgid "Advanced Collection Searching"
 msgstr "Pokročilé prohledávání kolekce"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:96
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:107
 msgid "Learn advanced ways to search your media collection"
 msgstr "Naučte se pokročilé způsoby, jak prohledávat svoji kolekci multimédií"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:101
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:112
 msgid "Banshee _Home Page"
 msgstr "_Domovská stránka Banshee"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:102
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:113
 msgid "Visit the Banshee Home Page"
 msgstr "Navštivte domovskou stránku Banshee"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:107
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:118
 msgid "_Get Involved"
 msgstr "_Zapojte se"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:108
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:119
 msgid "Become a contributor to Banshee"
 msgstr "Přispějte k vývoji Banshee"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:113
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:124
 msgid "_Version Information"
 msgstr "Informace o _verzi"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:114
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:125
 msgid "View detailed version and configuration information"
 msgstr "Zobrazit podrobné informace o verzi a nastavení"
 
 #. Prompt user for location of the playlist.
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:171
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:182
 msgid "Import Playlist"
 msgstr "Importovat seznam skladeb"
 
-#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:172
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/GlobalActions.cs:183
 #: ../src/Extensions/Banshee.PlayerMigration/Banshee.PlayerMigration/ItunesPlayerImportSource.cs:558
 msgid "Playlists"
 msgstr "Seznamy skladeb"
@@ -3522,6 +3536,14 @@ msgid_plural ""
 msgstr[0] "Opravdu chcete odstranit vybranou položku ze své {1}?"
 msgstr[1] "Opravdu chcete odstranit vybrané {0} položky ze své {1}?"
 msgstr[2] "Opravdu chcete odstranit vybraných {0} položek ze své {1}?"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:645
+msgid "Are you sure you want to continue?"
+msgstr "Opravdu chcete pokračovat?"
+
+#: ../src/Core/Banshee.ThickClient/Banshee.Gui/TrackActions.cs:656
+msgid "Remove tracks"
+msgstr "Odstranit stopy"
 
 #: ../src/Core/Banshee.ThickClient/Banshee.Gui.TrackEditor/AlbumArtistEntry.cs:53
 msgid "Com_pilation Album Artist:"
@@ -4323,7 +4345,7 @@ msgstr "Zapisuje se databáze médií"
 msgid "Sync {0}"
 msgstr "Synchronizovat {0}"
 
-#. This group source gives us a seperator for DAPs in the source view.
+#. This group source gives us a separator for DAPs in the source view.
 #: ../src/Dap/Banshee.Dap/Banshee.Dap/DapService.cs:64
 msgid "Devices"
 msgstr "Zařízení"
@@ -4389,12 +4411,8 @@ msgstr ""
 msgid "Sync Preferences"
 msgstr "Předvolby synchronizace"
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:53
-msgid "Sync"
-msgstr "Synchronizovat"
-
 #. singular form unused b/c we know it's > 1, but we still need GetPlural
-#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:106
+#: ../src/Dap/Banshee.Dap/Banshee.Dap/DapSync.cs:364
 #, csharp-format
 msgid "The sync operation will remove one track from your device."
 msgid_plural "The sync operation will remove {0} tracks from your device."
@@ -4402,13 +4420,9 @@ msgstr[0] "Synchronizací se z vašeho zařízení odstraní jedna stopa."
 msgstr[1] "Synchronizací se z vašeho zařízení odstraní {0} stopy."
 msgstr[2] "Synchronizací se z vašeho zařízení odstraní {0} stop."
 
-#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:110
-msgid "Are you sure you want to continue?"
-msgstr "Opravdu chcete pokračovat?"
-
-#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:121
-msgid "Remove tracks"
-msgstr "Odstranit stopy"
+#: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapActions.cs:53
+msgid "Sync"
+msgstr "Synchronizovat"
 
 #: ../src/Dap/Banshee.Dap/Banshee.Dap.Gui/DapInfoBar.cs:68
 #: ../src/Extensions/Banshee.InternetArchive/InternetArchive/MediaType.cs:97
