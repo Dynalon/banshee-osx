@@ -510,7 +510,7 @@ namespace Banshee.Sources
         protected virtual void DeleteTrackList (CachedList<DatabaseTrackInfo> list)
         {
             is_deleting = true;
-            DeleteTrackJob.Total += (int) list.Count;
+            DeleteTrackJob.Total += list.Count;
             List<DatabaseTrackInfo> skip_deletion = null;
 
             // Remove from file system
@@ -628,7 +628,7 @@ namespace Banshee.Sources
         {
             CachedList<DatabaseTrackInfo> list = cached_list as CachedList<DatabaseTrackInfo>;
             is_adding = true;
-            AddTrackJob.Total += (int) list.Count;
+            AddTrackJob.Total += list.Count;
 
             foreach (DatabaseTrackInfo track in list) {
                 if (AddTrackJob.IsCancelRequested) {
